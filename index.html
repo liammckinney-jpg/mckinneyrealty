@@ -169,7 +169,7 @@ img { max-width: 100%; height: auto; }
 }
 .hero-watermark {
   position: absolute; right: var(--side-padding); top: 50%; transform: translateY(-55%);
-  height: 480px; width: auto; pointer-events: none;
+  height: clamp(400px, 42vw, 720px); width: auto; pointer-events: none;
   animation: fadeIn 1.5s ease 0.5s forwards; opacity: 0;
 }
 .hero-stats {
