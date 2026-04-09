@@ -460,6 +460,7 @@
               '<select name="interest">' +
                 '<option value="" disabled selected>Select one</option>' +
                 '<option value="selling">Selling a multi-family property</option>' +
+                '<option value="buying">Acquiring a multi-family property</option>' +
                 '<option value="valuation">Confidential property valuation</option>' +
                 '<option value="restructure">Portfolio restructuring</option>' +
                 '<option value="succession">Succession or estate planning</option>' +
