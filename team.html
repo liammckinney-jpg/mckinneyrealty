@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>McKinney Realty — Meet the Principals</title>
+<meta name="description" content="Meet Liam and Sean McKinney — two generations of multi-family real estate expertise serving property owners and investors across Ontario.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* McKinney Realty — Brand System CSS
+   Source of truth: KB-02 Brand Identity & Visual System
+   Extracted from approved prototypes: mckinney_brand_concept_v2.html, mckinney_team_full.html
+   ========================================================================= */
+
+:root {
+  --white: #FFFFFF;
+  --offwhite: #FAFAF8;
+  --cream: #F5F3EF;
+  --stone-50: #E8E4DD;
+  --stone-gold: #B8A88A;
+  --stone-gold-light: #C9BBAA;
+  --stone-gold-dark: #9A8B6F;
+  --navy: #1A1F2E;
+  --navy-light: #2A3044;
+  --charcoal: #2C2C2C;
+  --text-primary: #1A1A1A;
+  --text-secondary: #6B6B6B;
+  --text-tertiary: #999999;
+  --border: rgba(0,0,0,0.08);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+}
+
+/* RESET & BASE */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --side-padding: 60px;
+  --content-max: 1400px;
+}
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+
+/* =========================================================================
+   NAVIGATION
+   ========================================================================= */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0; padding-left: var(--side-padding); padding-right: var(--side-padding); height: 72px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,0.92); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  animation: fadeDown 0.8s ease;
+}
+.nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+.nav-monogram { height: 36px; width: auto; }
+.nav-logo-text { display: flex; flex-direction: column; }
+.nav-logo-name {
+  font-family: var(--font-display); font-size: 18px; font-weight: 500;
+  letter-spacing: 0.22em; color: var(--navy); text-transform: uppercase; line-height: 1.1;
+}
+.nav-logo-sub {
+  font-family: var(--font-body); font-size: 8px; letter-spacing: 0.16em;
+  color: var(--stone-gold-dark); text-transform: uppercase; font-weight: 400; margin-top: 2px;
+}
+.nav-links { display: flex; gap: 36px; align-items: center; }
+.nav-links a {
+  font-size: 13px; font-weight: 400; color: var(--text-secondary);
+  text-decoration: none; letter-spacing: 0.04em; transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a.active { color: var(--text-primary); }
+.nav-cta {
+  font-size: 12px !important; font-weight: 500 !important; color: var(--navy) !important;
+  padding: 10px 24px; border: 1px solid var(--navy);
+  letter-spacing: 0.08em !important; text-transform: uppercase; transition: all 0.3s !important;
+}
+.nav-cta:hover { background: var(--navy) !important; color: var(--white) !important; }
+
+/* Mobile nav toggle */
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
+
+/* =========================================================================
+   BUTTONS
+   ========================================================================= */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 36px; background: var(--navy); color: var(--white);
+  font-family: var(--font-body); font-size: 13px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+  border: none; cursor: pointer; transition: all 0.3s;
+}
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.btn-primary svg { transition: transform 0.3s; }
+.btn-primary:hover svg { transform: translateX(3px); }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 36px; background: transparent; color: var(--navy);
+  font-family: var(--font-body); font-size: 13px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+  border: 1px solid var(--stone-50); cursor: pointer; transition: all 0.3s;
+}
+.btn-secondary:hover { border-color: var(--navy); }
+
+.btn-gold {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 36px; background: var(--stone-gold-dark); color: var(--white);
+  font-family: var(--font-body); font-size: 13px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+  border: none; cursor: pointer; transition: all 0.3s;
+}
+.btn-gold:hover { background: var(--stone-gold); transform: translateY(-1px); }
+
+/* =========================================================================
+   TYPOGRAPHY UTILITIES
+   ========================================================================= */
+.section-label {
+  font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--stone-gold-dark); font-weight: 500; margin-bottom: 20px;
+}
+.section-title {
+  font-family: var(--font-display); font-size: 40px; font-weight: 300;
+  color: var(--navy); margin-bottom: 60px; line-height: 1.15; max-width: 500px;
+}
+.section-title em { font-style: italic; font-weight: 300; color: var(--stone-gold-dark); }
+
+/* =========================================================================
+   HERO (Homepage)
+   ========================================================================= */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+  padding-top: 140px; padding-bottom: 80px; padding-left: var(--side-padding); padding-right: var(--side-padding); position: relative;
+  overflow: hidden;
+}
+.hero-content { max-width: 780px; }
+.hero-label {
+  font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--stone-gold-dark); font-weight: 500; margin-bottom: 32px;
+  opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards;
+}
+.hero-title {
+  font-family: var(--font-display); font-size: clamp(48px, 6vw, 76px); font-weight: 300;
+  line-height: 1.05; color: var(--navy); margin-bottom: 36px;
+  opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards;
+}
+.hero-title em { font-style: italic; font-weight: 300; color: var(--stone-gold-dark); }
+.hero-desc {
+  font-size: 17px; line-height: 1.7; color: var(--text-secondary); max-width: 540px;
+  font-weight: 300; margin-bottom: 48px;
+  opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards;
+}
+.hero-actions {
+  display: flex; gap: 16px;
+  opacity: 0; animation: fadeUp 0.8s ease 0.9s forwards;
+}
+.hero-watermark {
+  position: absolute; right: var(--side-padding); top: 50%; transform: translateY(-55%);
+  height: 480px; width: auto; pointer-events: none;
+  animation: fadeIn 1.5s ease 0.5s forwards; opacity: 0;
+}
+.hero-stats {
+  position: absolute; bottom: 60px; right: var(--side-padding);
+  display: flex; gap: 48px;
+  opacity: 0; animation: fadeUp 0.8s ease 1.1s forwards;
+}
+.stat { text-align: right; }
+.stat-number {
+  font-family: var(--font-display); font-size: 42px; font-weight: 300;
+  color: var(--navy); line-height: 1; margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--text-tertiary); font-weight: 400;
+}
+.hero-line { position: absolute; bottom: 0; left: var(--side-padding); right: var(--side-padding); height: 1px; background: var(--border); }
+
+/* =========================================================================
+   CREDIBILITY BAR
+   ========================================================================= */
+.cred-bar {
+  padding: 24px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); display: flex; align-items: center; justify-content: center;
+  gap: 48px; border-bottom: 1px solid var(--border);
+}
+.cred-item {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 13px; color: var(--text-secondary); font-weight: 400; letter-spacing: 0.02em;
+}
+.cred-icon {
+  width: 36px; height: 36px; border-radius: 50%; background: var(--cream);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.cred-icon svg { width: 16px; height: 16px; color: var(--stone-gold-dark); }
+
+/* =========================================================================
+   SERVICES GRID
+   ========================================================================= */
+.services { padding: 100px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); }
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+}
+.service-card {
+  background: var(--white); padding: 48px 40px; transition: all 0.4s;
+  cursor: pointer; position: relative; text-decoration: none; display: block;
+}
+.service-card::after {
+  content: ''; position: absolute; bottom: 0; left: 40px; right: 40px;
+  height: 2px; background: var(--stone-gold); transform: scaleX(0); transition: transform 0.4s;
+}
+.service-card:hover { background: var(--offwhite); }
+.service-card:hover::after { transform: scaleX(1); }
+.service-number {
+  font-family: var(--font-display); font-size: 48px; font-weight: 300;
+  color: var(--stone-50); margin-bottom: 24px; line-height: 1;
+}
+.service-name {
+  font-family: var(--font-display); font-size: 24px; font-weight: 500;
+  color: var(--navy); margin-bottom: 16px; line-height: 1.2;
+}
+.service-desc { font-size: 14px; line-height: 1.7; color: var(--text-secondary); font-weight: 300; }
+
+/* =========================================================================
+   ABOUT SECTION (dark)
+   ========================================================================= */
+.about {
+  padding: 100px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); background: var(--navy); color: var(--white);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  position: relative; overflow: hidden;
+}
+.about-watermark {
+  position: absolute; right: -40px; bottom: -60px;
+  opacity: 0.05; height: 400px; width: auto; pointer-events: none;
+  filter: brightness(0) invert(1);
+}
+.about-label {
+  font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--stone-gold-light); font-weight: 500; margin-bottom: 20px;
+}
+.about-title {
+  font-family: var(--font-display); font-size: 40px; font-weight: 300;
+  line-height: 1.15; margin-bottom: 28px; color: var(--white);
+}
+.about-title em { font-style: italic; color: var(--stone-gold-light); }
+.about-text {
+  font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.6);
+  font-weight: 300; margin-bottom: 36px;
+}
+.about-link {
+  font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--stone-gold-light); text-decoration: none; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 8px; transition: gap 0.3s;
+}
+.about-link:hover { gap: 14px; }
+.about-right { position: relative; z-index: 1; }
+.about-portraits { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.about-portrait img {
+  display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top;
+  filter: grayscale(15%);
+}
+.about-portrait-info { padding: 16px 0 0; }
+.about-portrait-name {
+  font-family: var(--font-display); font-size: 22px; font-weight: 400;
+  color: var(--white); margin-bottom: 4px;
+}
+.about-portrait-role {
+  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--stone-gold-light); font-weight: 400;
+}
+
+/* =========================================================================
+   DEAL TOMBSTONES
+   ========================================================================= */
+.tombstones { padding: 100px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); }
+.tombstones-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+}
+.tombstone-card {
+  background: var(--white); padding: 36px 32px;
+}
+.tombstone-value {
+  font-family: var(--font-display); font-size: 32px; font-weight: 300;
+  color: var(--navy); line-height: 1; margin-bottom: 12px;
+}
+.tombstone-detail {
+  font-size: 12px; letter-spacing: 0.08em; color: var(--stone-gold-dark);
+  font-weight: 500; text-transform: uppercase; margin-bottom: 16px;
+}
+.tombstone-meta {
+  font-size: 13px; line-height: 1.6; color: var(--text-secondary); font-weight: 300;
+}
+
+/* =========================================================================
+   CTA SECTION
+   ========================================================================= */
+.cta-section {
+  padding: 120px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); text-align: center; border-top: 1px solid var(--border);
+  position: relative;
+}
+.cta-monogram {
+  height: 56px; width: auto; margin-bottom: 32px; opacity: 0.15;
+}
+.cta-title {
+  font-family: var(--font-display); font-size: 44px; font-weight: 300;
+  color: var(--navy); margin-bottom: 20px; line-height: 1.15;
+}
+.cta-subtitle {
+  font-size: 16px; color: var(--text-secondary); font-weight: 300;
+  margin-bottom: 44px; max-width: 460px; margin-left: auto; margin-right: auto; line-height: 1.6;
+}
+
+/* =========================================================================
+   DUAL CTA (Seller + Buyer)
+   ========================================================================= */
+.dual-cta {
+  display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border);
+}
+.dual-cta-panel {
+  padding: 80px 60px; text-align: center;
+}
+.dual-cta-panel:first-child { border-right: 1px solid var(--border); }
+.dual-cta-panel .section-label { margin-bottom: 16px; }
+.dual-cta-panel h3 {
+  font-family: var(--font-display); font-size: 32px; font-weight: 300;
+  color: var(--navy); margin-bottom: 16px; line-height: 1.2;
+}
+.dual-cta-panel p {
+  font-size: 15px; color: var(--text-secondary); font-weight: 300;
+  line-height: 1.7; max-width: 380px; margin: 0 auto 32px;
+}
+
+/* =========================================================================
+   FOOTER
+   ========================================================================= */
+/* =========================================================================
+   FOOTER
+   ========================================================================= */
+.footer {
+  border-top: 1px solid rgba(0,0,0,0.06);
+  background: var(--offwhite);
+}
+.footer-principals {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 52px var(--side-padding) 48px;
+}
+.footer-principal {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.footer-principal--right {
+  justify-content: flex-end;
+  text-align: right;
+}
+.footer-principal--right .footer-principal-details {
+  order: -1;
+  text-align: right;
+}
+.footer-principal--right .footer-principal-brokerage {
+  justify-content: flex-end;
+}
+.footer-principal-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  filter: grayscale(20%);
+  flex-shrink: 0;
+  border: 2px solid var(--white);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.footer-principal-name {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.2;
+}
+.footer-principal-title {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--stone-gold-dark);
+  font-weight: 500;
+  margin-top: 3px;
+}
+.footer-principal-brokerage {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.footer-principal-brokerage img {
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.7;
+}
+.footer-principal:not(.footer-principal--right) .footer-principal-brokerage img {
+  height: 30px;
+}
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 40px;
+  position: relative;
+}
+.footer-center::before,
+.footer-center::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background: rgba(0,0,0,0.06);
+}
+.footer-center::before { left: 0; }
+.footer-center::after { right: 0; }
+.footer-monogram {
+  height: 48px;
+  width: auto;
+  margin-bottom: 10px;
+}
+.footer-brand-name {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  color: var(--navy);
+  text-transform: uppercase;
+}
+.footer-brand-byline {
+  font-size: 7px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--stone-gold-dark);
+  font-weight: 400;
+  margin-top: 4px;
+}
+.footer-copyright {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-tertiary);
+  padding: 24px var(--side-padding);
+  border-top: 1px solid rgba(0,0,0,0.06);
+  background: var(--white);
+}
+
+/* =========================================================================
+   TEAM PAGE
+   ========================================================================= */
+.team-hero { padding: 140px 0 64px; padding-left: var(--side-padding); padding-right: var(--side-padding); text-align: center; border-bottom: 1px solid var(--border); }
+.team-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--stone-gold-dark); font-weight: 500; margin-bottom: 24px; }
+.team-title { font-family: var(--font-display); font-size: 52px; font-weight: 300; line-height: 1.1; color: var(--navy); margin-bottom: 16px; }
+.team-title em { font-style: italic; color: var(--stone-gold-dark); }
+.team-subtitle { font-size: 16px; line-height: 1.7; color: var(--text-secondary); font-weight: 300; max-width: 600px; margin: 0 auto; }
+.portraits { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 880px; margin: 0 auto; }
+.portrait { position: relative; }
+.portrait img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top; filter: grayscale(15%); }
+.portrait-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; aspect-ratio: 4/5; background: var(--cream); color: var(--stone-gold-dark);
+  font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+}
+.portrait-info { padding: 24px 0 0; text-align: center; }
+.portrait-name { font-family: var(--font-display); font-size: 26px; font-weight: 400; color: var(--navy); margin-bottom: 4px; }
+.portrait-role { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--stone-gold-dark); font-weight: 400; }
+
+/* Individual bios */
+.bio-section { padding: 80px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); border-bottom: 1px solid var(--border); }
+.bio-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: start; max-width: 1200px; }
+.bio-photo { position: relative; }
+.bio-photo img {
+  display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top;
+  filter: grayscale(15%);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.06);
+  border-bottom: 3px solid var(--stone-gold);
+}
+.bio-header { margin-bottom: 32px; }
+.bio-name { font-family: var(--font-display); font-size: 36px; font-weight: 400; color: var(--navy); margin-bottom: 6px; }
+.bio-title { font-size: 13px; color: var(--stone-gold-dark); font-weight: 400; letter-spacing: 0.04em; }
+.bio-location { font-size: 13px; color: var(--text-tertiary); font-weight: 400; margin-top: 8px; }
+.bio-stats { display: flex; gap: 1px; margin-bottom: 36px; border: 1px solid var(--border); }
+.bio-stat { padding: 24px 28px; flex: 1; background: var(--offwhite); }
+.bio-stat-num { font-family: var(--font-display); font-size: 32px; font-weight: 300; color: var(--navy); line-height: 1; margin-bottom: 6px; }
+.bio-stat-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); }
+.bio-text { font-size: 15px; line-height: 1.85; color: var(--text-secondary); font-weight: 300; margin-bottom: 16px; }
+.bio-contact { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; gap: 48px; }
+.bio-contact-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px; }
+.bio-contact-value { font-size: 14px; color: var(--text-primary); }
+.bio-contact-value a { color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--stone-50); transition: border-color 0.3s; }
+.bio-contact-value a:hover { border-color: var(--navy); }
+
+/* Quote divider */
+.quote-section { padding: 80px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); background: var(--navy); text-align: center; }
+.quote-monogram { height: 40px; opacity: 0.1; margin-bottom: 32px; }
+.quote-text { font-family: var(--font-display); font-size: 32px; font-weight: 300; font-style: italic; color: var(--white); max-width: 680px; margin: 0 auto; line-height: 1.35; }
+.quote-text em { color: var(--stone-gold-light); }
+
+/* =========================================================================
+   SERVICES PAGE
+   ========================================================================= */
+.page-hero {
+  padding: 160px 60px 80px; border-bottom: 1px solid var(--border);
+}
+.page-hero .section-label { margin-bottom: 24px; }
+.page-hero-title {
+  font-family: var(--font-display); font-size: 52px; font-weight: 300;
+  color: var(--navy); line-height: 1.1; margin-bottom: 24px; max-width: 680px;
+}
+.page-hero-title em { font-style: italic; color: var(--stone-gold-dark); }
+.page-hero-desc {
+  font-size: 17px; line-height: 1.7; color: var(--text-secondary); font-weight: 300;
+  max-width: 580px;
+}
+
+.service-detail { padding: 80px 60px; border-bottom: 1px solid var(--border); }
+.service-detail-grid { display: grid; grid-template-columns: 280px 1fr; gap: 64px; }
+.service-detail-title {
+  font-family: var(--font-display); font-size: 28px; font-weight: 400;
+  color: var(--navy); margin-bottom: 8px;
+}
+.service-detail-sub {
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--stone-gold-dark); font-weight: 500;
+}
+.service-detail-body { font-size: 16px; line-height: 1.85; color: var(--text-secondary); font-weight: 300; }
+.service-detail-body p { margin-bottom: 20px; }
+
+/* =========================================================================
+   LISTINGS PAGE
+   ========================================================================= */
+.listings-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+}
+.listing-card {
+  background: var(--white); padding: 40px; display: block; text-decoration: none;
+  transition: background 0.3s;
+}
+.listing-card:hover { background: var(--offwhite); }
+.listing-metrics { display: flex; gap: 32px; margin-bottom: 20px; }
+.listing-metric {}
+.listing-metric-value {
+  font-family: var(--font-display); font-size: 28px; font-weight: 300;
+  color: var(--navy); line-height: 1;
+}
+.listing-metric-label {
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-tertiary); margin-top: 4px;
+}
+.listing-address {
+  font-family: var(--font-display); font-size: 22px; font-weight: 400;
+  color: var(--navy); margin-bottom: 8px;
+}
+.listing-details {
+  font-size: 13px; color: var(--text-secondary); font-weight: 300; line-height: 1.6;
+}
+.listing-tag {
+  display: inline-block; margin-top: 16px; padding: 6px 14px;
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  font-weight: 500; border: 1px solid var(--border); color: var(--text-tertiary);
+}
+.listing-tag.active { border-color: var(--stone-gold); color: var(--stone-gold-dark); }
+.listing-tag.sold { border-color: var(--navy); color: var(--navy); }
+
+/* =========================================================================
+   INSIGHTS / BLOG
+   ========================================================================= */
+.insights-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+}
+.insight-card {
+  background: var(--white); padding: 40px; display: block; text-decoration: none;
+  transition: background 0.3s;
+}
+.insight-card:hover { background: var(--offwhite); }
+.insight-date {
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-tertiary); margin-bottom: 16px;
+}
+.insight-title {
+  font-family: var(--font-display); font-size: 24px; font-weight: 400;
+  color: var(--navy); margin-bottom: 12px; line-height: 1.25;
+}
+.insight-excerpt {
+  font-size: 14px; line-height: 1.7; color: var(--text-secondary); font-weight: 300;
+}
+.insight-tag {
+  display: inline-block; margin-top: 20px; font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--stone-gold-dark); font-weight: 500;
+}
+
+/* =========================================================================
+   CONTACT PAGE
+   ========================================================================= */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.contact-info {
+  padding: 80px 60px; background: var(--navy); color: var(--white);
+}
+.contact-info h3 {
+  font-family: var(--font-display); font-size: 28px; font-weight: 300;
+  color: var(--white); margin-bottom: 32px;
+}
+.contact-office { margin-bottom: 40px; }
+.contact-office-label {
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--stone-gold-light); font-weight: 500; margin-bottom: 12px;
+}
+.contact-office-detail {
+  font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.6); font-weight: 300;
+}
+.contact-office-detail a { color: rgba(255,255,255,0.8); border-bottom: 1px solid rgba(255,255,255,0.2); transition: border-color 0.3s; }
+.contact-office-detail a:hover { border-color: rgba(255,255,255,0.6); }
+
+.contact-form-wrap { padding: 80px 60px; }
+.contact-form-wrap h3 {
+  font-family: var(--font-display); font-size: 28px; font-weight: 300;
+  color: var(--navy); margin-bottom: 8px;
+}
+.contact-form-wrap p {
+  font-size: 14px; color: var(--text-secondary); font-weight: 300; margin-bottom: 40px;
+}
+.form-row { margin-bottom: 24px; }
+.form-row label {
+  display: block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-tertiary); font-weight: 500; margin-bottom: 8px;
+}
+.form-row input, .form-row select, .form-row textarea {
+  width: 100%; padding: 14px 16px; border: 1px solid var(--border);
+  font-family: var(--font-body); font-size: 14px; font-weight: 300;
+  color: var(--text-primary); background: var(--white); transition: border-color 0.3s;
+  outline: none;
+}
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+  border-color: var(--stone-gold);
+}
+.form-row textarea { min-height: 120px; resize: vertical; }
+.form-row-inline { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+/* =========================================================================
+   INVESTOR REGISTRATION (gated)
+   ========================================================================= */
+.investor-reg { padding: 80px 60px; background: var(--cream); border-top: 1px solid var(--border); }
+.investor-reg h3 {
+  font-family: var(--font-display); font-size: 32px; font-weight: 300;
+  color: var(--navy); margin-bottom: 12px;
+}
+.investor-reg > p {
+  font-size: 15px; color: var(--text-secondary); font-weight: 300;
+  margin-bottom: 40px; max-width: 520px; line-height: 1.7;
+}
+.investor-form { max-width: 600px; }
+
+/* =========================================================================
+   ANIMATIONS
+   ========================================================================= */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 0.04; } }
+
+/* =========================================================================
+   RESPONSIVE
+   ========================================================================= */
+
+@media (min-width: 1520px) {
+  :root {
+    --side-padding: calc((100vw - 1400px) / 2);
+  }
+}
+@media (max-width: 1024px) {
+  .nav { padding: 0 32px; }
+  .hero { padding: 120px 32px 60px; }
+  .hero-stats { right: 32px; bottom: 32px; gap: 32px; }
+  .hero-watermark { right: 32px; height: 320px; }
+  .cred-bar { padding: 32px; gap: 32px; flex-wrap: wrap; justify-content: center; }
+  .services { padding: 80px 32px; }
+  .about { padding: 80px 32px; gap: 48px; }
+  .tombstones { padding: 80px 32px; }
+  .tombstones-grid { grid-template-columns: repeat(2, 1fr); }
+  .cta-section { padding: 80px 32px; }
+  .dual-cta-panel { padding: 60px 32px; }
+  .footer-principals { padding: 40px 32px 36px; gap: 32px; }
+  .page-hero { padding: 120px 32px 60px; }
+  .service-detail { padding: 60px 32px; }
+  .team-hero { padding: 120px 32px 80px; }
+  .bio-section { padding: 60px 32px; }
+  .quote-section { padding: 60px 32px; }
+  .contact-info, .contact-form-wrap { padding: 60px 32px; }
+  .investor-reg { padding: 60px 32px; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: fixed;
+    top: 72px; left: 0; right: 0; background: var(--white);
+    padding: 32px; gap: 24px; border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  }
+  .nav-toggle { display: block; }
+
+  .hero { min-height: auto; padding: 120px 24px 60px; }
+  .hero-title { font-size: clamp(36px, 8vw, 52px); }
+  .hero-stats { position: static; margin-top: 48px; justify-content: flex-start; }
+  .stat { text-align: left; }
+  .hero-watermark { display: none; }
+  .hero-actions { flex-direction: column; }
+
+  .cred-bar { flex-direction: column; gap: 16px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .about { grid-template-columns: 1fr; }
+  .about-right { }
+  .about-portraits { gap: 16px; }
+  .about-title { font-size: 30px; }
+  .about-text { font-size: 14px; }
+  .tombstones-grid { grid-template-columns: 1fr; }
+  .dual-cta { grid-template-columns: 1fr; }
+  .dual-cta-panel:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+
+  .section-title { font-size: 32px; }
+  .page-hero-title { font-size: 36px; }
+  .team-title { font-size: 36px; }
+
+  .portraits { grid-template-columns: 1fr; max-width: 400px; }
+  .bio-grid { grid-template-columns: 1fr; gap: 32px; }
+  .bio-photo { max-width: 400px; }
+  .bio-stats { flex-direction: column; gap: 0; }
+  .bio-stat { border-bottom: 1px solid var(--border); }
+  .bio-stat:last-child { border-bottom: none; }
+  .bio-contact { flex-direction: column; gap: 20px; }
+
+  .service-detail-grid { grid-template-columns: 1fr; gap: 24px; }
+  .listings-grid { grid-template-columns: 1fr; }
+  .insights-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row-inline { grid-template-columns: 1fr; }
+
+  .footer-principals { grid-template-columns: 1fr; gap: 28px; padding: 40px 24px 32px; }
+  .footer-principal { justify-content: center; }
+  .footer-principal--right { justify-content: center; text-align: left; }
+  .footer-principal--right .footer-principal-details { order: 0; text-align: left; }
+  .footer-principal--right .footer-principal-brokerage { justify-content: flex-start; }
+  .footer-center { order: -1; padding: 0 0 20px; }
+  .footer-center::before, .footer-center::after { display: none; }
+  .footer-copyright { padding: 16px 24px; }
+
+  .nav { padding: 0 24px; }
+  .services, .tombstones { padding: 60px 24px; }
+  .cta-section { padding: 60px 24px; }
+  .cta-title { font-size: 32px; }
+  .page-hero { padding: 100px 24px 48px; }
+}
+
+/* === QUOTE DIVIDER === */
+.quote-divider {
+  background: var(--navy);
+  padding: 100px 0; padding-left: var(--side-padding); padding-right: var(--side-padding);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.quote-divider-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  opacity: 0.06;
+  pointer-events: none;
+  filter: brightness(0) invert(1);
+}
+.quote-divider blockquote {
+  margin: 0 auto;
+  max-width: 780px;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: 34px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.9);
+  position: relative;
+  z-index: 1;
+  quotes: "\201C" "\201D";
+}
+.quote-divider blockquote::before { content: open-quote; }
+.quote-divider blockquote::after { content: close-quote; }
+.quote-divider blockquote em {
+  color: var(--stone-gold-light);
+  font-style: italic;
+}
+.quote-divider .quote-rule {
+  width: 40px;
+  height: 1px;
+  background: var(--stone-gold);
+  margin: 28px auto 0;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .quote-divider { padding: 48px 24px; }
+  .quote-divider blockquote { font-size: 22px; line-height: 1.45; }
+  .quote-divider-watermark { width: 200px; }
+}
+
+/* === MARKET CONTEXT === */
+.market-context {
+  padding: 100px 0; padding-left: var(--side-padding); padding-right: var(--side-padding);
+  background: var(--white);
+}
+.market-context-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.market-context-narrative h2 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 1.2;
+  color: var(--navy);
+  margin: 12px 0 24px;
+}
+.market-context-narrative h2 em { color: var(--stone-gold-dark); font-style: italic; }
+.market-context-narrative p {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+.market-context-cta {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.market-context-cta p {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.market-data-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.market-data-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 28px 32px;
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+}
+.market-data-card .mdc-number {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 40px;
+  color: var(--navy);
+  white-space: nowrap;
+  min-width: 100px;
+  line-height: 1;
+}
+.market-data-card .mdc-text {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+.market-data-card .mdc-text strong { color: var(--text-primary); font-weight: 400; }
+@media (max-width: 768px) {
+  .market-context { padding: 60px 24px; }
+  .market-context-inner { grid-template-columns: 1fr; gap: 40px; }
+  .market-context-narrative h2 { font-size: 30px; }
+  .market-data-card { flex-direction: column; gap: 8px; }
+  .market-data-card .mdc-number { font-size: 32px; }
+}
+
+/* === GEOGRAPHIC COVERAGE === */
+.geo-coverage { padding: 100px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); background: var(--navy); }
+.geo-coverage-inner { max-width: 1400px; margin: 0 auto; }
+.geo-coverage .section-label { color: var(--stone-gold-light); }
+.geo-coverage .section-title { color: var(--white); }
+.geo-coverage .section-title em { color: var(--stone-gold-light); }
+.geo-markets {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.geo-market-card {
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 28px 24px;
+  background: rgba(255,255,255,0.04);
+  transition: border-color 0.3s, background 0.3s;
+}
+.geo-market-card:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.07); }
+.geo-market-name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.geo-market-stat {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+}
+.geo-market-stat strong { color: rgba(255,255,255,0.8); font-weight: 400; }
+.geo-market-stat .stat-highlight {
+  color: var(--stone-gold-light);
+  font-weight: 500;
+  font-size: 22px;
+  font-family: var(--font-display);
+  display: block;
+  margin-bottom: 4px;
+}
+@media (max-width: 768px) {
+  .geo-coverage { padding: 60px 24px; }
+  .geo-markets { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .geo-market-card { padding: 20px 16px; }
+  .geo-market-name { font-size: 17px; margin-bottom: 8px; }
+  .geo-market-stat { font-size: 12px; }
+  .geo-market-stat .stat-highlight { font-size: 18px; }
+}
+@media (max-width: 480px) {
+  .geo-markets { grid-template-columns: 1fr; }
+  .about-portraits { grid-template-columns: 1fr; max-width: 280px; }
+  .about { gap: 32px; }
+  .hero-title { font-size: 32px; }
+  .hero-stats { flex-direction: column; gap: 16px; }
+  .section-title { font-size: 26px; }
+  .market-data-card .mdc-number { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <img class="nav-monogram" src="images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">McKinney Realty</span>
+      <span class="nav-logo-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="team.html" class="active">About</a>
+    <a href="#listings">Listings</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#insights">Market Insights</a>
+    <a class="nav-cta" href="#contact" data-mr-modal="seller">Contact</a>
+  </div>
+</nav>
+
+<!-- === TEAM HERO === -->
+<section class="team-hero">
+  <div class="team-label">Meet the Principals</div>
+  <h1 class="team-title">Two generations.<br>One <em>unmatched</em> perspective.</h1>
+  <p class="team-subtitle">McKinney Realty is led by two Brokers whose combined half-century of experience spans every corner of Ontario's investment real estate market.</p>
+</section>
+
+<!-- === SEAN BIO === -->
+<section class="bio-section">
+  <div class="bio-grid">
+    <div class="bio-photo">
+      <img src="images/sean-mckinney.jpg" alt="Sean McKinney">
+    </div>
+    <div class="bio-content">
+      <div class="bio-header">
+        <div class="bio-name">Sean McKinney</div>
+        <div class="bio-title">Broker &middot; Co-Principal</div>
+        <div class="bio-location">Based in Belleville & Quinte Region</div>
+      </div>
+      <div class="bio-stats">
+        <div class="bio-stat"><div class="bio-stat-num">40+</div><div class="bio-stat-label">Years in Real Estate</div></div>
+        <div class="bio-stat"><div class="bio-stat-num">100+</div><div class="bio-stat-label">Agent Brokerage</div></div>
+      </div>
+      <p class="bio-text">Sean McKinney is one of Ontario's most experienced commercial and multi-family real estate professionals, with over four decades of transaction experience spanning the Quinte region, Eastern Ontario, and beyond. As owner and Broker of Record of RE/MAX Quinte — a brokerage with approximately 100 agents — Sean has built an unparalleled network of property owners, investors, developers, and industry professionals.</p>
+      <p class="bio-text">As Co-Principal of McKinney Realty, Sean brings the relationship depth, market intelligence, and advisory credibility that defines the firm's approach. His network across Eastern Ontario represents four decades of trust built one handshake at a time.</p>
+      <div class="bio-contact">
+        <div><div class="bio-contact-label">Email</div><div class="bio-contact-value"><a href="mailto:sean@mckinneyrealty.ca">sean@mckinneyrealty.ca</a></div></div>
+        <div><div class="bio-contact-label">Office</div><div class="bio-contact-value"><a href="tel:+16139699907">(613) 969-9907</a></div></div>
+        <div><div class="bio-contact-label">Address</div><div class="bio-contact-value">106 North Front St, Belleville, ON</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === QUOTE DIVIDER === -->
+<section class="quote-section">
+  <img class="quote-monogram" src="images/mr-monogram-lg.png" alt="" style="filter: brightness(0) invert(1);">
+  <div class="quote-text">The relationships that surface <em>off-market opportunities</em> aren't built overnight. Ours span four decades.</div>
+</section>
+
+<!-- === LIAM BIO === -->
+<section class="bio-section">
+  <div class="bio-grid">
+    <div class="bio-photo">
+      <img src="images/liam-mckinney.jpg" alt="Liam McKinney">
+    </div>
+    <div class="bio-content">
+      <div class="bio-header">
+        <div class="bio-name">Liam McKinney</div>
+        <div class="bio-title">Broker &middot; Managing Partner</div>
+        <div class="bio-location">Based in Toronto & Prince Edward County</div>
+      </div>
+      <div class="bio-stats">
+        <div class="bio-stat"><div class="bio-stat-num">13</div><div class="bio-stat-label">Years in Real Estate</div></div>
+        <div class="bio-stat"><div class="bio-stat-num">250+</div><div class="bio-stat-label">Career Transactions</div></div>
+      </div>
+      <p class="bio-text">Liam McKinney brings thirteen years of real estate transaction experience to McKinney Realty's multi-family and investment practice. Based between Toronto and Prince Edward County, Liam built his career managing high-volume condo transactions at Property.ca, developing deep expertise in deal structuring, marketing strategy, and digital-first client acquisition.</p>
+      <p class="bio-text">As Managing Partner, Liam leads deal execution, investor relations, and strategic growth across Ontario's multi-family and investment real estate market. His approach combines rigorous financial analysis with a modern marketing methodology that ensures maximum exposure for every listing.</p>
+      <div class="bio-contact">
+        <div><div class="bio-contact-label">Email</div><div class="bio-contact-value"><a href="mailto:liam@mckinneyrealty.ca">liam@mckinneyrealty.ca</a></div></div>
+        <div><div class="bio-contact-label">Direct</div><div class="bio-contact-value"><a href="tel:+16474671467">(647) 467-1467</a></div></div>
+        <div><div class="bio-contact-label">Office</div><div class="bio-contact-value">36 Distillery Lane, Suite 500, Toronto ON</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === CTA === -->
+<section class="cta-section" id="contact">
+  <img class="cta-monogram" src="images/mr-monogram-lg.png" alt="">
+  <h2 class="cta-title">Considering a sale? Let's talk.</h2>
+  <p class="cta-subtitle">Whether you're selling a building, seeking acquisition opportunities, or exploring development sites — we'd welcome a confidential conversation.</p>
+  <a href="#" class="btn-primary">Schedule a Consultation <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</section>
+
+<!-- === FOOTER === -->
+<footer class="footer">
+  <div class="footer-principals">
+    <!-- Sean — Left -->
+    <div class="footer-principal">
+      <img class="footer-principal-photo" src="images/sean-mckinney.jpg" alt="Sean McKinney">
+      <div class="footer-principal-details">
+        <div class="footer-principal-name">Sean McKinney</div>
+        <div class="footer-principal-title">Broker of Record</div>
+        <div class="footer-principal-brokerage">
+          <img src="images/remax-quinte-logo.png" alt="RE/MAX Quinte Ltd., Brokerage">
+        </div>
+      </div>
+    </div>
+    <!-- Center brand -->
+    <div class="footer-center">
+      <img class="footer-monogram" src="images/mr-monogram-lg.png" alt="MR">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+    </div>
+    <!-- Liam — Right -->
+    <div class="footer-principal footer-principal--right">
+      <img class="footer-principal-photo" src="images/liam-mckinney.jpg" alt="Liam McKinney">
+      <div class="footer-principal-details">
+        <div class="footer-principal-name">Liam McKinney</div>
+        <div class="footer-principal-title">Broker</div>
+        <div class="footer-principal-brokerage">
+          <img src="images/propertyca-logo.png" alt="Property.ca Realty Inc., Brokerage">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">&copy; 2026 McKinney Realty &bull; mckinneyrealty.ca</div>
+</footer>
+
+<script src="mckinney-modal-cta.js"></script>
+</body>
+</html>
