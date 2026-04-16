@@ -3,8 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+
 <title>McKinney Realty — Contact Us</title>
 <meta name="description" content="Schedule a confidential consultation with McKinney Realty. Multi-family and investment real estate advisory across Ontario.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="McKinney Realty">
+<meta property="og:title" content="Contact — McKinney Realty">
+<meta property="og:description" content="Schedule a confidential consultation. Multi-family and investment real estate advisory across Ontario.">
+<meta property="og:url" content="https://mckinneyrealty.ca/contact">
+<meta property="og:image" content="https://mckinneyrealty.ca/images/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — McKinney Realty">
+<meta name="twitter:description" content="Schedule a confidential consultation. Multi-family and investment real estate advisory across Ontario.">
+<meta name="twitter:image" content="https://mckinneyrealty.ca/images/og-default.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* McKinney Realty — Brand System CSS
@@ -231,7 +243,7 @@ img { max-width: 100%; height: auto; }
   font-family: var(--font-display); font-size: 24px; font-weight: 500;
   color: var(--navy); margin-bottom: 16px; line-height: 1.2;
 }
-.service-desc { font-size: 14px; line-height: 1.7; color: var(--text-secondary); font-weight: 300; }
+.service-desc { font-size: 16px; line-height: 1.7; color: var(--text-secondary); font-weight: 300; }
 
 /* =========================================================================
    ABOUT SECTION (dark)
@@ -346,19 +358,25 @@ img { max-width: 100%; height: auto; }
 /* =========================================================================
    FOOTER
    ========================================================================= */
-.footer {
-  padding: 48px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); border-top: 1px solid var(--border);
-  display: flex; justify-content: space-between; align-items: center;
-}
-.footer-left { display: flex; align-items: center; gap: 16px; }
-.footer-monogram { height: 28px; width: auto; opacity: 0.6; }
-.footer-logo {
-  font-family: var(--font-display); font-size: 16px; font-weight: 500;
-  letter-spacing: 0.2em; color: var(--navy); text-transform: uppercase;
-}
-.footer-legal {
-  font-size: 11px; color: var(--text-tertiary); line-height: 1.6; text-align: right;
-}
+.footer { border-top: 1px solid rgba(0,0,0,0.06); background: var(--offwhite); }
+.footer-principals { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 40px; max-width: 1400px; margin: 0 auto; padding: 52px var(--side-padding) 48px; }
+.footer-principal { display: flex; align-items: center; gap: 14px; }
+.footer-principal--right { justify-content: flex-end; text-align: right; }
+.footer-principal--right .footer-principal-details { order: -1; text-align: right; }
+.footer-principal--right .footer-principal-brokerage { justify-content: flex-end; }
+.footer-principal-photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: top; filter: grayscale(20%); flex-shrink: 0; border: 2px solid var(--white); box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+.footer-principal-name { font-family: var(--font-display); font-size: 17px; font-weight: 500; color: var(--navy); line-height: 1.2; }
+.footer-principal-title { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--stone-gold-dark); font-weight: 500; margin-top: 3px; }
+.footer-principal-brokerage { display: flex; align-items: center; margin-top: 10px; }
+.footer-principal-brokerage img { height: 26px; width: auto; object-fit: contain; opacity: 0.7; }
+.footer-principal:not(.footer-principal--right) .footer-principal-brokerage img { height: 30px; }
+.footer-center { display: flex; flex-direction: column; align-items: center; padding: 0 40px; position: relative; }
+.footer-center::before, .footer-center::after { content: ''; position: absolute; top: 4px; bottom: 4px; width: 1px; background: rgba(0,0,0,0.06); }
+.footer-center::before { left: 0; } .footer-center::after { right: 0; }
+.footer-monogram { height: 48px; width: auto; margin-bottom: 10px; }
+.footer-brand-name { font-family: var(--font-display); font-size: 13px; font-weight: 500; letter-spacing: 0.24em; color: var(--navy); text-transform: uppercase; }
+.footer-brand-byline { font-size: 7px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--stone-gold-dark); font-weight: 400; margin-top: 4px; }
+.footer-copyright { text-align: center; font-size: 11px; color: var(--text-tertiary); padding: 24px var(--side-padding); border-top: 1px solid rgba(0,0,0,0.06); background: var(--white); }
 
 /* =========================================================================
    TEAM PAGE
@@ -396,7 +414,7 @@ img { max-width: 100%; height: auto; }
 .bio-text { font-size: 15px; line-height: 1.85; color: var(--text-secondary); font-weight: 300; margin-bottom: 16px; }
 .bio-contact { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; gap: 48px; }
 .bio-contact-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px; }
-.bio-contact-value { font-size: 14px; color: var(--text-primary); }
+.bio-contact-value { font-size: 16px; color: var(--text-primary); }
 .bio-contact-value a { color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--stone-50); transition: border-color 0.3s; }
 .bio-contact-value a:hover { border-color: var(--navy); }
 
@@ -494,7 +512,7 @@ img { max-width: 100%; height: auto; }
   color: var(--navy); margin-bottom: 12px; line-height: 1.25;
 }
 .insight-excerpt {
-  font-size: 14px; line-height: 1.7; color: var(--text-secondary); font-weight: 300;
+  font-size: 16px; line-height: 1.7; color: var(--text-secondary); font-weight: 300;
 }
 .insight-tag {
   display: inline-block; margin-top: 20px; font-size: 11px; letter-spacing: 0.1em;
@@ -518,7 +536,7 @@ img { max-width: 100%; height: auto; }
   color: var(--stone-gold-light); font-weight: 500; margin-bottom: 12px;
 }
 .contact-office-detail {
-  font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.6); font-weight: 300;
+  font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.6); font-weight: 300;
 }
 .contact-office-detail a { color: rgba(255,255,255,0.8); border-bottom: 1px solid rgba(255,255,255,0.2); transition: border-color 0.3s; }
 .contact-office-detail a:hover { border-color: rgba(255,255,255,0.6); }
@@ -529,16 +547,16 @@ img { max-width: 100%; height: auto; }
   color: var(--navy); margin-bottom: 8px;
 }
 .contact-form-wrap p {
-  font-size: 14px; color: var(--text-secondary); font-weight: 300; margin-bottom: 40px;
+  font-size: 16px; color: var(--text-secondary); font-weight: 300; margin-bottom: 40px;
 }
 .form-row { margin-bottom: 24px; }
 .form-row label {
   display: block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--text-tertiary); font-weight: 500; margin-bottom: 8px;
 }
-.form-row input, .form-row select, .form-row textarea {
+.form-row input, .form-row select, .form-row textarea { 
   width: 100%; padding: 14px 16px; border: 1px solid var(--border);
-  font-family: var(--font-body); font-size: 14px; font-weight: 300;
+  font-family: var(--font-body); font-size: 16px; font-weight: 300;
   color: var(--text-primary); background: var(--white); transition: border-color 0.3s;
   outline: none;
 }
@@ -590,7 +608,7 @@ img { max-width: 100%; height: auto; }
   .tombstones-grid { grid-template-columns: repeat(2, 1fr); }
   .cta-section { padding: 80px 32px; }
   .dual-cta-panel { padding: 60px 32px; }
-  .footer { padding: 32px; }
+  .footer-principals { padding: 40px 32px 36px; gap: 32px; }
   .page-hero { padding: 120px 32px 60px; }
   .service-detail { padding: 60px 32px; }
   .team-hero { padding: 120px 32px 80px; }
@@ -610,6 +628,11 @@ img { max-width: 100%; height: auto; }
   }
   .nav-toggle { display: block; }
 
+  .nav-logo-sub { display: none; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary { width: 100%; justify-content: center; }
+
+
   .hero { min-height: auto; padding: 120px 24px 60px; }
   .hero-title { font-size: clamp(36px, 8vw, 52px); }
   .hero-stats { position: static; margin-top: 48px; justify-content: flex-start; }
@@ -623,7 +646,7 @@ img { max-width: 100%; height: auto; }
   .about-right { }
   .about-portraits { gap: 16px; }
   .about-title { font-size: 30px; }
-  .about-text { font-size: 14px; }
+  .about-text { font-size: 16px; }
   .tombstones-grid { grid-template-columns: 1fr; }
   .dual-cta { grid-template-columns: 1fr; }
   .dual-cta-panel:first-child { border-right: none; border-bottom: 1px solid var(--border); }
@@ -646,8 +669,14 @@ img { max-width: 100%; height: auto; }
   .contact-grid { grid-template-columns: 1fr; }
   .form-row-inline { grid-template-columns: 1fr; }
 
-  .footer { flex-direction: column; gap: 24px; text-align: center; }
-  .footer-legal { text-align: center; }
+  .footer-principals { grid-template-columns: 1fr; gap: 28px; padding: 40px 24px 32px; }
+  .footer-principal { justify-content: center; }
+  .footer-principal--right { justify-content: center; text-align: left; }
+  .footer-principal--right .footer-principal-details { order: 0; text-align: left; }
+  .footer-principal--right .footer-principal-brokerage { justify-content: flex-start; }
+  .footer-center { order: -1; padding: 0 0 20px; }
+  .footer-center::before, .footer-center::after { display: none; }
+  .footer-copyright { padding: 16px 24px; }
 
   .nav { padding: 0 24px; }
   .services, .tombstones { padding: 60px 24px; }
@@ -773,7 +802,7 @@ img { max-width: 100%; height: auto; }
 .market-data-card .mdc-text {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--text-secondary);
 }
@@ -942,7 +971,7 @@ img { max-width: 100%; height: auto; }
         106 North Front St<br>
         Belleville, ON K8P 3B4<br><br>
         <a href="tel:+16139699907">(613) 969-9907</a><br>
-        <a href="mailto:sean@mckinneyrealty.ca">sean@mckinneyrealty.ca</a>
+        <a href="mailto:sean@remaxquinte.com">sean@remaxquinte.com</a>
       </div>
     </div>
 
@@ -962,18 +991,67 @@ img { max-width: 100%; height: auto; }
 </div>
 
 <!-- === FOOTER === -->
+<!-- === FOOTER === -->
 <footer class="footer">
-  <div class="footer-left">
-    <img class="footer-monogram" src="images/mr-monogram-sm.png" alt="MR">
-    <div class="footer-logo">McKinney Realty</div>
+  <div class="footer-principals">
+    <!-- Sean — Left -->
+    <div class="footer-principal">
+      <img class="footer-principal-photo" src="images/sean-mckinney.jpg" alt="Sean McKinney">
+      <div class="footer-principal-details">
+        <div class="footer-principal-name">Sean McKinney</div>
+        <div class="footer-principal-title">Broker of Record</div>
+        <div class="footer-principal-brokerage">
+          <img src="images/remax-quinte-logo.png" alt="RE/MAX Quinte Ltd., Brokerage">
+        </div>
+      </div>
+    </div>
+    <!-- Center brand -->
+    <div class="footer-center">
+      <img class="footer-monogram" src="images/mr-monogram-lg.png" alt="MR">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+    </div>
+    <!-- Liam — Right -->
+    <div class="footer-principal footer-principal--right">
+      <img class="footer-principal-photo" src="images/liam-mckinney.jpg" alt="Liam McKinney">
+      <div class="footer-principal-details">
+        <div class="footer-principal-name">Liam McKinney</div>
+        <div class="footer-principal-title">Broker</div>
+        <div class="footer-principal-brokerage">
+          <img src="images/propertyca-logo.png" alt="Property.ca Realty Inc., Brokerage">
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="footer-legal">
-    Liam McKinney, Broker, Property.ca Realty Inc., Brokerage &bull; (647) 467-1467 &bull; liam@mckinneyrealty.ca<br>
-    Sean McKinney, Broker, RE/MAX Quinte Ltd., Brokerage &bull; (613) 969-9907 &bull; sean@mckinneyrealty.ca<br>
-    36 Distillery Lane, Suite 500, Toronto ON &bull; 106 North Front St, Belleville, ON
-  </div>
+  <div class="footer-copyright">&copy; 2026 McKinney Realty &bull; mckinneyrealty.ca</div>
 </footer>
 
+<script>
+(function() {
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if (!toggle || !links) return;
+  var bars = '<path d="M3 12h18M3 6h18M3 18h18"/>';
+  var x = '<path d="M18 6L6 18M6 6l12 12"/>';
+  toggle.addEventListener('click', function() {
+    var open = links.classList.contains('open');
+    toggle.querySelector('svg').innerHTML = open ? bars : x;
+  });
+  links.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      links.classList.remove('open');
+      toggle.querySelector('svg').innerHTML = bars;
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!links.classList.contains('open')) return;
+    if (!toggle.contains(e.target) && !links.contains(e.target)) {
+      links.classList.remove('open');
+      toggle.querySelector('svg').innerHTML = bars;
+    }
+  });
+})();
+</script>
 <script src="mckinney-modal-cta.js"></script>
 </body>
 </html>

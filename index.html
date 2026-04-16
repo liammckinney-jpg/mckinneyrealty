@@ -3,8 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+
 <title>McKinney Realty — Multi-Family & Investment Real Estate Brokers | Ontario</title>
 <meta name="description" content="McKinney Realty combines four decades of relationship-driven deal-making with modern execution across Ontario's multi-family and investment real estate markets.">
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="McKinney Realty">
+<meta property="og:title" content="McKinney Realty — Multi-Family &amp; Investment Real Estate Brokers">
+<meta property="og:description" content="Generational expertise. Province-wide reach. Specialized multi-family and investment real estate advisory across Ontario.">
+<meta property="og:url" content="https://mckinneyrealty.ca">
+<meta property="og:image" content="https://mckinneyrealty.ca/images/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="McKinney Realty — Multi-Family &amp; Investment Real Estate Brokers">
+<meta name="twitter:description" content="Generational expertise. Province-wide reach. Specialized multi-family and investment real estate advisory across Ontario.">
+<meta name="twitter:image" content="https://mckinneyrealty.ca/images/og-default.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* McKinney Realty — Brand System CSS
@@ -748,7 +761,7 @@ img { max-width: 100%; height: auto; }
 }
 .form-row input, .form-row select, .form-row textarea {
   width: 100%; padding: 14px 16px; border: 1px solid var(--border);
-  font-family: var(--font-body); font-size: 14px; font-weight: 300;
+  font-family: var(--font-body); font-size: 16px; font-weight: 300;
   color: var(--text-primary); background: var(--white); transition: border-color 0.3s;
   outline: none;
 }
@@ -823,6 +836,11 @@ img { max-width: 100%; height: auto; }
     box-shadow: 0 8px 32px rgba(0,0,0,0.08);
   }
   .nav-toggle { display: block; }
+
+  .nav-logo-sub { display: none; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary { width: 100%; justify-content: center; }
+
 
   .hero { min-height: auto; padding: 120px 24px 60px; }
   .hero-title { font-size: clamp(36px, 8vw, 52px); }
@@ -1614,6 +1632,32 @@ img { max-width: 100%; height: auto; }
   });
 
   updateProgress();
+})();
+</script>
+<script>
+(function() {
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if (!toggle || !links) return;
+  var bars = '<path d="M3 12h18M3 6h18M3 18h18"/>';
+  var x = '<path d="M18 6L6 18M6 6l12 12"/>';
+  toggle.addEventListener('click', function() {
+    var open = links.classList.contains('open');
+    toggle.querySelector('svg').innerHTML = open ? bars : x;
+  });
+  links.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      links.classList.remove('open');
+      toggle.querySelector('svg').innerHTML = bars;
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!links.classList.contains('open')) return;
+    if (!toggle.contains(e.target) && !links.contains(e.target)) {
+      links.classList.remove('open');
+      toggle.querySelector('svg').innerHTML = bars;
+    }
+  });
 })();
 </script>
 <script src="mckinney-modal-cta.js"></script>

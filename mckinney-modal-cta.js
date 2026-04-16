@@ -117,7 +117,7 @@
 .mr-modal-field textarea {
   width: 100%;
   font-family: 'DM Sans', -apple-system, sans-serif;
-  font-size: 14px; font-weight: 300; color: #1A1A1A;
+  font-size: 16px; font-weight: 300; color: #1A1A1A;
   padding: 12px 16px;
   border: 1px solid rgba(0,0,0,0.1);
   background: #FAFAF8;
@@ -297,7 +297,7 @@
 .mr-modal-subscribe-row input {
   flex: 1;
   font-family: 'DM Sans', -apple-system, sans-serif;
-  font-size: 14px; font-weight: 300; color: #1A1A1A;
+  font-size: 16px; font-weight: 300; color: #1A1A1A;
   padding: 14px 16px;
   border: 1px solid rgba(0,0,0,0.1);
   border-right: none;

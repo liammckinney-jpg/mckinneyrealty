@@ -3,8 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+
 <title>McKinney Realty — Meet the Principals</title>
 <meta name="description" content="Meet Liam and Sean McKinney — two generations of multi-family real estate expertise serving property owners and investors across Ontario.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="McKinney Realty">
+<meta property="og:title" content="Our Team — McKinney Realty">
+<meta property="og:description" content="Meet Liam and Sean McKinney — two generations of multi-family real estate expertise serving property owners and investors across Ontario.">
+<meta property="og:url" content="https://mckinneyrealty.ca/team">
+<meta property="og:image" content="https://mckinneyrealty.ca/images/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Our Team — McKinney Realty">
+<meta name="twitter:description" content="Meet Liam and Sean McKinney — two generations of multi-family real estate expertise serving property owners and investors across Ontario.">
+<meta name="twitter:image" content="https://mckinneyrealty.ca/images/og-default.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* McKinney Realty — Brand System CSS
@@ -390,13 +402,7 @@ img { max-width: 100%; height: auto; }
 .bio-section { padding: 80px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); border-bottom: 1px solid var(--border); }
 .bio-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: start; max-width: 1200px; }
 .bio-photo { position: relative; }
-.bio-photo img {
-  display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top;
-  filter: grayscale(15%);
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.06);
-  border-bottom: 3px solid var(--stone-gold);
-}
+.bio-photo img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top; filter: grayscale(15%); border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 24px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.06); border-bottom: 3px solid var(--stone-gold); }
 .bio-header { margin-bottom: 32px; }
 .bio-name { font-family: var(--font-display); font-size: 36px; font-weight: 400; color: var(--navy); margin-bottom: 6px; }
 .bio-title { font-size: 13px; color: var(--stone-gold-dark); font-weight: 400; letter-spacing: 0.04em; }
@@ -550,7 +556,7 @@ img { max-width: 100%; height: auto; }
 }
 .form-row input, .form-row select, .form-row textarea {
   width: 100%; padding: 14px 16px; border: 1px solid var(--border);
-  font-family: var(--font-body); font-size: 14px; font-weight: 300;
+  font-family: var(--font-body); font-size: 16px; font-weight: 300;
   color: var(--text-primary); background: var(--white); transition: border-color 0.3s;
   outline: none;
 }
@@ -621,6 +627,11 @@ img { max-width: 100%; height: auto; }
     box-shadow: 0 8px 32px rgba(0,0,0,0.08);
   }
   .nav-toggle { display: block; }
+
+  .nav-logo-sub { display: none; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary { width: 100%; justify-content: center; }
+
 
   .hero { min-height: auto; padding: 120px 24px 60px; }
   .hero-title { font-size: clamp(36px, 8vw, 52px); }
@@ -914,7 +925,7 @@ img { max-width: 100%; height: auto; }
       <p class="bio-text">Sean McKinney is one of Ontario's most experienced commercial and multi-family real estate professionals, with over four decades of transaction experience spanning the Quinte region, Eastern Ontario, and beyond. As owner and Broker of Record of RE/MAX Quinte — a brokerage with approximately 100 agents — Sean has built an unparalleled network of property owners, investors, developers, and industry professionals.</p>
       <p class="bio-text">As Co-Principal of McKinney Realty, Sean brings the relationship depth, market intelligence, and advisory credibility that defines the firm's approach. His network across Eastern Ontario represents four decades of trust built one handshake at a time.</p>
       <div class="bio-contact">
-        <div><div class="bio-contact-label">Email</div><div class="bio-contact-value"><a href="mailto:sean@mckinneyrealty.ca">sean@mckinneyrealty.ca</a></div></div>
+        <div><div class="bio-contact-label">Email</div><div class="bio-contact-value"><a href="mailto:sean@remaxquinte.com">sean@remaxquinte.com</a></div></div>
         <div><div class="bio-contact-label">Office</div><div class="bio-contact-value"><a href="tel:+16139699907">(613) 969-9907</a></div></div>
         <div><div class="bio-contact-label">Address</div><div class="bio-contact-value">106 North Front St, Belleville, ON</div></div>
       </div>
@@ -973,6 +984,32 @@ img { max-width: 100%; height: auto; }
   <div class="footer-copyright">&copy; 2026 McKinney Realty &bull; mckinneyrealty.ca</div>
 </footer>
 
+<script>
+(function() {
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if (!toggle || !links) return;
+  var bars = '<path d="M3 12h18M3 6h18M3 18h18"/>';
+  var x = '<path d="M18 6L6 18M6 6l12 12"/>';
+  toggle.addEventListener('click', function() {
+    var open = links.classList.contains('open');
+    toggle.querySelector('svg').innerHTML = open ? bars : x;
+  });
+  links.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      links.classList.remove('open');
+      toggle.querySelector('svg').innerHTML = bars;
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!links.classList.contains('open')) return;
+    if (!toggle.contains(e.target) && !links.contains(e.target)) {
+      links.classList.remove('open');
+      toggle.querySelector('svg').innerHTML = bars;
+    }
+  });
+})();
+</script>
 <script src="mckinney-modal-cta.js"></script>
 </body>
 </html>

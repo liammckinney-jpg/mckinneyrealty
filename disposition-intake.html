@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+
 <title>McKinney Realty — Property Disposition Intake</title>
 <meta name="description" content="Submit your property information for a confidential valuation and disposition strategy from McKinney Realty.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -538,7 +540,7 @@ img { max-width: 100%; height: auto; }
 }
 .form-row input, .form-row select, .form-row textarea {
   width: 100%; padding: 14px 16px; border: 1px solid var(--border);
-  font-family: var(--font-body); font-size: 14px; font-weight: 300;
+  font-family: var(--font-body); font-size: 16px; font-weight: 300;
   color: var(--text-primary); background: var(--white); transition: border-color 0.3s;
   outline: none;
 }
@@ -609,6 +611,11 @@ img { max-width: 100%; height: auto; }
     box-shadow: 0 8px 32px rgba(0,0,0,0.08);
   }
   .nav-toggle { display: block; }
+
+  .nav-logo-sub { display: none; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary { width: 100%; justify-content: center; }
+
 
   .hero { min-height: auto; padding: 120px 24px 60px; }
   .hero-title { font-size: clamp(36px, 8vw, 52px); }
@@ -906,7 +913,7 @@ img { max-width: 100%; height: auto; }
   padding: 12px 14px;
   border: 1px solid var(--border);
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   color: var(--text-primary);
   background: var(--white);
@@ -940,20 +947,22 @@ img { max-width: 100%; height: auto; }
 .intake-check {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   cursor: pointer;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-primary);
   font-weight: 300;
+  min-height: 44px;
+  padding: 4px 0;
   text-transform: none;
   letter-spacing: 0;
 }
 .intake-check input[type="checkbox"],
 .intake-check input[type="radio"] {
-  width: 16px;
-  height: 16px;
-  min-width: 16px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
   accent-color: var(--stone-gold-dark);
   cursor: pointer;
   padding: 0;
@@ -1172,11 +1181,37 @@ img { max-width: 100%; height: auto; }
   </div>
   <div class="footer-legal">
     Liam McKinney, Broker, Property.ca Realty Inc., Brokerage &bull; (647) 467-1467 &bull; liam@mckinneyrealty.ca<br>
-    Sean McKinney, Broker, RE/MAX Quinte Ltd., Brokerage &bull; (613) 969-9907 &bull; sean@mckinneyrealty.ca<br>
+    Sean McKinney, Broker, RE/MAX Quinte Ltd., Brokerage &bull; (613) 969-9907 &bull; sean@remaxquinte.com<br>
     36 Distillery Lane, Suite 500, Toronto ON &bull; 106 North Front St, Belleville, ON
   </div>
 </footer>
 
+<script>
+(function() {
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if (!toggle || !links) return;
+  var bars = '<path d="M3 12h18M3 6h18M3 18h18"/>';
+  var x = '<path d="M18 6L6 18M6 6l12 12"/>';
+  toggle.addEventListener('click', function() {
+    var open = links.classList.contains('open');
+    toggle.querySelector('svg').innerHTML = open ? bars : x;
+  });
+  links.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      links.classList.remove('open');
+      toggle.querySelector('svg').innerHTML = bars;
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!links.classList.contains('open')) return;
+    if (!toggle.contains(e.target) && !links.contains(e.target)) {
+      links.classList.remove('open');
+      toggle.querySelector('svg').innerHTML = bars;
+    }
+  });
+})();
+</script>
 <script src="mckinney-modal-cta.js"></script>
 </body>
 </html>
