@@ -941,11 +941,11 @@ img { max-width: 100%; height: auto; }
 .intake-checkboxes {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 24px;
-  margin-top: 8px;
+  gap: 4px 28px;
+  margin-top: 10px;
 }
 .intake-check {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
@@ -953,20 +953,97 @@ img { max-width: 100%; height: auto; }
   font-size: 14px;
   color: var(--text-primary);
   font-weight: 300;
-  min-height: 44px;
-  padding: 4px 0;
+  padding: 8px 0;
+  line-height: 1.4;
+  min-height: 36px;
   text-transform: none;
   letter-spacing: 0;
+  user-select: none;
+  margin: 0;
+  background: transparent;
+  border: none;
+  transition: color 0.2s ease;
 }
+.intake-check:hover {
+  color: var(--navy);
+}
+.intake-check.is-checked {
+  color: var(--navy);
+  font-weight: 400;
+}
+
+/* Custom-styled checkbox/radio so selection is a filled mark,
+   not a native gold outline. Native input is kept in the DOM for
+   full accessibility + form submission. */
 .intake-check input[type="checkbox"],
 .intake-check input[type="radio"] {
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
-  accent-color: var(--stone-gold-dark);
-  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  flex-shrink: 0;
+  margin: 0;
   padding: 0;
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--text-tertiary);
+  background: var(--white);
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  box-sizing: border-box;
+}
+.intake-check input[type="checkbox"] { border-radius: 2px; }
+.intake-check input[type="radio"]    { border-radius: 50%; }
+
+.intake-check:hover input[type="checkbox"]:not(:checked),
+.intake-check:hover input[type="radio"]:not(:checked) {
+  border-color: var(--navy);
+}
+
+/* CHECKBOX — inner filled navy square (mirrors the radio pattern) */
+.intake-check input[type="checkbox"]:checked {
+  border-color: var(--navy);
+  background: var(--white);
+}
+.intake-check input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 9px;
+  height: 9px;
+  background: var(--navy);
+}
+
+/* RADIO — filled navy dot inside the ring */
+.intake-check input[type="radio"]:checked {
+  border-color: var(--navy);
+  background: var(--white);
+}
+.intake-check input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 9px;
+  height: 9px;
+  background: var(--navy);
+  border-radius: 50%;
+}
+
+.intake-check input:focus-visible {
+  outline: 2px solid var(--stone-gold);
+  outline-offset: 2px;
+}
+.intake-hint {
+  display: inline;
+  margin-left: 8px;
+  font-size: 11px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-tertiary);
 }
 .intake-note {
   font-size: 13px;
@@ -1079,7 +1156,7 @@ img { max-width: 100%; height: auto; }
     </div>
     <div class="intake-row single">
       <div class="intake-field">
-        <label>Building Type Preference</label>
+        <label>Building Type Preference <span class="intake-hint">Select all that apply</span></label>
         <div class="intake-checkboxes">
           <label class="intake-check"><input type="checkbox" name="building_pref" value="walkup"> Walkup</label>
           <label class="intake-check"><input type="checkbox" name="building_pref" value="lowrise"> Low-rise (elevator)</label>
@@ -1092,7 +1169,7 @@ img { max-width: 100%; height: auto; }
     </div>
     <div class="intake-row single">
       <div class="intake-field">
-        <label>Investment Strategy</label>
+        <label>Investment Strategy <span class="intake-hint">Select all that apply</span></label>
         <div class="intake-checkboxes">
           <label class="intake-check"><input type="checkbox" name="strategy" value="cashflow"> Cash flow / stabilized</label>
           <label class="intake-check"><input type="checkbox" name="strategy" value="valueadd"> Value-add / repositioning</label>
@@ -1165,7 +1242,7 @@ img { max-width: 100%; height: auto; }
     </div>
     <div class="intake-row single">
       <div class="intake-field">
-        <label>I'd like to receive</label>
+        <label>I'd like to receive <span class="intake-hint">Select all that apply</span></label>
         <div class="intake-checkboxes">
           <label class="intake-check"><input type="checkbox" name="alerts" value="offmarket"> Off-market deal alerts matching my criteria</label>
           <label class="intake-check"><input type="checkbox" name="alerts" value="listings"> New listing notifications</label>
@@ -1231,5 +1308,44 @@ img { max-width: 100%; height: auto; }
 })();
 </script>
 <script src="mckinney-modal-cta.js"></script>
+
+<!-- ============================================================
+     Form submission — POST to Apps Script backend
+     ============================================================ -->
+<script src="mckinney-forms.js"></script>
+<script>
+  McKinneyForms.init(document.getElementById('acquisition-form'), {
+    formType: 'acquisition',
+    canonicalFields: {
+      name: 'investor_name',
+      email: 'investor_email',
+      phone: 'investor_phone'
+    },
+    confirmationMessage: "Your criteria have been received. We'll be in touch within 24 hours and begin matching opportunities — including off-market deals — to your mandate."
+  });
+
+  // Chip selection state — JS fallback for browsers/contexts where
+  // the :has(input:checked) rule doesn't apply to pre-rendered inputs.
+  (function(){
+    var chips = document.querySelectorAll('.intake-check');
+    function syncChip(input) {
+      var chip = input.closest('.intake-check');
+      if (chip) chip.classList.toggle('is-checked', input.checked);
+    }
+    chips.forEach(function(chip){
+      var input = chip.querySelector('input[type="checkbox"], input[type="radio"]');
+      if (!input) return;
+      syncChip(input);
+      input.addEventListener('change', function(){
+        // Radios: unselecting others in the group
+        if (input.type === 'radio' && input.name) {
+          document.querySelectorAll('input[name="' + input.name + '"]').forEach(syncChip);
+        } else {
+          syncChip(input);
+        }
+      });
+    });
+  })();
+</script>
 </body>
 </html>

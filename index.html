@@ -4,1111 +4,238 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1A1F2E">
-
-<title>McKinney Realty — Multi-Family & Investment Real Estate Brokers | Ontario</title>
-<meta name="description" content="McKinney Realty combines four decades of relationship-driven deal-making with modern execution across Ontario's multi-family and investment real estate markets.">
-<!-- Open Graph / Social -->
+<title>McKinney Realty — Multi-Family &amp; Investment Real Estate Brokers | Ontario</title>
+<meta name="description" content="McKinney Realty is a specialized multi-family practice combining generational relationship capital with modern, data-driven execution — serving property owners and investors across Ontario's strongest secondary markets.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="McKinney Realty">
 <meta property="og:title" content="McKinney Realty — Multi-Family &amp; Investment Real Estate Brokers">
-<meta property="og:description" content="Generational expertise. Province-wide reach. Specialized multi-family and investment real estate advisory across Ontario.">
-<meta property="og:url" content="https://mckinneyrealty.ca">
+<meta property="og:description" content="Generational expertise. Province-wide reach. Specialized multi-family advisory across Ontario's secondary markets.">
+<meta property="og:url" content="https://mckinneyrealty.ca/">
 <meta property="og:image" content="https://mckinneyrealty.ca/images/og-default.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="McKinney Realty — Multi-Family &amp; Investment Real Estate Brokers">
-<meta name="twitter:description" content="Generational expertise. Province-wide reach. Specialized multi-family and investment real estate advisory across Ontario.">
+<meta name="twitter:description" content="Generational expertise. Province-wide reach. Specialized multi-family advisory across Ontario's secondary markets.">
 <meta name="twitter:image" content="https://mckinneyrealty.ca/images/og-default.jpg">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mckinney-system.css">
 <style>
-/* McKinney Realty — Brand System CSS
-   Source of truth: KB-02 Brand Identity & Visual System
-   Extracted from approved prototypes: mckinney_brand_concept_v2.html, mckinney_team_full.html
-   ========================================================================= */
+/* ============================================================
+   PAGE-SPECIFIC: index.html (homepage)
+   ============================================================ */
 
-:root {
-  --white: #FFFFFF;
-  --offwhite: #FAFAF8;
-  --cream: #F5F3EF;
-  --stone-50: #E8E4DD;
-  --stone-gold: #B8A88A;
-  --stone-gold-light: #C9BBAA;
-  --stone-gold-dark: #9A8B6F;
-  --navy: #1A1F2E;
-  --navy-light: #2A3044;
-  --charcoal: #2C2C2C;
-  --text-primary: #1A1A1A;
-  --text-secondary: #6B6B6B;
-  --text-tertiary: #999999;
-  --border: rgba(0,0,0,0.08);
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'DM Sans', -apple-system, sans-serif;
-}
-
-/* RESET & BASE */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-:root {
-  --side-padding: 60px;
-  --content-max: 1400px;
-}
-body {
-  font-family: var(--font-body);
-  background: var(--white);
-  color: var(--text-primary);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; height: auto; }
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-
-/* =========================================================================
-   NAVIGATION
-   ========================================================================= */
-.nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 0; padding-left: var(--side-padding); padding-right: var(--side-padding); height: 72px;
-  display: flex; align-items: center; justify-content: space-between;
-  background: rgba(255,255,255,0.92); backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  animation: fadeDown 0.8s ease;
-}
-.nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
-.nav-monogram { height: 36px; width: auto; }
-.nav-logo-text { display: flex; flex-direction: column; }
-.nav-logo-name {
-  font-family: var(--font-display); font-size: 18px; font-weight: 500;
-  letter-spacing: 0.22em; color: var(--navy); text-transform: uppercase; line-height: 1.1;
-}
-.nav-logo-sub {
-  font-family: var(--font-body); font-size: 8px; letter-spacing: 0.16em;
-  color: var(--stone-gold-dark); text-transform: uppercase; font-weight: 400; margin-top: 2px;
-}
-.nav-links { display: flex; gap: 36px; align-items: center; }
-.nav-links a {
-  font-size: 13px; font-weight: 400; color: var(--text-secondary);
-  text-decoration: none; letter-spacing: 0.04em; transition: color 0.3s;
-}
-.nav-links a:hover { color: var(--text-primary); }
-.nav-links a.active { color: var(--text-primary); }
-.nav-cta {
-  font-size: 12px !important; font-weight: 500 !important; color: var(--navy) !important;
-  padding: 10px 24px; border: 1px solid var(--navy);
-  letter-spacing: 0.08em !important; text-transform: uppercase; transition: all 0.3s !important;
-}
-.nav-cta:hover { background: var(--navy) !important; color: var(--white) !important; }
-
-/* Mobile nav toggle */
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-.nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
-
-/* =========================================================================
-   BUTTONS
-   ========================================================================= */
-.btn-primary {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 36px; background: var(--navy); color: var(--white);
-  font-family: var(--font-body); font-size: 13px; font-weight: 500;
-  letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
-  border: none; cursor: pointer; transition: all 0.3s;
-}
-.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
-.btn-primary svg { transition: transform 0.3s; }
-.btn-primary:hover svg { transform: translateX(3px); }
-
-.btn-secondary {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 36px; background: transparent; color: var(--navy);
-  font-family: var(--font-body); font-size: 13px; font-weight: 500;
-  letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
-  border: 1px solid var(--stone-50); cursor: pointer; transition: all 0.3s;
-}
-.btn-secondary:hover { border-color: var(--navy); }
-
-.btn-gold {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 36px; background: var(--stone-gold-dark); color: var(--white);
-  font-family: var(--font-body); font-size: 13px; font-weight: 500;
-  letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
-  border: none; cursor: pointer; transition: all 0.3s;
-}
-.btn-gold:hover { background: var(--stone-gold); transform: translateY(-1px); }
-
-/* =========================================================================
-   TYPOGRAPHY UTILITIES
-   ========================================================================= */
-.section-label {
-  font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--stone-gold-dark); font-weight: 500; margin-bottom: 20px;
-}
-.section-title {
-  font-family: var(--font-display); font-size: 40px; font-weight: 300;
-  color: var(--navy); margin-bottom: 60px; line-height: 1.15; max-width: 500px;
-}
-.section-title em { font-style: italic; font-weight: 300; color: var(--stone-gold-dark); }
-
-/* =========================================================================
-   HERO (Homepage)
-   ========================================================================= */
+/* ============================================================
+   HERO — big monogram watermark, horizontal stats
+   ============================================================ */
 .hero {
   min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
-  padding-top: 140px; padding-bottom: 80px; padding-left: var(--side-padding); padding-right: var(--side-padding); position: relative;
-  overflow: hidden;
-}
-.hero-content { max-width: 780px; }
-.hero-label {
-  font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--stone-gold-dark); font-weight: 500; margin-bottom: 32px;
-  opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards;
-}
-.hero-title {
-  font-family: var(--font-display); font-size: clamp(48px, 6vw, 76px); font-weight: 300;
-  line-height: 1.05; color: var(--navy); margin-bottom: 36px;
-  opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards;
-}
-.hero-title em { font-style: italic; font-weight: 300; color: var(--stone-gold-dark); }
-.hero-desc {
-  font-size: 17px; line-height: 1.7; color: var(--text-secondary); max-width: 540px;
-  font-weight: 300; margin-bottom: 48px;
-  opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards;
-}
-.hero-actions {
-  display: flex; gap: 16px;
-  opacity: 0; animation: fadeUp 0.8s ease 0.9s forwards;
+  padding: 8rem var(--side) 5rem; position: relative; overflow: hidden;
 }
 .hero-watermark {
-  position: absolute; right: var(--side-padding); top: 50%; transform: translateY(-55%);
-  height: clamp(400px, 42vw, 720px); width: auto; pointer-events: none;
-  animation: fadeIn 1.5s ease 0.5s forwards; opacity: 0;
+  position: absolute; right: var(--side); top: 50%; transform: translateY(-52%);
+  height: clamp(400px, 55vw, 700px); width: auto;
+  pointer-events: none;
+  animation: heroFade 1.5s ease 0.3s forwards; opacity: 0;
+}
+@keyframes heroFade { to { opacity: 0.04; } }
+.hero-content { max-width: 700px; position: relative; z-index: 1; }
+.hero-label { margin-bottom: var(--s-4); opacity: 0; animation: fadeUp 0.7s ease 0.2s forwards; }
+.hero-title {
+  font-family: var(--font-d); font-size: var(--d-hero); font-weight: 300;
+  line-height: 1.08; color: var(--navy); margin-bottom: var(--s-4);
+  opacity: 0; animation: fadeUp 0.7s ease 0.35s forwards;
+}
+.hero-desc {
+  font-size: var(--b-lg); font-weight: 300; line-height: 1.7;
+  color: var(--text-2); max-width: 540px; margin-bottom: var(--s-5);
+  opacity: 0; animation: fadeUp 0.7s ease 0.5s forwards;
+}
+.hero-actions {
+  display: flex; gap: var(--s-2);
+  opacity: 0; animation: fadeUp 0.7s ease 0.65s forwards;
 }
 .hero-stats {
-  position: absolute; bottom: 60px; right: var(--side-padding);
-  display: flex; gap: 48px;
-  opacity: 0; animation: fadeUp 0.8s ease 1.1s forwards;
+  position: absolute; bottom: 3.5rem; right: var(--side);
+  display: flex; gap: var(--s-6); z-index: 1;
+  opacity: 0; animation: fadeUp 0.7s ease 0.85s forwards;
 }
-.stat { text-align: right; }
-.stat-number {
-  font-family: var(--font-display); font-size: 42px; font-weight: 300;
-  color: var(--navy); line-height: 1; margin-bottom: 6px; white-space: nowrap;
+.hero-stat-num { font-family: var(--font-d); font-size: var(--d-stat); font-weight: 300; color: var(--navy); line-height: 1; }
+.hero-stat-label { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 0.25rem; }
+.hero::after {
+  content: ''; position: absolute; bottom: 0; left: 10%; right: 10%;
+  height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.3;
 }
-.stat-label {
-  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--text-tertiary); font-weight: 400;
-}
-.hero-line { position: absolute; bottom: 0; left: var(--side-padding); right: var(--side-padding); height: 1px; background: var(--border); }
 
-/* =========================================================================
-   CREDIBILITY BAR
-   ========================================================================= */
-.cred-bar {
-  padding: 24px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); display: flex; align-items: center; justify-content: center;
-  gap: 48px; border-bottom: 1px solid var(--border);
+/* ============================================================
+   SERVICES — 3-card grid on cream
+   ============================================================ */
+.services {
+  padding: var(--s-section) 0; background: var(--cream);
+  border-top: 1px solid var(--border);
 }
-.cred-item {
-  display: flex; align-items: center; gap: 12px;
-  font-size: 13px; color: var(--text-secondary); font-weight: 400; letter-spacing: 0.02em;
+.services-header { margin-bottom: var(--s-6); }
+.services-title {
+  font-family: var(--font-d); font-size: var(--d-section); font-weight: 300;
+  line-height: 1.2; color: var(--navy); margin-top: var(--s-2);
 }
-.cred-icon {
-  width: 36px; height: 36px; border-radius: 50%; background: var(--cream);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.cred-icon svg { width: 16px; height: 16px; color: var(--stone-gold-dark); }
-
-/* =========================================================================
-   SERVICES GRID
-   ========================================================================= */
-.services { padding: 100px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); background: var(--cream); }
 .services-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
   background: var(--border); border: 1px solid var(--border);
 }
 .service-card {
-  background: var(--white); padding: 48px 40px; transition: all 0.4s;
-  cursor: pointer; position: relative; text-decoration: none; display: block;
+  background: var(--white); padding: var(--s-5) var(--s-4);
+  display: flex; flex-direction: column; transition: background 0.4s;
+  position: relative;
 }
-.service-card::after {
-  content: ''; position: absolute; bottom: 0; left: 40px; right: 40px;
-  height: 2px; background: var(--stone-gold); transform: scaleX(0); transition: transform 0.4s;
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
 }
+.service-card:hover::before { transform: scaleX(1); }
 .service-card:hover { background: var(--offwhite); }
-.service-card:hover::after { transform: scaleX(1); }
-.service-number {
-  font-family: var(--font-display); font-size: 48px; font-weight: 300;
-  color: var(--stone-50); margin-bottom: 24px; line-height: 1;
+.service-num { font-family: var(--font-d); font-size: 0.875rem; font-weight: 400; color: var(--text-3); margin-bottom: var(--s-3); letter-spacing: 0.05em; }
+.service-name { font-family: var(--font-d); font-size: var(--d-sub); font-weight: 400; color: var(--navy); line-height: 1.25; margin-bottom: var(--s-1); min-height: 2.5em; }
+.service-sub { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: var(--s-3); }
+.service-desc { font-size: var(--b-sm); font-weight: 300; line-height: 1.75; color: var(--text-2); flex-grow: 1; }
+.service-link {
+  margin-top: var(--s-4); font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold-dark);
+  display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.3s;
 }
-.service-name {
-  font-family: var(--font-display); font-size: 24px; font-weight: 500;
-  color: var(--navy); margin-bottom: 16px; line-height: 1.2;
-}
-.service-desc { font-size: 14px; line-height: 1.7; color: var(--text-secondary); font-weight: 300; }
+.service-link:hover { gap: 0.875rem; }
+.service-link svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 
-/* =========================================================================
-   ABOUT SECTION (dark)
-   ========================================================================= */
-.about {
-  padding: 120px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); background: var(--navy); color: var(--white);
-  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-  position: relative; overflow: hidden;
+/* ============================================================
+   ABOUT — navy section with framed portraits
+   ============================================================ */
+.about { background: var(--navy); padding: var(--s-section) 0; position: relative; overflow: hidden; }
+.about-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--s-7); align-items: center;
 }
-.about-label {
-  font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--stone-gold-light); font-weight: 500; margin-bottom: 20px;
-}
+.about-text-block { order: 1; }
+.about-photos-block { order: 2; }
 .about-title {
-  font-family: var(--font-display); font-size: 40px; font-weight: 300;
-  line-height: 1.15; margin-bottom: 28px; color: var(--white);
+  font-family: var(--font-d); font-size: var(--d-section); font-weight: 300;
+  line-height: 1.2; color: var(--white); margin-bottom: var(--s-4);
 }
-.about-title em { font-style: italic; color: var(--stone-gold-light); }
-.about-text {
-  font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.6);
-  font-weight: 300; margin-bottom: 36px;
+.about-prose {
+  font-size: var(--b-md); font-weight: 300; line-height: 1.8;
+  color: rgba(255,255,255,0.5); margin-bottom: var(--s-3);
 }
 .about-link {
-  font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--stone-gold-light); text-decoration: none; font-weight: 500;
-  display: inline-flex; align-items: center; gap: 8px; transition: gap 0.3s;
+  font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold-light);
+  display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; margin-top: var(--s-2);
 }
-.about-link:hover { gap: 14px; }
-.about-right { position: relative; z-index: 1; }
-.about-portraits { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.about-portrait {
-  position: relative;
-}
-.about-portrait img {
-  display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top;
-  filter: grayscale(15%);
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.35), 0 1px 4px rgba(0,0,0,0.2);
-  border-bottom: 3px solid var(--stone-gold);
-}
-.about-portrait-info { padding: 16px 0 0; }
-.about-portrait-name {
-  font-family: var(--font-display); font-size: 22px; font-weight: 400;
-  color: var(--white); margin-bottom: 4px;
-}
-.about-portrait-role {
-  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--stone-gold-light); font-weight: 400;
-}
+.about-link:hover { gap: 0.875rem; }
+.about-link svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 
-/* =========================================================================
-   STRUCTURING HIGHLIGHT
-   ========================================================================= */
-.structuring-highlight {
-  padding: 120px 0; padding-left: var(--side-padding); padding-right: var(--side-padding);
-  background: var(--cream);
+.about-photos {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3);
 }
-.structuring-inner {
-  max-width: 720px;
-}
-.structuring-title {
-  font-family: var(--font-display); font-size: 36px; font-weight: 300;
-  color: var(--navy); line-height: 1.25; margin-bottom: 28px;
-}
-.structuring-title em { font-style: italic; color: var(--stone-gold-dark); }
-.structuring-text {
-  font-size: 15px; line-height: 1.85; color: var(--text-secondary);
-  font-weight: 300; margin-bottom: 36px; max-width: 620px;
-}
-
-/* =========================================================================
-   DEAL TOMBSTONES — Carousel
-   ========================================================================= */
-.tombstones { padding: 100px 0; overflow: hidden; }
-.tombstones-header {
-  padding-left: var(--side-padding); padding-right: var(--side-padding);
-}
-.tombstones-volume {
-  display: flex; align-items: baseline; gap: 16px; margin-bottom: 56px;
-}
-.tombstones-volume-number {
-  font-family: var(--font-display); font-size: 56px; font-weight: 300;
-  color: var(--navy); line-height: 1;
-}
-.tombstones-volume-label {
-  font-size: 13px; color: var(--text-secondary); font-weight: 300;
-  line-height: 1.5; max-width: 260px;
-}
-.tombstones-carousel-wrap {
-  position: relative; padding-left: var(--side-padding);
-  mask-image: linear-gradient(to right, transparent 0%, black 140px, black calc(100% - 140px), transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 140px, black calc(100% - 140px), transparent 100%);
-}
-.tombstones-track {
-  display: flex; gap: 20px; will-change: transform;
-}
-.tombstone-card {
-  flex: 0 0 340px; min-height: 240px; padding: 40px 36px;
+.about-portrait { position: relative; }
+.about-portrait-frame {
   position: relative; overflow: hidden;
-  display: flex; flex-direction: column;
-  transition: transform 0.4s ease;
-}
-.tombstone-card:hover { transform: translateY(-3px); }
-.tombstone-card::before {
-  content: ''; position: absolute; inset: 0;
-  background-color: var(--offwhite);
-  background-image:
-    radial-gradient(ellipse 600px 300px at 110% 80%, rgba(184, 168, 138, 0.06) 0%, transparent 70%),
-    radial-gradient(ellipse 400px 400px at -20% 20%, rgba(26, 31, 46, 0.03) 0%, transparent 70%);
-  z-index: 0;
-}
-.tombstone-card::after {
-  content: ''; position: absolute; inset: 0; opacity: 0.028; z-index: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%231A1F2E' stroke-width='1'%3E%3Cellipse cx='200' cy='200' rx='60' ry='40'/%3E%3Cellipse cx='200' cy='200' rx='100' ry='70'/%3E%3Cellipse cx='200' cy='200' rx='150' ry='105'/%3E%3Cellipse cx='200' cy='200' rx='200' ry='140'/%3E%3Cellipse cx='200' cy='200' rx='260' ry='180'/%3E%3Cellipse cx='200' cy='200' rx='330' ry='230'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 400px 400px; background-position: center;
-}
-.tombstone-accent {
-  position: absolute; left: 0; top: 40px; bottom: 40px;
-  width: 2px; background: var(--stone-gold); opacity: 0.4; z-index: 1;
-}
-.tombstone-card > * { position: relative; z-index: 1; }
-.tombstone-year {
-  position: absolute; top: 40px; right: 36px;
-  font-size: 13px; color: var(--text-tertiary); font-weight: 300;
-  letter-spacing: 0.04em; z-index: 1;
-}
-.tombstone-icon {
-  position: absolute; bottom: 36px; right: 32px;
-  width: 36px; height: 36px; z-index: 1;
-  opacity: 0.12; transition: opacity 0.3s ease;
-}
-.tombstone-card:hover .tombstone-icon { opacity: 0.22; }
-.tombstone-icon svg { width: 100%; height: 100%; color: var(--navy); }
-.tombstone-value {
-  font-family: var(--font-display); font-size: 40px; font-weight: 300;
-  color: var(--navy); line-height: 1; margin-bottom: 16px; letter-spacing: -0.01em;
-}
-.tombstone-detail {
-  font-size: 10px; letter-spacing: 0.12em; color: var(--stone-gold-dark);
-  font-weight: 500; text-transform: uppercase; margin-bottom: 20px;
-}
-.tombstone-divider {
-  width: 32px; height: 1px; background: var(--stone-50); margin-bottom: 16px;
-}
-.tombstone-meta {
-  font-size: 14px; line-height: 1.6; color: var(--text-secondary); font-weight: 300;
-}
-.tombstone-meta-type { color: var(--text-primary); font-weight: 400; }
-.tombstone-units {
-  margin-top: 12px; font-size: 12px; color: var(--text-tertiary);
-  font-weight: 300; font-style: italic;
-}
-.tombstones-controls {
-  display: flex; align-items: center; gap: 12px;
-  padding-left: var(--side-padding); padding-right: var(--side-padding);
-  margin-top: 48px;
-}
-.tombstones-btn {
-  width: 48px; height: 48px; border: 1px solid var(--stone-50);
-  background: var(--white); cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.3s;
-}
-.tombstones-btn:hover { border-color: var(--navy); background: var(--navy); }
-.tombstones-btn:hover svg { color: var(--white); }
-.tombstones-btn svg {
-  width: 16px; height: 16px; color: var(--text-secondary); transition: color 0.3s;
-}
-.tombstones-progress {
-  flex: 1; max-width: 240px; height: 1px;
-  background: var(--stone-50); position: relative; margin-left: 8px;
-}
-.tombstones-progress-fill {
-  position: absolute; left: 0; top: -0.5px; height: 2px;
-  background: var(--navy); transition: width 0.4s ease; width: 0%;
-}
-
-/* =========================================================================
-   CTA SECTION
-   ========================================================================= */
-.cta-section {
-  padding: 140px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); text-align: center; border-top: 1px solid var(--border);
-  position: relative;
-}
-.cta-monogram {
-  height: 56px; width: auto; margin-bottom: 32px; opacity: 0.15;
-}
-.cta-title {
-  font-family: var(--font-display); font-size: 44px; font-weight: 300;
-  color: var(--navy); margin-bottom: 20px; line-height: 1.15;
-}
-.cta-subtitle {
-  font-size: 16px; color: var(--text-secondary); font-weight: 300;
-  margin-bottom: 44px; max-width: 460px; margin-left: auto; margin-right: auto; line-height: 1.6;
-}
-
-/* =========================================================================
-   DUAL CTA (Seller + Buyer)
-   ========================================================================= */
-.dual-cta {
-  display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border);
-}
-.dual-cta-panel {
-  padding: 120px 60px; text-align: center;
-}
-.dual-cta-panel:first-child { border-right: 1px solid var(--border); }
-.dual-cta-panel .section-label { margin-bottom: 16px; }
-.dual-cta-panel h3 {
-  font-family: var(--font-display); font-size: 32px; font-weight: 300;
-  color: var(--navy); margin-bottom: 16px; line-height: 1.2;
-}
-.dual-cta-panel p {
-  font-size: 15px; color: var(--text-secondary); font-weight: 300;
-  line-height: 1.7; max-width: 380px; margin: 0 auto 32px;
-}
-
-/* =========================================================================
-   FOOTER
-   ========================================================================= */
-.footer {
-  border-top: 1px solid rgba(0,0,0,0.06);
-  background: var(--offwhite);
-}
-.footer-principals {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 40px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 52px var(--side-padding) 48px;
-}
-.footer-principal {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.footer-principal--right {
-  justify-content: flex-end;
-  text-align: right;
-}
-.footer-principal--right .footer-principal-details {
-  order: -1;
-  text-align: right;
-}
-.footer-principal--right .footer-principal-brokerage {
-  justify-content: flex-end;
-}
-.footer-principal-photo {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top;
-  filter: grayscale(20%);
-  flex-shrink: 0;
-  border: 2px solid var(--white);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-}
-.footer-principal-name {
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--navy);
-  line-height: 1.2;
-}
-.footer-principal-title {
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--stone-gold-dark);
-  font-weight: 500;
-  margin-top: 3px;
-}
-.footer-principal-brokerage {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-}
-.footer-principal-brokerage img {
-  height: 26px;
-  width: auto;
-  object-fit: contain;
-  opacity: 0.7;
-}
-.footer-principal:not(.footer-principal--right) .footer-principal-brokerage img {
-  height: 30px;
-}
-/* Center brand column */
-.footer-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 40px;
-  position: relative;
-}
-.footer-center::before,
-.footer-center::after {
-  content: '';
-  position: absolute;
-  top: 4px;
-  bottom: 4px;
-  width: 1px;
-  background: rgba(0,0,0,0.06);
-}
-.footer-center::before { left: 0; }
-.footer-center::after { right: 0; }
-.footer-monogram {
-  height: 48px;
-  width: auto;
-  margin-bottom: 10px;
-}
-.footer-brand-name {
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.24em;
-  color: var(--navy);
-  text-transform: uppercase;
-}
-.footer-brand-byline {
-  font-size: 7px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--stone-gold-dark);
-  font-weight: 400;
-  margin-top: 4px;
-}
-/* Copyright bar */
-.footer-copyright {
-  text-align: center;
-  font-size: 11px;
-  color: var(--text-tertiary);
-  padding: 24px var(--side-padding);
-  border-top: 1px solid rgba(0,0,0,0.06);
-  background: var(--white);
-}
-
-/* =========================================================================
-   TEAM PAGE
-   ========================================================================= */
-.team-hero { padding: 140px 0 100px; padding-left: var(--side-padding); padding-right: var(--side-padding); text-align: center; border-bottom: 1px solid var(--border); }
-.team-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--stone-gold-dark); font-weight: 500; margin-bottom: 24px; }
-.team-title { font-family: var(--font-display); font-size: 52px; font-weight: 300; line-height: 1.1; color: var(--navy); margin-bottom: 16px; }
-.team-title em { font-style: italic; color: var(--stone-gold-dark); }
-.team-subtitle { font-size: 16px; line-height: 1.7; color: var(--text-secondary); font-weight: 300; max-width: 520px; margin: 0 auto 60px; }
-.portraits { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 880px; margin: 0 auto; }
-.portrait { position: relative; }
-.portrait img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top; filter: grayscale(15%); }
-.portrait-placeholder {
-  display: flex; align-items: center; justify-content: center;
-  width: 100%; aspect-ratio: 4/5; background: var(--cream); color: var(--stone-gold-dark);
-  font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
-}
-.portrait-info { padding: 24px 0 0; text-align: center; }
-.portrait-name { font-family: var(--font-display); font-size: 26px; font-weight: 400; color: var(--navy); margin-bottom: 4px; }
-.portrait-role { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--stone-gold-dark); font-weight: 400; }
-
-/* Individual bios */
-.bio-section { padding: 80px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); border-bottom: 1px solid var(--border); }
-.bio-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: start; max-width: 1200px; }
-.bio-photo { position: relative; }
-.bio-photo img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top; filter: grayscale(15%); }
-.bio-header { margin-bottom: 32px; }
-.bio-name { font-family: var(--font-display); font-size: 36px; font-weight: 400; color: var(--navy); margin-bottom: 6px; }
-.bio-title { font-size: 13px; color: var(--stone-gold-dark); font-weight: 400; letter-spacing: 0.04em; }
-.bio-location { font-size: 13px; color: var(--text-tertiary); font-weight: 400; margin-top: 8px; }
-.bio-stats { display: flex; gap: 1px; margin-bottom: 36px; border: 1px solid var(--border); }
-.bio-stat { padding: 24px 28px; flex: 1; background: var(--offwhite); }
-.bio-stat-num { font-family: var(--font-display); font-size: 32px; font-weight: 300; color: var(--navy); line-height: 1; margin-bottom: 6px; }
-.bio-stat-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); }
-.bio-text { font-size: 15px; line-height: 1.85; color: var(--text-secondary); font-weight: 300; margin-bottom: 16px; }
-.bio-contact { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; gap: 48px; }
-.bio-contact-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px; }
-.bio-contact-value { font-size: 14px; color: var(--text-primary); }
-.bio-contact-value a { color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--stone-50); transition: border-color 0.3s; }
-.bio-contact-value a:hover { border-color: var(--navy); }
-
-/* Quote divider */
-.quote-section { padding: 80px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); background: var(--navy); text-align: center; }
-.quote-monogram { height: 40px; opacity: 0.1; margin-bottom: 32px; }
-.quote-text { font-family: var(--font-display); font-size: 32px; font-weight: 300; font-style: italic; color: var(--white); max-width: 680px; margin: 0 auto; line-height: 1.35; }
-.quote-text em { color: var(--stone-gold-light); }
-
-/* =========================================================================
-   SERVICES PAGE
-   ========================================================================= */
-.page-hero {
-  padding: 160px 60px 80px; border-bottom: 1px solid var(--border);
-}
-.page-hero .section-label { margin-bottom: 24px; }
-.page-hero-title {
-  font-family: var(--font-display); font-size: 52px; font-weight: 300;
-  color: var(--navy); line-height: 1.1; margin-bottom: 24px; max-width: 680px;
-}
-.page-hero-title em { font-style: italic; color: var(--stone-gold-dark); }
-.page-hero-desc {
-  font-size: 17px; line-height: 1.7; color: var(--text-secondary); font-weight: 300;
-  max-width: 580px;
-}
-
-.service-detail { padding: 80px 60px; border-bottom: 1px solid var(--border); }
-.service-detail-grid { display: grid; grid-template-columns: 280px 1fr; gap: 64px; }
-.service-detail-title {
-  font-family: var(--font-display); font-size: 28px; font-weight: 400;
-  color: var(--navy); margin-bottom: 8px;
-}
-.service-detail-sub {
-  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--stone-gold-dark); font-weight: 500;
-}
-.service-detail-body { font-size: 16px; line-height: 1.85; color: var(--text-secondary); font-weight: 300; }
-.service-detail-body p { margin-bottom: 20px; }
-
-/* =========================================================================
-   LISTINGS PAGE
-   ========================================================================= */
-.listings-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
-  background: var(--border); border: 1px solid var(--border);
-}
-.listing-card {
-  background: var(--white); padding: 40px; display: block; text-decoration: none;
-  transition: background 0.3s;
-}
-.listing-card:hover { background: var(--offwhite); }
-.listing-metrics { display: flex; gap: 32px; margin-bottom: 20px; }
-.listing-metric {}
-.listing-metric-value {
-  font-family: var(--font-display); font-size: 28px; font-weight: 300;
-  color: var(--navy); line-height: 1;
-}
-.listing-metric-label {
-  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--text-tertiary); margin-top: 4px;
-}
-.listing-address {
-  font-family: var(--font-display); font-size: 22px; font-weight: 400;
-  color: var(--navy); margin-bottom: 8px;
-}
-.listing-details {
-  font-size: 13px; color: var(--text-secondary); font-weight: 300; line-height: 1.6;
-}
-.listing-tag {
-  display: inline-block; margin-top: 16px; padding: 6px 14px;
-  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
-  font-weight: 500; border: 1px solid var(--border); color: var(--text-tertiary);
-}
-.listing-tag.active { border-color: var(--stone-gold); color: var(--stone-gold-dark); }
-.listing-tag.sold { border-color: var(--navy); color: var(--navy); }
-
-/* =========================================================================
-   INSIGHTS / BLOG
-   ========================================================================= */
-.insights-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
-  background: var(--border); border: 1px solid var(--border);
-}
-.insight-card {
-  background: var(--white); padding: 40px; display: block; text-decoration: none;
-  transition: background 0.3s;
-}
-.insight-card:hover { background: var(--offwhite); }
-.insight-date {
-  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--text-tertiary); margin-bottom: 16px;
-}
-.insight-title {
-  font-family: var(--font-display); font-size: 24px; font-weight: 400;
-  color: var(--navy); margin-bottom: 12px; line-height: 1.25;
-}
-.insight-excerpt {
-  font-size: 14px; line-height: 1.7; color: var(--text-secondary); font-weight: 300;
-}
-.insight-tag {
-  display: inline-block; margin-top: 20px; font-size: 11px; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--stone-gold-dark); font-weight: 500;
-}
-
-/* =========================================================================
-   CONTACT PAGE
-   ========================================================================= */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; }
-.contact-info {
-  padding: 80px 60px; background: var(--navy); color: var(--white);
-}
-.contact-info h3 {
-  font-family: var(--font-display); font-size: 28px; font-weight: 300;
-  color: var(--white); margin-bottom: 32px;
-}
-.contact-office { margin-bottom: 40px; }
-.contact-office-label {
-  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--stone-gold-light); font-weight: 500; margin-bottom: 12px;
-}
-.contact-office-detail {
-  font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.6); font-weight: 300;
-}
-.contact-office-detail a { color: rgba(255,255,255,0.8); border-bottom: 1px solid rgba(255,255,255,0.2); transition: border-color 0.3s; }
-.contact-office-detail a:hover { border-color: rgba(255,255,255,0.6); }
-
-.contact-form-wrap { padding: 80px 60px; }
-.contact-form-wrap h3 {
-  font-family: var(--font-display); font-size: 28px; font-weight: 300;
-  color: var(--navy); margin-bottom: 8px;
-}
-.contact-form-wrap p {
-  font-size: 14px; color: var(--text-secondary); font-weight: 300; margin-bottom: 40px;
-}
-.form-row { margin-bottom: 24px; }
-.form-row label {
-  display: block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--text-tertiary); font-weight: 500; margin-bottom: 8px;
-}
-.form-row input, .form-row select, .form-row textarea {
-  width: 100%; padding: 14px 16px; border: 1px solid var(--border);
-  font-family: var(--font-body); font-size: 16px; font-weight: 300;
-  color: var(--text-primary); background: var(--white); transition: border-color 0.3s;
-  outline: none;
-}
-.form-row input:focus, .form-row select:focus, .form-row textarea:focus {
-  border-color: var(--stone-gold);
-}
-.form-row textarea { min-height: 120px; resize: vertical; }
-.form-row-inline { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-
-/* =========================================================================
-   INVESTOR REGISTRATION (gated)
-   ========================================================================= */
-.investor-reg { padding: 80px 60px; background: var(--cream); border-top: 1px solid var(--border); }
-.investor-reg h3 {
-  font-family: var(--font-display); font-size: 32px; font-weight: 300;
-  color: var(--navy); margin-bottom: 12px;
-}
-.investor-reg > p {
-  font-size: 15px; color: var(--text-secondary); font-weight: 300;
-  margin-bottom: 40px; max-width: 520px; line-height: 1.7;
-}
-.investor-form { max-width: 600px; }
-
-/* =========================================================================
-   ANIMATIONS
-   ========================================================================= */
-@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 0.04; } }
-
-/* =========================================================================
-   RESPONSIVE
-   ========================================================================= */
-
-@media (min-width: 1520px) {
-  :root {
-    --side-padding: calc((100vw - 1400px) / 2);
-  }
-}
-@media (max-width: 1024px) {
-  .nav { padding: 0 32px; }
-  .hero { padding: 120px 32px 60px; }
-  .hero-stats { right: 32px; bottom: 32px; gap: 32px; }
-  .hero-watermark { right: 32px; height: 320px; }
-  .cred-bar { padding: 32px; gap: 32px; flex-wrap: wrap; justify-content: center; }
-  .services { padding: 80px 32px; }
-  .about { padding: 100px 32px; gap: 48px; }
-  .structuring-highlight { padding: 100px 32px; }
-  .tombstones { padding: 80px 0; }
-  .tombstones-header { padding-left: 32px; padding-right: 32px; }
-  .tombstones-carousel-wrap { padding-left: 32px; }
-  .tombstones-controls { padding-left: 32px; padding-right: 32px; }
-  .tombstone-card { flex: 0 0 300px; min-height: 220px; }
-  .cta-section { padding: 100px 32px; }
-  .dual-cta-panel { padding: 100px 32px; }
-  .footer-principals { padding: 40px 32px 36px; gap: 32px; }
-  .page-hero { padding: 120px 32px 60px; }
-  .service-detail { padding: 60px 32px; }
-  .team-hero { padding: 120px 32px 80px; }
-  .bio-section { padding: 60px 32px; }
-  .quote-section { padding: 60px 32px; }
-  .contact-info, .contact-form-wrap { padding: 60px 32px; }
-  .investor-reg { padding: 60px 32px; }
-}
-
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-links.open {
-    display: flex; flex-direction: column; position: fixed;
-    top: 72px; left: 0; right: 0; background: var(--white);
-    padding: 32px; gap: 24px; border-bottom: 1px solid var(--border);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-  }
-  .nav-toggle { display: block; }
-
-  .nav-logo-sub { display: none; }
-  .hero-actions .btn-primary,
-  .hero-actions .btn-secondary { width: 100%; justify-content: center; }
-
-
-  .hero { min-height: auto; padding: 120px 24px 60px; }
-  .hero-title { font-size: clamp(36px, 8vw, 52px); }
-  .hero-stats { position: static; margin-top: 48px; justify-content: flex-start; }
-  .stat { text-align: left; }
-  .hero-watermark { display: none; }
-  .hero-actions { flex-direction: column; }
-
-  .cred-bar { flex-direction: column; gap: 16px; }
-  .services-grid { grid-template-columns: 1fr; }
-  .about { grid-template-columns: 1fr; }
-  .about-right { }
-  .about-portraits { gap: 16px; }
-  .about-title { font-size: 30px; }
-  .about-text { font-size: 14px; }
-  .structuring-highlight { padding: 80px 24px; }
-  .structuring-title { font-size: 28px; }
-  .tombstones { padding: 60px 0; }
-  .tombstones-header { padding-left: 24px; padding-right: 24px; }
-  .tombstones-carousel-wrap { padding-left: 24px; }
-  .tombstones-controls { padding-left: 24px; padding-right: 24px; }
-  .tombstone-card { flex: 0 0 280px; min-height: 200px; padding: 32px 28px; }
-  .tombstone-value { font-size: 34px; }
-  .tombstones-volume-number { font-size: 40px; }
-  .tombstone-year { top: 32px; right: 28px; }
-  .tombstone-accent { top: 32px; bottom: 32px; }
-  .tombstone-icon { bottom: 28px; right: 24px; width: 30px; height: 30px; }
-  .dual-cta { grid-template-columns: 1fr; }
-  .dual-cta-panel:first-child { border-right: none; border-bottom: 1px solid var(--border); }
-
-  .section-title { font-size: 32px; }
-  .page-hero-title { font-size: 36px; }
-  .team-title { font-size: 36px; }
-
-  .portraits { grid-template-columns: 1fr; max-width: 400px; }
-  .bio-grid { grid-template-columns: 1fr; gap: 32px; }
-  .bio-photo { max-width: 400px; }
-  .bio-stats { flex-direction: column; gap: 0; }
-  .bio-stat { border-bottom: 1px solid var(--border); }
-  .bio-stat:last-child { border-bottom: none; }
-  .bio-contact { flex-direction: column; gap: 20px; }
-
-  .service-detail-grid { grid-template-columns: 1fr; gap: 24px; }
-  .listings-grid { grid-template-columns: 1fr; }
-  .insights-grid { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .form-row-inline { grid-template-columns: 1fr; }
-
-  .footer-principals { grid-template-columns: 1fr; gap: 28px; padding: 40px 24px 32px; }
-  .footer-principal { justify-content: center; }
-  .footer-principal--right { justify-content: center; text-align: left; }
-  .footer-principal--right .footer-principal-details { order: 0; text-align: left; }
-  .footer-principal--right .footer-principal-brokerage { justify-content: flex-start; }
-  .footer-center { order: -1; padding: 0 0 20px; }
-  .footer-center::before, .footer-center::after { display: none; }
-  .footer-copyright { padding: 16px 24px; }
-
-  .nav { padding: 0 24px; }
-  .services { padding: 60px 24px; }
-  .cta-section { padding: 80px 24px; }
-  .cta-title { font-size: 32px; }
-  .page-hero { padding: 100px 24px 48px; }
-}
-
-/* === QUOTE DIVIDER === */
-.quote-divider {
-  background: var(--navy);
-  padding: 60px 0 120px; padding-left: var(--side-padding); padding-right: var(--side-padding);
-  text-align: center;
-  overflow: hidden;
-}
-.quote-divider-content {
-  position: relative;
-}
-.quote-divider-watermark {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  opacity: 0.06;
-  pointer-events: none;
-  filter: brightness(0) invert(1);
-}
-.quote-divider blockquote {
-  margin: 0 auto;
-  max-width: 780px;
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-style: italic;
-  font-size: 34px;
-  line-height: 1.55;
-  color: rgba(255,255,255,0.9);
-  position: relative;
-  z-index: 1;
-  quotes: "\201C" "\201D";
-}
-.quote-divider blockquote::before { content: open-quote; }
-.quote-divider blockquote::after { content: close-quote; }
-.quote-divider blockquote em {
-  color: var(--stone-gold-light);
-  font-style: italic;
-}
-.quote-divider .quote-rule {
-  width: 40px;
-  height: 1px;
-  background: var(--stone-gold);
-  margin: 28px auto 0;
-  position: relative;
-  z-index: 1;
-}
-@media (max-width: 768px) {
-  .quote-divider { padding: 48px 24px; }
-  .quote-divider blockquote { font-size: 22px; line-height: 1.45; }
-  .quote-divider-watermark { width: 200px; }
-}
-
-/* === MARKET CONTEXT === */
-.market-context {
-  padding: 120px 0; padding-left: var(--side-padding); padding-right: var(--side-padding);
-  background: var(--white);
-}
-.market-context-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-.market-context-narrative h2 {
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-size: 40px;
-  line-height: 1.2;
-  color: var(--navy);
-  margin: 12px 0 24px;
-}
-.market-context-narrative h2 em { color: var(--stone-gold-dark); font-style: italic; }
-.market-context-narrative p {
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--text-secondary);
-  margin-bottom: 16px;
-}
-.market-context-cta {
-  margin-top: 32px;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
-}
-.market-context-cta p {
-  font-size: 13px;
-  color: var(--text-tertiary);
-  margin-top: 20px;
-  margin-bottom: 0;
-}
-.market-data-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.market-data-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  padding: 28px 32px;
-  display: flex;
-  align-items: baseline;
-  gap: 24px;
-}
-.market-data-card .mdc-number {
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-size: 40px;
-  color: var(--navy);
-  white-space: nowrap;
-  min-width: 100px;
-  line-height: 1;
-}
-.market-data-card .mdc-text {
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-secondary);
-}
-.market-data-card .mdc-text strong { color: var(--text-primary); font-weight: 400; }
-@media (max-width: 768px) {
-  .market-context { padding: 80px 24px; }
-  .market-context-inner { grid-template-columns: 1fr; gap: 40px; }
-  .market-context-narrative h2 { font-size: 30px; }
-  .market-data-card { flex-direction: column; gap: 8px; }
-  .market-data-card .mdc-number { font-size: 32px; }
-}
-
-/* === GEOGRAPHIC COVERAGE === */
-.geo-coverage { padding: 120px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); background: var(--navy); }
-.geo-coverage-inner { max-width: 1400px; margin: 0 auto; }
-.geo-coverage .section-label { color: var(--stone-gold-light); }
-.geo-coverage .section-title { color: var(--white); }
-.geo-coverage .section-title em { color: var(--stone-gold-light); }
-.geo-markets {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 48px;
-}
-.geo-market-card {
   border: 1px solid rgba(255,255,255,0.08);
-  padding: 28px 24px;
-  background: rgba(255,255,255,0.04);
-  transition: border-color 0.3s, background 0.3s;
 }
-.geo-market-card:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.07); }
-.geo-market-name {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 20px;
-  color: var(--white);
-  margin-bottom: 12px;
+.about-portrait-frame::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: var(--gold); opacity: 0.5;
 }
-.geo-market-stat {
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 13px;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.6;
+.about-portrait-frame img {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top;
+  filter: grayscale(15%); display: block;
 }
-.geo-market-stat strong { color: rgba(255,255,255,0.8); font-weight: 400; }
-.geo-market-stat .stat-highlight {
-  color: var(--stone-gold-light);
-  font-weight: 500;
-  font-size: 22px;
-  font-family: var(--font-display);
-  display: block;
-  margin-bottom: 4px;
+.about-portrait-info { padding-top: var(--s-2); }
+.about-portrait-name { font-family: var(--font-d); font-size: 1.25rem; font-weight: 400; color: var(--white); }
+.about-portrait-role { font-size: 0.625rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); margin-top: 2px; }
+
+/* ============================================================
+   STRUCTURING HIGHLIGHT
+   ============================================================ */
+.structuring { padding: var(--s-section) 0; background: var(--white); border-top: 1px solid var(--border); }
+.structuring-inner { max-width: 860px; border-left: 2px solid var(--gold); padding-left: var(--s-5); }
+.structuring-title {
+  font-family: var(--font-d); font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 300; line-height: 1.35; color: var(--navy); margin-bottom: var(--s-4);
+}
+.structuring-prose { font-size: var(--b-md); font-weight: 300; line-height: 1.8; color: var(--text-2); margin-bottom: var(--s-5); }
+
+/* ============================================================
+   MARKET INTELLIGENCE
+   ============================================================ */
+.intel { padding: var(--s-section) 0; background: var(--cream); border-top: 1px solid var(--border); }
+.intel-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: var(--s-6); flex-wrap: wrap; gap: var(--s-3);
+}
+.intel-title {
+  font-family: var(--font-d); font-size: var(--d-section); font-weight: 300;
+  line-height: 1.2; color: var(--navy); margin-top: var(--s-2);
+}
+.intel-year {
+  font-family: var(--font-d); font-size: var(--d-mega); font-weight: 300;
+  color: var(--navy); line-height: 0.85; opacity: 0.06;
+}
+.intel-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--border); margin-bottom: var(--s-6);
+  border: 1px solid var(--border);
+}
+.intel-card { background: var(--white); padding: var(--s-4); transition: background 0.3s; }
+.intel-card:hover { background: var(--offwhite); }
+.intel-card-num { font-family: var(--font-d); font-size: var(--d-stat-sm); font-weight: 300; color: var(--navy); line-height: 1; margin-bottom: var(--s-2); }
+.intel-card-text { font-size: var(--b-sm); font-weight: 300; line-height: 1.6; color: var(--text-2); }
+.intel-card-text strong { font-weight: 400; color: var(--text-1); }
+.intel-body { display: grid; grid-template-columns: 2fr 1fr; gap: var(--s-7); align-items: start; }
+.intel-narrative p { font-size: var(--b-md); font-weight: 300; line-height: 1.8; color: var(--text-2); margin-bottom: var(--s-3); }
+.intel-cta { padding-top: var(--s-4); border-top: 1px solid var(--border); margin-top: var(--s-2); }
+.intel-cta-note { font-size: var(--b-sm); color: var(--text-3); margin-top: var(--s-2); font-weight: 300; }
+.intel-sidebar { padding: var(--s-4); background: var(--white); border: 1px solid var(--border); }
+.intel-sidebar-title { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: var(--s-3); }
+.intel-sidebar-item { padding: var(--s-2) 0; border-bottom: 1px solid var(--border); font-size: var(--b-sm); font-weight: 300; color: var(--text-2); line-height: 1.5; }
+.intel-sidebar-item:last-child { border-bottom: none; }
+.intel-sidebar-item strong { display: block; font-weight: 400; color: var(--text-1); font-size: var(--b-xs); letter-spacing: 0.03em; text-transform: uppercase; margin-bottom: 0.125rem; }
+
+/* ============================================================
+   RESPONSIVE — homepage sections
+   ============================================================ */
+@media (max-width: 1024px) {
+  .about-inner { grid-template-columns: 1fr; }
+  .about-photos { max-width: 420px; }
+  .intel-body { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
-  .geo-coverage { padding: 80px 24px; }
-  .geo-markets { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .geo-market-card { padding: 20px 16px; }
-  .geo-market-name { font-size: 17px; margin-bottom: 8px; }
-  .geo-market-stat { font-size: 12px; }
-  .geo-market-stat .stat-highlight { font-size: 18px; }
+  .hero { min-height: auto; padding: 7rem var(--side) 4rem; }
+  .hero-watermark { display: none; }
+  .hero-stats { position: static; margin-top: var(--s-5); }
+  .hero-actions { flex-direction: column; }
+  .services-grid { grid-template-columns: 1fr; }
+  .intel-strip { grid-template-columns: 1fr 1fr; }
+  .intel-header { flex-direction: column; align-items: flex-start; }
+  .structuring-inner { padding-left: var(--s-3); }
 }
 @media (max-width: 480px) {
-  .geo-markets { grid-template-columns: 1fr; }
-  .about-portraits { grid-template-columns: 1fr; max-width: 280px; }
-  .about { gap: 32px; }
-  .hero-title { font-size: 32px; }
-  .hero-stats { flex-direction: column; gap: 16px; }
-  .section-title { font-size: 26px; }
-  .market-data-card .mdc-number { font-size: 24px; }
+  .intel-strip { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: column; gap: var(--s-3); }
+  .about-photos { grid-template-columns: 1fr; max-width: 280px; }
 }
 </style>
 </head>
 <body>
 
+<!-- ============================================================
+     NAV
+     ============================================================ -->
 <nav class="nav">
-  <a href="index.html" class="nav-logo">
-    <img class="nav-monogram" src="images/mr-monogram-sm.png" alt="MR">
-    <div class="nav-logo-text">
-      <span class="nav-logo-name">McKinney Realty</span>
-      <span class="nav-logo-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+  <a href="/" class="nav-brand">
+    <img class="nav-mono" src="images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
     </div>
   </a>
-  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+  <button class="nav-toggle" aria-label="Menu">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
   <div class="nav-links">
@@ -1120,520 +247,239 @@ img { max-width: 100%; height: auto; }
   </div>
 </nav>
 
-<!-- === HERO === -->
+<!-- ============================================================
+     HERO
+     ============================================================ -->
 <section class="hero">
   <img class="hero-watermark" src="images/mr-monogram-lg.png" alt="">
   <div class="hero-content">
-    <div class="hero-label">Multi-Family &amp; Investment Real Estate Brokers</div>
-    <h1 class="hero-title">Generational expertise.<br><em>Province-wide</em> reach.</h1>
+    <div class="label hero-label">Multi-Family &amp; Investment Real Estate Brokers</div>
+    <h1 class="hero-title">Generational expertise.<br><em class="gi">Province-wide</em> reach.</h1>
     <p class="hero-desc">McKinney Realty is a specialized multi-family practice combining generational relationship capital with modern, data-driven execution — serving property owners and investors across Ontario's strongest secondary markets.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Schedule a Consultation <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="track-record.html" class="btn-secondary">View Track Record</a>
+      <a href="contact.html" class="btn btn--navy">Schedule a Consultation <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a href="track-record.html" class="btn btn--outline">View Track Record</a>
     </div>
   </div>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-number">$200M+</div><div class="stat-label">Transaction Volume</div></div>
-    <div class="stat"><div class="stat-number">50+</div><div class="stat-label">Combined Years</div></div>
-    <div class="stat"><div class="stat-number">2</div><div class="stat-label">Brokers. Every Deal.</div></div>
-  </div>
-  <div class="hero-line"></div>
-</section>
-
-<!-- === CREDIBILITY BAR === -->
-<div class="cred-bar">
-  <div class="cred-item"><div class="cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M3 7v14M21 7v14M6 7V4l6-2 6 2v3M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div>Multi-Family Acquisitions &amp; Dispositions</div>
-  <div class="cred-item"><div class="cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>Off-Market Deal Sourcing</div>
-  <div class="cred-item"><div class="cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>Development Land &amp; Assemblies</div>
-</div>
-
-<!-- === SERVICES === -->
-<section class="services" id="services">
-  <div class="section-label">What We Do</div>
-  <h2 class="section-title">Specialized advisory for Ontario's <em>multi-family</em> market.</h2>
-  <div class="services-grid">
-    <a href="services.html#acquisition-disposition" class="service-card">
-      <div class="service-number">01</div>
-      <div class="service-name">Acquisition &amp;<br>Disposition</div>
-      <div class="service-desc">Representing buyers and sellers of multi-family residential properties across Ontario. Every listing includes institutional-grade investment summaries — loss-to-lease analysis, normalized expense modeling, utility optimization ROI, and zoning upside — so buyers see a roadmap, not just a building.</div>
-    </a>
-    <a href="services.html#off-market" class="service-card">
-      <div class="service-number">02</div>
-      <div class="service-name">Off-Market<br>Deal Sourcing</div>
-      <div class="service-desc">The buyer for your building isn't browsing MLS. They already own a similar asset in the next town. We identify them through proprietary data analysis — debt maturity timing, long-term ownership patterns, and operational signals — and connect them with the right opportunities.</div>
-    </a>
-    <a href="services.html#development-land" class="service-card">
-      <div class="service-number">03</div>
-      <div class="service-name">Development Land<br>&amp; Assemblies</div>
-      <div class="service-desc">Identifying and facilitating land acquisitions for multi-family development. As developers shift from high-rise steel-and-concrete to 4-to-6-storey wood-frame builds, secondary market land along Ontario's growth corridors is commanding institutional attention.</div>
-    </a>
+    <div class="hero-stat"><div class="hero-stat-num">$200M+</div><div class="hero-stat-label">Transaction Volume</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">50+</div><div class="hero-stat-label">Combined Years</div></div>
   </div>
 </section>
 
-<!-- === DEAL TOMBSTONES === -->
-<section class="tombstones" id="track-record">
-  <div class="tombstones-header">
-    <div class="section-label">Track Record</div>
-    <h2 class="section-title">Selected <em>transactions</em></h2>
-    <div class="tombstones-volume">
-      <div class="tombstones-volume-number">$100M+</div>
-      <div class="tombstones-volume-label">in multi-family, commercial, and development land transactions across Ontario</div>
+<!-- ============================================================
+     SERVICES
+     ============================================================ -->
+<section class="services">
+  <div class="wrap">
+    <div class="services-header">
+      <div class="label">What We Do</div>
+      <h2 class="services-title">Specialized advisory for Ontario's <em class="gi">multi-family</em> market.</h2>
     </div>
-  </div>
-
-  <div class="tombstones-carousel-wrap">
-    <div class="tombstones-track" id="tombstone-track">
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2021</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="7" height="13"/><rect x="14" y="3" width="7" height="18"/><line x1="5.5" y1="11" x2="7.5" y2="11"/><line x1="5.5" y1="14" x2="7.5" y2="14"/><line x1="5.5" y1="17" x2="7.5" y2="17"/><line x1="16.5" y1="6" x2="18.5" y2="6"/><line x1="16.5" y1="9" x2="18.5" y2="9"/><line x1="16.5" y1="12" x2="18.5" y2="12"/><line x1="16.5" y1="15" x2="18.5" y2="15"/><line x1="16.5" y1="18" x2="18.5" y2="18"/></svg></div>
-        <div class="tombstone-value">$5.84M</div>
-        <div class="tombstone-detail">Sell-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Multi-Family</span><br>Goderich</div>
-        <div class="tombstone-units">— units TBD</div>
-      </div>
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2021</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="7" height="13"/><rect x="14" y="3" width="7" height="18"/><line x1="5.5" y1="11" x2="7.5" y2="11"/><line x1="5.5" y1="14" x2="7.5" y2="14"/><line x1="5.5" y1="17" x2="7.5" y2="17"/><line x1="16.5" y1="6" x2="18.5" y2="6"/><line x1="16.5" y1="9" x2="18.5" y2="9"/><line x1="16.5" y1="12" x2="18.5" y2="12"/><line x1="16.5" y1="15" x2="18.5" y2="15"/><line x1="16.5" y1="18" x2="18.5" y2="18"/></svg></div>
-        <div class="tombstone-value">$5.25M</div>
-        <div class="tombstone-detail">Sell-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Multi-Family</span><br>Prince Edward County</div>
-        <div class="tombstone-units">— units TBD</div>
-      </div>
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2021</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="7" height="13"/><rect x="14" y="3" width="7" height="18"/><line x1="5.5" y1="11" x2="7.5" y2="11"/><line x1="5.5" y1="14" x2="7.5" y2="14"/><line x1="5.5" y1="17" x2="7.5" y2="17"/><line x1="16.5" y1="6" x2="18.5" y2="6"/><line x1="16.5" y1="9" x2="18.5" y2="9"/><line x1="16.5" y1="12" x2="18.5" y2="12"/><line x1="16.5" y1="15" x2="18.5" y2="15"/><line x1="16.5" y1="18" x2="18.5" y2="18"/></svg></div>
-        <div class="tombstone-value">$5.07M</div>
-        <div class="tombstone-detail">Buy-Side & Sell-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Multi-Family</span><br>Greater Napanee</div>
-        <div class="tombstone-units">— units TBD</div>
-      </div>
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2022</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="7" height="13"/><rect x="14" y="3" width="7" height="18"/><line x1="5.5" y1="11" x2="7.5" y2="11"/><line x1="5.5" y1="14" x2="7.5" y2="14"/><line x1="5.5" y1="17" x2="7.5" y2="17"/><line x1="16.5" y1="6" x2="18.5" y2="6"/><line x1="16.5" y1="9" x2="18.5" y2="9"/><line x1="16.5" y1="12" x2="18.5" y2="12"/><line x1="16.5" y1="15" x2="18.5" y2="15"/><line x1="16.5" y1="18" x2="18.5" y2="18"/></svg></div>
-        <div class="tombstone-value">$4.50M</div>
-        <div class="tombstone-detail">Buy-Side & Sell-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Multi-Family</span><br>Greater Napanee</div>
-        <div class="tombstone-units">— units TBD</div>
-      </div>
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2017</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="7" height="13"/><rect x="14" y="3" width="7" height="18"/><line x1="5.5" y1="11" x2="7.5" y2="11"/><line x1="5.5" y1="14" x2="7.5" y2="14"/><line x1="5.5" y1="17" x2="7.5" y2="17"/><line x1="16.5" y1="6" x2="18.5" y2="6"/><line x1="16.5" y1="9" x2="18.5" y2="9"/><line x1="16.5" y1="12" x2="18.5" y2="12"/><line x1="16.5" y1="15" x2="18.5" y2="15"/><line x1="16.5" y1="18" x2="18.5" y2="18"/></svg></div>
-        <div class="tombstone-value">$4.34M</div>
-        <div class="tombstone-detail">Buy-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Multi-Family</span><br>Belleville</div>
-        <div class="tombstone-units">— units TBD</div>
-      </div>
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2021</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="7" height="13"/><rect x="14" y="3" width="7" height="18"/><line x1="5.5" y1="11" x2="7.5" y2="11"/><line x1="5.5" y1="14" x2="7.5" y2="14"/><line x1="5.5" y1="17" x2="7.5" y2="17"/><line x1="16.5" y1="6" x2="18.5" y2="6"/><line x1="16.5" y1="9" x2="18.5" y2="9"/><line x1="16.5" y1="12" x2="18.5" y2="12"/><line x1="16.5" y1="15" x2="18.5" y2="15"/><line x1="16.5" y1="18" x2="18.5" y2="18"/></svg></div>
-        <div class="tombstone-value">$3.55M</div>
-        <div class="tombstone-detail">Sell-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Multi-Family</span><br>Goderich</div>
-        <div class="tombstone-units">— units TBD</div>
-      </div>
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2019</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="7" height="13"/><rect x="14" y="3" width="7" height="18"/><line x1="5.5" y1="11" x2="7.5" y2="11"/><line x1="5.5" y1="14" x2="7.5" y2="14"/><line x1="5.5" y1="17" x2="7.5" y2="17"/><line x1="16.5" y1="6" x2="18.5" y2="6"/><line x1="16.5" y1="9" x2="18.5" y2="9"/><line x1="16.5" y1="12" x2="18.5" y2="12"/><line x1="16.5" y1="15" x2="18.5" y2="15"/><line x1="16.5" y1="18" x2="18.5" y2="18"/></svg></div>
-        <div class="tombstone-value">$3.34M</div>
-        <div class="tombstone-detail">Buy-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Multi-Family</span><br>Smiths Falls</div>
-        <div class="tombstone-units">— units TBD</div>
-      </div>
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2021</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="7" height="13"/><rect x="14" y="3" width="7" height="18"/><line x1="5.5" y1="11" x2="7.5" y2="11"/><line x1="5.5" y1="14" x2="7.5" y2="14"/><line x1="5.5" y1="17" x2="7.5" y2="17"/><line x1="16.5" y1="6" x2="18.5" y2="6"/><line x1="16.5" y1="9" x2="18.5" y2="9"/><line x1="16.5" y1="12" x2="18.5" y2="12"/><line x1="16.5" y1="15" x2="18.5" y2="15"/><line x1="16.5" y1="18" x2="18.5" y2="18"/></svg></div>
-        <div class="tombstone-value">$3.33M</div>
-        <div class="tombstone-detail">Sell-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Multi-Family</span><br>Prince Edward County</div>
-        <div class="tombstone-units">— units TBD</div>
-      </div>
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2021</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="7" height="13"/><rect x="14" y="3" width="7" height="18"/><line x1="5.5" y1="11" x2="7.5" y2="11"/><line x1="5.5" y1="14" x2="7.5" y2="14"/><line x1="5.5" y1="17" x2="7.5" y2="17"/><line x1="16.5" y1="6" x2="18.5" y2="6"/><line x1="16.5" y1="9" x2="18.5" y2="9"/><line x1="16.5" y1="12" x2="18.5" y2="12"/><line x1="16.5" y1="15" x2="18.5" y2="15"/><line x1="16.5" y1="18" x2="18.5" y2="18"/></svg></div>
-        <div class="tombstone-value">$3.10M</div>
-        <div class="tombstone-detail">Sell-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Multi-Family</span><br>Timmins</div>
-        <div class="tombstone-units">— units TBD</div>
-      </div>
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2022</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="7" height="13"/><rect x="14" y="3" width="7" height="18"/><line x1="5.5" y1="11" x2="7.5" y2="11"/><line x1="5.5" y1="14" x2="7.5" y2="14"/><line x1="5.5" y1="17" x2="7.5" y2="17"/><line x1="16.5" y1="6" x2="18.5" y2="6"/><line x1="16.5" y1="9" x2="18.5" y2="9"/><line x1="16.5" y1="12" x2="18.5" y2="12"/><line x1="16.5" y1="15" x2="18.5" y2="15"/><line x1="16.5" y1="18" x2="18.5" y2="18"/></svg></div>
-        <div class="tombstone-value">$3.06M</div>
-        <div class="tombstone-detail">Sell-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Multi-Family</span><br>Belleville</div>
-        <div class="tombstone-units">— units TBD</div>
-      </div>
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2021</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="7" height="13"/><rect x="14" y="3" width="7" height="18"/><line x1="5.5" y1="11" x2="7.5" y2="11"/><line x1="5.5" y1="14" x2="7.5" y2="14"/><line x1="5.5" y1="17" x2="7.5" y2="17"/><line x1="16.5" y1="6" x2="18.5" y2="6"/><line x1="16.5" y1="9" x2="18.5" y2="9"/><line x1="16.5" y1="12" x2="18.5" y2="12"/><line x1="16.5" y1="15" x2="18.5" y2="15"/><line x1="16.5" y1="18" x2="18.5" y2="18"/></svg></div>
-        <div class="tombstone-value">$2.92M</div>
-        <div class="tombstone-detail">Sell-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Multi-Family</span><br>Brockville</div>
-        <div class="tombstone-units">— units TBD</div>
-      </div>
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2024</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="20" height="12"/><polyline points="2 9 12 3 22 9"/><line x1="7" y1="14" x2="7" y2="18"/><line x1="12" y1="14" x2="12" y2="18"/><line x1="17" y1="14" x2="17" y2="18"/></svg></div>
-        <div class="tombstone-value">$2.57M</div>
-        <div class="tombstone-detail">Sell-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Commercial</span><br>Belleville</div>
-      </div>
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2021</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="7" height="13"/><rect x="14" y="3" width="7" height="18"/><line x1="5.5" y1="11" x2="7.5" y2="11"/><line x1="5.5" y1="14" x2="7.5" y2="14"/><line x1="5.5" y1="17" x2="7.5" y2="17"/><line x1="16.5" y1="6" x2="18.5" y2="6"/><line x1="16.5" y1="9" x2="18.5" y2="9"/><line x1="16.5" y1="12" x2="18.5" y2="12"/><line x1="16.5" y1="15" x2="18.5" y2="15"/><line x1="16.5" y1="18" x2="18.5" y2="18"/></svg></div>
-        <div class="tombstone-value">$2.44M</div>
-        <div class="tombstone-detail">Sell-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Multi-Family</span><br>Bancroft</div>
-        <div class="tombstone-units">— units TBD</div>
-      </div>
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2021</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="3" y1="17" x2="21" y2="17"/><line x1="10" y1="3" x2="10" y2="21"/><line x1="17" y1="3" x2="17" y2="21"/></svg></div>
-        <div class="tombstone-value">$2.35M</div>
-        <div class="tombstone-detail">Buy-Side & Sell-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Development Land</span><br>Belleville</div>
-      </div>
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2021</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="7" height="13"/><rect x="14" y="3" width="7" height="18"/><line x1="5.5" y1="11" x2="7.5" y2="11"/><line x1="5.5" y1="14" x2="7.5" y2="14"/><line x1="5.5" y1="17" x2="7.5" y2="17"/><line x1="16.5" y1="6" x2="18.5" y2="6"/><line x1="16.5" y1="9" x2="18.5" y2="9"/><line x1="16.5" y1="12" x2="18.5" y2="12"/><line x1="16.5" y1="15" x2="18.5" y2="15"/><line x1="16.5" y1="18" x2="18.5" y2="18"/></svg></div>
-        <div class="tombstone-value">$2.30M</div>
-        <div class="tombstone-detail">Buy-Side & Sell-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Multi-Family</span><br>Brockville</div>
-        <div class="tombstone-units">— units TBD</div>
-      </div>
-
-      <div class="tombstone-card">
-        <div class="tombstone-accent"></div>
-        <div class="tombstone-year">2021</div>
-        <div class="tombstone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="3" y1="17" x2="21" y2="17"/><line x1="10" y1="3" x2="10" y2="21"/><line x1="17" y1="3" x2="17" y2="21"/></svg></div>
-        <div class="tombstone-value">$2.15M</div>
-        <div class="tombstone-detail">Sell-Side Advisory</div>
-        <div class="tombstone-divider"></div>
-        <div class="tombstone-meta"><span class="tombstone-meta-type">Development Land</span><br>Belleville</div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="tombstones-controls">
-    <button class="tombstones-btn" id="btn-prev" aria-label="Previous">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-    </button>
-    <button class="tombstones-btn" id="btn-next" aria-label="Next">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
-    <div class="tombstones-progress">
-      <div class="tombstones-progress-fill" id="progress-fill"></div>
+    <div class="services-grid">
+      <a href="services.html#acquisition-disposition" class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-name">Acquisition &amp;<br>Disposition</div>
+        <div class="service-sub">Sell-Side &amp; Buy-Side Advisory</div>
+        <div class="service-desc">Representing buyers and sellers of multi-family residential properties across Ontario — from four-unit walkups to 40+ unit purpose-built rentals. Every listing includes institutional-grade investment summaries: loss-to-lease analysis, normalized expense modeling, and zoning upside.</div>
+        <span class="service-link">Learn More <svg width="12" height="12" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a>
+      <a href="services.html#off-market" class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-name">Off-Market<br>Deal Sourcing</div>
+        <div class="service-sub">Private Sales &amp; Targeted Matching</div>
+        <div class="service-desc">The buyer for your building isn't browsing MLS. They already own a similar asset in the next town. We identify them through proprietary data analysis — debt maturity timing, ownership patterns, and operational signals — and connect them before properties reach the open market.</div>
+        <span class="service-link">Learn More <svg width="12" height="12" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a>
+      <a href="services.html#development-land" class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-name">Development Land<br>&amp; Assemblies</div>
+        <div class="service-sub">Land Advisory &amp; Site Identification</div>
+        <div class="service-desc">Identifying and facilitating land acquisitions for multi-family development. As developers shift to four-to-six-storey wood-frame builds, secondary market land along Ontario's growth corridors is commanding institutional attention.</div>
+        <span class="service-link">Learn More <svg width="12" height="12" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- === ABOUT === -->
-<section class="about" id="about">
-  <div class="about-left">
-    <div class="about-label">About McKinney Realty</div>
-    <h2 class="about-title">Principal-led advisory at <em>every</em> stage.</h2>
-    <p class="about-text">McKinney Realty occupies the space between institutional brokerages — where mid-market deals are delegated to junior associates — and residential agents handling occasional multi-family transactions without the specialized underwriting, marketing, or investor networks the asset class demands.</p>
-    <p class="about-text">Our practice brings two generations of multi-family transaction experience, deep roots across Ontario's secondary markets, and direct access to the private capital that dominates the sub-$20M segment.</p>
-    <a href="team.html" class="about-link">Meet the Team <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-  </div>
-  <div class="about-right">
-    <div class="about-portraits">
-      <div class="about-portrait">
-        <img src="images/liam-mckinney.jpg" alt="Liam McKinney">
-        <div class="about-portrait-info">
-          <div class="about-portrait-name">Liam McKinney</div>
-          <div class="about-portrait-role">Broker &middot; Managing Partner</div>
+<!-- ============================================================
+     TRACK RECORD (summary on homepage)
+     ============================================================ -->
+<section class="track">
+  <div class="wrap">
+    <div class="track-header">
+      <div class="label">Track Record</div>
+      <div class="track-header-top">
+        <h2 class="track-title">Selected <em class="gi">transactions</em></h2>
+        <div class="track-agg">
+          <div class="track-agg-num">$200M+</div>
+          <div class="track-agg-label">multi-family, commercial, and investment transactions across Ontario</div>
         </div>
       </div>
-      <div class="about-portrait">
-        <img src="images/sean-mckinney.jpg" alt="Sean McKinney">
-        <div class="about-portrait-info">
-          <div class="about-portrait-name">Sean McKinney</div>
-          <div class="about-portrait-role">Broker &middot; Co-Principal</div>
+    </div>
+
+    <div class="track-metrics">
+      <div class="track-metric"><div class="track-metric-num">250+</div><div class="track-metric-label">Career transactions</div></div>
+      <div class="track-metric"><div class="track-metric-num">12+</div><div class="track-metric-label">Ontario markets</div></div>
+      <div class="track-metric"><div class="track-metric-num">40+</div><div class="track-metric-label">Years in market</div></div>
+      <div class="track-metric"><div class="track-metric-num">2</div><div class="track-metric-label">Generations</div></div>
+    </div>
+
+    <div class="deal-grid">
+      <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$5.84M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Goderich</div></div>
+      <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$5.25M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Prince Edward County</div></div>
+      <div class="deal"><div class="deal-side">Buy &amp; Sell-Side</div><div class="deal-value">$5.07M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Greater Napanee</div></div>
+      <div class="deal"><div class="deal-side">Buy &amp; Sell-Side</div><div class="deal-value">$4.50M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Greater Napanee</div></div>
+      <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$3.55M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Goderich</div></div>
+      <div class="deal"><div class="deal-side">Buy-Side</div><div class="deal-value">$3.34M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Smiths Falls</div></div>
+      <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$2.57M</div><div class="deal-line"></div><div class="deal-type">Commercial</div><div class="deal-geo">Belleville</div></div>
+      <div class="deal"><div class="deal-side">Buy-Side</div><div class="deal-value">$2.50M</div><div class="deal-line"></div><div class="deal-type">Development Land</div><div class="deal-geo">Prince Edward County</div></div>
+    </div>
+
+    <div class="track-cta">
+      <a href="track-record.html" class="btn btn--outline">View Full Track Record <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section class="about on-dark">
+  <div class="wrap about-inner">
+    <div class="about-text-block">
+      <div class="label label--light" style="margin-bottom: var(--s-3)">About McKinney Realty</div>
+      <h2 class="about-title">Principal-led advisory at every stage.</h2>
+      <p class="about-prose">McKinney Realty operates at the intersection of generational relationship capital and modern deal execution — serving as trusted advisor to multi-family building owners, institutional investors, and developers across Ontario's secondary markets.</p>
+      <p class="about-prose">Our competitive advantage is structural: four decades of relationship depth in markets where institutional firms don't operate, combined with the analytical tools and marketing sophistication those markets now demand.</p>
+      <a href="team.html" class="about-link">Meet the Team <svg width="12" height="12" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+    <div class="about-photos-block">
+      <div class="about-photos">
+        <div class="about-portrait">
+          <div class="about-portrait-frame"><img src="images/sean-mckinney.jpg" alt="Sean McKinney"></div>
+          <div class="about-portrait-info"><div class="about-portrait-name">Sean McKinney</div><div class="about-portrait-role">Co-Principal</div></div>
+        </div>
+        <div class="about-portrait">
+          <div class="about-portrait-frame"><img src="images/liam-mckinney.jpg" alt="Liam McKinney"></div>
+          <div class="about-portrait-info"><div class="about-portrait-name">Liam McKinney</div><div class="about-portrait-role">Managing Partner</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- === QUOTE DIVIDER === -->
-<div class="quote-divider">
-  <div class="quote-divider-content">
-    <img class="quote-divider-watermark" src="images/mr-monogram-lg.png" alt="">
-    <blockquote>The relationships that surface off-market opportunities aren't built overnight. Ours span <em>four decades</em>.</blockquote>
+<!-- ============================================================
+     QUOTE DIVIDER
+     ============================================================ -->
+<div class="quote on-dark">
+  <img class="quote-mark" src="images/mr-monogram-lg.png" alt="" style="filter: brightness(0) invert(1);">
+  <div class="wrap">
+    <p class="quote-text">"The relationships that surface <em class="gi">off-market</em> opportunities aren't built overnight. Ours span <em class="gi">four decades</em>."</p>
     <div class="quote-rule"></div>
   </div>
 </div>
 
-<!-- === STRUCTURING HIGHLIGHT === -->
-<section class="structuring-highlight">
-  <div class="structuring-inner">
-    <div class="section-label">Beyond the Transaction</div>
-    <h2 class="structuring-title">The difference between a well-structured and a poorly-structured disposition can be <em>hundreds of thousands of dollars</em>.</h2>
-    <p class="structuring-text">Before we discuss pricing, we ensure our clients understand their full disposition picture — entity structure, CCA recapture exposure, and net after-tax proceeds. We work alongside your accountant and legal counsel to evaluate disposition timing, holding entity strategies, and succession planning so that every decision is informed before it's final.</p>
-    <a href="services.html#structuring" class="btn-secondary">Learn About Our Approach <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-  </div>
-</section>
-
-<!-- === MARKET CONTEXT === -->
-<section class="market-context" id="insights">
-  <div class="market-context-inner">
-    <div class="market-context-narrative">
-      <div class="section-label">Market Intelligence</div>
-      <h2>Ontario multi-family in <em>2026</em>.</h2>
-      <p>Cap rates have stabilized after two years of expansion. The bid-ask gap that froze the market in 2023 has closed, and transaction volume surged 25.1% quarter-over-quarter in Q4 2025 as Bank of Canada rate cuts restored positive leverage.</p>
-      <p>Simultaneously, construction starts are pausing across the province. Punitive development charges, tariff-driven materials costs, and broken pro formas have shut down the new supply pipeline. National apartment completions peaked at 25,000 units in 2025 — the highest since 1987 — but that peak is now behind us.</p>
-      <p>These structural dynamics are converging with a generational ownership transition: aging operators facing refinancing at dramatically higher rates, mandatory elevator modernizations at $120K–$400K+ per cab, and insurance premiums up 84% over the past decade.</p>
-      <div class="market-context-cta">
-        <a href="#" class="btn-primary">Subscribe to Market Updates <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <p>We publish monthly market updates and quarterly in-depth reports covering cap rates, vacancy, transaction volume, and regulatory developments across Ontario's multi-family markets.</p>
-      </div>
-    </div>
-    <div class="market-data-cards">
-      <div class="market-data-card">
-        <div class="mdc-number">25.1%</div>
-        <div class="mdc-text"><strong>Q4 2025 national CRE investment surge.</strong> Transaction volumes accelerating as rate cuts take hold.</div>
-      </div>
-      <div class="market-data-card">
-        <div class="mdc-number">~60%</div>
-        <div class="mdc-text"><strong>Commercial mortgages renewing 2025–2026.</strong> Owners who locked sub-2% rates face resets requiring significant fresh equity.</div>
-      </div>
-      <div class="market-data-card">
-        <div class="mdc-number">84%</div>
-        <div class="mdc-text"><strong>Ontario property insurance increase over the past decade.</strong> Annual increases of 7–12% continuing with restricted coverage.</div>
-      </div>
-      <div class="market-data-card">
-        <div class="mdc-number">25K</div>
-        <div class="mdc-text"><strong>National apartment completions in 2025 — the peak.</strong> Construction starts pausing across the province.</div>
-      </div>
+<!-- ============================================================
+     STRUCTURING HIGHLIGHT
+     ============================================================ -->
+<section class="structuring">
+  <div class="wrap">
+    <div class="structuring-inner">
+      <div class="label" style="margin-bottom: var(--s-3)">Beyond the Transaction</div>
+      <h2 class="structuring-title">The difference between a well-structured and a poorly-structured disposition can be <em class="gi">hundreds of thousands of dollars</em>.</h2>
+      <p class="structuring-prose">Before we discuss pricing, we ensure our clients understand their full disposition picture — entity structure, CCA recapture exposure, share versus asset sale implications, and net after-tax proceeds. We work alongside your accountant and legal counsel so that every decision is informed before it's final.</p>
+      <a href="services.html" class="btn btn--outline">Learn About Our Approach <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div>
   </div>
 </section>
 
-<!-- === DUAL CTA === -->
-<div class="dual-cta" id="contact">
+<!-- ============================================================
+     MARKET INTELLIGENCE
+     ============================================================ -->
+<section class="intel" id="insights">
+  <div class="wrap">
+    <div class="intel-header">
+      <div><div class="label">Market Intelligence</div><h2 class="intel-title">Ontario multi-family in <em class="gi">2026</em>.</h2></div>
+      <div class="intel-year">2026</div>
+    </div>
+    <div class="intel-strip">
+      <div class="intel-card"><div class="intel-card-num">25.1%</div><div class="intel-card-text"><strong>Q4 2025 CRE investment surge.</strong> Transaction volumes accelerating as rate cuts take hold.</div></div>
+      <div class="intel-card"><div class="intel-card-num">~60%</div><div class="intel-card-text"><strong>Mortgages renewing 2025–26.</strong> Sub-2% locks face resets requiring significant fresh equity.</div></div>
+      <div class="intel-card"><div class="intel-card-num">84%</div><div class="intel-card-text"><strong>Insurance increase, past decade.</strong> Annual 7–12% increases continuing with restricted coverage.</div></div>
+      <div class="intel-card"><div class="intel-card-num">25K</div><div class="intel-card-text"><strong>2025 completions — the peak.</strong> Construction starts pausing as development economics break down.</div></div>
+    </div>
+    <div class="intel-body">
+      <div class="intel-narrative">
+        <p>Cap rates have stabilized after two years of expansion. The bid-ask gap that froze the market in 2023 has closed, and transaction volume surged 25.1% quarter-over-quarter in Q4 2025 as Bank of Canada rate cuts restored positive leverage.</p>
+        <p>Simultaneously, construction starts are pausing across the province. Punitive development charges, tariff-driven materials costs, and broken pro formas have shut down the new supply pipeline. National apartment completions peaked at 25,000 units in 2025 — the highest since 1987 — but that peak is now behind us.</p>
+        <p>These structural dynamics are converging with a generational ownership transition: aging operators facing refinancing at dramatically higher rates, mandatory elevator modernizations at $120K–$400K+ per cab, and insurance premiums up 84% over the past decade.</p>
+        <div class="intel-cta">
+          <a href="#" data-mr-modal="subscribe" class="btn btn--navy">Subscribe to Market Updates <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <p class="intel-cta-note">Published quarterly. Cap rates, vacancy, transaction volume, and regulatory developments.</p>
+        </div>
+      </div>
+      <div class="intel-sidebar">
+        <div class="intel-sidebar-title">What we're watching</div>
+        <div class="intel-sidebar-item"><strong>Bank of Canada rate path</strong>Projected 50–75bps of additional cuts through 2026, restoring positive leverage for stabilized assets.</div>
+        <div class="intel-sidebar-item"><strong>Vacancy compression</strong>Ontario purpose-built vacancy tightening as immigration-driven demand outpaces stalled new supply.</div>
+        <div class="intel-sidebar-item"><strong>Generational transitions</strong>Aging operators facing refinancing cliffs and deferred CapEx creating a multi-year disposition wave.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DUAL CTA
+     ============================================================ -->
+<div class="dual-cta">
   <div class="dual-cta-panel">
-    <div class="section-label">For Property Owners</div>
-    <h3>Thinking about selling?</h3>
-    <p>We provide confidential valuations, tax-informed structuring guidance, and strategic advisory to multi-family building owners evaluating their options — whether that's a sale, a portfolio restructuring, or a succession plan.</p>
-    <a href="#" class="btn-primary">Request a Consultation <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <div class="label">For Property Owners</div>
+    <h3 class="dual-cta-title">Considering a disposition?</h3>
+    <p class="dual-cta-desc">Confidential valuations, tax-informed structuring guidance, and strategic advisory for multi-family building owners evaluating their options.</p>
+    <a href="contact.html" data-mr-modal="seller" class="btn btn--navy">Request a Consultation <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </div>
   <div class="dual-cta-panel">
-    <div class="section-label">For Investors</div>
-    <h3>Access off-market opportunities.</h3>
-    <p>Register to receive early access to investment opportunities, quarterly market reports, and cap rate data across Ontario's secondary markets — where fundamentals consistently outperform primary market pricing.</p>
-    <a href="#" class="btn-gold">Register as an Investor <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <div class="label">For Investors</div>
+    <h3 class="dual-cta-title">Access off-market opportunities.</h3>
+    <p class="dual-cta-desc">Early access to investment opportunities, quarterly market reports, and cap rate data across Ontario's secondary markets.</p>
+    <a href="#" data-mr-modal="investor" class="btn btn--gold">Register as an Investor <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </div>
 </div>
 
-<!-- === FOOTER === -->
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 <footer class="footer">
-  <div class="footer-principals">
-    <!-- Sean — Left -->
-    <div class="footer-principal">
-      <img class="footer-principal-photo" src="images/sean-mckinney.jpg" alt="Sean McKinney">
-      <div class="footer-principal-details">
-        <div class="footer-principal-name">Sean McKinney</div>
-        <div class="footer-principal-title">Broker of Record</div>
-        <div class="footer-principal-brokerage">
-          <img src="images/remax-quinte-logo.png" alt="RE/MAX Quinte Ltd., Brokerage">
-        </div>
-      </div>
-    </div>
-    <!-- Center brand -->
-    <div class="footer-center">
-      <img class="footer-monogram" src="images/mr-monogram-lg.png" alt="MR">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="images/mr-monogram-lg.png" alt="McKinney Realty">
       <div class="footer-brand-name">McKinney Realty</div>
       <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
     </div>
-    <!-- Liam — Right -->
-    <div class="footer-principal footer-principal--right">
-      <img class="footer-principal-photo" src="images/liam-mckinney.jpg" alt="Liam McKinney">
-      <div class="footer-principal-details">
-        <div class="footer-principal-name">Liam McKinney</div>
-        <div class="footer-principal-title">Broker</div>
-        <div class="footer-principal-brokerage">
-          <img src="images/propertyca-logo.png" alt="Property.ca Realty Inc., Brokerage">
-        </div>
+    <div class="footer-offices">
+      <div class="footer-office">
+        <div class="footer-office-region">Quinte &amp; Eastern Ontario</div>
+        <div class="footer-office-line">106 North Front St, Belleville, ON K8P 3B4</div>
+        <div class="footer-office-line" style="margin-top:0.25rem"><a href="tel:6139699907">(613) 969-9907</a> &middot; <a href="mailto:sean@remaxquinte.com">sean@remaxquinte.com</a></div>
+      </div>
+      <div class="footer-office">
+        <div class="footer-office-region">Toronto &amp; GTA</div>
+        <div class="footer-office-line">36 Distillery Lane, Suite 500, Toronto, ON M5A 3C4</div>
+        <div class="footer-office-line" style="margin-top:0.25rem"><a href="tel:6474671467">(647) 467-1467</a> &middot; <a href="mailto:liam@mckinneyrealty.ca">liam@mckinneyrealty.ca</a></div>
       </div>
     </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Sean McKinney, Broker, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Realty Inc., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="team.html">Team</a><a href="services.html">Services</a><a href="track-record.html">Track Record</a><a href="contact.html">Contact</a></div>
+    </div>
   </div>
-  <div class="footer-copyright">&copy; 2026 McKinney Realty &bull; mckinneyrealty.ca</div>
 </footer>
 
-<script>
-(function() {
-  const track = document.getElementById('tombstone-track');
-  const btnPrev = document.getElementById('btn-prev');
-  const btnNext = document.getElementById('btn-next');
-  const progressFill = document.getElementById('progress-fill');
-
-  const originalCards = track.innerHTML;
-  track.innerHTML = originalCards + originalCards;
-
-  const cardWidth = 340;
-  const gap = 20;
-  const step = cardWidth + gap;
-  const originalCount = 16;
-  const totalOriginalWidth = originalCount * step;
-
-  let position = 0;
-  let autoScrollRAF = null;
-  let isManual = false;
-  let autoSpeed = 0.35;
-
-  function setPosition(px) {
-    position = px;
-    track.style.transform = 'translateX(' + px + 'px)';
-    updateProgress();
-  }
-
-  function updateProgress() {
-    var absPos = Math.abs(position);
-    var pct = (absPos % totalOriginalWidth) / totalOriginalWidth * 100;
-    progressFill.style.width = pct + '%';
-  }
-
-  function autoScroll() {
-    if (isManual) return;
-    position -= autoSpeed;
-    if (Math.abs(position) >= totalOriginalWidth) {
-      position += totalOriginalWidth;
-    }
-    track.style.transform = 'translateX(' + position + 'px)';
-    updateProgress();
-    autoScrollRAF = requestAnimationFrame(autoScroll);
-  }
-
-  autoScrollRAF = requestAnimationFrame(autoScroll);
-
-  track.addEventListener('mouseenter', function() {
-    if (!isManual && autoScrollRAF) {
-      cancelAnimationFrame(autoScrollRAF);
-      autoScrollRAF = null;
-    }
-  });
-  track.addEventListener('mouseleave', function() {
-    if (!isManual) {
-      autoScrollRAF = requestAnimationFrame(autoScroll);
-    }
-  });
-
-  function switchToManual() {
-    if (isManual) return;
-    isManual = true;
-    if (autoScrollRAF) {
-      cancelAnimationFrame(autoScrollRAF);
-      autoScrollRAF = null;
-    }
-  }
-
-  function animateTo(target) {
-    var start = position;
-    var distance = target - start;
-    var duration = 500;
-    var startTime = null;
-
-    function ease(t) {
-      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    }
-
-    function tick(time) {
-      if (!startTime) startTime = time;
-      var elapsed = time - startTime;
-      var progress = Math.min(elapsed / duration, 1);
-      var eased = ease(progress);
-      setPosition(start + distance * eased);
-      if (progress < 1) {
-        requestAnimationFrame(tick);
-      }
-    }
-    requestAnimationFrame(tick);
-  }
-
-  btnNext.addEventListener('click', function() {
-    switchToManual();
-    var target = position - step * 2;
-    var maxScroll = -(totalOriginalWidth * 2 - window.innerWidth);
-    animateTo(Math.max(target, maxScroll));
-  });
-
-  btnPrev.addEventListener('click', function() {
-    switchToManual();
-    var target = position + step * 2;
-    animateTo(Math.min(target, 0));
-  });
-
-  var touchStartX = 0;
-  var touchStartPos = 0;
-  var isDragging = false;
-
-  track.addEventListener('touchstart', function(e) {
-    switchToManual();
-    isDragging = true;
-    touchStartX = e.touches[0].clientX;
-    touchStartPos = position;
-  }, { passive: true });
-
-  track.addEventListener('touchmove', function(e) {
-    if (!isDragging) return;
-    var dx = e.touches[0].clientX - touchStartX;
-    setPosition(touchStartPos + dx);
-  }, { passive: true });
-
-  track.addEventListener('touchend', function() {
-    isDragging = false;
-  });
-
-  updateProgress();
-})();
-</script>
+<!-- ============================================================
+     Mobile nav toggle
+     ============================================================ -->
 <script>
 (function() {
   var toggle = document.querySelector('.nav-toggle');
@@ -1642,8 +488,8 @@ img { max-width: 100%; height: auto; }
   var bars = '<path d="M3 12h18M3 6h18M3 18h18"/>';
   var x = '<path d="M18 6L6 18M6 6l12 12"/>';
   toggle.addEventListener('click', function() {
-    var open = links.classList.contains('open');
-    toggle.querySelector('svg').innerHTML = open ? bars : x;
+    var open = links.classList.toggle('open');
+    toggle.querySelector('svg').innerHTML = open ? x : bars;
   });
   links.querySelectorAll('a').forEach(function(a) {
     a.addEventListener('click', function() {
@@ -1660,6 +506,17 @@ img { max-width: 100%; height: auto; }
   });
 })();
 </script>
+
+<!-- ============================================================
+     Form submission helpers — required by the modal CTA system
+     so seller / investor / subscribe flows can POST to the backend.
+     ============================================================ -->
+<script src="mckinney-forms.js"></script>
+
+<!-- ============================================================
+     Modal CTA system — seller / investor / subscribe flows
+     ============================================================ -->
 <script src="mckinney-modal-cta.js"></script>
+
 </body>
 </html>

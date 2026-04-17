@@ -146,28 +146,70 @@
   color: #BBBBBB; font-weight: 300;
 }
 
-/* Radio/checkbox groups */
+/* Radio/checkbox groups — match the intake form treatment:
+   flat list + custom control with filled inner square / inner dot.
+   No pill container. Supports multi-select visually. */
 .mr-modal-checks {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  margin-top: 2px;
+  display: flex; flex-wrap: wrap; gap: 4px 28px;
+  margin-top: 6px;
 }
 .mr-modal-check {
-  display: flex; align-items: center; gap: 7px;
+  display: inline-flex; align-items: center; gap: 10px;
   font-family: 'DM Sans', -apple-system, sans-serif;
   font-size: 13px; font-weight: 300; color: #1A1A1A;
   cursor: pointer;
-  padding: 8px 14px;
-  border: 1px solid rgba(0,0,0,0.08);
-  background: #FAFAF8;
-  transition: border-color 0.2s, background 0.2s;
+  padding: 6px 0;
+  min-height: 32px;
+  background: transparent; border: none;
+  user-select: none;
+  transition: color 0.2s;
 }
-.mr-modal-check:hover {
-  border-color: rgba(0,0,0,0.15);
+.mr-modal-check:hover { color: #1A1F2E; }
+.mr-modal-check span { line-height: 1.4; }
+
+.mr-modal-check input[type="checkbox"],
+.mr-modal-check input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px; height: 18px; min-width: 18px;
+  flex-shrink: 0;
+  margin: 0; padding: 0;
+  border: 1.5px solid #999999;
+  background: #FFFFFF;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.15s, background-color 0.15s;
+  box-sizing: border-box;
 }
-.mr-modal-check input { width: auto; margin: 0; accent-color: #9A8B6F; }
-.mr-modal-check input:checked ~ span,
-.mr-modal-check:has(input:checked) {
-  border-color: #9A8B6F; background: rgba(154,139,111,0.04);
+.mr-modal-check input[type="checkbox"] { border-radius: 2px; }
+.mr-modal-check input[type="radio"]    { border-radius: 50%; }
+
+.mr-modal-check:hover input[type="checkbox"]:not(:checked),
+.mr-modal-check:hover input[type="radio"]:not(:checked) {
+  border-color: #1A1F2E;
+}
+
+/* CHECKBOX selected — inner navy square */
+.mr-modal-check input[type="checkbox"]:checked {
+  border-color: #1A1F2E; background: #FFFFFF;
+}
+.mr-modal-check input[type="checkbox"]:checked::after {
+  content: ''; position: absolute; top: 3px; left: 3px;
+  width: 9px; height: 9px; background: #1A1F2E;
+}
+
+/* RADIO selected — inner navy dot */
+.mr-modal-check input[type="radio"]:checked {
+  border-color: #1A1F2E; background: #FFFFFF;
+}
+.mr-modal-check input[type="radio"]:checked::after {
+  content: ''; position: absolute; top: 3px; left: 3px;
+  width: 9px; height: 9px; background: #1A1F2E; border-radius: 50%;
+}
+
+.mr-modal-check input:focus-visible {
+  outline: 2px solid #B8A88A;
+  outline-offset: 2px;
 }
 
 /* =========================================================================
@@ -477,7 +519,13 @@
       var form = document.getElementById('mr-seller-step1');
       if (form) form.addEventListener('submit', function(e) {
         e.preventDefault();
-        showSellerConfirm(new FormData(form));
+        var fd = new FormData(form);
+        postModalPayload(form, fd, {
+          form_type: 'disposition',
+          step: 1,
+          source: 'modal_seller'
+        });
+        showSellerConfirm(fd);
       });
     }, 50);
   }
@@ -592,6 +640,11 @@
       var form = document.getElementById('mr-seller-step2');
       if (form) form.addEventListener('submit', function(e) {
         e.preventDefault();
+        postModalPayload(form, new FormData(form), {
+          form_type: 'disposition',
+          step: 2,
+          source: 'modal_seller'
+        }, contactData);
         showFinalConfirm('seller');
       });
     }, 50);
@@ -641,7 +694,13 @@
       var form = document.getElementById('mr-investor-step1');
       if (form) form.addEventListener('submit', function(e) {
         e.preventDefault();
-        showInvestorConfirm(new FormData(form));
+        var fd = new FormData(form);
+        postModalPayload(form, fd, {
+          form_type: 'acquisition',
+          step: 1,
+          source: 'modal_investor'
+        });
+        showInvestorConfirm(fd);
       });
     }, 50);
   }
@@ -784,6 +843,11 @@
       var form = document.getElementById('mr-investor-step2');
       if (form) form.addEventListener('submit', function(e) {
         e.preventDefault();
+        postModalPayload(form, new FormData(form), {
+          form_type: 'acquisition',
+          step: 2,
+          source: 'modal_investor'
+        }, contactData);
         showFinalConfirm('investor');
       });
     }, 50);
@@ -803,6 +867,10 @@
       '</div>' +
       '<div class="mr-modal-body">' +
         '<form id="mr-subscribe-form">' +
+          '<div class="mr-modal-row">' +
+            '<div class="mr-modal-field"><label>First Name</label><input type="text" name="first_name" required></div>' +
+            '<div class="mr-modal-field"><label>Last Name</label><input type="text" name="last_name" required></div>' +
+          '</div>' +
           '<div class="mr-modal-subscribe-row">' +
             '<input type="email" name="email" placeholder="Your email address" required>' +
             '<button type="submit">Subscribe</button>' +
@@ -815,6 +883,14 @@
       var form = document.getElementById('mr-subscribe-form');
       if (form) form.addEventListener('submit', function(e) {
         e.preventDefault();
+        // Route subscribe through the backend's "general" handler so it
+        // triggers the existing email notification to Liam. The source
+        // and subject fields make the purpose obvious at a glance.
+        postModalPayload(form, new FormData(form), {
+          form_type: 'general',
+          source: 'modal_subscribe',
+          subject: 'Market Insights subscription request'
+        });
         showSubscribeConfirm();
       });
     }, 50);
@@ -870,6 +946,94 @@
   /* ---------------------------------------------------
      UTILITIES
   --------------------------------------------------- */
+  /* ---------------------------------------------------
+     Populate form-type-specific contact fields from the canonical
+     first_name/last_name/email/phone that modal step 1 collects.
+     - disposition form_type → owner_name / owner_email / owner_phone
+     - acquisition form_type → investor_name / investor_email / investor_phone
+     Only fills keys that are missing or empty so explicit form values
+     from the standalone intake pages are never clobbered.
+  --------------------------------------------------- */
+  function mirrorContactToFormTypeFields(payload) {
+    var prefix = null;
+    if (payload.form_type === 'disposition') prefix = 'owner';
+    else if (payload.form_type === 'acquisition') prefix = 'investor';
+    if (!prefix) return;
+
+    var fn = (payload.first_name || '').toString().trim();
+    var ln = (payload.last_name  || '').toString().trim();
+    var fullName = (fn + ' ' + ln).trim();
+
+    var nameKey  = prefix + '_name';
+    var emailKey = prefix + '_email';
+    var phoneKey = prefix + '_phone';
+
+    if (fullName && !payload[nameKey]) payload[nameKey] = fullName;
+    if (payload.email && !payload[emailKey]) payload[emailKey] = payload.email;
+    if (payload.phone && !payload[phoneKey]) payload[phoneKey] = payload.phone;
+  }
+
+  /* ---------------------------------------------------
+     BACKEND SUBMISSION
+     Sends the modal form payload to the Apps Script Web App via
+     McKinneyForms.submit (defined in mckinney-forms.js).
+     Silently no-ops if the forms module hasn't loaded — the modal
+     UI still progresses so the user is never stuck.
+
+     meta: { form_type, step, source, subject }
+     priorData: FormData from an earlier step to merge into this payload
+  --------------------------------------------------- */
+  function postModalPayload(form, formData, meta, priorData) {
+    if (typeof window.McKinneyForms === 'undefined' || !window.McKinneyForms.submit) {
+      return;
+    }
+
+    // Build payload from current step's form (handles multi-value checkboxes
+    // by routing through McKinneyForms.collectPayload when the form element
+    // is available). For modal forms we generally have flat fields, but this
+    // keeps the interface consistent with the standalone intake pages.
+    var payload;
+    try {
+      payload = window.McKinneyForms.collectPayload(form, {
+        formType: meta.form_type
+      });
+    } catch (err) {
+      // Fallback: flatten FormData manually
+      payload = { form_type: meta.form_type };
+      formData.forEach(function(value, key) {
+        payload[key] = value;
+      });
+    }
+
+    // Merge step 1 contact data into step 2 submissions so each record
+    // stands alone and Liam can see full context.
+    if (priorData && typeof priorData.forEach === 'function') {
+      priorData.forEach(function(value, key) {
+        if (!(key in payload) || payload[key] === '') {
+          payload[key] = value;
+        }
+      });
+    }
+
+    if (meta.step) payload.step = meta.step;
+    if (meta.source) payload.source = meta.source;
+    if (meta.subject) payload.subject = meta.subject;
+
+    // Mirror the canonical contact fields into the form-type-specific
+    // names the backend's acquisition/disposition handlers expect. The
+    // modal forms use first_name/last_name/email/phone; the standalone
+    // intake pages use owner_name/investor_name + *_email/*_phone.
+    // Sending both conventions lets the backend map either way without
+    // us needing to know which columns it reads.
+    mirrorContactToFormTypeFields(payload);
+
+    try {
+      window.McKinneyForms.submit(payload);
+    } catch (err) {
+      // Silent — modal UI continues regardless.
+    }
+  }
+
   function escHtml(s) {
     var d = document.createElement('div');
     d.appendChild(document.createTextNode(s));

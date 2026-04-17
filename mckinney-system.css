@@ -1,0 +1,311 @@
+/* ================================================================
+   McKinney Realty — Design System CSS v1.0
+   Shared tokens, utilities, and cross-page components.
+   Page-specific sections live in each page's <style> block.
+   ================================================================ */
+
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root {
+  --white: #FFFFFF;
+  --offwhite: #FAFAF8;
+  --cream: #F5F3EF;
+  --stone-50: #E8E4DD;
+  --gold: #B8A88A;
+  --gold-light: #C9BBAA;
+  --gold-dark: #9A8B6F;
+  --navy: #1A1F2E;
+  --navy-light: #2A3044;
+  --text-1: #1A1A1A;
+  --text-2: #6B6B6B;
+  --text-3: #999999;
+  --border: rgba(0,0,0,0.07);
+  --border-strong: rgba(0,0,0,0.12);
+  --font-d: 'Cormorant Garamond', Georgia, serif;
+  --font-b: 'DM Sans', -apple-system, sans-serif;
+  --d-hero: clamp(3.25rem, 5.5vw, 4.5rem);
+  --d-section: clamp(2rem, 3vw, 2.75rem);
+  --d-sub: clamp(1.5rem, 2vw, 1.75rem);
+  --d-stat: clamp(2.5rem, 4vw, 3.5rem);
+  --d-stat-sm: clamp(1.75rem, 2.5vw, 2.25rem);
+  --d-mega: clamp(5rem, 10vw, 9rem);
+  --b-lg: 1.0625rem;
+  --b-md: 0.9375rem;
+  --b-sm: 0.8125rem;
+  --b-xs: 0.6875rem;
+  --s-1: 0.5rem; --s-2: 1rem; --s-3: 1.5rem; --s-4: 2rem;
+  --s-5: 3rem; --s-6: 4rem; --s-7: 6rem; --s-8: 8rem;
+  --s-section: clamp(5rem, 8vw, 7.5rem);
+  --side: clamp(1.5rem, 4vw, 3.75rem);
+  --max-w: 1320px;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-b); color: var(--text-1); background: var(--white); overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.wrap { max-width: var(--max-w); margin: 0 auto; padding-left: var(--side); padding-right: var(--side); }
+.label { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dark); }
+.label--light { color: var(--gold-light); }
+em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color: var(--gold-dark); }
+.on-dark em.gi { color: var(--gold-light); }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.625rem;
+  padding: 0.875rem 2rem; font-size: var(--b-sm); font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; border: none; transition: all 0.3s;
+}
+.btn svg { width: 14px; height: 14px; transition: transform 0.3s; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.btn:hover svg { transform: translateX(3px); }
+.btn--navy { background: var(--navy); color: var(--white); }
+.btn--navy:hover { background: var(--navy-light); }
+.btn--outline { background: transparent; color: var(--navy); border: 1px solid var(--border-strong); }
+.btn--outline:hover { border-color: var(--navy); }
+.btn--gold { background: var(--gold-dark); color: var(--white); }
+.btn--gold:hover { background: var(--gold); }
+
+/* ============================================================
+   NAV — with hamburger toggle
+   ============================================================ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 4.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--side);
+  background: rgba(255,255,255,0.94); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-brand { display: flex; align-items: center; gap: 0.875rem; }
+.nav-mono { height: 36px; width: auto; }
+.nav-text { display: flex; flex-direction: column; }
+.nav-name { font-family: var(--font-d); font-size: 1.125rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy); line-height: 1; }
+.nav-sub { font-size: 0.5rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-dark); margin-top: 2px; }
+.nav-links { display: flex; gap: 2.25rem; align-items: center; }
+.nav-links a { font-size: var(--b-sm); font-weight: 400; color: var(--text-2); letter-spacing: 0.03em; transition: color 0.3s; }
+.nav-links a:hover { color: var(--text-1); }
+.nav-links a.active { color: var(--text-1); }
+.nav-cta { font-size: 0.6875rem !important; font-weight: 500 !important; padding: 0.5rem 1.25rem; border: 1px solid var(--navy); color: var(--navy) !important; letter-spacing: 0.08em !important; text-transform: uppercase; transition: all 0.3s !important; }
+.nav-cta:hover { background: var(--navy) !important; color: var(--white) !important; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
+
+/* ============================================================
+   TRACK RECORD — deal grid + metrics strip (used across pages)
+   ============================================================ */
+.track { padding: var(--s-section) 0; background: var(--white); border-top: 1px solid var(--border); }
+.track-header {
+  margin-bottom: var(--s-5);
+}
+.track-header .label { margin-bottom: var(--s-2); }
+.track-header-top {
+  display: flex; justify-content: space-between; align-items: baseline;
+  flex-wrap: wrap; gap: var(--s-3);
+}
+.track-title {
+  font-family: var(--font-d); font-size: var(--d-section); font-weight: 300;
+  line-height: 1.2; color: var(--navy);
+}
+.track-agg {
+  display: flex; align-items: baseline; gap: var(--s-3);
+}
+.track-agg-num {
+  font-family: var(--font-d); font-size: var(--d-stat); font-weight: 300; color: var(--navy); line-height: 1;
+}
+.track-agg-label {
+  font-size: var(--b-xs); font-weight: 400; color: var(--text-3); max-width: 240px; line-height: 1.4;
+}
+
+/* Metrics strip */
+.track-metrics {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border); border-bottom: 2px solid var(--gold);
+  background: var(--offwhite); margin-bottom: var(--s-5);
+}
+.track-metric { padding: var(--s-3) var(--s-4); border-right: 1px solid var(--border); }
+.track-metric:last-child { border-right: none; }
+.track-metric-num { font-family: var(--font-d); font-size: var(--d-stat-sm); font-weight: 300; color: var(--navy); line-height: 1; }
+.track-metric-label { font-size: var(--b-xs); font-weight: 400; color: var(--text-3); margin-top: 0.25rem; }
+
+/* Deal grid + tombstone */
+.deal-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+}
+.deal {
+  background: var(--offwhite); padding: var(--s-3); position: relative; transition: all 0.3s;
+}
+.deal::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0;
+  background: var(--gold); transition: height 0.4s;
+}
+.deal:hover::before { height: 100%; }
+.deal:hover { background: var(--cream); }
+.deal-side {
+  font-size: 0.5625rem; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--gold-dark); margin-bottom: var(--s-2);
+}
+.deal-value {
+  font-family: var(--font-d); font-size: 1.75rem; font-weight: 300;
+  color: var(--navy); line-height: 1; margin-bottom: var(--s-2);
+}
+.deal-line { height: 1px; background: var(--border); margin-bottom: var(--s-2); }
+.deal-type { font-size: var(--b-sm); font-weight: 400; color: var(--text-1); margin-bottom: 0.125rem; }
+.deal-geo { font-size: var(--b-sm); font-weight: 300; color: var(--text-2); }
+.track-cta { margin-top: var(--s-5); text-align: center; }
+
+/* ============================================================
+   QUOTE DIVIDER — reused on team.html
+   ============================================================ */
+.quote {
+  background: var(--navy); padding: var(--s-7) 0;
+  text-align: center; position: relative; overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+.quote-mark {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  height: 220px; width: auto; opacity: 0.025; pointer-events: none;
+}
+.quote-text {
+  font-family: var(--font-d); font-size: clamp(1.375rem, 2.5vw, 2rem);
+  font-weight: 300; font-style: italic; line-height: 1.55;
+  color: rgba(255,255,255,0.85); max-width: 680px; margin: 0 auto; position: relative; z-index: 1;
+}
+.quote-rule { width: 40px; height: 1px; background: var(--gold); margin: var(--s-4) auto 0; }
+
+/* ============================================================
+   DUAL CTA — reused on services.html
+   ============================================================ */
+.dual-cta { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border); }
+.dual-cta-panel { padding: var(--s-8) var(--s-6); text-align: center; display: flex; flex-direction: column; align-items: center; }
+.dual-cta-panel:first-child { border-right: 1px solid var(--border); }
+.dual-cta-panel .label { margin-bottom: var(--s-2); }
+.dual-cta-title { font-family: var(--font-d); font-size: clamp(1.625rem, 2.5vw, 2.25rem); font-weight: 300; color: var(--navy); margin-bottom: var(--s-3); line-height: 1.2; }
+.dual-cta-desc { font-size: var(--b-sm); font-weight: 300; line-height: 1.7; color: var(--text-2); max-width: 380px; margin: 0 auto; flex-grow: 1; }
+.dual-cta-panel .btn { margin-top: var(--s-5); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer { background: var(--navy); padding: var(--s-5) 0 var(--s-3); }
+.footer-brand {
+  text-align: center; padding-bottom: var(--s-4);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: var(--s-4);
+}
+.footer-brand-mono { height: 40px; width: auto; opacity: 1; margin: 0 auto var(--s-2); filter: brightness(0) invert(1); }
+.footer-brand-name {
+  font-family: var(--font-d); font-size: 0.9375rem; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5);
+  margin-bottom: 0.1875rem;
+}
+.footer-brand-byline {
+  font-size: 0.5rem; font-weight: 400; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--gold-dark); margin-bottom: var(--s-2);
+}
+.footer-brand-scope {
+  font-size: var(--b-sm); font-weight: 300; color: rgba(255,255,255,0.2);
+  line-height: 1.5;
+}
+.footer-offices {
+  display: flex; justify-content: center; gap: var(--s-8);
+  margin-bottom: var(--s-3);
+}
+.footer-office-region { font-size: 0.5625rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.625rem; }
+.footer-office-line { font-size: var(--b-sm); font-weight: 300; color: rgba(255,255,255,0.35); line-height: 1.5; }
+.footer-office-line a { transition: color 0.3s; }
+.footer-office-line a:hover { color: var(--white); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: var(--s-2); border-top: 1px solid rgba(255,255,255,0.06);
+  flex-wrap: wrap; gap: var(--s-2);
+}
+.footer-legal { font-size: 0.6875rem; font-weight: 300; color: rgba(255,255,255,0.15); line-height: 1.7; }
+.footer-nav { display: flex; gap: var(--s-3); }
+.footer-nav a { font-size: 0.6875rem; font-weight: 400; color: rgba(255,255,255,0.2); letter-spacing: 0.03em; transition: color 0.3s; }
+.footer-nav a:hover { color: rgba(255,255,255,0.5); }
+
+/* ============================================================
+   FORM SUBMISSION — confirmation & error panels
+   Used by all three intake forms (acquisition, disposition, contact).
+   Injected by mckinney-forms.js after a successful submission.
+   ============================================================ */
+.mr-form-confirmation {
+  background: var(--cream);
+  border-left: 3px solid var(--gold);
+  padding: var(--s-5) var(--s-6);
+  max-width: 720px;
+  animation: fadeUp 0.5s ease forwards;
+}
+.mr-form-confirmation-label {
+  font-size: var(--b-xs); font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-dark); margin-bottom: var(--s-2);
+}
+.mr-form-confirmation-title {
+  font-family: var(--font-d); font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 300; color: var(--navy);
+  line-height: 1.2; margin-bottom: var(--s-3);
+}
+.mr-form-confirmation-body {
+  font-family: var(--font-b);
+  font-size: var(--b-md); font-weight: 300;
+  line-height: 1.75; color: var(--text-2);
+  max-width: 540px;
+}
+
+.mr-form-error {
+  padding: var(--s-3) var(--s-4);
+  margin-bottom: var(--s-4);
+  background: rgba(184,71,71,0.06);
+  border-left: 3px solid #b84747;
+  font-size: var(--b-sm); font-weight: 400;
+  line-height: 1.6; color: #7a2e2e;
+}
+
+/* ============================================================
+   SHARED ANIMATIONS
+   ============================================================ */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ============================================================
+   RESPONSIVE — shared components only
+   ============================================================ */
+@media (max-width: 1024px) {
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: fixed; top: 4.5rem; left: 0; right: 0;
+    background: rgba(255,255,255,0.98); backdrop-filter: blur(16px);
+    padding: var(--s-4); gap: var(--s-3);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  }
+  .deal-grid { grid-template-columns: 1fr 1fr; }
+  .track-metrics { grid-template-columns: 1fr 1fr; }
+  .track-metric:nth-child(2) { border-right: none; }
+  .dual-cta { grid-template-columns: 1fr; }
+  .dual-cta-panel:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+  .footer-offices { flex-direction: column; gap: var(--s-4); align-items: center; text-align: center; }
+  .track-header-top { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .deal-grid { grid-template-columns: 1fr; }
+  .track-metrics { grid-template-columns: 1fr; }
+  .track-metric { border-right: none; border-bottom: 1px solid var(--border); }
+  .track-metric:last-child { border-bottom: none; }
+}
