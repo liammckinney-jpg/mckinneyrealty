@@ -22,7 +22,7 @@
   // -------------------------------------------------------------------
   // CONFIG — single place to update the backend endpoint
   // -------------------------------------------------------------------
-  var WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxUftGUlNNIixjMmuqR54obU4zGZneXl5CtoHo3wUPz148c2RjV6tjLLRLI8Fm-86HmXQ/exec';
+  var WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbw7jMXR6CHQJp5VZzG3JtKJtnnGM0VKZNEF3HcKNXx8cWk6E2NjwU4ouiJmorBmTGSX/exec';
 
   // -------------------------------------------------------------------
   // Data collection
