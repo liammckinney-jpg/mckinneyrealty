@@ -32,7 +32,7 @@
 }
 .hero-watermark {
   position: absolute; right: var(--side); top: 50%; transform: translateY(-52%);
-  height: clamp(400px, 55vw, 700px); width: auto;
+  height: clamp(400px, 55vw, 880px); width: auto;
   pointer-events: none;
   animation: heroFade 1.5s ease 0.3s forwards; opacity: 0;
 }
@@ -200,13 +200,6 @@
 /* ============================================================
    RESPONSIVE — homepage sections
    ============================================================ */
-@media (min-width: 1600px) {
-  /* 16"+ displays — restore the dramatic overlap effect the monogram
-     has on smaller screens. The default clamp caps at 700px which stops
-     the watermark from scaling past ~1272px viewport, making it look
-     small and disconnected from the hero on 16" MacBooks and up. */
-  .hero-watermark { height: clamp(800px, 58vw, 1200px); }
-}
 @media (max-width: 1024px) {
   .about-inner { grid-template-columns: 1fr; }
   .about-photos { max-width: 420px; }
