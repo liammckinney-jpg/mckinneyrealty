@@ -38,6 +38,17 @@
   --s-5: 3rem; --s-6: 4rem; --s-7: 6rem; --s-8: 8rem;
   --s-section: clamp(5rem, 8vw, 7.5rem);
   --side: clamp(1.5rem, 4vw, 3.75rem);
+  --max-w: 1560px;
+}
+
+/* ============================================================
+   ENVELOPE VARIANTS
+   Default envelope (--max-w: 1560px) applies to data-dense pages:
+   homepage, track-record. Editorial pages (team, services, contact)
+   tighten to 1320px for prose-forward composition density.
+   The nav uses a separate persistent 1560px and is unaffected.
+   ============================================================ */
+body.page-editorial {
   --max-w: 1320px;
 }
 
@@ -81,10 +92,15 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
    ============================================================ */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 4.5rem;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 var(--side);
   background: rgba(255,255,255,0.94); backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1560px;  /* Persistent nav width — does not follow --max-w */
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 var(--side);
+  display: flex; align-items: center; justify-content: space-between;
 }
 .nav-brand { display: flex; align-items: center; gap: 0.875rem; }
 .nav-mono { height: 36px; width: auto; }
