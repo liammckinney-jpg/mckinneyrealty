@@ -222,6 +222,7 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
   margin-bottom: var(--s-3);
 }
 .footer-office-region { font-size: 0.5625rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.625rem; }
+.footer-office-brokerage { font-size: var(--b-sm); font-weight: 300; color: rgba(255,255,255,0.35); line-height: 1.5; }
 .footer-office-line { font-size: var(--b-sm); font-weight: 300; color: rgba(255,255,255,0.35); line-height: 1.5; }
 .footer-office-line a { transition: color 0.3s; }
 .footer-office-line a:hover { color: var(--white); }

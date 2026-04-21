@@ -68,6 +68,37 @@
   filter: grayscale(15%); display: block;
 }
 
+/* Bio header — name/title/location on left, brokerage logo on right */
+.tm-bio-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  margin-bottom: var(--s-4);
+}
+.tm-bio-header-text {
+  flex: 1;
+  min-width: 0;
+}
+.tm-bio-header-text .tm-bio-location {
+  margin-bottom: 0;
+}
+.tm-bio-brokerage {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.tm-bio-brokerage img {
+  height: 36px;
+  width: auto;
+  max-width: 130px;
+  opacity: 0.9;
+}
+.tm-bio-brokerage img[src*="propertyca"] {
+  height: 29px;
+  max-width: 107px;
+}
+
 /* Bio content header */
 .tm-bio-name {
   font-family: var(--font-d); font-size: clamp(1.75rem, 2.5vw, 2.25rem); font-weight: 400;
@@ -147,6 +178,10 @@
 @media (max-width: 768px) {
   .tm-hero { padding-top: 7rem; padding-bottom: var(--s-6); }
   .tm-bio-contact { flex-direction: column; gap: var(--s-3); }
+  .tm-bio-header { flex-direction: column; align-items: flex-start; gap: var(--s-3); }
+  .tm-bio-header-text .tm-bio-location { margin-bottom: 0; }
+  .tm-bio-brokerage img { height: 29px; }
+  .tm-bio-brokerage img[src*="propertyca"] { height: 24px; }
 }
 </style>
 </head>
@@ -198,9 +233,16 @@
         </div>
       </div>
       <div class="tm-bio-content">
-        <h2 class="tm-bio-name">Sean McKinney</h2>
-        <div class="tm-bio-title">Broker &middot; Co-Principal</div>
-        <div class="tm-bio-location">Based in Belleville &amp; Quinte Region</div>
+        <div class="tm-bio-header">
+          <div class="tm-bio-header-text">
+            <h2 class="tm-bio-name">Sean McKinney</h2>
+            <div class="tm-bio-title">Broker of Record</div>
+            <div class="tm-bio-location">Based in Belleville &amp; Quinte Region</div>
+          </div>
+          <div class="tm-bio-brokerage">
+            <img src="images/remax-quinte-logo.png" alt="RE/MAX Quinte Ltd.">
+          </div>
+        </div>
 
         <div class="track-metrics">
           <div class="track-metric"><div class="track-metric-num">40+</div><div class="track-metric-label">Years in Real Estate</div></div>
@@ -247,9 +289,16 @@
   <div class="wrap">
     <div class="tm-bio-grid tm-bio-grid--reversed">
       <div class="tm-bio-content">
-        <h2 class="tm-bio-name">Liam McKinney</h2>
-        <div class="tm-bio-title">Broker &middot; Managing Partner</div>
-        <div class="tm-bio-location">Based in Toronto &amp; Prince Edward County</div>
+        <div class="tm-bio-header">
+          <div class="tm-bio-header-text">
+            <h2 class="tm-bio-name">Liam McKinney</h2>
+            <div class="tm-bio-title">Broker &middot; Managing Partner</div>
+            <div class="tm-bio-location">Based in Toronto &amp; Prince Edward County</div>
+          </div>
+          <div class="tm-bio-brokerage">
+            <img src="images/propertyca-logo.png" alt="Property.ca Inc., Brokerage">
+          </div>
+        </div>
 
         <div class="track-metrics">
           <div class="track-metric"><div class="track-metric-num">13</div><div class="track-metric-label">Years in Real Estate</div></div>
@@ -309,13 +358,13 @@
     <div class="footer-offices">
       <div class="footer-office">
         <div class="footer-office-region">Quinte &amp; Eastern Ontario</div>
-        <div class="footer-office-line">106 North Front St, Belleville, ON K8P 3B4</div>
-        <div class="footer-office-line" style="margin-top:0.25rem"><a href="tel:6139699907">(613) 969-9907</a> &middot; <a href="mailto:sean@remaxquinte.com">sean@remaxquinte.com</a></div>
+        <div class="footer-office-brokerage">RE/MAX Quinte Ltd.</div><div class="footer-office-line">106 North Front St, Belleville, ON K8P 3B4</div>
+        <div class="footer-office-line"><a href="tel:6139699907">(613) 969-9907</a> &middot; <a href="mailto:sean@remaxquinte.com">sean@remaxquinte.com</a></div>
       </div>
       <div class="footer-office">
         <div class="footer-office-region">Toronto &amp; GTA</div>
-        <div class="footer-office-line">36 Distillery Lane, Suite 500, Toronto, ON M5A 3C4</div>
-        <div class="footer-office-line" style="margin-top:0.25rem"><a href="tel:6474671467">(647) 467-1467</a> &middot; <a href="mailto:liam@mckinneyrealty.ca">liam@mckinneyrealty.ca</a></div>
+        <div class="footer-office-brokerage">Property.ca Inc., Brokerage</div><div class="footer-office-line">36 Distillery Lane, Suite 500, Toronto, ON M5A 3C4</div>
+        <div class="footer-office-line"><a href="tel:6474671467">(647) 467-1467</a> &middot; <a href="mailto:liam@mckinneyrealty.ca">liam@mckinneyrealty.ca</a></div>
       </div>
     </div>
     <div class="footer-bottom">
