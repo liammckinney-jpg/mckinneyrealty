@@ -200,6 +200,13 @@
 /* ============================================================
    RESPONSIVE — homepage sections
    ============================================================ */
+@media (min-width: 1600px) {
+  /* 16"+ displays — restore the dramatic overlap effect the monogram
+     has on smaller screens. The default clamp caps at 700px which stops
+     the watermark from scaling past ~1272px viewport, making it look
+     small and disconnected from the hero on 16" MacBooks and up. */
+  .hero-watermark { height: clamp(800px, 58vw, 1200px); }
+}
 @media (max-width: 1024px) {
   .about-inner { grid-template-columns: 1fr; }
   .about-photos { max-width: 420px; }
