@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+<title>McKinney Realty — Services | Multi-Family &amp; Investment Real Estate</title>
+<meta name="description" content="Specialized multi-family advisory services: acquisition and disposition brokerage, off-market deal sourcing, and development land advisory across Ontario.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="McKinney Realty">
+<meta property="og:title" content="Services — McKinney Realty">
+<meta property="og:description" content="Specialized multi-family advisory: acquisition and disposition brokerage, off-market deal sourcing, and development land advisory across Ontario.">
+<meta property="og:url" content="https://mckinneyrealty.ca/services">
+<meta property="og:image" content="https://mckinneyrealty.ca/images/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Services — McKinney Realty">
+<meta name="twitter:description" content="Specialized multi-family advisory: acquisition and disposition brokerage, off-market deal sourcing, and development land advisory across Ontario.">
+<meta name="twitter:image" content="https://mckinneyrealty.ca/images/og-default.jpg">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VFY0V42GLR');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mckinney-system.css?v=2">
+<style>
+/* ============================================================
+   PAGE-SPECIFIC: services.html
+   ============================================================ */
+
+/* Page hero — reuses track-header pattern with hero-level top padding */
+.sv-hero {
+  padding: 8rem 0 var(--s-section);
+  background: var(--white);
+}
+.sv-hero .label { margin-bottom: var(--s-4); }
+.sv-hero-title {
+  font-family: var(--font-d); font-size: var(--d-hero); font-weight: 300;
+  line-height: 1.08; color: var(--navy); margin-bottom: var(--s-4);
+  max-width: 860px;
+}
+.sv-hero-desc {
+  font-size: var(--b-lg); font-weight: 300; line-height: 1.7;
+  color: var(--text-2); max-width: 580px;
+}
+
+/* Service detail sections — two-column editorial layout */
+.sv-detail {
+  padding: var(--s-section) 0;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+}
+.sv-detail-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--s-7);
+  align-items: start;
+}
+.sv-detail-title {
+  font-family: var(--font-d); font-size: var(--d-sub); font-weight: 400;
+  color: var(--navy); line-height: 1.25; margin-bottom: var(--s-1);
+}
+.sv-detail-sub {
+  font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--gold-dark);
+}
+.sv-detail-body p {
+  font-size: var(--b-md); font-weight: 300; line-height: 1.85;
+  color: var(--text-2); margin-bottom: var(--s-3);
+}
+.sv-detail-body p:last-child { margin-bottom: 0; }
+
+/* Investment Summary Showcase */
+.sv-showcase {
+  padding: var(--s-section) 0;
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+}
+.sv-showcase-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: var(--s-7);
+  align-items: center;
+}
+.sv-showcase-text .label { margin-bottom: var(--s-3); }
+.sv-showcase-title {
+  font-family: var(--font-d); font-size: var(--d-section); font-weight: 300;
+  line-height: 1.2; color: var(--navy); margin-bottom: var(--s-4);
+}
+.sv-showcase-prose {
+  font-size: var(--b-md); font-weight: 300; line-height: 1.8;
+  color: var(--text-2); margin-bottom: var(--s-5);
+  max-width: 480px;
+}
+.sv-showcase-docs {
+  position: relative;
+  min-height: 480px;
+}
+.sv-doc {
+  position: absolute;
+  width: 62%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  border: 1px solid rgba(0,0,0,0.04);
+  background: var(--white);
+}
+.sv-doc img {
+  width: 100%; height: auto; display: block;
+}
+.sv-doc--p1 {
+  top: 0; left: 0;
+  transform: rotate(-2.5deg);
+  z-index: 1;
+}
+.sv-doc--p2 {
+  top: 48px; right: 0;
+  transform: rotate(2deg);
+  z-index: 2;
+}
+
+@media (max-width: 1024px) {
+  .sv-detail-grid { grid-template-columns: 240px 1fr; gap: var(--s-6); }
+  .sv-showcase-grid { grid-template-columns: 1fr; gap: var(--s-6); }
+  .sv-showcase-docs { min-height: 420px; max-width: 560px; }
+}
+@media (max-width: 768px) {
+  .sv-hero { padding-top: 7rem; padding-bottom: var(--s-6); }
+  .sv-detail-grid { grid-template-columns: 1fr; gap: var(--s-4); }
+  .sv-showcase-docs { min-height: 360px; }
+  .sv-doc { width: 70%; }
+  .sv-doc--p2 { top: 32px; }
+}
+@media (max-width: 480px) {
+  .sv-showcase-docs { min-height: 300px; }
+  .sv-doc { width: 78%; }
+}
+</style>
+</head>
+<body class="page-editorial">
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav">
+  <div class="nav-inner">
+  <a href="index.html" class="nav-brand">
+    <img class="nav-mono" src="images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="team.html">Our Team</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="track-record.html">Track Record</a>
+    <a href="index.html#insights">Market Insights</a>
+    <a class="nav-cta" href="contact.html">Contact</a>
+  </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="sv-hero">
+  <div class="wrap">
+    <div class="label">Our Services</div>
+    <h1 class="sv-hero-title">Advisory-level service for Ontario's <em class="gi">multi-family</em> market.</h1>
+    <p class="sv-hero-desc">We don't list buildings. We advise on the most significant financial decisions our clients make — and execute with the precision, discretion, and market intelligence the asset class demands.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICE 01 — Acquisition & Disposition
+     ============================================================ -->
+<section class="sv-detail" id="acquisition-disposition">
+  <div class="wrap">
+    <div class="sv-detail-grid">
+      <div>
+        <h2 class="sv-detail-title">Acquisition &amp; Disposition</h2>
+        <div class="sv-detail-sub">Sell-Side &amp; Buy-Side Advisory</div>
+      </div>
+      <div class="sv-detail-body">
+        <p>Representing buyers and sellers of multi-family residential properties across Ontario — from four-unit walkups to 40+ unit purpose-built rentals. Our sweet spot is the $2M–$20M segment where institutional firms are less competitive and where the difference between a well-positioned and a poorly-positioned deal is measured in <em class="gi">hundreds of thousands of dollars</em>.</p>
+        <p>Every listing includes institutional-grade investment summaries: loss-to-lease analysis, normalized expense modeling, utility optimization ROI, and excess density or zoning upside. Buyers see a roadmap, not just a building. This is the single most important differentiator from residential agents producing one-page MLS sheets and from national firms whose rigid corporate templates lack the agility to position a value-add deal.</p>
+        <p>Before we discuss pricing, we ensure our clients understand their full disposition picture — entity structure, recapture exposure, share versus asset sale implications, and net after-tax proceeds. The difference between a well-structured and a poorly-structured transaction can be hundreds of thousands of dollars.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICE 02 — Off-Market Deal Sourcing
+     ============================================================ -->
+<section class="sv-detail" id="off-market">
+  <div class="wrap">
+    <div class="sv-detail-grid">
+      <div>
+        <h2 class="sv-detail-title">Off-Market Deal Sourcing</h2>
+        <div class="sv-detail-sub">Private Sales &amp; Targeted Matching</div>
+      </div>
+      <div class="sv-detail-body">
+        <p>The buyer for your building isn't browsing MLS. They already own a similar asset in the next town. We identify them through proprietary data analysis — debt maturity timing, long-term ownership patterns, and operational signals — and connect them with the right opportunities before properties ever reach the open market.</p>
+        <p>Our sourcing methodology combines <em class="gi">four decades</em> of relationship capital with systematic market intelligence. We monitor ownership patterns, financing cycles, and operational signals across Ontario's secondary markets to identify owners approaching key decision points — and engage them with a clean, confidential solution before the competition even knows the building is in play.</p>
+        <p>For investors, our off-market deal alert system provides early access to opportunities that never reach the open market. The most likely buyer for a 40-unit building in Kingston is an investor who already successfully owns comparable assets in Peterborough or Belleville. We cross-reference holdings and geography to match capital with the right opportunities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICE 03 — Development Land & Assemblies
+     ============================================================ -->
+<section class="sv-detail" id="development-land">
+  <div class="wrap">
+    <div class="sv-detail-grid">
+      <div>
+        <h2 class="sv-detail-title">Development Land &amp; Assemblies</h2>
+        <div class="sv-detail-sub">Land Advisory &amp; Site Identification</div>
+      </div>
+      <div class="sv-detail-body">
+        <p>Identifying and facilitating land acquisitions for multi-family development. As developers shift from high-rise steel-and-concrete to four-to-six-storey wood-frame builds, secondary market land along Ontario's growth corridors is commanding institutional attention.</p>
+        <p>We work with developers to identify shovel-ready and zoning-eligible parcels, navigate municipal entitlement processes, and assemble contiguous sites where individual lot values understate the assembled development potential. Our local relationships give us visibility into opportunities that haven't been marketed — estate dispositions, stalled projects, and CapEx-exhausted sites where the highest and best use has shifted from hold to redevelop.</p>
+        <p>With national apartment construction starts pausing across the province and development charges escalating, the supply pipeline is narrowing. Today's land acquisitions become tomorrow's irreplaceable rental assets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INVESTMENT SUMMARY SHOWCASE
+     ============================================================ -->
+<section class="sv-showcase">
+  <div class="wrap">
+    <div class="sv-showcase-grid">
+      <div class="sv-showcase-text">
+        <div class="label">The Investment Summary Difference</div>
+        <h2 class="sv-showcase-title">Institutional-grade deal packages on <em class="gi">every</em> transaction.</h2>
+        <p class="sv-showcase-prose">Sellers achieve maximum value because buyers can underwrite with confidence. Every listing includes a comprehensive investment summary — financial analysis, loss-to-lease modeling, market context, and comparable transactions — presented at a standard institutional buyers expect.</p>
+        <a href="contact.html" class="btn btn--outline">See a Sample Summary <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+      <div class="sv-showcase-docs" aria-hidden="true">
+        <div class="sv-doc sv-doc--p1">
+          <img src="images/investment-summary-p1.webp" alt="">
+        </div>
+        <div class="sv-doc sv-doc--p2">
+          <img src="images/investment-summary-p2.webp" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DUAL CTA
+     ============================================================ -->
+<div class="dual-cta" id="contact">
+  <div class="dual-cta-panel">
+    <div class="label">For Property Owners</div>
+    <h3 class="dual-cta-title">Considering a disposition?</h3>
+    <p class="dual-cta-desc">We provide confidential valuations, tax-informed structuring guidance, and strategic advisory to multi-family building owners evaluating their options — whether that's a sale, a portfolio restructuring, or a succession plan.</p>
+    <a href="contact.html" data-mr-modal="seller" class="btn btn--navy">Request a Consultation <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+  </div>
+  <div class="dual-cta-panel">
+    <div class="label">For Investors</div>
+    <h3 class="dual-cta-title">Access off-market opportunities.</h3>
+    <p class="dual-cta-desc">Register to receive early access to investment opportunities, quarterly market reports, and cap rate data across Ontario's secondary markets — where fundamentals consistently outperform primary market pricing.</p>
+    <a href="#" data-mr-modal="investor" class="btn btn--gold">Register as an Investor <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+  </div>
+</div>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="images/mr-monogram-lg.png" alt="McKinney Realty">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-offices">
+      <div class="footer-office">
+        <div class="footer-office-region">Quinte &amp; Eastern Ontario</div>
+        <div class="footer-office-brokerage">RE/MAX Quinte Ltd.</div><div class="footer-office-line">106 North Front St, Belleville, ON K8P 3B4</div>
+        <div class="footer-office-line"><a href="tel:6139699907">(613) 969-9907</a> &middot; <a href="mailto:sean@remaxquinte.com">sean@remaxquinte.com</a></div>
+      </div>
+      <div class="footer-office">
+        <div class="footer-office-region">Toronto &amp; GTA</div>
+        <div class="footer-office-brokerage">Property.ca Inc., Brokerage</div><div class="footer-office-line">36 Distillery Lane, Suite 500, Toronto, ON M5A 3C4</div>
+        <div class="footer-office-line"><a href="tel:6474671467">(647) 467-1467</a> &middot; <a href="mailto:liam@mckinneyrealty.ca">liam@mckinneyrealty.ca</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="team.html">Team</a><a href="services.html">Services</a><a href="track-record.html">Track Record</a><a href="contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     Mobile nav toggle
+     ============================================================ -->
+<script>
+(function() {
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if (!toggle || !links) return;
+  var bars = '<path d="M3 12h18M3 6h18M3 18h18"/>';
+  var x = '<path d="M18 6L6 18M6 6l12 12"/>';
+  toggle.addEventListener('click', function() {
+    var open = links.classList.toggle('open');
+    toggle.querySelector('svg').innerHTML = open ? x : bars;
+  });
+  links.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      links.classList.remove('open');
+      toggle.querySelector('svg').innerHTML = bars;
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!links.classList.contains('open')) return;
+    if (!toggle.contains(e.target) && !links.contains(e.target)) {
+      links.classList.remove('open');
+      toggle.querySelector('svg').innerHTML = bars;
+    }
+  });
+})();
+</script>
+
+<!-- ============================================================
+     Form submission helpers — required by the modal CTA system.
+     ============================================================ -->
+<script src="mckinney-forms.js?v=2"></script>
+
+<!-- ============================================================
+     Modal CTA system — seller / investor / subscribe flows
+     ============================================================ -->
+<script src="mckinney-modal-cta.js?v=2"></script>
+
+</body>
+</html>

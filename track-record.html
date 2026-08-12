@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+<title>McKinney Realty — Track Record</title>
+<meta name="description" content="Selected transactions across Ontario — multi-family, commercial, and development land. Over $200M in combined transaction volume.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="McKinney Realty">
+<meta property="og:title" content="Track Record — McKinney Realty">
+<meta property="og:description" content="Selected transactions across Ontario — multi-family, commercial, and development land. Over $200M in combined transaction volume.">
+<meta property="og:url" content="https://mckinneyrealty.ca/track-record">
+<meta property="og:image" content="https://mckinneyrealty.ca/images/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Track Record — McKinney Realty">
+<meta name="twitter:description" content="Selected transactions across Ontario — multi-family, commercial, and development land. Over $200M in combined transaction volume.">
+<meta name="twitter:image" content="https://mckinneyrealty.ca/images/og-default.jpg">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VFY0V42GLR');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mckinney-system.css?v=2">
+<style>
+/* ============================================================
+   PAGE-SPECIFIC: track-record.html
+   ============================================================ */
+
+/* Hero — uses track-header layout with hero-level top padding */
+.tr-hero {
+  padding: 8rem 0 0;
+  background: var(--white);
+}
+.tr-hero .track-header {
+  margin-bottom: var(--s-4);
+}
+.tr-hero-desc {
+  font-size: var(--b-lg); font-weight: 300; line-height: 1.7;
+  color: var(--text-2); max-width: 560px;
+}
+
+/* Category sections */
+.tr-section {
+  padding: var(--s-section) 0;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+.tr-section--cream {
+  background: var(--cream);
+}
+.tr-category-header {
+  margin-bottom: var(--s-5);
+}
+.tr-category-header .label {
+  margin-bottom: var(--s-2);
+}
+.tr-category-title {
+  font-family: var(--font-d); font-size: var(--d-sub); font-weight: 300;
+  line-height: 1.2; color: var(--navy);
+}
+
+/* Horizontal auto-scrolling deal rows */
+.tr-rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.tr-row {
+  overflow: hidden;
+}
+.tr-track-wrap {
+  position: relative;
+  mask-image: linear-gradient(to right, transparent 0, black 80px, black calc(100% - 80px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 80px, black calc(100% - 80px), transparent 100%);
+}
+.tr-track {
+  display: flex;
+  gap: 20px;
+  padding: 1px var(--side);
+  will-change: transform;
+}
+.tr-track .deal {
+  flex: 0 0 300px;
+  min-height: 190px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+.tr-track .deal .deal-type {
+  margin-top: auto;
+}
+/* On cream sections, deal cards shift to white for contrast */
+.tr-section--cream .tr-track .deal {
+  background: var(--white);
+}
+.tr-section--cream .tr-track .deal:hover {
+  background: var(--offwhite);
+}
+
+/* CTA section */
+.tr-cta {
+  padding: var(--s-section) 0;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.tr-cta-title {
+  font-family: var(--font-d); font-size: var(--d-section); font-weight: 300;
+  line-height: 1.2; color: var(--navy); margin-bottom: var(--s-3);
+}
+.tr-cta-desc {
+  font-size: var(--b-sm); font-weight: 300; line-height: 1.7;
+  color: var(--text-2); max-width: 460px; margin: 0 auto var(--s-5);
+}
+
+@media (max-width: 768px) {
+  .tr-hero { padding-top: 7rem; }
+  .tr-track .deal { flex: 0 0 260px; min-height: 170px; }
+  .tr-track-wrap {
+    mask-image: linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav">
+  <div class="nav-inner">
+  <a href="/" class="nav-brand">
+    <img class="nav-mono" src="images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="team.html">Our Team</a>
+    <a href="services.html">Services</a>
+    <a href="track-record.html" class="active">Track Record</a>
+    <a href="index.html#insights">Market Insights</a>
+    <a class="nav-cta" href="contact.html">Contact</a>
+  </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO — track-header layout with $200M+ aggregate
+     ============================================================ -->
+<section class="tr-hero">
+  <div class="wrap">
+    <div class="track-header">
+      <div class="label">Track Record</div>
+      <div class="track-header-top">
+        <h1 class="track-title">Selected <em class="gi">transactions</em></h1>
+        <div class="track-agg">
+          <div class="track-agg-num">$200M+</div>
+          <div class="track-agg-label">multi-family, commercial, and investment transactions across Ontario</div>
+        </div>
+      </div>
+    </div>
+    <p class="tr-hero-desc">Every deal reflects our commitment to informed structuring, strategic pricing, and confidential execution.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     METRICS + APARTMENT CAROUSELS — white bg
+     ============================================================ -->
+<section class="tr-section" style="border-top: none;">
+  <div class="wrap">
+    <!-- Metrics strip -->
+    <div class="track-metrics">
+      <div class="track-metric"><div class="track-metric-num">250+</div><div class="track-metric-label">Career transactions</div></div>
+      <div class="track-metric"><div class="track-metric-num">12+</div><div class="track-metric-label">Ontario markets</div></div>
+      <div class="track-metric"><div class="track-metric-num">40+</div><div class="track-metric-label">Years in market</div></div>
+      <div class="track-metric"><div class="track-metric-num">2</div><div class="track-metric-label">Generations</div></div>
+    </div>
+
+    <!-- Category header -->
+    <div class="tr-category-header">
+      <div class="label">Multi-Family</div>
+      <h2 class="tr-category-title">Apartment buildings across <em class="gi">Ontario</em></h2>
+    </div>
+  </div>
+
+  <!-- Carousels are outside .wrap for full-viewport width -->
+  <div class="tr-rows">
+    <div class="tr-row">
+      <div class="tr-track-wrap">
+        <div class="tr-track" data-dir="-1" data-speed="0.3">
+          <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$5.84M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Goderich</div></div>
+          <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$5.25M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Picton</div></div>
+          <div class="deal"><div class="deal-side">Buy &amp; Sell-Side</div><div class="deal-value">$5.07M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Greater Napanee</div></div>
+          <div class="deal"><div class="deal-side">Buy &amp; Sell-Side</div><div class="deal-value">$4.50M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Greater Napanee</div></div>
+          <div class="deal"><div class="deal-side">Buy &amp; Sell-Side</div><div class="deal-value">$4.34M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Belleville</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tr-row">
+      <div class="tr-track-wrap">
+        <div class="tr-track" data-dir="1" data-speed="0.25">
+          <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$3.55M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Goderich</div></div>
+          <div class="deal"><div class="deal-side">Buy-Side</div><div class="deal-value">$3.34M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Smiths Falls</div></div>
+          <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$3.33M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Prince Edward County</div></div>
+          <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$3.10M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Timmins</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tr-row">
+      <div class="tr-track-wrap">
+        <div class="tr-track" data-dir="-1" data-speed="0.35">
+          <div class="deal"><div class="deal-side">Buy &amp; Sell-Side</div><div class="deal-value">$2.92M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Brockville</div></div>
+          <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$2.65M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Greater Napanee</div></div>
+          <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$2.44M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Bancroft</div></div>
+          <div class="deal"><div class="deal-side">Buy &amp; Sell-Side</div><div class="deal-value">$2.30M</div><div class="deal-line"></div><div class="deal-type">Multi-Family</div><div class="deal-geo">Brockville</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STRATEGIC SITES & COMMERCIAL — cream bg
+     ============================================================ -->
+<section class="tr-section tr-section--cream">
+  <div class="wrap">
+    <div class="tr-category-header">
+      <div class="label">Land, Development &amp; Commercial</div>
+      <h2 class="tr-category-title">Strategic sites &amp; <em class="gi">commercial</em> assets</h2>
+    </div>
+  </div>
+
+  <div class="tr-rows">
+    <div class="tr-row">
+      <div class="tr-track-wrap">
+        <div class="tr-track" data-dir="1" data-speed="0.22">
+          <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$2.57M</div><div class="deal-line"></div><div class="deal-type">Commercial</div><div class="deal-geo">Belleville</div></div>
+          <div class="deal"><div class="deal-side">Buy-Side</div><div class="deal-value">$2.50M</div><div class="deal-line"></div><div class="deal-type">Development Land</div><div class="deal-geo">Prince Edward County</div></div>
+          <div class="deal"><div class="deal-side">Buy &amp; Sell-Side</div><div class="deal-value">$2.35M</div><div class="deal-line"></div><div class="deal-type">Development Land</div><div class="deal-geo">Belleville</div></div>
+          <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$2.15M</div><div class="deal-line"></div><div class="deal-type">Development Land</div><div class="deal-geo">Belleville</div></div>
+          <div class="deal"><div class="deal-side">Buy &amp; Sell-Side</div><div class="deal-value">$1.60M</div><div class="deal-line"></div><div class="deal-type">Development Land</div><div class="deal-geo">Belleville</div></div>
+          <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$1.50M</div><div class="deal-line"></div><div class="deal-type">Development Land</div><div class="deal-geo">Belleville</div></div>
+          <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$1.42M</div><div class="deal-line"></div><div class="deal-type">Development Land</div><div class="deal-geo">Belleville</div></div>
+          <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$1.40M</div><div class="deal-line"></div><div class="deal-type">Business</div><div class="deal-geo">Prince Edward County</div></div>
+          <div class="deal"><div class="deal-side">Sell-Side</div><div class="deal-value">$1.05M</div><div class="deal-line"></div><div class="deal-type">Commercial</div><div class="deal-geo">Trent Hills</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section class="tr-cta">
+  <div class="wrap">
+    <div class="label" style="margin-bottom: var(--s-2);">Get Started</div>
+    <h2 class="tr-cta-title">Ready to add to this list?</h2>
+    <p class="tr-cta-desc">Whether you're considering a sale or seeking acquisition opportunities — we'd welcome a confidential conversation.</p>
+    <a href="contact.html" data-mr-modal="seller" class="btn btn--navy">Request a Consultation <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="images/mr-monogram-lg.png" alt="McKinney Realty">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-offices">
+      <div class="footer-office">
+        <div class="footer-office-region">Quinte &amp; Eastern Ontario</div>
+        <div class="footer-office-brokerage">RE/MAX Quinte Ltd.</div><div class="footer-office-line">106 North Front St, Belleville, ON K8P 3B4</div>
+        <div class="footer-office-line"><a href="tel:6139699907">(613) 969-9907</a> &middot; <a href="mailto:sean@remaxquinte.com">sean@remaxquinte.com</a></div>
+      </div>
+      <div class="footer-office">
+        <div class="footer-office-region">Toronto &amp; GTA</div>
+        <div class="footer-office-brokerage">Property.ca Inc., Brokerage</div><div class="footer-office-line">36 Distillery Lane, Suite 500, Toronto, ON M5A 3C4</div>
+        <div class="footer-office-line"><a href="tel:6474671467">(647) 467-1467</a> &middot; <a href="mailto:liam@mckinneyrealty.ca">liam@mckinneyrealty.ca</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="team.html">Team</a><a href="services.html">Services</a><a href="track-record.html">Track Record</a><a href="contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     Deal carousel auto-scroll
+     ============================================================ -->
+<script>
+(function(){
+  var tracks = document.querySelectorAll('.tr-track[data-dir]');
+  var rows = [];
+  var cardWidth = 300;
+  var gap = 20;
+  var mqMobile = window.matchMedia('(max-width: 768px)');
+  function cw() { return mqMobile.matches ? 260 : 300; }
+
+  tracks.forEach(function(el){
+    // Determine copies needed so the track always spans more than
+    // (viewport + 1 set) at any playback position — prevents an empty
+    // gap on the right when dir=1 starts at position -totalWidth.
+    // Minimum 3 copies handles boundary cases where viewport == tw exactly.
+    var originalHTML = el.innerHTML;
+    var originalCount = el.querySelectorAll('.deal').length;
+    var singleSetWidth = originalCount * (cw() + gap);
+    var copies = Math.max(3, Math.ceil(window.innerWidth / singleSetWidth) + 2);
+    var dupHTML = '';
+    for (var i = 0; i < copies; i++) dupHTML += originalHTML;
+    el.innerHTML = dupHTML;
+
+    var dir = parseInt(el.getAttribute('data-dir'));
+    var speed = parseFloat(el.getAttribute('data-speed'));
+    var row = {
+      el: el,
+      dir: dir,
+      speed: speed,
+      originalCount: originalCount,
+      getTotalWidth: function() { return originalCount * (cw() + gap); },
+      position: 0,
+      paused: false
+    };
+    row.position = dir === 1 ? -row.getTotalWidth() : 0;
+
+    // Pause on hover
+    el.addEventListener('mouseenter', function(){ row.paused = true; });
+    el.addEventListener('mouseleave', function(){ row.paused = false; });
+
+    // Touch drag support
+    var startX = 0, startPos = 0, dragging = false;
+    el.addEventListener('touchstart', function(ev){
+      dragging = true;
+      startX = ev.touches[0].clientX;
+      startPos = row.position;
+      row.paused = true;
+    }, { passive: true });
+    el.addEventListener('touchmove', function(ev){
+      if (!dragging) return;
+      row.position = startPos + (ev.touches[0].clientX - startX);
+    }, { passive: true });
+    el.addEventListener('touchend', function(){
+      dragging = false;
+      setTimeout(function(){ row.paused = false; }, 150);
+    });
+
+    rows.push(row);
+  });
+
+  function tick(){
+    rows.forEach(function(row){
+      if (!row.paused) {
+        row.position += row.speed * row.dir;
+        var totalWidth = row.getTotalWidth();
+        if (row.dir === -1 && Math.abs(row.position) >= totalWidth) {
+          row.position += totalWidth;
+        } else if (row.dir === 1 && row.position >= 0) {
+          row.position -= totalWidth;
+        }
+      }
+      row.el.style.transform = 'translateX(' + row.position + 'px)';
+    });
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
+
+<!-- ============================================================
+     Mobile nav toggle
+     ============================================================ -->
+<script>
+(function() {
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if (!toggle || !links) return;
+  var bars = '<path d="M3 12h18M3 6h18M3 18h18"/>';
+  var x = '<path d="M18 6L6 18M6 6l12 12"/>';
+  toggle.addEventListener('click', function() {
+    var open = links.classList.toggle('open');
+    toggle.querySelector('svg').innerHTML = open ? x : bars;
+  });
+  links.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      links.classList.remove('open');
+      toggle.querySelector('svg').innerHTML = bars;
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!links.classList.contains('open')) return;
+    if (!toggle.contains(e.target) && !links.contains(e.target)) {
+      links.classList.remove('open');
+      toggle.querySelector('svg').innerHTML = bars;
+    }
+  });
+})();
+</script>
+
+<!-- ============================================================
+     Form submission helpers — required by the modal CTA system.
+     ============================================================ -->
+<script src="mckinney-forms.js?v=2"></script>
+
+<!-- ============================================================
+     Modal CTA system — seller / investor / subscribe flows
+     ============================================================ -->
+<script src="mckinney-modal-cta.js?v=2"></script>
+
+</body>
+</html>

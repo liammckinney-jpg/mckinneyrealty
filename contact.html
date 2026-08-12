@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+<title>McKinney Realty — Contact Us</title>
+<meta name="description" content="Schedule a confidential consultation with McKinney Realty. Multi-family and investment real estate advisory across Ontario.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="McKinney Realty">
+<meta property="og:title" content="Contact — McKinney Realty">
+<meta property="og:description" content="Schedule a confidential consultation. Multi-family and investment real estate advisory across Ontario.">
+<meta property="og:url" content="https://mckinneyrealty.ca/contact">
+<meta property="og:image" content="https://mckinneyrealty.ca/images/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — McKinney Realty">
+<meta name="twitter:description" content="Schedule a confidential consultation. Multi-family and investment real estate advisory across Ontario.">
+<meta name="twitter:image" content="https://mckinneyrealty.ca/images/og-default.jpg">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VFY0V42GLR');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mckinney-system.css?v=2">
+<style>
+/* ============================================================
+   PAGE-SPECIFIC: contact.html
+   ============================================================ */
+
+/* Hero — left-aligned, white */
+.ct-hero {
+  padding: 8rem 0 var(--s-section);
+  background: var(--white);
+}
+.ct-hero .label { margin-bottom: var(--s-4); }
+.ct-hero-title {
+  font-family: var(--font-d); font-size: var(--d-hero); font-weight: 300;
+  line-height: 1.08; color: var(--navy); margin-bottom: var(--s-4);
+  max-width: 860px;
+}
+.ct-hero-desc {
+  font-size: var(--b-lg); font-weight: 300; line-height: 1.7;
+  color: var(--text-2); max-width: 680px;
+}
+
+/* Contact section — form + offices panel contained in white */
+.ct-section {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding-bottom: var(--s-section);
+}
+.ct-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: stretch;
+}
+
+/* Form column (left) */
+.ct-form-col {
+  padding: var(--s-section) var(--s-6) var(--s-section) 0;
+}
+.ct-form-head { margin-bottom: var(--s-5); }
+.ct-form-title {
+  font-family: var(--font-d); font-size: var(--d-sub); font-weight: 400;
+  color: var(--navy); line-height: 1.25; margin-bottom: var(--s-2);
+}
+.ct-form-helper {
+  font-size: var(--b-sm); font-weight: 300; line-height: 1.6;
+  color: var(--text-2);
+}
+
+/* Form fields — bottom-border style */
+.ct-form .form-row { margin-bottom: var(--s-4); }
+.ct-form .form-row-inline {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--s-4);
+  margin-bottom: 0;
+}
+.ct-form label {
+  display: block;
+  font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--text-3);
+  margin-bottom: 0.625rem;
+}
+.ct-form input,
+.ct-form select,
+.ct-form textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-family: var(--font-b); font-size: 1rem; font-weight: 300;
+  color: var(--text-1); background: var(--offwhite);
+  border: 1px solid var(--border-strong);
+  border-radius: 0;
+  outline: none;
+  transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.ct-form input:hover,
+.ct-form select:hover,
+.ct-form textarea:hover {
+  border-color: rgba(0,0,0,0.22);
+}
+.ct-form input:focus,
+.ct-form select:focus,
+.ct-form textarea:focus {
+  border-color: var(--gold);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(184,168,138,0.12);
+}
+.ct-form input::placeholder,
+.ct-form textarea::placeholder {
+  color: var(--text-3); font-weight: 300;
+}
+.ct-form textarea {
+  min-height: 130px; resize: vertical; line-height: 1.6;
+}
+.ct-form select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%239A8B6F' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.25rem;
+  color: var(--text-1);
+}
+.ct-form select:invalid { color: var(--text-3); }
+.ct-form-submit { margin-top: var(--s-5); }
+
+/* Offices panel (right, navy) */
+.ct-offices {
+  background: var(--navy);
+  padding: var(--s-section) var(--s-6);
+  color: var(--white);
+}
+.ct-offices-title {
+  font-family: var(--font-d); font-size: var(--d-sub); font-weight: 400;
+  color: var(--white); line-height: 1.25;
+  margin-bottom: var(--s-5);
+}
+.ct-office {
+  padding: var(--s-4) 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.ct-office:first-of-type { padding-top: 0; }
+.ct-office:last-of-type { border-bottom: none; padding-bottom: 0; }
+.ct-office-region {
+  font-size: 0.5625rem; font-weight: 500; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold-light);
+  margin-bottom: var(--s-3);
+}
+.ct-office-principal {
+  font-size: var(--b-sm); font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
+}
+.ct-office-brokerage {
+  font-size: var(--b-sm); font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: var(--s-3);
+  line-height: 1.5;
+}
+.ct-office-address {
+  font-size: var(--b-sm); font-weight: 300;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.6;
+  margin-bottom: var(--s-3);
+}
+.ct-office-contact {
+  font-size: var(--b-sm); font-weight: 300;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.8;
+}
+.ct-office-contact a {
+  color: inherit;
+  transition: color 0.3s;
+}
+.ct-office-contact a:hover { color: var(--white); }
+
+@media (max-width: 1024px) {
+  .ct-grid { grid-template-columns: 1fr; }
+  .ct-offices { padding: var(--s-6); }
+  .ct-form-col { padding: var(--s-6) 0; }
+}
+@media (max-width: 768px) {
+  .ct-hero { padding-top: 7rem; padding-bottom: var(--s-6); }
+  .ct-form .form-row-inline { grid-template-columns: 1fr; gap: 0; }
+  .ct-form .form-row-inline .form-row { margin-bottom: var(--s-4); }
+}
+</style>
+</head>
+<body class="page-editorial">
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav">
+  <div class="nav-inner">
+  <a href="index.html" class="nav-brand">
+    <img class="nav-mono" src="images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="team.html">Our Team</a>
+    <a href="services.html">Services</a>
+    <a href="track-record.html">Track Record</a>
+    <a href="index.html#insights">Market Insights</a>
+    <a class="nav-cta active" href="contact.html" style="background: var(--navy); color: var(--white) !important;">Contact</a>
+  </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="ct-hero">
+  <div class="wrap">
+    <div class="label">Get in Touch</div>
+    <h1 class="ct-hero-title">Start with a confidential <em class="gi">consultation</em>.</h1>
+    <p class="ct-hero-desc">Whether you're considering a sale, seeking acquisition opportunities, or exploring how your portfolio fits into today's market — we'd welcome a confidential discussion.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT SECTION — form (60%) + navy offices panel (40%)
+     ============================================================ -->
+<section class="ct-section">
+  <div class="wrap">
+  <div class="ct-grid">
+
+    <!-- FORM -->
+    <div class="ct-form-col">
+      <div class="ct-form-head">
+        <h2 class="ct-form-title">Request a consultation</h2>
+        <p class="ct-form-helper">Tell us about your situation and we'll follow up within one business day.</p>
+      </div>
+
+      <form class="ct-form" method="post">
+        <div class="form-row-inline">
+          <div class="form-row">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" required>
+          </div>
+          <div class="form-row">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" required>
+          </div>
+        </div>
+
+        <div class="form-row-inline">
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-row">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="interest">I'm interested in</label>
+          <select id="interest" name="interest" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="selling-multifamily">Selling a multi-family property</option>
+            <option value="selling-commercial-land">Selling commercial or development land</option>
+            <option value="acquiring-multifamily">Acquiring multi-family properties</option>
+            <option value="off-market-alerts">Off-market deal alerts</option>
+            <option value="development-land">Development land advisory</option>
+            <option value="portfolio-succession">Portfolio or succession planning</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Tell us more</label>
+          <textarea id="message" name="message" placeholder="Property details, investment criteria, timeline, or anything else you'd like us to know."></textarea>
+        </div>
+
+        <div class="ct-form-submit">
+          <button type="submit" class="btn btn--navy">Send Message <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+        </div>
+      </form>
+    </div>
+
+    <!-- OFFICES (navy panel) -->
+    <aside class="ct-offices">
+      <h2 class="ct-offices-title">Our offices</h2>
+
+      <div class="ct-office">
+        <div class="ct-office-region">Quinte &amp; Eastern Ontario</div>
+        <div class="ct-office-principal">Sean McKinney, Broker of Record</div>
+        <div class="ct-office-brokerage">RE/MAX Quinte Ltd., Brokerage</div>
+        <div class="ct-office-address">
+          106 North Front St<br>
+          Belleville, ON K8P 3B4
+        </div>
+        <div class="ct-office-contact">
+          <a href="tel:+16139699907">(613) 969-9907</a><br>
+          <a href="mailto:sean@remaxquinte.com">sean@remaxquinte.com</a>
+        </div>
+      </div>
+
+      <div class="ct-office">
+        <div class="ct-office-region">Toronto &amp; GTA</div>
+        <div class="ct-office-principal">Liam McKinney, Broker</div>
+        <div class="ct-office-brokerage">Property.ca Inc., Brokerage</div>
+        <div class="ct-office-address">
+          36 Distillery Lane, Suite 500<br>
+          Toronto, ON M5A 3C4
+        </div>
+        <div class="ct-office-contact">
+          <a href="tel:+16474671467">(647) 467-1467</a><br>
+          <a href="mailto:liam@mckinneyrealty.ca">liam@mckinneyrealty.ca</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="images/mr-monogram-lg.png" alt="McKinney Realty">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-offices">
+      <div class="footer-office">
+        <div class="footer-office-region">Quinte &amp; Eastern Ontario</div>
+        <div class="footer-office-brokerage">RE/MAX Quinte Ltd.</div><div class="footer-office-line">106 North Front St, Belleville, ON K8P 3B4</div>
+        <div class="footer-office-line"><a href="tel:6139699907">(613) 969-9907</a> &middot; <a href="mailto:sean@remaxquinte.com">sean@remaxquinte.com</a></div>
+      </div>
+      <div class="footer-office">
+        <div class="footer-office-region">Toronto &amp; GTA</div>
+        <div class="footer-office-brokerage">Property.ca Inc., Brokerage</div><div class="footer-office-line">36 Distillery Lane, Suite 500, Toronto, ON M5A 3C4</div>
+        <div class="footer-office-line"><a href="tel:6474671467">(647) 467-1467</a> &middot; <a href="mailto:liam@mckinneyrealty.ca">liam@mckinneyrealty.ca</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="team.html">Team</a><a href="services.html">Services</a><a href="track-record.html">Track Record</a><a href="contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     Mobile nav toggle
+     ============================================================ -->
+<script>
+(function() {
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if (!toggle || !links) return;
+  var bars = '<path d="M3 12h18M3 6h18M3 18h18"/>';
+  var x = '<path d="M18 6L6 18M6 6l12 12"/>';
+  toggle.addEventListener('click', function() {
+    var open = links.classList.toggle('open');
+    toggle.querySelector('svg').innerHTML = open ? x : bars;
+  });
+  links.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      links.classList.remove('open');
+      toggle.querySelector('svg').innerHTML = bars;
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!links.classList.contains('open')) return;
+    if (!toggle.contains(e.target) && !links.contains(e.target)) {
+      links.classList.remove('open');
+      toggle.querySelector('svg').innerHTML = bars;
+    }
+  });
+})();
+</script>
+
+<!-- ============================================================
+     Modal CTA system — seller / investor / subscribe flows
+     ============================================================ -->
+<script src="mckinney-modal-cta.js?v=2"></script>
+
+<!-- ============================================================
+     Form submission — POST to Apps Script backend
+     ============================================================ -->
+<script src="mckinney-forms.js?v=2"></script>
+<script>
+  McKinneyForms.init(document.querySelector('.ct-form'), {
+    formType: 'general',
+    keyMap: { 'first-name': 'first_name', 'last-name': 'last_name' },
+    confirmationMessage: "Your message has been received. We'll respond within one business day."
+  });
+</script>
+
+</body>
+</html>
