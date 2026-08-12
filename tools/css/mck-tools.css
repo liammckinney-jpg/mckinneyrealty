@@ -72,13 +72,15 @@
 }
 /* Prefixed input (e.g. $ / %) */
 .tool-affix { position: relative; }
-.tool-affix input { padding-left: 1.75rem; }
+/* .tool-field input[type=...] sets base padding at higher specificity —
+   match it so the affix padding actually wins */
+.tool-field .tool-affix input[type="text"] { padding-left: 1.75rem; }
 .tool-affix::before {
   content: attr(data-affix); position: absolute; left: 0.875rem; top: 50%;
   transform: translateY(-50%); font-size: var(--b-md); color: var(--text-3);
   pointer-events: none;
 }
-.tool-affix--suffix input { padding-left: 0.875rem; padding-right: 2rem; }
+.tool-field .tool-affix--suffix input[type="text"] { padding-left: 0.875rem; padding-right: 2.25rem; }
 .tool-affix--suffix::before { left: auto; right: 0.875rem; }
 
 /* Toggle pair (opEx mode, ownership) */
@@ -144,7 +146,7 @@
 .mck-compare .mck-compare-hero td {
   font-family: var(--font-d); font-size: 1.375rem; font-weight: 400; color: var(--navy);
 }
-.mck-compare .mck-binding {
+.mck-binding {
   font-size: 0.5625rem; font-weight: 500; letter-spacing: 0.08em;
   text-transform: uppercase; color: var(--gold-dark);
 }
@@ -181,6 +183,7 @@
 .mck-wf-row--net .mck-wf-value {
   font-family: var(--font-d); font-size: var(--d-stat-sm); font-weight: 400; color: var(--navy);
 }
+.mck-wf-cda[hidden], .tool-help[hidden] { display: none; }
 .mck-wf-cda {
   display: flex; justify-content: space-between; align-items: baseline;
   max-width: 860px; margin-top: var(--s-2);
@@ -237,12 +240,14 @@
    ============================================================ */
 .mck-modal-overlay {
   position: fixed; inset: 0; z-index: 9999;
-  background: rgba(26,31,46,0.55); backdrop-filter: blur(8px);
+  background: rgba(26,31,46,0.55);
   display: flex; align-items: center; justify-content: center;
   opacity: 0; visibility: hidden;
   transition: opacity 0.35s ease, visibility 0.35s ease; padding: 24px;
 }
-.mck-modal-overlay.is-visible { opacity: 1; visibility: visible; }
+/* backdrop-filter only while visible — a hidden full-viewport filter layer
+   can blank the page in some compositors/captures */
+.mck-modal-overlay.is-visible { opacity: 1; visibility: visible; backdrop-filter: blur(8px); }
 .mck-modal {
   background: var(--white); width: 100%; max-width: 480px; max-height: 90vh;
   overflow-y: auto; position: relative; padding: var(--s-5) var(--s-4) var(--s-4);
