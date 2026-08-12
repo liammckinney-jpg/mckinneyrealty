@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+
+<title>McKinney Realty — Multi-Family Financing Modeler</title>
+<meta name="description" content="Compare CMHC MLI Select, MLI Standard, and conventional financing side by side for multi-family properties. Maximum loan, down payment, premium, and cash flow at your assumptions.">
+<meta name="robots" content="noindex">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VFY0V42GLR');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../mckinney-system.css">
+<link rel="stylesheet" href="css/mck-tools.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+  <a href="../index.html" class="nav-brand">
+    <img class="nav-mono" src="../images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="../team.html">Our Team</a>
+    <a href="../services.html">Services</a>
+    <a href="../track-record.html">Track Record</a>
+    <a class="nav-cta" href="../contact.html">Contact</a>
+  </div>
+  </div>
+</nav>
+
+<main class="tool-main">
+
+<!-- HERO -->
+<section class="tool-hero">
+  <div class="wrap">
+    <div class="label label--light">Financing Analysis</div>
+    <h1 class="tool-hero-title">Model Your <em class="gi">Financing</em></h1>
+    <p class="tool-hero-sub">Compare CMHC MLI Select, CMHC MLI Standard, and conventional financing side by side — maximum loan, capital required at closing, and cash flow at your assumptions.</p>
+  </div>
+</section>
+
+<!-- INPUTS -->
+<section class="wrap">
+  <form id="fm-form" class="tool-form" novalidate>
+
+    <fieldset class="tool-fieldset">
+      <div class="tool-fieldset-legend">Property &amp; Income</div>
+      <div class="tool-grid">
+        <div class="tool-field">
+          <label for="fm-price">Purchase price</label>
+          <div class="tool-affix" data-affix="$"><input type="text" id="fm-price" data-currency inputmode="decimal" required></div>
+        </div>
+        <div class="tool-field">
+          <label for="fm-units">Number of units</label>
+          <input type="number" id="fm-units" min="1" step="1" required>
+        </div>
+        <div class="tool-field">
+          <label for="fm-gross">Gross annual rental income</label>
+          <div class="tool-affix" data-affix="$"><input type="text" id="fm-gross" data-currency inputmode="decimal" required></div>
+        </div>
+        <div class="tool-field">
+          <label for="fm-other">Other annual income</label>
+          <div class="tool-affix" data-affix="$"><input type="text" id="fm-other" data-currency inputmode="decimal" value="0"></div>
+          <div class="tool-help">Parking, laundry, storage.</div>
+        </div>
+        <div class="tool-field">
+          <label for="fm-vacancy">Vacancy allowance</label>
+          <div class="tool-affix tool-affix--suffix" data-affix="%"><input type="text" id="fm-vacancy" inputmode="decimal"></div>
+          <div class="tool-help">Applied against gross income.</div>
+        </div>
+        <div class="tool-field">
+          <label for="fm-opex">Annual operating expenses</label>
+          <div class="tool-toggle" role="group" aria-label="Expense entry mode" style="margin-bottom:0.5rem">
+            <button type="button" id="fm-opex-mode-pct" class="active">% of EGI</button>
+            <button type="button" id="fm-opex-mode-amt">$ amount</button>
+          </div>
+          <div class="tool-affix tool-affix--suffix" data-affix="%" id="fm-opex-wrap"><input type="text" id="fm-opex" inputmode="decimal"></div>
+          <div class="tool-help" id="fm-opex-help">Share of effective gross income spent on operations.</div>
+        </div>
+      </div>
+      <div class="tool-note" id="fm-units-note" hidden>CMHC multi-unit programs (MLI Select and MLI Standard) require 5 or more units. The CMHC columns below are shown for reference only at this unit count.</div>
+    </fieldset>
+
+    <fieldset class="tool-fieldset">
+      <div class="tool-fieldset-legend">Financing Assumptions</div>
+      <div class="tool-grid">
+        <div class="tool-field">
+          <label for="fm-rate-insured">Interest rate — CMHC-insured</label>
+          <div class="tool-affix tool-affix--suffix" data-affix="%"><input type="text" id="fm-rate-insured" inputmode="decimal" required></div>
+          <div class="tool-help">Insured rates typically price below conventional.</div>
+        </div>
+        <div class="tool-field">
+          <label for="fm-rate-conv">Interest rate — conventional</label>
+          <div class="tool-affix tool-affix--suffix" data-affix="%"><input type="text" id="fm-rate-conv" inputmode="decimal" required></div>
+        </div>
+        <div class="tool-field">
+          <label for="fm-tier">MLI Select points tier</label>
+          <select id="fm-tier">
+            <option value="mliSelect50">50 points</option>
+            <option value="mliSelect70" selected>70 points</option>
+            <option value="mliSelect100">100 points</option>
+          </select>
+          <div class="tool-help">See “How MLI Select points work” below the results.</div>
+        </div>
+      </div>
+    </fieldset>
+
+    <button type="submit" class="btn btn--navy tool-submit">Calculate <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+  </form>
+</section>
+
+<!-- RESULTS -->
+<section class="wrap">
+  <div class="tool-results" id="fm-results">
+
+    <div class="mck-print-header">
+      <img src="../images/mr-monogram-sm.png" alt="MR">
+      <span class="mck-print-header-name">McKinney Realty — Financing Analysis</span>
+      <span class="mck-print-header-date" id="fm-print-date"></span>
+    </div>
+
+    <div class="tool-results-header">
+      <div class="label">Results</div>
+      <h2 class="tool-results-title">Three structures, side by side.</h2>
+    </div>
+
+    <div class="tool-disclaimer">These figures are illustrations based on the assumptions you entered and generalized program parameters. They are not a projection, a guarantee, financing advice, tax advice, or a recommendation to buy or sell. CMHC program criteria, lending terms, and tax rules change and depend on your specific circumstances. Consult your lender, accountant, and legal counsel. McKinney Realty &mdash; Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage.</div>
+
+    <table class="mck-compare" id="fm-table">
+      <thead><tr id="fm-table-head"><th scope="col">&nbsp;</th></tr></thead>
+      <tbody id="fm-table-body"></tbody>
+    </table>
+    <div class="mck-cards" id="fm-cards"></div>
+
+    <p class="tool-takeaway" id="fm-takeaway"></p>
+
+    <div class="tool-capture">
+      <button type="button" class="btn btn--outline" id="mck-capture-open">Email me this analysis as a PDF summary <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+    </div>
+
+    <div class="mck-print-footer">
+      These figures are illustrations based on user-entered assumptions and generalized program parameters — not a projection, guarantee, financing advice, tax advice, or a recommendation to buy or sell. Consult your lender, accountant, and legal counsel.<br>
+      Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage &middot; mckinneyrealty.ca
+    </div>
+  </div>
+
+  <!-- POINTS EXPLAINER
+       COPY STATUS: DRAFT — orientation copy to be replaced with the
+       approved explainer drafted in the main project (spec §3.4). -->
+  <details class="tool-explainer">
+    <summary>How MLI Select points work</summary>
+    <div class="tool-explainer-body">
+      <p>MLI Select scores a property across three categories — <strong>affordability</strong>, <strong>energy efficiency</strong>, and <strong>accessibility</strong> — and the total point score sets the financing terms. Points from the three categories can be combined.</p>
+      <h4>What each tier unlocks</h4>
+      <ul>
+        <li><strong>50 points</strong> — up to 85% loan-to-value, extended amortization, and a reduced insurance premium.</li>
+        <li><strong>70 points</strong> — up to 90% loan-to-value, longer amortization, and a deeper premium reduction.</li>
+        <li><strong>100 points</strong> — the program maximums: highest leverage, longest amortization, largest premium reduction.</li>
+      </ul>
+      <h4>The three categories</h4>
+      <ul>
+        <li><strong>Affordability</strong> — committing a share of units to rents at defined affordability thresholds, for a minimum period.</li>
+        <li><strong>Energy efficiency</strong> — improvement against a reference building standard; the baseline is transitioning to NECB 2020.</li>
+        <li><strong>Accessibility</strong> — accessible or universal-design units and barrier-free common areas.</li>
+      </ul>
+      <p>Scoring criteria are in transition through <strong>September 30, 2026</strong>, and exact scoring is confirmed by your lender and CMHC at underwriting. Treat this explainer as orientation, not qualification.</p>
+    </div>
+  </details>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="../images/mr-monogram-lg.png" alt="McKinney Realty">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="../team.html">Team</a><a href="../services.html">Services</a><a href="../track-record.html">Track Record</a><a href="../contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../mckinney-forms.js"></script>
+<script src="js/mck-params.js"></script>
+<script src="js/mck-calc-engine.js"></script>
+<script src="js/mck-calc-ui.js"></script>
+<script>
+(function () {
+  'use strict';
+  var P = window.MCK_PARAMS, E = window.MCK_ENGINE, U = window.MCKUI;
+  var $ = function (id) { return document.getElementById(id); };
+
+  // Defaults from params
+  $('fm-vacancy').value = (P.financingDefaults.vacancyRate * 100).toFixed(1);
+  $('fm-opex').value = (P.financingDefaults.opExRatioOfEGI * 100).toFixed(0);
+  $('fm-rate-insured').value = (P.financingDefaults.rateInsured * 100).toFixed(2);
+  $('fm-rate-conv').value = (P.financingDefaults.rateConventional * 100).toFixed(2);
+  $('fm-tier').value = P.financingDefaults.defaultTier;
+
+  // opEx entry mode toggle: % of EGI vs $ amount
+  var opExMode = 'pct';
+  function setOpExMode(mode) {
+    opExMode = mode;
+    $('fm-opex-mode-pct').classList.toggle('active', mode === 'pct');
+    $('fm-opex-mode-amt').classList.toggle('active', mode === 'amt');
+    var wrap = $('fm-opex-wrap');
+    wrap.setAttribute('data-affix', mode === 'pct' ? '%' : '$');
+    wrap.classList.toggle('tool-affix--suffix', mode === 'pct');
+    $('fm-opex-help').textContent = mode === 'pct'
+      ? 'Share of effective gross income spent on operations.'
+      : 'Total annual operating expenses, before debt service.';
+    if (mode === 'pct') $('fm-opex').removeAttribute('data-currency');
+    else $('fm-opex').setAttribute('data-currency', '');
+    $('fm-opex').value = '';
+    $('fm-opex').placeholder = mode === 'pct' ? (P.financingDefaults.opExRatioOfEGI * 100).toFixed(0) : '';
+  }
+  $('fm-opex-mode-pct').addEventListener('click', function () { setOpExMode('pct'); });
+  $('fm-opex-mode-amt').addEventListener('click', function () { setOpExMode('amt'); });
+
+  // <5 units note
+  $('fm-units').addEventListener('input', function () {
+    var u = parseInt($('fm-units').value, 10);
+    $('fm-units-note').hidden = !(u >= 1 && u < P.financingDefaults.minUnitsForCMHC);
+  });
+
+  var ROWS = [
+    { label: 'Maximum loan', hero: true, cell: function (s) { return U.fmtCurrency(s.maxLoan); } },
+    { label: 'Binding constraint', cell: function (s) {
+        return '<span class="mck-binding">' + (s.bindingConstraint === 'LTV' ? 'LTV-limited' : 'DSCR-limited') + '</span>';
+      } },
+    { label: 'Down payment required', cell: function (s) { return U.fmtCurrency(s.downPayment); } },
+    { label: 'CMHC premium', cell: function (s) {
+        return s.premium > 0 ? U.fmtCurrency(s.premium) + ' <span style="color:var(--text-3)">(' + U.fmtPct(s.premiumRate) + ')</span>' : '—';
+      } },
+    { label: 'Amortization', cell: function (s) { return s.amortYears + ' years'; } },
+    { label: 'Monthly payment', cell: function (s) { return U.fmtCurrency(s.monthlyPayment); } },
+    { label: 'DSCR at maximum loan', cell: function (s) { return U.fmtRatio(s.dscrActual); } },
+    { label: 'Annual cash flow', cell: function (s) {
+        var cls = s.cashFlow < 0 ? ' class="mck-negative"' : '';
+        return '<span' + cls + '>' + U.fmtCurrency(s.cashFlow) + '</span>';
+      } },
+    { label: 'Cash-on-cash', cell: function (s) { return U.fmtPct(s.cashOnCash); } }
+  ];
+
+  function render(comparison) {
+    // Table head
+    var head = '<th scope="col">&nbsp;</th>' + comparison.map(function (s) {
+      return '<th scope="col"' + (s.eligible ? '' : ' class="col-ineligible"') + '>' + s.label + '</th>';
+    }).join('');
+    $('fm-table-head').innerHTML = head;
+
+    // Table body
+    $('fm-table-body').innerHTML = ROWS.map(function (row) {
+      var cells = comparison.map(function (s) {
+        var cls = s.eligible ? '' : ' class="is-ineligible col-ineligible"';
+        return '<td' + cls + '>' + row.cell(s) + '</td>';
+      }).join('');
+      return '<tr' + (row.hero ? ' class="mck-compare-hero"' : '') + '><th scope="row">' + row.label + '</th>' + cells + '</tr>';
+    }).join('');
+
+    // Mobile cards
+    $('fm-cards').innerHTML = comparison.map(function (s) {
+      var rows = ROWS.map(function (row) {
+        return '<div class="mck-card-row' + (row.hero ? ' mck-card-row--hero' : '') + '"><dt>' + row.label + '</dt><dd>' + row.cell(s) + '</dd></div>';
+      }).join('');
+      return '<div class="mck-card' + (s.eligible ? '' : ' is-ineligible') + '"><div class="mck-card-head">' + s.label + '</div><dl>' + rows + '</dl></div>';
+    }).join('');
+
+    // Factual takeaway — selected tier vs conventional capital at closing
+    var sel = comparison[0], conv = comparison[2];
+    var tierPts = { mliSelect50: '50', mliSelect70: '70', mliSelect100: '100' }[$('fm-tier').value];
+    var diff = (conv.downPayment) - (sel.downPayment);
+    var takeaway = '';
+    if (sel.eligible && isFinite(diff) && Math.abs(diff) > 1) {
+      takeaway = 'At these assumptions, the MLI Select ' + tierPts + '-point scenario requires ' +
+        U.fmtCurrency(Math.abs(diff)) + (diff >= 0 ? ' less' : ' more') +
+        ' capital at closing than conventional financing.';
+    }
+    $('fm-takeaway').textContent = takeaway;
+    $('fm-takeaway').style.display = takeaway ? '' : 'none';
+  }
+
+  U.initTool({
+    tool: 'financing-modeler',
+    form: $('fm-form'),
+    results: $('fm-results'),
+    calculate: function () {
+      var price = U.parseNum($('fm-price'));
+      var gross = U.parseNum($('fm-gross'));
+      var other = U.parseNum($('fm-other'), 0);
+      var vacancy = U.parsePct($('fm-vacancy'), P.financingDefaults.vacancyRate);
+      var egi = (gross + other) * (1 - vacancy);
+      var opEx = opExMode === 'pct'
+        ? egi * U.parsePct($('fm-opex'), P.financingDefaults.opExRatioOfEGI)
+        : U.parseNum($('fm-opex'), 0);
+
+      var inputs = {
+        price: price,
+        units: parseInt($('fm-units').value, 10) || 0,
+        grossIncome: gross,
+        otherIncome: other,
+        vacancyRate: vacancy,
+        opEx: opEx,
+        rateInsured: U.parsePct($('fm-rate-insured'), P.financingDefaults.rateInsured),
+        rateConventional: U.parsePct($('fm-rate-conv'), P.financingDefaults.rateConventional)
+      };
+      var comparison = E.computeFinancingComparison(inputs, $('fm-tier').value, P);
+      render(comparison);
+      $('fm-print-date').textContent = new Date().toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+      return { tool: 'financing-modeler', inputs: inputs, tier: $('fm-tier').value, outputs: comparison, scenarioCount: comparison.length };
+    }
+  });
+
+  // Nav hamburger
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+})();
+</script>
+</body>
+</html>

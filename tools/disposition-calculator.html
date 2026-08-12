@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+
+<title>McKinney Realty — Disposition Proceeds Calculator</title>
+<meta name="description" content="What would a sale actually net you? Estimate selling costs, mortgage payout, capital gains tax, and CCA recapture on the disposition of a multi-family property.">
+<meta name="robots" content="noindex">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VFY0V42GLR');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../mckinney-system.css">
+<link rel="stylesheet" href="css/mck-tools.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+  <a href="../index.html" class="nav-brand">
+    <img class="nav-mono" src="../images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="../team.html">Our Team</a>
+    <a href="../services.html">Services</a>
+    <a href="../track-record.html">Track Record</a>
+    <a class="nav-cta" href="../contact.html">Contact</a>
+  </div>
+  </div>
+</nav>
+
+<main class="tool-main">
+
+<!-- HERO -->
+<section class="tool-hero">
+  <div class="wrap">
+    <div class="label label--light">Disposition Analysis</div>
+    <h1 class="tool-hero-title">What Would a Sale <em class="gi">Actually Net You?</em></h1>
+    <p class="tool-hero-sub">The answer most owners have never calculated properly: selling costs, mortgage payout, prepayment penalty, capital gains tax, and CCA recapture — down to the number that lands in your account.</p>
+  </div>
+</section>
+
+<!-- INPUTS -->
+<section class="wrap">
+  <form id="dc-form" class="tool-form" novalidate>
+
+    <fieldset class="tool-fieldset">
+      <div class="tool-fieldset-legend">Sale Scenario</div>
+      <div class="tool-grid">
+        <div class="tool-field">
+          <label for="dc-price">Estimated sale price</label>
+          <div class="tool-affix" data-affix="$"><input type="text" id="dc-price" data-currency inputmode="decimal" required></div>
+        </div>
+        <div class="tool-field">
+          <label for="dc-commission">Commission rate</label>
+          <div class="tool-affix tool-affix--suffix" data-affix="%"><input type="text" id="dc-commission" inputmode="decimal"></div>
+        </div>
+        <div class="tool-field">
+          <label for="dc-legal">Legal &amp; closing costs</label>
+          <div class="tool-affix" data-affix="$"><input type="text" id="dc-legal" data-currency inputmode="decimal"></div>
+        </div>
+        <div class="tool-field">
+          <label for="dc-mortgage">Outstanding mortgage balance</label>
+          <div class="tool-affix" data-affix="$"><input type="text" id="dc-mortgage" data-currency inputmode="decimal" required></div>
+        </div>
+        <div class="tool-field">
+          <label for="dc-penalty">Mortgage prepayment penalty</label>
+          <div class="tool-affix" data-affix="$"><input type="text" id="dc-penalty" data-currency inputmode="decimal" value="0"></div>
+          <div class="tool-help">Typically 3 months&rsquo; interest or IRD — your lender can quote this; enter an estimate.</div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="tool-fieldset">
+      <div class="tool-fieldset-legend">Tax Profile</div>
+      <div class="tool-grid">
+        <div class="tool-field">
+          <label for="dc-purchase">Original purchase price</label>
+          <div class="tool-affix" data-affix="$"><input type="text" id="dc-purchase" data-currency inputmode="decimal" required></div>
+        </div>
+        <div class="tool-field">
+          <label for="dc-improvements">Capital improvements since purchase</label>
+          <div class="tool-affix" data-affix="$"><input type="text" id="dc-improvements" data-currency inputmode="decimal" value="0"></div>
+        </div>
+        <div class="tool-field tool-field--full">
+          <label for="dc-building">Building portion of original cost<span class="tool-range-value" id="dc-building-value">80%</span></label>
+          <input type="range" id="dc-building" min="50" max="95" step="5" value="80">
+          <div class="tool-help">The land/building split. Land isn&rsquo;t depreciable, so only the building portion carries CCA recapture.</div>
+        </div>
+        <div class="tool-field">
+          <label for="dc-cca">Total CCA claimed to date</label>
+          <div class="tool-affix" data-affix="$"><input type="text" id="dc-cca" data-currency inputmode="decimal" value="0"></div>
+          <div class="tool-help">On your T776 / corporate schedules — if unsure, your accountant has this number.</div>
+        </div>
+        <div class="tool-field">
+          <label>Ownership</label>
+          <div class="tool-toggle" role="group" aria-label="Ownership structure">
+            <button type="button" id="dc-own-personal" class="active">Personal</button>
+            <button type="button" id="dc-own-corp">Corporation</button>
+          </div>
+        </div>
+        <div class="tool-field" id="dc-marginal-field">
+          <label for="dc-marginal">Marginal tax rate</label>
+          <div class="tool-affix tool-affix--suffix" data-affix="%"><input type="text" id="dc-marginal" inputmode="decimal"></div>
+          <div class="tool-help">Defaults to Ontario&rsquo;s top combined marginal rate — edit to yours.</div>
+        </div>
+      </div>
+    </fieldset>
+
+    <button type="submit" class="btn btn--navy tool-submit">Calculate <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+  </form>
+</section>
+
+<!-- RESULTS -->
+<section class="wrap">
+  <div class="tool-results" id="dc-results">
+
+    <div class="mck-print-header">
+      <img src="../images/mr-monogram-sm.png" alt="MR">
+      <span class="mck-print-header-name">McKinney Realty — Disposition Analysis</span>
+      <span class="mck-print-header-date" id="dc-print-date"></span>
+    </div>
+
+    <div class="tool-results-header">
+      <div class="label">Results</div>
+      <h2 class="tool-results-title">From sale price to your account.</h2>
+    </div>
+
+    <div class="tool-disclaimer">These figures are illustrations based on the assumptions you entered and generalized program parameters. They are not a projection, a guarantee, financing advice, tax advice, or a recommendation to buy or sell. CMHC program criteria, lending terms, and tax rules change and depend on your specific circumstances. Tax calculations are simplified estimates — corporate tax treatment in particular (refundable tax, capital dividend account) requires professional advice. Consult your lender, accountant, and legal counsel. McKinney Realty &mdash; Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage.</div>
+
+    <div class="mck-waterfall" id="dc-waterfall"></div>
+
+    <div class="mck-wf-cda" id="dc-cda" hidden>
+      <div class="mck-wf-cda-label" id="dc-cda-label"></div>
+      <div class="mck-wf-cda-value" id="dc-cda-value"></div>
+    </div>
+    <p class="tool-help" id="dc-corp-note" hidden style="max-width:860px">A portion of corporate tax on investment income may be refundable when taxable dividends are paid — refundable tax (RDTOH) mechanics are not modelled here. Precision on this is your accountant&rsquo;s job; this tool&rsquo;s job is the order of magnitude.</p>
+
+    <div class="mck-net-hero">
+      <div class="label">Estimated Net to Vendor</div>
+      <div class="mck-net-hero-num" id="dc-net"></div>
+    </div>
+
+    <!-- "If you held instead" — factual side-by-side, no verdict -->
+    <div class="mck-hold" id="dc-hold">
+      <div class="tool-results-header" style="margin-bottom:var(--s-2)">
+        <div class="label">If You Held Instead</div>
+      </div>
+      <div class="tool-grid mck-hold-inputs" style="max-width:640px">
+        <div class="tool-field">
+          <label for="dc-hold-rent">Assumed annual rent growth</label>
+          <div class="tool-affix tool-affix--suffix" data-affix="%"><input type="text" id="dc-hold-rent" inputmode="decimal"></div>
+          <div class="tool-help">An assumption, not a forecast.</div>
+        </div>
+        <div class="tool-field">
+          <label for="dc-hold-expense">Assumed annual expense growth</label>
+          <div class="tool-affix tool-affix--suffix" data-affix="%"><input type="text" id="dc-hold-expense" inputmode="decimal"></div>
+          <div class="tool-help">An assumption, not a forecast.</div>
+        </div>
+        <div class="tool-field">
+          <label for="dc-hold-appreciation">Assumed annual appreciation</label>
+          <div class="tool-affix tool-affix--suffix" data-affix="%"><input type="text" id="dc-hold-appreciation" inputmode="decimal"></div>
+          <div class="tool-help">An assumption, not a forecast.</div>
+        </div>
+        <div class="tool-field">
+          <label for="dc-hold-amort">Remaining mortgage amortization</label>
+          <div class="tool-affix tool-affix--suffix" data-affix="yrs"><input type="text" id="dc-hold-amort" inputmode="decimal" value="20"></div>
+        </div>
+        <div class="tool-field">
+          <label for="dc-hold-rate">Mortgage interest rate</label>
+          <div class="tool-affix tool-affix--suffix" data-affix="%"><input type="text" id="dc-hold-rate" inputmode="decimal" value="4.50"></div>
+        </div>
+      </div>
+      <div class="mck-hold-cols">
+        <div class="mck-hold-col">
+          <div class="label">Net Proceeds Today</div>
+          <div class="mck-hold-num" id="dc-hold-now"></div>
+          <div class="mck-hold-note">After selling costs, mortgage payout, penalty, and estimated tax.</div>
+        </div>
+        <div class="mck-hold-col">
+          <div class="label">Estimated Equity in 5 Years</div>
+          <div class="mck-hold-num" id="dc-hold-future"></div>
+          <div class="mck-hold-note" id="dc-hold-future-note"></div>
+        </div>
+      </div>
+      <p class="mck-hold-frame">Two numbers to discuss with your advisors.</p>
+    </div>
+
+    <div class="tool-capture">
+      <button type="button" class="btn btn--outline" id="mck-capture-open">Email me this analysis as a PDF summary <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+    </div>
+
+    <div class="mck-print-footer">
+      These figures are illustrations based on user-entered assumptions and generalized program parameters — not a projection, guarantee, financing advice, tax advice, or a recommendation to buy or sell. Tax calculations are simplified estimates; corporate treatment (refundable tax, capital dividend account) requires professional advice.<br>
+      Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage &middot; mckinneyrealty.ca
+    </div>
+  </div>
+
+  <!-- POSITIONING BLOCK
+       COPY STATUS: DRAFT — to be replaced with the approved copy
+       drafted in the main project (spec §4.4). -->
+  <div class="tool-positioning">
+    <div class="label">Before You List</div>
+    <h3 class="tool-positioning-title">Pre-sale structuring is where value is <em class="gi">won or lost.</em></h3>
+    <p class="tool-positioning-body">Share sale versus asset sale. The timing of CCA in your final year. Capital Dividend Account planning before, not after, the closing date. The decisions that move six figures on a disposition are made before the listing goes live — with your accountant, your lawyer, and a broker who has structured these transactions.</p>
+    <a href="../disposition-intake.html" class="btn btn--navy">Book a Pre-Sale Consultation <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="../images/mr-monogram-lg.png" alt="McKinney Realty">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="../team.html">Team</a><a href="../services.html">Services</a><a href="../track-record.html">Track Record</a><a href="../contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../mckinney-forms.js"></script>
+<script src="js/mck-params.js"></script>
+<script src="js/mck-calc-engine.js"></script>
+<script src="js/mck-calc-ui.js"></script>
+<script>
+(function () {
+  'use strict';
+  var P = window.MCK_PARAMS, E = window.MCK_ENGINE, U = window.MCKUI;
+  var $ = function (id) { return document.getElementById(id); };
+  var D = P.disposition;
+
+  // Defaults from params
+  $('dc-commission').value = (D.commissionRate * 100).toFixed(1);
+  $('dc-legal').value = D.legalClosingDefault.toLocaleString('en-CA');
+  $('dc-building').value = D.buildingPortionDefault * 100;
+  $('dc-building-value').textContent = Math.round(D.buildingPortionDefault * 100) + '%';
+  $('dc-marginal').value = (D.marginalRateON * 100).toFixed(2);
+  $('dc-hold-rent').value = (D.holdRentGrowth * 100).toFixed(1);
+  $('dc-hold-expense').value = (D.holdExpenseGrowth * 100).toFixed(1);
+  $('dc-hold-appreciation').value = (D.holdAppreciation * 100).toFixed(1);
+
+  $('dc-building').addEventListener('input', function () {
+    $('dc-building-value').textContent = $('dc-building').value + '%';
+  });
+
+  // Ownership toggle
+  var ownership = 'personal';
+  function setOwnership(mode) {
+    ownership = mode;
+    $('dc-own-personal').classList.toggle('active', mode === 'personal');
+    $('dc-own-corp').classList.toggle('active', mode === 'corporation');
+    $('dc-marginal-field').style.display = mode === 'personal' ? '' : 'none';
+    // Re-render live if we've already calculated
+    if ($('dc-results').classList.contains('is-visible')) {
+      $('dc-form').dispatchEvent(new Event('input', { bubbles: true }));
+    }
+  }
+  $('dc-own-personal').addEventListener('click', function () { setOwnership('personal'); });
+  $('dc-own-corp').addEventListener('click', function () { setOwnership('corporation'); });
+
+  /* Waterfall renderer — descending ladder. Each deduction bar starts
+     where the running total left off; widths proportional to sale price. */
+  function renderWaterfall(d, salePrice) {
+    var steps = [
+      { label: 'Sale price', amount: salePrice, type: 'start' },
+      { label: 'Selling costs', amount: -(d.commission + d.legalClosing), type: 'cost' },
+      { label: 'Mortgage payout', amount: -d.mortgageBalance, type: 'cost' },
+      { label: 'Prepayment penalty', amount: -d.penalty, type: 'cost' },
+      { label: 'Tax — CCA recapture', amount: -d.taxOnRecapture, type: 'tax-recapture' },
+      { label: 'Tax — capital gain', amount: -d.taxOnGain, type: 'tax-gain' },
+      { label: 'Net to vendor', amount: d.netToVendor, type: 'net' }
+    ];
+    var scale = 100 / salePrice;
+    var running = salePrice;
+    var html = steps.map(function (s) {
+      var left, width, cls;
+      if (s.type === 'start') { left = 0; width = salePrice * scale; cls = 'start'; }
+      else if (s.type === 'net') { left = 0; width = Math.max(0, d.netToVendor) * scale; cls = 'net'; }
+      else {
+        var mag = Math.abs(s.amount);
+        running -= mag;
+        left = Math.max(0, running) * scale;
+        width = Math.min(mag, Math.max(0, running + mag)) * scale;
+        cls = s.type;
+      }
+      var neg = s.type === 'net' && d.netToVendor < 0 ? ' mck-negative' : '';
+      return '<div class="mck-wf-row mck-wf-row--' + cls + '">' +
+        '<div class="mck-wf-label">' + s.label + '</div>' +
+        '<div class="mck-wf-track"><div class="mck-wf-bar mck-wf-bar--' + cls + '" style="left:' + left.toFixed(2) + '%;width:' + Math.max(width, 0.4).toFixed(2) + '%"></div></div>' +
+        '<div class="mck-wf-value' + neg + '">' + (s.type === 'start' || s.type === 'net' ? '' : '−') + U.fmtCurrency(Math.abs(s.amount)) + '</div>' +
+        '</div>';
+    }).join('');
+    $('dc-waterfall').innerHTML = html;
+  }
+
+  U.initTool({
+    tool: 'disposition-calculator',
+    form: $('dc-form'),
+    results: $('dc-results'),
+    calculate: function () {
+      var inputs = {
+        salePrice: U.parseNum($('dc-price')),
+        commissionRate: U.parsePct($('dc-commission'), D.commissionRate),
+        legalClosing: U.parseNum($('dc-legal'), D.legalClosingDefault),
+        mortgageBalance: U.parseNum($('dc-mortgage')),
+        penalty: U.parseNum($('dc-penalty'), 0),
+        purchasePrice: U.parseNum($('dc-purchase')),
+        improvements: U.parseNum($('dc-improvements'), 0),
+        buildingPortion: parseFloat($('dc-building').value) / 100,
+        ccaClaimed: U.parseNum($('dc-cca'), 0),
+        ownership: ownership,
+        marginalRate: U.parsePct($('dc-marginal'), D.marginalRateON)
+      };
+
+      var d = E.computeDisposition(inputs, P);
+      renderWaterfall(d, inputs.salePrice);
+      $('dc-net').textContent = U.fmtCurrency(d.netToVendor);
+
+      // Corporation extras
+      var isCorp = ownership === 'corporation';
+      $('dc-cda').hidden = !isCorp;
+      $('dc-corp-note').hidden = !isCorp;
+      if (isCorp && d.cdaCredit !== null) {
+        $('dc-cda-label').textContent = 'Capital Dividend Account credit — may be distributable tax-free via the CDA. Confirm with your accountant.';
+        $('dc-cda-value').textContent = U.fmtCurrency(d.cdaCredit);
+      }
+
+      // Hold scenario
+      var hold = E.computeHoldScenario({
+        propertyValue: inputs.salePrice,
+        mortgageBalance: inputs.mortgageBalance,
+        mortgageRate: U.parsePct($('dc-hold-rate'), 0.045),
+        remainingAmortYears: U.parseNum($('dc-hold-amort'), 20),
+        appreciation: U.parsePct($('dc-hold-appreciation'), D.holdAppreciation),
+        years: D.holdYears
+      }, P);
+      $('dc-hold-now').textContent = U.fmtCurrency(d.netToVendor);
+      $('dc-hold-future').textContent = U.fmtCurrency(hold.futureEquity);
+      $('dc-hold-future-note').textContent = 'Assumed value ' + U.fmtCurrency(hold.futureValue) +
+        ' less remaining mortgage ' + U.fmtCurrency(hold.futureBalance) +
+        ', before selling costs and tax at that time.';
+
+      $('dc-print-date').textContent = new Date().toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+      return { tool: 'disposition-calculator', inputs: inputs, outputs: d, hold: hold, scenarioCount: 1 };
+    }
+  });
+
+  // Nav hamburger
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+})();
+</script>
+</body>
+</html>

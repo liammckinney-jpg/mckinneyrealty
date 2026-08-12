@@ -1,0 +1,327 @@
+/* ================================================================
+   McKinney Realty — Calculator Tools CSS
+   Extends mckinney-system.css (tokens only — no new colors/fonts).
+   Shared by financing-modeler.html and disposition-calculator.html.
+   ================================================================ */
+
+/* ============================================================
+   PAGE FRAME
+   ============================================================ */
+.tool-main { padding-top: 4.5rem; }
+.tool-hero {
+  background: var(--navy);
+  padding: var(--s-7) 0 var(--s-6);
+}
+.tool-hero .label { margin-bottom: var(--s-2); }
+.tool-hero-title {
+  font-family: var(--font-d); font-size: var(--d-section); font-weight: 300;
+  line-height: 1.15; color: var(--white); max-width: 720px;
+}
+.tool-hero-sub {
+  font-size: var(--b-md); font-weight: 300; line-height: 1.7;
+  color: rgba(255,255,255,0.55); max-width: 620px; margin-top: var(--s-3);
+}
+
+/* ============================================================
+   INPUT PANELS — single-column flow
+   ============================================================ */
+.tool-form { padding: var(--s-6) 0; max-width: 760px; }
+.tool-fieldset {
+  border: 1px solid var(--border); background: var(--offwhite);
+  padding: var(--s-4); margin-bottom: var(--s-4);
+}
+.tool-fieldset-legend {
+  font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold-dark); margin-bottom: var(--s-3);
+}
+.tool-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3);
+}
+.tool-field--full { grid-column: 1 / -1; }
+.tool-field label {
+  display: block; font-size: var(--b-sm); font-weight: 500;
+  color: var(--text-1); margin-bottom: 0.375rem;
+}
+.tool-field input[type="text"],
+.tool-field input[type="number"],
+.tool-field select {
+  width: 100%; padding: 0.75rem 0.875rem;
+  font-family: var(--font-b); font-size: var(--b-md); font-weight: 400;
+  color: var(--text-1); background: var(--white);
+  border: 1px solid var(--border-strong); border-radius: 0;
+  transition: border-color 0.3s; -webkit-appearance: none; appearance: none;
+}
+.tool-field select {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%231A1F2E' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 0.875rem center;
+  padding-right: 2.25rem;
+}
+.tool-field input:focus, .tool-field select:focus {
+  outline: none; border-color: var(--gold-dark);
+}
+.tool-field input[aria-invalid="true"] { border-color: #b84747; }
+.tool-help {
+  font-size: var(--b-xs); font-weight: 300; line-height: 1.5;
+  color: var(--text-3); margin-top: 0.375rem;
+}
+.tool-note {
+  font-size: var(--b-sm); font-weight: 400; line-height: 1.6;
+  color: var(--gold-dark); background: var(--cream);
+  border-left: 3px solid var(--gold);
+  padding: 0.75rem 1rem; margin-top: var(--s-2);
+}
+/* Prefixed input (e.g. $ / %) */
+.tool-affix { position: relative; }
+.tool-affix input { padding-left: 1.75rem; }
+.tool-affix::before {
+  content: attr(data-affix); position: absolute; left: 0.875rem; top: 50%;
+  transform: translateY(-50%); font-size: var(--b-md); color: var(--text-3);
+  pointer-events: none;
+}
+.tool-affix--suffix input { padding-left: 0.875rem; padding-right: 2rem; }
+.tool-affix--suffix::before { left: auto; right: 0.875rem; }
+
+/* Toggle pair (opEx mode, ownership) */
+.tool-toggle { display: inline-flex; border: 1px solid var(--border-strong); }
+.tool-toggle button {
+  padding: 0.5rem 1rem; font-family: var(--font-b); font-size: var(--b-xs);
+  font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  background: var(--white); color: var(--text-2); border: none; cursor: pointer;
+  transition: all 0.3s;
+}
+.tool-toggle button.active { background: var(--navy); color: var(--white); }
+
+/* Range slider (building portion) */
+.tool-field input[type="range"] {
+  width: 100%; margin-top: 0.5rem; accent-color: var(--gold-dark);
+}
+.tool-range-value {
+  font-family: var(--font-d); font-size: 1.25rem; font-weight: 400;
+  color: var(--navy); margin-left: 0.5rem;
+}
+
+.tool-submit { margin-top: var(--s-2); }
+
+/* ============================================================
+   RESULTS
+   ============================================================ */
+.tool-results { display: none; padding: 0 0 var(--s-6); }
+.tool-results.is-visible { display: block; animation: fadeUp 0.5s ease forwards; }
+.tool-results-header { margin-bottom: var(--s-4); }
+.tool-results-header .label { margin-bottom: var(--s-2); }
+.tool-results-title {
+  font-family: var(--font-d); font-size: var(--d-sub); font-weight: 300;
+  color: var(--navy); line-height: 1.2;
+}
+
+/* Disclaimer — always above the fold of results */
+.tool-disclaimer {
+  font-size: var(--b-xs); font-weight: 300; line-height: 1.7;
+  color: var(--text-3); background: var(--offwhite);
+  border-left: 3px solid var(--stone-50);
+  padding: var(--s-2) var(--s-3); margin-bottom: var(--s-4);
+  max-width: 860px;
+}
+
+/* --------------------------------------------
+   Comparison table (Tool 1) — stacks to cards
+   -------------------------------------------- */
+.mck-compare { width: 100%; border-collapse: collapse; border: 1px solid var(--border); }
+.mck-compare th, .mck-compare td {
+  padding: 0.875rem 1rem; text-align: right;
+  font-size: var(--b-sm); font-weight: 400; color: var(--text-1);
+  border-bottom: 1px solid var(--border);
+}
+.mck-compare thead th {
+  background: var(--navy); color: var(--white);
+  font-family: var(--font-d); font-size: 1.0625rem; font-weight: 400;
+  text-align: right; line-height: 1.3;
+}
+.mck-compare thead th:first-child { text-align: left; }
+.mck-compare tbody th {
+  text-align: left; font-weight: 400; color: var(--text-2); background: var(--offwhite);
+}
+.mck-compare .mck-compare-hero td {
+  font-family: var(--font-d); font-size: 1.375rem; font-weight: 400; color: var(--navy);
+}
+.mck-compare .mck-binding {
+  font-size: 0.5625rem; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--gold-dark);
+}
+.mck-compare td.is-ineligible { color: var(--text-3); }
+.mck-compare col.is-ineligible, .mck-compare .col-ineligible { opacity: 0.45; }
+.mck-negative { color: #7a2e2e; }
+
+/* Card layout on mobile */
+.mck-cards { display: none; }
+
+/* Factual takeaway sentence */
+.tool-takeaway {
+  font-family: var(--font-d); font-size: 1.25rem; font-weight: 300;
+  font-style: italic; line-height: 1.5; color: var(--navy);
+  border-left: 3px solid var(--gold); padding-left: var(--s-3);
+  margin-top: var(--s-4); max-width: 720px;
+}
+
+/* --------------------------------------------
+   Waterfall (Tool 2) — CSS only, descending ladder
+   -------------------------------------------- */
+.mck-waterfall { max-width: 860px; }
+.mck-wf-row { display: grid; grid-template-columns: 200px 1fr 140px; gap: var(--s-2); align-items: center; margin-bottom: 0.625rem; }
+.mck-wf-label { font-size: var(--b-sm); font-weight: 400; color: var(--text-2); text-align: right; }
+.mck-wf-track { position: relative; height: 26px; background: transparent; }
+.mck-wf-bar { position: absolute; top: 0; bottom: 0; transition: left 0.6s ease, width 0.6s ease; }
+.mck-wf-bar--start { background: var(--navy); }
+.mck-wf-bar--cost { background: var(--stone-50); }
+.mck-wf-bar--tax-recapture { background: var(--gold-dark); }
+.mck-wf-bar--tax-gain { background: var(--gold); }
+.mck-wf-bar--net { background: var(--navy); }
+.mck-wf-value { font-size: var(--b-sm); font-weight: 500; color: var(--text-1); font-variant-numeric: tabular-nums; }
+.mck-wf-row--net .mck-wf-label { font-weight: 500; color: var(--navy); }
+.mck-wf-row--net .mck-wf-value {
+  font-family: var(--font-d); font-size: var(--d-stat-sm); font-weight: 400; color: var(--navy);
+}
+.mck-wf-cda {
+  display: flex; justify-content: space-between; align-items: baseline;
+  max-width: 860px; margin-top: var(--s-2);
+  border-top: 1px dashed var(--gold); padding-top: var(--s-2);
+}
+.mck-wf-cda-label { font-size: var(--b-sm); font-weight: 400; color: var(--gold-dark); max-width: 560px; line-height: 1.5; }
+.mck-wf-cda-value { font-family: var(--font-d); font-size: 1.375rem; color: var(--gold-dark); }
+
+/* Net-to-vendor headline number */
+.mck-net-hero { margin: var(--s-4) 0; }
+.mck-net-hero .label { margin-bottom: 0.5rem; }
+.mck-net-hero-num {
+  font-family: var(--font-d); font-size: var(--d-stat); font-weight: 300;
+  color: var(--navy); line-height: 1;
+}
+
+/* Hold-vs-sell side-by-side */
+.mck-hold { margin-top: var(--s-5); border-top: 1px solid var(--border); padding-top: var(--s-4); max-width: 860px; }
+.mck-hold-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: var(--s-3); }
+.mck-hold-col { background: var(--offwhite); padding: var(--s-3); }
+.mck-hold-col .label { margin-bottom: var(--s-2); }
+.mck-hold-num { font-family: var(--font-d); font-size: var(--d-stat-sm); font-weight: 300; color: var(--navy); line-height: 1.1; }
+.mck-hold-note { font-size: var(--b-xs); font-weight: 300; color: var(--text-3); margin-top: 0.375rem; line-height: 1.5; }
+.mck-hold-frame { font-size: var(--b-sm); font-weight: 300; font-style: italic; color: var(--text-2); margin-top: var(--s-2); }
+
+/* ============================================================
+   EXPLAINER / POSITIONING BLOCKS
+   ============================================================ */
+.tool-explainer { border: 1px solid var(--border); margin-top: var(--s-5); max-width: 860px; }
+.tool-explainer summary {
+  cursor: pointer; list-style: none; display: flex; justify-content: space-between;
+  align-items: center; padding: var(--s-3) var(--s-4);
+  font-family: var(--font-d); font-size: 1.125rem; font-weight: 400; color: var(--navy);
+}
+.tool-explainer summary::-webkit-details-marker { display: none; }
+.tool-explainer summary::after { content: '+'; font-size: 1.25rem; color: var(--gold-dark); }
+.tool-explainer[open] summary::after { content: '\2212'; }
+.tool-explainer-body { padding: 0 var(--s-4) var(--s-4); font-size: var(--b-sm); font-weight: 300; line-height: 1.75; color: var(--text-2); }
+.tool-explainer-body h4 { font-family: var(--font-b); font-size: var(--b-sm); font-weight: 500; color: var(--text-1); margin: var(--s-3) 0 0.5rem; }
+.tool-explainer-body ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+.tool-explainer-body li { margin-bottom: 0.375rem; }
+
+.tool-positioning { background: var(--cream); padding: var(--s-5); margin-top: var(--s-5); max-width: 860px; }
+.tool-positioning .label { margin-bottom: var(--s-2); }
+.tool-positioning-title { font-family: var(--font-d); font-size: var(--d-sub); font-weight: 300; color: var(--navy); line-height: 1.25; margin-bottom: var(--s-3); }
+.tool-positioning-body { font-size: var(--b-md); font-weight: 300; line-height: 1.75; color: var(--text-2); max-width: 640px; }
+.tool-positioning .btn { margin-top: var(--s-4); }
+
+/* Capture CTA under results */
+.tool-capture { margin-top: var(--s-5); }
+
+/* ============================================================
+   EMAIL-CAPTURE MODAL
+   ============================================================ */
+.mck-modal-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(26,31,46,0.55); backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease; padding: 24px;
+}
+.mck-modal-overlay.is-visible { opacity: 1; visibility: visible; }
+.mck-modal {
+  background: var(--white); width: 100%; max-width: 480px; max-height: 90vh;
+  overflow-y: auto; position: relative; padding: var(--s-5) var(--s-4) var(--s-4);
+  transform: translateY(20px) scale(0.98); transition: transform 0.35s ease;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.08);
+}
+.mck-modal-overlay.is-visible .mck-modal { transform: translateY(0) scale(1); }
+.mck-modal .label { margin-bottom: 0.75rem; }
+.mck-modal-title { font-family: var(--font-d); font-size: 1.75rem; font-weight: 300; color: var(--navy); line-height: 1.2; margin-bottom: 0.5rem; }
+.mck-modal-desc { font-size: var(--b-sm); font-weight: 300; line-height: 1.65; color: var(--text-2); margin-bottom: var(--s-3); }
+.mck-modal .tool-field { margin-bottom: var(--s-2); }
+.mck-modal-close {
+  position: absolute; top: 16px; right: 16px; width: 36px; height: 36px;
+  border-radius: 50%; border: 1px solid var(--border-strong); background: var(--white);
+  cursor: pointer; font-size: 1rem; color: var(--text-2); line-height: 1;
+}
+.mck-modal-close:hover { color: var(--navy); border-color: var(--navy); }
+/* Honeypot — visually removed, present for bots */
+.mck-hp { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
+
+/* ============================================================
+   PRINT SUMMARY VIEW
+   Hidden on screen; becomes the whole document when printing.
+   ============================================================ */
+.mck-print-header, .mck-print-footer { display: none; }
+
+@media print {
+  @page { margin: 1.4cm; }
+  body { background: #fff; }
+  .nav, .tool-hero, .tool-form, .footer, .tool-capture, .tool-explainer,
+  .tool-positioning, .mck-modal-overlay, .tool-submit, .mck-hold-inputs { display: none !important; }
+  .tool-main { padding-top: 0; }
+  .tool-results { display: block !important; padding: 0; }
+  .mck-print-header {
+    display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 16px;
+  }
+  .mck-print-header img { height: 34px; width: auto; }
+  .mck-print-header-name {
+    font-family: var(--font-d); font-size: 13px; font-weight: 500;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy);
+  }
+  .mck-print-header-date { margin-left: auto; font-size: 10px; color: var(--text-3); }
+  .mck-print-footer {
+    display: block; border-top: 1px solid #ccc; margin-top: 18px; padding-top: 8px;
+    font-size: 8.5px; line-height: 1.6; color: var(--text-3);
+  }
+  .mck-compare th, .mck-compare td { padding: 6px 8px; font-size: 11px; }
+  .mck-compare thead th { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .mck-wf-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .tool-disclaimer { page-break-inside: avoid; }
+  .tool-results { page-break-inside: avoid; }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .tool-grid { grid-template-columns: 1fr; }
+  /* Comparison table → cards */
+  .mck-compare { display: none; }
+  .mck-cards { display: block; }
+  .mck-card { border: 1px solid var(--border); background: var(--offwhite); margin-bottom: var(--s-3); }
+  .mck-card.is-ineligible { opacity: 0.5; }
+  .mck-card-head {
+    background: var(--navy); color: var(--white); padding: var(--s-2) var(--s-3);
+    font-family: var(--font-d); font-size: 1.125rem; font-weight: 400;
+  }
+  .mck-card-row {
+    display: flex; justify-content: space-between; gap: var(--s-2);
+    padding: 0.625rem var(--s-3); border-bottom: 1px solid var(--border);
+    font-size: var(--b-sm);
+  }
+  .mck-card-row:last-child { border-bottom: none; }
+  .mck-card-row dt { color: var(--text-2); font-weight: 300; }
+  .mck-card-row dd { font-weight: 500; color: var(--text-1); text-align: right; }
+  .mck-card-row--hero dd { font-family: var(--font-d); font-size: 1.25rem; font-weight: 400; color: var(--navy); }
+  .mck-wf-row { grid-template-columns: 1fr; gap: 0.25rem; margin-bottom: var(--s-2); }
+  .mck-wf-label { text-align: left; }
+  .mck-wf-value { text-align: left; }
+  .mck-hold-cols { grid-template-columns: 1fr; }
+}
