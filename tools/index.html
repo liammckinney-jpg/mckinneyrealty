@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+
+<title>McKinney Realty — Calculators</title>
+<meta name="description" content="Interactive analysis tools for multi-family owners and investors: model CMHC MLI Select, MLI Standard, and conventional financing, or calculate what a sale would actually net you.">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VFY0V42GLR');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../mckinney-system.css">
+<link rel="stylesheet" href="css/mck-tools.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+  <a href="../index.html" class="nav-brand">
+    <img class="nav-mono" src="../images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="../team.html">Our Team</a>
+    <a href="../services.html">Services</a>
+    <a href="../track-record.html">Track Record</a>
+    <a href="index.html" class="active">Calculators</a>
+    <a class="nav-cta" href="../contact.html">Contact</a>
+  </div>
+  </div>
+</nav>
+
+<main class="tool-main">
+
+<!-- HERO -->
+<section class="tool-hero">
+  <div class="wrap">
+    <div class="label label--light">Calculators</div>
+    <h1 class="tool-hero-title">Run the numbers like a <em class="gi">specialist.</em></h1>
+    <p class="tool-hero-sub">Two interactive tools built on the same analysis we run for clients. They compute — they don&rsquo;t advise. Every output is an illustration to take to your lender, accountant, and legal counsel.</p>
+  </div>
+</section>
+
+<!-- TOOL CARDS -->
+<div class="dual-cta">
+  <div class="dual-cta-panel">
+    <div class="label">For Investors &amp; Buyers</div>
+    <h3 class="dual-cta-title">Multi-Family Financing Modeler</h3>
+    <p class="dual-cta-desc">Compare CMHC MLI Select, CMHC MLI Standard, and conventional financing side by side — maximum loan, the constraint that binds it, capital required at closing, insurance premium, and cash flow at your assumptions.</p>
+    <a href="financing-modeler.html" class="btn btn--navy">Model Your Financing <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+  </div>
+  <div class="dual-cta-panel">
+    <div class="label">For Property Owners</div>
+    <h3 class="dual-cta-title">Disposition Proceeds Calculator</h3>
+    <p class="dual-cta-desc">What would a sale actually net you? Selling costs, mortgage payout, prepayment penalty, capital gains tax, and CCA recapture — down to the number that lands in your account, personally or through a corporation.</p>
+    <a href="disposition-calculator.html" class="btn btn--gold">Calculate Your Net <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="../images/mr-monogram-lg.png" alt="McKinney Realty">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="../team.html">Team</a><a href="../services.html">Services</a><a href="../track-record.html">Track Record</a><a href="index.html">Calculators</a><a href="../contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
