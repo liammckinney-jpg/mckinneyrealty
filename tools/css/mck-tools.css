@@ -212,7 +212,7 @@
 /* ============================================================
    EXPLAINER / POSITIONING BLOCKS
    ============================================================ */
-.tool-explainer { border: 1px solid var(--border); margin-top: var(--s-5); max-width: 860px; }
+.tool-explainer { border: 1px solid var(--border); margin: var(--s-5) 0 var(--s-7); max-width: 860px; }
 .tool-explainer summary {
   cursor: pointer; list-style: none; display: flex; justify-content: space-between;
   align-items: center; padding: var(--s-3) var(--s-4);
@@ -226,7 +226,7 @@
 .tool-explainer-body ul { padding-left: 1.25rem; margin: 0.5rem 0; }
 .tool-explainer-body li { margin-bottom: 0.375rem; }
 
-.tool-positioning { background: var(--cream); padding: var(--s-5); margin-top: var(--s-5); max-width: 860px; }
+.tool-positioning { background: var(--cream); padding: var(--s-5); margin: var(--s-5) 0 var(--s-7); max-width: 860px; }
 .tool-positioning .label { margin-bottom: var(--s-2); }
 .tool-positioning-title { font-family: var(--font-d); font-size: var(--d-sub); font-weight: 300; color: var(--navy); line-height: 1.25; margin-bottom: var(--s-3); }
 .tool-positioning-body { font-size: var(--b-md); font-weight: 300; line-height: 1.75; color: var(--text-2); max-width: 640px; }
