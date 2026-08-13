@@ -58,19 +58,45 @@
      amortSurchargeStepYears beyond amortSurchargeBaseYears.
      Tier discount applied to the combined rate.
      --------------------------------------------------------------- */
+  // Returns null when the LTV falls in an unverified grid bucket
+  // (rate: null in params) — callers must render "estimate unavailable"
+  // and suppress premium-dependent outputs.
+  // Tier discount applies to (base + surcharges), not base alone.
   function premiumRate(ltv, amortYears, tierDiscount, params) {
     var grid = params.premium.grid;
-    var base = null;
+    var base;
+    var found = false;
     for (var i = 0; i < grid.length; i++) {
-      if (ltv <= grid[i].maxLTV + 1e-9) { base = grid[i].rate; break; }
+      if (ltv <= grid[i].maxLTV + 1e-9) { base = grid[i].rate; found = true; break; }
     }
-    if (base === null) base = grid[grid.length - 1].rate;
+    if (!found) base = grid[grid.length - 1].rate;
+    if (base === null) return null;
 
     var extraYears = Math.max(0, amortYears - params.premium.amortSurchargeBaseYears);
     var steps = Math.floor(extraYears / params.premium.amortSurchargeStepYears);
     var rate = base + steps * params.premium.amortSurchargePerStep;
 
     return rate * (1 - (tierDiscount || 0));
+  }
+
+  // DSCR sizing must respect the floor on premium-INCLUSIVE debt service:
+  // the gross (capitalized) loan the NOI supports is fixed; the maximum
+  // net loan is gross ÷ (1 + premiumRate), where premiumRate depends on
+  // the net loan's own LTV bucket — iterate to the bucket fixpoint.
+  // Returns { net, rate }; rate null when the bucket is unverified
+  // (net falls back to the premium-exclusive gross).
+  function netLoanFromGross(gross, price, amortYears, tierDiscount, params) {
+    if (gross <= 0 || price <= 0) return { net: Math.max(0, gross), rate: 0 };
+    var net = gross;
+    var rate = null;
+    for (var i = 0; i < 8; i++) {
+      rate = premiumRate(net / price, amortYears, tierDiscount, params);
+      if (rate === null) return { net: gross, rate: null };
+      var next = gross / (1 + rate);
+      if (Math.abs(next - net) < 0.005) return { net: next, rate: rate };
+      net = next;
+    }
+    return { net: net, rate: rate };
   }
 
   /* ---------------------------------------------------------------
@@ -86,7 +112,16 @@
 
     var maxLoanLTV = inputs.price * scenario.maxLTV;
     var maxAnnualDS = noi / scenario.minDSCR;
-    var maxLoanDSCR = loanFromPayment(Math.max(0, maxAnnualDS) / 12, inputs.rate, scenario.maxAmortYears);
+    var grossMaxDSCR = loanFromPayment(Math.max(0, maxAnnualDS) / 12, inputs.rate, scenario.maxAmortYears);
+
+    // For CMHC scenarios the DSCR cap applies to the premium-inclusive
+    // loan, so the net (pre-premium) DSCR maximum is smaller than the
+    // gross annuity value.
+    var maxLoanDSCR = grossMaxDSCR;
+    if (scenario.cmhcInsured) {
+      maxLoanDSCR = netLoanFromGross(grossMaxDSCR, inputs.price,
+        scenario.maxAmortYears, scenario.premiumDiscount, params).net;
+    }
 
     var maxLoan = Math.min(maxLoanLTV, maxLoanDSCR);
     var bindingConstraint = maxLoanLTV <= maxLoanDSCR ? 'LTV' : 'DSCR';
@@ -94,19 +129,26 @@
     var downPayment = inputs.price - maxLoan;
 
     var ltv = inputs.price > 0 ? maxLoan / inputs.price : 0;
-    var premRate = 0, premium = 0;
+    var premRate = 0, premiumUnavailable = false;
     if (scenario.cmhcInsured && maxLoan > 0) {
       premRate = premiumRate(ltv, scenario.maxAmortYears, scenario.premiumDiscount, params);
-      premium = maxLoan * premRate;
+      if (premRate === null) premiumUnavailable = true;
     }
 
-    var loanWithPremium = maxLoan + premium;   // premium capitalized into the loan
-    var pmt = monthlyPayment(loanWithPremium, inputs.rate, scenario.maxAmortYears);
-    var annualDS = pmt * 12;
-
+    var premium = null, loanWithPremium = null, pmt = null, annualDS = null;
+    var dscrActual = null, cashFlow = null, cashOnCash = null;
     var closingCosts = inputs.price * params.financingDefaults.closingCostAllowance;
-    var cashFlow = noi - annualDS;
-    var equity = downPayment + closingCosts;
+
+    if (!premiumUnavailable) {
+      premium = maxLoan * premRate;
+      loanWithPremium = maxLoan + premium;   // premium capitalized into the loan
+      pmt = monthlyPayment(loanWithPremium, inputs.rate, scenario.maxAmortYears);
+      annualDS = pmt * 12;
+      cashFlow = noi - annualDS;
+      var equity = downPayment + closingCosts;
+      dscrActual = annualDS > 0 ? noi / annualDS : null;
+      cashOnCash = equity > 0 ? cashFlow / equity : null;
+    }
 
     return {
       key: scenario.key || null,
@@ -119,16 +161,17 @@
       bindingConstraint: bindingConstraint,
       downPayment: downPayment,
       ltv: ltv,
-      premiumRate: premRate,
+      premiumRate: premiumUnavailable ? null : premRate,
+      premiumUnavailable: premiumUnavailable,
       premium: premium,
       loanWithPremium: loanWithPremium,
       amortYears: scenario.maxAmortYears,
       monthlyPayment: pmt,
       annualDebtService: annualDS,
-      dscrActual: annualDS > 0 ? noi / annualDS : null,
+      dscrActual: dscrActual,
       cashFlow: cashFlow,
       closingCostAllowance: closingCosts,
-      cashOnCash: equity > 0 ? cashFlow / equity : null
+      cashOnCash: cashOnCash
     };
   }
 
@@ -232,6 +275,7 @@
     loanFromPayment: loanFromPayment,
     remainingBalance: remainingBalance,
     premiumRate: premiumRate,
+    netLoanFromGross: netLoanFromGross,
     computeScenario: computeScenario,
     computeFinancingComparison: computeFinancingComparison,
     computeDisposition: computeDisposition,

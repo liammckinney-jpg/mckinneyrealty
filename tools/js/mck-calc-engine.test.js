@@ -49,18 +49,22 @@ approx(engine.remainingBalance(900000, 0.045, 20, 60), 743725.75, 0.01, 'remaini
 /* ---------------------------------------------------------------
    Premium grid
    --------------------------------------------------------------- */
-console.log('Premium grid');
-// 90% LTV, 45-yr amort, 20% tier discount:
-// band 0.0475 + 4×0.0025 surcharge = 0.0575, ×0.80 = 0.046
-approx(engine.premiumRate(0.90, 45, 0.20, params), 0.046, 1e-9, '90%/45yr/20% off');
-// 85% LTV, 40-yr, no discount: 0.04 + 3×0.0025 = 0.0475
-approx(engine.premiumRate(0.85, 40, 0, params), 0.0475, 1e-9, '85%/40yr');
-// Band edge: exactly 65% at 25 yr → 0.0175, no surcharge
-approx(engine.premiumRate(0.65, 25, 0, params), 0.0175, 1e-9, '65%/25yr band edge');
-// Just over a band edge falls into the next band
-approx(engine.premiumRate(0.6501, 25, 0, params), 0.0200, 1e-9, '65.01% next band');
-// Partial surcharge step (29 yr = 0 full steps beyond 25)
-approx(engine.premiumRate(0.75, 29, 0, params), 0.0250, 1e-9, '29yr no full step');
+console.log('Premium grid (July 14 2025)');
+// LOCKED (status doc §2a): 95% LTV base 6.15% + 1.00% (45-yr surcharge)
+// = 7.15%, tier discount applies to the TOTAL: ×0.80 = 5.72%
+approx(engine.premiumRate(0.95, 45, 0, params), 0.0715, 1e-9, '95%/45yr undiscounted total');
+approx(engine.premiumRate(0.95, 45, 0.20, params), 0.0572, 1e-9, '95%/45yr/70pts = 5.72% (discount on total)');
+// 90% bucket shares the 6.15% base
+approx(engine.premiumRate(0.90, 45, 0.20, params), 0.0572, 1e-9, '90%/45yr/20% off');
+// 85% LTV, 40-yr, no discount: 5.35% + 3×0.25% = 6.10%
+approx(engine.premiumRate(0.85, 40, 0, params), 0.0610, 1e-9, '85%/40yr');
+// Band edge: exactly 65% at 25 yr → 2.50% anchor, no surcharge
+approx(engine.premiumRate(0.65, 25, 0, params), 0.0250, 1e-9, '65%/25yr band edge');
+// Unverified mid buckets (65–80%) must return null, never a number
+ok(engine.premiumRate(0.6501, 25, 0, params) === null, '65.01% unverified bucket → null');
+ok(engine.premiumRate(0.78, 45, 0.20, params) === null, '78% unverified bucket → null');
+// Partial surcharge step in a verified bucket (29 yr = 0 full steps)
+approx(engine.premiumRate(0.85, 29, 0, params), 0.0535, 1e-9, '29yr no full step');
 
 /* ---------------------------------------------------------------
    Tool 1 — locked worked example
@@ -79,22 +83,27 @@ var comparison = engine.computeFinancingComparison(t1inputs, 'mliSelect70', para
 var sel = comparison[0], std = comparison[1], conv = comparison[2];
 
 approx(sel.noi, 108252, 0.01, 'NOI');
-// MLI Select 70 — LTV-bound
-approx(sel.maxLoanLTV, 1800000, 0.01, 'Select70 maxLoan_LTV');
-approx(sel.maxLoanDSCR, 2015086.35, 0.5, 'Select70 maxLoan_DSCR');
-approx(sel.maxLoan, 1800000, 0.01, 'Select70 maxLoan');
+// MLI Select 70 — 95% LTV, LTV-bound (DSCR net max just above the cap)
+approx(sel.maxLoanLTV, 1900000, 0.01, 'Select70 maxLoan_LTV @95%');
+approx(sel.maxLoanDSCR, 1906059.74, 0.5, 'Select70 maxLoan_DSCR (premium-inclusive net)');
+approx(sel.maxLoan, 1900000, 0.01, 'Select70 maxLoan');
 ok(sel.bindingConstraint === 'LTV', 'Select70 LTV-bound');
-approx(sel.downPayment, 200000, 0.01, 'Select70 down payment');
-approx(sel.premium, 82800, 0.5, 'Select70 premium (4.6% eff.)');
-approx(sel.monthlyPayment, 7662.54, 0.05, 'Select70 monthly payment');
-approx(sel.dscrActual, 1.1773, 0.0005, 'Select70 DSCR actual');
-approx(sel.cashFlow, 16301.57, 1, 'Select70 cash flow');
-approx(sel.cashOnCash, 0.070876, 0.0001, 'Select70 cash-on-cash');
-// MLI Standard — LTV-bound
-approx(std.maxLoan, 1700000, 0.01, 'Standard maxLoan');
-ok(std.bindingConstraint === 'LTV', 'Standard LTV-bound');
-approx(std.premium, 80750, 0.5, 'Standard premium (4.75%)');
-approx(std.monthlyPayment, 7569.83, 0.05, 'Standard monthly payment');
+approx(sel.downPayment, 100000, 0.01, 'Select70 down payment');
+approx(sel.premium, 108680, 0.5, 'Select70 premium (5.72% eff.)');
+approx(sel.monthlyPayment, 8174.84, 0.05, 'Select70 monthly payment');
+approx(sel.dscrActual, 1.1035, 0.0005, 'Select70 DSCR actual');
+approx(sel.cashFlow, 10153.96, 1, 'Select70 cash flow');
+approx(sel.cashOnCash, 0.078107, 0.0001, 'Select70 cash-on-cash');
+// MLI Standard — DSCR-bound once the premium is inside the constraint
+approx(std.maxLoanDSCR, 1666767.66, 0.5, 'Standard maxLoan_DSCR (premium-inclusive net)');
+approx(std.maxLoan, 1666767.66, 0.5, 'Standard maxLoan');
+ok(std.bindingConstraint === 'DSCR', 'Standard DSCR-bound');
+approx(std.downPayment, 333232.34, 0.5, 'Standard down payment');
+approx(std.premium, 101672.83, 0.5, 'Standard premium (6.10%)');
+approx(std.monthlyPayment, 7517.50, 0.05, 'Standard monthly payment');
+approx(std.dscrActual, 1.20, 1e-6, 'Standard DSCR sits exactly on the floor');
+approx(std.cashFlow, 18042.00, 1, 'Standard cash flow');
+approx(std.cashOnCash, 0.049671, 0.0001, 'Standard cash-on-cash');
 // Conventional — DSCR-bound, no premium
 approx(conv.maxLoanDSCR, 1211039.07, 0.5, 'Conventional maxLoan_DSCR');
 ok(conv.bindingConstraint === 'DSCR', 'Conventional DSCR-bound');
@@ -106,11 +115,40 @@ approx(conv.cashOnCash, 0.026436, 0.0001, 'Conventional cash-on-cash');
    Tool 1 — edge cases
    --------------------------------------------------------------- */
 console.log('Tool 1 edge cases');
-// DSCR/LTV crossover: weak income makes every scenario DSCR-bound
+// DSCR/LTV crossover: weak income makes every scenario DSCR-bound —
+// and whenever DSCR binds, actual DSCR must sit on/above the floor
+// even with the premium capitalized (status doc §2b).
 var weak = Object.assign({}, t1inputs, { grossIncome: 90000, opEx: 60000 });
 engine.computeFinancingComparison(weak, 'mliSelect70', params).forEach(function (s) {
   ok(s.bindingConstraint === 'DSCR', s.label + ' DSCR-bound when income is weak');
+  if (s.dscrActual !== null) {
+    var scen = params.scenarios[s.key];
+    ok(s.dscrActual >= scen.minDSCR - 1e-9,
+      s.label + ' DSCR ' + s.dscrActual.toFixed(4) + ' >= floor ' + scen.minDSCR);
+  }
 });
+// Weak Select 70 lands in the verified ≤65% bucket: net loan 599,728.86
+// at 2.80% effective premium, DSCR exactly on the 1.10 floor (locked)
+var weakSel = engine.computeFinancingComparison(weak, 'mliSelect70', params)[0];
+approx(weakSel.maxLoan, 599728.86, 0.5, 'weak Select70 net max loan');
+approx(weakSel.dscrActual, 1.10, 1e-6, 'weak Select70 DSCR exactly on floor');
+// DSCR-bound net loan falling in an unverified premium bucket (LTV ~78%):
+// engine must flag premiumUnavailable and null premium-dependent outputs
+var adsTarget = engine.monthlyPayment(1560000, 0.0415, 45) * 12;
+var midBucket = {
+  price: 2000000, units: 10,
+  grossIncome: adsTarget * 1.10, otherIncome: 0,
+  vacancyRate: 0, opEx: 0,
+  rateInsured: 0.0415, rateConventional: 0.0525
+};
+var midSel = engine.computeFinancingComparison(midBucket, 'mliSelect70', params)[0];
+ok(midSel.bindingConstraint === 'DSCR', 'mid-bucket case is DSCR-bound');
+approx(midSel.maxLoan, 1560000, 1, 'mid-bucket falls back to premium-exclusive gross');
+ok(midSel.premiumUnavailable === true, 'mid-bucket flags premiumUnavailable');
+ok(midSel.premium === null, 'mid-bucket premium is null');
+ok(midSel.monthlyPayment === null, 'mid-bucket payment suppressed');
+ok(midSel.dscrActual === null, 'mid-bucket DSCR suppressed');
+ok(midSel.cashOnCash === null, 'mid-bucket cash-on-cash suppressed');
 // <5 units: CMHC scenarios flagged ineligible, conventional still eligible
 var small = Object.assign({}, t1inputs, { units: 4 });
 var smallComp = engine.computeFinancingComparison(small, 'mliSelect70', params);

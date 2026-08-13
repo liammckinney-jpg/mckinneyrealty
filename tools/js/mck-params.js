@@ -40,7 +40,7 @@
       mliSelect70: {
         label: 'MLI Select — 70 pts',
         cmhcInsured: true,
-        maxLTV: 0.90,              // VERIFY
+        maxLTV: 0.95,              // verified Aug 12 2026 — confirm with lender whether 95% is conditional on the affordability pathway
         maxAmortYears: 45,         // VERIFY
         minDSCR: 1.10,             // VERIFY
         premiumDiscount: 0.20      // VERIFY
@@ -58,7 +58,7 @@
         cmhcInsured: true,
         maxLTV: 0.85,              // VERIFY
         maxAmortYears: 40,         // VERIFY
-        minDSCR: 1.20,             // VERIFY
+        minDSCR: 1.20,             // VERIFY — 1.20 conservative; some sources claim 1.10, confirm with lender
         premiumDiscount: 0
       },
       conventional: {
@@ -78,14 +78,18 @@
        Bands are [maxLTV inclusive] → rate.
        --------------------------------------------------------------- */
     premium: {
+      // Term, standard rental — July 14 2025 grid (verified Aug 12 2026).
+      // rate: null = bucket unverified; the UI must render
+      // "premium estimate unavailable at this leverage — contact us"
+      // instead of a number, and suppress premium-dependent outputs.
       grid: [
-        { maxLTV: 0.65, rate: 0.0175 },  // VERIFY
-        { maxLTV: 0.70, rate: 0.0200 },  // VERIFY
-        { maxLTV: 0.75, rate: 0.0250 },  // VERIFY
-        { maxLTV: 0.80, rate: 0.0350 },  // VERIFY
-        { maxLTV: 0.85, rate: 0.0400 },  // VERIFY
-        { maxLTV: 0.90, rate: 0.0475 },  // VERIFY
-        { maxLTV: 0.95, rate: 0.0550 }   // VERIFY
+        { maxLTV: 0.65, rate: 0.0250 },  // VERIFY — anchor ~2.50%, confirm
+        { maxLTV: 0.70, rate: null },    // unverified mid bucket
+        { maxLTV: 0.75, rate: null },    // unverified mid bucket
+        { maxLTV: 0.80, rate: null },    // unverified mid bucket
+        { maxLTV: 0.85, rate: 0.0535 },  // verified
+        { maxLTV: 0.90, rate: 0.0615 },  // verified
+        { maxLTV: 0.95, rate: 0.0615 }   // verified — >90% (Select-only leverage)
       ],
       // +0.25% premium surcharge per full 5-year amortization
       // extension beyond 25 years (July 2025 pricing).

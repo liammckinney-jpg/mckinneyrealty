@@ -258,6 +258,7 @@
       } },
     { label: 'Down payment required', cell: function (s) { return U.fmtCurrency(s.downPayment); } },
     { label: 'CMHC premium', cell: function (s) {
+        if (s.premiumUnavailable) return '<span class="mck-prem-na">Premium estimate unavailable at this leverage — contact us</span>';
         return s.premium > 0 ? U.fmtCurrency(s.premium) + ' <span style="color:var(--text-3)">(' + U.fmtPct(s.premiumRate) + ')</span>' : '—';
       } },
     { label: 'Amortization', cell: function (s) { return s.amortYears + ' years'; } },
