@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+
+<title>McKinney Realty — The Generational Wealth Series</title>
+<meta name="description" content="Two guides on Ontario multi-family — one for the investor building a portfolio, one for the owner deciding what happens to theirs. Written by a three-generation multi-family family.">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VFY0V42GLR');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mckinney-system.css">
+<style>
+/* ============================================================
+   GENERATIONAL WEALTH — campaign landing page styles
+   ============================================================ */
+
+/* Hero — editorial, restrained */
+.gw-hero { padding: calc(4.5rem + var(--s-7)) 0 var(--s-6); background: var(--white); }
+.gw-hero .label { margin-bottom: var(--s-3); }
+.gw-hero-title {
+  font-family: var(--font-d); font-size: var(--d-hero); font-weight: 300;
+  line-height: 1.1; color: var(--navy); max-width: 800px;
+}
+.gw-hero-sub {
+  font-size: var(--b-lg); font-weight: 300; line-height: 1.75;
+  color: var(--text-2); max-width: 640px; margin-top: var(--s-4);
+}
+
+/* Lane self-selector — the page's one bold element */
+.gw-lanes { padding: var(--s-5) 0 var(--s-7); }
+.gw-lane-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3); }
+.gw-lane {
+  position: relative; overflow: hidden;
+  background: var(--navy); color: var(--white);
+  padding: var(--s-6) var(--s-5); display: flex; flex-direction: column;
+  border-top: 2px solid var(--gold);
+}
+.gw-lane-mark {
+  position: absolute; width: 340px; height: auto; opacity: 0.05;
+  pointer-events: none; bottom: -60px;
+}
+.gw-lane--a .gw-lane-mark { right: -60px; }
+.gw-lane--b .gw-lane-mark { left: -60px; transform: scaleX(-1); }
+.gw-lane-eyebrow {
+  font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold-light); margin-bottom: var(--s-2);
+}
+.gw-lane-title {
+  font-family: var(--font-d); font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 300; line-height: 1.15; margin-bottom: var(--s-3);
+}
+.gw-lane-line {
+  font-size: var(--b-md); font-weight: 300; line-height: 1.7;
+  color: rgba(255,255,255,0.7); max-width: 460px; margin-bottom: var(--s-4);
+}
+.gw-lane-rule { width: 40px; height: 1px; background: var(--gold); margin-bottom: var(--s-3); }
+.gw-chapters {
+  list-style: none; margin: 0 0 var(--s-5); padding: 0;
+  display: grid; gap: 0.375rem; position: relative; z-index: 1;
+}
+.gw-chapters li {
+  font-size: var(--b-sm); font-weight: 300; color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+}
+.gw-chapters li span { color: var(--gold-light); font-weight: 400; margin-right: 0.5rem; font-variant-numeric: tabular-nums; }
+.gw-lane .btn { margin-top: auto; align-self: flex-start; position: relative; z-index: 1; }
+
+/* Calculator strip */
+.gw-calcs { padding: var(--s-6) 0 var(--s-7); border-top: 1px solid var(--border); }
+.gw-calcs .label { margin-bottom: var(--s-3); }
+.gw-calc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.gw-calc {
+  background: var(--offwhite); padding: var(--s-3) var(--s-4);
+  display: block; position: relative; transition: background 0.3s;
+}
+.gw-calc::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0;
+  background: var(--gold); transition: height 0.4s;
+}
+.gw-calc:hover::before { height: 100%; }
+.gw-calc:hover { background: var(--cream); }
+.gw-calc-title { font-family: var(--font-d); font-size: 1.25rem; font-weight: 400; color: var(--navy); margin-bottom: 0.375rem; }
+.gw-calc-line { font-size: var(--b-sm); font-weight: 300; line-height: 1.6; color: var(--text-2); }
+
+/* Series context band */
+.gw-context { background: var(--cream); padding: var(--s-7) 0; }
+.gw-context-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-5); }
+.gw-context-col .label { margin-bottom: var(--s-2); }
+.gw-context-col p { font-size: var(--b-sm); font-weight: 300; line-height: 1.75; color: var(--text-2); }
+
+/* Gate modal (calc-capture pattern) */
+.gw-modal-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(26,31,46,0.55);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease; padding: 24px;
+}
+.gw-modal-overlay.is-visible { opacity: 1; visibility: visible; backdrop-filter: blur(8px); }
+.gw-modal {
+  background: var(--white); width: 100%; max-width: 460px; max-height: 90vh;
+  overflow-y: auto; position: relative; padding: var(--s-5) var(--s-4) var(--s-4);
+  transform: translateY(20px) scale(0.98); transition: transform 0.35s ease;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.08);
+}
+.gw-modal-overlay.is-visible .gw-modal { transform: translateY(0) scale(1); }
+.gw-modal .label { margin-bottom: 0.75rem; }
+.gw-modal-title { font-family: var(--font-d); font-size: 1.75rem; font-weight: 300; color: var(--navy); line-height: 1.2; margin-bottom: 0.5rem; }
+.gw-modal-desc { font-size: var(--b-sm); font-weight: 300; line-height: 1.65; color: var(--text-2); margin-bottom: var(--s-3); }
+.gw-modal-close {
+  position: absolute; top: 16px; right: 16px; width: 36px; height: 36px;
+  border-radius: 50%; border: 1px solid var(--border-strong); background: var(--white);
+  cursor: pointer; font-size: 1rem; color: var(--text-2); line-height: 1;
+}
+.gw-modal-close:hover { color: var(--navy); border-color: var(--navy); }
+.gw-field { margin-bottom: var(--s-2); }
+.gw-field label { display: block; font-size: var(--b-sm); font-weight: 500; color: var(--text-1); margin-bottom: 0.375rem; }
+.gw-field input, .gw-field textarea {
+  width: 100%; padding: 0.75rem 0.875rem;
+  font-family: var(--font-b); font-size: var(--b-md); font-weight: 400;
+  color: var(--text-1); background: var(--white);
+  border: 1px solid var(--border-strong); border-radius: 0;
+  transition: border-color 0.3s; -webkit-appearance: none; appearance: none;
+}
+.gw-field textarea { resize: vertical; min-height: 4.5rem; }
+.gw-field input:focus, .gw-field textarea:focus { outline: none; border-color: var(--gold-dark); }
+.gw-field input[aria-invalid="true"] { border-color: #b84747; }
+.gw-hp { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
+.gw-sent { animation: fadeUp 0.4s ease forwards; }
+.gw-sent p {
+  font-size: var(--b-md); font-weight: 300; line-height: 1.7;
+  color: var(--text-1); border-left: 3px solid var(--gold);
+  background: var(--cream); padding: var(--s-2) var(--s-3);
+}
+
+@media (max-width: 900px) {
+  .gw-lane-grid { grid-template-columns: 1fr; }
+  .gw-calc-grid { grid-template-columns: 1fr; }
+  .gw-context-grid { grid-template-columns: 1fr; gap: var(--s-4); }
+}
+</style>
+</head>
+<body class="page-editorial">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+  <a href="index.html" class="nav-brand">
+    <img class="nav-mono" src="images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="team.html">Our Team</a>
+    <a href="services.html">Services</a>
+    <a href="track-record.html">Track Record</a>
+    <div class="nav-drop">
+      <a href="tools/">Calculators</a>
+      <div class="nav-drop-menu">
+        <a href="tools/financing-modeler.html">Financing Modeler</a>
+        <a href="tools/disposition-calculator.html">Disposition Proceeds</a>
+        <a href="tools/compounding-modeler.html">Compounding Modeler</a>
+      </div>
+    </div>
+    <a class="nav-cta" href="contact.html">Contact</a>
+  </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<header class="gw-hero">
+  <div class="wrap">
+    <div class="label">The Generational Wealth Series</div>
+    <h1 class="gw-hero-title">Wealth that holds for <em class="gi">generations</em>.</h1>
+    <p class="gw-hero-sub">Two guides on Ontario multi-family — one for the investor building a portfolio, one for the owner deciding what happens to theirs. Written by a three-generation multi-family family.</p>
+  </div>
+</header>
+
+<!-- LANE SELF-SELECTOR -->
+<section class="gw-lanes">
+  <div class="wrap">
+    <div class="gw-lane-grid">
+
+      <div class="gw-lane gw-lane--a">
+        <img class="gw-lane-mark" src="images/mr-monogram-lg.png" alt="">
+        <div class="gw-lane-eyebrow">Volume I &middot; For the Buyer</div>
+        <h2 class="gw-lane-title">The Builder&rsquo;s Guide</h2>
+        <p class="gw-lane-line">You&rsquo;re a professional or business owner building long-term wealth, and you&rsquo;re considering your first &mdash; or next &mdash; apartment building.</p>
+        <div class="gw-lane-rule"></div>
+        <!-- CHAPTER TITLES — COPY STATUS: PLACEHOLDER pending final guide TOC -->
+        <ol class="gw-chapters">
+          <li><span>I</span>The Mechanism — why buildings compound</li>
+          <li><span>II</span>The Spread — cap rate against cost of debt</li>
+          <li><span>III</span>Financing — MLI Select and its points</li>
+          <li><span>IV</span>The Building — what to buy, and why</li>
+          <li><span>V</span>Operations — the owner&rsquo;s discipline</li>
+          <li><span>VI</span>The Team — lender, accountant, counsel</li>
+          <li><span>VII</span>The Long Arc — refinance, repeat, hold</li>
+        </ol>
+        <button type="button" class="btn btn--gold" data-guide="builders-guide">Get the Builder&rsquo;s Guide <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+      </div>
+
+      <div class="gw-lane gw-lane--b">
+        <img class="gw-lane-mark" src="images/mr-monogram-lg.png" alt="">
+        <div class="gw-lane-eyebrow">Volume II &middot; For the Owner</div>
+        <h2 class="gw-lane-title">The Steward&rsquo;s Guide</h2>
+        <p class="gw-lane-line">You own a building &mdash; perhaps for decades &mdash; and you&rsquo;re weighing holding, refinancing, selling, or passing it on.</p>
+        <div class="gw-lane-rule"></div>
+        <!-- CHAPTER TITLES — COPY STATUS: PLACEHOLDER pending final guide TOC -->
+        <ol class="gw-chapters">
+          <li><span>I</span>The Position — what you actually own</li>
+          <li><span>II</span>The Number — what a sale actually nets</li>
+          <li><span>III</span>Holding — the case for staying put</li>
+          <li><span>IV</span>Refinancing — equity without selling</li>
+          <li><span>V</span>Selling — structure before price</li>
+          <li><span>VI</span>Succession — passing the building on</li>
+          <li><span>VII</span>The Decision — a framework, not a verdict</li>
+        </ol>
+        <button type="button" class="btn btn--gold" data-guide="stewards-guide">Get the Steward&rsquo;s Guide <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR STRIP -->
+<section class="gw-calcs">
+  <div class="wrap">
+    <div class="label">Interactive Tools</div>
+    <div class="gw-calc-grid">
+      <a class="gw-calc" href="tools/financing-modeler.html">
+        <div class="gw-calc-title">Financing Modeler</div>
+        <div class="gw-calc-line">CMHC MLI Select, MLI Standard, and conventional financing side by side, at your assumptions.</div>
+      </a>
+      <a class="gw-calc" href="tools/disposition-calculator.html">
+        <div class="gw-calc-title">Disposition Proceeds</div>
+        <div class="gw-calc-line">What a sale would actually net — selling costs, mortgage payout, and tax, down to one number.</div>
+      </a>
+      <a class="gw-calc" href="tools/compounding-modeler.html">
+        <div class="gw-calc-title">Compounding Modeler</div>
+        <div class="gw-calc-line">Levered equity compounding over time — the cap-rate-to-interest spread made visible.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES CONTEXT BAND -->
+<section class="gw-context">
+  <div class="wrap">
+    <div class="gw-context-grid">
+      <div class="gw-context-col">
+        <div class="label">Written, Not Generated</div>
+        <p>Principal-authored and data-verified, with sources named. Where a number appears, it has a citation; where a rule of thumb appears, it says so.</p>
+      </div>
+      <div class="gw-context-col">
+        <div class="label">Illustrations, Not Promises</div>
+        <p>Every figure in the series is an illustration of the assumptions behind it &mdash; never a projection, a forecast, or a promise of performance.</p>
+      </div>
+      <div class="gw-context-col">
+        <div class="label">Three Generations</div>
+        <!-- COPY STATUS: review against KB-11 approved proof point before campaign traffic -->
+        <p>The same family has bought, operated, and stewarded Ontario multi-family buildings across three generations. The guides are written from that seat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="images/mr-monogram-lg.png" alt="McKinney Realty">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="team.html">Team</a><a href="services.html">Services</a><a href="track-record.html">Track Record</a><a href="tools/">Calculators</a><a href="contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- GATE MODAL -->
+<div class="gw-modal-overlay" id="gw-overlay">
+  <div class="gw-modal" role="dialog" aria-modal="true" aria-labelledby="gw-modal-title">
+    <button type="button" class="gw-modal-close" aria-label="Close">&#10005;</button>
+    <div class="label" id="gw-modal-label"></div>
+    <h3 class="gw-modal-title" id="gw-modal-title"></h3>
+    <p class="gw-modal-desc" id="gw-modal-desc"></p>
+    <form id="gw-form" novalidate>
+      <div class="gw-field">
+        <label for="gw-first">First name</label>
+        <input type="text" id="gw-first" name="firstName" autocomplete="given-name" required>
+      </div>
+      <div class="gw-field">
+        <label for="gw-email">Email</label>
+        <input type="text" id="gw-email" name="email" inputmode="email" autocomplete="email" required>
+      </div>
+      <div class="gw-field">
+        <label for="gw-note">What are you working toward? <span style="font-weight:300;color:var(--text-3)">(optional)</span></label>
+        <textarea id="gw-note" name="note" rows="2"></textarea>
+      </div>
+      <div class="gw-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit" class="btn btn--navy" id="gw-submit"></button>
+    </form>
+  </div>
+</div>
+
+<script src="mckinney-forms.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+
+  // Flip `rendered` to true per volume when its PDF is live in Drive —
+  // buttons and confirmation copy switch automatically.
+  var GUIDES = {
+    'builders-guide': { title: 'The Builder’s Guide', eyebrow: 'Volume I · For the Buyer', rendered: false },
+    'stewards-guide': { title: 'The Steward’s Guide', eyebrow: 'Volume II · For the Owner', rendered: false }
+  };
+
+  var activeSlug = null;
+
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+
+  // Lane buttons: label per rendered state, open gate on click
+  Object.keys(GUIDES).forEach(function (slug) {
+    var btn = document.querySelector('[data-guide="' + slug + '"]');
+    btn.innerHTML = (GUIDES[slug].rendered ? 'Get ' + GUIDES[slug].title : 'Join the Release List') +
+      ' <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+    btn.addEventListener('click', function () {
+      activeSlug = slug;
+      track('lane_select', { guide_slug: slug });
+      var g = GUIDES[slug];
+      $('gw-modal-label').textContent = g.eyebrow;
+      $('gw-modal-title').textContent = g.title;
+      $('gw-modal-desc').textContent = g.rendered
+        ? 'Tell us where to send it — the guide arrives by email as a PDF.'
+        : 'Volume in final preparation. Join the release list and it arrives in your inbox the day it’s ready.';
+      $('gw-submit').textContent = g.rendered ? 'Send me the guide' : 'Join the release list';
+      $('gw-overlay').classList.add('is-visible');
+    });
+  });
+
+  function close() { $('gw-overlay').classList.remove('is-visible'); }
+  document.querySelector('.gw-modal-close').addEventListener('click', close);
+  $('gw-overlay').addEventListener('click', function (e) { if (e.target === $('gw-overlay')) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+
+  $('gw-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var form = $('gw-form');
+    if (form.elements.company_website.value) { close(); return; }   // honeypot
+
+    var first = $('gw-first').value.trim();
+    var email = $('gw-email').value.trim();
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+    $('gw-email').setAttribute('aria-invalid', emailOk ? 'false' : 'true');
+    $('gw-first').setAttribute('aria-invalid', first ? 'false' : 'true');
+    if (!first || !emailOk) return;
+
+    var btn = $('gw-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    var g = GUIDES[activeSlug];
+    window.McKinneyForms.submit({
+      form_type: 'guide',           // backend switch key (site convention)
+      formType: 'guide',            // spec §3 key, kept for compatibility
+      guideSlug: activeSlug,
+      firstName: first,
+      email: email,
+      note: $('gw-note').value.trim(),
+      waitlist: !g.rendered,
+      page: 'generational-wealth',
+      ts: new Date().toISOString()
+    }).then(function () {
+      track('lead_submit', { form_type: 'guide', guide_slug: activeSlug });
+      var sent = document.createElement('div');
+      sent.className = 'gw-sent';
+      sent.setAttribute('role', 'status');
+      var p = document.createElement('p');
+      p.textContent = g.rendered
+        ? 'It’s on its way to your inbox.'
+        : 'You’re on the list — ' + g.title + ' will arrive in your inbox the day it’s released.';
+      sent.appendChild(p);
+      $('gw-form').parentNode.replaceChild(sent, $('gw-form'));
+    }).catch(function () {
+      btn.disabled = false;
+      btn.textContent = 'Try again';
+    });
+  });
+
+  // Nav hamburger
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+})();
+</script>
+</body>
+</html>
