@@ -141,7 +141,7 @@
         '<button type="button" class="mck-modal-close" aria-label="Close">&#10005;</button>' +
         '<div class="label">PDF Summary</div>' +
         '<h3 class="mck-modal-title" id="mck-modal-title">Email me this analysis</h3>' +
-        '<p class="mck-modal-desc">We’ll send a copy of this analysis to your inbox, and open a print-ready summary you can save as a PDF.</p>' +
+        '<p class="mck-modal-desc">We’ll send a branded PDF summary of this analysis to your inbox.</p>' +
         '<form novalidate>' +
           '<div class="tool-field"><label for="mck-cap-name">Name</label>' +
             '<input type="text" id="mck-cap-name" name="name" autocomplete="name" required></div>' +
@@ -160,6 +160,29 @@
 
     function open() { overlay.classList.add('is-visible'); }
     function close() { overlay.classList.remove('is-visible'); }
+
+    // Post-submit confirmation: the PDF arrives by email, so swap the
+    // form for a sent message with an optional print-view fallback.
+    function showSent(email) {
+      var confirm = document.createElement('div');
+      confirm.className = 'mck-modal-sent';
+      confirm.setAttribute('role', 'status');
+      var p = document.createElement('p');
+      p.className = 'mck-modal-sent-msg';
+      var strong = document.createElement('strong');
+      strong.textContent = email;
+      p.appendChild(document.createTextNode('Your summary is on its way to '));
+      p.appendChild(strong);
+      p.appendChild(document.createTextNode('. Check your inbox in the next minute or two.'));
+      var printLink = document.createElement('button');
+      printLink.type = 'button';
+      printLink.className = 'mck-modal-printlink';
+      printLink.textContent = 'Prefer to save it now? Open a print-ready version.';
+      printLink.addEventListener('click', function () { window.print(); });
+      confirm.appendChild(p);
+      confirm.appendChild(printLink);
+      modalForm.parentNode.replaceChild(confirm, modalForm);
+    }
 
     trigger.addEventListener('click', open);
     overlay.querySelector('.mck-modal-close').addEventListener('click', close);
@@ -197,11 +220,9 @@
       window.McKinneyForms.submit(payload)
         .then(function () {
           track('lead_submit', { form_type: 'calculator', tool: config.tool });
-          close();
-          btn.disabled = false;
-          btn.textContent = 'Send my summary';
-          // v1 "PDF": print-optimized summary via the browser print dialog
-          window.setTimeout(function () { window.print(); }, 400);
+          // The Apps Script emails the lead a branded PDF — confirm in
+          // the modal instead of auto-firing the print dialog (§2e).
+          showSent(email);
         })
         .catch(function () {
           btn.disabled = false;
