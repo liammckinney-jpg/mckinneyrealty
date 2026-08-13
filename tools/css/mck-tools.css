@@ -236,6 +236,7 @@
 .tool-positioning .label { margin-bottom: var(--s-2); }
 .tool-positioning-title { font-family: var(--font-d); font-size: var(--d-sub); font-weight: 300; color: var(--navy); line-height: 1.25; margin-bottom: var(--s-3); }
 .tool-positioning-body { font-size: var(--b-md); font-weight: 300; line-height: 1.75; color: var(--text-2); max-width: 640px; }
+.tool-positioning-body + .tool-positioning-body { margin-top: var(--s-3); }
 .tool-positioning .btn { margin-top: var(--s-4); }
 
 /* Capture CTA under results */
