@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+
+<title>McKinney Realty — Compounding Modeler</title>
+<meta name="description" content="Watch levered multi-family equity compound under your own assumptions: cap rate, interest rate, and time. An illustration of the mechanism — principal paydown, cash flow, and appreciation.">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VFY0V42GLR');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../mckinney-system.css">
+<link rel="stylesheet" href="css/mck-tools.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+  <a href="../index.html" class="nav-brand">
+    <img class="nav-mono" src="../images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="../team.html">Our Team</a>
+    <a href="../services.html">Services</a>
+    <a href="../track-record.html">Track Record</a>
+    <div class="nav-drop">
+      <a href="index.html">Calculators</a>
+      <div class="nav-drop-menu">
+        <a href="financing-modeler.html">Financing Modeler</a>
+        <a href="disposition-calculator.html">Disposition Proceeds</a>
+        <a href="compounding-modeler.html">Compounding Modeler</a>
+      </div>
+    </div>
+    <a class="nav-cta" href="../contact.html">Contact</a>
+  </div>
+  </div>
+</nav>
+
+<main class="tool-main">
+
+<!-- HERO -->
+<section class="tool-hero">
+  <div class="wrap">
+    <div class="label label--light">Generational Wealth</div>
+    <h1 class="tool-hero-title">The Compounding <em class="gi">Modeler</em></h1>
+    <p class="tool-hero-sub">Pick your assumptions — starting capital, borrowing cost, cap rate, time — and watch levered multi-family equity compound. The driver is the spread between what a building earns and what its debt costs.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <!-- INTRO — COPY STATUS: PLACEHOLDER for C3 (Builder's Guide voice, spec §8) -->
+  <p class="tool-hero-sub" style="color:var(--text-2);max-width:720px;padding:var(--s-4) 0 0">Three engines run at once in a levered building: tenants retire the debt, the building pays you to hold it, and growing income pulls value upward. This model lets you watch all three work on your own assumptions.</p>
+
+  <!-- CONTROLS -->
+  <form id="cm-form" class="tool-form" novalidate>
+    <fieldset class="tool-fieldset">
+      <div class="tool-fieldset-legend">Your Assumptions</div>
+      <div class="tool-grid">
+        <div class="tool-field tool-field--full cm-slider">
+          <label for="cm-equity">Initial investment (equity) <span class="cm-slider-value" id="cm-equity-v"></span></label>
+          <input type="range" id="cm-equity" min="100000" max="5000000" step="50000" value="750000">
+        </div>
+        <div class="tool-field cm-slider">
+          <label for="cm-rate">Interest rate <span class="cm-slider-value" id="cm-rate-v"></span></label>
+          <input type="range" id="cm-rate" min="2" max="8" step="0.05" value="4">
+        </div>
+        <div class="tool-field cm-slider">
+          <label for="cm-cap">Cap rate <span class="cm-slider-value" id="cm-cap-v"></span></label>
+          <input type="range" id="cm-cap" min="3" max="8" step="0.05" value="4.75">
+        </div>
+        <div class="tool-field tool-field--full cm-slider">
+          <label for="cm-horizon">Time horizon <span class="cm-slider-value" id="cm-horizon-v"></span></label>
+          <input type="range" id="cm-horizon" min="5" max="30" step="1" value="20">
+        </div>
+      </div>
+      <div class="tool-toggle" role="group" aria-label="Mode" style="margin-top:var(--s-3)">
+        <button type="button" id="cm-mode-simple" class="active">Simple</button>
+        <button type="button" id="cm-mode-adv">Advanced</button>
+      </div>
+    </fieldset>
+
+    <fieldset class="tool-fieldset" id="cm-adv" hidden>
+      <div class="tool-fieldset-legend">Advanced Assumptions</div>
+      <div class="tool-grid">
+        <div class="tool-field">
+          <label for="cm-ltv">Loan-to-value</label>
+          <select id="cm-ltv">
+            <option value="0.65">65%</option>
+            <option value="0.75" selected>75%</option>
+            <option value="0.85">85%</option>
+          </select>
+        </div>
+        <div class="tool-field">
+          <label for="cm-am">Amortization</label>
+          <select id="cm-am">
+            <option value="25">25 years</option>
+            <option value="30" selected>30 years</option>
+            <option value="40">40 years</option>
+          </select>
+        </div>
+        <div class="tool-field cm-slider">
+          <label for="cm-growth">NOI growth <span class="cm-slider-value" id="cm-growth-v"></span></label>
+          <input type="range" id="cm-growth" min="0" max="5" step="0.1" value="2.5">
+        </div>
+        <div class="tool-field cm-slider">
+          <label for="cm-drift">Cap rate drift over horizon <span class="cm-slider-value" id="cm-drift-v"></span></label>
+          <input type="range" id="cm-drift" min="-100" max="100" step="5" value="0">
+        </div>
+        <div class="tool-field">
+          <label>Refinance &amp; repeat <span style="font-weight:300;color:var(--gold-dark)">(the generational discipline)</span></label>
+          <div class="tool-toggle" role="group" aria-label="Refinance and repeat">
+            <button type="button" id="cm-refi-off" class="active">Off</button>
+            <button type="button" id="cm-refi-on">On</button>
+          </div>
+        </div>
+        <div class="tool-field" id="cm-refi-interval-field" hidden>
+          <label for="cm-refi-interval">Refinance every</label>
+          <select id="cm-refi-interval">
+            <option value="5">5 years</option>
+            <option value="7" selected>7 years</option>
+            <option value="10">10 years</option>
+          </select>
+        </div>
+      </div>
+      <p class="cm-adv-note">Modeling simplifications: refinance proceeds and accumulated cash flow are redeployed into additional buildings treated as divisible (fractional buildings), at the same assumptions and current pricing. Refinance friction is fixed at 2% of each new loan. Accumulated cash flow is held uninvested at 0% throughout — deliberately conservative.</p>
+    </fieldset>
+  </form>
+
+  <!-- RESULTS — always visible, recomputes live -->
+  <div class="tool-results is-visible" id="cm-results">
+
+    <div class="mck-print-header">
+      <img src="../images/mr-monogram-sm.png" alt="MR">
+      <span class="mck-print-header-name">McKinney Realty — Compounding Illustration</span>
+      <span class="mck-print-header-date" id="cm-print-date"></span>
+    </div>
+
+    <div class="tool-disclaimer">These figures are illustrations based on the assumptions you entered and generalized program parameters. They are not a projection, a guarantee, financing advice, tax advice, or a recommendation to buy or sell. CMHC program criteria, lending terms, and tax rules change and depend on your specific circumstances. Consult your lender, accountant, and legal counsel. McKinney Realty &mdash; Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage.</div>
+
+    <div class="cm-spread" id="cm-spread">
+      <div class="cm-spread-num" id="cm-spread-num"></div>
+      <div class="cm-spread-sentence" id="cm-spread-sentence"></div>
+    </div>
+
+    <div class="tool-note" id="cm-dscr-note" hidden>At these assumptions this building would not qualify for financing at this leverage &mdash; an illustration only.</div>
+
+    <div class="cm-stats" id="cm-stats"></div>
+    <p class="cm-compliance">These figures reflect only the assumptions you selected. They are an illustration of a mathematical mechanism, not a projection of investment performance, and are not financial advice.</p>
+
+    <div class="cm-chart" id="cm-chart" role="img" aria-label="Equity growth chart stacked by engine: principal paydown, cash flow, appreciation"></div>
+
+    <!-- ENGINE LEGEND — education layer (sentences to mirror Ch.1; placeholder pending C3 review) -->
+    <div class="cm-legend">
+      <div class="cm-legend-row"><span class="cm-legend-swatch" style="background:#2A3044"></span><span><span class="cm-legend-name">Principal paydown.</span> Rent retires debt — every payment your tenants fund converts a slice of the loan into your equity.</span></div>
+      <div class="cm-legend-row"><span class="cm-legend-swatch" style="background:#C9BBAA"></span><span><span class="cm-legend-name">Cash flow.</span> What the building earns above operating costs and debt service, held uninvested at 0% in this illustration.</span></div>
+      <div class="cm-legend-row"><span class="cm-legend-swatch" style="background:#B8A88A"></span><span><span class="cm-legend-name">Appreciation.</span> As income grows, value follows at your cap rate — growth working on the whole building, not just your share of it.</span></div>
+    </div>
+
+    <div class="tool-capture">
+      <button type="button" class="btn btn--outline" id="mck-capture-open">Email me this analysis as a PDF summary <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+    </div>
+
+    <div class="mck-print-footer">
+      These figures are illustrations based on user-entered assumptions — not a projection, guarantee, financing advice, tax advice, or a recommendation to buy or sell. They illustrate a mathematical mechanism, not investment performance. Consult your lender, accountant, and legal counsel.<br>
+      Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage &middot; mckinneyrealty.ca
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="../images/mr-monogram-lg.png" alt="McKinney Realty">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="../team.html">Team</a><a href="../services.html">Services</a><a href="../track-record.html">Track Record</a><a href="index.html">Calculators</a><a href="../contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../mckinney-forms.js"></script>
+<script src="js/mck-compound-engine.js"></script>
+<script src="js/mck-calc-ui.js"></script>
+<script>
+(function () {
+  'use strict';
+  var E = window.MCK_COMPOUND, U = window.MCKUI;
+  var $ = function (id) { return document.getElementById(id); };
+
+  var mode = 'simple';
+  var refiEnabled = false;
+  var interacted = false;
+  var capState = { snapshot: null };
+
+  /* ------------------------------------------------------------
+     Inputs
+     ------------------------------------------------------------ */
+  function readInputs() {
+    return {
+      initialEquity: parseFloat($('cm-equity').value),
+      interestRate: parseFloat($('cm-rate').value) / 100,
+      capRate: parseFloat($('cm-cap').value) / 100,
+      horizonYears: parseInt($('cm-horizon').value, 10),
+      ltv: mode === 'adv' ? parseFloat($('cm-ltv').value) : 0.75,
+      amortYears: mode === 'adv' ? parseInt($('cm-am').value, 10) : 30,
+      noiGrowth: mode === 'adv' ? parseFloat($('cm-growth').value) / 100 : 0.025,
+      capRateDriftBps: mode === 'adv' ? parseInt($('cm-drift').value, 10) : 0,
+      refiEnabled: mode === 'adv' && refiEnabled,
+      refiIntervalYears: parseInt($('cm-refi-interval').value, 10)
+    };
+  }
+
+  function fmtPctSlider(v, d) { return parseFloat(v).toFixed(d === undefined ? 2 : d) + '%'; }
+
+  function updateReadouts() {
+    $('cm-equity-v').textContent = U.fmtCurrency(parseFloat($('cm-equity').value));
+    $('cm-rate-v').textContent = fmtPctSlider($('cm-rate').value);
+    $('cm-cap-v').textContent = fmtPctSlider($('cm-cap').value);
+    $('cm-horizon-v').textContent = $('cm-horizon').value + ' years';
+    $('cm-growth-v').textContent = fmtPctSlider($('cm-growth').value, 1);
+    var dr = parseInt($('cm-drift').value, 10);
+    $('cm-drift-v').textContent = (dr > 0 ? '+' : '') + dr + ' bps';
+  }
+
+  /* ------------------------------------------------------------
+     Chart — dependency-free SVG, stacked engine bands
+     ------------------------------------------------------------ */
+  function compactMoney(v) {
+    var a = Math.abs(v);
+    if (a >= 1e6) return '$' + (v / 1e6).toFixed(1) + 'M';
+    if (a >= 1e3) return '$' + Math.round(v / 1e3) + 'K';
+    return '$' + Math.round(v);
+  }
+
+  function renderChart(result, inputs) {
+    var W = 720, H = 320, mL = 64, mR = 14, mT = 14, mB = 30;
+    var iw = W - mL - mR, ih = H - mT - mB;
+    var years = result.years;
+    var T = inputs.horizonYears;
+    var E0 = inputs.initialEquity;
+
+    // Stacked curves: baseline E0 → +paydown → +cashflow → total equity
+    var c0 = [], c1 = [], c2 = [], c3 = [];
+    years.forEach(function (y) {
+      c0.push(E0);
+      c1.push(E0 + y.paydownCum);
+      c2.push(E0 + y.paydownCum + y.cumCashFlow);
+      c3.push(y.equity);
+    });
+    var all = c0.concat(c1, c2, c3);
+    var yMax = Math.max.apply(null, all) * 1.06;
+    var yMin = Math.min(0, Math.min.apply(null, all) * 1.06);
+
+    function X(t) { return mL + (t / T) * iw; }
+    function Y(v) { return mT + ih - ((v - yMin) / (yMax - yMin)) * ih; }
+
+    function line(c) {
+      return c.map(function (v, t) { return (t ? 'L' : 'M') + X(t).toFixed(1) + ' ' + Y(v).toFixed(1); }).join('');
+    }
+    function band(lower, upper) {
+      var up = upper.map(function (v, t) { return (t ? 'L' : 'M') + X(t).toFixed(1) + ' ' + Y(v).toFixed(1); }).join('');
+      var down = lower.slice().reverse().map(function (v, idx) {
+        var t = lower.length - 1 - idx;
+        return 'L' + X(t).toFixed(1) + ' ' + Y(v).toFixed(1);
+      }).join('');
+      return up + down + 'Z';
+    }
+
+    var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,-apple-system,sans-serif">';
+
+    // y gridlines + labels
+    for (var gI = 0; gI <= 4; gI++) {
+      var gv = yMin + (gI / 4) * (yMax - yMin);
+      var gy = Y(gv);
+      s += '<line x1="' + mL + '" x2="' + (W - mR) + '" y1="' + gy.toFixed(1) + '" y2="' + gy.toFixed(1) + '" stroke="rgba(0,0,0,0.07)" stroke-width="1"/>';
+      s += '<text x="' + (mL - 8) + '" y="' + (gy + 3).toFixed(1) + '" text-anchor="end" font-size="10" fill="#999999">' + compactMoney(gv) + '</text>';
+    }
+    // x labels every 5 years
+    for (var xt = 0; xt <= T; xt += 5) {
+      s += '<text x="' + X(xt).toFixed(1) + '" y="' + (H - 10) + '" text-anchor="middle" font-size="10" fill="#999999">' + (xt === 0 ? 'Today' : 'Yr ' + xt) + '</text>';
+    }
+
+    // bands: paydown (navy-light) / cash flow (stone gold light) / appreciation (gold)
+    s += '<path d="' + band(c0, c1) + '" fill="#2A3044" fill-opacity="0.85"/>';
+    s += '<path d="' + band(c1, c2) + '" fill="#C9BBAA" fill-opacity="0.8"/>';
+    s += '<path d="' + band(c2, c3) + '" fill="#B8A88A" fill-opacity="0.75"/>';
+
+    // baseline + total
+    s += '<path d="' + line(c0) + '" stroke="#999999" stroke-width="1" stroke-dasharray="4 4" fill="none"/>';
+    s += '<path d="' + line(c3) + '" stroke="#1A1F2E" stroke-width="2" fill="none"/>';
+
+    // refi event markers
+    years.forEach(function (y) {
+      if (!y.refiEvent) return;
+      var x = X(y.t).toFixed(1);
+      s += '<line x1="' + x + '" x2="' + x + '" y1="' + mT + '" y2="' + (mT + ih) + '" stroke="#9A8B6F" stroke-width="1" stroke-dasharray="3 3"/>';
+      s += '<circle cx="' + x + '" cy="' + Y(y.equity).toFixed(1) + '" r="4" fill="#9A8B6F"/>';
+      s += '<text x="' + x + '" y="' + (mT + 10) + '" text-anchor="middle" font-size="9" fill="#9A8B6F">refi</text>';
+    });
+
+    // baseline label
+    s += '<text x="' + (mL + 6) + '" y="' + (Y(E0) - 5).toFixed(1) + '" font-size="10" fill="#999999">Initial equity ' + compactMoney(E0) + '</text>';
+
+    s += '</svg>';
+    $('cm-chart').innerHTML = s;
+  }
+
+  /* ------------------------------------------------------------
+     Render
+     ------------------------------------------------------------ */
+  function render() {
+    updateReadouts();
+    var inputs = readInputs();
+    var r = E.simulate(inputs);
+
+    // Spread strip
+    var bps = r.spreadBps;
+    var strip = $('cm-spread');
+    strip.classList.toggle('is-negative', bps < 0);
+    $('cm-spread-num').textContent = 'Spread: ' + (bps > 0 ? '+' : '') + bps + ' bps';
+    $('cm-spread-sentence').textContent =
+      bps > 0 ? 'Your cap rate exceeds your cost of debt — every borrowed dollar earns more than it costs. This is positive leverage.' :
+      bps < 0 ? 'Your cost of debt exceeds your cap rate — every borrowed dollar costs more than it earns. This is negative leverage.' :
+      'Your cap rate equals your cost of debt — borrowed dollars neither add nor subtract yield; growth and principal paydown still compound.';
+
+    // Qualification notice
+    $('cm-dscr-note').hidden = !(r.dscrYear1 !== null && r.dscrYear1 < 1);
+
+    // Summary stats
+    var stats = [
+      { n: U.fmtCurrency(r.endingEquity), l: 'Ending equity (' + inputs.horizonYears + ' yrs)', neg: r.endingEquity < 0 },
+      { n: r.equityMultiple === null ? '—' : r.equityMultiple.toFixed(1) + 'x', l: 'Equity multiple' },
+      { n: r.cagr === null ? '—' : (r.cagr * 100).toFixed(1) + '%', l: 'Implied annual growth (CAGR)' },
+      { n: (bps > 0 ? '+' : '') + bps + ' bps', l: 'Cap-rate-to-interest spread', neg: bps < 0 }
+    ];
+    if (inputs.refiEnabled) {
+      stats.push({ n: U.fmtCurrency(r.portfolioValue), l: 'Portfolio value' });
+      stats.push({ n: r.buildingCount.toFixed(1), l: 'Building-equivalents' });
+    }
+    $('cm-stats').innerHTML = stats.map(function (st) {
+      return '<div class="cm-stat"><div class="cm-stat-num' + (st.neg ? ' mck-negative' : '') + '">' + st.n + '</div><div class="cm-stat-label">' + st.l + '</div></div>';
+    }).join('');
+    $('cm-stats').setAttribute('data-cols', stats.length > 4 ? '6' : '4');
+
+    renderChart(r, inputs);
+
+    $('cm-print-date').textContent = new Date().toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+
+    // Snapshot (spec §7 keys, exactly)
+    capState.snapshot = {
+      tool: 'compounding-modeler',
+      mode: mode === 'adv' ? 'advanced' : 'simple',
+      initialEquity: inputs.initialEquity,
+      interestRate: inputs.interestRate,
+      capRate: inputs.capRate,
+      horizonYears: inputs.horizonYears,
+      ltv: inputs.ltv,
+      amortYears: inputs.amortYears,
+      noiGrowth: inputs.noiGrowth,
+      capRateDriftBps: inputs.capRateDriftBps,
+      refiEnabled: inputs.refiEnabled,
+      refiIntervalYears: inputs.refiIntervalYears,
+      endingEquity: Math.round(r.endingEquity),
+      equityMultiple: r.equityMultiple === null ? null : Math.round(r.equityMultiple * 100) / 100,
+      cagrPct: r.cagr === null ? null : Math.round(r.cagr * 10000) / 100,
+      spreadBps: r.spreadBps,
+      portfolioValue: Math.round(r.portfolioValue),
+      buildingCount: Math.round(r.buildingCount * 10) / 10
+    };
+  }
+
+  /* ------------------------------------------------------------
+     Wiring — live recompute, no Calculate button
+     ------------------------------------------------------------ */
+  function onInteract() {
+    if (!interacted) {
+      interacted = true;
+      U.track('calc_start', { tool: 'compounding-modeler' });
+      U.track('calc_complete', { tool: 'compounding-modeler', scenario_count: 1 });
+    }
+    render();
+  }
+  $('cm-form').addEventListener('input', onInteract);
+
+  // Mode toggle — entered values are preserved (fields hide, not reset)
+  function setMode(m) {
+    mode = m;
+    $('cm-mode-simple').classList.toggle('active', m === 'simple');
+    $('cm-mode-adv').classList.toggle('active', m === 'adv');
+    $('cm-adv').hidden = m !== 'adv';
+    onInteract();
+  }
+  $('cm-mode-simple').addEventListener('click', function () { setMode('simple'); });
+  $('cm-mode-adv').addEventListener('click', function () { setMode('adv'); });
+
+  function setRefi(on) {
+    refiEnabled = on;
+    $('cm-refi-off').classList.toggle('active', !on);
+    $('cm-refi-on').classList.toggle('active', on);
+    $('cm-refi-interval-field').hidden = !on;
+    onInteract();
+  }
+  $('cm-refi-off').addEventListener('click', function () { setRefi(false); });
+  $('cm-refi-on').addEventListener('click', function () { setRefi(true); });
+
+  // Email capture — same modal, §2e post-submit behavior
+  U.initCapture({ tool: 'compounding-modeler' }, capState);
+
+  // Nav hamburger
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+
+  // Initial render at canonical defaults (no analytics fired on load)
+  render();
+})();
+</script>
+</body>
+</html>

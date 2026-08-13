@@ -216,6 +216,79 @@
 .mck-hold-frame { font-size: var(--b-sm); font-weight: 300; font-style: italic; color: var(--text-2); margin-top: var(--s-2); }
 
 /* ============================================================
+   COMPOUNDING MODELER
+   ============================================================ */
+/* Slider rows — comfortable at 380px: full-width track, tall hit area */
+.cm-slider label { display: flex; justify-content: space-between; align-items: baseline; }
+.cm-slider-value {
+  font-family: var(--font-d); font-size: 1.25rem; font-weight: 400;
+  color: var(--navy); font-variant-numeric: tabular-nums;
+}
+.cm-slider input[type="range"] {
+  width: 100%; height: 2.25rem; margin: 0; accent-color: var(--gold-dark);
+  cursor: pointer;
+}
+.cm-adv-note { font-size: var(--b-xs); font-weight: 300; line-height: 1.6; color: var(--text-3); margin-top: var(--s-2); max-width: 640px; }
+
+/* Spread strip */
+.cm-spread {
+  display: flex; align-items: baseline; gap: var(--s-3); flex-wrap: wrap;
+  border: 1px solid var(--border); border-left: 3px solid var(--gold);
+  background: var(--offwhite); padding: var(--s-2) var(--s-3);
+  margin-bottom: var(--s-4); max-width: 860px;
+}
+.cm-spread-num {
+  font-family: var(--font-d); font-size: var(--d-stat-sm); font-weight: 400;
+  color: var(--navy); line-height: 1; white-space: nowrap;
+}
+.cm-spread.is-negative { border-left-color: #b84747; }
+.cm-spread.is-negative .cm-spread-num { color: #7a2e2e; }
+.cm-spread-sentence { font-size: var(--b-sm); font-weight: 300; line-height: 1.6; color: var(--text-2); max-width: 520px; }
+
+/* Summary stat row */
+.cm-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border); border-bottom: 2px solid var(--gold);
+  background: var(--offwhite); max-width: 860px; margin-bottom: var(--s-2);
+}
+.cm-stat { padding: var(--s-3); border-right: 1px solid var(--border); }
+.cm-stat:last-child { border-right: none; }
+.cm-stat-num { font-family: var(--font-d); font-size: var(--d-stat-sm); font-weight: 300; color: var(--navy); line-height: 1.1; white-space: nowrap; }
+.cm-stat-num.mck-negative { color: #7a2e2e; }
+.cm-stat-label { font-size: var(--b-xs); font-weight: 400; color: var(--text-3); margin-top: 0.25rem; }
+.cm-compliance { font-size: var(--b-xs); font-weight: 300; line-height: 1.6; color: var(--text-3); max-width: 860px; margin-bottom: var(--s-4); }
+
+/* Chart */
+.cm-chart { max-width: 860px; border: 1px solid var(--border); background: var(--white); padding: var(--s-2); }
+.cm-chart svg { display: block; width: 100%; height: auto; }
+.cm-legend { max-width: 860px; margin-top: var(--s-3); display: grid; gap: 0.625rem; }
+.cm-legend-row { display: flex; gap: 0.75rem; align-items: baseline; font-size: var(--b-sm); font-weight: 300; line-height: 1.6; color: var(--text-2); }
+.cm-legend-swatch { flex: 0 0 auto; width: 12px; height: 12px; transform: translateY(1px); }
+.cm-legend-name { font-weight: 500; color: var(--text-1); }
+
+.cm-stats[data-cols="6"] { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 768px) {
+  .cm-stats, .cm-stats[data-cols="6"] { grid-template-columns: 1fr 1fr; }
+  .cm-stat:nth-child(2n) { border-right: none; }
+  .cm-stat { border-bottom: 1px solid var(--border); }
+  .cm-stat-num { font-size: 1.375rem; }
+}
+@media (max-width: 480px) {
+  .cm-stats, .cm-stats[data-cols="6"] { grid-template-columns: 1fr; }
+  .cm-stat { border-right: none; }
+}
+
+/* Three-tool hub variant */
+.dual-cta--three { grid-template-columns: 1fr 1fr 1fr; }
+.dual-cta--three .dual-cta-panel { border-right: 1px solid var(--border); }
+.dual-cta--three .dual-cta-panel:last-child { border-right: none; }
+@media (max-width: 900px) {
+  .dual-cta--three { grid-template-columns: 1fr; }
+  .dual-cta--three .dual-cta-panel { border-right: none; border-bottom: 1px solid var(--border); }
+  .dual-cta--three .dual-cta-panel:last-child { border-bottom: none; }
+}
+
+/* ============================================================
    EXPLAINER / POSITIONING BLOCKS
    ============================================================ */
 .tool-explainer { border: 1px solid var(--border); margin: var(--s-5) 0 var(--s-7); max-width: 860px; }

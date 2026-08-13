@@ -233,6 +233,12 @@
 
   window.MCKUI = {
     initTool: initTool,
+    // For live-recompute tools with no Calculate button: wires only the
+    // email-capture modal. `stateLike` is any object whose .snapshot the
+    // page keeps updated; it is read at submit time.
+    initCapture: function (config, stateLike) {
+      initCaptureModal(config, stateLike);
+    },
     fmtCurrency: fmtCurrency,
     fmtPct: fmtPct,
     fmtRatio: fmtRatio,
