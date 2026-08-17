@@ -150,6 +150,7 @@
           '<div class="tool-field"><label for="mck-cap-phone">Phone <span style="font-weight:300;color:var(--text-3)">(optional)</span></label>' +
             '<input type="text" id="mck-cap-phone" name="phone" inputmode="tel" autocomplete="tel"></div>' +
           '<div class="mck-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>' +
+          '<label class="mck-consent" style="margin-bottom:0.875rem"><input type="checkbox" id="mck-cap-consent" checked> Email me McKinney Realty&#8217;s market updates and educational content. Unsubscribe anytime.</label>' +
           '<button type="submit" class="btn btn--navy">Send my summary</button>' +
         '</form>' +
       '</div>';
@@ -208,13 +209,18 @@
       btn.disabled = true;
       btn.textContent = 'Sending…';
 
+      var consentEl = overlay.querySelector('#mck-cap-consent');
       var payload = {
         form_type: 'calculator',
         tool: config.tool,
         name: name,
         email: email,
         phone: modalForm.elements.phone.value.trim(),
-        snapshot: state.snapshot ? JSON.stringify(state.snapshot) : ''
+        snapshot: state.snapshot ? JSON.stringify(state.snapshot) : '',
+        consent: consentEl.checked,
+        consent_ts: consentEl.checked ? new Date().toISOString() : '',
+        consent_source: config.tool,
+        consent_basis: 'prechecked'
       };
 
       window.McKinneyForms.submit(payload)

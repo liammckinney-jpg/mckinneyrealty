@@ -136,7 +136,7 @@
         <form class="article-gate-form" id="p2-gate-form" novalidate>
           <input type="text" id="p2-email" name="email" placeholder="Email" inputmode="email" autocomplete="email" required aria-label="Email">
           <div class="article-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
-          <label class="mck-consent" id="p2-consent-row"><input type="checkbox" id="p2-consent"> Email me McKinney Realty's market updates and educational content. Unsubscribe anytime.</label>
+          <label class="mck-consent" id="p2-consent-row"><input type="checkbox" id="p2-consent" checked> Email me McKinney Realty's market updates and educational content. Unsubscribe anytime.</label>
           <button type="submit" class="btn btn--navy" id="p2-gate-submit">Send me the guide</button>
         </form>
       </div>
@@ -211,6 +211,7 @@
       page: 'the-50000-problem',
       consent: document.getElementById('p2-consent').checked,
       consent_ts: document.getElementById('p2-consent').checked ? new Date().toISOString() : '',
+      consent_basis: 'prechecked',
       consent_source: 'the-50000-problem',
       ts: new Date().toISOString()
     }).then(function () {

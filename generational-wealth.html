@@ -322,7 +322,7 @@
         <textarea id="gw-note" name="note" rows="2"></textarea>
       </div>
       <div class="gw-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
-      <label class="mck-consent" id="gw-consent-row"><input type="checkbox" id="gw-consent"> Email me McKinney Realty's market updates and educational content. Unsubscribe anytime.</label>
+      <label class="mck-consent" id="gw-consent-row"><input type="checkbox" id="gw-consent" checked> Email me McKinney Realty's market updates and educational content. Unsubscribe anytime.</label>
       <button type="submit" class="btn btn--navy" id="gw-submit"></button>
     </form>
   </div>
@@ -405,6 +405,7 @@
       page: 'generational-wealth',
       consent: document.getElementById('gw-consent').checked,
       consent_ts: document.getElementById('gw-consent').checked ? new Date().toISOString() : '',
+      consent_basis: 'prechecked',
       consent_source: 'generational-wealth',
       ts: new Date().toISOString()
     }).then(function () {
