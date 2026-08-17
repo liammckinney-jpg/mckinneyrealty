@@ -162,6 +162,46 @@
 }
 .ins-label--light { color: #B8A88A; }
 
+/* ---- market intelligence (ported from homepage) --------------------- */
+.intel { padding: 72px 0; background: var(--cream, #F5F2EC); border-top: 1px solid rgba(26,31,46,0.12); }
+.intel-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 40px; flex-wrap: wrap; gap: 18px;
+}
+.intel-title {
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 4vw, 2.5rem); font-weight: 300;
+  line-height: 1.2; color: var(--navy, #1A1F2E); margin-top: 10px;
+}
+.intel-year {
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(4rem, 10vw, 7rem); font-weight: 300;
+  color: var(--navy, #1A1F2E); line-height: 0.85; opacity: 0.06;
+}
+.intel-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: rgba(26,31,46,0.12); margin-bottom: 40px;
+  border: 1px solid rgba(26,31,46,0.12);
+}
+.intel-card { background: #FFFFFF; padding: 26px; transition: background 0.3s; }
+.intel-card:hover { background: #FAF8F4; }
+.intel-card-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--navy, #1A1F2E); line-height: 1; margin-bottom: 10px; }
+.intel-card-text { font-size: 0.85rem; font-weight: 300; line-height: 1.6; color: rgba(26,31,46,0.7); }
+.intel-card-text strong { font-weight: 400; color: rgba(26,31,46,0.9); }
+.intel-body { display: grid; grid-template-columns: 2fr 1fr; gap: 56px; align-items: start; }
+.intel-narrative p { font-size: 0.98rem; font-weight: 300; line-height: 1.8; color: rgba(26,31,46,0.72); margin-bottom: 18px; }
+.intel-cta { padding-top: 26px; border-top: 1px solid rgba(26,31,46,0.12); margin-top: 10px; }
+.intel-cta-note { font-size: 0.85rem; color: rgba(26,31,46,0.5); margin-top: 10px; font-weight: 300; }
+.intel-sidebar { padding: 26px; background: #FFFFFF; border: 1px solid rgba(26,31,46,0.12); }
+.intel-sidebar-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #9A8B6F; margin-bottom: 18px; }
+.intel-sidebar-item { padding: 10px 0; border-bottom: 1px solid rgba(26,31,46,0.12); font-size: 0.85rem; font-weight: 300; color: rgba(26,31,46,0.7); line-height: 1.5; }
+.intel-sidebar-item:last-child { border-bottom: none; }
+.intel-sidebar-item strong { display: block; font-weight: 400; color: rgba(26,31,46,0.9); font-size: 0.72rem; letter-spacing: 0.03em; text-transform: uppercase; margin-bottom: 0.125rem; }
+@media (max-width: 1024px) { .intel-body { grid-template-columns: 1fr; } }
+@media (max-width: 768px) {
+  .intel-strip { grid-template-columns: 1fr 1fr; }
+  .intel-header { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) { .intel-strip { grid-template-columns: 1fr; } }
+
 @media (max-width: 720px) {
   .wrap { padding: 0 22px; }
   .ins-hero { padding: 124px 0 56px; }
@@ -244,6 +284,39 @@
       </div>
     </article>
 
+  </div>
+</section>
+
+<!-- MARKET INTELLIGENCE -->
+<section class="intel" id="market">
+  <div class="wrap">
+    <div class="intel-header">
+      <div><div class="ins-label">Market Intelligence</div><h2 class="intel-title">Ontario multi-family in <em class="gi">2026</em>.</h2></div>
+      <div class="intel-year">2026</div>
+    </div>
+    <div class="intel-strip">
+      <div class="intel-card"><div class="intel-card-num">25.1%</div><div class="intel-card-text"><strong>Q4 2025 CRE investment surge.</strong> Transaction volumes accelerating as rate cuts take hold.</div></div>
+      <div class="intel-card"><div class="intel-card-num">~60%</div><div class="intel-card-text"><strong>Mortgages renewing 2025&ndash;26.</strong> Sub-2% locks face resets requiring significant fresh equity.</div></div>
+      <div class="intel-card"><div class="intel-card-num">84%</div><div class="intel-card-text"><strong>Insurance increase, past decade.</strong> Annual 7&ndash;12% increases continuing with restricted coverage.</div></div>
+      <div class="intel-card"><div class="intel-card-num">25K</div><div class="intel-card-text"><strong>2025 completions &mdash; the peak.</strong> Construction starts pausing as development economics break down.</div></div>
+    </div>
+    <div class="intel-body">
+      <div class="intel-narrative">
+        <p>Cap rates have stabilized after two years of expansion. The bid-ask gap that froze the market in 2023 has closed, and transaction volume surged 25.1% quarter-over-quarter in Q4 2025 as Bank of Canada rate cuts restored positive leverage.</p>
+        <p>Simultaneously, construction starts are pausing across the province. Punitive development charges, tariff-driven materials costs, and broken pro formas have shut down the new supply pipeline. National apartment completions peaked at 25,000 units in 2025 &mdash; the highest since 1987 &mdash; but that peak is now behind us.</p>
+        <p>These structural dynamics are converging with a generational ownership transition: aging operators facing refinancing at dramatically higher rates, mandatory elevator modernizations at $120K&ndash;$400K+ per cab, and insurance premiums up 84% over the past decade.</p>
+        <div class="intel-cta">
+          <a href="contact.html" class="btn btn--navy">Subscribe to Market Updates <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <p class="intel-cta-note">Published quarterly. Cap rates, vacancy, transaction volume, and regulatory developments.</p>
+        </div>
+      </div>
+      <div class="intel-sidebar">
+        <div class="intel-sidebar-title">What we're watching</div>
+        <div class="intel-sidebar-item"><strong>Bank of Canada rate path</strong>Projected 50&ndash;75bps of additional cuts through 2026, restoring positive leverage for stabilized assets.</div>
+        <div class="intel-sidebar-item"><strong>Vacancy compression</strong>Ontario purpose-built vacancy tightening as immigration-driven demand outpaces stalled new supply.</div>
+        <div class="intel-sidebar-item"><strong>Generational transitions</strong>Aging operators facing refinancing cliffs and deferred CapEx creating a multi-year disposition wave.</div>
+      </div>
+    </div>
   </div>
 </section>
 
