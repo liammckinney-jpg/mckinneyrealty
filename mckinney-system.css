@@ -283,6 +283,19 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
 .footer-nav a { font-size: 0.6875rem; font-weight: 400; color: rgba(255,255,255,0.2); letter-spacing: 0.03em; transition: color 0.3s; }
 .footer-nav a:hover { color: rgba(255,255,255,0.5); }
 
+/* Consent checkbox (CASL express consent — unchecked by default) */
+.mck-consent {
+  display: flex; gap: 10px; align-items: flex-start;
+  flex-basis: 100%; width: 100%;
+  font-size: 0.8rem; font-weight: 300; line-height: 1.5;
+  color: var(--text-3, rgba(26,31,46,0.55)); cursor: pointer;
+}
+.mck-consent input[type="checkbox"] {
+  margin-top: 3px; flex-shrink: 0; accent-color: var(--gold-dark, #9A8B6F);
+  width: 15px; height: 15px; cursor: pointer;
+}
+.mck-consent.is-invalid { color: #B0413E; }
+
 /* ============================================================
    FORM SUBMISSION — confirmation & error panels
    Used by all three intake forms (acquisition, disposition, contact).

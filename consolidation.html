@@ -197,6 +197,7 @@
       <form class="article-gate-form" id="cn-gate-form" novalidate>
         <input type="text" id="cn-email" name="email" placeholder="Email" inputmode="email" autocomplete="email" required aria-label="Email">
         <div class="article-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+        <label class="mck-consent" id="cn-consent-row"><input type="checkbox" id="cn-consent"> Email me McKinney Realty's market updates and educational content. Unsubscribe anytime.</label>
         <button type="submit" class="btn btn--navy" id="cn-gate-submit">Send me the full piece</button>
       </form>
     </div>
@@ -266,6 +267,9 @@
       campaign: 'consolidation-math',
       persona: 'P1',
       page: 'consolidation',
+      consent: document.getElementById('cn-consent').checked,
+      consent_ts: document.getElementById('cn-consent').checked ? new Date().toISOString() : '',
+      consent_source: 'consolidation',
       ts: new Date().toISOString()
     }).then(function () {
       track('lead_submit', {

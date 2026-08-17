@@ -459,6 +459,7 @@
           <form class="intel-sub" id="intel-sub-form" novalidate>
             <input type="text" id="intel-sub-email" name="email" placeholder="Email" inputmode="email" autocomplete="email" required aria-label="Email">
             <div class="intel-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+            <label class="mck-consent" id="intel-consent-row"><input type="checkbox" id="intel-consent" data-required="true"> Email me McKinney Realty's market updates and educational content. Unsubscribe anytime.</label>
             <button type="submit" class="btn btn--navy" id="intel-sub-submit">Subscribe to Market Updates <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
             <a href="insights.html" class="btn btn--outline">View All Insights <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           </form>
@@ -577,6 +578,10 @@
     var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
     input.setAttribute('aria-invalid', ok ? 'false' : 'true');
     if (!ok) { input.focus(); return; }
+    var consentEl = document.getElementById('intel-consent');
+    var consentRow = document.getElementById('intel-consent-row');
+    if (!consentEl.checked) { consentRow.classList.add('is-invalid'); consentEl.focus(); return; }
+    consentRow.classList.remove('is-invalid');
     var btn = document.getElementById('intel-sub-submit');
     btn.disabled = true;
     btn.textContent = 'Subscribing\u2026';
@@ -585,6 +590,9 @@
       formType: 'subscribe',
       email: email,
       page: 'home',
+      consent: true,
+      consent_ts: new Date().toISOString(),
+      consent_source: 'home',
       campaign: 'market-updates',
       note: '[subscribe: quarterly market updates]',
       ts: new Date().toISOString()

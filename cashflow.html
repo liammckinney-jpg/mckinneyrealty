@@ -302,6 +302,7 @@
         <input type="text" id="cf-first" name="firstName" placeholder="First name (optional)" autocomplete="given-name" aria-label="First name (optional)">
         <input type="text" id="cf-email" name="email" placeholder="Email" inputmode="email" autocomplete="email" required aria-label="Email">
         <div class="cf-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+        <label class="mck-consent" id="cf-consent-row"><input type="checkbox" id="cf-consent"> Email me McKinney Realty's market updates and educational content. Unsubscribe anytime.</label>
         <button type="submit" class="btn btn--navy" id="cf-gate-submit">Send me the guide</button>
       </form>
     </div>
@@ -369,6 +370,9 @@
       campaign: 'cashflow-vs-hope',
       persona: 'P4',
       page: 'cashflow',
+      consent: document.getElementById('cf-consent').checked,
+      consent_ts: document.getElementById('cf-consent').checked ? new Date().toISOString() : '',
+      consent_source: 'cashflow',
       ts: new Date().toISOString()
     }).then(function () {
       track('lead_submit', {
