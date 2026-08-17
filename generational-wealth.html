@@ -7,6 +7,7 @@
 
 <title>McKinney Realty — The Generational Wealth Series</title>
 <meta name="description" content="Two guides on Ontario multi-family — one for the investor building a portfolio, one for the owner deciding what happens to theirs. Written by a three-generation multi-family family.">
+<script src="mckinney-consent.js"></script>
 <!-- Google Analytics (GA4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
 <script>
@@ -384,18 +385,21 @@
     btn.textContent = 'Sending…';
 
     var g = GUIDES[activeSlug];
+    var userNote = $('gw-note').value.trim();
+    var campaignTag = '[campaign: generational-wealth]';
     window.McKinneyForms.submit({
       form_type: 'guide',           // backend switch key (site convention)
       formType: 'guide',            // spec §3 key, kept for compatibility
       guideSlug: activeSlug,
       firstName: first,
       email: email,
-      note: $('gw-note').value.trim(),
+      note: userNote ? userNote + ' — ' + campaignTag : campaignTag,
       waitlist: !g.rendered,
+      campaign: 'generational-wealth',
       page: 'generational-wealth',
       ts: new Date().toISOString()
     }).then(function () {
-      track('lead_submit', { form_type: 'guide', guide_slug: activeSlug });
+      track('lead_submit', { form_type: 'guide', guide_slug: activeSlug, campaign: 'generational-wealth' });
       var sent = document.createElement('div');
       sent.className = 'gw-sent';
       sent.setAttribute('role', 'status');
