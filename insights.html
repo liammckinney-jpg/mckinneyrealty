@@ -195,6 +195,16 @@
 .intel-sidebar-item { padding: 10px 0; border-bottom: 1px solid rgba(26,31,46,0.12); font-size: 0.85rem; font-weight: 300; color: rgba(26,31,46,0.7); line-height: 1.5; }
 .intel-sidebar-item:last-child { border-bottom: none; }
 .intel-sidebar-item strong { display: block; font-weight: 400; color: rgba(26,31,46,0.9); font-size: 0.72rem; letter-spacing: 0.03em; text-transform: uppercase; margin-bottom: 0.125rem; }
+.intel-sub { display: flex; gap: 10px; flex-wrap: wrap; align-items: stretch; }
+.intel-sub input[type="text"] {
+  flex: 1 1 220px; min-width: 0; padding: 0.875rem 1rem;
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 300;
+  color: rgba(26,31,46,0.9); background: #FFFFFF; border: 1px solid rgba(26,31,46,0.12);
+}
+.intel-sub input[type="text"]:focus { outline: none; border-color: #9A8B6F; }
+.intel-sub input[aria-invalid="true"] { border-color: #B0413E; }
+.intel-hp { position: absolute; left: -9999px; }
+.intel-sub-sent { font-size: 0.98rem; font-weight: 300; color: rgba(26,31,46,0.9); padding: 0.5rem 0; }
 @media (max-width: 1024px) { .intel-body { grid-template-columns: 1fr; } }
 @media (max-width: 768px) {
   .intel-strip { grid-template-columns: 1fr 1fr; }
@@ -306,7 +316,11 @@
         <p>Simultaneously, construction starts are pausing across the province. Punitive development charges, tariff-driven materials costs, and broken pro formas have shut down the new supply pipeline. National apartment completions peaked at 25,000 units in 2025 &mdash; the highest since 1987 &mdash; but that peak is now behind us.</p>
         <p>These structural dynamics are converging with a generational ownership transition: aging operators facing refinancing at dramatically higher rates, mandatory elevator modernizations at $120K&ndash;$400K+ per cab, and insurance premiums up 84% over the past decade.</p>
         <div class="intel-cta">
-          <a href="contact.html" class="btn btn--navy">Subscribe to Market Updates <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <form class="intel-sub" id="intel-sub-form" novalidate>
+            <input type="text" id="intel-sub-email" name="email" placeholder="Email" inputmode="email" autocomplete="email" required aria-label="Email">
+            <div class="intel-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+            <button type="submit" class="btn btn--navy" id="intel-sub-submit">Subscribe to Market Updates <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+          </form>
           <p class="intel-cta-note">Published quarterly. Cap rates, vacancy, transaction volume, and regulatory developments.</p>
         </div>
       </div>
@@ -373,10 +387,47 @@
   </div>
 </footer>
 
+<script src="mckinney-forms.js"></script>
 <script>
   document.querySelector('.nav-toggle').addEventListener('click', function () {
     document.querySelector('.nav-links').classList.toggle('open');
   });
+  (function () {
+    'use strict';
+    var form = document.getElementById('intel-sub-form');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (form.elements.company_website.value) return;   // honeypot
+      var input = document.getElementById('intel-sub-email');
+      var email = input.value.trim();
+      var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+      input.setAttribute('aria-invalid', ok ? 'false' : 'true');
+      if (!ok) { input.focus(); return; }
+      var btn = document.getElementById('intel-sub-submit');
+      btn.disabled = true;
+      btn.textContent = 'Subscribing\u2026';
+      window.McKinneyForms.submit({
+        form_type: 'subscribe',
+        formType: 'subscribe',
+        email: email,
+        page: 'insights',
+        campaign: 'market-updates',
+        note: '[subscribe: quarterly market updates]',
+        ts: new Date().toISOString()
+      }).then(function () {
+        if (typeof window.gtag === 'function') window.gtag('event', 'lead_submit', { form_type: 'subscribe', campaign: 'market-updates' });
+        var sent = document.createElement('div');
+        sent.className = 'intel-sub-sent';
+        sent.setAttribute('role', 'status');
+        sent.textContent = 'You\u2019re on the list. Updates arrive quarterly.';
+        form.parentNode.replaceChild(sent, form);
+      }).catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Try again';
+      });
+    });
+  })();
 </script>
 
 </body>
