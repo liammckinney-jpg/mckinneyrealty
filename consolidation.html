@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+
+<title>The Consolidation Math — Four Houses to One Building | McKinney Realty</title>
+<meta name="description" content="Trading scattered Ontario rentals for one multi-family building, with the real costs shown — capital gains, CCA recapture, and transaction friction included in the arithmetic.">
+<script src="mckinney-consent.js"></script>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VFY0V42GLR');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mckinney-system.css">
+<link rel="stylesheet" href="mckinney-article.css">
+<style>
+/* ============================================================
+   /CONSOLIDATION — P1 funnel page
+   Register: peer-to-peer, math-forward, empathetic to the squeeze.
+   No family narrative (cold-asset rule).
+   ============================================================ */
+.cn-hero {
+  background: radial-gradient(ellipse at 30% 20%, var(--navy-light), var(--navy) 65%);
+  color: var(--white);
+  padding: calc(4.5rem + var(--s-8)) 0 var(--s-8);
+}
+.cn-hero .label { margin-bottom: var(--s-3); }
+.cn-hero-title {
+  font-family: var(--font-d); font-size: var(--d-hero); font-weight: 300;
+  line-height: 1.12; max-width: 860px;
+}
+.cn-hero-sub {
+  font-size: var(--b-lg); font-weight: 300; line-height: 1.75;
+  color: rgba(255,255,255,0.65); max-width: 580px; margin-top: var(--s-4);
+}
+.cn-hero .btn { margin-top: var(--s-5); }
+
+.cn-section { padding: var(--s-7) 0; }
+.cn-section .label { margin-bottom: var(--s-2); }
+.cn-section-title {
+  font-family: var(--font-d); font-size: var(--d-section); font-weight: 300;
+  line-height: 1.2; color: var(--navy); max-width: 700px; margin-bottom: var(--s-3);
+}
+.cn-prose { font-size: var(--b-md); font-weight: 300; line-height: 1.8; color: var(--text-2); max-width: 660px; margin-bottom: 1rem; }
+.cn-prose strong { font-weight: 500; color: var(--navy); }
+
+/* The wall — three-item strip */
+.cn-wall { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: var(--s-5); }
+.cn-wall-item { background: var(--offwhite); padding: var(--s-4); }
+.cn-wall-title { font-family: var(--font-d); font-size: 1.375rem; font-weight: 400; color: var(--navy); margin-bottom: var(--s-2); line-height: 1.25; }
+.cn-wall-text { font-size: var(--b-sm); font-weight: 300; line-height: 1.7; color: var(--text-2); }
+
+/* What it buys — four compact panels */
+.cn-buys { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3); margin-top: var(--s-5); }
+.cn-buy { border-top: 2px solid var(--gold); background: var(--cream); padding: var(--s-4); }
+.cn-buy--honest { border-top-color: var(--border-strong); background: var(--offwhite); }
+.cn-buy-title { font-family: var(--font-d); font-size: 1.375rem; font-weight: 400; color: var(--navy); margin-bottom: var(--s-2); line-height: 1.3; }
+.cn-buy-text { font-size: var(--b-sm); font-weight: 300; line-height: 1.7; color: var(--text-2); }
+.cn-buy-text strong { font-weight: 500; color: var(--navy); }
+
+@media (max-width: 900px) {
+  .cn-wall { grid-template-columns: 1fr; }
+  .cn-buys { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body class="page-editorial">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+  <a href="index.html" class="nav-brand">
+    <img class="nav-mono" src="images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="team.html">Our Team</a>
+    <a href="services.html">Services</a>
+    <a href="track-record.html">Track Record</a>
+    <div class="nav-drop">
+      <a href="tools/">Calculators</a>
+      <div class="nav-drop-menu">
+        <a href="tools/financing-modeler.html">Financing Modeler</a>
+        <a href="tools/disposition-calculator.html">Disposition Proceeds</a>
+        <a href="tools/compounding-modeler.html">Compounding Modeler</a>
+      </div>
+    </div>
+    <a class="nav-cta" href="contact.html">Contact</a>
+  </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- 1 · HERO -->
+<header class="cn-hero on-dark">
+  <div class="wrap">
+    <div class="label label--light">For the Owner of Scattered Rentals</div>
+    <h1 class="cn-hero-title">Four houses. Four renewals. One part-time job you never applied for.</h1>
+    <p class="cn-hero-sub">There is a step up: trading scattered doors for one multi-family building. This page shows what the move actually costs — the tax toll included — and what the capital buys on the other side.</p>
+    <a class="btn btn--gold" href="#toll">See the full calculation <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+  </div>
+</header>
+
+<!-- 2 · THE WALL -->
+<section class="cn-section">
+  <div class="wrap">
+    <div class="label">The Wall</div>
+    <h2 class="cn-section-title">If you own four or five rentals, you already know the shape of the problem.</h2>
+    <div class="cn-wall">
+      <div class="cn-wall-item">
+        <div class="cn-wall-title">The lending wall has a mechanism.</div>
+        <div class="cn-wall-text">Many A-lenders carry internal exposure caps — often four or five rental mortgages per borrower — and rental income can no longer be double-counted across properties, so the debt-service math degrades with every door you add. Past the cap, you&rsquo;re shopping B-lenders at higher rates for the privilege of continuing.</div>
+      </div>
+      <div class="cn-wall-item">
+        <div class="cn-wall-title">One tenant is a quarter of your revenue.</div>
+        <div class="cn-wall-text">When one of four tenants stops paying, that&rsquo;s 25% of your rental income gone while a tribunal process that can run three to seven months plays out — and you&rsquo;re the one preparing the filings after work.</div>
+      </div>
+      <div class="cn-wall-item">
+        <div class="cn-wall-title">The renewal cycle rewrote the math.</div>
+        <div class="cn-wall-text">After the renewal cycle of the last two years, more than a few portfolios that cash-flowed comfortably in 2021 now run flat or negative on math alone. None of this means you invested badly. It means you&rsquo;ve outgrown the vehicle.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · THE TOLL BOOTH -->
+<section class="cn-section" id="toll" style="padding-top:0">
+  <div class="wrap">
+    <div class="label">The Toll Booth</div>
+    <h2 class="cn-section-title">Canada has no 1031 exchange. Selling your rentals is a taxable event.</h2>
+    <p class="cn-prose">Capital gains at a 50% inclusion rate, CCA recapture on every dollar of depreciation you claimed, commissions and legal on each sale, land transfer tax on the purchase. That is the toll booth. It is real, it is unavoidable, and the only intelligent question is whether the asset on the other side earns it back. Here is the whole calculation on a composite four-property portfolio — <strong>including the unpleasant parts.</strong></p>
+
+    <div class="article-ledger">
+      <span class="label">Four Doors to Redeployable Capital — Illustration</span>
+      <table>
+        <tr><td>Combined market value</td><td>$2,400,000</td></tr>
+        <tr><td>Combined mortgage balances</td><td>$1,300,000</td></tr>
+        <tr><td>Gross equity</td><td>$1,100,000</td></tr>
+        <tr><td>Selling costs (commissions, legal, ~5%)</td><td>&minus;$120,000</td></tr>
+        <tr><td>Combined adjusted cost base</td><td>$1,500,000</td></tr>
+        <tr><td>Capital gain</td><td>$900,000</td></tr>
+        <tr><td>Taxable portion (50% inclusion)</td><td>$450,000</td></tr>
+        <tr><td>Tax at an illustrative ~50% marginal rate</td><td>&minus;$225,000</td></tr>
+        <tr class="sum"><td>Redeployable capital</td><td>&asymp; $755,000</td></tr>
+      </table>
+      <p class="article-ledger-note">Illustration of mechanics, not a projection of anyone&rsquo;s outcome. Your cost base, CCA history, structure, and marginal rate change this arithmetic materially — model your own situation with your accountant.</p>
+    </div>
+
+    <p class="cn-prose">The toll booth took roughly $345,000, and $1.1M of gross equity became about $755,000 of working capital. If the analysis stopped here, you&rsquo;d never move. It doesn&rsquo;t stop here: deployed at the 75&ndash;85% leverage typical of insured multi-family financing, roughly $755,000 supports a building purchase in the <strong>$3.0M&ndash;$3.5M range</strong> — a 12-to-16-unit walkup in the Ontario secondary markets where buildings still trade on real income yields.</p>
+  </div>
+</section>
+
+<!-- 4 · WHAT IT BUYS -->
+<section class="cn-section" style="padding-top:0">
+  <div class="wrap">
+    <div class="label">What Changes When You Cross That Line</div>
+    <h2 class="cn-section-title">Four things change. One of them is a warning.</h2>
+    <div class="cn-buys">
+      <div class="cn-buy">
+        <div class="cn-buy-title">The financing framework changes.</div>
+        <div class="cn-buy-text">CMHC&rsquo;s multi-family programs begin at five units — reduced insurance premiums and amortizations far beyond anything residential lending allows. Underwriting shifts from your personal income to the building&rsquo;s income. <strong>The building qualifies, not your T4.</strong></div>
+      </div>
+      <div class="cn-buy">
+        <div class="cn-buy-title">The valuation model changes.</div>
+        <div class="cn-buy-text">Your houses were worth whatever comparable houses sold for. A building is worth its net operating income divided by the market cap rate — for the first time, <strong>you control the value lever.</strong> You could never renovate your houses&rsquo; comparables.</div>
+      </div>
+      <div class="cn-buy">
+        <div class="cn-buy-title">The operating math changes.</div>
+        <div class="cn-buy-text">One roof, one boiler system, one insurance policy, one snow contract, one tax bill. Professional management, uneconomic on scattered doors, becomes a line item the building carries — <strong>the difference between owning an investment and working a second job.</strong></div>
+      </div>
+      <div class="cn-buy cn-buy--honest">
+        <div class="cn-buy-title">The exposure changes shape — not direction.</div>
+        <div class="cn-buy-text">Fourteen units means fourteen tenancies under the same Residential Tenancies Act — <strong>more</strong> potential LTB contact than four doors, not less. What changes: one non-payer is 7% of revenue instead of 25%, and it&rsquo;s your property manager&rsquo;s file, prepared by someone who gets the notices right the first time. The risk gets smaller per event, spread wider, and professionally managed — worth buying for exactly what it is.</div>
+      </div>
+    </div>
+
+    <!-- 5 · GATE -->
+    <div class="article-gate" id="gate">
+      <div class="label">The Full Piece</div>
+      <h3 class="article-gate-title">The Consolidation Math</h3>
+      <p>The complete calculation — the wall, the toll booth, what the capital buys, and the cases where staying put is the right answer. Delivered as a PDF, by email.</p>
+      <form class="article-gate-form" id="cn-gate-form" novalidate>
+        <input type="text" id="cn-email" name="email" placeholder="Email" inputmode="email" autocomplete="email" required aria-label="Email">
+        <div class="article-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+        <button type="submit" class="btn btn--navy" id="cn-gate-submit">Send me the full piece</button>
+      </form>
+    </div>
+
+    <!-- 6 · UNGATED MODELER CTA -->
+    <div class="article-tool on-dark">
+      <img class="article-tool-mono" src="images/mr-monogram-lg.png" alt="">
+      <span class="label label--light">Free Public Tool</span>
+      <div class="article-tool-title">Run your own consolidation numbers in the Compounding <em class="gi">Modeler</em></div>
+      <p>Put in your own equity, your own markets, your own assumptions, and see the mechanics for yourself. No email required.</p>
+      <a class="btn btn--gold" href="tools/">Open the Compounding Modeler <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 7 · COMPLIANCE FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="images/mr-monogram-lg.png" alt="McKinney Realty">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="team.html">Team</a><a href="services.html">Services</a><a href="track-record.html">Track Record</a><a href="tools/">Calculators</a><a href="contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="mckinney-forms.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+
+  $('cn-gate-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var form = $('cn-gate-form');
+    if (form.elements.company_website.value) return;   // honeypot
+
+    var email = $('cn-email').value.trim();
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+    $('cn-email').setAttribute('aria-invalid', emailOk ? 'false' : 'true');
+    if (!emailOk) { $('cn-email').focus(); return; }
+
+    var btn = $('cn-gate-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    window.McKinneyForms.submit({
+      form_type: 'guide',
+      formType: 'guide',
+      guideSlug: 'consolidation-math',
+      asset: 'consolidation-math',
+      firstName: '',
+      email: email,
+      note: '',
+      waitlist: false,
+      campaign: 'consolidation-math',
+      persona: 'P1',
+      page: 'consolidation',
+      ts: new Date().toISOString()
+    }).then(function () {
+      track('lead_submit', {
+        form_type: 'guide',
+        guide_slug: 'consolidation-math',
+        campaign: 'consolidation-math',
+        persona: 'P1'
+      });
+      var sent = document.createElement('div');
+      sent.className = 'article-gate-sent';
+      sent.setAttribute('role', 'status');
+      sent.textContent = 'The full piece is on its way to your inbox.';
+      form.parentNode.replaceChild(sent, form);
+    }).catch(function () {
+      btn.disabled = false;
+      btn.textContent = 'Try again';
+    });
+  });
+
+  // Nav hamburger
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+})();
+</script>
+</body>
+</html>

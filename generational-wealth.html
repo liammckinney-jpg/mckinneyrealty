@@ -386,20 +386,23 @@
 
     var g = GUIDES[activeSlug];
     var userNote = $('gw-note').value.trim();
-    var campaignTag = '[campaign: generational-wealth]';
+    // KB-14 persona mapping (confirmed Aug 17): buyer lane P3, owner lane sellside
+    var persona = activeSlug === 'builders-guide' ? 'P3' : 'sellside';
     window.McKinneyForms.submit({
       form_type: 'guide',           // backend switch key (site convention)
       formType: 'guide',            // spec §3 key, kept for compatibility
       guideSlug: activeSlug,
+      asset: activeSlug,
       firstName: first,
       email: email,
-      note: userNote ? userNote + ' — ' + campaignTag : campaignTag,
+      note: userNote,
       waitlist: !g.rendered,
       campaign: 'generational-wealth',
+      persona: persona,
       page: 'generational-wealth',
       ts: new Date().toISOString()
     }).then(function () {
-      track('lead_submit', { form_type: 'guide', guide_slug: activeSlug, campaign: 'generational-wealth' });
+      track('lead_submit', { form_type: 'guide', guide_slug: activeSlug, campaign: 'generational-wealth', persona: persona });
       var sent = document.createElement('div');
       sent.className = 'gw-sent';
       sent.setAttribute('role', 'status');
