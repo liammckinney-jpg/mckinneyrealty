@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+
+<title>Insights — Research &amp; Analysis | McKinney Realty</title>
+<meta name="description" content="Research and analysis on Ontario multi-family real estate from McKinney Realty — income valuation, corporate tax treatment of investment income, and apartment building fundamentals.">
+<link rel="canonical" href="https://www.mckinneyrealty.ca/insights.html">
+<script src="mckinney-consent.js"></script>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VFY0V42GLR');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mckinney-system.css">
+<script src="mckinney-schema.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is McKinney Realty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "McKinney Realty is a father-and-son multi-family and investment real estate team serving all of Ontario. Sean McKinney (Broker of Record, RE/MAX Quinte Ltd., Brokerage) and Liam McKinney (Broker, Property.ca Inc., Brokerage) have completed more than $200M in combined career transaction volume, including more than $100M in multi-family, land, and commercial property."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does McKinney Realty specialize in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The sale and acquisition of apartment buildings and investment properties in the $2M–$10M range across Ontario, with particular depth in Ontario's secondary markets. The team advises both building owners on disposition and investors on acquisition, including CMHC multi-family financing pathways such as MLI Select."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does McKinney Realty operate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Province-wide across Ontario. Liam McKinney is based in Toronto; Sean McKinney is based in the Quinte region of Eastern Ontario."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does McKinney Realty work with first-time apartment building buyers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The team publishes free public tools, including the Compounding Modeler at mckinneyrealty.ca/tools, and written guides covering underwriting, financing, and operations for investors moving into multi-family for the first time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is McKinney Realty compensated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As licensed real estate brokers, through commission on completed transactions, under the brokerages named above. Consultations carry no fee or obligation."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+/* ---- page scaffold ------------------------------------------------- */
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+
+.ins-hero {
+  background: var(--navy, #1A1F2E);
+  padding: 148px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+.ins-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 90% at 80% 0%, rgba(184,168,138,0.14), transparent 60%);
+  pointer-events: none;
+}
+.ins-hero .wrap { position: relative; z-index: 1; }
+.ins-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  line-height: 1.08;
+  color: #F5F2EC;
+  margin: 14px 0 18px;
+  letter-spacing: 0.01em;
+}
+.ins-hero-title em { font-style: italic; color: #B8A88A; }
+.ins-hero-sub {
+  font-size: 1.02rem; line-height: 1.65; color: rgba(245,242,236,0.72);
+  max-width: 560px; font-weight: 300;
+}
+
+/* ---- article cards -------------------------------------------------- */
+.ins-list { padding: 72px 0 8px; }
+.ins-card {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 36px;
+  padding: 40px 0 44px;
+  border-bottom: 1px solid rgba(26,31,46,0.12);
+}
+.ins-card:first-child { padding-top: 8px; }
+.ins-card-meta {
+  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #9A8B6F; padding-top: 10px; line-height: 1.9;
+}
+.ins-card-meta .ins-date { display: block; color: rgba(26,31,46,0.45); letter-spacing: 0.08em; text-transform: none; font-size: 0.78rem; }
+.ins-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  line-height: 1.15;
+  margin: 0 0 12px;
+}
+.ins-card-title a { color: var(--navy, #1A1F2E); text-decoration: none; transition: color 0.2s ease; }
+.ins-card-title a:hover { color: #9A8B6F; }
+.ins-card-dek { font-size: 0.98rem; line-height: 1.7; color: rgba(26,31,46,0.72); max-width: 640px; font-weight: 300; margin: 0 0 16px; }
+.ins-card-link {
+  font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #9A8B6F; text-decoration: none; border-bottom: 1px solid rgba(154,139,111,0.4);
+  padding-bottom: 2px; transition: border-color 0.2s ease;
+}
+.ins-card-link:hover { border-color: #9A8B6F; }
+
+/* ---- FAQ ------------------------------------------------------------ */
+.ins-faq { padding: 72px 0 88px; }
+.ins-faq-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  color: var(--navy, #1A1F2E);
+  margin: 12px 0 8px;
+}
+.ins-faq-intro { font-size: 0.95rem; line-height: 1.7; color: rgba(26,31,46,0.6); font-weight: 300; max-width: 620px; margin-bottom: 20px; }
+.ins-faq-item { padding: 28px 0; border-bottom: 1px solid rgba(26,31,46,0.1); max-width: 780px; }
+.ins-faq-item:last-child { border-bottom: none; }
+.ins-faq-q {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.28rem;
+  color: var(--navy, #1A1F2E);
+  margin: 0 0 10px;
+}
+.ins-faq-a { font-size: 0.95rem; line-height: 1.75; color: rgba(26,31,46,0.75); font-weight: 300; margin: 0; }
+.ins-faq-a a { color: #9A8B6F; }
+
+.ins-label {
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #9A8B6F; font-weight: 500;
+}
+.ins-label--light { color: #B8A88A; }
+
+@media (max-width: 720px) {
+  .wrap { padding: 0 22px; }
+  .ins-hero { padding: 124px 0 56px; }
+  .ins-card { grid-template-columns: 1fr; gap: 10px; padding: 32px 0 36px; }
+  .ins-card-meta { padding-top: 0; }
+  .ins-list { padding: 48px 0 0; }
+  .ins-faq { padding: 56px 0 64px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+  <a href="index.html" class="nav-brand">
+    <img class="nav-mono" src="images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="team.html">Our Team</a>
+    <a href="services.html">Services</a>
+    <a href="track-record.html">Track Record</a>
+    <div class="nav-drop">
+      <a href="tools/">Calculators</a>
+      <div class="nav-drop-menu">
+        <a href="tools/financing-modeler.html">Financing Modeler</a>
+        <a href="tools/disposition-calculator.html">Disposition Proceeds</a>
+        <a href="tools/compounding-modeler.html">Compounding Modeler</a>
+      </div>
+    </div>
+    <a href="insights.html" class="active">Insights</a>
+    <a class="nav-cta" href="contact.html">Contact</a>
+  </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<header class="ins-hero">
+  <div class="wrap">
+    <div class="ins-label ins-label--light">Research &amp; Analysis</div>
+    <h1 class="ins-hero-title">Insights on Ontario <em>multi-family</em> real estate.</h1>
+    <p class="ins-hero-sub">Written analysis on how income properties are valued, financed, and taxed — the arithmetic beneath the decisions, shown in full.</p>
+  </div>
+</header>
+
+<!-- ARTICLE LIST -->
+<section class="ins-list">
+  <div class="wrap">
+
+    <article class="ins-card">
+      <div class="ins-card-meta">
+        Analysis
+        <span class="ins-date">August 17, 2026</span>
+      </div>
+      <div>
+        <h2 class="ins-card-title"><a href="the-50000-problem.html">The $50,000 Problem</a></h2>
+        <p class="ins-card-dek">How your corporation's investment portfolio quietly raises the tax rate on your practice — the SBD grind mechanism, the Ontario nuance most summaries skip, and where multi-family real estate fits.</p>
+        <a class="ins-card-link" href="the-50000-problem.html">Read the analysis</a>
+      </div>
+    </article>
+
+    <article class="ins-card">
+      <div class="ins-card-meta">
+        Analysis
+        <span class="ins-date">August 16, 2026</span>
+      </div>
+      <div>
+        <h2 class="ins-card-title"><a href="cashflow.html">Cash Flow vs. Hope</a></h2>
+        <p class="ins-card-dek">Condos were priced on hope. Buildings are priced on income. The difference between those two pricing models is not a matter of opinion — it is arithmetic, and the piece shows it.</p>
+        <a class="ins-card-link" href="cashflow.html">Read the analysis</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="ins-faq" id="faq">
+  <div class="wrap">
+    <div class="ins-label">Common Questions</div>
+    <h2 class="ins-faq-title">About McKinney Realty</h2>
+    <p class="ins-faq-intro">Direct answers to the questions we are asked most often.</p>
+
+    <div class="ins-faq-item">
+      <h3 class="ins-faq-q">Who is McKinney Realty?</h3>
+      <p class="ins-faq-a">McKinney Realty is a father-and-son multi-family and investment real estate team serving all of Ontario. Sean McKinney (Broker of Record, RE/MAX Quinte Ltd., Brokerage) and Liam McKinney (Broker, Property.ca Inc., Brokerage) have completed more than $200M in combined career transaction volume, including more than $100M in multi-family, land, and commercial property.</p>
+    </div>
+
+    <div class="ins-faq-item">
+      <h3 class="ins-faq-q">What does McKinney Realty specialize in?</h3>
+      <p class="ins-faq-a">The sale and acquisition of apartment buildings and investment properties in the $2M&ndash;$10M range across Ontario, with particular depth in Ontario's secondary markets. The team advises both building owners on disposition and investors on acquisition, including CMHC multi-family financing pathways such as MLI Select.</p>
+    </div>
+
+    <div class="ins-faq-item">
+      <h3 class="ins-faq-q">Where does McKinney Realty operate?</h3>
+      <p class="ins-faq-a">Province-wide across Ontario. Liam McKinney is based in Toronto; Sean McKinney is based in the Quinte region of Eastern Ontario.</p>
+    </div>
+
+    <div class="ins-faq-item">
+      <h3 class="ins-faq-q">Does McKinney Realty work with first-time apartment building buyers?</h3>
+      <p class="ins-faq-a">Yes. The team publishes free public tools, including the Compounding Modeler at <a href="tools/">mckinneyrealty.ca/tools</a>, and written guides covering underwriting, financing, and operations for investors moving into multi-family for the first time.</p>
+    </div>
+
+    <div class="ins-faq-item">
+      <h3 class="ins-faq-q">How is McKinney Realty compensated?</h3>
+      <p class="ins-faq-a">As licensed real estate brokers, through commission on completed transactions, under the brokerages named above. Consultations carry no fee or obligation.</p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="images/mr-monogram-lg.png" alt="McKinney Realty">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="team.html">Team</a><a href="services.html">Services</a><a href="track-record.html">Track Record</a><a href="tools/">Calculators</a><a href="insights.html">Insights</a><a href="contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
