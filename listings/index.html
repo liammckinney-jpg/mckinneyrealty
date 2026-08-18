@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+
+<title>Current Listings — Multi-Family Investment Properties | McKinney Realty</title>
+<meta name="description" content="Multi-family and investment properties currently offered by McKinney Realty across Ontario — apartment buildings and income properties with full underwriting available to qualified investors.">
+<link rel="canonical" href="https://www.mckinneyrealty.ca/listings/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="McKinney Realty">
+<meta property="og:title" content="Current Listings — McKinney Realty">
+<meta property="og:description" content="Multi-family and investment properties currently offered across Ontario. Full underwriting available to qualified investors.">
+<meta property="og:url" content="https://www.mckinneyrealty.ca/listings/">
+<meta property="og:image" content="https://www.mckinneyrealty.ca/images/listings/elgin-hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script src="../mckinney-consent.js"></script>
+<script src="../mckinney-schema.js"></script>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VFY0V42GLR');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../mckinney-system.css">
+
+<style>
+/* ---- page scaffold ------------------------------------------------- */
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+
+.lst-hero {
+  background: var(--navy, #1A1F2E);
+  padding: 148px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+.lst-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 90% at 80% 0%, rgba(184,168,138,0.14), transparent 60%);
+  pointer-events: none;
+}
+.lst-hero .wrap { position: relative; z-index: 1; }
+.lst-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  line-height: 1.08;
+  color: #F5F2EC;
+  margin: 14px 0 18px;
+  letter-spacing: 0.01em;
+}
+.lst-hero-title em { font-style: italic; color: #B8A88A; }
+.lst-hero-sub {
+  font-size: 1.02rem; line-height: 1.65; color: rgba(245,242,236,0.72);
+  max-width: 580px; font-weight: 300;
+}
+
+.lst-label {
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #9A8B6F; font-weight: 500;
+}
+.lst-label--light { color: #B8A88A; }
+
+/* ---- listing cards -------------------------------------------------- */
+.lst-list { padding: 72px 0 88px; }
+.lst-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+  gap: 40px;
+}
+.lst-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #FFFFFF;
+  border: 1px solid rgba(26,31,46,0.12);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.lst-card:hover { box-shadow: 0 18px 48px rgba(26,31,46,0.14); transform: translateY(-3px); }
+.lst-card-media { position: relative; aspect-ratio: 16 / 9; overflow: hidden; }
+.lst-card-media img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.6s ease;
+}
+.lst-card:hover .lst-card-media img { transform: scale(1.035); }
+.lst-badge {
+  position: absolute; top: 16px; left: 16px;
+  background: var(--navy, #1A1F2E); color: #C9BBAA;
+  font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;
+  font-weight: 500; padding: 6px 14px;
+}
+.lst-card-body { padding: 26px 28px 28px; }
+.lst-card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.lst-card-addr {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+  line-height: 1.15;
+  color: var(--navy, #1A1F2E);
+  margin: 0;
+}
+.lst-card-city { font-size: 0.85rem; font-weight: 300; color: rgba(26,31,46,0.55); margin-top: 3px; }
+.lst-card-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; font-weight: 500; color: var(--navy, #1A1F2E);
+  white-space: nowrap;
+}
+.lst-card-price small { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 300; color: rgba(26,31,46,0.55); text-align: right; margin-top: 2px; }
+.lst-card-metrics {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(26,31,46,0.1);
+  margin-top: 18px; padding-top: 16px; gap: 8px;
+}
+.lst-m-val { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--navy, #1A1F2E); line-height: 1; }
+.lst-m-lbl { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(26,31,46,0.45); margin-top: 5px; font-weight: 400; }
+.lst-card-dek { font-size: 0.92rem; line-height: 1.65; color: rgba(26,31,46,0.68); font-weight: 300; margin: 16px 0 18px; }
+.lst-card-link {
+  font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #9A8B6F; border-bottom: 1px solid rgba(154,139,111,0.4);
+  padding-bottom: 2px; display: inline-block;
+}
+.lst-card:hover .lst-card-link { border-color: #9A8B6F; }
+
+/* ---- off-market band ------------------------------------------------ */
+.lst-offmarket { padding: 64px 0 80px; background: var(--cream, #F5F2EC); border-top: 1px solid rgba(26,31,46,0.12); }
+.lst-offmarket-inner { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; align-items: center; }
+.lst-offmarket-title {
+  font-family: 'Cormorant Garamond', serif; font-weight: 400;
+  font-size: clamp(1.7rem, 3.5vw, 2.3rem); color: var(--navy, #1A1F2E);
+  margin: 10px 0 12px; line-height: 1.15;
+}
+.lst-offmarket-body { font-size: 0.95rem; line-height: 1.7; color: rgba(26,31,46,0.68); font-weight: 300; max-width: 620px; }
+.lst-offmarket-cta { text-align: right; }
+@media (max-width: 900px) {
+  .lst-offmarket-inner { grid-template-columns: 1fr; gap: 24px; }
+  .lst-offmarket-cta { text-align: left; }
+}
+@media (max-width: 720px) {
+  .wrap { padding: 0 22px; }
+  .lst-hero { padding: 124px 0 56px; }
+  .lst-list { padding: 48px 0 64px; }
+  .lst-grid { grid-template-columns: 1fr; gap: 28px; }
+  .lst-card-body { padding: 22px 20px 24px; }
+  .lst-card-metrics { grid-template-columns: repeat(2, 1fr); row-gap: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+  <a href="../index.html" class="nav-brand">
+    <img class="nav-mono" src="../images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="index.html" class="active">Listings</a>
+    <a href="../team.html">Our Team</a>
+    <a href="../services.html">Services</a>
+    <a href="../track-record.html">Track Record</a>
+    <div class="nav-drop">
+      <a href="../tools/">Calculators</a>
+      <div class="nav-drop-menu">
+        <a href="../tools/financing-modeler.html">Financing Modeler</a>
+        <a href="../tools/disposition-calculator.html">Disposition Proceeds</a>
+        <a href="../tools/compounding-modeler.html">Compounding Modeler</a>
+      </div>
+    </div>
+    <a href="../insights.html">Insights</a>
+    <a class="nav-cta" href="../contact.html">Contact</a>
+  </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<header class="lst-hero">
+  <div class="wrap">
+    <div class="lst-label lst-label--light">Exclusive Offerings</div>
+    <h1 class="lst-hero-title">Current <em>listings</em>.</h1>
+    <p class="lst-hero-sub">Multi-family and investment properties currently offered by McKinney Realty. Full underwriting — rent rolls, operating statements, and stabilized projections — is available to qualified investors on request.</p>
+  </div>
+</header>
+
+<!-- LISTING GRID -->
+<section class="lst-list">
+  <div class="wrap">
+    <div class="lst-grid">
+
+      <a class="lst-card" href="58-60-elgin-street.html">
+        <div class="lst-card-media">
+          <img src="../images/listings/elgin-hero.jpg" alt="58-60 Elgin Street, Belleville — two freestanding 12-plex apartment buildings" loading="lazy">
+          <span class="lst-badge">New Price</span>
+        </div>
+        <div class="lst-card-body">
+          <div class="lst-card-top">
+            <div>
+              <h2 class="lst-card-addr">58-60 Elgin Street</h2>
+              <div class="lst-card-city">Belleville, Ontario</div>
+            </div>
+            <div class="lst-card-price">$3,890,000<small>$1,945,000 per building</small></div>
+          </div>
+          <div class="lst-card-metrics">
+            <div><div class="lst-m-val">24</div><div class="lst-m-lbl">Units</div></div>
+            <div><div class="lst-m-val">5.7%</div><div class="lst-m-lbl">Cap Rate</div></div>
+            <div><div class="lst-m-val">8.4%</div><div class="lst-m-lbl">Stabilized</div></div>
+            <div><div class="lst-m-val">$162K</div><div class="lst-m-lbl">Per Door</div></div>
+          </div>
+          <p class="lst-card-dek">Two freestanding 12-plexes on adjacent lots — portfolio-level scale at small-building pricing, with $104,905 in annualized rent upside on natural turnover and $200K+ in seller capital already invested.</p>
+          <span class="lst-card-link">View Listing</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- OFF-MARKET BAND -->
+<section class="lst-offmarket">
+  <div class="wrap">
+    <div class="lst-offmarket-inner">
+      <div>
+        <div class="lst-label">Before It Reaches This Page</div>
+        <h2 class="lst-offmarket-title">Qualified investors see new offerings <em class="gi">first</em>.</h2>
+        <p class="lst-offmarket-body">A meaningful share of our mandates transact before public marketing. Register your acquisition criteria — market, size, and return targets — and we'll bring you matching opportunities directly.</p>
+      </div>
+      <div class="lst-offmarket-cta">
+        <a href="../acquisition-intake.html" class="btn btn--navy">Register Acquisition Criteria <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="../images/mr-monogram-lg.png" alt="McKinney Realty">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="index.html">Listings</a><a href="../team.html">Team</a><a href="../services.html">Services</a><a href="../track-record.html">Track Record</a><a href="../tools/">Calculators</a><a href="../insights.html">Insights</a><a href="../contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

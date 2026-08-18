@@ -2,3 +2,5 @@
 .vercel
 # gated guide masters + PDFs — must never deploy to the public site
 guides-print/
+# local dev config
+.claude/
