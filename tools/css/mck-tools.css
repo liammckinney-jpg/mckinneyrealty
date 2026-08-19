@@ -278,6 +278,17 @@
   .cm-stat { border-right: none; }
 }
 
+/* Four-tool hub variant */
+.dual-cta--four { grid-template-columns: 1fr 1fr; }
+.dual-cta--four .dual-cta-panel { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.dual-cta--four .dual-cta-panel:nth-child(2n) { border-right: none; }
+.dual-cta--four .dual-cta-panel:nth-last-child(-n+2) { border-bottom: none; }
+@media (max-width: 900px) {
+  .dual-cta--four { grid-template-columns: 1fr; }
+  .dual-cta--four .dual-cta-panel { border-right: none; border-bottom: 1px solid var(--border); }
+  .dual-cta--four .dual-cta-panel:last-child { border-bottom: none; }
+}
+
 /* Three-tool hub variant */
 .dual-cta--three { grid-template-columns: 1fr 1fr 1fr; }
 .dual-cta--three .dual-cta-panel { border-right: 1px solid var(--border); }

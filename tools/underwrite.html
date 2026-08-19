@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+
+<title>McKinney Realty — The Underwriter</title>
+<meta name="description" content="A free, ungated multi-family underwriting tool. Enter your own assumptions and get a full annual pro forma — NOI, cap rate, DSCR, cash flow, and cash-on-cash. Nothing pre-filled, nothing gated.">
+<link rel="canonical" href="https://www.mckinneyrealty.ca/tools/underwrite.html">
+<script src="../mckinney-consent.js"></script>
+<script src="../mckinney-schema.js"></script>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VFY0V42GLR');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../mckinney-system.css">
+<link rel="stylesheet" href="css/mck-tools.css">
+
+<style>
+/* ---- page-specific: The Underwriter ---- */
+.uw-layout { display: grid; grid-template-columns: minmax(0,1fr) 360px; gap: 2.5rem; align-items: start; }
+.uw-rail { position: sticky; top: 90px; }
+.uw-mode { margin: 0 0 1.5rem; }
+.uw-mode button.active { background: var(--gold-dark); }
+.uw-banner {
+  background: var(--cream); border-left: 2px solid var(--gold-dark);
+  padding: 0.75rem 1rem; font-size: 0.8125rem; color: var(--text-2);
+  margin: 0 0 1.25rem; font-weight: 300;
+}
+.uw-prefilled > label::after {
+  content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold-dark); margin-left: 7px; vertical-align: middle;
+}
+.uw-a { display: none; }
+body.uw-adv .uw-a { display: block; }
+body.uw-adv .uw-s-only { display: none; }
+fieldset.uw-a { display: none; }
+body.uw-adv fieldset.uw-a { display: block; }
+
+/* results card */
+.uw-results { background: var(--white); border: 1px solid var(--border-strong); padding: 1.5rem 1.5rem 1.75rem; }
+.uw-res-label { font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dark); font-weight: 500; margin-bottom: 0.875rem; }
+.uw-head { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.25rem; margin-bottom: 1.1rem; }
+.uw-head .num { font-family: var(--font-d); font-size: 1.65rem; font-weight: 500; color: var(--navy); line-height: 1.05; }
+.uw-head .num.neg { color: #B0413E; }
+.uw-head .lbl { font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-top: 0.3rem; }
+.uw-rows { border-top: 1px solid rgba(0,0,0,0.08); padding-top: 0.8rem; }
+.uw-row { display: flex; justify-content: space-between; gap: 1rem; padding: 0.28rem 0; font-size: 0.8125rem; }
+.uw-row .k { color: var(--text-2); font-weight: 300; }
+.uw-row .v { font-weight: 500; color: var(--text-1); white-space: nowrap; }
+.uw-row .v.neg { color: #B0413E; }
+.uw-nudge { font-size: 0.78rem; color: var(--text-3); font-style: italic; margin-top: 0.6rem; }
+.uw-stress { margin-top: 1.1rem; border-top: 1px solid rgba(0,0,0,0.08); padding-top: 0.9rem; }
+.uw-stress table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+.uw-stress th { text-align: left; font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); font-weight: 500; padding: 0.2rem 0; }
+.uw-stress td { padding: 0.22rem 0; color: var(--text-2); border-top: 1px solid rgba(0,0,0,0.05); }
+.uw-stress td.v { text-align: right; font-weight: 500; color: var(--text-1); }
+.uw-stress td.v.neg { color: #B0413E; }
+.uw-actions { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.25rem; }
+.uw-actions .btn { justify-content: center; }
+
+/* rent roll + utility matrix */
+.uw-roll-row { display: grid; grid-template-columns: 1fr 74px 110px 34px; gap: 0.5rem; margin-bottom: 0.5rem; align-items: center; }
+.uw-roll-row input { width: 100%; }
+.uw-roll-del { background: none; border: 1px solid var(--border-strong); color: var(--text-3); cursor: pointer; height: 34px; }
+.uw-roll-add { background: none; border: 1px dashed var(--border-strong); color: var(--text-2); cursor: pointer; padding: 0.5rem 0.9rem; font-size: 0.8125rem; font-family: var(--font-b); }
+.uw-util { display: grid; grid-template-columns: 84px 1fr auto; gap: 0.6rem 0.9rem; align-items: center; margin-bottom: 0.6rem; }
+.uw-util .nm { font-size: 0.8125rem; color: var(--text-1); }
+.uw-util .amt { width: 130px; }
+.uw-reserve-total { font-size: 0.8125rem; color: var(--text-2); white-space: nowrap; }
+
+/* email block */
+.uw-email { background: var(--cream); padding: 1.25rem 1.4rem 1.4rem; margin-top: 2.2rem; }
+.uw-email h3 { font-family: var(--font-d); font-weight: 500; font-size: 1.2rem; margin: 0.2rem 0 0.35rem; }
+.uw-email p { font-size: 0.8125rem; color: var(--text-2); font-weight: 300; margin-bottom: 0.9rem; }
+.uw-email-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.uw-email-row input[type="text"] { flex: 1 1 220px; }
+.uw-consent { display: flex; gap: 0.55rem; align-items: flex-start; font-size: 0.75rem; color: var(--text-2); font-weight: 300; margin-top: 0.7rem; line-height: 1.5; }
+.uw-consent input { margin-top: 2px; accent-color: var(--gold-dark); }
+.uw-email-sent { font-size: 0.9rem; color: var(--text-1); font-weight: 300; }
+
+/* mobile pinned summary */
+.uw-bar { display: none; }
+@media (max-width: 999px) {
+  .uw-layout { grid-template-columns: 1fr; }
+  .uw-rail { position: static; }
+  .uw-bar {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.4rem;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    background: var(--navy); color: var(--white); padding: 0.6rem 0.9rem;
+    box-shadow: 0 -6px 24px rgba(26,31,46,0.25);
+  }
+  .uw-bar .num { font-family: var(--font-d); font-size: 1.02rem; line-height: 1; }
+  .uw-bar .num.neg { color: #E4A19E; }
+  .uw-bar .lbl { font-size: 0.55rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-light); margin-top: 0.2rem; }
+  body { padding-bottom: 64px; }
+}
+
+/* print: one-page pro forma */
+@media print {
+  .nav, .footer, .uw-form-col, .uw-bar, .uw-email, .uw-actions, .uw-mode, .tool-hero, .uw-faq { display: none !important; }
+  .uw-layout { grid-template-columns: 1fr; }
+  .uw-rail { position: static; }
+  .uw-results { border: none; padding: 0; }
+  body { padding-bottom: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+  <a href="../index.html" class="nav-brand">
+    <img class="nav-mono" src="../images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="../listings/">Listings</a>
+    <a href="../team.html">Our Team</a>
+    <a href="../services.html">Services</a>
+    <a href="../track-record.html">Track Record</a>
+    <div class="nav-drop">
+      <a href="index.html">Calculators</a>
+      <div class="nav-drop-menu">
+        <a href="underwrite.html">The Underwriter</a>
+        <a href="financing-modeler.html">Financing Modeler</a>
+        <a href="disposition-calculator.html">Disposition Proceeds</a>
+        <a href="compounding-modeler.html">Compounding Modeler</a>
+      </div>
+    </div>
+    <a href="../insights.html">Insights</a>
+    <a class="nav-cta" href="../contact.html">Contact</a>
+  </div>
+  </div>
+</nav>
+
+<main class="tool-main">
+
+<!-- HERO -->
+<section class="tool-hero">
+  <div class="wrap">
+    <div class="label label--light">Decision-Stage Analysis</div>
+    <h1 class="tool-hero-title">The <em class="gi">Underwriter</em></h1>
+    <p class="tool-hero-sub">A full pro forma on your assumptions. Nothing pre-filled, nothing gated. Your assumptions, not ours.</p>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:2.2rem">
+
+  <div class="uw-banner" id="uw-prefill-banner" hidden>Pre-filled from listing data as provided. Verify independently.</div>
+
+  <div class="tool-toggle uw-mode" role="group" aria-label="Detail level">
+    <button type="button" id="uw-mode-simple" class="active">Simple</button>
+    <button type="button" id="uw-mode-adv">Advanced</button>
+  </div>
+
+  <div class="uw-layout">
+
+    <!-- ============ FORM COLUMN ============ -->
+    <div class="uw-form-col">
+      <form id="uw-form" novalidate>
+
+        <fieldset class="tool-fieldset">
+          <div class="tool-fieldset-legend">Property &amp; Acquisition</div>
+          <div class="tool-grid">
+            <div class="tool-field" data-k="p">
+              <label for="uw-p">Purchase price</label>
+              <div class="tool-affix" data-affix="$"><input type="text" id="uw-p" data-currency inputmode="decimal"></div>
+            </div>
+            <div class="tool-field" data-k="u">
+              <label for="uw-u">Number of units</label>
+              <input type="number" id="uw-u" min="1" step="1">
+            </div>
+            <div class="tool-field uw-a" data-k="cc">
+              <label for="uw-cc">Closing costs</label>
+              <div class="tool-affix" data-affix="$"><input type="text" id="uw-cc" data-currency inputmode="decimal"></div>
+              <div class="tool-help">Land transfer tax, legal, inspections.</div>
+            </div>
+            <div class="tool-field uw-a" data-k="cx">
+              <label for="uw-cx">Immediate capital / reno budget</label>
+              <div class="tool-affix" data-affix="$"><input type="text" id="uw-cx" data-currency inputmode="decimal"></div>
+              <div class="tool-help">Optional. Adds to total cash invested.</div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="tool-fieldset">
+          <div class="tool-fieldset-legend">Income</div>
+
+          <div class="uw-a" id="uw-roll-wrap" style="margin-bottom:1rem">
+            <div class="tool-help" style="margin-bottom:0.5rem">Rent roll — unit type, count, monthly rent per unit.</div>
+            <div id="uw-roll"></div>
+            <button type="button" class="uw-roll-add" id="uw-roll-add">+ Add unit type</button>
+          </div>
+
+          <div class="tool-grid">
+            <div class="tool-field" data-k="rm">
+              <label for="uw-rm" id="uw-rm-label">Gross monthly residential rent</label>
+              <div class="tool-affix" data-affix="$"><input type="text" id="uw-rm" data-currency inputmode="decimal"></div>
+              <div class="tool-help uw-a">Kept from Simple mode until distributed into the roll; the total always reconciles.</div>
+            </div>
+            <div class="tool-field uw-s-only" data-k="om">
+              <label for="uw-om">Other monthly income</label>
+              <div class="tool-affix" data-affix="$"><input type="text" id="uw-om" data-currency inputmode="decimal"></div>
+              <div class="tool-help">Parking, laundry, storage.</div>
+            </div>
+            <div class="tool-field uw-a" data-k="om2">
+              <label for="uw-om2">Other income — unallocated</label>
+              <div class="tool-affix" data-affix="$"><input type="text" id="uw-om2" data-currency inputmode="decimal"></div>
+              <div class="tool-help">Entered in Simple mode; distribute below or leave here.</div>
+            </div>
+            <div class="tool-field uw-a" data-k="pk">
+              <label for="uw-pk">Parking</label>
+              <div class="tool-affix" data-affix="$"><input type="text" id="uw-pk" data-currency inputmode="decimal" placeholder="per month"></div>
+            </div>
+            <div class="tool-field uw-a" data-k="la">
+              <label for="uw-la">Laundry</label>
+              <div class="tool-affix" data-affix="$"><input type="text" id="uw-la" data-currency inputmode="decimal" placeholder="per month"></div>
+            </div>
+            <div class="tool-field uw-a" data-k="so">
+              <label for="uw-so">Storage / other income</label>
+              <div class="tool-affix" data-affix="$"><input type="text" id="uw-so" data-currency inputmode="decimal" placeholder="per month"></div>
+            </div>
+            <div class="tool-field" data-k="v">
+              <label for="uw-v">Vacancy &amp; bad debt</label>
+              <div class="tool-affix tool-affix--suffix" data-affix="%"><input type="text" id="uw-v" inputmode="decimal" placeholder="your assumption"></div>
+              <div class="tool-help">Applied against gross potential rent.</div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="tool-fieldset">
+          <div class="tool-fieldset-legend">Operating Expenses</div>
+          <div class="tool-grid">
+            <div class="tool-field" data-k="tx">
+              <label for="uw-tx">Property taxes</label>
+              <div class="tool-affix" data-affix="$"><input type="text" id="uw-tx" data-currency inputmode="decimal" placeholder="annual"></div>
+            </div>
+            <div class="tool-field" data-k="ox">
+              <label for="uw-ox" id="uw-ox-label">Operating expenses (excl. property tax)</label>
+              <div class="tool-toggle" role="group" aria-label="Opex entry mode" style="margin-bottom:0.5rem">
+                <button type="button" id="uw-ox-amt" class="active">$ annual</button>
+                <button type="button" id="uw-ox-pct">% of EGI</button>
+              </div>
+              <div class="tool-affix" data-affix="$" id="uw-ox-wrap"><input type="text" id="uw-ox" data-currency inputmode="decimal"></div>
+              <div class="tool-help" id="uw-ox-help">One lump figure in Simple mode; itemize in Advanced.</div>
+            </div>
+          </div>
+
+          <div class="uw-a">
+            <div class="tool-fieldset-legend" style="margin-top:1.2rem;font-size:0.72rem">Fixed</div>
+            <div class="tool-grid">
+              <div class="tool-field" data-k="in">
+                <label for="uw-in">Insurance</label>
+                <div class="tool-affix" data-affix="$"><input type="text" id="uw-in" data-currency inputmode="decimal" placeholder="annual"></div>
+              </div>
+            </div>
+
+            <div class="tool-fieldset-legend" style="margin-top:1.2rem;font-size:0.72rem">Utilities &amp; Metering</div>
+            <div class="tool-help" style="margin-bottom:0.6rem">Who pays what changes everything — enter only landlord-paid amounts.</div>
+            <div class="uw-util" data-u="h">
+              <span class="nm">Hydro</span>
+              <div class="tool-toggle"><button type="button" data-set="t" class="active">Tenant-paid (separately metered)</button><button type="button" data-set="l">Landlord-paid</button></div>
+              <div class="tool-affix amt" data-affix="$" hidden><input type="text" id="uw-uh" data-currency inputmode="decimal" placeholder="annual"></div>
+            </div>
+            <div class="uw-util" data-u="t">
+              <span class="nm">Heat</span>
+              <div class="tool-toggle"><button type="button" data-set="t" class="active">Tenant-paid (separately metered)</button><button type="button" data-set="l">Landlord-paid</button></div>
+              <div class="tool-affix amt" data-affix="$" hidden><input type="text" id="uw-ut" data-currency inputmode="decimal" placeholder="annual"></div>
+            </div>
+            <div class="uw-util" data-u="w">
+              <span class="nm">Water</span>
+              <div class="tool-toggle"><button type="button" data-set="t" class="active">Tenant-paid (separately metered)</button><button type="button" data-set="l">Landlord-paid</button></div>
+              <div class="tool-affix amt" data-affix="$" hidden><input type="text" id="uw-uw" data-currency inputmode="decimal" placeholder="annual"></div>
+            </div>
+            <div class="tool-grid" style="margin-top:0.4rem">
+              <div class="tool-field" data-k="ug">
+                <label for="uw-ug">Gas (if separate)</label>
+                <div class="tool-affix" data-affix="$"><input type="text" id="uw-ug" data-currency inputmode="decimal" placeholder="annual"></div>
+              </div>
+            </div>
+
+            <div class="tool-fieldset-legend" style="margin-top:1.2rem;font-size:0.72rem">Operations</div>
+            <div class="tool-grid">
+              <div class="tool-field" data-k="pm">
+                <label for="uw-pm">Property management</label>
+                <div class="tool-toggle" role="group" style="margin-bottom:0.5rem">
+                  <button type="button" id="uw-pm-pct" class="active">% of EGI</button>
+                  <button type="button" id="uw-pm-amt">$ annual</button>
+                </div>
+                <div class="tool-affix tool-affix--suffix" data-affix="%" id="uw-pm-wrap"><input type="text" id="uw-pm" inputmode="decimal" placeholder="often 3–5%"></div>
+              </div>
+              <div class="tool-field" data-k="su">
+                <label for="uw-su">Superintendent / caretaker</label>
+                <div class="tool-affix" data-affix="$"><input type="text" id="uw-su" data-currency inputmode="decimal" placeholder="annual"></div>
+              </div>
+              <div class="tool-field" data-k="rp">
+                <label for="uw-rp">Repairs &amp; maintenance</label>
+                <div class="tool-affix" data-affix="$"><input type="text" id="uw-rp" data-currency inputmode="decimal" placeholder="annual"></div>
+              </div>
+              <div class="tool-field" data-k="tn">
+                <label for="uw-tn">Turnover / make-ready</label>
+                <div class="tool-affix" data-affix="$"><input type="text" id="uw-tn" data-currency inputmode="decimal" placeholder="annual"></div>
+              </div>
+              <div class="tool-field" data-k="cl">
+                <label for="uw-cl">Common area cleaning</label>
+                <div class="tool-affix" data-affix="$"><input type="text" id="uw-cl" data-currency inputmode="decimal" placeholder="annual"></div>
+              </div>
+            </div>
+
+            <div class="tool-fieldset-legend" style="margin-top:1.2rem;font-size:0.72rem">Grounds &amp; Seasonal</div>
+            <div class="tool-grid">
+              <div class="tool-field" data-k="sn">
+                <label for="uw-sn">Snow removal</label>
+                <div class="tool-affix" data-affix="$"><input type="text" id="uw-sn" data-currency inputmode="decimal" placeholder="annual"></div>
+              </div>
+              <div class="tool-field" data-k="ld">
+                <label for="uw-ld">Landscaping / grounds</label>
+                <div class="tool-affix" data-affix="$"><input type="text" id="uw-ld" data-currency inputmode="decimal" placeholder="annual"></div>
+              </div>
+              <div class="tool-field" data-k="ws">
+                <label for="uw-ws">Waste removal</label>
+                <div class="tool-affix" data-affix="$"><input type="text" id="uw-ws" data-currency inputmode="decimal" placeholder="annual"></div>
+              </div>
+            </div>
+
+            <div class="tool-fieldset-legend" style="margin-top:1.2rem;font-size:0.72rem">Building Systems</div>
+            <div class="tool-grid">
+              <div class="tool-field" data-k="el">
+                <label for="uw-el">Elevator contract</label>
+                <div class="tool-affix" data-affix="$"><input type="text" id="uw-el" data-currency inputmode="decimal" placeholder="annual"></div>
+              </div>
+              <div class="tool-field" data-k="fs">
+                <label for="uw-fs">Fire &amp; life-safety monitoring / inspections</label>
+                <div class="tool-affix" data-affix="$"><input type="text" id="uw-fs" data-currency inputmode="decimal" placeholder="annual"></div>
+              </div>
+              <div class="tool-field" data-k="pc">
+                <label for="uw-pc">Pest control</label>
+                <div class="tool-affix" data-affix="$"><input type="text" id="uw-pc" data-currency inputmode="decimal" placeholder="annual"></div>
+              </div>
+            </div>
+
+            <div class="tool-fieldset-legend" style="margin-top:1.2rem;font-size:0.72rem">Admin</div>
+            <div class="tool-grid">
+              <div class="tool-field" data-k="ad">
+                <label for="uw-ad">Advertising &amp; leasing</label>
+                <div class="tool-affix" data-affix="$"><input type="text" id="uw-ad" data-currency inputmode="decimal" placeholder="annual"></div>
+              </div>
+              <div class="tool-field" data-k="lg">
+                <label for="uw-lg">Legal, accounting &amp; admin</label>
+                <div class="tool-affix" data-affix="$"><input type="text" id="uw-lg" data-currency inputmode="decimal" placeholder="annual"></div>
+              </div>
+              <div class="tool-field" data-k="ot">
+                <label for="uw-otl">Other</label>
+                <input type="text" id="uw-otl" placeholder="label" style="margin-bottom:0.4rem">
+                <div class="tool-affix" data-affix="$"><input type="text" id="uw-otv" data-currency inputmode="decimal" placeholder="annual"></div>
+              </div>
+            </div>
+
+            <div class="tool-fieldset-legend" style="margin-top:1.2rem;font-size:0.72rem">Reserves</div>
+            <div class="tool-grid">
+              <div class="tool-field" data-k="cr">
+                <label for="uw-cr">Capital reserve</label>
+                <div style="display:flex;gap:0.7rem;align-items:center">
+                  <div class="tool-affix" data-affix="$" style="flex:1"><input type="text" id="uw-cr" data-currency inputmode="decimal" placeholder="your reserve assumption"></div>
+                  <span class="uw-reserve-total" id="uw-cr-total"></span>
+                </div>
+                <div class="tool-help">Per unit, per year.</div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="tool-fieldset">
+          <div class="tool-fieldset-legend">Financing</div>
+          <div class="tool-grid">
+            <div class="tool-field" data-k="dp">
+              <label for="uw-dp">Down payment</label>
+              <div class="tool-toggle" role="group" style="margin-bottom:0.5rem">
+                <button type="button" id="uw-dp-pct" class="active">% of price</button>
+                <button type="button" id="uw-dp-amt">$ amount</button>
+              </div>
+              <div class="tool-affix tool-affix--suffix" data-affix="%" id="uw-dp-wrap"><input type="text" id="uw-dp" inputmode="decimal"></div>
+            </div>
+            <div class="tool-field" data-k="ir">
+              <label for="uw-ir">Interest rate</label>
+              <div class="tool-affix tool-affix--suffix" data-affix="%"><input type="text" id="uw-ir" inputmode="decimal"></div>
+            </div>
+            <div class="tool-field" data-k="am">
+              <label for="uw-am">Amortization</label>
+              <div class="tool-affix tool-affix--suffix" data-affix="yrs"><input type="text" id="uw-am" inputmode="decimal"></div>
+            </div>
+            <div class="tool-field uw-a" data-k="ip">
+              <label for="uw-ip">Insurer / lender premium (if any)</label>
+              <div class="tool-affix" data-affix="$"><input type="text" id="uw-ip" data-currency inputmode="decimal"></div>
+              <div class="tool-help">Added to the loan amount.</div>
+            </div>
+          </div>
+        </fieldset>
+
+      </form>
+
+      <!-- EMAIL (optional, never a gate) -->
+      <div class="uw-email" id="uw-email-block">
+        <div class="label">Optional</div>
+        <h3>Email me this underwrite</h3>
+        <p>A summary of your inputs and results, sent to your inbox. The tool works fully without it.</p>
+        <form id="uw-email-form" novalidate>
+          <div class="uw-email-row">
+            <input type="text" id="uw-email" inputmode="email" autocomplete="email" placeholder="Email" aria-label="Email">
+            <div class="mck-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+            <button type="submit" class="btn btn--navy" id="uw-email-btn">Send <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+          </div>
+          <label class="uw-consent"><input type="checkbox" id="uw-email-consent"><span>Also email me McKinney Realty&rsquo;s quarterly market updates. Unsubscribe anytime.</span></label>
+        </form>
+      </div>
+
+      <!-- FAQ NOTES -->
+      <div class="uw-faq" style="margin-top:2.4rem">
+        <details class="tool-explainer">
+          <summary>Why nothing is pre-filled</summary>
+          <div class="tool-explainer-body"><p>Every assumption in an underwrite changes the answer, and the assumptions are yours to make. A tool that arrives with numbers already in the boxes is quietly making your decision for you. This one arrives empty. Where a listing pre-fills factual data, the figures are marked, remain editable, and should be verified independently.</p></div>
+        </details>
+        <details class="tool-explainer">
+          <summary>What this tool does and does not do</summary>
+          <div class="tool-explainer-body"><p>It performs current-year arithmetic on the figures you enter: income, expenses, financing, and the ratios that follow. It does not model appreciation, future rents, or multi-year returns, and it does not score, qualify, or recommend. The stress strip re-runs the same arithmetic at higher rates and vacancy — it is sensitivity, not prediction.</p></div>
+        </details>
+        <details class="tool-explainer">
+          <summary>Tax and structuring questions</summary>
+          <div class="tool-explainer-body"><p>How a purchase should be structured, financed, and taxed depends on your circumstances. Those questions belong with your own accountant, lender, and legal counsel.</p></div>
+        </details>
+      </div>
+    </div>
+
+    <!-- ============ RESULTS RAIL ============ -->
+    <div class="uw-rail">
+      <div class="uw-results" id="uw-results">
+        <div class="mck-print-header">
+          <img src="../images/mr-monogram-sm.png" alt="MR">
+          <span class="mck-print-header-name">McKinney Realty — The Underwriter</span>
+          <span class="mck-print-header-date" id="uw-print-date"></span>
+        </div>
+
+        <div class="uw-res-label">Pro Forma — Current Year</div>
+        <div class="tool-disclaimer" style="margin-bottom:1rem">This tool performs arithmetic on figures you enter. It is not investment, lending, tax, or legal advice, and no output is a projection or promise of performance. Assumptions are yours; listing figures are as provided and must be independently verified.</div>
+
+        <div class="uw-head">
+          <div><div class="num" id="uw-r-noi">—</div><div class="lbl">NOI</div></div>
+          <div><div class="num" id="uw-r-cap">—</div><div class="lbl">Cap rate at price</div></div>
+          <div><div class="num" id="uw-r-cf">—</div><div class="lbl">Cash flow / yr <span id="uw-r-cfmo"></span></div></div>
+          <div><div class="num" id="uw-r-dscr">—</div><div class="lbl">DSCR</div></div>
+        </div>
+
+        <div class="uw-rows">
+          <div class="uw-row"><span class="k">Price per unit</span><span class="v" id="uw-r-ppu">—</span></div>
+          <div class="uw-row"><span class="k">Gross potential rent</span><span class="v" id="uw-r-gpr">—</span></div>
+          <div class="uw-row"><span class="k">Less vacancy</span><span class="v" id="uw-r-vac">—</span></div>
+          <div class="uw-row"><span class="k">Other income</span><span class="v" id="uw-r-oth">—</span></div>
+          <div class="uw-row"><span class="k">Effective gross income</span><span class="v" id="uw-r-egi">—</span></div>
+          <div class="uw-row"><span class="k">Total operating expenses</span><span class="v" id="uw-r-opex">—</span></div>
+          <div class="uw-row"><span class="k">Opex ratio (% of EGI)</span><span class="v" id="uw-r-oxr">—</span></div>
+          <div class="uw-row"><span class="k">Annual debt service</span><span class="v" id="uw-r-ads">—</span></div>
+          <div class="uw-row"><span class="k">Total cash invested</span><span class="v" id="uw-r-tci">—</span></div>
+          <div class="uw-row"><span class="k">Cash-on-cash</span><span class="v" id="uw-r-coc">—</span></div>
+          <div class="uw-row"><span class="k">Breakeven occupancy</span><span class="v" id="uw-r-be">—</span></div>
+        </div>
+        <div class="uw-nudge" id="uw-nudge" hidden>Needs price, income, financing.</div>
+
+        <div class="uw-stress uw-a" id="uw-stress" hidden>
+          <div class="uw-res-label" style="margin-bottom:0.4rem">Stress</div>
+          <table>
+            <thead><tr><th>Scenario</th><th style="text-align:right">DSCR</th><th style="text-align:right">Cash flow / yr</th></tr></thead>
+            <tbody id="uw-stress-body"></tbody>
+          </table>
+        </div>
+
+        <div class="uw-actions">
+          <button type="button" class="btn btn--outline" id="uw-permalink">Copy link to this underwrite</button>
+          <button type="button" class="btn btn--outline" id="uw-print">Print this pro forma</button>
+        </div>
+
+        <div class="mck-print-footer">
+          This tool performs arithmetic on figures you enter. It is not investment, lending, tax, or legal advice, and no output is a projection or promise of performance.<br>
+          Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage &middot; mckinneyrealty.ca
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOBILE PINNED SUMMARY -->
+<div class="uw-bar" aria-hidden="true">
+  <div><div class="num" id="uw-b-noi">—</div><div class="lbl">NOI</div></div>
+  <div><div class="num" id="uw-b-cap">—</div><div class="lbl">Cap</div></div>
+  <div><div class="num" id="uw-b-cf">—</div><div class="lbl">Cash flow</div></div>
+  <div><div class="num" id="uw-b-dscr">—</div><div class="lbl">DSCR</div></div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="../images/mr-monogram-lg.png" alt="McKinney Realty">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="../listings/">Listings</a><a href="../team.html">Team</a><a href="../services.html">Services</a><a href="../track-record.html">Track Record</a><a href="index.html">Calculators</a><a href="../insights.html">Insights</a><a href="../contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../mckinney-forms.js"></script>
+<script src="js/mck-calc-engine.js"></script>
+<script src="js/mck-calc-ui.js"></script>
+<script>
+(function () {
+  'use strict';
+  var E = window.MCK_ENGINE, U = window.MCKUI;
+  var $ = function (id) { return document.getElementById(id); };
+
+  // GA4 + optional Meta pixel mirror (pixel guard: only if fbq exists).
+  function track(name, params) {
+    U.track(name, params || {});
+    if (typeof fbq !== 'undefined') fbq('trackCustom', name, params || {});
+  }
+  track('underwriter_open');
+
+  /* -------------------------------------------------------------
+     State — one shared object across both modes. Mode switching
+     only changes visibility, never values.
+     ------------------------------------------------------------- */
+  var mode = 'simple';                 // 'simple' | 'adv'
+  var oxMode = 'amt';                  // opex lump entry: '$' annual or '% of EGI'
+  var pmMode = 'pct';                  // property management entry mode
+  var dpMode = 'pct';                  // down payment entry mode
+  var util = { h: 't', t: 't', w: 't' }; // hydro/heat/water: tenant- or landlord-paid
+  var roll = [];                       // rent roll rows {label, count, rent}
+  var src = '';                        // prefill source tag
+  var engaged = false, completed = false;
+
+  var CURRENCY_IDS = ['uw-p','uw-cc','uw-cx','uw-rm','uw-om','uw-om2','uw-pk','uw-la','uw-so',
+    'uw-tx','uw-ox','uw-in','uw-uh','uw-ut','uw-uw','uw-ug','uw-su','uw-rp','uw-tn','uw-cl',
+    'uw-sn','uw-ld','uw-ws','uw-el','uw-fs','uw-pc','uw-ad','uw-lg','uw-otv','uw-cr','uw-ip'];
+
+  function val(id) { return U.parseNum($(id), 0) || 0; }
+  function num(id) { return U.parseNum($(id)); }        // NaN when empty
+
+  /* -------------------------------------------------------------
+     Rent roll rows
+     ------------------------------------------------------------- */
+  function rollRowHtml(i, r) {
+    return '<div class="uw-roll-row" data-i="' + i + '">' +
+      '<input type="text" placeholder="Unit type (e.g. 2BR)" value="' + (r.label || '') + '" data-rr="label" aria-label="Unit type">' +
+      '<input type="number" min="0" step="1" placeholder="#" value="' + (r.count || '') + '" data-rr="count" aria-label="Unit count">' +
+      '<input type="text" inputmode="decimal" placeholder="$ / mo" value="' + (r.rent || '') + '" data-rr="rent" aria-label="Monthly rent">' +
+      '<button type="button" class="uw-roll-del" aria-label="Remove row">&#10005;</button></div>';
+  }
+  function renderRoll() {
+    $('uw-roll').innerHTML = roll.map(function (r, i) { return rollRowHtml(i, r); }).join('');
+  }
+  $('uw-roll-add').addEventListener('click', function () {
+    roll.push({ label: '', count: '', rent: '' });
+    renderRoll();
+  });
+  $('uw-roll').addEventListener('input', function (e) {
+    var row = e.target.closest('.uw-roll-row'); if (!row) return;
+    var r = roll[+row.dataset.i]; if (!r) return;
+    r[e.target.dataset.rr] = e.target.value;
+    compute();
+  });
+  $('uw-roll').addEventListener('click', function (e) {
+    if (!e.target.classList.contains('uw-roll-del')) return;
+    roll.splice(+e.target.closest('.uw-roll-row').dataset.i, 1);
+    renderRoll(); compute();
+  });
+  function rollMonthly() {
+    return roll.reduce(function (s, r) {
+      var c = parseFloat(r.count) || 0, m = parseFloat(String(r.rent).replace(/[$,\s]/g, '')) || 0;
+      return s + c * m;
+    }, 0);
+  }
+
+  /* -------------------------------------------------------------
+     Toggles
+     ------------------------------------------------------------- */
+  function setMode(m) {
+    mode = m;
+    document.body.classList.toggle('uw-adv', m === 'adv');
+    $('uw-mode-simple').classList.toggle('active', m === 'simple');
+    $('uw-mode-adv').classList.toggle('active', m === 'adv');
+    $('uw-rm-label').textContent = m === 'adv' ? 'Monthly rent — unallocated' : 'Gross monthly residential rent';
+    $('uw-ox-label').textContent = m === 'adv' ? 'Unallocated opex' : 'Operating expenses (excl. property tax)';
+    // Simple's "other monthly income" and Advanced's "unallocated" are the
+    // same state value shown through one input at a time.
+    if (m === 'adv') $('uw-om2').value = $('uw-om').value; else $('uw-om').value = $('uw-om2').value || $('uw-om').value;
+    $('uw-stress').hidden = m !== 'adv';
+    compute();
+  }
+  $('uw-mode-simple').addEventListener('click', function () { setMode('simple'); });
+  $('uw-mode-adv').addEventListener('click', function () { setMode('adv'); });
+  // Keep the two views of "other income — unallocated" in sync.
+  $('uw-om').addEventListener('input', function () { $('uw-om2').value = $('uw-om').value; });
+  $('uw-om2').addEventListener('input', function () { $('uw-om').value = $('uw-om2').value; });
+
+  function wireToggle(pctBtn, amtBtn, wrap, input, setter, pctPlaceholder) {
+    function set(m) {
+      setter(m);
+      pctBtn.classList.toggle('active', m === 'pct');
+      amtBtn.classList.toggle('active', m === 'amt');
+      wrap.setAttribute('data-affix', m === 'pct' ? '%' : '$');
+      wrap.classList.toggle('tool-affix--suffix', m === 'pct');
+      if (m === 'pct') { input.removeAttribute('data-currency'); input.placeholder = pctPlaceholder || ''; }
+      else { input.setAttribute('data-currency', ''); input.placeholder = ''; }
+      compute();
+    }
+    pctBtn.addEventListener('click', function () { set('pct'); });
+    amtBtn.addEventListener('click', function () { set('amt'); });
+    return set;
+  }
+  var setOxMode = wireToggle($('uw-ox-pct'), $('uw-ox-amt'), $('uw-ox-wrap'), $('uw-ox'), function (m) { oxMode = m; });
+  var setPmMode = wireToggle($('uw-pm-pct'), $('uw-pm-amt'), $('uw-pm-wrap'), $('uw-pm'), function (m) { pmMode = m; }, 'often 3–5%');
+  var setDpMode = wireToggle($('uw-dp-pct'), $('uw-dp-amt'), $('uw-dp-wrap'), $('uw-dp'), function (m) { dpMode = m; });
+
+  // Utility matrix toggles
+  document.querySelectorAll('.uw-util').forEach(function (u) {
+    var key = u.dataset.u;
+    u.querySelectorAll('.tool-toggle button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        util[key] = b.dataset.set;
+        u.querySelectorAll('.tool-toggle button').forEach(function (x) { x.classList.toggle('active', x === b); });
+        u.querySelector('.amt').hidden = b.dataset.set !== 'l';
+        compute();
+      });
+    });
+  });
+  function setUtil(key, mode) {
+    var u = document.querySelector('.uw-util[data-u="' + key + '"]');
+    util[key] = mode;
+    u.querySelectorAll('.tool-toggle button').forEach(function (x) { x.classList.toggle('active', x.dataset.set === mode); });
+    u.querySelector('.amt').hidden = mode !== 'l';
+  }
+
+  /* -------------------------------------------------------------
+     Compute — pure current-year arithmetic on user inputs.
+     Mortgage payment uses MCK_ENGINE.monthlyPayment, which applies
+     the Canadian convention: rates quoted with SEMI-ANNUAL
+     compounding, converted to an effective monthly rate.
+     ------------------------------------------------------------- */
+  function fmtK(v) {
+    if (!isFinite(v)) return '—';
+    var a = Math.abs(v);
+    if (a >= 1e6) return (v < 0 ? '−' : '') + '$' + (a / 1e6).toFixed(2) + 'M';
+    if (a >= 1e3) return (v < 0 ? '−' : '') + '$' + Math.round(a / 1e3) + 'K';
+    return (v < 0 ? '−' : '') + '$' + Math.round(a);
+  }
+
+  function calcOpex(egi) {
+    var lump = oxMode === 'pct' ? egi * (val('uw-ox') / 100) : val('uw-ox');
+    var utils = (util.h === 'l' ? val('uw-uh') : 0) + (util.t === 'l' ? val('uw-ut') : 0) + (util.w === 'l' ? val('uw-uw') : 0) + val('uw-ug');
+    var mgmt = pmMode === 'pct' ? egi * (val('uw-pm') / 100) : val('uw-pm');
+    var reserve = val('uw-cr') * (val('uw-u') || 0);
+    return lump + val('uw-tx') + val('uw-in') + utils + mgmt +
+      val('uw-su') + val('uw-rp') + val('uw-tn') + val('uw-cl') +
+      val('uw-sn') + val('uw-ld') + val('uw-ws') +
+      val('uw-el') + val('uw-fs') + val('uw-pc') +
+      val('uw-ad') + val('uw-lg') + val('uw-otv') + reserve;
+  }
+
+  function scenario(rateBump, vacBump) {
+    var gprMo = val('uw-rm') + rollMonthly();
+    var gpr = gprMo * 12;
+    var otherAnn = (val('uw-om') + val('uw-pk') + val('uw-la') + val('uw-so')) * 12;
+    var vacPct = (isNaN(num('uw-v')) ? 0 : num('uw-v')) + (vacBump || 0);
+    var vacAmt = gpr * vacPct / 100;
+    var egi = gpr - vacAmt + otherAnn;
+    var opex = calcOpex(egi);
+    var noi = egi - opex;
+
+    var price = num('uw-p');
+    var down = dpMode === 'pct' ? (price * val('uw-dp') / 100) : val('uw-dp');
+    var loan = (isFinite(price) ? price - down : NaN) + val('uw-ip');
+    var rate = num('uw-ir'), amort = num('uw-am');
+    var haveFin = isFinite(price) && down > 0 && isFinite(rate) && isFinite(amort) && amort > 0;
+    var pmt = haveFin ? E.monthlyPayment(loan, (rate + (rateBump || 0)) / 100, amort) : NaN;
+    var ads = pmt * 12;
+
+    return {
+      gpr: gpr, vacAmt: vacAmt, otherAnn: otherAnn, egi: egi, opex: opex,
+      noi: (gpr > 0 || otherAnn > 0) ? noi : NaN,
+      price: price, down: down, loan: loan, ads: ads,
+      dscr: noi / ads, cf: noi - ads,
+      tci: down + val('uw-cc') + val('uw-cx'),
+      breakeven: gpr > 0 ? (opex + ads - otherAnn) / gpr : NaN
+    };
+  }
+
+  function put(id, text, negClass) {
+    var el = $(id);
+    el.textContent = text;
+    el.classList.toggle('neg', !!negClass);
+  }
+
+  function compute() {
+    var s = scenario(0, 0);
+    var haveNoi = isFinite(s.noi);
+    var haveDscr = isFinite(s.dscr);
+
+    put('uw-r-noi', haveNoi ? U.fmtCurrency(s.noi) : '—', s.noi < 0);
+    put('uw-r-cap', haveNoi && isFinite(s.price) && s.price > 0 ? U.fmtPct(s.noi / s.price) : '—');
+    put('uw-r-cf', isFinite(s.cf) ? U.fmtCurrency(s.cf) : '—', s.cf < 0);
+    $('uw-r-cfmo').textContent = isFinite(s.cf) ? '· ' + U.fmtCurrency(s.cf / 12) + '/mo' : '';
+    put('uw-r-dscr', haveDscr ? U.fmtRatio(s.dscr) : '—', s.dscr < 1);
+
+    put('uw-r-ppu', isFinite(s.price) && val('uw-u') > 0 ? U.fmtCurrency(s.price / val('uw-u')) : '—');
+    put('uw-r-gpr', s.gpr > 0 ? U.fmtCurrency(s.gpr) : '—');
+    put('uw-r-vac', s.gpr > 0 ? '(' + U.fmtCurrency(s.vacAmt) + ')' : '—');
+    put('uw-r-oth', s.otherAnn > 0 ? U.fmtCurrency(s.otherAnn) : '—');
+    put('uw-r-egi', (s.gpr > 0 || s.otherAnn > 0) ? U.fmtCurrency(s.egi) : '—');
+    put('uw-r-opex', (s.gpr > 0 || s.otherAnn > 0) ? U.fmtCurrency(s.opex) : '—');
+    put('uw-r-oxr', s.egi > 0 ? U.fmtPct(s.opex / s.egi, 1) : '—');
+    put('uw-r-ads', isFinite(s.ads) ? U.fmtCurrency(s.ads) : '—');
+    put('uw-r-tci', s.tci > 0 ? U.fmtCurrency(s.tci) : '—');
+    put('uw-r-coc', isFinite(s.cf) && s.tci > 0 ? U.fmtPct(s.cf / s.tci) : '—', s.cf < 0);
+    put('uw-r-be', isFinite(s.breakeven) && isFinite(s.ads) ? U.fmtPct(Math.max(0, s.breakeven)) : '—', s.breakeven > 1);
+
+    put('uw-b-noi', haveNoi ? fmtK(s.noi) : '—', s.noi < 0);
+    put('uw-b-cap', haveNoi && isFinite(s.price) && s.price > 0 ? U.fmtPct(s.noi / s.price, 1) : '—');
+    put('uw-b-cf', isFinite(s.cf) ? fmtK(s.cf) : '—', s.cf < 0);
+    put('uw-b-dscr', haveDscr ? U.fmtRatio(s.dscr) : '—', s.dscr < 1);
+
+    $('uw-nudge').hidden = haveNoi && haveDscr;
+
+    // Capital reserve annual total beside the $/unit input
+    var cr = val('uw-cr'), u = val('uw-u');
+    $('uw-cr-total').textContent = cr > 0 && u > 0 ? '= ' + U.fmtCurrency(cr * u) + '/yr' : '';
+
+    // Stress strip — same arithmetic at bumped rate / vacancy (Advanced)
+    if (mode === 'adv' && haveDscr) {
+      var rows = [
+        ['Rate +0.5%', scenario(0.5, 0)],
+        ['Rate +1.0%', scenario(1.0, 0)],
+        ['Rate +2.0%', scenario(2.0, 0)],
+        ['Vacancy +2pts', scenario(0, 2)]
+      ];
+      $('uw-stress-body').innerHTML = rows.map(function (r) {
+        var t = r[1];
+        return '<tr><td>' + r[0] + '</td><td class="v' + (t.dscr < 1 ? ' neg' : '') + '">' + U.fmtRatio(t.dscr) +
+          '</td><td class="v' + (t.cf < 0 ? ' neg' : '') + '">' + U.fmtCurrency(t.cf) + '</td></tr>';
+      }).join('');
+      $('uw-stress').hidden = false;
+    } else {
+      $('uw-stress').hidden = true;
+    }
+
+    if (haveNoi && haveDscr && !completed) {
+      completed = true;
+      track('underwriter_complete', { src: src });
+    }
+    return s;
+  }
+
+  $('uw-form').addEventListener('input', function () {
+    if (!engaged) { engaged = true; track('underwriter_engaged', { src: src }); }
+    compute();
+  });
+
+  /* -------------------------------------------------------------
+     URL state — prefill (factual listing data) + permalink
+     ------------------------------------------------------------- */
+  var FIELDS = { p:'uw-p', u:'uw-u', cc:'uw-cc', cx:'uw-cx', rm:'uw-rm', om:'uw-om',
+    pk:'uw-pk', la:'uw-la', so:'uw-so', v:'uw-v', tx:'uw-tx', ox:'uw-ox', in_:'uw-in',
+    uh:'uw-uh', ut:'uw-ut', uw:'uw-uw', ug:'uw-ug', pm:'uw-pm', su:'uw-su', rp:'uw-rp',
+    tn:'uw-tn', cl:'uw-cl', sn:'uw-sn', ld:'uw-ld', ws:'uw-ws', el:'uw-el', fs:'uw-fs',
+    pc:'uw-pc', ad:'uw-ad', lg:'uw-lg', otv:'uw-otv', otl:'uw-otl', cr:'uw-cr',
+    dp:'uw-dp', ir:'uw-ir', am:'uw-am', ip:'uw-ip' };
+  // Listing pre-fill schema (public, documented) → internal fields.
+  var PREFILL = { price:'p', units:'u', tax:'tx', rentmo:'rm', parkmo:'pk',
+    laundrymo:'la', othermo:'om', ins:'in_' };
+
+  function markPrefilled(id) {
+    var f = $(id).closest('.tool-field, .uw-util');
+    if (f) f.classList.add('uw-prefilled');
+  }
+
+  function loadFromUrl() {
+    var q = new URLSearchParams(location.search);
+    if (![...q.keys()].length) return;
+    var prefilled = false, advancedTouched = false;
+
+    q.forEach(function (v, k) {
+      if (k === 'src') { src = v; return; }
+      if (k === 'mode' && v === 'adv') { advancedTouched = true; return; }
+      if (k === 'oxm') { setOxMode(v === 'pct' ? 'pct' : 'amt'); return; }
+      if (k === 'pmm') { setPmMode(v === 'amt' ? 'amt' : 'pct'); return; }
+      if (k === 'dpm') { setDpMode(v === 'amt' ? 'amt' : 'pct'); return; }
+      if (k === 'mh' || k === 'mt' || k === 'mw') { setUtil({mh:'h',mt:'t',mw:'w'}[k], v === 'l' ? 'l' : 't'); return; }
+      if (k === 'rr') {
+        try {
+          roll = v.split('|').filter(Boolean).map(function (r) {
+            var p = r.split('~'); return { label: decodeURIComponent(p[0] || ''), count: p[1] || '', rent: p[2] || '' };
+          });
+          renderRoll(); advancedTouched = true;
+        } catch (e) {}
+        return;
+      }
+      // Listing prefill keys: landlord-paid utility annuals
+      if (k === 'heat')  { setUtil('t', 'l'); $('uw-ut').value = v; markPrefilled('uw-ut'); prefilled = true; return; }
+      if (k === 'hydro') { setUtil('h', 'l'); $('uw-uh').value = v; markPrefilled('uw-uh'); prefilled = true; return; }
+      if (k === 'water') { setUtil('w', 'l'); $('uw-uw').value = v; markPrefilled('uw-uw'); prefilled = true; return; }
+      var fk = PREFILL[k];
+      if (fk) { $(FIELDS[fk]).value = v; markPrefilled(FIELDS[fk]); prefilled = true; return; }
+      if (FIELDS[k]) { $(FIELDS[k]).value = v; return; }
+    });
+
+    $('uw-om2').value = $('uw-om').value;
+    if (advancedTouched) setMode('adv');
+    if (prefilled) {
+      $('uw-prefill-banner').hidden = false;
+      track('underwriter_prefill', { src: src });
+    }
+    compute();
+  }
+
+  function permalink() {
+    var q = new URLSearchParams();
+    Object.keys(FIELDS).forEach(function (k) {
+      var el = $(FIELDS[k]);
+      var raw = String(el.value).replace(/[$,\s]/g, '');
+      if (raw !== '') q.set(k === 'in_' ? 'ins' : k, raw);
+    });
+    if (roll.length) q.set('rr', roll.map(function (r) {
+      return encodeURIComponent(r.label || '') + '~' + (r.count || '') + '~' + String(r.rent || '').replace(/[$,\s]/g, '');
+    }).join('|'));
+    if (oxMode === 'pct') q.set('oxm', 'pct');
+    if (pmMode === 'amt') q.set('pmm', 'amt');
+    if (dpMode === 'amt') q.set('dpm', 'amt');
+    ['h','t','w'].forEach(function (k) { if (util[k] === 'l') q.set({h:'mh',t:'mt',w:'mw'}[k], 'l'); });
+    if (mode === 'adv') q.set('mode', 'adv');
+    if (src) q.set('src', src);
+    return location.origin + location.pathname + '?' + q.toString();
+  }
+  // Note: permalinks reuse `ins` for insurance so shared links and listing
+  // prefill links read the same schema.
+
+  $('uw-permalink').addEventListener('click', function () {
+    var url = permalink();
+    var done = function () {
+      track('underwriter_permalink_copy', { src: src });
+      var b = $('uw-permalink'); b.textContent = 'Link copied';
+      setTimeout(function () { b.textContent = 'Copy link to this underwrite'; }, 2200);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(done, function () { window.prompt('Copy this link:', url); done(); });
+    } else { window.prompt('Copy this link:', url); done(); }
+  });
+
+  $('uw-print').addEventListener('click', function () {
+    $('uw-print-date').textContent = new Date().toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+    window.print();
+  });
+
+  /* -------------------------------------------------------------
+     Email me this underwrite — optional, never a gate.
+     ------------------------------------------------------------- */
+  $('uw-email-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var form = $('uw-email-form');
+    if (form.elements.company_website.value) return;   // honeypot
+    var emailEl = $('uw-email');
+    var email = emailEl.value.trim();
+    var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+    emailEl.setAttribute('aria-invalid', ok ? 'false' : 'true');
+    if (!ok) { emailEl.focus(); return; }
+
+    var s = compute();
+    var consent = $('uw-email-consent').checked;
+    var btn = $('uw-email-btn');
+    btn.disabled = true; btn.textContent = 'Sending…';
+
+    window.McKinneyForms.submit({
+      form_type: 'underwriter',
+      formType: 'underwriter',
+      email: email,
+      src: src,
+      permalink: permalink(),
+      summary: JSON.stringify({
+        price: s.price, units: val('uw-u'), gpr: s.gpr, egi: s.egi, opex: s.opex,
+        noi: s.noi, capRate: s.price > 0 ? s.noi / s.price : null,
+        ads: s.ads, dscr: s.dscr, cashFlow: s.cf, cashInvested: s.tci,
+        cashOnCash: s.tci > 0 ? s.cf / s.tci : null, mode: mode
+      }),
+      subscribe: consent,
+      consent: consent,
+      consent_basis: consent ? 'express-checkbox' : '',
+      consent_ts: consent ? new Date().toISOString() : '',
+      consent_source: 'underwriter',
+      campaign: consent ? 'market-updates' : '',
+      note: '[underwriter email' + (src ? ' · src=' + src : '') + ']',
+      ts: new Date().toISOString()
+    }).then(function () {
+      track('underwriter_email_submit', { src: src });
+      var sent = document.createElement('div');
+      sent.className = 'uw-email-sent';
+      sent.setAttribute('role', 'status');
+      sent.textContent = 'Sent. Your underwrite summary is on its way to ' + email + '.';
+      form.parentNode.replaceChild(sent, form);
+    }).catch(function () {
+      btn.disabled = false; btn.textContent = 'Try again';
+    });
+  });
+
+  /* -------------------------------------------------------------
+     Boot
+     ------------------------------------------------------------- */
+  CURRENCY_IDS.forEach(function (id) {
+    var el = $(id);
+    el.addEventListener('blur', function () {
+      var n = U.parseNum(el, NaN);
+      if (!isNaN(n) && el.hasAttribute('data-currency')) el.value = n.toLocaleString('en-CA');
+    });
+  });
+  loadFromUrl();
+  compute();
+
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+})();
+</script>
+</body>
+</html>
