@@ -30,9 +30,10 @@ function* walk(dir) {
 }
 
 function canonicalPath(rel) {
+  // cleanUrls: canonical form drops the .html extension
   if (rel === 'index.html') return '/';
   if (rel.endsWith('/index.html')) return '/' + rel.slice(0, -'index.html'.length);
-  return '/' + rel;
+  return '/' + rel.replace(/\.html$/, '');
 }
 
 const REQUIRED = [

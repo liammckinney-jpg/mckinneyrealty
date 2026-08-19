@@ -1,4 +1,5 @@
 {
   "buildCommand": "npm run og:check",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "cleanUrls": true
 }

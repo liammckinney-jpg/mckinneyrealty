@@ -95,7 +95,7 @@
       var v = params[k];
       if (v !== undefined && v !== null && v !== '') q.set(k, v);
     });
-    return '../../tools/underwrite.html?' + q.toString();
+    return '/tools/underwrite?' + q.toString();
   }
   // The canonical building as Underwriter state (no price, no financing).
   function bldgParams(extra) {
