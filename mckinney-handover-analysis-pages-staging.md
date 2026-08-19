@@ -1,5 +1,5 @@
-# Handover — Staging Session, Aug 19 2026 (evening)
-## /overlooked-markets + /price-of-holding staged · FB Addendum A applied · clean URLs live
+# Handover — Staging Session, Aug 19 2026 (evening) — UPDATED after split-merge
+## /price-of-holding LIVE · /overlooked-markets chambered · FB Addendum A applied · clean URLs live · social banners created
 
 ---
 
@@ -10,22 +10,34 @@
 - Site-wide consistency pass shipped with it: canonicals, `og:url`, JSON-LD, sitemap.xml, llms.txt, all internal links, and the two JS deep-link builders (Mechanics → Underwriter, Lesson Zero → Modeler). The OG deploy gate now **enforces** extensionless `og:url` — a future page tagged with `.html` fails the build.
 - Canonical form for all typed/printed/spoken links from now on: **no `.html`**.
 
-### /overlooked-markets — STAGED, not merged
+### /price-of-holding — **LIVE on production** (merged Aug 19, per Liam: needed for early paid reference)
+- https://www.mckinneyrealty.ca/price-of-holding — verified 200, `.html` form redirects, OG card live, /insights card + sitemap + llms.txt shipped with it. Ready as the seller-lane dark-post destination.
+
+### /overlooked-markets — CHAMBERED, deliberately held
+- Held back on purpose to stagger posting dates so the article date lines up with the social push. Lives on branch **`staging/overlooked-markets`** — a clean OM-only delta cut off current main (page, OG card, manifest/sitemap/llms/insights entries) that merges with zero conflicts on the publish date. The old two-page `staging/analysis-pages` branch was deleted.
+- **At publish:** update the /insights card date (placeholder: Aug 19) and the page JSON-LD `datePublished` to the actual date, then merge.
 - Copy v1.2 inserted verbatim (mechanical sentence-level diff against the spec: zero paraphrase). Essay-first per /cashflow: navy radial hero, white/offwhite editorial sections, navy corridor bookend, two-action CTA band (→ /tools/, → /learn/).
 - Illustration panel: twelve-plex $98,532 NOI; **$2,189,600 @ 4.50%** / **$1,515,877 @ 6.50%** / delta **$673,723** — exact spec arithmetic, label line in-frame verbatim.
 - OG card rendered (ANALYSIS kicker, emphasis *yield*), manifest entry flipped from `future`, Article JSON-LD, sitemap + llms.txt + /insights card (dek = standfirst verbatim).
 
-### /price-of-holding — STAGED, not merged (merge gate: your vet + Sean's read)
+### /price-of-holding — build details (Sean's read still owed post-hoc per the spec header)
 - Copy v1.2 verbatim (elevator-scrubbed source honored — `elevator` grep is zero on the page, including comments). Ledger panels for the five hold line-items (labels keep spec sentence case; CSS uppercases visually). Three toll gates, illustration panel ($1.2M cost · $700K UCC · $3.0M sale, label line in-frame), navy "Where we come in" bookend.
 - Steward's Guide gate wired per spec: `form_type: guide`, slug `stewards-guide`, persona `sellside`, campaign `price-of-holding`, prechecked consent + `consent_basis/ts/source`, Brevo per v11, `lead_submit` GA4 event on success.
 - CTA band: Disposition Proceeds Calculator (ungated) · Steward's Guide (#guide) · disposition intake.
 - OG card rendered (emphasis *holding*), JSON-LD, sitemap, llms.txt, /insights card.
 
-### Preview (the vet surface)
-- Branch: `staging/analysis-pages` · commit `6a9ce0c` · build **success** (OG gate passed on Vercel).
-- Dashboard: https://vercel.com/liams-projects-0b21288d/mckinneyrealty/6ihvvbfxmZJGZB16e84Z4sdHgTza
-- Direct: https://mckinneyrealty-6ozll5u0x-liams-projects-0b21288d.vercel.app/overlooked-markets and /price-of-holding
-- Verified on the preview itself: both pages serve, structure checks pass (prices, delta, ledger labels, gate present, CTA hrefs), `.html` → clean redirect works there too.
+### Social profile banners — NEW (created Aug 19 on Liam's direct ask; not in the runbook)
+- Production assets in `MARKETING/SOCIAL BANNERS/` (Desktop workspace), ready to upload to the real profiles:
+  - **`fb-cover.png`** — 1640×624 (FB page cover @2x). Brand treatment on the design system: navy radial, MR monogram watermark, Cormorant wordmark, gold rule, byline, proof line "Ontario · Three Generations · $200M+ Career Volume". All text inside FB's mobile-safe center-640px band.
+  - **`linkedin-company-banner.png`** — 2256×382 (LinkedIn company cover @2x). Same treatment, no proof line (short canvas, logo overlap). Content clear of the bottom-left logo zone.
+  - Editable artboard sources (`*-artboard.html`) sit beside the PNGs — re-render at 2x with the OG pipeline flags.
+- Both mockup profile headers now display these actual files (no more CSS stand-ins). The FB mockup's previous cover was the raw Elgin photo — replaced per Liam: brand asset, not listing photography.
+
+### Social link-preview banners (OG cards) — propagated into mockups
+- The OG card system renders the per-page link banners; both new pages have theirs (`images/og/overlooked-markets.png`, `price-of-holding.png`). PoH's is live on production.
+- FB + LinkedIn mockups: all four "The Overlooked Markets" link-preview cards now show the real rendered OG banner instead of the typographic stand-in; captions carry the definite URL `mckinneyrealty.ca/overlooked-markets`; annotations read "PILLAR STAGED — MERGE HELD FOR DATE STAGGER".
+- FB seller lane: Ghost 2 now shows the live PoH banner and reads "THEIR DESTINATION — mckinneyrealty.ca/price-of-holding — LIVE (AUG 19)". The P3 essay cards stay PENDING (page not built).
+- All four FB/LinkedIn exports re-rendered. (Export pipeline fix: Chrome blanks anything below 16,384 physical px — tall pages now capture in stitched halves.)
 
 ### FB mockup — Addendum A applied (local, never deployed)
 - The six mirror posts now render in `fb-page-endstate.html`, visuals ported verbatim from ig-seed-grid-mockup-v3, square-cropped exactly as IG crops them, interleaved newest-first at their stated timestamps (A/B 5w · C/D 6w · E/F 7w). Flagged placeholder block removed.
@@ -42,9 +54,11 @@
 6. **Runbook step 1 (OG system)** was already live from earlier today — new-page manifest entries + cards were the only remaining work.
 7. **Meta descriptions / insights deks** are the specs' standfirsts verbatim (no new marketing copy authored locally).
 
-## 3. After your vet
-- Say the word → merge `staging/analysis-pages` to main. Then: the FB/LinkedIn mockup "PILLAR URL PENDING" slots can take `mckinneyrealty.ca/overlooked-markets`, and OM splinters/PoH dark posts follow the distribution-mockup sequencing (pillar live → splinters; PoH lane additionally gated on pre-spend gate + FB page).
-- PoH merge additionally gated on **Sean's read** per the spec header.
+## 3. Remaining moves
+- **OM publish day:** set the insights-card date + JSON-LD `datePublished`, merge `staging/overlooked-markets`, then OM splinters may post (pillar-live gate satisfied).
+- **PoH dark posts:** destination is live; still gated on the pre-spend gate + FB page existing, per the distribution sequencing.
+- **Sean's read of /price-of-holding** — owed per the spec header (page shipped ahead of it at Liam's call).
+- **Upload the two banner files** to the real FB page and LinkedIn company profile when the accounts spin up.
 
 ## 4. Standing flags still open (unchanged)
 Companion distribution mockup file · P3 essay email subject · CFvH Batch_01 v2 confirmation · LinkedIn cards 12/14 captions · OM carousel slide count · "The Inflation Question" title confirmation · IG tile 9 team photo (Shoot References/USE) · Brevo Standard flip → course automation · Meta pixel install session · Elgin MLS reprice → regenerate 6-page package.
