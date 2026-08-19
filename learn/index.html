@@ -82,20 +82,37 @@ a.crs-lesson { text-decoration: none; transition: background 0.3s; }
 a.crs-lesson:hover { background: var(--offwhite); }
 a.crs-lesson .crs-lesson-title { transition: color 0.2s; }
 a.crs-lesson:hover .crs-lesson-title { color: var(--gold-dark); }
-.mech-shelf { padding: var(--s-6) 0; border-top: 1px solid var(--border); margin-top: var(--s-5); }
-.mech-shelf-title { font-family: var(--font-d); font-weight: 400; font-size: clamp(1.7rem, 3.5vw, 2.3rem); color: var(--navy); margin: 10px 0 8px; }
-.mech-shelf-sub { font-size: var(--b-md); font-weight: 300; color: var(--text-2); max-width: 620px; line-height: 1.7; margin-bottom: var(--s-4); }
-.mech-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
-.mech-card { background: var(--white); padding: var(--s-4) var(--s-3); text-decoration: none; display: flex; flex-direction: column; transition: background 0.3s; position: relative; }
-.mech-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
-.mech-card:hover::before { transform: scaleX(1); }
-.mech-card:hover { background: var(--offwhite); }
-.mech-card-num { font-family: var(--font-d); font-size: 0.85rem; color: var(--text-3); margin-bottom: 0.5rem; }
-.mech-card-name { font-family: var(--font-d); font-size: 1.15rem; font-weight: 500; color: var(--navy); line-height: 1.25; margin-bottom: 0.4rem; }
-.mech-card-desc { font-size: 0.8rem; font-weight: 300; color: var(--text-2); line-height: 1.55; flex-grow: 1; }
-.mech-card-open { margin-top: 0.7rem; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-dark); font-weight: 500; }
+.mech-shelf { background: var(--navy); padding: var(--s-7) 0; margin-top: var(--s-6); position: relative; overflow: hidden; }
+.mech-shelf::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 90% at 80% 0%, rgba(184,168,138,0.12), transparent 60%); pointer-events: none; }
+.mech-shelf .wrap { position: relative; z-index: 1; }
+.mech-shelf .label { color: var(--gold-light); }
+.mech-shelf-title { font-family: var(--font-d); font-weight: 300; font-size: clamp(2.2rem, 4.5vw, 3.2rem); color: #F5F2EC; margin: 10px 0 8px; }
+.mech-shelf-sub { font-size: var(--b-md); font-weight: 300; color: rgba(245,242,236,0.6); max-width: 640px; line-height: 1.7; margin-bottom: var(--s-5); }
+.mech-shelf-sub .shelf-stage { color: var(--gold-light); }
+.mech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.mech-card {
+  background: rgba(245,242,236,0.03); border: 1px solid rgba(250,250,248,0.12);
+  padding: var(--s-4); min-height: 200px; text-decoration: none;
+  display: flex; flex-direction: column; position: relative; overflow: hidden;
+  transition: border-color 0.35s, background 0.35s, transform 0.35s;
+}
+.mech-card:hover { border-color: rgba(184,168,138,0.7); background: rgba(245,242,236,0.06); transform: translateY(-3px); }
+.mech-card-num {
+  font-family: var(--font-d); font-size: 2.6rem; font-weight: 300; line-height: 1;
+  color: var(--gold-light); opacity: 0.28; margin-bottom: 0.8rem;
+}
+.mech-card-name { font-family: var(--font-d); font-size: 1.45rem; font-weight: 400; color: #F5F2EC; line-height: 1.2; margin-bottom: 0.5rem; }
+.mech-card-desc { font-size: 0.85rem; font-weight: 300; color: rgba(245,242,236,0.55); line-height: 1.6; flex-grow: 1; }
+.mech-card-open {
+  margin-top: 1rem; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold-light); font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.3s;
+}
+.mech-card-open::after { content: '\2192'; }
+.mech-card:hover .mech-card-open { gap: 0.875rem; }
+.mech-card--cta { border-style: dashed; align-items: flex-start; justify-content: center; background: transparent; }
+.mech-card--cta .mech-card-name { color: var(--gold-light); font-style: italic; font-weight: 300; }
 @media (max-width: 1000px) { .mech-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 560px) { .mech-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .mech-grid { grid-template-columns: 1fr; } .mech-card { min-height: 0; } }
 </style>
 </head>
 <body class="page-editorial">
@@ -210,6 +227,7 @@ a.crs-lesson:hover .crs-lesson-title { color: var(--gold-dark); }
       <a class="mech-card" href="mechanics/reading-a-listing.html"><div class="mech-card-num">06</div><div class="mech-card-name">How to read a listing</div><div class="mech-card-desc">Pro forma against actuals, one line at a time.</div><span class="mech-card-open">Read</span></a>
       <a class="mech-card" href="mechanics/lenders-math.html"><div class="mech-card-num">07</div><div class="mech-card-name">The lender's math</div><div class="mech-card-desc">DSCR, breakeven occupancy, and the number that sizes your bid.</div><span class="mech-card-open">Read</span></a>
       <a class="mech-card" href="mechanics/fit.html"><div class="mech-card-num">08</div><div class="mech-card-name">Which approach fits which investor</div><div class="mech-card-desc">The capstone — situations, mapped to the mechanics that matter.</div><span class="mech-card-open">Read</span></a>
+      <a class="mech-card mech-card--cta" href="../tools/underwrite.html"><div class="mech-card-name">Every page runs on the Underwriter</div><div class="mech-card-desc">The same arithmetic, on a full deal — your assumptions, a complete pro forma.</div><span class="mech-card-open">Open the tool</span></a>
     </div>
   </div>
 </section>
