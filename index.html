@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/favicon.png">
 <title>McKinney Realty — Multi-Family &amp; Investment Real Estate Brokers | Ontario</title>
-<meta name="description" content="McKinney Realty is a father-and-son multi-family and investment real estate team serving all of Ontario — apartment buildings and investment properties in the $2M–$10M range, with particular depth in Ontario's secondary markets.">
+<meta name="description" content="Father-and-son multi-family brokers serving all of Ontario — with free, ungated underwriting and financing tools built for apartment investors.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="McKinney Realty">
 <meta property="og:title" content="McKinney Realty — Multi-Family &amp; Investment Real Estate Brokers">
@@ -122,6 +122,57 @@
 }
 .service-link:hover { gap: 0.875rem; }
 .service-link svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ============================================================
+   TOOLS — navy section surfacing the /tools/ suite
+   ============================================================ */
+.tools-home { background: var(--navy); padding: var(--s-section) 0; position: relative; overflow: hidden; }
+.tools-home::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 90% at 80% 0%, rgba(184,168,138,0.12), transparent 60%);
+  pointer-events: none;
+}
+.tools-home .wrap { position: relative; z-index: 1; }
+.tools-home-title {
+  font-family: var(--font-d); font-size: var(--d-section); font-weight: 300;
+  line-height: 1.2; color: var(--white); margin-top: var(--s-2);
+}
+.tools-home-dek { font-size: var(--b-md); font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.55); max-width: 580px; margin-top: var(--s-2); }
+.tools-home-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: var(--s-3); margin-top: var(--s-5); }
+.tools-home a { text-decoration: none; }
+.tools-home a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.tools-home-feature {
+  border: 1px solid rgba(250,250,248,0.14); padding: var(--s-5);
+  display: flex; flex-direction: column; position: relative; transition: border-color 0.4s;
+}
+.tools-home-feature:hover { border-color: rgba(184,168,138,0.55); }
+.tools-home-new {
+  position: absolute; top: var(--s-4); right: var(--s-4);
+  font-size: var(--b-xs); letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold-light); border: 1px solid rgba(184,168,138,0.45); padding: 4px 10px;
+}
+.tools-home-feature-name { font-family: var(--font-d); font-size: clamp(1.6rem, 2.4vw, 2.1rem); font-weight: 400; color: var(--white); margin-bottom: var(--s-2); }
+.tools-home-feature-desc { font-size: var(--b-sm); font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.55); max-width: 520px; flex-grow: 1; }
+.tools-home-feature .btn { margin-top: var(--s-4); align-self: flex-start; }
+.tools-home-stack { display: flex; flex-direction: column; gap: var(--s-3); }
+.tools-home-card {
+  border: 1px solid rgba(250,250,248,0.14); padding: var(--s-4); flex: 1;
+  display: flex; flex-direction: column; justify-content: center; transition: border-color 0.4s;
+}
+.tools-home-card:hover { border-color: rgba(184,168,138,0.55); }
+.tools-home-card-name { font-family: var(--font-d); font-size: var(--d-sub); font-weight: 400; color: var(--white); margin-bottom: 0.35rem; }
+.tools-home-card-desc { font-size: var(--b-sm); font-weight: 300; line-height: 1.65; color: rgba(255,255,255,0.5); }
+.tools-home-card-link {
+  margin-top: 0.6rem; font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold-light);
+  display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.3s;
+}
+.tools-home-card:hover .tools-home-card-link { gap: 0.875rem; }
+.tools-home-card-link svg, .tools-home-feature .btn svg { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.tools-home-close { margin-top: var(--s-4); font-family: var(--font-d); font-size: 1.1rem; font-style: italic; font-weight: 300; color: var(--gold-light); }
+@media (max-width: 900px) {
+  .tools-home-grid { grid-template-columns: 1fr; }
+}
 
 /* ============================================================
    ABOUT — navy section with framed portraits
@@ -345,6 +396,45 @@
         <span class="service-link">Learn More <svg width="12" height="12" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a>
     </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TOOLS — the /tools/ suite, Underwriter featured
+     ============================================================ -->
+<section class="tools-home on-dark" id="tools">
+  <div class="wrap">
+    <div class="label label--light">The Tools &mdash; Free &middot; Ungated</div>
+    <h2 class="tools-home-title">Run your <em class="gi">own</em> numbers.</h2>
+    <p class="tools-home-dek">Serious analysis shouldn't sit behind an email gate. Four working tools, built for the way investors actually evaluate multi-family. No email required. No assumptions supplied.</p>
+
+    <div class="tools-home-grid">
+      <a class="tools-home-feature" href="tools/underwrite.html" data-tool="underwriter">
+        <span class="tools-home-new">New</span>
+        <div class="tools-home-feature-name">The Underwriter</div>
+        <p class="tools-home-feature-desc">A full multi-family pro forma in the browser &mdash; line-item operating expenses, utility metering, financing, and rate stress tests. Enter your assumptions; read your deal. The tool serious buyers keep in a private spreadsheet &mdash; public, and free.</p>
+        <span class="btn btn--gold">Open the Underwriter <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a>
+      <div class="tools-home-stack">
+        <a class="tools-home-card" href="tools/financing-modeler.html" data-tool="financing-modeler">
+          <div class="tools-home-card-name">Multi-Family Financing Modeler</div>
+          <p class="tools-home-card-desc">CMHC MLI Select, CMHC MLI Standard, and conventional financing side by side &mdash; at your assumptions.</p>
+          <span class="tools-home-card-link">Open <svg width="12" height="12" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+        <a class="tools-home-card" href="tools/disposition-calculator.html" data-tool="disposition-calculator">
+          <div class="tools-home-card-name">Disposition Proceeds Calculator</div>
+          <p class="tools-home-card-desc">What would a sale actually net you? Selling costs, payout, penalty, and tax &mdash; down to the final number.</p>
+          <span class="tools-home-card-link">Open <svg width="12" height="12" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+        <a class="tools-home-card" href="tools/compounding-modeler.html" data-tool="compounding-modeler">
+          <div class="tools-home-card-name">Compounding Modeler</div>
+          <p class="tools-home-card-desc">Levered multi-family equity compounding under your own assumptions &mdash; the mechanism made visible.</p>
+          <span class="tools-home-card-link">Open <svg width="12" height="12" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <p class="tools-home-close">Your assumptions, not ours.</p>
   </div>
 </section>
 
@@ -611,6 +701,13 @@
     });
   });
 })();
+</script>
+<script>
+  document.querySelectorAll('.tools-home a[data-tool]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (typeof gtag !== 'undefined') gtag('event', 'home_tools_click', { tool: a.dataset.tool });
+    });
+  });
 </script>
 </body>
 </html>
