@@ -167,9 +167,21 @@
     };
   }
 
+  // Default conventions shared by the Modeler UI and Lesson Zero's widget.
+  // capRate: 6.0% — mid-range of Ontario secondary-market multi-family caps
+  // (~5.5–7.5%) per Liam, Aug 20 2026; re-verify per staleness rule before
+  // any render that cites it as market fact.
+  // Invariant (tested): capRate must exceed lessonZeroPresetInterestRate —
+  // the preset must never ship as an underwater illustration.
+  var DEFAULTS = {
+    capRate: 0.06,
+    lessonZeroPresetInterestRate: 0.04
+  };
+
   var MCK_COMPOUND = {
     monthlyPaymentSimple: monthlyPaymentSimple,
-    simulate: simulate
+    simulate: simulate,
+    DEFAULTS: DEFAULTS
   };
 
   if (typeof module !== 'undefined' && module.exports) {

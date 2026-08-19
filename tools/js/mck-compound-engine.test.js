@@ -175,3 +175,11 @@ if (failures > 0) {
   process.exit(1);
 }
 console.log('All ' + passes + ' assertions passed.');
+
+// Lesson Zero preset invariant (widget v3 addendum, Aug 20 2026): the
+// preset must never ship with cap rate <= interest rate.
+if (!(engine.DEFAULTS.capRate > engine.DEFAULTS.lessonZeroPresetInterestRate)) {
+  console.error('PRESET SPREAD VIOLATION: default cap rate must exceed the Lesson Zero preset interest rate');
+  process.exit(1);
+}
+console.log('Preset spread invariant holds: cap ' + (engine.DEFAULTS.capRate*100) + '% > preset interest ' + (engine.DEFAULTS.lessonZeroPresetInterestRate*100) + '%');

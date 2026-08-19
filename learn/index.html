@@ -32,20 +32,27 @@
 .crs-hero-title em { font-style: italic; color: var(--gold); }
 .crs-hero-sub { font-size: 1.02rem; line-height: 1.7; color: rgba(245,242,236,0.72); max-width: 600px; font-weight: 300; margin-bottom: 8px; }
 
-.crs-body { padding: var(--s-6) 0; }
+.crs-body { padding: var(--s-5) 0 var(--s-2); }
 .crs-body .measure { max-width: 680px; }
 .crs-body p { font-size: var(--b-lg); font-weight: 300; line-height: 1.85; color: var(--text-2); margin-bottom: 1.4rem; }
 .crs-body p strong { font-weight: 500; color: var(--navy); }
 
-.crs-syllabus { padding: 0 0 var(--s-6); }
+.crs-syllabus { padding: var(--s-6) 0; }
 .crs-syllabus-title { font-family: var(--font-d); font-size: var(--d-sub); font-weight: 400; color: var(--navy); margin-bottom: var(--s-3); }
-.crs-lesson { display: grid; grid-template-columns: 56px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--border); max-width: 680px; }
-.crs-lesson:last-child { border-bottom: none; }
+.crs-lessons { display: grid; grid-template-columns: 1fr 1fr; grid-auto-flow: column; grid-template-rows: repeat(4, auto); column-gap: var(--s-6); }
+.crs-lesson { display: grid; grid-template-columns: 48px 1fr; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--border); }
+.crs-lessons .crs-lesson:nth-child(4n) { border-bottom: none; }
+@media (max-width: 900px) {
+  .crs-lessons { grid-template-columns: 1fr; grid-auto-flow: row; grid-template-rows: none; }
+  .crs-lessons .crs-lesson:nth-child(4n) { border-bottom: 1px solid var(--border); }
+  .crs-lessons }
 .crs-lesson-num { font-family: var(--font-d); font-size: 1.6rem; font-weight: 300; color: var(--gold-dark); line-height: 1.2; }
 .crs-lesson-title { font-weight: 500; color: var(--navy); font-size: var(--b-md); margin-bottom: 2px; }
 .crs-lesson-desc { font-size: var(--b-sm); font-weight: 300; color: var(--text-2); line-height: 1.6; }
 
-.crs-enroll { background: var(--cream); border-top: 2px solid var(--gold); padding: var(--s-5); max-width: 680px; margin: 0 0 var(--s-6); }
+.crs-enroll { background: var(--cream); border-top: 2px solid var(--gold); padding: var(--s-4) var(--s-5); margin: 0 0 var(--s-5); display: grid; grid-template-columns: minmax(280px, 1fr) minmax(340px, 1.2fr); gap: var(--s-2) var(--s-5); align-items: center; }
+.crs-enroll .crs-note { grid-column: 1 / -1; margin-top: 0; }
+@media (max-width: 900px) { .crs-enroll { grid-template-columns: 1fr; } }
 .crs-enroll-title { font-family: var(--font-d); font-size: var(--d-sub); font-weight: 400; color: var(--navy); margin-bottom: 8px; }
 .crs-enroll p { font-size: var(--b-sm); font-weight: 300; color: var(--text-2); line-height: 1.7; margin-bottom: var(--s-3); }
 .crs-form { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -56,31 +63,63 @@
 .crs-note { font-size: 0.75rem !important; color: var(--text-3) !important; margin-top: 10px !important; margin-bottom: 0 !important; }
 .crs-sent { font-size: var(--b-md); font-weight: 300; color: var(--text-1); padding: 0.5rem 0; }
 
-/* lane self-selection + The Mechanics shelf */
-.crs-lane { background: var(--cream); border-bottom: 1px solid var(--border); }
-.crs-lane .wrap { display: flex; gap: var(--s-5); flex-wrap: wrap; padding-top: 1.1rem; padding-bottom: 1.1rem; }
-.crs-lane span { font-size: var(--b-sm); font-weight: 300; color: var(--text-2); }
-.crs-lane strong { font-weight: 500; color: var(--navy); }
-.crs-lane a { color: var(--gold-dark); text-decoration: none; }
-.crs-lane a:hover { text-decoration: underline; }
+/* featured front door, shelf framing, tools strip */
+.why-feature { margin-bottom: var(--s-4); }
+.why-feature {
+  display: flex; align-items: center; gap: var(--s-4);
+  background: var(--navy); padding: var(--s-3) var(--s-4); text-decoration: none;
+  border-left: 2px solid var(--gold); transition: border-color 0.3s;
+}
+.why-feature:hover { border-left-color: var(--gold-light); }
+.why-feature-eyebrow { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); font-weight: 500; margin-bottom: 0.3rem; white-space: nowrap; }
+.why-feature-title { font-family: var(--font-d); font-size: 1.35rem; font-weight: 500; color: #F5F2EC; white-space: nowrap; }
+.why-feature-line { flex: 1; font-size: var(--b-sm); font-weight: 300; color: rgba(245,242,236,0.65); line-height: 1.6; }
+.why-feature-arrow { color: var(--gold-light); font-size: 1.2rem; }
+.shelf-line { font-size: var(--b-md); font-weight: 300; color: var(--text-2); margin: 0.4rem 0 var(--s-4); line-height: 1.7; }
+.shelf-stage { color: var(--gold-dark); font-weight: 400; }
+@media (max-width: 720px) { .why-feature { flex-direction: column; align-items: flex-start; gap: 0.6rem; } .why-feature-title, .why-feature-eyebrow { white-space: normal; } }
+
+/* The Mechanics shelf */
 a.crs-lesson { text-decoration: none; transition: background 0.3s; }
 a.crs-lesson:hover { background: var(--offwhite); }
 a.crs-lesson .crs-lesson-title { transition: color 0.2s; }
 a.crs-lesson:hover .crs-lesson-title { color: var(--gold-dark); }
-.mech-shelf { padding: var(--s-6) 0; border-top: 1px solid var(--border); margin-top: var(--s-5); }
-.mech-shelf-title { font-family: var(--font-d); font-weight: 400; font-size: clamp(1.7rem, 3.5vw, 2.3rem); color: var(--navy); margin: 10px 0 8px; }
-.mech-shelf-sub { font-size: var(--b-md); font-weight: 300; color: var(--text-2); max-width: 620px; line-height: 1.7; margin-bottom: var(--s-4); }
-.mech-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
-.mech-card { background: var(--white); padding: var(--s-4) var(--s-3); text-decoration: none; display: flex; flex-direction: column; transition: background 0.3s; position: relative; }
-.mech-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
-.mech-card:hover::before { transform: scaleX(1); }
-.mech-card:hover { background: var(--offwhite); }
-.mech-card-num { font-family: var(--font-d); font-size: 0.85rem; color: var(--text-3); margin-bottom: 0.5rem; }
-.mech-card-name { font-family: var(--font-d); font-size: 1.15rem; font-weight: 500; color: var(--navy); line-height: 1.25; margin-bottom: 0.4rem; }
-.mech-card-desc { font-size: 0.8rem; font-weight: 300; color: var(--text-2); line-height: 1.55; flex-grow: 1; }
-.mech-card-open { margin-top: 0.7rem; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-dark); font-weight: 500; }
+.learn-cta { background: var(--cream); padding: var(--s-6) 0; }
+.learn-cta .wrap { display: flex; justify-content: space-between; align-items: center; gap: var(--s-4); flex-wrap: wrap; }
+.learn-cta-title { font-family: var(--font-d); font-weight: 300; font-size: clamp(1.8rem, 3.5vw, 2.5rem); color: var(--navy); margin: 8px 0 6px; }
+.learn-cta-sub { font-size: var(--b-md); font-weight: 300; color: var(--text-2); line-height: 1.7; max-width: 560px; }
+
+.mech-shelf { background: var(--navy); padding: var(--s-7) 0; margin-top: var(--s-6); position: relative; overflow: hidden; }
+.mech-shelf::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 90% at 80% 0%, rgba(184,168,138,0.12), transparent 60%); pointer-events: none; }
+.mech-shelf .wrap { position: relative; z-index: 1; }
+.mech-shelf .label { color: var(--gold-light); }
+.mech-shelf-title { font-family: var(--font-d); font-weight: 300; font-size: clamp(2.2rem, 4.5vw, 3.2rem); color: #F5F2EC; margin: 10px 0 8px; }
+.mech-shelf-sub { font-size: var(--b-md); font-weight: 300; color: rgba(245,242,236,0.6); max-width: 640px; line-height: 1.7; margin-bottom: var(--s-5); }
+.mech-shelf-sub .shelf-stage { color: var(--gold-light); }
+.mech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.mech-card {
+  background: rgba(245,242,236,0.03); border: 1px solid rgba(250,250,248,0.12);
+  padding: var(--s-4); min-height: 200px; text-decoration: none;
+  display: flex; flex-direction: column; position: relative; overflow: hidden;
+  transition: border-color 0.35s, background 0.35s, transform 0.35s;
+}
+.mech-card:hover { border-color: rgba(184,168,138,0.7); background: rgba(245,242,236,0.06); transform: translateY(-3px); }
+.mech-card-num {
+  font-family: var(--font-d); font-size: 2.6rem; font-weight: 300; line-height: 1;
+  color: var(--gold-light); opacity: 0.28; margin-bottom: 0.8rem;
+}
+.mech-card-name { font-family: var(--font-d); font-size: 1.45rem; font-weight: 400; color: #F5F2EC; line-height: 1.2; margin-bottom: 0.5rem; }
+.mech-card-desc { font-size: 0.85rem; font-weight: 300; color: rgba(245,242,236,0.55); line-height: 1.6; flex-grow: 1; }
+.mech-card-open {
+  margin-top: 1rem; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold-light); font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.3s;
+}
+.mech-card-open::after { content: '\2192'; }
+.mech-card:hover .mech-card-open { gap: 0.875rem; }
+.mech-card--cta { border-style: dashed; align-items: flex-start; justify-content: center; background: transparent; }
+.mech-card--cta .mech-card-name { color: var(--gold-light); font-style: italic; font-weight: 300; }
 @media (max-width: 1000px) { .mech-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 560px) { .mech-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .mech-grid { grid-template-columns: 1fr; } .mech-card { min-height: 0; } }
 </style>
 </head>
 <body class="page-editorial">
@@ -120,31 +159,31 @@ a.crs-lesson:hover .crs-lesson-title { color: var(--gold-dark); }
 <main>
 <header class="crs-hero">
   <div class="wrap">
-    <div class="label">The First Building &middot; A Free Course</div>
-    <h1 class="crs-hero-title">Eight lessons on the asset class <em>nobody explains</em>.</h1>
-    <p class="crs-hero-sub">How apartment buildings are priced, financed, and compounded — delivered by email over roughly two weeks, with the honest parts left in. No cost, no obligation, unsubscribe anytime.</p>
+    <div class="label">The Course &middot; The Library</div>
+    <h1 class="crs-hero-title">Learn the asset class <em>nobody explains</em>.</h1>
+    <p class="crs-hero-sub">How apartment buildings are priced, financed, and compounded — read here, or paced to your inbox. No cost, no obligation, unsubscribe anytime.</p>
   </div>
 </header>
 
-<div class="crs-lane">
-  <div class="wrap">
-    <span><strong>Starting out</strong> &rarr; The First Building, below.</span>
-    <span><strong>Already own, or evaluating a deal</strong> &rarr; <a href="#mechanics">The Mechanics</a>, the reference library.</span>
-  </div>
-</div>
 
-<section class="crs-body">
-  <div class="wrap">
-    <div class="measure">
-      <p><strong>Most people are never shown how income real estate actually works.</strong> Not because it is complicated — the core of it fits on a napkin — but because the residential market has no reason to teach it. This course is the explanation we wish every first-time building buyer had received: the pricing model, the financing framework, the real costs, and the compounding mechanic, each in a five-to-eight-minute read.</p>
-      <p>It is written by a father-and-son brokerage team, and it is honest to a fault: one full lesson is about the taxes and tolls, another names the situations where buying a building is the wrong move, and the last one tells you plainly that most people finishing the course should not buy a building this month.</p>
-    </div>
-  </div>
-</section>
+
+
 
 <section class="crs-syllabus">
   <div class="wrap">
-    <h2 class="crs-syllabus-title">The eight lessons</h2>
+    <div class="label">The Course</div>
+    <h2 class="crs-syllabus-title">The First Building</h2>
+    <p class="shelf-line">A guided path from capital to keys. Eight lessons, in order. <span class="shelf-stage">New to the asset class? Start here.</span></p>
+    <a class="why-feature" href="why-multi-family.html">
+      <div>
+        <div class="why-feature-eyebrow">Lesson Zero &middot; Start Here</div>
+        <div class="why-feature-title">Why multi-family?</div>
+      </div>
+      <span class="why-feature-line">The mechanism the whole asset class runs on &mdash; start here, then lesson one.</span>
+      <span class="why-feature-arrow">&rarr;</span>
+    </a>
+
+    <div class="crs-lessons">
     <a class="crs-lesson" href="lesson-1.html"><div class="crs-lesson-num">01</div><div><div class="crs-lesson-title">Two Ways to Price Real Estate</div><div class="crs-lesson-desc">Comparable sales against income — and the lever that only income property hands its owner.</div></div></a>
     <a class="crs-lesson" href="lesson-2.html"><div class="crs-lesson-num">02</div><div><div class="crs-lesson-title">Why Buildings Beat Doors</div><div class="crs-lesson-desc">The lending wall, the operating math, and the honest version of what scale actually buys.</div></div></a>
     <a class="crs-lesson" href="lesson-3.html"><div class="crs-lesson-num">03</div><div><div class="crs-lesson-title">Reading a Building Like a Buyer</div><div class="crs-lesson-desc">Two documents, five numbers, and where sellers hide the soft spots.</div></div></a>
@@ -153,14 +192,17 @@ a.crs-lesson:hover .crs-lesson-title { color: var(--gold-dark); }
     <a class="crs-lesson" href="lesson-6.html"><div class="crs-lesson-num">06</div><div><div class="crs-lesson-title">The Compounding Mechanic</div><div class="crs-lesson-desc">Tenants retire the debt, income compounds into value, refinancing recycles the equity.</div></div></a>
     <a class="crs-lesson" href="lesson-7.html"><div class="crs-lesson-num">07</div><div><div class="crs-lesson-title">The Levers</div><div class="crs-lesson-desc">Rent, expenses, the spread, and growth — small numbers that decide 25-year outcomes.</div></div></a>
     <a class="crs-lesson" href="lesson-8.html"><div class="crs-lesson-num">08</div><div><div class="crs-lesson-title">What Working With a Broker Actually Looks Like</div><div class="crs-lesson-desc">The process end to end, what it costs, and an honest closing note.</div></div></a>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <div class="crs-enroll" id="enroll">
-      <h2 class="crs-enroll-title">Take the course</h2>
-      <p>Read the course now, or have it paced to your inbox — one lesson a week. Free, educational, and written to be kept. When you finish, we add you to our quarterly market updates — every email has an unsubscribe link, and replies go to a person.</p>
+      <div>
+        <h2 class="crs-enroll-title">Take the course</h2>
+        <p style="margin-bottom:0">Read it now, or have it paced to your inbox — one lesson a week. Free, and written to be kept.</p>
+      </div>
       <form class="crs-form" id="crs-form" novalidate>
         <input type="text" id="crs-first" name="firstName" placeholder="First name (optional)" autocomplete="given-name" aria-label="First name (optional)">
         <input type="text" id="crs-email" name="email" placeholder="Email" inputmode="email" autocomplete="email" required aria-label="Email">
@@ -174,9 +216,9 @@ a.crs-lesson:hover .crs-lesson-title { color: var(--gold-dark); }
 
 <section class="mech-shelf" id="mechanics">
   <div class="wrap">
-    <div class="label">The Mechanics &middot; Reference Library</div>
-    <h2 class="mech-shelf-title">How multi-family actually works.</h2>
-    <p class="mech-shelf-sub">Standalone concept pages for practitioners — each with a live example wired to the Underwriter. Reference, not a sequence; read the page the current decision needs.</p>
+    <div class="label">The Library</div>
+    <h2 class="mech-shelf-title">The Mechanics</h2>
+    <p class="mech-shelf-sub">How multi-family actually works, one question at a time. Read in any order. <span class="shelf-stage">Evaluating a deal, or want the machinery? Go deeper.</span></p>
     <div class="mech-grid">
       <a class="mech-card" href="mechanics/what-youre-buying.html"><div class="mech-card-num">01</div><div class="mech-card-name">What you're actually buying</div><div class="mech-card-desc">Price is income times a multiple — what a cap rate actually tells you.</div><span class="mech-card-open">Read</span></a>
       <a class="mech-card" href="mechanics/cost-to-run.html"><div class="mech-card-num">02</div><div class="mech-card-name">What it really costs to run</div><div class="mech-card-desc">The honest expense schedule, and what unusually low ratios usually mean.</div><span class="mech-card-open">Read</span></a>
@@ -186,7 +228,20 @@ a.crs-lesson:hover .crs-lesson-title { color: var(--gold-dark); }
       <a class="mech-card" href="mechanics/reading-a-listing.html"><div class="mech-card-num">06</div><div class="mech-card-name">How to read a listing</div><div class="mech-card-desc">Pro forma against actuals, one line at a time.</div><span class="mech-card-open">Read</span></a>
       <a class="mech-card" href="mechanics/lenders-math.html"><div class="mech-card-num">07</div><div class="mech-card-name">The lender's math</div><div class="mech-card-desc">DSCR, breakeven occupancy, and the number that sizes your bid.</div><span class="mech-card-open">Read</span></a>
       <a class="mech-card" href="mechanics/fit.html"><div class="mech-card-num">08</div><div class="mech-card-name">Which approach fits which investor</div><div class="mech-card-desc">The capstone — situations, mapped to the mechanics that matter.</div><span class="mech-card-open">Read</span></a>
+      <a class="mech-card mech-card--cta" href="../tools/underwrite.html"><div class="mech-card-name">Every page runs on the Underwriter</div><div class="mech-card-desc">The same arithmetic, on a full deal — your assumptions, a complete pro forma.</div><span class="mech-card-open">Open the tool</span></a>
     </div>
+  </div>
+</section>
+
+
+<section class="learn-cta">
+  <div class="wrap">
+    <div>
+      <div class="label">The Next Step</div>
+      <h2 class="learn-cta-title">Ready to start your <em class="gi">journey</em>?</h2>
+      <p class="learn-cta-sub">A consultation costs nothing and obliges nothing &mdash; bring your questions, or a building.</p>
+    </div>
+    <a href="../contact.html" class="btn btn--navy">Schedule a Consultation <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </div>
 </section>
 </main>

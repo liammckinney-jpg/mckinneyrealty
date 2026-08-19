@@ -67,6 +67,7 @@
     <div class="label label--light">Generational Wealth</div>
     <h1 class="tool-hero-title">The <em class="gi">Compounding</em> Modeler</h1>
     <p class="tool-hero-sub">Pick your assumptions — starting capital, borrowing cost, cap rate, time — and watch levered multi-family equity compound. The driver is the spread between what a building earns and what its debt costs.</p>
+    <p style="font-size:0.8rem;margin-top:0.8rem"><a href="../learn/why-multi-family.html" style="color:var(--gold-light);text-decoration:none;border-bottom:1px solid rgba(201,187,170,0.4);padding-bottom:1px">Why this tool exists &rarr;</a></p>
   </div>
 </section>
 
@@ -89,7 +90,8 @@
         </div>
         <div class="tool-field cm-slider">
           <label for="cm-cap">Cap rate <span class="cm-slider-value" id="cm-cap-v"></span></label>
-          <input type="range" id="cm-cap" min="3" max="8" step="0.05" value="4.75">
+          <!-- default 6.0 = MCK_COMPOUND.DEFAULTS.capRate (see engine source comment, Aug 20 2026) -->
+          <input type="range" id="cm-cap" min="3" max="8" step="0.05" value="6">
         </div>
         <div class="tool-field tool-field--full cm-slider">
           <label for="cm-horizon">Time horizon <span class="cm-slider-value" id="cm-horizon-v"></span></label>
@@ -442,6 +444,32 @@
   document.querySelector('.nav-toggle').addEventListener('click', function () {
     document.querySelector('.nav-links').classList.toggle('open');
   });
+
+  // Apply URL params when present (used by Lesson Zero's widget CTA) —
+  // values only; no analytics fired on load.
+  (function () {
+    var q = new URLSearchParams(location.search);
+    if (![...q.keys()].length) return;
+    var map = { eq: 'cm-equity', ir: 'cm-rate', cap: 'cm-cap', yrs: 'cm-horizon', g: 'cm-growth', drift: 'cm-drift' };
+    Object.keys(map).forEach(function (k) { if (q.has(k)) $(map[k]).value = q.get(k); });
+    if (q.has('ltv')) $('cm-ltv').value = q.get('ltv');
+    if (q.has('am')) $('cm-am').value = q.get('am');
+    if (q.has('ri')) $('cm-refi-interval').value = q.get('ri');
+    if (q.get('refi') === '1') {
+      refiEnabled = true;
+      $('cm-refi-off').classList.remove('active');
+      $('cm-refi-on').classList.add('active');
+      $('cm-refi-interval-field').hidden = false;
+    }
+    // Advanced params only take effect in Advanced mode — switch silently
+    // (UI state only; no onInteract, no analytics on load).
+    if (['g','ltv','am','drift','ri'].some(function (k) { return q.has(k); }) || q.get('refi') === '1') {
+      mode = 'adv';
+      $('cm-mode-simple').classList.remove('active');
+      $('cm-mode-adv').classList.add('active');
+      $('cm-adv').hidden = false;
+    }
+  })();
 
   // Initial render at canonical defaults (no analytics fired on load)
   render();
