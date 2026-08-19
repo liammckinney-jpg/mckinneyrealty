@@ -1,0 +1,8 @@
+{
+  "name": "mckinneyrealty-site",
+  "private": true,
+  "scripts": {
+    "og:render": "node scripts/render-og-cards.js",
+    "og:check": "node scripts/check-og.js"
+  }
+}
