@@ -11,7 +11,7 @@ Standing context for every session in this repo. The strategic source of truth i
 - Three-generation history may be stated as historical fact. **The grandfather's name and the founding year are deliberately omitted (open TBD)** — never invent, infer, or "complete" them. Naming Sean is fine and does not resolve this TBD.
 
 ## Hard content rules (grep-enforced)
-- Forbidden in public copy: exclamation points, "astronomical", "fortune", "guarantee", "projected", "recommended" (as a value label), "MLI", MLI Select program terms. Generic "CMHC" as a topic reference is allowed; program specifics are not (KB-15 gate).
+- Forbidden in public copy: exclamation points, "astronomical", "fortune", "guarantee", "projected", "recommended" (as a value label). (MLI/CMHC program-content prohibition removed per Liam, Aug 20 2026 — the Financing Modeler's MLI Select content is sanctioned; individual specs may still impose page-scoped gates.)
 - **Projected-Figures Rule (KB-02, rev. Aug 20 2026):** outcome figures NEVER appear in paid creative, social tiles, or ad copy, and never in promissory framing. On-site hypothetical illustrations are allowed only when labeled illustrative, all assumptions disclosed adjacent, editable where interactive (conservative presets; appreciation defaults 0%), standard disclaimer, never framed as typical/likely/expected.
 - **No announced virtues:** the brand never describes its own character ("honest", "understated", "no-pressure", "data-driven" as self-description). Character is demonstrated, not claimed.
 - No interior vocabulary in public copy: personas/P-numbers, "funnel", "tier", "pillar", "splinter", "gated/ungated" as self-description, "nurture".
