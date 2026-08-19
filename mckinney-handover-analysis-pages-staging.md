@@ -28,14 +28,14 @@
 
 ### Social profile banners — NEW (created Aug 19 on Liam's direct ask; not in the runbook)
 - Production assets in `MARKETING/SOCIAL BANNERS/` (Desktop workspace), ready to upload to the real profiles:
-  - **`fb-cover.png`** — 1640×624 (FB page cover @2x). Brand treatment on the design system: navy radial, MR monogram watermark, Cormorant wordmark, gold rule, byline, proof line "Ontario · Three Generations · $200M+ Career Volume". All text inside FB's mobile-safe center-640px band.
+  - **`fb-cover.png`** — 1640×624 (FB page cover @2x). Brand treatment on the design system: navy radial, MR monogram watermark, Cormorant wordmark, gold rule, byline (proof line removed per Liam). All text inside FB's mobile-safe center-640px band.
   - **`linkedin-company-banner.png`** — 2256×382 (LinkedIn company cover @2x). Same treatment, no proof line (short canvas, logo overlap). Content clear of the bottom-left logo zone.
   - Editable artboard sources (`*-artboard.html`) sit beside the PNGs — re-render at 2x with the OG pipeline flags.
 - Both mockup profile headers now display these actual files (no more CSS stand-ins). The FB mockup's previous cover was the raw Elgin photo — replaced per Liam: brand asset, not listing photography.
 
 ### Social link-preview banners (OG cards) — propagated into mockups
 - The OG card system renders the per-page link banners; both new pages have theirs (`images/og/overlooked-markets.png`, `price-of-holding.png`). PoH's is live on production.
-- FB + LinkedIn mockups: all four "The Overlooked Markets" link-preview cards now show the real rendered OG banner instead of the typographic stand-in; captions carry the definite URL `mckinneyrealty.ca/overlooked-markets`; annotations read "PILLAR STAGED — MERGE HELD FOR DATE STAGGER".
+- FB + LinkedIn mockups: the four "The Overlooked Markets" link-preview cards keep the clean narrow typographic band (per Liam — full OG banners rendered too tall in-feed); captions carry the definite URL `mckinneyrealty.ca/overlooked-markets`, domains lost their PENDING, and annotations note the platform will render the OG card (`images/og/overlooked-markets.png`) with "PILLAR STAGED — MERGE HELD FOR DATE STAGGER".
 - FB seller lane: Ghost 2 now shows the live PoH banner and reads "THEIR DESTINATION — mckinneyrealty.ca/price-of-holding — LIVE (AUG 19)". The P3 essay cards stay PENDING (page not built).
 - All four FB/LinkedIn exports re-rendered. (Export pipeline fix: Chrome blanks anything below 16,384 physical px — tall pages now capture in stitched halves.)
 
