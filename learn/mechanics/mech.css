@@ -1,0 +1,85 @@
+/* =========================================================================
+   The Mechanics — shared page + widget styles
+   Extends mckinney-system.css tokens. Loaded by every concept page.
+   ========================================================================= */
+
+/* ---- page scaffold ---- */
+.mx-hero { background: var(--navy); padding: 140px 0 56px; position: relative; overflow: hidden; }
+.mx-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 90% at 80% 0%, rgba(184,168,138,0.14), transparent 60%); pointer-events: none; }
+.mx-hero .wrap { position: relative; z-index: 1; }
+.mx-hero .label { color: var(--gold-light); }
+.mx-hero-title { font-family: var(--font-d); font-weight: 400; font-size: clamp(2.1rem, 4.5vw, 3.1rem); line-height: 1.1; color: #F5F2EC; margin: 12px 0 14px; }
+.mx-hero-title em { font-style: italic; color: var(--gold); }
+.mx-hook { font-size: 1.02rem; line-height: 1.7; color: rgba(245,242,236,0.72); max-width: 620px; font-weight: 300; }
+
+.mx-body { padding: var(--s-6) 0 0; }
+.mx-body .measure { max-width: 680px; }
+.mx-body p { font-size: var(--b-lg); font-weight: 300; line-height: 1.85; color: var(--text-2); margin-bottom: 1.4rem; }
+.mx-body p strong { font-weight: 500; color: var(--navy); }
+.mx-body h2 { font-family: var(--font-d); font-size: var(--d-sub); font-weight: 500; color: var(--navy); margin: var(--s-4) 0 var(--s-2); }
+
+/* ---- widget card ---- */
+.mx-widget { background: var(--navy); padding: var(--s-4); margin: var(--s-4) 0; max-width: 680px; position: relative; overflow: hidden; }
+.mx-widget::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 90% at 85% 0%, rgba(184,168,138,0.1), transparent 60%); pointer-events: none; }
+.mx-widget > * { position: relative; z-index: 1; }
+.mx-widget-label { font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-light); font-weight: 500; margin-bottom: 0.9rem; }
+.mx-hypo { font-size: 0.72rem; color: rgba(245,242,236,0.45); font-weight: 300; font-style: italic; margin-top: 1rem; }
+
+.mx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem 1.2rem; }
+.mx-field label { display: block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(245,242,236,0.55); margin-bottom: 0.35rem; font-weight: 400; }
+.mx-field input[type="text"], .mx-field input[type="number"] {
+  width: 100%; padding: 0.65rem 0.8rem; font-family: var(--font-b); font-size: 0.95rem; font-weight: 300;
+  color: #F5F2EC; background: rgba(245,242,236,0.07); border: 1px solid rgba(245,242,236,0.18);
+}
+.mx-field input:focus { outline: none; border-color: var(--gold); }
+.mx-field input[type="range"] { width: 100%; accent-color: var(--gold-dark); }
+.mx-range-val { font-size: 0.85rem; color: #F5F2EC; font-weight: 400; margin-left: 0.4rem; }
+
+.mx-toggle { display: inline-flex; border: 1px solid rgba(245,242,236,0.25); }
+.mx-toggle button { background: transparent; border: none; color: rgba(245,242,236,0.6); font-family: var(--font-b); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.45rem 0.9rem; cursor: pointer; }
+.mx-toggle button.active { background: var(--gold-dark); color: var(--white); }
+
+.mx-out { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; border-top: 1px solid rgba(245,242,236,0.14); margin-top: 1.1rem; padding-top: 1rem; }
+.mx-out .num { font-family: var(--font-d); font-size: 1.5rem; font-weight: 400; color: #F5F2EC; line-height: 1.05; }
+.mx-out .num.neg { color: #E4A19E; }
+.mx-out .num.pos { color: var(--gold-light); }
+.mx-out .lbl { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,242,236,0.5); margin-top: 0.3rem; }
+.mx-delta { font-size: 0.8rem; color: rgba(245,242,236,0.65); font-weight: 300; margin-top: 0.9rem; line-height: 1.6; }
+.mx-delta strong { color: var(--gold-light); font-weight: 500; }
+
+.mx-widget .btn { margin-top: 1.1rem; }
+.mx-fill {
+  background: transparent; border: 1px dashed rgba(245,242,236,0.35); color: rgba(245,242,236,0.65);
+  font-family: var(--font-b); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.55rem 0.9rem; cursor: pointer; transition: border-color 0.3s, color 0.3s;
+}
+.mx-fill:hover { border-color: var(--gold); color: var(--gold-light); }
+
+/* ---- underwriting tie-in / related / CTA ---- */
+.mx-tiein { background: var(--cream); border-left: 2px solid var(--gold); padding: var(--s-3) var(--s-4); max-width: 680px; margin: var(--s-4) 0; }
+.mx-tiein-title { font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dark); font-weight: 500; margin-bottom: 0.6rem; }
+.mx-tiein p { font-size: var(--b-sm); font-weight: 300; line-height: 1.7; color: var(--text-2); margin-bottom: 0.5rem; }
+.mx-tiein p:last-child { margin-bottom: 0; }
+
+.mx-related { max-width: 680px; margin: var(--s-5) 0; }
+.mx-related-title { font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dark); font-weight: 500; margin-bottom: 0.8rem; }
+.mx-related a { display: block; padding: 0.7rem 0; border-top: 1px solid var(--border); font-size: var(--b-md); color: var(--navy); text-decoration: none; font-weight: 400; transition: color 0.2s; }
+.mx-related a:last-child { border-bottom: 1px solid var(--border); }
+.mx-related a:hover { color: var(--gold-dark); }
+.mx-related a span { color: var(--text-3); font-weight: 300; font-size: var(--b-sm); display: block; margin-top: 2px; }
+
+.mx-cta { background: var(--navy); padding: var(--s-5) 0; margin-top: var(--s-6); }
+.mx-cta .wrap { display: flex; justify-content: space-between; align-items: center; gap: var(--s-4); flex-wrap: wrap; }
+.mx-cta-title { font-family: var(--font-d); font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 400; color: #F5F2EC; }
+.mx-cta-title em { font-style: italic; color: var(--gold-light); }
+
+.mx-note { font-size: 0.78rem; color: var(--text-3); font-weight: 300; font-style: italic; max-width: 680px; margin: var(--s-3) 0; }
+
+a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+@media (max-width: 720px) {
+  .mx-hero { padding: 120px 0 44px; }
+  .mx-grid { grid-template-columns: 1fr; }
+  .mx-out { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+  .mx-out .num { font-size: 1.15rem; }
+}
