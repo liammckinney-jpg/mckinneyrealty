@@ -8,20 +8,20 @@
 > Liam McKinney, Broker, Property.ca Inc., Brokerage.
 
 ## Key pages
-- [Services](https://www.mckinneyrealty.ca/services.html): disposition and acquisition advisory for Ontario multi-family
-- [Track record](https://www.mckinneyrealty.ca/track-record.html): completed transactions
-- [Team](https://www.mckinneyrealty.ca/team.html): the principals
+- [Services](https://www.mckinneyrealty.ca/services): disposition and acquisition advisory for Ontario multi-family
+- [Track record](https://www.mckinneyrealty.ca/track-record): completed transactions
+- [Team](https://www.mckinneyrealty.ca/team): the principals
 - [Free tools](https://www.mckinneyrealty.ca/tools/): public calculators including the Compounding Modeler
-- [Insights](https://www.mckinneyrealty.ca/insights.html): research and analysis
+- [Insights](https://www.mckinneyrealty.ca/insights): research and analysis
 
 ## Analysis
-- [Cash Flow vs. Hope](https://www.mckinneyrealty.ca/cashflow.html): why buildings are priced on income and condos were priced on comparables
-- [The $50,000 Problem](https://www.mckinneyrealty.ca/the-50000-problem.html): the CCPC passive-income grind and where multi-family fits
+- [Cash Flow vs. Hope](https://www.mckinneyrealty.ca/cashflow): why buildings are priced on income and condos were priced on comparables
+- [The $50,000 Problem](https://www.mckinneyrealty.ca/the-50000-problem): the CCPC passive-income grind and where multi-family fits
 
 ## Learn
-- [Why Multi-Family](https://www.mckinneyrealty.ca/learn/why-multi-family.html): lesson zero — the buy-hold-refinance mechanism as machinery, no projections
+- [Why Multi-Family](https://www.mckinneyrealty.ca/learn/why-multi-family): lesson zero — the buy-hold-refinance mechanism as machinery, no projections
 - [The First Building](https://www.mckinneyrealty.ca/learn/): free eight-lesson course on how apartment buildings are priced, financed, and compounded
-- [The Mechanics](https://www.mckinneyrealty.ca/learn/#mechanics): reference library of concept pages, each wired to the Underwriter — including [what you're actually buying](https://www.mckinneyrealty.ca/learn/mechanics/what-youre-buying.html), [how buildings become worth more](https://www.mckinneyrealty.ca/learn/mechanics/worth-more.html), and [the lender's math](https://www.mckinneyrealty.ca/learn/mechanics/lenders-math.html)
+- [The Mechanics](https://www.mckinneyrealty.ca/learn/#mechanics): reference library of concept pages, each wired to the Underwriter — including [what you're actually buying](https://www.mckinneyrealty.ca/learn/mechanics/what-youre-buying), [how buildings become worth more](https://www.mckinneyrealty.ca/learn/mechanics/worth-more), and [the lender's math](https://www.mckinneyrealty.ca/learn/mechanics/lenders-math)
 
 ## Contact
 - liam@mckinneyrealty.ca (Toronto) · sean@remaxquinte.com (Quinte region)
