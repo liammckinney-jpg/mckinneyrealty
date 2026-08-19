@@ -87,6 +87,12 @@ body.uw-adv fieldset.uw-a { display: block; }
 .uw-consent { display: flex; gap: 0.55rem; align-items: flex-start; font-size: 0.75rem; color: var(--text-2); font-weight: 300; margin-top: 0.7rem; line-height: 1.5; }
 .uw-consent input { margin-top: 2px; accent-color: var(--gold-dark); }
 .uw-email-sent { font-size: 0.9rem; color: var(--text-1); font-weight: 300; }
+.uw-hint {
+  display: inline-flex; width: 15px; height: 15px; border: 1px solid var(--border-strong); border-radius: 50%;
+  align-items: center; justify-content: center; font-size: 0.6rem; color: var(--text-3);
+  text-decoration: none; margin-left: 6px; vertical-align: 1px; transition: color 0.2s, border-color 0.2s;
+}
+.uw-hint:hover { color: var(--gold-dark); border-color: var(--gold-dark); }
 
 /* mobile pinned summary */
 .uw-bar { display: none; }
@@ -238,7 +244,7 @@ body.uw-adv fieldset.uw-a { display: block; }
               <div class="tool-affix" data-affix="$"><input type="text" id="uw-so" data-currency inputmode="decimal" placeholder="per month"></div>
             </div>
             <div class="tool-field" data-k="v">
-              <label for="uw-v">Vacancy &amp; bad debt</label>
+              <label for="uw-v">Vacancy &amp; bad debt <a class="uw-hint" href="../learn/mechanics/where-returns-leak.html#vacancy" title="Vacancy as the compounding leak" aria-label="Concept: vacancy">?</a></label>
               <div class="tool-affix tool-affix--suffix" data-affix="%"><input type="text" id="uw-v" inputmode="decimal" placeholder="your assumption"></div>
               <div class="tool-help">Applied against gross potential rent.</div>
             </div>
@@ -246,7 +252,7 @@ body.uw-adv fieldset.uw-a { display: block; }
         </fieldset>
 
         <fieldset class="tool-fieldset">
-          <div class="tool-fieldset-legend">Operating Expenses</div>
+          <div class="tool-fieldset-legend">Operating Expenses <a class="uw-hint" href="../learn/mechanics/cost-to-run.html" title="The honest expense schedule" aria-label="Concept: operating costs">?</a></div>
           <div class="tool-grid">
             <div class="tool-field" data-k="tx">
               <label for="uw-tx">Property taxes</label>
@@ -272,7 +278,7 @@ body.uw-adv fieldset.uw-a { display: block; }
               </div>
             </div>
 
-            <div class="tool-fieldset-legend" style="margin-top:1.2rem;font-size:0.72rem">Utilities &amp; Metering</div>
+            <div class="tool-fieldset-legend" style="margin-top:1.2rem;font-size:0.72rem">Utilities &amp; Metering <a class="uw-hint" href="../learn/mechanics/worth-more.html#metering" title="How metering changes NOI" aria-label="Concept: utility metering">?</a></div>
             <div class="tool-help" style="margin-bottom:0.6rem">Who pays what changes everything — enter only landlord-paid amounts.</div>
             <div class="uw-util" data-u="h">
               <span class="nm">Hydro</span>
@@ -376,7 +382,7 @@ body.uw-adv fieldset.uw-a { display: block; }
             <div class="tool-fieldset-legend" style="margin-top:1.2rem;font-size:0.72rem">Reserves</div>
             <div class="tool-grid">
               <div class="tool-field" data-k="cr">
-                <label for="uw-cr">Capital reserve</label>
+                <label for="uw-cr">Capital reserve <a class="uw-hint" href="../learn/mechanics/where-returns-leak.html#reserves" title="Why reserves belong in the numbers" aria-label="Concept: capital reserves">?</a></label>
                 <div style="display:flex;gap:0.7rem;align-items:center">
                   <div class="tool-affix" data-affix="$" style="flex:1"><input type="text" id="uw-cr" data-currency inputmode="decimal" placeholder="your reserve assumption"></div>
                   <span class="uw-reserve-total" id="uw-cr-total"></span>
@@ -388,7 +394,7 @@ body.uw-adv fieldset.uw-a { display: block; }
         </fieldset>
 
         <fieldset class="tool-fieldset">
-          <div class="tool-fieldset-legend">Financing</div>
+          <div class="tool-fieldset-legend">Financing <a class="uw-hint" href="../learn/mechanics/lenders-math.html" title="DSCR and the lender&#39;s math" aria-label="Concept: the lender&#39;s math">?</a></div>
           <div class="tool-grid">
             <div class="tool-field" data-k="dp">
               <label for="uw-dp">Down payment</label>
