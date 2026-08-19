@@ -444,6 +444,32 @@
     document.querySelector('.nav-links').classList.toggle('open');
   });
 
+  // Apply URL params when present (used by Lesson Zero's widget CTA) —
+  // values only; no analytics fired on load.
+  (function () {
+    var q = new URLSearchParams(location.search);
+    if (![...q.keys()].length) return;
+    var map = { eq: 'cm-equity', ir: 'cm-rate', cap: 'cm-cap', yrs: 'cm-horizon', g: 'cm-growth', drift: 'cm-drift' };
+    Object.keys(map).forEach(function (k) { if (q.has(k)) $(map[k]).value = q.get(k); });
+    if (q.has('ltv')) $('cm-ltv').value = q.get('ltv');
+    if (q.has('am')) $('cm-am').value = q.get('am');
+    if (q.has('ri')) $('cm-refi-interval').value = q.get('ri');
+    if (q.get('refi') === '1') {
+      refiEnabled = true;
+      $('cm-refi-off').classList.remove('active');
+      $('cm-refi-on').classList.add('active');
+      $('cm-refi-interval-field').hidden = false;
+    }
+    // Advanced params only take effect in Advanced mode — switch silently
+    // (UI state only; no onInteract, no analytics on load).
+    if (['g','ltv','am','drift','ri'].some(function (k) { return q.has(k); }) || q.get('refi') === '1') {
+      mode = 'adv';
+      $('cm-mode-simple').classList.remove('active');
+      $('cm-mode-adv').classList.add('active');
+      $('cm-adv').hidden = false;
+    }
+  })();
+
   // Initial render at canonical defaults (no analytics fired on load)
   render();
 })();

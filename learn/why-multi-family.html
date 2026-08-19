@@ -57,6 +57,11 @@
 .wz-hp { position: absolute; left: -9999px; }
 .wz-note { font-size: 0.75rem; color: var(--text-3); font-weight: 300; margin-top: 10px; }
 .wz-sent { font-size: var(--b-md); font-weight: 300; color: var(--text-1); padding: 0.5rem 0; }
+.wz-leadin { font-size: 0.8rem; letter-spacing: 0.02em; color: var(--gold-dark); font-weight: 400; margin-bottom: 0.5rem; }
+.wm-zero-note { display: block; font-size: 0.66rem; letter-spacing: 0.02em; text-transform: none; color: var(--gold-light); font-style: italic; margin-top: 2px; }
+.wm-adv { margin-top: 0.9rem; }
+.wm-adv summary { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,242,236,0.5); cursor: pointer; }
+.wm-adv p { font-size: 0.78rem; font-weight: 300; color: rgba(245,242,236,0.55); line-height: 1.65; margin-top: 0.5rem; }
 .wz-close { display: flex; gap: var(--s-3); flex-wrap: wrap; align-items: center; margin: var(--s-5) 0 0; }
 .mx-body { padding-bottom: var(--s-7); }
 @media (max-width: 720px) { .mx-hero { padding: 110px 0 36px; } }
@@ -104,15 +109,49 @@
   <div class="wrap">
     <div class="label">The First Building &middot; Lesson Zero</div>
     <h1 class="mx-hero-title">Why <em>multi-family</em>?</h1>
-    <p class="mx-hook">There are two things savings can become: a number you watch, or an income you live on. Most investing produces the first and hopes it eventually becomes the second. This course is about an asset built to produce the second from the start &mdash; and this page explains, in about four minutes, how it works.</p>
+    <p class="mx-hook">Have you ever looked at a family that owns apartment buildings and wondered how that happens? Mostly it isn&rsquo;t lottery money or a lucky flip. It&rsquo;s one building, a mortgage the tenants pay down, and twenty-five years of arithmetic. Pick your own numbers and watch what that arithmetic does.</p>
   </div>
 </header>
 
 <section class="mx-body">
   <div class="wrap">
 
+    <!-- WIDGET: the machine, on preset numbers (Compounding Modeler engine, imported) -->
+    <div class="mx-widget" id="w-machine">
+      <div class="mx-widget-label">The machine, on numbers you can change</div>
+      <div class="mx-grid">
+        <div class="mx-field">
+          <label for="wm-eq">Starting capital</label>
+          <input type="text" id="wm-eq" inputmode="decimal" value="500,000">
+        </div>
+        <div class="mx-field">
+          <label for="wm-hold">Hold</label>
+          <input type="text" id="wm-hold" inputmode="decimal" value="25">
+        </div>
+        <div class="mx-field">
+          <label for="wm-growth">Property price growth <span class="wm-zero-note">even if prices never rise a dollar</span></label>
+          <input type="text" id="wm-growth" inputmode="decimal" value="0">
+        </div>
+        <div class="mx-field">
+          <label for="wm-rate">Interest rate</label>
+          <input type="text" id="wm-rate" inputmode="decimal" value="5.0">
+        </div>
+      </div>
+      <div class="mx-out" style="grid-template-columns:1fr">
+        <div><div class="num" id="wm-out" style="font-size:2rem">&mdash;</div><div class="lbl" id="wm-preset-line"></div></div>
+      </div>
+      <div class="mx-delta" style="margin-top:0.7rem">An illustration on the assumptions shown &mdash; change any of them.</div>
+      <details class="wm-adv">
+        <summary>The rest of the assumptions</summary>
+        <p>Purchase cap rate 4.75% &middot; 75% loan-to-value &middot; 30-year amortization &middot; refinance every 7 years at 2% friction, proceeds and accumulated cash flow redeployed at the same assumptions &middot; cash flow held uninvested at 0% throughout. The full Modeler lets you change all of these.</p>
+      </details>
+      <a class="btn btn--gold" id="wz-modeler" href="../tools/compounding-modeler.html">Open the full Compounding Modeler <svg viewBox="0 0 16 16" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <div class="mx-hypo">A hypothetical twelve-plex. Illustrative figures &mdash; not a listing, not a market claim.</div>
+    </div>
+
     <!-- ENROLLMENT — above the fold after the hook -->
     <div class="wz-enroll" id="enroll">
+      <p class="wz-leadin">Want to understand the machine that just did that? Start here.</p>
       <div class="wz-enroll-title">The First Building &mdash; a free course</div>
       <p>The First Building is a free eight-lesson course on buying and owning small apartment buildings in Ontario. Each lesson is a five-to-eight-minute read.</p>
       <form class="wz-form" id="wz-form" novalidate>
@@ -131,7 +170,7 @@
       <p>Most buyers don't pay cash. They put down a portion, a lender finances the rest, and the building's income makes the mortgage payment. That payment does two jobs at once. Part of it is interest, the cost of borrowing. The other part pays down the loan itself. That second part matters more than it looks: every month, the people renting the units are, through their rent, reducing the debt on a building you own. You added no new money. The loan is smaller anyway.</p>
       <p>Leave that alone for ten or fifteen years and something slow happens: the debt keeps shrinking while the building keeps operating. The gap between what the building is worth and what you owe on it is your equity, and loan paydown builds it on a schedule you can read the day you sign, because it is arithmetic. Whether the building is also worth more by then is a separate question. Market prices move in both directions, and no one can tell you in advance which way. The paydown doesn't depend on that.</p>
       <p>Now the step that turns a purchase into a cycle. Equity in a building can be borrowed against. Owners who want to grow refinance &mdash; take a new, larger loan against the building they have paid down &mdash; and use what that frees up as the down payment on a second building. The first building's tenants keep retiring the first loan. The second building's tenants start on the second. None of this requires a hot market, perfect timing, or a rare deal. It requires a sound building, competent operation, and years.</p>
-      <p>That is the machine. Income covers the costs and the debt, the debt falls, the equity that creates gets put back to work, and each building added puts more rent to work retiring more debt. The eight lessons that follow each cover one part of the machine: what a sound building looks like, what it truly costs to run, how lenders decide what you can borrow, and what can go wrong. The widget below runs the first piece of the arithmetic &mdash; the paydown &mdash; on a hypothetical building, with numbers you choose.</p>
+      <p>That is the machine the widget above just ran. Income covers the costs and the debt, the debt falls, the equity that creates gets put back to work, and each building added puts more rent to work retiring more debt. The eight lessons that follow each cover one part of it: what a sound building looks like, what it truly costs to run, how lenders decide what you can borrow, and what can go wrong.</p>
     </div>
 
     <!-- THE PROOF, AS HISTORY -->
@@ -143,35 +182,6 @@
     <!-- THE HONEST PARAGRAPH -->
     <div class="measure">
       <p>Before you start, the caveats that belong up front rather than in fine print. This takes years; the machine runs on time, and there is no version of it that runs fast. Debt is what makes the arithmetic work, and debt also makes mistakes expensive &mdash; leverage cuts in both directions. And a building is a real operation: tenants, trades, a furnace that fails on a Friday night in January. Professional management handles the daily work, but ownership is never entirely passive. If those three things &mdash; time, debt, and operations &mdash; don't put you off, the rest of the course is the detail.</p>
-    </div>
-
-    <!-- WIDGET: one cycle, your numbers -->
-    <div class="mx-widget" id="w-cycle">
-      <div class="mx-widget-label">One cycle, your numbers &mdash; principal retired over a hold</div>
-      <div class="mx-grid">
-        <div class="mx-field">
-          <label for="wz-loan">Loan amount</label>
-          <input type="text" id="wz-loan" inputmode="decimal" placeholder="your loan, $">
-        </div>
-        <div class="mx-field">
-          <label for="wz-rate">Interest rate</label>
-          <input type="text" id="wz-rate" inputmode="decimal" placeholder="your rate, %">
-        </div>
-        <div class="mx-field">
-          <label for="wz-am">Amortization</label>
-          <input type="text" id="wz-am" inputmode="decimal" placeholder="years">
-        </div>
-        <div class="mx-field">
-          <label for="wz-hold">Years held</label>
-          <input type="text" id="wz-hold" inputmode="decimal" placeholder="your hold">
-        </div>
-      </div>
-      <div class="mx-out" style="grid-template-columns:1fr">
-        <div><div class="num" id="wz-out">—</div><div class="lbl">Principal retired over the hold &mdash; amortization arithmetic only</div></div>
-      </div>
-      <div class="mx-delta" id="wz-read" hidden></div>
-      <a class="btn btn--gold" id="wz-modeler" href="../tools/compounding-modeler.html">Run the full cycle on your own assumptions <svg viewBox="0 0 16 16" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      <div class="mx-hypo">A hypothetical twelve-plex. Illustrative figures &mdash; not a listing, not a market claim.</div>
     </div>
 
     <!-- DUAL CTA CLOSE -->
@@ -205,6 +215,7 @@
 
 <script src="../mckinney-forms.js"></script>
 <script src="../tools/js/mck-calc-engine.js"></script>
+<script src="../tools/js/mck-compound-engine.js"></script>
 <script src="mechanics/mech-widgets.js"></script>
 <script>
 (function () {
@@ -219,32 +230,47 @@
     return raw === '' ? NaN : parseFloat(raw);
   }
 
-  // Principal retired over the hold — pure amortization arithmetic via the
-  // shared engine (Canadian semi-annual convention). No appreciation input,
-  // no refinance-proceeds output: the refinance step stays conceptual.
+  // The machine, preset: the Compounding Modeler's own engine (imported,
+  // not forked), scoped to four visible inputs. All other conventions
+  // inherit the Modeler's internal assumption set (see the disclosure).
+  var PRESET = { cap: 0.0475, ltv: 0.75, am: 30, drift: 0, refiEvery: 7 };
   var engaged = false;
-  function compute() {
-    var loan = num($('wz-loan')), rate = num($('wz-rate')), am = num($('wz-am')), hold = num($('wz-hold'));
-    var ok = loan > 0 && isFinite(rate) && am > 0 && hold > 0;
-    var read = $('wz-read');
-    if (ok) {
-      var months = Math.min(hold, am) * 12;
-      var remaining = E.remainingBalance(loan, rate / 100, am, months);
-      var retired = loan - remaining;
-      $('wz-out').textContent = M.fmt$(retired);
-      read.hidden = false;
-      read.innerHTML = 'Over ' + hold + ' year' + (hold === 1 ? '' : 's') + ' at these figures, the tenancy retires <strong>' + M.fmt$(retired) + '</strong> of the debt &mdash; by schedule, before any assumption about markets.';
-    } else {
-      $('wz-out').textContent = '—';
-      read.hidden = true;
-    }
+  function num(el) {
+    var raw = String(el.value).replace(/[$,%\s]/g, '');
+    return raw === '' ? NaN : parseFloat(raw);
   }
-  ['wz-loan','wz-rate','wz-am','wz-hold'].forEach(function (id) {
+  function clamp(v, lo, hi) { return Math.min(hi, Math.max(lo, v)); }
+  function computeMachine() {
+    var eq = clamp(num($('wm-eq')), 1000, 100000000);
+    var hold = clamp(Math.round(num($('wm-hold'))), 1, 60);
+    var growth = clamp(num($('wm-growth')), -10, 10);
+    var rate = clamp(num($('wm-rate')), 0, 25);
+    var ok = isFinite(eq) && isFinite(hold) && isFinite(growth) && isFinite(rate);
+    if (ok === false) { $('wm-out').textContent = '\u2014'; $('wm-preset-line').textContent = ''; return; }
+    var r = window.MCK_COMPOUND.simulate({
+      initialEquity: eq, interestRate: rate / 100, capRate: PRESET.cap,
+      horizonYears: hold, ltv: PRESET.ltv, amortYears: PRESET.am,
+      noiGrowth: growth / 100, capRateDriftBps: PRESET.drift,
+      refiEnabled: true, refiIntervalYears: PRESET.refiEvery
+    });
+    if (isFinite(r.buildingCount) === false || isFinite(r.endingEquity) === false) {
+      $('wm-out').textContent = '\u2014'; return;
+    }
+    var n = r.buildingCount.toFixed(1);
+    var label = n === '1.0' ? '1 building' : n + ' buildings';
+    $('wm-out').textContent = label + ' \u00b7 ' + M.fmt$(r.endingEquity) + ' of total equity';
+    $('wm-preset-line').textContent = 'On: ' + M.fmt$(eq) + ' to start \u00b7 ' + hold + '-year hold \u00b7 ' + growth + '% price growth \u00b7 ' + rate + '% interest';
+    $('wz-modeler').href = '../tools/compounding-modeler.html?eq=' + Math.round(eq) + '&ir=' + rate + '&yrs=' + Math.min(hold, 30) + '&g=' + Math.max(0, growth) + '&cap=4.75&ltv=0.75&am=30&drift=0&ri=7&refi=1';
+    return r;
+  }
+  ['wm-eq','wm-hold','wm-growth','wm-rate'].forEach(function (id) {
     $(id).addEventListener('input', function () {
       if (engaged === false) { engaged = true; track('why_widget_engaged'); }
-      compute();
+      computeMachine();
     });
   });
+  computeMachine();
+  track('why_widget_rendered');
 
   $('wz-modeler').addEventListener('click', function () { track('why_to_modeler'); });
   $('wz-cta-library').addEventListener('click', function () { track('why_to_mechanics'); });
