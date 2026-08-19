@@ -77,11 +77,6 @@
 .why-feature-arrow { color: var(--gold-light); font-size: 1.2rem; }
 .shelf-line { font-size: var(--b-md); font-weight: 300; color: var(--text-2); margin: 0.4rem 0 var(--s-4); line-height: 1.7; }
 .shelf-stage { color: var(--gold-dark); font-weight: 400; }
-.tools-strip { border-top: 1px solid var(--border); margin-top: var(--s-5); }
-.tools-strip .wrap { display: flex; gap: var(--s-3); flex-wrap: wrap; align-items: baseline; padding-top: 1.1rem; padding-bottom: 1.4rem; }
-.tools-strip span { font-size: var(--b-sm); font-weight: 300; color: var(--text-3); }
-.tools-strip a { font-size: var(--b-sm); color: var(--gold-dark); text-decoration: none; border-bottom: 1px solid rgba(154,139,111,0.4); padding-bottom: 1px; }
-.tools-strip a:hover { border-color: var(--gold-dark); }
 @media (max-width: 720px) { .why-feature { flex-direction: column; align-items: flex-start; gap: 0.6rem; } .why-feature-title, .why-feature-eyebrow { white-space: normal; } }
 
 /* The Mechanics shelf */
@@ -89,6 +84,11 @@ a.crs-lesson { text-decoration: none; transition: background 0.3s; }
 a.crs-lesson:hover { background: var(--offwhite); }
 a.crs-lesson .crs-lesson-title { transition: color 0.2s; }
 a.crs-lesson:hover .crs-lesson-title { color: var(--gold-dark); }
+.learn-cta { background: var(--cream); padding: var(--s-6) 0; }
+.learn-cta .wrap { display: flex; justify-content: space-between; align-items: center; gap: var(--s-4); flex-wrap: wrap; }
+.learn-cta-title { font-family: var(--font-d); font-weight: 300; font-size: clamp(1.8rem, 3.5vw, 2.5rem); color: var(--navy); margin: 8px 0 6px; }
+.learn-cta-sub { font-size: var(--b-md); font-weight: 300; color: var(--text-2); line-height: 1.7; max-width: 560px; }
+
 .mech-shelf { background: var(--navy); padding: var(--s-7) 0; margin-top: var(--s-6); position: relative; overflow: hidden; }
 .mech-shelf::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 90% at 80% 0%, rgba(184,168,138,0.12), transparent 60%); pointer-events: none; }
 .mech-shelf .wrap { position: relative; z-index: 1; }
@@ -233,13 +233,17 @@ a.crs-lesson:hover .crs-lesson-title { color: var(--gold-dark); }
   </div>
 </section>
 
-<div class="tools-strip">
+
+<section class="learn-cta">
   <div class="wrap">
-    <span>The tools these lessons point at &mdash; free, no gate:</span>
-    <a href="../tools/underwrite.html">The Underwriter</a>
-    <a href="../tools/">The calculators</a>
+    <div>
+      <div class="label">The Next Step</div>
+      <h2 class="learn-cta-title">Ready to start your <em class="gi">journey</em>?</h2>
+      <p class="learn-cta-sub">A consultation costs nothing and obliges nothing &mdash; bring your questions, or a building.</p>
+    </div>
+    <a href="../contact.html" class="btn btn--navy">Schedule a Consultation <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </div>
-</div>
+</section>
 </main>
 
 <footer class="footer">
