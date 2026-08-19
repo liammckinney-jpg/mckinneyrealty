@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<title>The Price of Holding | McKinney Realty</title>
+<!-- Social cards — required on every indexable page. Audited at build (npm run og:check). -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="McKinney Realty">
+<meta property="og:title" content="The Price of Holding">
+<meta property="og:description" content="Written for owners twenty or thirty years into a building. The arithmetic of the next five years of ownership, the honest net of an exit, and a third option most conversations skip — laid out so you can run the numbers before anyone suggests a sign.">
+<meta property="og:url" content="https://www.mckinneyrealty.ca/price-of-holding">
+<meta property="og:image" content="https://www.mckinneyrealty.ca/images/og/price-of-holding.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Price of Holding — McKinney Realty">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Price of Holding">
+<meta name="twitter:description" content="Written for owners twenty or thirty years into a building. The arithmetic of the next five years of ownership, the honest net of an exit, and a third option most conversations skip — laid out so you can run the numbers before anyone suggests a sign.">
+<meta name="twitter:image" content="https://www.mckinneyrealty.ca/images/og/price-of-holding.png">
+<meta name="description" content="Written for owners twenty or thirty years into a building. The arithmetic of the next five years of ownership, the honest net of an exit, and a third option most conversations skip — laid out so you can run the numbers before anyone suggests a sign.">
+<link rel="canonical" href="https://www.mckinneyrealty.ca/price-of-holding">
+<script src="mckinney-consent.js"></script>
+<script src="mckinney-schema.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Price of Holding",
+  "description": "Written for owners twenty or thirty years into a building. The arithmetic of the next five years of ownership, the honest net of an exit, and a third option most conversations skip — laid out so you can run the numbers before anyone suggests a sign.",
+  "url": "https://www.mckinneyrealty.ca/price-of-holding",
+  "datePublished": "2026-08-19",
+  "dateModified": "2026-08-19",
+  "author": { "@type": "Person", "name": "Liam McKinney", "jobTitle": "Broker, Property.ca Inc., Brokerage" },
+  "publisher": { "@type": "Organization", "name": "McKinney Realty", "url": "https://www.mckinneyrealty.ca" }
+}
+</script>
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VFY0V42GLR');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mckinney-system.css">
+<style>
+/* ============================================================
+   THE PRICE OF HOLDING — analysis page for long-tenured owners
+   Copy verbatim-locked (v1.2, Aug 19).
+   Essay-first per /cashflow; ledger panels for the hold's line items.
+   ============================================================ */
+
+.ph-hero {
+  background: radial-gradient(ellipse at 30% 20%, var(--navy-light), var(--navy) 65%);
+  color: var(--white);
+  padding: calc(4.5rem + var(--s-8)) 0 var(--s-8);
+}
+.ph-hero .label { margin-bottom: var(--s-3); }
+.ph-hero-title {
+  font-family: var(--font-d); font-size: var(--d-hero); font-weight: 300;
+  line-height: 1.15; max-width: 880px;
+}
+.ph-hero-sub {
+  font-size: var(--b-lg); font-weight: 300; line-height: 1.75;
+  color: rgba(255,255,255,0.65); max-width: 640px; margin-top: var(--s-4);
+}
+
+.ph-section { padding: var(--s-7) 0; }
+.ph-section .label { margin-bottom: var(--s-2); }
+.ph-section-title {
+  font-family: var(--font-d); font-size: var(--d-section); font-weight: 300;
+  line-height: 1.2; color: var(--navy); max-width: 700px; margin-bottom: var(--s-3);
+}
+.ph-prose { font-size: var(--b-md); font-weight: 300; line-height: 1.8; color: var(--text-2); max-width: 660px; margin-bottom: 1rem; }
+.ph-prose strong { font-weight: 500; color: var(--navy); }
+.ph-prose a { color: var(--gold-dark); }
+
+/* Ledger — the hold's line items */
+.ph-ledger { display: grid; gap: var(--s-3); margin-top: var(--s-4); max-width: 720px; }
+.ph-line { background: var(--white); border: 1px solid var(--border); border-left: 2px solid var(--gold); padding: var(--s-3) var(--s-4); }
+.ph-line-k { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: var(--s-1); }
+.ph-line p { font-size: var(--b-md); font-weight: 300; line-height: 1.75; color: var(--text-2); }
+.ph-line p strong { font-weight: 500; color: var(--navy); }
+
+/* The toll — three gates */
+.ph-gates { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-3); margin-top: var(--s-4); max-width: 880px; }
+.ph-gate-card { background: var(--offwhite); border-top: 2px solid var(--border-strong); padding: var(--s-3) var(--s-3); }
+.ph-gate-k { font-family: var(--font-d); font-size: var(--d-sub); font-weight: 300; color: var(--navy); margin-bottom: var(--s-1); }
+.ph-gate-card p { font-size: var(--b-sm); font-weight: 300; line-height: 1.7; color: var(--text-2); }
+
+/* Illustration panel */
+.ph-panel {
+  background: var(--cream); border-left: 2px solid var(--gold);
+  padding: var(--s-4) var(--s-5); margin: var(--s-5) 0; max-width: 720px;
+}
+.ph-panel-label {
+  font-size: var(--b-xs); font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-3); display: block; margin-bottom: var(--s-3); line-height: 1.6;
+}
+.ph-panel-assump { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); margin-bottom: var(--s-3); }
+.ph-assump { font-family: var(--font-d); font-size: 1.2rem; font-weight: 500; color: var(--navy); }
+.ph-assump span { display: block; font-family: var(--font-b); font-size: var(--b-xs); font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-top: 0.25rem; }
+.ph-panel p { font-size: var(--b-md); font-weight: 300; line-height: 1.8; color: var(--text-2); }
+.ph-panel p strong { font-weight: 500; color: var(--navy); }
+
+/* Steward's Guide gate */
+.ph-guide { border: 1px solid var(--border); border-top: 2px solid var(--gold); padding: var(--s-5); max-width: 720px; margin-top: var(--s-5); }
+.ph-guide .label { margin-bottom: var(--s-2); }
+.ph-guide-title { font-family: var(--font-d); font-size: var(--d-sub); font-weight: 300; color: var(--navy); line-height: 1.25; margin-bottom: var(--s-2); }
+.ph-guide p { font-size: var(--b-sm); font-weight: 300; line-height: 1.7; color: var(--text-2); max-width: 520px; margin-bottom: var(--s-3); }
+.ph-guide-form { display: flex; gap: var(--s-2); flex-wrap: wrap; }
+.ph-guide-form input[type="text"] {
+  flex: 1 1 220px; padding: 0.8125rem 0.875rem;
+  font-family: var(--font-b); font-size: var(--b-md); font-weight: 400;
+  color: var(--text-1); background: var(--white);
+  border: 1px solid var(--border-strong); border-radius: 0;
+  transition: border-color 0.3s; -webkit-appearance: none; appearance: none;
+}
+.ph-guide-form input:focus { outline: none; border-color: var(--gold-dark); }
+.ph-guide-form input[aria-invalid="true"] { border-color: #b84747; }
+.ph-hp { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
+.ph-guide-sent {
+  font-size: var(--b-md); font-weight: 300; line-height: 1.7; color: var(--text-1);
+  border-left: 3px solid var(--gold); background: var(--cream);
+  padding: var(--s-2) var(--s-3); animation: fadeUp 0.4s ease forwards;
+}
+
+/* Where we come in — navy bookend */
+.ph-cred {
+  background: radial-gradient(ellipse at 70% 80%, var(--navy-light), var(--navy) 65%);
+  color: var(--white); padding: var(--s-8) 0;
+}
+.ph-cred .label--light { margin-bottom: var(--s-3); display: block; }
+.ph-cred-text {
+  font-size: var(--b-lg); font-weight: 300; line-height: 1.85;
+  color: rgba(255,255,255,0.8); max-width: 720px;
+}
+
+/* CTA band */
+.ph-cta { background: var(--offwhite); border-top: 1px solid var(--border); padding: var(--s-7) 0; }
+.ph-cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-3); }
+.ph-cta-card {
+  background: var(--white); border: 1px solid var(--border); border-top: 2px solid var(--gold);
+  padding: var(--s-4) var(--s-4); display: block; text-decoration: none;
+  transition: border-color 0.3s;
+}
+.ph-cta-card:hover { border-color: var(--gold-dark); }
+.ph-cta-title { font-family: var(--font-d); font-size: var(--d-sub); font-weight: 300; color: var(--navy); line-height: 1.25; margin-bottom: var(--s-1); }
+.ph-cta-sub { font-size: var(--b-sm); font-weight: 300; line-height: 1.65; color: var(--text-2); }
+
+@media (max-width: 768px) {
+  .ph-gates { grid-template-columns: 1fr; }
+  .ph-cta-grid { grid-template-columns: 1fr; }
+  .ph-guide-form input[type="text"] { flex-basis: 100%; }
+  .ph-guide-form .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body class="page-editorial">
+
+<!-- NAV (page is off main nav; standard chrome) -->
+<nav class="nav">
+  <div class="nav-inner">
+  <a href="/" class="nav-brand">
+    <img class="nav-mono" src="images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="listings/">Listings</a>
+    <a href="/team">Our Team</a>
+    <a href="/services">Services</a>
+    <a href="/track-record">Track Record</a>
+    <div class="nav-drop">
+      <a href="tools/">Calculators</a>
+      <div class="nav-drop-menu">
+        <a href="/tools/underwrite">The Underwriter</a>
+        <a href="/tools/financing-modeler">Financing Modeler</a>
+        <a href="/tools/disposition-calculator">Disposition Proceeds</a>
+        <a href="/tools/compounding-modeler">Compounding Modeler</a>
+      </div>
+    </div>
+    <a href="learn/">Learn</a><a href="/insights">Insights</a>
+    <a class="nav-cta" href="/contact">Contact</a>
+  </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- 1 · HERO -->
+<header class="ph-hero on-dark">
+  <div class="wrap">
+    <div class="label label--light">Analysis &middot; For the Long-Tenured Owner</div>
+    <h1 class="ph-hero-title">Most owners can quote what their building would sell for. Fewer can quote what <em class="gi">keeping</em> it will cost.</h1>
+    <p class="ph-hero-sub">Written for owners twenty or thirty years into a building. The arithmetic of the next five years of ownership, the honest net of an exit, and a third option most conversations skip — laid out so you can run the numbers before anyone suggests a sign.</p>
+  </div>
+</header>
+
+<!-- 2 · OPENING -->
+<section class="ph-section">
+  <div class="wrap">
+    <p class="ph-prose">You have owned the building long enough that it mostly runs. The mortgage is small or gone, the tenants are long, and the income arrives whether or not you think about it. Which is exactly why the hold-or-sell question is hard to see clearly: nothing about the building forces the question, and most of the people raising it are paid on one side of the answer.</p>
+    <p class="ph-prose">Including us. A brokerage earns its fee when buildings trade — which is precisely why the only version of this decision worth trusting is the one you can price yourself, on both sides. This page lays out both prices. It does not tell you which to choose, because that answer lives in your rent roll, your capital plan, and your family — not in anyone&rsquo;s marketing.</p>
+  </div>
+</section>
+
+<!-- 3 · THE HOLD HAS A PRICE NOW -->
+<section class="ph-section" style="background:var(--offwhite);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="label">The Ledger</div>
+    <h2 class="ph-section-title">The hold has a price now</h2>
+    <p class="ph-prose">Holding used to be close to free for a long-tenured owner: a paid-down mortgage, familiar expenses, rents that drifted up. Several of those inputs have repriced, and each belongs in the hold&rsquo;s underwriting as a line item, not a mood.</p>
+
+    <div class="ph-ledger">
+      <div class="ph-line">
+        <div class="ph-line-k">Insurance</div>
+        <p>Premiums on multi-residential buildings repriced hard between 2019 and 2024 — Ontario owners have watched the line roughly double over the past decade, and even U.S. Federal Reserve data puts multifamily insurance costs up more than 75% in real terms over just five of those years. Renewals have cooled recently as the commercial market softened — but nobody is refunding the repricing. The line item settled at a permanently higher base, and on an older building it is no longer a rounding line.</p>
+      </div>
+      <div class="ph-line">
+        <div class="ph-line-k">Debt</div>
+        <p>About 60% of Canadian mortgages renew by the end of 2026 (Bank of Canada), and money locked in at the 2020&ndash;21 lows resets at today&rsquo;s rates. Commercial multi-residential carries the same five-year clock: a charge registered in 2020 or 2021 matures now. An owner who financed at the lows is, at renewal, buying today&rsquo;s debt at today&rsquo;s price — whatever the original spreadsheet said.</p>
+      </div>
+      <div class="ph-line">
+        <div class="ph-line-k">The capital clock</div>
+        <p>A 1970s building keeps 1970s appointments. Roofs, boilers, windows, plumbing stacks, balconies, electrical — the systems age on their own schedule, several of them land six figures at a time, and none of them care that the mortgage is paid off. The question is not whether these bills arrive but whose ownership they arrive in.</p>
+      </div>
+      <div class="ph-line">
+        <div class="ph-line-k">The rental market, honestly</div>
+        <p>Record apartment completions in 2025 pushed purpose-built vacancy up, and near-term conditions favour tenants in many markets — which shows up for an owner as slower lease-ups and softer renewal leverage. Forward construction starts are falling, so this is a phase, not a permanent state; but the next few years of holding include it.</p>
+      </div>
+      <div class="ph-line">
+        <div class="ph-line-k">Administration</div>
+        <p>Ontario&rsquo;s tenancy framework applies to every unit you own, and more tenancies mean more potential contact with it. Professional management changes the severity and cost of each incident — not the number of doors that can generate one.</p>
+      </div>
+    </div>
+
+    <p class="ph-prose" style="margin-top:var(--s-4)">None of these is an argument to sell. Each is a number, and numbers belong in a ledger, not a sales letter.</p>
+  </div>
+</section>
+
+<!-- 4 · HOLDING IS A PURCHASE -->
+<section class="ph-section">
+  <div class="wrap">
+    <div class="label">The Frame</div>
+    <h2 class="ph-section-title">Holding is a purchase</h2>
+    <p class="ph-prose">Here is the frame that makes the decision tractable: <strong>every year you hold, you are choosing to buy the building again</strong> — at today&rsquo;s value, with your equity, at today&rsquo;s insurance, today&rsquo;s debt, and today&rsquo;s place in the capital cycle.</p>
+    <p class="ph-prose">So ask the question in that form. If the building came to market today at its current value, with its current rent roll and its coming capital plan — would you be a buyer? If the answer is yes, hold with a clear conscience; the same arithmetic that would price a sale is telling you the hold earns its keep. If you hesitate, the hesitation has a number, and it is worth finding before the decision gets made for you by a boiler, a renewal date, or an estate.</p>
+  </div>
+</section>
+
+<!-- 5 · THE EXIT HAS A TOLL -->
+<section class="ph-section" style="background:var(--offwhite);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="label">The Other Side</div>
+    <h2 class="ph-section-title">The exit has a toll</h2>
+    <p class="ph-prose">Selling is not converting a building into its price. Canada has no equivalent of the American 1031 exchange — there is no rolling a sale into the next property untaxed. The proceeds pass through a toll booth, and the toll has three gates:</p>
+
+    <div class="ph-gates">
+      <div class="ph-gate-card">
+        <div class="ph-gate-k">Recapture</div>
+        <p>Every dollar of capital cost allowance claimed over the decades comes back as ordinary income in the year of sale. A long, well-advised hold usually means a low UCC — which is exactly what makes the recapture large.</p>
+      </div>
+      <div class="ph-gate-card">
+        <div class="ph-gate-k">The gain</div>
+        <p>The lift above your original cost is a capital gain, half of it taxable at your rate (50% inclusion — the proposed increase was cancelled and never took effect).</p>
+      </div>
+      <div class="ph-gate-card">
+        <div class="ph-gate-k">The friction</div>
+        <p>Selling costs, mortgage payout and any penalty, legal.</p>
+      </div>
+    </div>
+
+    <div class="ph-panel">
+      <span class="ph-panel-label">Hypothetical illustration. All assumptions shown. Not tax advice; your accountant should model your actual position.</span>
+      <div class="ph-panel-assump">
+        <div class="ph-assump">$1.2M<span>Original cost</span></div>
+        <div class="ph-assump">$700K<span>UCC at sale</span></div>
+        <div class="ph-assump">$3.0M<span>Sale price</span></div>
+      </div>
+      <p>A building bought decades ago for $1.2M, ground down to a $700K UCC, selling at $3.0M: roughly $500K returns as recaptured income, $1.8M is capital gain with $900K taxable, and costs of sale stack on top — the gap between price and net routinely lands in the hundreds of thousands. The exact figure is knowable in advance: the <strong><a href="/tools/disposition-calculator" style="color:var(--gold-dark)">Disposition Proceeds Calculator</a></strong> on this site walks price to net — selling costs, payout, penalty, recapture, and gains — at your numbers, with nothing gated.</p>
+    </div>
+
+    <p class="ph-prose">Two things follow. First, <strong>your accountant should see your UCC position before you form a price expectation</strong> — not after an offer arrives. Second, structure is set before listing or not at all: share versus asset sale, entity questions, and timing can move the net materially, and they are decisions for your accountant and lawyer with the brokerage working alongside — never the other way around.</p>
+  </div>
+</section>
+
+<!-- 6 · WHAT PREPARATION IS WORTH -->
+<section class="ph-section">
+  <div class="wrap">
+    <div class="label">Preparation</div>
+    <h2 class="ph-section-title">What preparation is worth</h2>
+    <p class="ph-prose">If the ledger does point to a sale — this year or in five — the difference between a well-prepared and a poorly-prepared disposition can be hundreds of thousands of dollars, and almost none of it is marketing polish.</p>
+    <p class="ph-prose">Buyers pay for what they can underwrite. A documented gap between in-place and market rents is value a buyer&rsquo;s lender can see; an undocumented one is a story. Normalized operating expenses let a buyer bid the building instead of padding for uncertainty. An assembled capital history — what was done, when, what remains — shrinks the diligence discount. Preparation is not staging; it is making the income legible, because the income is the price.</p>
+  </div>
+</section>
+
+<!-- 7 · THE OPTION BETWEEN -->
+<section class="ph-section" style="padding-top:0">
+  <div class="wrap">
+    <div class="label">The Third Branch</div>
+    <h2 class="ph-section-title">The option between hold and sell</h2>
+    <p class="ph-prose">One more branch, named because most conversations skip it: <strong>transition.</strong> Some buildings should pass to the next generation rather than to the market — and that path has its own structuring questions (timing, entities, estate mechanics) that reward the same early advisory work as a sale. Our own family has moved buildings between generations across three of them; it is why we will not tell you that selling is always the answer. Sometimes the right buyer shares your last name.</p>
+
+    <!-- STEWARD'S GUIDE GATE -->
+    <div class="ph-guide" id="guide">
+      <div class="label"><a href="/generational-wealth" style="color:inherit;text-decoration:none">The Generational Wealth Series &middot; Volume II</a></div>
+      <h3 class="ph-guide-title">The Steward&rsquo;s Guide</h3>
+      <p>The complete owner&rsquo;s guide — the hold&rsquo;s ledger, the exit&rsquo;s toll, and the transition path, in full. Written by a three-generation multi-family family. Delivered as a PDF, by email.</p>
+      <form class="ph-guide-form" id="ph-guide-form" novalidate>
+        <input type="text" id="ph-first" name="firstName" placeholder="First name (optional)" autocomplete="given-name" aria-label="First name (optional)">
+        <input type="text" id="ph-email" name="email" placeholder="Email" inputmode="email" autocomplete="email" required aria-label="Email">
+        <div class="ph-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+        <label class="mck-consent" id="ph-consent-row"><input type="checkbox" id="ph-consent" checked> Email me McKinney Realty's market updates and educational content. Unsubscribe anytime.</label>
+        <button type="submit" class="btn btn--navy" id="ph-guide-submit">Send me the guide</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · WHERE WE COME IN -->
+<section class="ph-cred on-dark">
+  <div class="wrap">
+    <span class="label label--light">Where We Come In</span>
+    <p class="ph-cred-text">What we bring to an owner weighing this is not a pitch — it is the underwriting. A confidential valuation built the way a buyer&rsquo;s lender would build it; the loss-to-lease and expense work that makes the building legible; and, if the ledger points to a sale, marketing to a buyer pool that already owns comparable buildings in comparable markets. Three generations of this family have owned, financed, and brokered Ontario multi-family; the fee only ever attaches to the last part.</p>
+  </div>
+</section>
+
+<!-- 9 · CTA BAND -->
+<section class="ph-cta">
+  <div class="wrap">
+    <div class="ph-cta-grid">
+      <a class="ph-cta-card" href="/tools/disposition-calculator">
+        <div class="ph-cta-title">Price your own exit</div>
+        <div class="ph-cta-sub">Disposition Proceeds Calculator — ungated</div>
+      </a>
+      <a class="ph-cta-card" href="#guide">
+        <div class="ph-cta-title">The complete owner&rsquo;s guide</div>
+        <div class="ph-cta-sub">The Steward&rsquo;s Guide — by email</div>
+      </a>
+      <a class="ph-cta-card" href="/disposition-intake">
+        <div class="ph-cta-title">A confidential valuation</div>
+        <div class="ph-cta-sub">Disposition intake — principal-led, no obligation</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- COMPLIANCE FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="images/mr-monogram-lg.png" alt="McKinney Realty">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; Liam McKinney, Broker, Property.ca Inc., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="listings/">Listings</a><a href="/team">Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="tools/">Calculators</a><a href="learn/">Learn</a><a href="/insights">Insights</a><a href="/contact">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="mckinney-forms.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+
+  $('ph-guide-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var form = $('ph-guide-form');
+    if (form.elements.company_website.value) return;   // honeypot
+
+    var email = $('ph-email').value.trim();
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+    $('ph-email').setAttribute('aria-invalid', emailOk ? 'false' : 'true');
+    if (!emailOk) { $('ph-email').focus(); return; }
+
+    var btn = $('ph-guide-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    window.McKinneyForms.submit({
+      form_type: 'guide',
+      formType: 'guide',
+      guideSlug: 'stewards-guide',
+      asset: 'stewards-guide',
+      firstName: $('ph-first').value.trim(),
+      email: email,
+      // campaign/persona tagged in note for CRM-row visibility until the
+      // Apps Script promotes these to first-class fields (logged follow-up)
+      note: '[campaign: price-of-holding · persona: sellside]',
+      waitlist: false,
+      campaign: 'price-of-holding',
+      persona: 'sellside',
+      page: 'price-of-holding',
+      consent: document.getElementById('ph-consent').checked,
+      consent_ts: document.getElementById('ph-consent').checked ? new Date().toISOString() : '',
+      consent_basis: 'prechecked',
+      consent_source: 'price-of-holding',
+      ts: new Date().toISOString()
+    }).then(function () {
+      track('lead_submit', {
+        form_type: 'guide',
+        guide_slug: 'stewards-guide',
+        campaign: 'price-of-holding',
+        persona: 'sellside'
+      });
+      var sent = document.createElement('div');
+      sent.className = 'ph-guide-sent';
+      sent.setAttribute('role', 'status');
+      sent.textContent = 'It’s on its way to your inbox.';
+      form.parentNode.replaceChild(sent, form);
+    }).catch(function () {
+      btn.disabled = false;
+      btn.textContent = 'Try again';
+    });
+  });
+
+  // Nav hamburger
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+})();
+</script>
+</body>
+</html>
