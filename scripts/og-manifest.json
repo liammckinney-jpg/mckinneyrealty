@@ -1,0 +1,151 @@
+{
+  "/index.html": {
+    "kicker": "MCKINNEY REALTY",
+    "slug": "home"
+  },
+  "/team.html": {
+    "kicker": "MCKINNEY REALTY"
+  },
+  "/services.html": {
+    "kicker": "MCKINNEY REALTY"
+  },
+  "/track-record.html": {
+    "kicker": "MCKINNEY REALTY"
+  },
+  "/contact.html": {
+    "kicker": "MCKINNEY REALTY"
+  },
+  "/acquisition-intake.html": {
+    "kicker": "MCKINNEY REALTY"
+  },
+  "/disposition-intake.html": {
+    "kicker": "MCKINNEY REALTY"
+  },
+  "/insights.html": {
+    "kicker": "ANALYSIS"
+  },
+  "/cashflow.html": {
+    "kicker": "ANALYSIS",
+    "type": "article",
+    "emphasis": "income"
+  },
+  "/the-50000-problem.html": {
+    "kicker": "ANALYSIS",
+    "type": "article"
+  },
+  "/consolidation.html": {
+    "kicker": "ANALYSIS",
+    "type": "article"
+  },
+  "/generational-wealth.html": {
+    "kicker": "ANALYSIS",
+    "type": "article"
+  },
+  "/consolidation-math.html": {
+    "exempt": true
+  },
+  "/tools/index.html": {
+    "kicker": "INTERACTIVE TOOL"
+  },
+  "/tools/underwrite.html": {
+    "kicker": "INTERACTIVE TOOL"
+  },
+  "/tools/financing-modeler.html": {
+    "kicker": "INTERACTIVE TOOL"
+  },
+  "/tools/disposition-calculator.html": {
+    "kicker": "INTERACTIVE TOOL"
+  },
+  "/tools/compounding-modeler.html": {
+    "kicker": "INTERACTIVE TOOL"
+  },
+  "/learn/index.html": {
+    "kicker": "LEARN"
+  },
+  "/learn/why-multi-family.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/listings/index.html": {
+    "image": "/images/listings/elgin-hero.jpg"
+  },
+  "/listings/58-60-elgin-street.html": {
+    "image": "/images/listings/elgin-hero.jpg"
+  },
+  "/overlooked-markets.html": {
+    "kicker": "ANALYSIS",
+    "type": "article",
+    "future": true,
+    "title": "The Overlooked Markets"
+  },
+  "/inflation-question.html": {
+    "kicker": "ANALYSIS",
+    "type": "article",
+    "future": true,
+    "title": "The Inflation Question"
+  },
+  "/learn/lesson-1.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/learn/lesson-2.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/learn/lesson-3.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/learn/lesson-4.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/learn/lesson-5.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/learn/lesson-6.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/learn/lesson-7.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/learn/lesson-8.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/learn/mechanics/what-youre-buying.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/learn/mechanics/cost-to-run.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/learn/mechanics/worth-more.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/learn/mechanics/where-returns-leak.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/learn/mechanics/value-add.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/learn/mechanics/reading-a-listing.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/learn/mechanics/lenders-math.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  },
+  "/learn/mechanics/fit.html": {
+    "kicker": "LEARN",
+    "type": "article"
+  }
+}

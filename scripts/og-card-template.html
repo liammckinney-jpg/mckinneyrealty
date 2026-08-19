@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* OG card master — tokens from mckinney-system.css (navy/gold/offwhite; Cormorant + DM Sans) */
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;background:#1A1F2E;position:relative;overflow:hidden;
+     font-family:'DM Sans',-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+.wm{position:absolute;right:-140px;top:50%;transform:translateY(-50%);height:820px;opacity:.04;pointer-events:none}
+.inner{position:absolute;inset:0;padding:72px 84px;display:flex;flex-direction:column}
+.kicker{font-size:22px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#9A8B6F}
+.title{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;color:#FAFAF8;
+       font-size:{{SIZE}}px;line-height:1.12;margin-top:28px;max-width:920px;flex:1;
+       display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.title em{font-style:italic;color:#C9BBAA}
+.foot{border-top:1px solid rgba(184,168,138,.5);padding-top:26px;display:flex;align-items:baseline;gap:22px}
+.foot .wordmark{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:26px;
+                letter-spacing:.18em;text-transform:uppercase;color:#FAFAF8}
+.foot .byline{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:#9A8B6F}
+.flag{display:none;position:absolute;inset:0;background:rgba(176,65,62,.92);color:#fff;
+      font-size:44px;font-weight:600;align-items:center;justify-content:center;text-align:center;padding:60px}
+body.overflow .flag{display:flex}
+</style></head>
+<body>
+<img class="wm" src="../images/mr-monogram-lg.png">
+<div class="inner">
+  <div class="kicker">{{KICKER}}</div>
+  <div class="title" id="t">{{TITLE}}</div>
+  <div class="foot"><span class="wordmark">McKinney Realty</span><span class="byline">Multi-Family &amp; Investment Real Estate Brokers</span></div>
+</div>
+<div class="flag">TITLE DOES NOT FIT — FLAG BACK</div>
+<script>
+// Long-title rule: step down 76 -> 64 -> 56; below that, flag — never truncate mid-word.
+(function(){
+  var t = document.getElementById('t');
+  var steps = [76, 64, 56];
+  var i = steps.indexOf(parseInt(getComputedStyle(t).fontSize, 10));
+  if (i < 0) i = 0;
+  function fits(){ return t.scrollHeight <= t.clientHeight + 4; }
+  while (i < steps.length - 1 && (t.style.fontSize = steps[i] + 'px', t.offsetHeight, fits()) === false) i++;
+  t.style.fontSize = steps[i] + 'px';
+  if (fits() === false) document.body.classList.add('overflow');
+})();
+</script>
+</body></html>
