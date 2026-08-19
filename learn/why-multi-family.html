@@ -57,34 +57,35 @@
 .wz-hp { position: absolute; left: -9999px; }
 .wz-note { font-size: 0.75rem; color: var(--text-3); font-weight: 300; margin-top: 10px; }
 .wz-sent { font-size: var(--b-md); font-weight: 300; color: var(--text-1); padding: 0.5rem 0; }
-.wz-band { background: var(--navy); padding: var(--s-6) 0; position: relative; overflow: hidden; }
-.wz-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 90% at 80% 0%, rgba(184,168,138,0.12), transparent 60%); pointer-events: none; }
+.wz-band { background: var(--white); border-bottom: 1px solid var(--border); padding: var(--s-6) 0; position: relative; overflow: hidden; }
+.wz-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 90% at 85% 0%, rgba(184,168,138,0.10), transparent 60%); pointer-events: none; }
 .wz-band .wrap { position: relative; z-index: 1; }
 .wz-band-grid { display: grid; grid-template-columns: 2fr 3fr; gap: var(--s-6); align-items: start; }
-.wz-sentence { font-family: var(--font-d); font-size: clamp(1.25rem, 2vw, 1.6rem); font-weight: 300; line-height: 1.9; color: #F5F2EC; }
+.wz-sentence { font-family: var(--font-d); font-size: clamp(1.25rem, 2vw, 1.6rem); font-weight: 300; line-height: 1.9; color: var(--navy); }
 .wz-hold { white-space: nowrap; }
 .wz-inline {
   background: transparent; border: none; border-bottom: 2px solid var(--gold-dark);
-  color: var(--gold-light); font-family: var(--font-d); font-size: inherit; font-weight: 400;
+  color: var(--gold-dark); font-family: var(--font-d); font-size: inherit; font-weight: 500;
   padding: 0 2px 1px; text-align: center; min-width: 2ch;
 }
-.wz-inline:focus { outline: none; border-bottom-color: var(--gold-light); }
-.wz-zero { font-size: 0.72em; font-style: italic; color: rgba(245,242,236,0.55); }
+.wz-inline:focus { outline: none; border-bottom-color: var(--navy); }
+.wz-zero { font-size: 0.72em; font-style: italic; color: var(--text-3); }
 .wz-hero-num {
-  font-family: var(--font-d); font-weight: 400; color: var(--gold-light);
+  font-family: var(--font-d); font-weight: 400; color: var(--navy);
   font-size: clamp(2.6rem, 5.5vw, 4rem); line-height: 1.05; min-height: 1.1em;
 }
-.wz-count { font-size: 1.05rem; font-weight: 300; color: #F5F2EC; margin-top: 0.4rem; }
-.wz-echo { font-size: 0.78rem; font-weight: 300; color: rgba(245,242,236,0.5); margin-top: 0.45rem; line-height: 1.6; }
-.wz-tl { margin-top: var(--s-3); border-left: 1px solid rgba(184,168,138,0.35); padding-left: var(--s-3); }
+.wz-count { font-size: 1.05rem; font-weight: 400; color: var(--gold-dark); margin-top: 0.4rem; }
+.wz-echo { font-size: 0.78rem; font-weight: 300; color: var(--text-3); margin-top: 0.45rem; line-height: 1.6; }
+.wz-tl { margin-top: var(--s-3); border-left: 1px solid rgba(154,139,111,0.45); padding-left: var(--s-3); }
 .wz-tl-row { display: grid; grid-template-columns: 96px 1fr; gap: 0.9rem; padding: 0.42rem 0; }
-.wz-tl-year { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-light); font-weight: 500; padding-top: 2px; white-space: nowrap; }
-.wz-tl-text { font-size: 0.9rem; font-weight: 300; color: rgba(245,242,236,0.75); line-height: 1.6; }
-.wz-tl-row--ellipsis .wz-tl-text { color: rgba(245,242,236,0.45); font-style: italic; }
+.wz-tl-year { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); font-weight: 500; padding-top: 2px; white-space: nowrap; }
+.wz-tl-text { font-size: 0.9rem; font-weight: 300; color: var(--text-2); line-height: 1.6; }
+.wz-tl-row--ellipsis .wz-tl-text { color: var(--text-3); font-style: italic; }
 .wz-modeler-cta { margin-top: var(--s-3); }
+.wz-band .mx-hypo { color: var(--text-3); }
 .wm-adv { margin-top: var(--s-3); }
-.wm-adv summary { font-size: 0.75rem; letter-spacing: 0.06em; color: rgba(245,242,236,0.55); cursor: pointer; }
-.wm-adv p { font-size: 0.8rem; font-weight: 300; color: rgba(245,242,236,0.55); line-height: 1.65; margin-top: 0.5rem; }
+.wm-adv summary { font-size: 0.75rem; letter-spacing: 0.06em; color: var(--text-3); cursor: pointer; }
+.wm-adv p { font-size: 0.8rem; font-weight: 300; color: var(--text-2); line-height: 1.65; margin-top: 0.5rem; }
 @media (max-width: 900px) {
   .wz-band-grid { grid-template-columns: 1fr; gap: var(--s-4); }
   .wz-modeler-cta { width: 100%; justify-content: center; }
