@@ -105,6 +105,10 @@
 }
 .el-m-val { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 400; color: #F5F2EC; line-height: 1; }
 .el-m-lbl { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,242,236,0.5); margin-top: 6px; font-weight: 400; }
+.el-metrics-ctas { display: flex; flex-direction: column; gap: 8px; }
+.el-metrics-ctas .btn { justify-content: center; white-space: nowrap; }
+.btn--ghost-gold { background: transparent; border: 1px solid rgba(184,168,138,0.55); color: #C9BBAA; }
+.btn--ghost-gold:hover { border-color: #B8A88A; color: #F5F2EC; }
 
 /* ---- body layout ---------------------------------------------------- */
 .el-body { padding: 72px 0 8px; }
@@ -170,6 +174,8 @@
   .el-cols { grid-template-columns: 1fr; gap: 44px; }
   .el-side { position: static; }
   .el-metrics .wrap { grid-template-columns: repeat(3, 1fr); row-gap: 20px; }
+  .el-metrics-ctas { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; }
+  .el-metrics-ctas .btn { flex: 1 1 220px; }
 }
 @media (max-width: 720px) {
   .wrap { padding: 0 22px; }
@@ -242,7 +248,10 @@
     <div><div class="el-m-val">8.4%</div><div class="el-m-lbl">Stabilized</div></div>
     <div><div class="el-m-val">$162K</div><div class="el-m-lbl">Per Door</div></div>
     <div><div class="el-m-val">$223,606</div><div class="el-m-lbl">NOI (In-Place)</div></div>
-    <a href="#request" class="btn btn--gold">Request Investment Summary <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    <div class="el-metrics-ctas">
+      <a href="#request" class="btn btn--gold">Request Investment Summary <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a href="../tools/underwrite.html?price=3890000&amp;units=24&amp;tax=54219&amp;rentmo=27858&amp;laundrymo=250&amp;ins=6624&amp;src=elgin" class="btn btn--ghost-gold">Underwrite This Property <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
   </div>
 </div>
 
@@ -254,7 +263,6 @@
       <div>
         <div class="el-label">The Offering</div>
         <p class="el-desc">Two freestanding 12-plex buildings on adjacent lots — 24 units of portfolio-level scale at small-building pricing. In-place rents average 23.9% below market, creating $104,905 in annualized rent upside on natural turnover alone. The seller has completed over $200K in major capital including fire alarm retrofit and window replacement across both buildings, materially reducing near-term capital exposure for an incoming operator. Hydro individually metered to tenants. A single superintendent covers both buildings at $7,248 per year.</p>
-        <p style="margin-top:22px"><a class="btn btn--outline" href="../tools/underwrite.html?price=3890000&amp;units=24&amp;tax=54219&amp;rentmo=27858&amp;laundrymo=250&amp;ins=6624&amp;src=elgin">Open in the Underwriter <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
 
 
         <div class="el-hl">
