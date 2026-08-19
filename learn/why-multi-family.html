@@ -57,11 +57,39 @@
 .wz-hp { position: absolute; left: -9999px; }
 .wz-note { font-size: 0.75rem; color: var(--text-3); font-weight: 300; margin-top: 10px; }
 .wz-sent { font-size: var(--b-md); font-weight: 300; color: var(--text-1); padding: 0.5rem 0; }
+.wz-band { background: var(--navy); padding: var(--s-6) 0; position: relative; overflow: hidden; }
+.wz-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 90% at 80% 0%, rgba(184,168,138,0.12), transparent 60%); pointer-events: none; }
+.wz-band .wrap { position: relative; z-index: 1; }
+.wz-band-grid { display: grid; grid-template-columns: 2fr 3fr; gap: var(--s-6); align-items: start; }
+.wz-sentence { font-family: var(--font-d); font-size: clamp(1.25rem, 2vw, 1.6rem); font-weight: 300; line-height: 1.9; color: #F5F2EC; }
+.wz-hold { white-space: nowrap; }
+.wz-inline {
+  background: transparent; border: none; border-bottom: 2px solid var(--gold-dark);
+  color: var(--gold-light); font-family: var(--font-d); font-size: inherit; font-weight: 400;
+  padding: 0 2px 1px; text-align: center; min-width: 2ch;
+}
+.wz-inline:focus { outline: none; border-bottom-color: var(--gold-light); }
+.wz-zero { font-size: 0.72em; font-style: italic; color: rgba(245,242,236,0.55); }
+.wz-hero-num {
+  font-family: var(--font-d); font-weight: 400; color: var(--gold-light);
+  font-size: clamp(2.6rem, 5.5vw, 4rem); line-height: 1.05; min-height: 1.1em;
+}
+.wz-count { font-size: 1.05rem; font-weight: 300; color: #F5F2EC; margin-top: 0.4rem; }
+.wz-echo { font-size: 0.78rem; font-weight: 300; color: rgba(245,242,236,0.5); margin-top: 0.45rem; line-height: 1.6; }
+.wz-tl { margin-top: var(--s-3); border-left: 1px solid rgba(184,168,138,0.35); padding-left: var(--s-3); }
+.wz-tl-row { display: grid; grid-template-columns: 96px 1fr; gap: 0.9rem; padding: 0.42rem 0; }
+.wz-tl-year { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-light); font-weight: 500; padding-top: 2px; white-space: nowrap; }
+.wz-tl-text { font-size: 0.9rem; font-weight: 300; color: rgba(245,242,236,0.75); line-height: 1.6; }
+.wz-tl-row--ellipsis .wz-tl-text { color: rgba(245,242,236,0.45); font-style: italic; }
+.wz-modeler-cta { margin-top: var(--s-3); }
+.wm-adv { margin-top: var(--s-3); }
+.wm-adv summary { font-size: 0.75rem; letter-spacing: 0.06em; color: rgba(245,242,236,0.55); cursor: pointer; }
+.wm-adv p { font-size: 0.8rem; font-weight: 300; color: rgba(245,242,236,0.55); line-height: 1.65; margin-top: 0.5rem; }
+@media (max-width: 900px) {
+  .wz-band-grid { grid-template-columns: 1fr; gap: var(--s-4); }
+  .wz-modeler-cta { width: 100%; justify-content: center; }
+}
 .wz-leadin { font-size: 0.8rem; letter-spacing: 0.02em; color: var(--gold-dark); font-weight: 400; margin-bottom: 0.5rem; }
-.wm-zero-note { display: block; font-size: 0.66rem; letter-spacing: 0.02em; text-transform: none; color: var(--gold-light); font-style: italic; margin-top: 2px; }
-.wm-adv { margin-top: 0.9rem; }
-.wm-adv summary { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,242,236,0.5); cursor: pointer; }
-.wm-adv p { font-size: 0.78rem; font-weight: 300; color: rgba(245,242,236,0.55); line-height: 1.65; margin-top: 0.5rem; }
 .wz-close { display: flex; gap: var(--s-3); flex-wrap: wrap; align-items: center; margin: var(--s-5) 0 0; }
 .mx-body { padding-bottom: var(--s-7); }
 @media (max-width: 720px) { .mx-hero { padding: 110px 0 36px; } }
@@ -113,41 +141,43 @@
   </div>
 </header>
 
+<!-- WIDGET v3: full-bleed band — the machine, on numbers you can change
+     (Compounding Modeler engine + DEFAULTS, imported, not forked) -->
+<section class="wz-band" id="w-machine">
+  <div class="wrap">
+    <div class="wz-band-grid">
+      <div class="wz-sentence-col">
+        <p class="wz-sentence">If I start with
+          <span class="wz-hold"><input class="wz-inline" id="wm-eq" inputmode="decimal" value="$500,000" aria-label="Starting capital — the money you begin with"></span>, borrow at
+          <span class="wz-hold"><input class="wz-inline" id="wm-rate" inputmode="decimal" value="4.0" aria-label="Interest rate — what the bank charges on the mortgage">%</span>, hold for
+          <span class="wz-hold"><input class="wz-inline" id="wm-hold" inputmode="decimal" value="25" aria-label="Hold — how long you stay in"> years</span>, and property prices grow
+          <span class="wz-hold"><input class="wz-inline" id="wm-growth" inputmode="decimal" value="0" aria-label="Price growth — how much building prices rise each year">% a year</span>
+          <em class="wz-zero">&mdash; we set this one to zero on purpose &mdash;</em> then:
+        </p>
+        <details class="wm-adv">
+          <summary>Everything else we assumed &mdash; open it and judge for yourself.</summary>
+          <p>We assumed buildings are bought at a 6% cap rate &mdash; meaning a building producing $60,000 a year of income costs $1,000,000.</p>
+          <p>We assumed you borrow 75% of what a building is worth, and refinance back up to 75% every 7 years &mdash; each refinance costs 2% of the new loan.</p>
+          <p>Mortgages pay off over 30 years.</p>
+          <p>Rent money left over each year sits uninvested at 0% until the next refinance.</p>
+          <p>The full Modeler lets you change all of these.</p>
+        </details>
+      </div>
+      <div class="wz-out-col">
+        <div class="wz-hero-num" id="wm-out" aria-live="polite">&mdash;</div>
+        <div class="wz-count" id="wm-count"></div>
+        <div class="wz-echo" id="wm-preset-line"></div>
+        <div class="wz-echo">An illustration on the assumptions shown &mdash; change any of them.</div>
+        <div class="wz-tl" id="wm-tl"></div>
+        <a class="btn btn--gold wz-modeler-cta" id="wz-modeler" href="../tools/compounding-modeler.html">Open the full Compounding Modeler <svg viewBox="0 0 16 16" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <div class="mx-hypo">A hypothetical twelve-plex. Illustrative figures &mdash; not a listing, not a market claim.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="mx-body">
   <div class="wrap">
-
-    <!-- WIDGET: the machine, on preset numbers (Compounding Modeler engine, imported) -->
-    <div class="mx-widget" id="w-machine">
-      <div class="mx-widget-label">The machine, on numbers you can change</div>
-      <div class="mx-grid">
-        <div class="mx-field">
-          <label for="wm-eq">Starting capital</label>
-          <input type="text" id="wm-eq" inputmode="decimal" value="500,000">
-        </div>
-        <div class="mx-field">
-          <label for="wm-hold">Hold</label>
-          <input type="text" id="wm-hold" inputmode="decimal" value="25">
-        </div>
-        <div class="mx-field">
-          <label for="wm-growth">Property price growth <span class="wm-zero-note">even if prices never rise a dollar</span></label>
-          <input type="text" id="wm-growth" inputmode="decimal" value="0">
-        </div>
-        <div class="mx-field">
-          <label for="wm-rate">Interest rate</label>
-          <input type="text" id="wm-rate" inputmode="decimal" value="5.0">
-        </div>
-      </div>
-      <div class="mx-out" style="grid-template-columns:1fr">
-        <div><div class="num" id="wm-out" style="font-size:2rem">&mdash;</div><div class="lbl" id="wm-preset-line"></div></div>
-      </div>
-      <div class="mx-delta" style="margin-top:0.7rem">An illustration on the assumptions shown &mdash; change any of them.</div>
-      <details class="wm-adv">
-        <summary>The rest of the assumptions</summary>
-        <p>Purchase cap rate 4.75% &middot; 75% loan-to-value &middot; 30-year amortization &middot; refinance every 7 years at 2% friction, proceeds and accumulated cash flow redeployed at the same assumptions &middot; cash flow held uninvested at 0% throughout. The full Modeler lets you change all of these.</p>
-      </details>
-      <a class="btn btn--gold" id="wz-modeler" href="../tools/compounding-modeler.html">Open the full Compounding Modeler <svg viewBox="0 0 16 16" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      <div class="mx-hypo">A hypothetical twelve-plex. Illustrative figures &mdash; not a listing, not a market claim.</div>
-    </div>
 
     <!-- ENROLLMENT — above the fold after the hook -->
     <div class="wz-enroll" id="enroll">
@@ -230,37 +260,105 @@
     return raw === '' ? NaN : parseFloat(raw);
   }
 
-  // The machine, preset: the Compounding Modeler's own engine (imported,
-  // not forked), scoped to four visible inputs. All other conventions
-  // inherit the Modeler's internal assumption set (see the disclosure).
-  var PRESET = { cap: 0.0475, ltv: 0.75, am: 30, drift: 0, refiEvery: 7 };
+  // The machine (v3): the Compounding Modeler's engine + DEFAULTS, imported.
+  // Presentation: sentence inputs, hero-scale output, engine-derived timeline.
+  var CC = window.MCK_COMPOUND;
+  var PRESET = { cap: CC.DEFAULTS.capRate, ltv: 0.75, am: 30, drift: 0, refiEvery: 7 };
+  if (PRESET.cap <= CC.DEFAULTS.lessonZeroPresetInterestRate) {
+    // Preset spread invariant (also enforced in the engine test suite).
+    console.error('PRESET SPREAD VIOLATION: cap rate must exceed preset interest rate');
+  }
   var engaged = false;
   function num(el) {
     var raw = String(el.value).replace(/[$,%\s]/g, '');
     return raw === '' ? NaN : parseFloat(raw);
   }
   function clamp(v, lo, hi) { return Math.min(hi, Math.max(lo, v)); }
+  function fmtHero(v) {
+    if (isFinite(v) === false) return '—';
+    if (Math.abs(v) >= 1e7) return (v < 0 ? '−' : '') + '$' + (Math.abs(v) / 1e6).toFixed(1) + 'M';
+    return M.fmt$(v);
+  }
+  function sizeInput(el) { el.style.width = (String(el.value).length + 1) + 'ch'; }
+  var WORDS = ['two','three','four','five','six','seven','eight','nine','ten','eleven','twelve'];
+
+  function countPhrase(count) {
+    var n = Math.floor(count), frac = count - n;
+    if (n < 1) { n = 1; frac = 0; }
+    if (n === 1) return frac >= 0.15 ? '1 building — and partway to a second.' : '1 building.';
+    return frac >= 0.15 ? n + ' buildings — and partway to number ' + (n + 1) + '.' : n + ' buildings.';
+  }
+
+  // Count-up: ~600ms, text-only updates into a fixed-height block (no CLS).
+  var countAnim = null, countSnap = null;
+  function animateHero(from, to) {
+    if (countAnim) cancelAnimationFrame(countAnim);
+    if (countSnap) clearTimeout(countSnap);
+    var finalText = fmtHero(to) + ' of equity';
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced || document.hidden) { $('wm-out').textContent = finalText; return; }
+    var start = null, DUR = 600;
+    function step(ts) {
+      if (start === null) start = ts;
+      var p = Math.min(1, (ts - start) / DUR);
+      var eased = 1 - Math.pow(1 - p, 3);
+      $('wm-out').textContent = p < 1 ? fmtHero(from + (to - from) * eased) + ' of equity' : finalText;
+      if (p < 1) countAnim = requestAnimationFrame(step);
+    }
+    countAnim = requestAnimationFrame(step);
+    // rAF is suspended in hidden tabs — snap to the final value regardless.
+    countSnap = setTimeout(function () { $('wm-out').textContent = finalText; }, DUR + 120);
+  }
+  var lastEquity = 0;
+
+  function buildTimeline(r, eq, hold, count) {
+    var refis = r.years.filter(function (y) { return y.refiEvent; }).map(function (y) { return y.t; });
+    var rows = [];
+    rows.push(['Year 0', 'You buy building one, with your ' + M.fmt$(eq) + ' as the down payment.']);
+    var firstStop = refis.length ? refis[0] : hold;
+    if (firstStop > 1) rows.push(['Years 1–' + (firstStop - 1), "Tenants' rent pays the mortgage down, month after month."]);
+    refis.forEach(function (yr, i) {
+      var word = WORDS[Math.min(i, WORDS.length - 1)];
+      rows.push(['Year ' + yr, 'Enough of the loan is gone to refinance. That money becomes the down payment on building ' + word + '.']);
+    });
+    var paydown = r.years[r.years.length - 1].paydownCum;
+    var finalRow = ['Year ' + hold, countPhrase(count) + ' Tenants have retired ' + M.fmt$(paydown) + ' of debt. Your equity: ' + fmtHero(r.endingEquity) + '.'];
+    // Cap at 6 displayed milestones; collapse the middle with an ellipsis row.
+    var all = rows.concat([finalRow]);
+    if (all.length > 6) {
+      var head = rows.slice(0, 3);
+      var tail = rows[rows.length - 1];
+      all = head.concat([['', '…the cycle repeats…']], [tail], [finalRow]);
+    }
+    $('wm-tl').innerHTML = all.map(function (row) {
+      var cls = row[1].indexOf('cycle repeats') !== -1 ? ' wz-tl-row--ellipsis' : '';
+      return '<div class="wz-tl-row' + cls + '"><span class="wz-tl-year">' + row[0] + '</span><span class="wz-tl-text">' + row[1] + '</span></div>';
+    }).join('');
+  }
+
   function computeMachine() {
     var eq = clamp(num($('wm-eq')), 1000, 100000000);
     var hold = clamp(Math.round(num($('wm-hold'))), 1, 60);
     var growth = clamp(num($('wm-growth')), -10, 10);
     var rate = clamp(num($('wm-rate')), 0, 25);
+    ['wm-eq','wm-hold','wm-growth','wm-rate'].forEach(function (id) { sizeInput($(id)); });
     var ok = isFinite(eq) && isFinite(hold) && isFinite(growth) && isFinite(rate);
-    if (ok === false) { $('wm-out').textContent = '\u2014'; $('wm-preset-line').textContent = ''; return; }
-    var r = window.MCK_COMPOUND.simulate({
+    if (ok === false) { $('wm-out').textContent = '—'; $('wm-count').textContent = ''; $('wm-tl').innerHTML = ''; return; }
+    var r = CC.simulate({
       initialEquity: eq, interestRate: rate / 100, capRate: PRESET.cap,
       horizonYears: hold, ltv: PRESET.ltv, amortYears: PRESET.am,
       noiGrowth: growth / 100, capRateDriftBps: PRESET.drift,
       refiEnabled: true, refiIntervalYears: PRESET.refiEvery
     });
     if (isFinite(r.buildingCount) === false || isFinite(r.endingEquity) === false) {
-      $('wm-out').textContent = '\u2014'; return;
+      $('wm-out').textContent = '—'; return;
     }
-    var n = r.buildingCount.toFixed(1);
-    var label = n === '1.0' ? '1 building' : n + ' buildings';
-    $('wm-out').textContent = label + ' \u00b7 ' + M.fmt$(r.endingEquity) + ' of total equity';
-    $('wm-preset-line').textContent = 'On: ' + M.fmt$(eq) + ' to start \u00b7 ' + hold + '-year hold \u00b7 ' + growth + '% price growth \u00b7 ' + rate + '% interest';
-    $('wz-modeler').href = '../tools/compounding-modeler.html?eq=' + Math.round(eq) + '&ir=' + rate + '&yrs=' + Math.min(hold, 30) + '&g=' + Math.max(0, growth) + '&cap=4.75&ltv=0.75&am=30&drift=0&ri=7&refi=1';
+    animateHero(lastEquity, r.endingEquity);
+    lastEquity = r.endingEquity;
+    $('wm-count').textContent = countPhrase(r.buildingCount);
+    $('wm-preset-line').textContent = 'On: ' + M.fmt$(eq) + ' to start · ' + hold + '-year hold · ' + growth + '% price growth · ' + rate + '% interest';
+    buildTimeline(r, eq, hold, r.buildingCount);
+    $('wz-modeler').href = '../tools/compounding-modeler.html?eq=' + Math.round(eq) + '&ir=' + rate + '&yrs=' + Math.min(hold, 30) + '&g=' + Math.max(0, growth) + '&cap=' + (PRESET.cap * 100) + '&ltv=0.75&am=30&drift=0&ri=7&refi=1';
     return r;
   }
   ['wm-eq','wm-hold','wm-growth','wm-rate'].forEach(function (id) {

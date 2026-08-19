@@ -90,7 +90,8 @@
         </div>
         <div class="tool-field cm-slider">
           <label for="cm-cap">Cap rate <span class="cm-slider-value" id="cm-cap-v"></span></label>
-          <input type="range" id="cm-cap" min="3" max="8" step="0.05" value="4.75">
+          <!-- default 6.0 = MCK_COMPOUND.DEFAULTS.capRate (see engine source comment, Aug 20 2026) -->
+          <input type="range" id="cm-cap" min="3" max="8" step="0.05" value="6">
         </div>
         <div class="tool-field tool-field--full cm-slider">
           <label for="cm-horizon">Time horizon <span class="cm-slider-value" id="cm-horizon-v"></span></label>
