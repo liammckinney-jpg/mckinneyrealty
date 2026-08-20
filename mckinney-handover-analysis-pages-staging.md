@@ -54,8 +54,16 @@
 6. **Runbook step 1 (OG system)** was already live from earlier today — new-page manifest entries + cards were the only remaining work.
 7. **Meta descriptions / insights deks** are the specs' standfirsts verbatim (no new marketing copy authored locally).
 
+### Share affordances (Phase 1) — STAGED on `staging/share-affordances`, awaiting Liam's merge call
+- `mckinney-share.js` + system-CSS block + one partial per page: /cashflow, /consolidation, /the-50000-problem, /generational-wealth, /price-of-holding, Elgin listing ("SHARE THIS LISTING"); /overlooked-markets got its partial on the chambered branch.
+- Native share sheet where `navigator.share` exists (single Share button — includes macOS Chrome/Safari); otherwise Copy link (bare canonical, flips to "Copied" 2s) / Email / LinkedIn / Facebook, UTM encoded inside the shared URL, new-tab + noopener, GA4 `share` event with method/content_type/item_id. No third-party anything; hidden in print.
+- Verified on the Vercel preview: all six pages render the row with correct labels/types, tool + intake pages untouched, URL encoding correct, canonical resolves to the clean production URL (shares never point at preview hosts).
+- **Deviations flagged:** module lives at repo root (`/mckinney-share.js`) matching `mckinney-forms.js` convention — spec said `assets/`; the spec's UTM examples showed unencoded `?utm...` appended inside intent URLs — implemented properly encoded as the spec's prose requires.
+- **Merge sequencing:** merge `staging/share-affordances` BEFORE (or with) `staging/overlooked-markets` — the OM page references the module that ships on the share branch.
+- **Liam QA still owed (needs real devices/accounts):** iOS Safari + Android Chrome share sheet; GA4 DebugView `share` events; one real LinkedIn/FB share to see the OG card end-to-end.
+
 ## 3. Remaining moves
-- **OM publish day:** set the insights-card date + JSON-LD `datePublished`, merge `staging/overlooked-markets`, then OM splinters may post (pillar-live gate satisfied).
+- **OM publish day:** set the insights-card date + JSON-LD `datePublished`, merge `staging/overlooked-markets` (after the share branch), then OM splinters may post (pillar-live gate satisfied).
 - **PoH dark posts:** destination is live; still gated on the pre-spend gate + FB page existing, per the distribution sequencing.
 - **Sean's read of /price-of-holding** — owed per the spec header (page shipped ahead of it at Liam's call).
 - **Upload the two banner files** to the real FB page and LinkedIn company profile when the accounts spin up.
