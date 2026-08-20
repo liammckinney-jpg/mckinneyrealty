@@ -390,3 +390,29 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
   .track-metric { border-right: none; border-bottom: 1px solid var(--border); }
   .track-metric:last-child { border-bottom: none; }
 }
+
+/* ---- share affordances (mck-share) ---------------------------------- */
+/* One placement per page: end of essay, above the CTA band. Thin gold
+   rule, small-caps label, quiet buttons. Hidden in print. */
+.mck-share { padding: var(--s-5) 0 var(--s-6); }
+.mck-share .wrap { border-top: 1px solid var(--gold); padding-top: var(--s-4); }
+.mck-share-label {
+  display: block; font-family: var(--font-b); font-size: var(--b-xs);
+  font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-dark); margin-bottom: var(--s-2);
+}
+.mck-share-row { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); align-items: center; }
+.mck-share-btn {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-family: var(--font-b); font-size: var(--b-sm); font-weight: 400;
+  color: var(--navy); background: transparent; border: none; cursor: pointer;
+  padding: 0.3rem 0; text-decoration: none;
+  border-bottom: 1px solid transparent; transition: border-color 0.25s;
+}
+.mck-share-btn:hover { border-bottom-color: var(--gold-dark); }
+.mck-share-btn svg { width: 15px; height: 15px; display: block; }
+.mck-share-btn:disabled { cursor: default; color: var(--gold-dark); }
+@media print { .mck-share { display: none; } }
+/* inline variant — for article pages whose CTA band lives inside the article column */
+.mck-share--inline { padding: var(--s-5) 0 0; }
+.mck-share--inline .mck-share-inner { border-top: 1px solid var(--gold); padding-top: var(--s-4); margin-bottom: var(--s-5); }
