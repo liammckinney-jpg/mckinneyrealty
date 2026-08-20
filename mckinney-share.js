@@ -60,14 +60,26 @@
     return a;
   }
 
-  if (navigator.share) {
-    var shareBtn = makeButton('share', 'Share', 'native');
-    shareBtn.addEventListener('click', function () {
+  // Mobile: the OS sheet genuinely offers the social targets (FB, IG,
+  // LinkedIn, WhatsApp, Messages) — one button covers everything.
+  // Desktop sheets (macOS) carry no social targets, so desktop always
+  // gets the explicit row; the OS sheet is appended as a fifth option.
+  var isMobile = (navigator.userAgentData && navigator.userAgentData.mobile) ||
+    /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+    (window.matchMedia && matchMedia('(pointer: coarse)').matches);
+
+  function nativeButton(text) {
+    var b = makeButton('share', text, 'native');
+    b.addEventListener('click', function () {
       navigator.share({ title: title, url: canonical })
         .then(function () { track('native'); })
         .catch(function () { /* sheet dismissed — nothing to record */ });
     });
-    host.appendChild(shareBtn);
+    return b;
+  }
+
+  if (navigator.share && isMobile) {
+    host.appendChild(nativeButton('Share'));
     return;
   }
 
@@ -106,4 +118,6 @@
   host.appendChild(makeLink('facebook', 'Facebook',
     'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(utm('facebook')),
     'facebook', true));
+
+  if (navigator.share) host.appendChild(nativeButton('More\u2026'));
 })();
