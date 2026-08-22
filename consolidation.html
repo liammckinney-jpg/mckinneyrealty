@@ -218,14 +218,14 @@
     </div>
 
     <div class="article-gate" id="gate">
-      <div class="label">The Full Piece</div>
+      <div class="label">The Full Calculation</div>
       <h3 class="article-gate-title">The Consolidation Math</h3>
       <p>The complete calculation — the wall, the toll booth, what the capital buys, and the cases where staying put is the right answer. Delivered as a PDF, by email.</p>
       <form class="article-gate-form" id="cn-gate-form" novalidate>
         <input type="text" id="cn-email" name="email" placeholder="Email" inputmode="email" autocomplete="email" required aria-label="Email">
         <div class="article-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
         <label class="mck-consent" id="cn-consent-row"><input type="checkbox" id="cn-consent" checked> Email me McKinney Realty's market updates and educational content. Unsubscribe anytime.</label>
-        <button type="submit" class="btn btn--navy" id="cn-gate-submit">Send me the full piece</button>
+        <button type="submit" class="btn btn--navy" id="cn-gate-submit">Send me the full calculation</button>
       </form>
     </div>
 
@@ -309,7 +309,7 @@
       var sent = document.createElement('div');
       sent.className = 'article-gate-sent';
       sent.setAttribute('role', 'status');
-      sent.textContent = 'The full piece is on its way to your inbox.';
+      sent.textContent = 'The full calculation is on its way to your inbox.';
       form.parentNode.replaceChild(sent, form);
     }).catch(function () {
       btn.disabled = false;
