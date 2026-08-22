@@ -26,15 +26,15 @@
     "member": [
       {
         "@type": "Person",
-        "name": "Sean McKinney",
-        "jobTitle": "Broker of Record, RE/MAX Quinte Ltd., Brokerage",
-        "email": "sean@remaxquinte.com"
-      },
-      {
-        "@type": "Person",
         "name": "Liam McKinney",
         "jobTitle": "Broker, Property.ca Inc., Brokerage",
         "email": "liam@mckinneyrealty.ca"
+      },
+      {
+        "@type": "Person",
+        "name": "Sean McKinney",
+        "jobTitle": "Broker of Record, RE/MAX Quinte Ltd., Brokerage",
+        "email": "sean@remaxquinte.com"
       }
     ]
   };
