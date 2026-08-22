@@ -43,5 +43,10 @@ Verify grep: remaining "honest" in both masters = 5, all external-referent (owne
 - **Disclosure:** the old `investment_summary_test_245_victoria.html` test artifact was overwritten during this pass with a blank-sheet render before I checked the local deal sheet was empty (my error — "245 Victoria" was only ever the sheet's placeholder hint). The blank artifacts were deleted; the Elgin reference render above replaces the test artifact with real data. Nothing distributable was affected.
 - Elgin package regeneration: unchanged, its own session.
 
-## Still flagged
-- Apps Script `sendLeadPdf_` contact block — editor paste session (unchanged).
+## Apps Script — CLOSED (Aug 22, Code-v13 deployed by Liam)
+The last flag is resolved. Liam supplied the v12 source via clipboard; Code-v13.gs was built locally (13 verified edits, node syntax-checked), loaded back to his clipboard, pasted and deployed as a new version. Workspace record: Desktop `TOOLS/Code-v13.gs`.
+- **Liam-first**: `sendLeadPdf_` fine-print compliance line + `brevoShellHtml_` footer swapped (order only). The PDF signature block and email signatures were already Liam-first in v12.
+- **Drift hazard neutralized**: the `COURSE_EMAILS` constant carried the pre-Pass-4 email copy — a re-run of `updateCourseEmailCopy()` would have reverted every published email edit and stripped the preheaders. v13 aligns it with the published state: all six copy edits, clean lesson URLs, and preheader support (`pre` ×8 wired through `brevoShellHtml_`), so regeneration now reproduces exactly what is live in Brevo.
+- Cosmetic: test helper permalink normalized to the clean URL form.
+
+**The copy-governance flag list is now empty.**
