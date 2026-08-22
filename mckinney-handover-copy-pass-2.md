@@ -44,3 +44,14 @@ Preview: https://mckinneyrealty-lqhjwtgtj-liams-projects-0b21288d.vercel.app —
 
 ## §6 Verification
 - §1/§2 greps zero on public surfaces (false positives above) · footer order confirmed on all 5 pages · FAQ JSON-LD valid, Liam first · MI identical from one source, date visible · OG audit passes · preview build green.
+
+## Copy Pass 2b (Aug 22, follow-up — branch `staging/copy-pass-2b`)
+| Where | Old | New |
+|---|---|---|
+| lesson-8 process phase | defining the mandate (your capital… | defining what you're buying (your capital… |
+| price-of-holding standfirst + meta/og/twitter/JSON-LD descriptions (×5) | …laid out so you can run the numbers before anyone suggests a sign. | …laid out so you can run the numbers yourself. |
+
+- "mandate" on acquisition-intake + listings/index: deliberate keeps (CRE term, investor reader).
+- consolidation-math heading "The honest cost side": approved keep.
+- **Source-doc true-up done:** `price-of-holding-page-copy-and-spec.md` standfirst updated to match (1 instance) — the project copy of the spec now mirrors the live page.
+- Verified: "suggests a sign" zero site-wide · "mandate" only on the two keep pages · OG audit passes · preview green.
