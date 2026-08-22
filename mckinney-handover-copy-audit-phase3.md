@@ -1,5 +1,12 @@
-# Copy Audit Phase 3 — Handover (Aug 21, 2026)
-**Branch `staging/copy-audit` · 30 commits · preview build green · NOT merged (awaiting Liam).**
+# Copy Audit Phase 3 — Handover (Aug 21, 2026) — UPDATED after merge + locked-pages pass
+**Phase 3 MERGED to main and live. Locked-pages voice pass also MERGED (Aug 21, ahead of Sean's read, per Liam).**
+
+## Locked-pages pass (pre-Sean-read, per Liam's direct instruction — supersedes the post-read deferral)
+- **/price-of-holding (LIVE):** "the honest net of an exit" → "the actual net of an exit" (hero sub + og/twitter/meta descriptions + JSON-LD — mirrors the shipped insights-dek fix); ledger kicker "The rental market, honestly" → "The rental market". KEPT (real claims, calibration dial): the ledger close, the preparation sentence, "not a pitch — it is the underwriting."
+- **/learn/why-multi-family (LIVE):** "— not a theory assembled for the internet" clause cut; the sentence's concrete history carries the claim. KEPT: widget summary, "most useful fact in the course," "The why ends here. The how starts in lesson one."
+- **/overlooked-markets (chambered):** zero changes needed — both Phase 1 flags were closed as keeps. Sean-ready as chambered.
+- **Source-doc drift:** `lesson-zero-final-copy.md` and the PoH copy spec in Liam's project now differ from the live pages by these three strings — true-up before the next verbatim check.
+- **Sean's read** now covers the final pages: https://www.mckinneyrealty.ca/price-of-holding · https://www.mckinneyrealty.ca/learn/why-multi-family · OM preview on `staging/overlooked-markets`.
 Old → new for every §3 item is the brief itself, applied verbatim except where noted below; one commit per page (`git log main..staging/copy-audit` is the per-page changelog).
 
 ## Applied
