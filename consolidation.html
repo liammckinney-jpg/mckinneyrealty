@@ -218,14 +218,14 @@
     </div>
 
     <div class="article-gate" id="gate">
-      <div class="label">The Full Piece</div>
+      <div class="label">The Full Calculation</div>
       <h3 class="article-gate-title">The Consolidation Math</h3>
       <p>The complete calculation — the wall, the toll booth, what the capital buys, and the cases where staying put is the right answer. Delivered as a PDF, by email.</p>
       <form class="article-gate-form" id="cn-gate-form" novalidate>
         <input type="text" id="cn-email" name="email" placeholder="Email" inputmode="email" autocomplete="email" required aria-label="Email">
         <div class="article-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
         <label class="mck-consent" id="cn-consent-row"><input type="checkbox" id="cn-consent" checked> Email me McKinney Realty's market updates and educational content. Unsubscribe anytime.</label>
-        <button type="submit" class="btn btn--navy" id="cn-gate-submit">Send me the full piece</button>
+        <button type="submit" class="btn btn--navy" id="cn-gate-submit">Send me the full calculation</button>
       </form>
     </div>
 
@@ -250,6 +250,18 @@
       <div class="footer-brand-name">McKinney Realty</div>
       <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
       <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-offices">
+      <div class="footer-office">
+        <div class="footer-office-region">Quinte &amp; Eastern Ontario</div>
+        <div class="footer-office-brokerage">RE/MAX Quinte Ltd.</div><div class="footer-office-line">106 North Front St, Belleville, ON K8P 3B4</div>
+        <div class="footer-office-line"><a href="tel:6139699907">(613) 969-9907</a> &middot; <a href="mailto:sean@remaxquinte.com">sean@remaxquinte.com</a></div>
+      </div>
+      <div class="footer-office">
+        <div class="footer-office-region">Toronto &amp; GTA</div>
+        <div class="footer-office-brokerage">Property.ca Inc., Brokerage</div><div class="footer-office-line">36 Distillery Lane, Suite 500, Toronto, ON M5A 3C4</div>
+        <div class="footer-office-line"><a href="tel:6474671467">(647) 467-1467</a> &middot; <a href="mailto:liam@mckinneyrealty.ca">liam@mckinneyrealty.ca</a></div>
+      </div>
     </div>
     <div class="footer-bottom">
       <div class="footer-legal">Liam McKinney, Broker, Property.ca Inc., Brokerage &middot; Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
@@ -309,7 +321,7 @@
       var sent = document.createElement('div');
       sent.className = 'article-gate-sent';
       sent.setAttribute('role', 'status');
-      sent.textContent = 'The full piece is on its way to your inbox.';
+      sent.textContent = 'The full calculation is on its way to your inbox.';
       form.parentNode.replaceChild(sent, form);
     }).catch(function () {
       btn.disabled = false;
