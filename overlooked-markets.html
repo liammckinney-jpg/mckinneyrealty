@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<title>The Overlooked Markets — Where the Yield Begins | McKinney Realty</title>
+<!-- Social cards — required on every indexable page. Audited at build (npm run og:check). -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="McKinney Realty">
+<meta property="og:title" content="The Overlooked Markets — Where the Yield Begins">
+<meta property="og:description" content="Canada's institutional cap-rate surveys track thirteen markets. The buildings that price at six per cent and above are in the towns the surveys never name — and what they sell is the return that never depended on rising prices: income.">
+<meta property="og:url" content="https://www.mckinneyrealty.ca/overlooked-markets">
+<meta property="og:image" content="https://www.mckinneyrealty.ca/images/og/overlooked-markets.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Overlooked Markets — Where the Yield Begins — McKinney Realty">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Overlooked Markets — Where the Yield Begins">
+<meta name="twitter:description" content="Canada's institutional cap-rate surveys track thirteen markets. The buildings that price at six per cent and above are in the towns the surveys never name — and what they sell is the return that never depended on rising prices: income.">
+<meta name="twitter:image" content="https://www.mckinneyrealty.ca/images/og/overlooked-markets.png">
+<meta name="description" content="Canada's institutional cap-rate surveys track thirteen markets. The buildings that price at six per cent and above are in the towns the surveys never name — and what they sell is the return that never depended on rising prices: income.">
+<link rel="canonical" href="https://www.mckinneyrealty.ca/overlooked-markets">
+<script src="mckinney-consent.js"></script>
+<script src="mckinney-schema.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Overlooked Markets — Where the Yield Begins",
+  "description": "Canada's institutional cap-rate surveys track thirteen markets. The buildings that price at six per cent and above are in the towns the surveys never name — and what they sell is the return that never depended on rising prices: income.",
+  "url": "https://www.mckinneyrealty.ca/overlooked-markets",
+  "datePublished": "2026-08-19",
+  "dateModified": "2026-08-19",
+  "author": { "@type": "Person", "name": "Liam McKinney", "jobTitle": "Broker, Property.ca Inc., Brokerage" },
+  "publisher": { "@type": "Organization", "name": "McKinney Realty", "url": "https://www.mckinneyrealty.ca" }
+}
+</script>
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VFY0V42GLR');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mckinney-system.css">
+<style>
+/* ============================================================
+   THE OVERLOOKED MARKETS — analysis page
+   Copy verbatim-locked (v1.2, Aug 19). Essay-first per /cashflow:
+   navy radial bookends, white editorial middle.
+   ============================================================ */
+
+.om-hero {
+  background: radial-gradient(ellipse at 30% 20%, var(--navy-light), var(--navy) 65%);
+  color: var(--white);
+  padding: calc(4.5rem + var(--s-8)) 0 var(--s-8);
+}
+.om-hero .label { margin-bottom: var(--s-3); }
+.om-hero-title {
+  font-family: var(--font-d); font-size: var(--d-hero); font-weight: 300;
+  line-height: 1.12; max-width: 820px;
+}
+.om-hero-sub {
+  font-size: var(--b-lg); font-weight: 300; line-height: 1.75;
+  color: rgba(255,255,255,0.65); max-width: 640px; margin-top: var(--s-4);
+}
+
+.om-section { padding: var(--s-7) 0; }
+.om-section .label { margin-bottom: var(--s-2); }
+.om-section-title {
+  font-family: var(--font-d); font-size: var(--d-section); font-weight: 300;
+  line-height: 1.2; color: var(--navy); max-width: 700px; margin-bottom: var(--s-3);
+}
+.om-prose { font-size: var(--b-md); font-weight: 300; line-height: 1.8; color: var(--text-2); max-width: 660px; margin-bottom: 1rem; }
+.om-prose strong { font-weight: 500; color: var(--navy); }
+.om-prose a { color: var(--gold-dark); }
+
+/* Illustration panel — the same income, two prices */
+.om-panel {
+  background: var(--cream); border-left: 2px solid var(--gold);
+  padding: var(--s-4) var(--s-5); margin: var(--s-5) 0; max-width: 720px;
+}
+.om-panel-label {
+  font-size: var(--b-xs); font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-3); display: block; margin-bottom: var(--s-3); line-height: 1.6;
+}
+.om-panel-intro { font-size: var(--b-md); font-weight: 300; line-height: 1.8; color: var(--text-2); margin-bottom: var(--s-3); }
+.om-prices { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3); }
+.om-price { background: var(--white); padding: var(--s-3) var(--s-3); border-top: 2px solid var(--border-strong); }
+.om-price--income { border-top-color: var(--gold); }
+.om-price-cap { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-3); margin-bottom: var(--s-1); }
+.om-price--income .om-price-cap { color: var(--gold-dark); }
+.om-price-num { font-family: var(--font-d); font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 400; color: var(--navy); line-height: 1.1; }
+.om-price-per { font-size: var(--b-sm); font-weight: 300; color: var(--text-2); margin-top: 0.5rem; }
+.om-panel-delta { font-size: var(--b-md); font-weight: 300; line-height: 1.8; color: var(--text-2); margin-top: var(--s-3); }
+.om-panel-delta strong { font-weight: 500; color: var(--navy); }
+
+/* Reasons / compensation — strong-led prose items */
+.om-items { max-width: 660px; }
+.om-items .om-prose { padding-left: var(--s-3); border-left: 1px solid var(--border); }
+
+/* Corridor bookend */
+.om-corridor {
+  background: radial-gradient(ellipse at 70% 80%, var(--navy-light), var(--navy) 65%);
+  color: var(--white); padding: var(--s-8) 0;
+}
+.om-corridor .label--light { margin-bottom: var(--s-3); display: block; }
+.om-corridor-text {
+  font-size: var(--b-lg); font-weight: 300; line-height: 1.85;
+  color: rgba(255,255,255,0.8); max-width: 720px; margin-bottom: 1.25rem;
+}
+
+/* CTA band */
+.om-cta { background: var(--offwhite); border-top: 1px solid var(--border); padding: var(--s-7) 0; }
+.om-cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3); max-width: 880px; }
+.om-cta-card {
+  background: var(--white); border: 1px solid var(--border); border-top: 2px solid var(--gold);
+  padding: var(--s-4) var(--s-4); display: block; text-decoration: none;
+  transition: border-color 0.3s;
+}
+.om-cta-card:hover { border-color: var(--gold-dark); }
+.om-cta-title { font-family: var(--font-d); font-size: var(--d-sub); font-weight: 300; color: var(--navy); line-height: 1.25; margin-bottom: var(--s-1); }
+.om-cta-sub { font-size: var(--b-sm); font-weight: 300; line-height: 1.65; color: var(--text-2); }
+
+@media (max-width: 768px) {
+  .om-prices { grid-template-columns: 1fr; }
+  .om-cta-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body class="page-editorial">
+
+<!-- NAV (page is off main nav; standard chrome) -->
+<nav class="nav">
+  <div class="nav-inner">
+  <a href="/" class="nav-brand">
+    <img class="nav-mono" src="images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="listings/">Listings</a>
+    <a href="/team">Our Team</a>
+    <a href="/services">Services</a>
+    <a href="/track-record">Track Record</a>
+    <div class="nav-drop">
+      <a href="tools/">Calculators</a>
+      <div class="nav-drop-menu">
+        <a href="/tools/underwrite">The Underwriter</a>
+        <a href="/tools/financing-modeler">Financing Modeler</a>
+        <a href="/tools/disposition-calculator">Disposition Proceeds</a>
+        <a href="/tools/compounding-modeler">Compounding Modeler</a>
+      </div>
+    </div>
+    <a href="learn/">Learn</a><a href="/insights">Insights</a>
+    <a class="nav-cta" href="/contact">Contact</a>
+  </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- 1 · HERO -->
+<header class="om-hero on-dark">
+  <div class="wrap">
+    <div class="label label--light">Analysis</div>
+    <h1 class="om-hero-title">The survey ends where the <em class="gi">yield</em> begins.</h1>
+    <p class="om-hero-sub">Canada&rsquo;s institutional cap-rate surveys track thirteen markets. In Ontario, that means Toronto, Ottawa, London, and Kitchener-Waterloo. The buildings that price at six per cent and above are in the towns the surveys never name — and what they sell is the return that never depended on rising prices: income.</p>
+  </div>
+</header>
+
+<!-- 2 · THE MAP -->
+<section class="om-section">
+  <div class="wrap">
+    <div class="label">The Map</div>
+    <p class="om-prose">A capitalization rate is the plainest number in real estate: a building&rsquo;s net operating income divided by its price. It tells you how much income a dollar of purchase price buys today. A 4% cap rate means $40,000 of annual net income per million dollars paid. A 6.5% cap rate means $65,000. Same dollar, different amount of income — the difference is what the market believes about everything that isn&rsquo;t current income: growth, liquidity, safety, prestige.</p>
+    <p class="om-prose">In the second quarter of 2026, CBRE&rsquo;s national cap-rate survey put Toronto multifamily Class A in a band of roughly 3.85&ndash;4.75%, with multifamily yields nationally holding effectively flat quarter over quarter (CBRE Canadian Cap Rates &amp; Investment Insights, Q1 2026, published April 21, 2026; Q2 2026, published July 21, 2026). Kitchener-Waterloo — the one Southwestern Ontario market CBRE tracks by name — printed 4.25&ndash;4.75% for high-rise Class A. On the institutional map, Ontario is a tight, expensive province almost everywhere the map has a label.</p>
+    <p class="om-prose">The map has very few labels. CBRE&rsquo;s survey covers thirteen Canadian markets. Ontario gets four: Toronto, Ottawa, London, Kitchener-Waterloo. Belleville is not in the series. Neither is Kingston, Peterborough, Barrie, nor any market along the 401 corridor east of the GTA. The surveys also concentrate on institutional-grade assets — the large, newer, professionally managed buildings that trade between funds. The twelve-unit walk-up built in 1972, owned by the same family for thirty years, in a town of sixty thousand — the most common building in Ontario&rsquo;s rental stock — is invisible to the published record.</p>
+    <p class="om-prose">In that unsurveyed segment, income-priced buildings routinely trade at capitalization rates the institutional map never shows: 6% and above in-place, higher where rents sit below market. Not because those markets are secret, but because no institution publishes them. Pricing there is assembled deal by deal — from assessment records, land registry, local transaction knowledge, and the rent roll in front of you.</p>
+  </div>
+</section>
+
+<!-- 3 · THE TWO COMPONENTS -->
+<section class="om-section" style="background:var(--offwhite);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="label">The Record</div>
+    <h2 class="om-section-title">What the record says about the two components</h2>
+    <p class="om-prose">Paying a 4% cap rate is a decision to accept less income now in exchange for the other component of return — growth in value. The record on both components is public.</p>
+    <p class="om-prose">The MSCI/REALPAC Canada Property Index has tracked institutional Canadian real estate — the portfolios held by the country&rsquo;s pension funds and largest owners — since 1985. Across that entire history, income is the component that showed up every year: a steady 4.3&ndash;4.9% annually, through every cycle. Growth in value is the component that comes and goes: roughly 2% per year averaged across the whole record, and negative in each of the last four years, 2022 through 2025.</p>
+    <p class="om-prose">That 2% will surprise anyone who has watched Canadian real estate, so it deserves one clarification. The prices that multiplied over the last two decades were house and condominium prices — assets bought by households and priced by borrowing power and expectation. Income property is appraised on its income, and over time its value moves with its income. Where a building&rsquo;s price is its income multiplied, the durable way the value rises is for the income to rise.</p>
+    <p class="om-prose">Read plainly: a compressed cap rate pays a premium for the component that comes and goes. A wider cap rate buys more of the one that showed up every year.</p>
+    <p class="om-prose">This is a description of what happened, not a forecast of what will. Markets that traded at 4% may compress further; markets at 6.5% may widen. But an investor choosing between the two should at least know which component of return each price is betting on — and what that component&rsquo;s track record is.</p>
+  </div>
+</section>
+
+<!-- 4 · THE SAME INCOME, TWO PRICES -->
+<section class="om-section">
+  <div class="wrap">
+    <div class="label">The Illustration</div>
+    <h2 class="om-section-title">The same income, two prices</h2>
+
+    <div class="om-panel">
+      <span class="om-panel-label">Hypothetical illustration. All assumptions shown. Not a projection, appraisal, or opinion of value for any property.</span>
+      <p class="om-panel-intro">Take one hypothetical building: twelve units, $98,532 in stabilized net operating income. (The same illustrative twelve-plex that runs through the concept library at <a href="learn/" style="color:var(--gold-dark)">/learn</a> — every figure below is derived from that single stated income; nothing else is assumed.)</p>
+      <div class="om-prices">
+        <div class="om-price">
+          <div class="om-price-cap">Priced at a 4.50% cap rate</div>
+          <div class="om-price-num">$2,189,600</div>
+          <div class="om-price-per">about $182,500 per unit</div>
+        </div>
+        <div class="om-price om-price--income">
+          <div class="om-price-cap">Priced at a 6.50% cap rate</div>
+          <div class="om-price-num">$1,515,877</div>
+          <div class="om-price-per">about $126,300 per unit</div>
+        </div>
+      </div>
+      <p class="om-panel-delta">Same building. Same income. A <strong>$673,723</strong> difference in price, entirely produced by the capitalization rate. At the higher cap rate, every dollar of purchase price is buying 44% more current income.</p>
+    </div>
+
+    <p class="om-prose">The second consequence is mechanical. Financing costs are set nationally; a lender does not charge a lower interest rate because the building is in Toronto. When the cap rate sits above the interest rate, the income covers the debt with margin. When it sits below, the borrower funds the difference. The spread between the cap rate and the borrowing rate determines which direction leverage works — and that spread is structurally wider where buildings price on income. <em>(The mechanics of that spread are worked through, with editable numbers, in the <a href="learn/">concept library</a> and the <a href="/tools/compounding-modeler">Compounding Modeler</a>.)</em></p>
+  </div>
+</section>
+
+<!-- 5 · WHAT THE WIDER SPREAD DOES -->
+<section class="om-section" style="padding-top:0">
+  <div class="wrap">
+    <div class="label">The Spread, Working</div>
+    <h2 class="om-section-title">What the wider spread does each year</h2>
+    <p class="om-prose">The wider spread is not only a cheaper entry. It changes what the building does in every year of ownership.</p>
+    <p class="om-prose">At a cap rate above the borrowing rate, the income services the debt and leaves a surplus. That surplus is cash the owner does not have to wait for. The mortgage payments it covers retire principal on schedule, regardless of what the market believes the building is worth that year. Equity accumulates from two sources that require no price movement at all: retained income and principal paydown. If values rise, that is a third source, on top — but the first two arrive either way.</p>
+    <p class="om-prose">This is the working difference between the two prices in the illustration. The compressed-cap purchase leans on the component that comes and goes. The income-priced purchase runs on the two that arrive on schedule — and each cycle of surplus and paydown enlarges the equity available for the next building. That cycle is the buy-hold-refinance pattern this family&rsquo;s portfolio was built on, one building at a time. How fast it compounds depends on assumptions that belong to you, not to us; the tools on this site exist so you can set them and see.</p>
+  </div>
+</section>
+
+<!-- 6 · WHY THE GAP PERSISTS -->
+<section class="om-section" style="background:var(--offwhite);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="label">The Persistence</div>
+    <h2 class="om-section-title">Why the gap persists</h2>
+    <p class="om-prose">If higher-yielding buildings were simply better, capital would close the gap. It persists for reasons worth stating plainly.</p>
+    <div class="om-items">
+      <p class="om-prose"><strong>Coverage.</strong> Institutional research follows institutional product. No fund analyst is paid to underwrite a ten-unit building in Quinte West, so no one publishes its cap rate, so capital that navigates by published data never sees it. The information gap is the moat around the pricing gap.</p>
+      <p class="om-prose"><strong>Mandates.</strong> Institutional capital in Canadian multifamily has concentrated in new-build, rent-control-exempt assets in major markets. The $2M&ndash;$10M building in a secondary market is below most institutional minimums and above most residential agents&rsquo; competence — a segment served almost entirely by private buyers.</p>
+      <p class="om-prose"><strong>Data fragmentation.</strong> Pricing a building in an unsurveyed market means assembling MPAC assessment data, land-registry records, municipal permits, and local transaction history into a view no single platform provides. That work is real, and most buyers won&rsquo;t do it. The price of admission to the higher cap rate is the underwriting effort the published surveys let you skip.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · THE COMPENSATION -->
+<section class="om-section">
+  <div class="wrap">
+    <div class="label">The Other Side</div>
+    <h2 class="om-section-title">What the higher cap rate is compensation for</h2>
+    <p class="om-prose">A 6.5% cap rate is not free money, and reading it that way is the fastest route to a bad purchase. It is the market&rsquo;s price for real differences:</p>
+    <div class="om-items">
+      <p class="om-prose"><strong>Liquidity.</strong> Fewer buyers see the deal; selling takes longer. The exit is thinner than in a market where forty groups bid every offering.</p>
+      <p class="om-prose"><strong>Depth.</strong> A smaller employment base and a smaller tenant pool mean a single major employer or a single vacancy carries more weight than it would across a two-hundred-unit portfolio in a metro.</p>
+      <p class="om-prose"><strong>Stock.</strong> The buildings are older. Roofs, boilers, and electrical are not abstractions in a 1970s walk-up; the capital plan is part of the price.</p>
+      <p class="om-prose"><strong>Management.</strong> Ontario&rsquo;s tenancy framework applies identically everywhere, and more units mean more tenancies — professional handling changes the severity and cost of each incident, not the number of doors that can generate one.</p>
+    </div>
+    <p class="om-prose">The question a buyer should actually ask is not &ldquo;why is the cap rate higher?&rdquo; — the list above answers that. It is whether the compensation is adequate for the specific building in front of them. That is an underwriting question, answered building by building, and it is the entire reason the segment rewards people who do the work.</p>
+  </div>
+</section>
+
+<!-- 8 · THE CORRIDOR -->
+<section class="om-corridor on-dark">
+  <div class="wrap">
+    <span class="label label--light">The Corridor</span>
+    <p class="om-corridor-text">This firm operates across exactly this divide. One desk in Toronto, where capital forms and prices compress; one in the Quinte region, where our family has brokered, owned, and operated income buildings across three generations. The practice runs province-wide because the opportunity does: buildings priced on income, in markets the surveys never name, matched with capital that would otherwise never see them.</p>
+    <p class="om-corridor-text">The figures above are the published record and one disclosed illustration. What any specific building is worth is a rent roll, an expense stack, and a capital plan — run through the same arithmetic, with your own assumptions.</p>
+  </div>
+</section>
+
+<!-- SHARE AFFORDANCES — end of essay, above the CTA band.
+     Module + CSS ship on staging/share-affordances: merge that branch
+     BEFORE (or with) this one so /mckinney-share.js and the .mck-share
+     styles exist in production. -->
+<section class="mck-share" data-content-type="article">
+  <div class="wrap">
+    <span class="mck-share-label">Share this page</span>
+    <div class="mck-share-row"></div>
+  </div>
+</section>
+
+<!-- 9 · CTA BAND -->
+<section class="om-cta">
+  <div class="wrap">
+    <div class="om-cta-grid">
+      <a class="om-cta-card" href="tools/">
+        <div class="om-cta-title">Run the numbers yourself</div>
+        <div class="om-cta-sub">Compounding Modeler / Underwriter</div>
+      </a>
+      <a class="om-cta-card" href="learn/">
+        <div class="om-cta-title">Start with the mechanics</div>
+        <div class="om-cta-sub">cap rate, expense stack, lender&rsquo;s math</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- COMPLIANCE FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="images/mr-monogram-lg.png" alt="McKinney Realty">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Liam McKinney, Broker, Property.ca Inc., Brokerage &middot; Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="listings/">Listings</a><a href="/team">Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="tools/">Calculators</a><a href="learn/">Learn</a><a href="/insights">Insights</a><a href="/contact">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+</script>
+<script src="mckinney-share.js"></script>
+</body>
+</html>

@@ -75,8 +75,7 @@
  "/overlooked-markets.html": {
   "kicker": "ANALYSIS",
   "type": "article",
-  "future": true,
-  "title": "The Overlooked Markets"
+  "emphasis": "yield"
  },
  "/inflation-question.html": {
   "kicker": "ANALYSIS",
