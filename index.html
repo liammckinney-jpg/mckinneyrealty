@@ -504,17 +504,11 @@
       <div><div class="label">Market Intelligence</div><h2 class="intel-title">Ontario multi-family in <em class="gi">2026</em>.</h2></div>
       <div class="intel-year">2026</div>
     </div>
-    <div class="intel-strip">
-      <div class="intel-card"><div class="intel-card-num">25.1%</div><div class="intel-card-text"><strong>Q4 2025 CRE investment surge.</strong> Transaction volumes accelerating as rate cuts take hold.</div></div>
-      <div class="intel-card"><div class="intel-card-num">~60%</div><div class="intel-card-text"><strong>Mortgages renewing 2025–26.</strong> Sub-2% locks face resets requiring significant fresh equity.</div></div>
-      <div class="intel-card"><div class="intel-card-num">84%</div><div class="intel-card-text"><strong>Insurance increase, past decade.</strong> Repriced to a permanently higher base; renewals have recently cooled.</div></div>
-      <div class="intel-card"><div class="intel-card-num">25K</div><div class="intel-card-text"><strong>2025 completions — the peak.</strong> Construction starts pausing as development economics break down.</div></div>
-    </div>
+    <div class="intel-dateline" data-mi="dateline"></div>
+    <div class="intel-strip" data-mi="cards"></div>
     <div class="intel-body">
       <div class="intel-narrative">
-        <p>Cap rates have stabilized after two years of expansion. The bid-ask gap that froze the market in 2023 has closed, and transaction volume surged 25.1% quarter-over-quarter in Q4 2025 as Bank of Canada rate cuts restored positive leverage.</p>
-        <p>Simultaneously, construction starts are pausing across the province. Punitive development charges, tariff-driven materials costs, and broken pro formas have shut down the new supply pipeline. National apartment completions peaked at 25,000 units in 2025 — the highest since 1987 — but that peak is now behind us.</p>
-        <p>These structural dynamics are converging with a generational ownership transition: aging operators facing refinancing at dramatically higher rates, six-figure capital items coming due on 1970s-era building systems, and insurance costs repriced to a permanently higher base over the past decade.</p>
+        <div data-mi="narrative"></div>
         <div class="intel-cta">
           <form class="intel-sub" id="intel-sub-form" novalidate>
             <input type="text" id="intel-sub-email" name="email" placeholder="Email" inputmode="email" autocomplete="email" required aria-label="Email">
@@ -526,12 +520,7 @@
           <p class="intel-cta-note">Published quarterly. Cap rates, vacancy, transaction volume, and regulatory developments. Subscribing consents to receiving them by email; unsubscribe anytime. Full analyses on the <a href="/insights">Insights</a> page.</p>
         </div>
       </div>
-      <div class="intel-sidebar">
-        <div class="intel-sidebar-title">What we're watching</div>
-        <div class="intel-sidebar-item"><strong>Bank of Canada rate path</strong>Projected 50–75bps of additional cuts through 2026, restoring positive leverage for stabilized assets.</div>
-        <div class="intel-sidebar-item"><strong>Vacancy compression</strong>Ontario purpose-built vacancy tightening as immigration-driven demand outpaces stalled new supply.</div>
-        <div class="intel-sidebar-item"><strong>Generational transitions</strong>Aging operators facing refinancing cliffs and deferred CapEx creating a multi-year disposition wave.</div>
-      </div>
+      <div class="intel-sidebar" data-mi="watch"></div>
     </div>
   </div>
 </section>
@@ -714,5 +703,6 @@
     });
   });
 </script>
+<script src="mckinney-mi.js"></script>
 </body>
 </html>
