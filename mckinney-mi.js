@@ -23,10 +23,13 @@
 
   var NARRATIVE = [
     'Cap rates have stabilized after two years of expansion. The bid-ask gap that froze the market in 2023 has closed, and transaction volume surged 25.1% quarter-over-quarter in Q4 2025 as Bank of Canada rate cuts restored positive leverage.',
+    'Simultaneously, construction starts are pausing across the province. Punitive development charges, tariff-driven materials costs, and broken pro formas have shut down the new supply pipeline. National apartment completions peaked at 25,000 units in 2025 — the highest since 1987 — but that peak is now behind us.',
     'These structural dynamics are converging with a generational ownership transition: aging operators facing refinancing at dramatically higher rates, six-figure capital items coming due on 1970s-era building systems, and insurance costs repriced to a permanently higher base over the past decade.'
   ];
 
   var WATCH = [
+    { k: 'Bank of Canada rate path', v: 'Projected 50–75bps of additional cuts through 2026, restoring positive leverage for stabilized assets.' },
+    { k: 'Vacancy compression', v: 'Ontario purpose-built vacancy tightening as immigration-driven demand outpaces stalled new supply.' },
     { k: 'Generational transitions', v: 'Aging operators facing refinancing cliffs and deferred CapEx creating a multi-year disposition wave.' }
   ];
 
