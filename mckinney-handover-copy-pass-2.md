@@ -23,14 +23,14 @@ Preview: https://mckinneyrealty-lqhjwtgtj-liams-projects-0b21288d.vercel.app —
 - `5% down` · `~100` · `100 agents` · `Property.ca Realty` · `strongest seller` · `seller's window` → all zero, confirmed.
 
 ## §3 Liam-first missed surfaces
-- Footer office cards on team / index / contact / services / track-record: Toronto & GTA (Property.ca, Liam) block now precedes Quinte & Eastern Ontario (RE/MAX, Sean). Text unchanged.
+- Footer office cards: swapped to Toronto-first per the brief, then **REVERTED to Quinte-first per Liam (Aug 22)** — footers lead with the Quinte office. Text unchanged throughout. (Compliance line beneath stays Liam-first from Phase 3.)
 - insights FAQ "Who is McKinney Realty?" + FAQ JSON-LD: "…Liam McKinney (Broker, Property.ca Inc., Brokerage) and Sean McKinney (Broker of Record, RE/MAX Quinte Ltd., Brokerage) have completed…" JSON-LD parses.
 - Ordering grep: zero remaining Sean-before-Liam pairings within 200 chars.
 
 ## §4 Market Intelligence — single source + dated
 - **`mckinney-mi.js`** now renders the block's data (dateline, 4 stat cards, narrative, watch list) into slot containers on index and insights — one source, drift impossible. Header (eyebrow + "Ontario multi-family in 2026.") and the subscribe CTA stay static per page.
 - Dateline visible on both: **"Market view — Q1 2026 · data through Q4 2025."**
-- Removed exactly per brief: 25K tile's second sentence (tile now "2025 completions — the peak. 25,000 units, the highest since 1987."); the whole second narrative paragraph; Vacancy-compression and BoC-rate-path watch items ("Generational transitions" is the single watch item).
+- Per Liam's calibration (Aug 22): the second narrative paragraph and the full three-item watch list are **RESTORED** (brief's removals went too far). Still removed: the 25K tile's second sentence (tile reads "2025 completions — the peak. 25,000 units, the highest since 1987." — flip it back with one word if wanted). Dateline and insurance-tile fix kept.
 - Figures untouched: 25.1% / ~60% / 84% / 25K. No new lines, nothing made prescient.
 - Verified on the preview: identical content from the shared source on both pages, 4-up card grid, dateline in gold small-caps, no layout overflow.
 - Note: the block is now client-rendered (no build step exists for HTML includes). Static fallback is empty slots — acceptable for a stats block; the Q2/Q3 sourced edition replaces content in mckinney-mi.js only.
