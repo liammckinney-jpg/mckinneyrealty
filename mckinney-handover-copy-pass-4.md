@@ -8,7 +8,7 @@
 - **Test sends** ids 3, 7, 8, 10 → liam@mckinneyrealty.ca, all 204 — confirm render in inbox.
 - **Re-fetch verification:** all 10 survivors grep clean — `honest` / `mandate` / `.html` hrefs / Sean-before-Liam = zero.
 - `emails/` committed post-verification — **repo is now the source of truth**; edit there, publish with `scripts/brevo-push.js push`.
-- **Still open: preheaders (item 5)** — `brevo-publish-sheet.md` never materialized; no preheader text exists to apply. One `push` run once the sheet lands.
+- **Preheaders: DONE (Aug 22, text supplied by Liam directly).** The template API has no `preheader` field (400 + absent from GET), so the standard hidden-preheader span went in at the top of `htmlContent` on ids 1–10 (display:none + mso-hide + &nbsp;&zwnj; padding). Pushed, re-fetched, all 10 confirmed present and positioned before the header. Fresh test send of id 3 for an inbox preview check.
 
 ## Part A history — first key blocked
 1. **The supplied key returns 401 "Key not found" on the REST API.** Decoded and sent exactly as provided (env-only; never written to disk, script, or this doc). Most likely it's an SMTP key or was revoked — the REST path needs an **API key** from Brevo → Settings → API Keys (`xkeysib-…`, "API" tab, not "SMTP"). The MCP connector still reads fine but cannot update templates, so PUT/DELETE/test-send all wait on a working key.
