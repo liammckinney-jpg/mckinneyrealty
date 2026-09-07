@@ -116,18 +116,6 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
 .nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
 
-/* Brokerage identification band (RECO Bulletin 5.3) — sits in the header
-   on every page, directly beneath the nav bar. Same line as the footer
-   compliance line; never hidden or truncated. First child of .nav so the
-   open mobile menu (a later positioned descendant) paints above it. */
-.nav-band {
-  position: absolute; top: 100%; left: 0; right: 0;
-  background: var(--navy); color: rgba(255,255,255,0.78);
-  font-size: 0.625rem; font-weight: 400; letter-spacing: 0.05em;
-  line-height: 1.5; text-align: center;
-  padding: 0.3125rem var(--side);
-}
-
 /* Nav dropdown (Calculators) */
 .nav-drop { position: relative; }
 .nav-drop > a { display: inline-flex; align-items: center; gap: 0.4375rem; }
