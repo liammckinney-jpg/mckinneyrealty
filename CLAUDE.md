@@ -40,3 +40,14 @@ Standing context for every session in this repo. The strategic source of truth i
 - Elgin MLS reprice → regenerate the 6-page package (fixes the PDF entity error).
 - Full-site copy audit (spec exists: three phases, audit report first, zero edits in phase 1).
 - IG tile 9 team photo (Shoot References / USE folders).
+
+## Listings module (/apartment-buildings-for-sale)
+- Data provider is selected by LISTINGS_PROVIDER=fixture|proptx. Production builds must fail if set to fixture.
+- Public routes show StandardStatus=Active only. Sold, expired, withdrawn, suspended and pending listings never render on a public route. A build-time test enforces this.
+- "Listed by {listOfficeName}" appears on every card and detail page, never truncated or de-emphasized.
+- Derived metrics are limited to pricePerUnit and capRateReported (reported NOI / list price). Never compute NOI, stabilized or projected figures on these routes; projection lives only in the Underwriter with editable, disclosed assumptions.
+- All public copy for these routes comes verbatim from the Listings Front End spec §6. Do not write or alter user-facing strings without a spec update.
+- Fixture data is synthetic and must be obviously fictional (addresses, brokerage names). It is never deployed to production.
+- PropTx credentials are server-side only. Never expose the endpoint or keys to the client bundle.
+- Do not paraphrase or edit PublicRemarks from other brokerages' listings.
+- One data source per results page; no co-mingling with other MLS feeds.

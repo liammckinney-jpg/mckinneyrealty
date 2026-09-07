@@ -185,6 +185,11 @@ async function main() {
   const refreshed = COPY.refreshed(fmtRefreshTime(snapshot.generatedAt));
   const template = fs.readFileSync(path.join(__dirname, 'templates', 'listings-page.html'), 'utf8');
 
+  // §6 staging banner — fixture mode only, cannot be dismissed
+  const stagingBanner = snapshot.source === 'fixture'
+    ? '<div class="lst-staging-banner" role="status">Sample data — not live listings. Staging only.</div>'
+    : '';
+
   fs.mkdirSync(OUT, { recursive: true });
 
   // data.json — what the client-side filter layer reads
@@ -208,6 +213,7 @@ async function main() {
     MARKET_NAME: '',
     MARKET_FILTER: marketFilterHtml(),
     COUNT_LINE: COPY.countIndex(cards.length),
+    STAGING_BANNER: stagingBanner,
     CARDS: cards.map(R.renderCard).join('\n'),
     REFRESHED: R.esc(refreshed),
   }));
@@ -225,6 +231,7 @@ async function main() {
       MARKET_NAME: R.esc(m.name),
       MARKET_FILTER: '',
       COUNT_LINE: COPY.countMarket(mine.length, m.name),
+      STAGING_BANNER: stagingBanner,
       CARDS: mine.map(R.renderCard).join('\n'),
       REFRESHED: R.esc(refreshed),
     }));
@@ -266,9 +273,26 @@ async function main() {
         addressHtml: R.esc(h1),
         office: l.listOfficeName,
       }),
+      STAGING_BANNER: stagingBanner,
       REFRESHED: R.esc(refreshed),
     }));
   });
+
+  // §8 sitemap — index + market pages + all active detail pages,
+  // regenerated per build/poll. Referenced from robots.txt at the
+  // production flip (routes are noindex while in fixture mode).
+  const urls = [SITE + '/apartment-buildings-for-sale/']
+    .concat(MARKETS.map(function (m) { return SITE + '/apartment-buildings-for-sale/' + m.slug + '/'; }))
+    .concat(snapshot.listings.map(function (l) {
+      return SITE + '/apartment-buildings-for-sale/' + l.market + '/' + listingSlug(l) + '/';
+    }));
+  const lastmod = new Date(snapshot.generatedAt).toISOString();
+  fs.writeFileSync(path.join(OUT, 'sitemap.xml'),
+    '<?xml version="1.0" encoding="UTF-8"?>\n' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+    urls.map(function (u) {
+      return '  <url><loc>' + u + '</loc><lastmod>' + lastmod + '</lastmod></url>';
+    }).join('\n') + '\n</urlset>\n');
 
   console.log('listings:build OK — provider=' + provider.name +
     ', ' + cards.length + ' listings, index + ' + MARKETS.length + ' market pages + ' +

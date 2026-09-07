@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "listings:build": "node scripts/listings/build-listings.js",
+    "listings:check": "node scripts/listings/status-check.js",
     "og:render": "node scripts/render-og-cards.js",
     "og:check": "node scripts/check-og.js"
   }

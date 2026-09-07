@@ -129,6 +129,15 @@
 .lst-refreshed { background: var(--white); padding: 0 0 2rem; }
 .lst-refreshed .wrap { font-size: var(--b-sm); color: var(--text-3); }
 
+/* ---- staging banner (fixture mode only; cannot be dismissed) --- */
+.lst-staging-banner {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 200;
+  background: var(--gold-dark); color: var(--white);
+  font-size: var(--b-sm); font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; text-align: center;
+  padding: 0.625rem var(--side);
+}
+
 /* ================================================================
    DETAIL PAGE (spec §6 "Detail page")
    ================================================================ */
