@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1F2E">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+
+<title>Apartment buildings for sale in Barrie–Simcoe — McKinney Realty</title>
+<meta name="description" content="Every building with five or more units currently listed in Barrie–Simcoe. Updated through the day.">
+<link rel="canonical" href="https://www.mckinneyrealty.ca/apartment-buildings-for-sale/barrie-simcoe/">
+<!-- Fixture mode: all listings routes are noindex until production (spec §8). -->
+<meta name="robots" content="noindex,follow">
+<script src="/mckinney-consent.js"></script>
+<script src="/mckinney-schema.js"></script>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VFY0V42GLR');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/mckinney-system.css">
+<link rel="stylesheet" href="/mckinney-listings.css">
+</head>
+<body data-market="barrie-simcoe" data-market-name="Barrie–Simcoe">
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav">
+  <div class="nav-inner">
+  <a href="/" class="nav-brand">
+    <img class="nav-mono" src="/images/mr-monogram-sm.png" alt="MR">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Realty</span>
+      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+    </div>
+  </a>
+  <button class="nav-toggle" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-links">
+    <a href="/listings/" class="active">Listings</a>
+    <a href="/team">Our Team</a>
+    <a href="/services">Services</a>
+    <a href="/track-record">Track Record</a>
+    <div class="nav-drop">
+      <a href="/tools/">Calculators</a>
+      <div class="nav-drop-menu">
+        <a href="/tools/underwrite">The Underwriter</a>
+        <a href="/tools/financing-modeler">Financing Modeler</a>
+        <a href="/tools/disposition-calculator">Disposition Proceeds</a>
+        <a href="/tools/compounding-modeler">Compounding Modeler</a>
+      </div>
+    </div>
+    <a href="/learn/">Learn</a><a href="/insights">Insights</a>
+    <a class="nav-cta" href="/contact">Contact</a>
+  </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="lst-hero">
+  <div class="wrap">
+    <h1 class="lst-h1">Apartment buildings for sale in Barrie–Simcoe</h1>
+    <p class="lst-dek">Every building with five or more units currently listed in Barrie–Simcoe. Updated through the day.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FILTERS + SORT (spec §5; state is URL-encoded and shareable)
+     ============================================================ -->
+<section class="lst-controls">
+  <div class="wrap">
+    <form id="lst-filters" autocomplete="off" onsubmit="return false;">
+      <fieldset class="lst-group" aria-label="Units">
+        <legend class="lst-group-label">Units</legend>
+        <label class="lst-pill"><input type="checkbox" name="units" value="5-11"><span>5–11</span></label>
+        <label class="lst-pill"><input type="checkbox" name="units" value="12-24"><span>12–24</span></label>
+        <label class="lst-pill"><input type="checkbox" name="units" value="25-49"><span>25–49</span></label>
+        <label class="lst-pill"><input type="checkbox" name="units" value="50+"><span>50+</span></label>
+      </fieldset>
+      
+      <fieldset class="lst-group" aria-label="Price">
+        <legend class="lst-group-label">Price</legend>
+        <input type="number" name="price_min" min="0" step="50000" placeholder="Min" aria-label="Price minimum">
+        <span class="lst-dash">–</span>
+        <input type="number" name="price_max" min="0" step="50000" placeholder="Max" aria-label="Price maximum">
+      </fieldset>
+      <fieldset class="lst-group" aria-label="Price per unit">
+        <legend class="lst-group-label">Price per unit</legend>
+        <input type="number" name="ppu_min" min="0" step="5000" placeholder="Min" aria-label="Price per unit minimum">
+        <span class="lst-dash">–</span>
+        <input type="number" name="ppu_max" min="0" step="5000" placeholder="Max" aria-label="Price per unit maximum">
+      </fieldset>
+      <fieldset class="lst-group" aria-label="Reported cap rate">
+        <legend class="lst-group-label">Reported cap rate</legend>
+        <label class="lst-check"><input type="checkbox" name="cap"><span>Only listings with a reported cap rate</span></label>
+        <input type="number" name="cap_min" min="0" max="20" step="0.1" placeholder="Min %" aria-label="Reported cap rate minimum" class="lst-cap-min">
+      </fieldset>
+      <fieldset class="lst-group" aria-label="Listed within">
+        <legend class="lst-group-label">Listed within</legend>
+        <select name="within" aria-label="Listed within">
+          <option value="">Any time</option>
+          <option value="7">7 days</option>
+          <option value="30">30 days</option>
+          <option value="90">90 days</option>
+        </select>
+      </fieldset>
+      <fieldset class="lst-group lst-group--sort" aria-label="Sort">
+        <legend class="lst-group-label">Sort</legend>
+        <select name="sort" aria-label="Sort">
+          <option value="">Newest</option>
+          <option value="price-asc">Price (low→high)</option>
+          <option value="price-desc">Price (high→low)</option>
+          <option value="ppu">Price per unit</option>
+          <option value="units">Units</option>
+          <option value="cap">Reported cap</option>
+        </select>
+      </fieldset>
+    </form>
+  </div>
+</section>
+
+<!-- ============================================================
+     RESULTS
+     ============================================================ -->
+<section class="lst-results">
+  <div class="wrap">
+    <div class="lst-count" id="lst-count" aria-live="polite">1 buildings in Barrie–Simcoe</div>
+    <div class="lst-grid" id="lst-grid"><a class="lst-card" href="/apartment-buildings-for-sale/barrie-simcoe/338-placeholder-road-barrie-fx903500/"><div class="lst-card-media"><img src="https://picsum.photos/seed/mck-fixture-035-1/1200/800" alt="Sample photo 1 of 4 — synthetic listing" loading="lazy" width="1200" height="800"></div><div class="lst-card-body"><div class="lst-card-l1">338 Placeholder Road, Barrie</div><div class="lst-card-l2">20 units · $4,005,000 · $200,250 per unit</div><div class="lst-card-l4">Listed by Specimen Realty Co., Brokerage</div></div></a></div>
+    <p class="lst-empty" id="lst-empty" hidden>No buildings match these filters. Widen the unit range or the market.</p>
+  </div>
+</section>
+
+<!-- Snapshot age (spec §7.5) -->
+<div class="lst-refreshed"><div class="wrap">Listings refreshed September 7, 2026 at 12:00 p.m. ET</div></div>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <img class="footer-brand-mono" src="/images/mr-monogram-lg.png" alt="McKinney Realty">
+      <div class="footer-brand-name">McKinney Realty</div>
+      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    </div>
+    <div class="footer-offices">
+      <div class="footer-office">
+        <div class="footer-office-region">Quinte &amp; Eastern Ontario</div>
+        <div class="footer-office-brokerage">RE/MAX Quinte Ltd.</div><div class="footer-office-line">106 North Front St, Belleville, ON K8P 3B4</div>
+        <div class="footer-office-line"><a href="tel:6139699907">(613) 969-9907</a> &middot; <a href="mailto:sean@remaxquinte.com">sean@remaxquinte.com</a></div>
+      </div>
+      <div class="footer-office">
+        <div class="footer-office-region">Toronto &amp; GTA</div>
+        <div class="footer-office-brokerage">Property.ca Inc., Brokerage</div><div class="footer-office-line">36 Distillery Lane, Suite 500, Toronto, ON M5A 3C4</div>
+        <div class="footer-office-line"><a href="tel:6474671467">(647) 467-1467</a> &middot; <a href="mailto:liam@mckinneyrealty.ca">liam@mckinneyrealty.ca</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Liam McKinney, Broker, Property.ca Inc., Brokerage &middot; Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
+      <div class="footer-nav"><a href="/listings/">Listings</a><a href="/team">Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="/tools/">Calculators</a><a href="/learn/">Learn</a><a href="/insights">Insights</a><a href="/contact">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+</script>
+<script src="/apartment-buildings-for-sale/render.js"></script>
+<script src="/apartment-buildings-for-sale/listings.js"></script>
+</body>
+</html>

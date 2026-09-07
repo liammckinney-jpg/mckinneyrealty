@@ -1,0 +1,138 @@
+/* ================================================================
+   McKinney Realty — Listings front end (/apartment-buildings-for-sale/)
+   Page styles for index + market pages. Card copy rules live in the
+   spec (§6/§7): attribution is body-size and never truncated.
+   ================================================================ */
+
+/* ---- hero ------------------------------------------------------ */
+.lst-hero {
+  background: var(--navy);
+  padding: 10rem 0 4.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.lst-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 90% at 80% 0%, rgba(184,168,138,0.14), transparent 60%);
+  pointer-events: none;
+}
+.lst-hero .wrap { position: relative; z-index: 1; }
+.lst-h1 {
+  font-family: var(--font-d);
+  font-weight: 400;
+  font-size: var(--d-section);
+  line-height: 1.1;
+  color: var(--white);
+  max-width: 20em;
+}
+.lst-dek {
+  margin-top: 1.25rem;
+  font-size: var(--b-lg);
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.72);
+  max-width: 44em;
+}
+
+/* ---- filter bar ------------------------------------------------ */
+.lst-controls {
+  position: sticky; top: 4.5rem; z-index: 50;
+  background: var(--offwhite);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+}
+#lst-filters {
+  display: flex; flex-wrap: wrap; gap: 1.25rem 2rem; align-items: flex-end;
+}
+.lst-group { border: none; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.lst-group-label {
+  display: block; width: 100%;
+  font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-3);
+  margin-bottom: 0.375rem; padding: 0;
+}
+.lst-pill { cursor: pointer; }
+.lst-pill input { position: absolute; opacity: 0; pointer-events: none; }
+.lst-pill span {
+  display: inline-block; padding: 0.375rem 0.875rem;
+  font-size: var(--b-sm); color: var(--text-2);
+  border: 1px solid var(--border-strong); border-radius: 999px;
+  background: var(--white); transition: all 0.2s; white-space: nowrap;
+}
+.lst-pill input:checked + span {
+  background: var(--navy); border-color: var(--navy); color: var(--white);
+}
+.lst-pill input:focus-visible + span { outline: 2px solid var(--gold-dark); outline-offset: 1px; }
+.lst-group input[type="number"], .lst-group select {
+  font-family: var(--font-b); font-size: var(--b-sm); color: var(--text-1);
+  padding: 0.4rem 0.625rem; border: 1px solid var(--border-strong);
+  background: var(--white); width: 7.5rem;
+}
+.lst-group select { width: auto; }
+.lst-cap-min { width: 5.25rem !important; }
+.lst-dash { color: var(--text-3); }
+.lst-check { display: inline-flex; align-items: center; gap: 0.5rem; font-size: var(--b-sm); color: var(--text-2); cursor: pointer; }
+.lst-check input { accent-color: var(--navy); }
+
+/* market multi-select dropdown (index page only) */
+.lst-mkt { position: relative; }
+.lst-mkt summary {
+  list-style: none; cursor: pointer;
+  display: inline-block; padding: 0.4rem 0.875rem;
+  font-size: var(--b-sm); color: var(--text-2);
+  border: 1px solid var(--border-strong); background: var(--white);
+}
+.lst-mkt summary::-webkit-details-marker { display: none; }
+.lst-mkt[open] summary { border-color: var(--navy); color: var(--text-1); }
+.lst-mkt-list {
+  position: absolute; left: 0; top: calc(100% + 0.375rem); z-index: 60;
+  display: flex; flex-direction: column; gap: 0.375rem;
+  max-height: 21rem; overflow-y: auto;
+  background: var(--white); border: 1px solid var(--border-strong);
+  box-shadow: 0 12px 32px rgba(26,31,46,0.12);
+  padding: 0.75rem; min-width: 16rem;
+}
+.lst-mkt-list .lst-pill span { border: none; padding: 0.25rem 0.5rem; border-radius: 4px; width: 100%; }
+.lst-mkt-list .lst-pill input:checked + span { background: var(--cream); color: var(--text-1); font-weight: 500; }
+
+/* ---- results --------------------------------------------------- */
+.lst-results { padding: 2.5rem 0 4rem; background: var(--white); }
+.lst-count { font-size: var(--b-sm); color: var(--text-2); margin-bottom: 1.5rem; }
+.lst-grid {
+  display: grid; gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+.lst-empty { font-size: var(--b-md); color: var(--text-2); padding: 3rem 0; }
+
+/* ---- card (spec §6) -------------------------------------------- */
+.lst-card {
+  display: block; background: var(--white);
+  border: 1px solid var(--border); transition: all 0.25s;
+}
+.lst-card:hover { border-color: var(--border-strong); box-shadow: 0 16px 40px rgba(26,31,46,0.10); transform: translateY(-2px); }
+.lst-card-media { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: var(--cream); }
+.lst-card-media img { width: 100%; height: 100%; object-fit: cover; }
+.lst-badge {
+  position: absolute; top: 0.75rem; left: 0.75rem;
+  font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  background: var(--gold-dark); color: var(--white); padding: 0.25rem 0.625rem;
+}
+.lst-card-body { padding: 1.25rem 1.375rem 1.375rem; }
+.lst-card-l1 { font-family: var(--font-d); font-size: 1.3125rem; font-weight: 500; color: var(--text-1); line-height: 1.25; }
+.lst-card-l2 { margin-top: 0.5rem; font-size: var(--b-md); color: var(--text-1); }
+.lst-card-l3 { margin-top: 0.25rem; font-size: var(--b-md); color: var(--gold-dark); }
+/* Attribution: body size, full brokerage name, never truncated (§7.1) */
+.lst-card-l4 { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); font-size: var(--b-md); color: var(--text-2); }
+
+/* ---- snapshot age (§7.5) --------------------------------------- */
+.lst-refreshed { background: var(--white); padding: 0 0 2rem; }
+.lst-refreshed .wrap { font-size: var(--b-sm); color: var(--text-3); }
+
+/* ---- responsive ------------------------------------------------ */
+@media (max-width: 768px) {
+  .lst-hero { padding: 8rem 0 3rem; }
+  .lst-controls { position: static; }
+  #lst-filters { gap: 1rem 1.25rem; }
+  .lst-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+}

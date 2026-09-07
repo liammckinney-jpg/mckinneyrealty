@@ -152,5 +152,45 @@
   "kicker": "ANALYSIS",
   "type": "article",
   "emphasis": "holding"
+ },
+ "/emails/01-quarterly-market-intelligence.html": {
+  "exempt": true,
+  "note": "Brevo email master, not a web page"
+ },
+ "/emails/02-nurture-guide-day-4.html": {
+  "exempt": true,
+  "note": "Brevo email master, not a web page"
+ },
+ "/emails/03-course-day-0-lesson-1-of-8.html": {
+  "exempt": true,
+  "note": "Brevo email master, not a web page"
+ },
+ "/emails/04-course-day-2-lesson-2-of-8.html": {
+  "exempt": true,
+  "note": "Brevo email master, not a web page"
+ },
+ "/emails/05-course-day-4-lesson-3-of-8.html": {
+  "exempt": true,
+  "note": "Brevo email master, not a web page"
+ },
+ "/emails/06-course-day-6-lesson-4-of-8.html": {
+  "exempt": true,
+  "note": "Brevo email master, not a web page"
+ },
+ "/emails/07-course-day-8-lesson-5-of-8.html": {
+  "exempt": true,
+  "note": "Brevo email master, not a web page"
+ },
+ "/emails/08-course-day-11-lesson-6-of-8.html": {
+  "exempt": true,
+  "note": "Brevo email master, not a web page"
+ },
+ "/emails/09-course-day-13-lesson-7-of-8.html": {
+  "exempt": true,
+  "note": "Brevo email master, not a web page"
+ },
+ "/emails/10-course-day-16-lesson-8-of-8.html": {
+  "exempt": true,
+  "note": "Brevo email master, not a web page"
  }
 }

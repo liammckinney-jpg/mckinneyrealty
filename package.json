@@ -2,6 +2,7 @@
   "name": "mckinneyrealty-site",
   "private": true,
   "scripts": {
+    "listings:build": "node scripts/listings/build-listings.js",
     "og:render": "node scripts/render-og-cards.js",
     "og:check": "node scripts/check-og.js"
   }
