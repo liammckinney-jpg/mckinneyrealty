@@ -37,6 +37,12 @@ const COPY = {
   refreshed: function (time) { return 'Listings refreshed ' + time; },
 };
 
+function fmtDate(iso) {
+  return new Date(iso).toLocaleDateString('en-CA', {
+    year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Toronto',
+  });
+}
+
 function fmtRefreshTime(iso) {
   const d = new Date(iso);
   return d.toLocaleString('en-CA', {
@@ -88,6 +94,67 @@ function marketFilterHtml() {
     '        </details>',
     '      </fieldset>',
   ].join('\n      ');
+}
+
+/* ---- detail page pieces (spec §6 "Detail page") -------------------- */
+
+// Underwriter prefill URL: documented keys only; reported figures pass
+// through untouched — the tool completes gross = noi + opex and keeps
+// every assumption editable (appreciation default 0% is the tool's own).
+function underwriterUrl(l) {
+  const q = new URLSearchParams();
+  q.set('price', l.listPrice);
+  q.set('units', l.units);
+  if (l.reported.taxes != null) q.set('taxes', l.reported.taxes);
+  if (l.reported.grossIncome != null) q.set('gross', l.reported.grossIncome);
+  if (l.reported.operatingExpense != null) q.set('opex', l.reported.operatingExpense);
+  if (l.reported.noi != null) q.set('noi', l.reported.noi);
+  q.set('src', 'listings');
+  q.set('mls', l.mlsId);
+  return '/tools/underwrite?' + q.toString();
+}
+
+function figuresRows(l) {
+  const cap = l.derived.capRateReported;
+  const rows = [
+    ['Gross income', l.reported.grossIncome, R.fmtMoney],
+    ['Operating expenses', l.reported.operatingExpense, R.fmtMoney],
+    ['Net operating income', l.reported.noi, R.fmtMoney],
+    ['Property taxes', l.reported.taxes, R.fmtMoney],
+    ['Cap rate on list price', cap, R.fmtCap],
+  ];
+  return rows.map(function (r) {
+    const val = r[1] != null ? r[2](r[1]) : 'Not reported';
+    const cls = r[1] != null ? '' : ' class="det-notreported"';
+    return '        <tr><td>' + r[0] + '</td><td' + cls + '>' + val + '</td></tr>';
+  }).join('\n');
+}
+
+function photosHtml(l) {
+  return (l.media || []).map(function (m) {
+    return '      <figure class="det-photo"><img src="' + R.esc(m.url) + '" alt="' + R.esc(m.caption || '') + '" loading="lazy" width="1200" height="800"></figure>';
+  }).join('\n');
+}
+
+function jsonLd(l, canonical) {
+  // §8: RealEstateListing with offers.price and address; no invented fields.
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateListing',
+    name: l.address.street + ', ' + l.address.city,
+    url: canonical,
+    dateModified: l.modified,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: l.address.street,
+      addressLocality: l.address.city,
+      addressRegion: l.address.region,
+      postalCode: l.address.postalCode,
+      addressCountry: 'CA',
+    },
+    offers: { '@type': 'Offer', price: l.listPrice, priceCurrency: 'CAD' },
+    provider: { '@type': 'RealEstateAgent', name: 'McKinney Realty' },
+  });
 }
 
 function renderPage(template, vars) {
@@ -163,8 +230,49 @@ async function main() {
     }));
   });
 
+  // Detail pages — one per listing (spec §6 "Detail page")
+  const detailTemplate = fs.readFileSync(path.join(__dirname, 'templates', 'listing-detail.html'), 'utf8');
+  snapshot.listings.forEach(function (l) {
+    const m = MARKETS.filter(function (x) { return x.slug === l.market; })[0];
+    if (!m) throw new Error('Listing ' + l.mlsId + ' has unmapped market slug "' + l.market + '"');
+    const slug = listingSlug(l);
+    const canonical = SITE + '/apartment-buildings-for-sale/' + m.slug + '/' + slug + '/';
+    const h1 = l.address.street + ', ' + l.address.city;
+    // Sub: `{units} units · Built {yearBuilt} · MLS® {mlsId}` — the Built
+    // segment is omitted when the feed carries no year.
+    const sub = l.units + ' units · ' + (l.yearBuilt != null ? 'Built ' + l.yearBuilt + ' · ' : '') + 'MLS® ' + l.mlsId;
+    writePage(path.join(m.slug, slug), renderPage(detailTemplate, {
+      TITLE: R.esc(h1 + ' — McKinney Realty'),
+      META_DESC: R.esc(sub + '. Listed by ' + l.listOfficeName + '.'),
+      CANONICAL_URL: canonical,
+      JSONLD: jsonLd(l, canonical),
+      MARKET_SLUG: m.slug,
+      MARKET_NAME: R.esc(m.name),
+      H1: R.esc(h1),
+      SUB: R.esc(sub),
+      LIST_OFFICE: R.esc(l.listOfficeName),
+      UPDATED_DATE: R.esc(fmtDate(l.modified)),
+      PRICE: R.fmtMoney(l.listPrice),
+      PPU: R.fmtMoney(l.derived.pricePerUnit),
+      UW_URL: R.esc(underwriterUrl(l)),
+      PHOTOS: photosHtml(l),
+      FIGURES_ROWS: figuresRows(l),
+      REMARKS: R.esc(l.remarks),
+      LISTING_JSON: JSON.stringify({
+        mlsId: l.mlsId,
+        slug: slug,
+        market: m.slug,
+        address: h1,
+        addressHtml: R.esc(h1),
+        office: l.listOfficeName,
+      }),
+      REFRESHED: R.esc(refreshed),
+    }));
+  });
+
   console.log('listings:build OK — provider=' + provider.name +
-    ', ' + cards.length + ' listings, index + ' + MARKETS.length + ' market pages → apartment-buildings-for-sale/');
+    ', ' + cards.length + ' listings, index + ' + MARKETS.length + ' market pages + ' +
+    snapshot.listings.length + ' detail pages → apartment-buildings-for-sale/');
 }
 
 main().catch(function (e) {

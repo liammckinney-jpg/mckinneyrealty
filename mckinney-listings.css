@@ -129,7 +129,71 @@
 .lst-refreshed { background: var(--white); padding: 0 0 2rem; }
 .lst-refreshed .wrap { font-size: var(--b-sm); color: var(--text-3); }
 
+/* ================================================================
+   DETAIL PAGE (spec §6 "Detail page")
+   ================================================================ */
+.det-head { background: var(--offwhite); border-bottom: 1px solid var(--border); padding: 7.5rem 0 2.5rem; }
+.det-back {
+  display: inline-block; margin-bottom: 1.5rem;
+  font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold-dark); border-bottom: 1px solid rgba(154,139,111,0.4); padding-bottom: 2px;
+}
+.det-head-grid { display: flex; justify-content: space-between; gap: 2.5rem; align-items: flex-start; flex-wrap: wrap; }
+.det-h1 { font-family: var(--font-d); font-weight: 400; font-size: var(--d-section); line-height: 1.1; color: var(--text-1); }
+.det-sub { margin-top: 0.625rem; font-size: var(--b-md); color: var(--text-2); }
+/* Attribution block: above the fold on mobile, never collapsed (§6/§7.1) */
+.det-attribution { margin-top: 1rem; font-size: var(--b-md); color: var(--text-2); line-height: 1.7; }
+.det-price { text-align: right; }
+.det-price-main { font-family: var(--font-d); font-size: var(--d-stat-sm); font-weight: 500; color: var(--text-1); line-height: 1.1; }
+.det-price-ppu { margin-top: 0.25rem; font-size: var(--b-md); color: var(--text-2); }
+.det-ctas { margin-top: 2rem; display: flex; gap: 2.5rem; flex-wrap: wrap; }
+.det-cta { max-width: 24rem; }
+.det-cta-help { margin-top: 0.625rem; font-size: var(--b-sm); color: var(--text-3); line-height: 1.6; }
+
+.det-photos { padding: 2.5rem 0 0; background: var(--white); }
+.det-photo-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.det-photo { aspect-ratio: 3 / 2; overflow: hidden; background: var(--cream); }
+.det-photo img { width: 100%; height: 100%; object-fit: cover; }
+.det-photo:first-child { grid-column: 1 / -1; aspect-ratio: 21 / 9; }
+
+.det-h2 { font-family: var(--font-d); font-weight: 500; font-size: var(--d-sub); color: var(--text-1); margin-bottom: 1.25rem; }
+.det-figures { padding: 3.5rem 0 0; background: var(--white); }
+.det-figures-table { width: 100%; max-width: 34rem; border-collapse: collapse; }
+.det-figures-table td { padding: 0.75rem 0; border-bottom: 1px solid var(--border); font-size: var(--b-md); color: var(--text-1); }
+.det-figures-table td:last-child { text-align: right; }
+.det-notreported { color: var(--text-3); }
+
+.det-remarks { padding: 3.5rem 0 0; background: var(--white); }
+/* PublicRemarks as supplied — line breaks preserved, no editing (§7.8) */
+.det-remarks-text { font-size: var(--b-md); font-weight: 300; line-height: 1.75; color: var(--text-1); max-width: 46rem; white-space: pre-line; }
+
+.det-request { padding: 3.5rem 0 4rem; background: var(--white); }
+.det-request-box { max-width: 34rem; border: 1px solid var(--border-strong); background: var(--offwhite); padding: 2rem; }
+.det-req-form { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.25rem; }
+.det-req-form input[type="text"], .det-req-form input[type="email"], .det-req-form input[type="tel"] {
+  width: 100%; padding: 0.875rem 1rem;
+  font-family: var(--font-b); font-size: var(--b-sm); color: var(--text-1);
+  background: var(--white); border: 1px solid var(--border-strong);
+}
+.det-req-form input:focus { outline: none; border-color: var(--gold-dark); }
+.det-req-form input[aria-invalid="true"] { border-color: #B0413E; }
+.det-req-consent { display: flex; gap: 0.625rem; align-items: flex-start; font-size: var(--b-xs); line-height: 1.55; color: var(--text-2); }
+.det-req-consent input { margin-top: 2px; accent-color: var(--gold-dark); }
+.det-req-form .btn { justify-content: center; width: 100%; }
+.det-req-note { font-size: var(--b-xs); line-height: 1.6; color: var(--text-3); margin-top: 0.875rem; }
+.det-req-sent { font-size: var(--b-md); line-height: 1.7; color: var(--text-1); padding: 0.5rem 0; }
+.det-req-sent strong { color: var(--gold-dark); }
+.det-hp { position: absolute; left: -9999px; }
+
+.det-gone { padding: 10rem 0 6rem; }
+
 /* ---- responsive ------------------------------------------------ */
+@media (max-width: 768px) {
+  .det-head { padding-top: 6.5rem; }
+  .det-head-grid { flex-direction: column; gap: 1.25rem; }
+  .det-price { text-align: left; }
+  .det-photo:first-child { aspect-ratio: 3 / 2; }
+}
 @media (max-width: 768px) {
   .lst-hero { padding: 8rem 0 3rem; }
   .lst-controls { position: static; }

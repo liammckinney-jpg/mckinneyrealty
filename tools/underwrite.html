@@ -829,6 +829,9 @@ body.uw-adv fieldset.uw-a { display: block; }
   // Listing pre-fill schema (public, documented) → internal fields.
   var PREFILL = { price:'p', units:'u', tax:'tx', rentmo:'rm', parkmo:'pk',
     laundrymo:'la', othermo:'om', ins:'in_' };
+  // Reported-figures keys from the listings front end, handled after the
+  // main loop: taxes (alias of tax), gross / opex / noi (annual figures as
+  // reported by the listing brokerage), mls (tracking only, appended to src).
 
   function markPrefilled(id) {
     var f = $(id).closest('.tool-field, .uw-util');
@@ -839,9 +842,11 @@ body.uw-adv fieldset.uw-a { display: block; }
     var q = new URLSearchParams(location.search);
     if (![...q.keys()].length) return;
     var prefilled = false, advancedTouched = false;
+    var lp = {};   // listing reported-figures keys, applied after the loop
 
     q.forEach(function (v, k) {
       if (k === 'src') { src = v; return; }
+      if (k === 'taxes' || k === 'gross' || k === 'opex' || k === 'noi' || k === 'mls') { lp[k] = v; return; }
       if (k === 'mode' && v === 'adv') { advancedTouched = true; return; }
       if (k === 'oxm') { setOxMode(v === 'pct' ? 'pct' : 'amt'); return; }
       if (k === 'pmm') { setPmMode(v === 'amt' ? 'amt' : 'pct'); return; }
@@ -864,6 +869,27 @@ body.uw-adv fieldset.uw-a { display: block; }
       if (fk) { $(FIELDS[fk]).value = v; markPrefilled(FIELDS[fk]); prefilled = true; return; }
       if (FIELDS[k]) { $(FIELDS[k]).value = v; return; }
     });
+
+    /* Reported-figures prefill (listings front end). The listing brokerage
+       reports annual gross / opex / noi (any subset) plus taxes. Complete
+       the identity gross = noi + opex from whichever two are present, then
+       allocate: rent field gets gross/12, tax field gets taxes, and the
+       opex lump gets opex minus taxes (the field is excl.-property-tax).
+       Computed NOI then reproduces the reported NOI exactly; every value
+       sits in a normal editable field behind the prefill banner. */
+    if (lp.mls) { src = (src ? src + ':' : '') + lp.mls; }
+    (function () {
+      var tax = parseFloat(lp.taxes), g = parseFloat(lp.gross),
+          ox = parseFloat(lp.opex), n = parseFloat(lp.noi);
+      if (!isNaN(tax)) { $('uw-tx').value = Math.round(tax); markPrefilled('uw-tx'); prefilled = true; }
+      if (isNaN(g) && !isNaN(n)) { g = n + (!isNaN(ox) ? ox : (isNaN(tax) ? 0 : tax)); }
+      if (isNaN(ox) && !isNaN(n) && !isNaN(g)) { ox = g - n; }
+      if (!isNaN(g)) { $('uw-rm').value = Math.round(g / 12); markPrefilled('uw-rm'); prefilled = true; }
+      if (!isNaN(ox)) {
+        $('uw-ox').value = Math.max(Math.round(ox - (isNaN(tax) ? 0 : tax)), 0);
+        markPrefilled('uw-ox'); prefilled = true;
+      }
+    })();
 
     $('uw-om2').value = $('uw-om').value;
     if (advancedTouched) setMode('adv');
