@@ -1,9 +1,5 @@
 {
   "buildCommand": "npm run listings:build && npm run listings:check && npm run og:check",
   "outputDirectory": ".",
-  "cleanUrls": true,
-  "redirects": [
-    { "source": "/listings", "destination": "/apartment-buildings-for-sale/", "permanent": true },
-    { "source": "/listings/", "destination": "/apartment-buildings-for-sale/", "permanent": true }
-  ]
+  "cleanUrls": true
 }
