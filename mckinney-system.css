@@ -118,15 +118,27 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
 .nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
 
-/* Nav dropdown (Calculators) */
+/* ---- feature-flag gates (mckinney-flags.js, restoration brief §5) --- */
+html:not([data-listings-public]) .flag-listings-public { display: none !important; }
+html:not([data-header-band]) .nav-band { display: none !important; }
+
+/* Nav dropdowns (Buildings for Sale / Tools / About) — parent labels are
+   not links (restoration brief §3); hover opens on desktop, the flattened
+   hamburger menu covers tap on mobile. */
 .nav-drop { position: relative; }
-.nav-drop > a { display: inline-flex; align-items: center; gap: 0.4375rem; }
-.nav-drop > a::after {
+.nav-drop > a, .nav-drop-label { display: inline-flex; align-items: center; gap: 0.4375rem; }
+.nav-drop-label {
+  font-size: var(--b-sm); font-weight: 400; color: var(--text-2);
+  letter-spacing: 0.03em; transition: color 0.3s; cursor: default;
+}
+.nav-drop:hover .nav-drop-label, .nav-drop:focus-within .nav-drop-label { color: var(--text-1); }
+.nav-drop > a::after, .nav-drop-label::after {
   content: ''; width: 5px; height: 5px; margin-top: -4px;
   border-right: 1px solid currentColor; border-bottom: 1px solid currentColor;
   transform: rotate(45deg); transition: transform 0.3s;
 }
-.nav-drop:hover > a::after, .nav-drop:focus-within > a::after { transform: rotate(225deg); margin-top: 2px; }
+.nav-drop:hover > a::after, .nav-drop:focus-within > a::after,
+.nav-drop:hover .nav-drop-label::after, .nav-drop:focus-within .nav-drop-label::after { transform: rotate(225deg); margin-top: 2px; }
 /* invisible bridge so the pointer can cross the gap to the menu */
 .nav-drop::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 1rem; }
 .nav-drop-menu {
@@ -386,7 +398,8 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
     letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--gold-dark);
   }
-  .nav-drop > a::after { display: none; }
+  .nav-drop > a::after, .nav-drop-label::after { display: none; }
+  .nav-drop-label { justify-content: center; width: 100%; font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); }
   .nav-drop::after { display: none; }
 }
 
@@ -415,7 +428,8 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
     letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--gold-dark);
   }
-  .nav-drop > a::after { display: none; }
+  .nav-drop > a::after, .nav-drop-label::after { display: none; }
+  .nav-drop-label { justify-content: center; width: 100%; font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); }
   .nav-drop::after { display: none; }
   .deal-grid { grid-template-columns: 1fr 1fr; }
   .track-metrics { grid-template-columns: 1fr 1fr; }

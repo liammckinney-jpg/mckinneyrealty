@@ -24,6 +24,7 @@
 <meta name="twitter:description" content="Submit your property information for a confidential valuation and disposition strategy from McKinney Multifamily Group.">
 <meta name="twitter:image" content="https://www.mckinneyrealty.ca/images/og/disposition-intake.png">
 <meta name="description" content="Submit your property information for a confidential valuation and disposition strategy from McKinney Multifamily Group.">
+<script src="/mckinney-flags.js"></script>
 <script src="mckinney-consent.js"></script>
 <script src="mckinney-schema.js"></script>
 <!-- Google Analytics (GA4) -->
@@ -1105,14 +1106,34 @@ img { max-width: 100%; height: auto; }
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
   <div class="nav-links">
-    <a href="/">Home</a>
-    <a href="/apartment-buildings-for-sale/">Listings</a>
-    <a href="/team">Our Team</a>
-    <a href="/services">Services</a>
-    <a href="/track-record">Track Record</a>
-    <a href="tools/">Calculators</a>
-    <a href="learn/">Learn</a><a href="/insights">Insights</a>
+    <div class="nav-drop">
+      <span class="nav-drop-label" tabindex="0" role="button" aria-haspopup="true">Buildings for Sale</span>
+      <div class="nav-drop-menu">
+        <a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a>
+        <a href="/listings/">Our Listings</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <span class="nav-drop-label" tabindex="0" role="button" aria-haspopup="true">Tools</span>
+      <div class="nav-drop-menu">
+        <a href="/tools/underwrite">The Underwriter</a>
+        <a href="/tools/financing-modeler">Financing Modeler</a>
+        <a href="/tools/disposition-calculator">Disposition Proceeds</a>
+        <a href="/tools/compounding-modeler">Compounding Modeler</a>
+      </div>
+    </div>
+    <a href="/learn/">Learn</a>
+    <a href="/insights">Insights</a>
+    <div class="nav-drop">
+      <span class="nav-drop-label" tabindex="0" role="button" aria-haspopup="true">About</span>
+      <div class="nav-drop-menu">
+        <a href="/team">Our Team</a>
+        <a href="/services">Services</a>
+        <a href="/track-record">Track Record</a>
+      </div>
+    </div>
     <a class="nav-cta" href="/contact">Contact</a>
+  </div>
   </div>
 </nav>
 
