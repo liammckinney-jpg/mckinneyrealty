@@ -247,18 +247,18 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
    FOOTER
    ============================================================ */
 .footer { background: var(--navy); padding: var(--s-5) 0 var(--s-3); }
-/* Brand row: McKinney block · thin gold separator · RE/MAX mark.
-   Side by side on desktop, stacked on mobile. */
+/* Brand row: McKinney block · thin separator · RE/MAX mark.
+   Side by side on desktop, stacked on mobile. No bottom hairline of its
+   own — footer-bottom's top border is the single separator beneath. */
 .footer-brand-row {
   display: grid; grid-template-columns: 1fr 1px 1fr; align-items: center;
   padding-bottom: var(--s-4);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  margin-bottom: var(--s-4);
 }
 .footer-brand { text-align: center; justify-self: center; }
 /* Separator sits at the exact page centre; each mark is centred in its
-   half, so both logo centres are equidistant from the bar. */
-.footer-brand-sep { width: 1px; height: 76px; background: var(--gold-dark); }
+   half, so both logo centres are equidistant from the bar. Same subtle
+   hairline treatment as the other footer separators. */
+.footer-brand-sep { width: 1px; height: 76px; background: rgba(255,255,255,0.06); }
 .footer-remax { height: 46px; width: auto; justify-self: center; }
 @media (max-width: 768px) {
   .footer-brand-row { display: flex; flex-direction: column; gap: var(--s-3); }
