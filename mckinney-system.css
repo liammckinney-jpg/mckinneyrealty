@@ -118,6 +118,21 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
 .nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
 
+/* RE/MAX brokerage identification band (brand preview; RECO 5.1/5.3) —
+   part of the header on every page, directly beneath the nav bar.
+   Logotype used as supplied, never recoloured; office name is set at
+   1rem, no smaller than the nav wordmark. First child of .nav so the
+   open mobile menu (a later positioned descendant) paints above it. */
+.nav-band {
+  position: absolute; top: 100%; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: center;
+  gap: 0.875rem; flex-wrap: wrap;
+  background: var(--white); border-bottom: 1px solid var(--border);
+  padding: 0.4375rem var(--side);
+}
+.nav-band img { height: 20px; width: auto; }
+.nav-band span { font-size: 1rem; color: var(--navy); letter-spacing: 0.02em; }
+
 /* Nav dropdown (Calculators) */
 .nav-drop { position: relative; }
 .nav-drop > a { display: inline-flex; align-items: center; gap: 0.4375rem; }
