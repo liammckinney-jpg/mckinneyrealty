@@ -122,6 +122,20 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
 html:not([data-listings-public]) .flag-listings-public { display: none !important; }
 html:not([data-header-band]) .nav-band { display: none !important; }
 
+/* RE/MAX brokerage identification band (spec §7.2, RECO 5.3) — kept
+   intact behind HEADER_BROKERAGE_BAND (default off; KB-10, Sept 9) so
+   restoring it is a flag flip, not a rebuild. Logotype never recoloured;
+   office name no smaller than the nav wordmark (1rem). */
+.nav-band {
+  position: absolute; top: 100%; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: center;
+  gap: 0.875rem; flex-wrap: wrap;
+  background: var(--white); border-bottom: 1px solid var(--border);
+  padding: 0.4375rem var(--side);
+}
+.nav-band img { height: 20px; width: auto; }
+.nav-band span { font-size: 1rem; color: var(--navy); letter-spacing: 0.02em; }
+
 /* Nav dropdowns (Buildings for Sale / Tools / About) — parent labels are
    not links (restoration brief §3); hover opens on desktop, the flattened
    hamburger menu covers tap on mobile. */
