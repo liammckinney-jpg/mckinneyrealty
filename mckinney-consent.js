@@ -1,5 +1,5 @@
 /* =========================================================================
-   McKinney Realty — Analytics Consent Banner (shared component)
+   McKinney Multifamily Group — Analytics Consent Banner (shared component)
    Law 25 / PIPEDA Tier 2 item. Minimal and dismissible, styled to system.
 
    Usage: include in <head> BEFORE the gtag snippet:

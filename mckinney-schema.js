@@ -1,5 +1,5 @@
 /* =========================================================================
-   McKinney Realty — Organization structured data (shared include)
+   McKinney Multifamily Group — Organization structured data (shared include)
    Injects the site-wide RealEstateAgent JSON-LD block into <head>.
    Canonical entity facts only (KB source of truth, Aug 17 2026) —
    these must stay identical to the FAQ, llms.txt, and meta descriptions.
@@ -11,7 +11,7 @@
   var data = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "name": "McKinney Realty",
+    "name": "McKinney Multifamily Group",
     "description": "Father-and-son multi-family and investment real estate team serving all of Ontario, focused on apartment buildings and investment properties in the $2M–$10M range.",
     "url": "https://www.mckinneyrealty.ca",
     "email": "liam@mckinneyrealty.ca",

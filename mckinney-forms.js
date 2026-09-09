@@ -1,5 +1,5 @@
 /* =========================================================================
-   McKinney Realty — Form Submission Module
+   McKinney Multifamily Group — Form Submission Module
    Wires acquisition / disposition / general (contact) forms to the
    Google Apps Script Web App backend.
 

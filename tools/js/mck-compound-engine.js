@@ -1,5 +1,5 @@
 /* =========================================================================
-   McKinney Realty — Compounding Modeler Engine
+   McKinney Multifamily Group — Compounding Modeler Engine
    Pure functions: inputs → outputs. No DOM, loadable in Node and browser.
 
    Deliberately independent of mck-params.js (spec §4) — this tool

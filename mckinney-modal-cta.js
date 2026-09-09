@@ -1,5 +1,5 @@
 /* =========================================================================
-   McKinney Realty — Modal CTA System
+   McKinney Multifamily Group — Modal CTA System
    Three flows: seller, investor, subscribe
    Seller & Investor: Step 1 (contact capture) → Step 2 (optional detailed intake)
    Subscribe: Single-step email capture

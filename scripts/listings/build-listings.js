@@ -25,13 +25,13 @@ const SITE = 'https://www.mckinneyrealty.ca';
 
 /* ---- §6 verbatim strings ------------------------------------------- */
 const COPY = {
-  indexTitle: 'Apartment buildings for sale in Ontario — McKinney Realty',
+  indexTitle: 'Apartment buildings for sale in Ontario — McKinney Multifamily Group',
   indexMeta: 'Every building with five or more units listed for sale on the MLS® across Ontario, updated through the day. Filter by units, market and price per unit, then run the numbers on any listing.',
   indexH1: 'Apartment buildings for sale in Ontario',
   indexDek: 'Every building with five or more units listed on the MLS® across the province, updated through the day. Filter by units, market and price per unit, then run the numbers on any listing.',
   countIndex: function (n) { return n + ' buildings listed'; },
   countMarket: function (n, market) { return n + ' buildings in ' + market; },
-  marketTitle: function (m) { return 'Apartment buildings for sale in ' + m + ' — McKinney Realty'; },
+  marketTitle: function (m) { return 'Apartment buildings for sale in ' + m + ' — McKinney Multifamily Group'; },
   marketH1: function (m) { return 'Apartment buildings for sale in ' + m; },
   marketDek: function (m) { return 'Every building with five or more units currently listed in ' + m + '. Updated through the day.'; },
   refreshed: function (time) { return 'Listings refreshed ' + time; },
@@ -153,7 +153,7 @@ function jsonLd(l, canonical) {
       addressCountry: 'CA',
     },
     offers: { '@type': 'Offer', price: l.listPrice, priceCurrency: 'CAD' },
-    provider: { '@type': 'RealEstateAgent', name: 'McKinney Realty' },
+    provider: { '@type': 'RealEstateAgent', name: 'McKinney Multifamily Group' },
   });
 }
 
@@ -249,7 +249,7 @@ async function main() {
     // segment is omitted when the feed carries no year.
     const sub = l.units + ' units · ' + (l.yearBuilt != null ? 'Built ' + l.yearBuilt + ' · ' : '') + 'MLS® ' + l.mlsId;
     writePage(path.join(m.slug, slug), renderPage(detailTemplate, {
-      TITLE: R.esc(h1 + ' — McKinney Realty'),
+      TITLE: R.esc(h1 + ' — McKinney Multifamily Group'),
       META_DESC: R.esc(sub + '. Listed by ' + l.listOfficeName + '.'),
       CANONICAL_URL: canonical,
       JSONLD: jsonLd(l, canonical),

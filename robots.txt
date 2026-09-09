@@ -1,4 +1,4 @@
-# McKinney Realty — crawler policy
+# McKinney Multifamily Group — crawler policy
 # AI answer engines are explicitly welcome. The only excluded path is a
 # gated deliverable whose value depends on email delivery.
 

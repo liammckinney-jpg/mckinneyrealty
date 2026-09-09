@@ -1,5 +1,5 @@
 /* =========================================================================
-   McKinney Realty — Calculator Suite Parameters
+   McKinney Multifamily Group — Calculator Suite Parameters
    SINGLE SOURCE OF TRUTH for every CMHC program parameter, tax rate, and
    default used by the Financing Modeler and Disposition Calculator.
 

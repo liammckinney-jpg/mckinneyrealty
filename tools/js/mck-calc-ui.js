@@ -1,5 +1,5 @@
 /* =========================================================================
-   McKinney Realty — Calculator Shared UI
+   McKinney Multifamily Group — Calculator Shared UI
    Input binding, formatting, results reveal, GA4 events, and the
    email-capture modal. Used by both tool pages.
 
@@ -150,7 +150,7 @@
           '<div class="tool-field"><label for="mck-cap-phone">Phone <span style="font-weight:300;color:var(--text-3)">(optional)</span></label>' +
             '<input type="text" id="mck-cap-phone" name="phone" inputmode="tel" autocomplete="tel"></div>' +
           '<div class="mck-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>' +
-          '<label class="mck-consent" style="margin-bottom:0.875rem"><input type="checkbox" id="mck-cap-consent" checked> Email me McKinney Realty&#8217;s market updates and educational content. Unsubscribe anytime.</label>' +
+          '<label class="mck-consent" style="margin-bottom:0.875rem"><input type="checkbox" id="mck-cap-consent" checked> Email me McKinney Multifamily Group&#8217;s market updates and educational content. Unsubscribe anytime.</label>' +
           '<button type="submit" class="btn btn--navy">Send my summary</button>' +
         '</form>' +
       '</div>';

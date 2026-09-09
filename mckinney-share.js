@@ -1,5 +1,5 @@
 /* =========================================================================
-   McKinney Realty — site-native share affordances (Phase 1)
+   McKinney Multifamily Group — site-native share affordances (Phase 1)
    One placement per page: <section class="mck-share"> above the CTA band.
    Native share sheet where available; quiet intent-link row otherwise.
    No third-party scripts, no cookies — plain navigations + one GA4 event.

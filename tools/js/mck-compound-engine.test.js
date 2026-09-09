@@ -1,5 +1,5 @@
 /* =========================================================================
-   McKinney Realty — Compounding Modeler Engine Tests (Node)
+   McKinney Multifamily Group — Compounding Modeler Engine Tests (Node)
    Run:  node tools/js/mck-compound-engine.test.js
 
    Acceptance tests per Compounding_Modeler_Spec_v1 §10. Locked values
