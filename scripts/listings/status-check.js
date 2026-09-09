@@ -66,7 +66,7 @@ async function main() {
     if (html.indexOf('LISTINGS_PROVIDER') !== -1) fail.push('provider flag exposed client-side: ' + rel);
     if (snapshot.source === 'fixture') {
       if (!/<meta name="robots" content="[^"]*noindex/.test(html)) fail.push('missing noindex in fixture mode: ' + rel);
-      if (html.indexOf('Sample data — not live listings. Staging only.') === -1) fail.push('missing staging banner in fixture mode: ' + rel);
+      if (html.indexOf('Staging preview — sample listings; brokerage transfer pending.') === -1) fail.push('missing staging banner in fixture mode: ' + rel);
     }
   });
 

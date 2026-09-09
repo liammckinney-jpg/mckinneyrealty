@@ -187,7 +187,7 @@ async function main() {
 
   // §6 staging banner — fixture mode only, cannot be dismissed
   const stagingBanner = snapshot.source === 'fixture'
-    ? '<div class="lst-staging-banner" role="status">Sample data — not live listings. Staging only.</div>'
+    ? '<div class="lst-staging-banner" role="status">Staging preview — sample listings; brokerage transfer pending.</div>'
     : '';
 
   fs.mkdirSync(OUT, { recursive: true });
