@@ -250,17 +250,18 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
 /* Brand row: McKinney block · thin gold separator · RE/MAX mark.
    Side by side on desktop, stacked on mobile. */
 .footer-brand-row {
-  display: flex; align-items: center; justify-content: center;
-  gap: var(--s-5);
+  display: grid; grid-template-columns: 1fr 1px 1fr; align-items: center;
   padding-bottom: var(--s-4);
   border-bottom: 1px solid rgba(255,255,255,0.06);
   margin-bottom: var(--s-4);
 }
-.footer-brand { text-align: center; }
-.footer-brand-sep { width: 1px; height: 76px; background: var(--gold-dark); flex: none; }
-.footer-remax { height: 46px; width: auto; flex: none; }
+.footer-brand { text-align: center; justify-self: center; }
+/* Separator sits at the exact page centre; each mark is centred in its
+   half, so both logo centres are equidistant from the bar. */
+.footer-brand-sep { width: 1px; height: 76px; background: var(--gold-dark); }
+.footer-remax { height: 46px; width: auto; justify-self: center; }
 @media (max-width: 768px) {
-  .footer-brand-row { flex-direction: column; gap: var(--s-3); }
+  .footer-brand-row { display: flex; flex-direction: column; gap: var(--s-3); }
   .footer-brand-sep { width: 64px; height: 1px; }
 }
 .footer-brand-mono { height: 40px; width: auto; opacity: 1; margin: 0 auto var(--s-2); filter: brightness(0) invert(1); }
