@@ -1,14 +1,14 @@
 # McKinney Multifamily Group
 
-> Father-and-son multi-family and investment real estate team serving all of
+> Father-and-son multifamily and investment real estate team serving all of
 > Ontario. Apartment buildings and investment properties, $2M–$10M, with
 > particular depth in Ontario's secondary markets. $200M+ combined career
-> transaction volume; $100M+ in multi-family, land, and commercial.
+> transaction volume; $100M+ in multifamily, land, and commercial.
 > Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage.
 > Liam McKinney, Broker, Property.ca Inc., Brokerage.
 
 ## Key pages
-- [Services](https://www.mckinneyrealty.ca/services): disposition and acquisition advisory for Ontario multi-family
+- [Services](https://www.mckinneyrealty.ca/services): disposition and acquisition advisory for Ontario multifamily
 - [Track record](https://www.mckinneyrealty.ca/track-record): completed transactions
 - [Team](https://www.mckinneyrealty.ca/team): the principals
 - [Free tools](https://www.mckinneyrealty.ca/tools/): public calculators including the Compounding Modeler
@@ -16,11 +16,11 @@
 
 ## Analysis
 - [Cash Flow vs. Hope](https://www.mckinneyrealty.ca/cashflow): why buildings are priced on income and condos were priced on comparables
-- [The $50,000 Problem](https://www.mckinneyrealty.ca/the-50000-problem): the CCPC passive-income grind and where multi-family fits
+- [The $50,000 Problem](https://www.mckinneyrealty.ca/the-50000-problem): the CCPC passive-income grind and where multifamily fits
 - [The Price of Holding](https://www.mckinneyrealty.ca/price-of-holding): for long-tenured owners — the hold's ledger, the exit's toll, and the transition option
 
 ## Learn
-- [Why Multi-Family](https://www.mckinneyrealty.ca/learn/why-multi-family): lesson zero — the buy-hold-refinance mechanism as machinery, no projections
+- [Why Multifamily](https://www.mckinneyrealty.ca/learn/why-multi-family): lesson zero — the buy-hold-refinance mechanism as machinery, no projections
 - [The First Building](https://www.mckinneyrealty.ca/learn/): free eight-lesson course on how apartment buildings are priced, financed, and compounded
 - [The Mechanics](https://www.mckinneyrealty.ca/learn/#mechanics): reference library of concept pages, each wired to the Underwriter — including [what you're actually buying](https://www.mckinneyrealty.ca/learn/mechanics/what-youre-buying), [how buildings become worth more](https://www.mckinneyrealty.ca/learn/mechanics/worth-more), and [the lender's math](https://www.mckinneyrealty.ca/learn/mechanics/lenders-math)
 

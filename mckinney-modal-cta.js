@@ -501,8 +501,8 @@
             '<div class="mr-modal-field"><label>I\u2019m interested in</label>' +
               '<select name="interest">' +
                 '<option value="" disabled selected>Select one</option>' +
-                '<option value="selling">Selling a multi-family property</option>' +
-                '<option value="buying">Acquiring a multi-family property</option>' +
+                '<option value="selling">Selling a multifamily property</option>' +
+                '<option value="buying">Acquiring a multifamily property</option>' +
                 '<option value="valuation">Confidential property valuation</option>' +
                 '<option value="restructure">Portfolio restructuring</option>' +
                 '<option value="succession">Succession or estate planning</option>' +
@@ -862,7 +862,7 @@
     var html = '' +
       '<div class="mr-modal-header">' +
         '<div class="mr-modal-label">Market Intelligence</div>' +
-        '<div class="mr-modal-title">Ontario multi-family <em>insights</em>, delivered.</div>' +
+        '<div class="mr-modal-title">Ontario multifamily <em>insights</em>, delivered.</div>' +
         '<div class="mr-modal-desc">Monthly market updates and quarterly in-depth reports covering cap rates, vacancy, transaction volume, and regulatory developments.</div>' +
       '</div>' +
       '<div class="mr-modal-body">' +
