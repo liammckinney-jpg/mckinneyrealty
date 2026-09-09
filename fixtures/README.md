@@ -8,10 +8,10 @@ credentials arrive (Listings Front End spec, §9).
   invented. Addresses use street names like "Sample Street"; brokerages are
   "Example Realty Inc., Brokerage" and similar; MLS® ids are prefixed `FX`.
 - Every record carries `source: "fixture"` and `status: "Active"`.
-- Photos are keyword-matched placeholder images (apartment buildings and
-  interiors) served by loremflickr.com from Creative-Commons Flickr photos,
-  locked per URL for deterministic builds. They are not photos of the
-  fictional addresses and are not our property photography.
+- Photos are a curated, self-hosted set of Creative-Commons / public-domain
+  apartment-building images in `/images/listings-fixtures/` (attribution in
+  that folder's README), assigned roughly by building size. They are not
+  photos of the fictional addresses and are not our property photography.
 
 **This data must never be deployed to production.** The provider is selected by
 `LISTINGS_PROVIDER=fixture|proptx`; the build fails if a production build runs with

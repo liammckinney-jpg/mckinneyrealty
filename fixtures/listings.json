@@ -41,32 +41,32 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=100",
+          "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=101",
+          "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=102",
+          "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=103",
+          "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=104",
+          "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=105",
+          "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
         }
@@ -117,22 +117,22 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=106",
+          "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=107",
+          "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=108",
+          "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=109",
+          "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 4 \u2014 synthetic listing"
         }
@@ -183,27 +183,27 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=110",
+          "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=111",
+          "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=112",
+          "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=113",
+          "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=114",
+          "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
         }
@@ -251,42 +251,42 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=115",
+          "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=116",
+          "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=117",
+          "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=118",
+          "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=119",
+          "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=120",
+          "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=121",
+          "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=122",
+          "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 8,
           "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
         }
@@ -334,37 +334,37 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=123",
+          "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=124",
+          "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=125",
+          "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=126",
+          "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=127",
+          "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=128",
+          "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=129",
+          "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
@@ -415,42 +415,42 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=130",
+          "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=131",
+          "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=132",
+          "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=133",
+          "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=134",
+          "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=135",
+          "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=136",
+          "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=137",
+          "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 8,
           "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
         }
@@ -501,27 +501,27 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=138",
+          "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=139",
+          "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=140",
+          "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=141",
+          "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=142",
+          "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
         }
@@ -569,32 +569,32 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=143",
+          "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=144",
+          "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=145",
+          "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=146",
+          "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=147",
+          "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=148",
+          "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
         }
@@ -645,37 +645,37 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=149",
+          "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=150",
+          "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=151",
+          "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=152",
+          "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=153",
+          "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=154",
+          "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=155",
+          "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
@@ -723,17 +723,17 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=156",
+          "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=157",
+          "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=158",
+          "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 3 \u2014 synthetic listing"
         }
@@ -784,37 +784,37 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=159",
+          "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=160",
+          "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=161",
+          "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=162",
+          "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=163",
+          "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=164",
+          "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=165",
+          "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
@@ -862,37 +862,37 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=166",
+          "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=167",
+          "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=168",
+          "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=169",
+          "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=170",
+          "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=171",
+          "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=172",
+          "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
@@ -943,17 +943,17 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=173",
+          "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=174",
+          "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=175",
+          "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 3 \u2014 synthetic listing"
         }
@@ -1004,27 +1004,27 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=176",
+          "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=177",
+          "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=178",
+          "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=179",
+          "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=180",
+          "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
         }
@@ -1072,27 +1072,27 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=181",
+          "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=182",
+          "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=183",
+          "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=184",
+          "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=185",
+          "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
         }
@@ -1140,37 +1140,37 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=186",
+          "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=187",
+          "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=188",
+          "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=189",
+          "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=190",
+          "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=191",
+          "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=192",
+          "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
@@ -1221,37 +1221,37 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=193",
+          "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=194",
+          "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=195",
+          "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=196",
+          "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=197",
+          "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=198",
+          "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=199",
+          "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
@@ -1302,27 +1302,27 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=200",
+          "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=201",
+          "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=202",
+          "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=203",
+          "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=204",
+          "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
         }
@@ -1373,37 +1373,37 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=205",
+          "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=206",
+          "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=207",
+          "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=208",
+          "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=209",
+          "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=210",
+          "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=211",
+          "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
@@ -1448,37 +1448,37 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=212",
+          "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=213",
+          "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=214",
+          "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=215",
+          "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=216",
+          "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=217",
+          "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=218",
+          "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
@@ -1529,17 +1529,17 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=219",
+          "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=220",
+          "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=221",
+          "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 3 \u2014 synthetic listing"
         }
@@ -1590,42 +1590,42 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=222",
+          "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=223",
+          "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=224",
+          "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=225",
+          "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=226",
+          "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=227",
+          "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=228",
+          "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=229",
+          "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 8,
           "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
         }
@@ -1676,17 +1676,17 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=230",
+          "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=231",
+          "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=232",
+          "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 3 \u2014 synthetic listing"
         }
@@ -1734,42 +1734,42 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=233",
+          "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=234",
+          "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=235",
+          "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=236",
+          "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=237",
+          "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=238",
+          "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=239",
+          "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=240",
+          "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 8,
           "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
         }
@@ -1817,37 +1817,37 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=241",
+          "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=242",
+          "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=243",
+          "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=244",
+          "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=245",
+          "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=246",
+          "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=247",
+          "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
@@ -1898,32 +1898,32 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=248",
+          "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=249",
+          "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=250",
+          "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=251",
+          "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=252",
+          "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=253",
+          "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
         }
@@ -1974,32 +1974,32 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=254",
+          "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=255",
+          "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=256",
+          "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=257",
+          "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=258",
+          "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=259",
+          "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
         }
@@ -2047,32 +2047,32 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=260",
+          "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=261",
+          "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=262",
+          "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=263",
+          "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=264",
+          "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=265",
+          "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
         }
@@ -2123,32 +2123,32 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=266",
+          "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=267",
+          "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=268",
+          "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=269",
+          "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=270",
+          "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=271",
+          "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
         }
@@ -2196,17 +2196,17 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=272",
+          "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=273",
+          "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=274",
+          "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 3 \u2014 synthetic listing"
         }
@@ -2257,22 +2257,22 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=275",
+          "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=276",
+          "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=277",
+          "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=278",
+          "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 4 \u2014 synthetic listing"
         }
@@ -2320,22 +2320,22 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=279",
+          "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=280",
+          "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=281",
+          "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=282",
+          "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 4 \u2014 synthetic listing"
         }
@@ -2386,27 +2386,27 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=283",
+          "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=284",
+          "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=285",
+          "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=286",
+          "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=287",
+          "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
         }
@@ -2457,37 +2457,37 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=288",
+          "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=289",
+          "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=290",
+          "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=291",
+          "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=292",
+          "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=293",
+          "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=294",
+          "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
@@ -2535,22 +2535,22 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=295",
+          "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=296",
+          "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=297",
+          "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=298",
+          "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 4 \u2014 synthetic listing"
         }
@@ -2598,37 +2598,37 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=299",
+          "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=300",
+          "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=301",
+          "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=302",
+          "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=303",
+          "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=304",
+          "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=305",
+          "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
@@ -2679,42 +2679,42 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=306",
+          "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=307",
+          "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=308",
+          "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=309",
+          "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=310",
+          "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=311",
+          "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=312",
+          "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=313",
+          "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 8,
           "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
         }
@@ -2765,37 +2765,37 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=314",
+          "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,facade?lock=315",
+          "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=316",
+          "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=317",
+          "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=318",
+          "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=319",
+          "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=320",
+          "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
@@ -2846,42 +2846,42 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=321",
+          "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=322",
+          "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=323",
+          "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=324",
+          "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=325",
+          "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=326",
+          "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=327",
+          "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=328",
+          "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 8,
           "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
         }
@@ -2926,37 +2926,37 @@
       },
       "media": [
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=329",
+          "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 1,
           "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,building?lock=330",
+          "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 2,
           "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/building,architecture?lock=331",
+          "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 3,
           "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=332",
+          "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 4,
           "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=333",
+          "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 5,
           "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/brick,building?lock=334",
+          "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 6,
           "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=335",
+          "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 7,
           "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }

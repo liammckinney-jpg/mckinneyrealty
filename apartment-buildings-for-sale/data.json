@@ -16,7 +16,7 @@
    "office": "Demo Commercial Realty Corp., Brokerage",
    "dom": 3,
    "modified": "2026-09-04T07:14:18.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=176",
+   "thumb": "/images/listings-fixtures/apt-11.jpg",
    "thumbAlt": "Sample photo 1 of 5 — synthetic listing"
   },
   {
@@ -33,7 +33,7 @@
    "office": "Sample Properties Ltd., Brokerage",
    "dom": 3,
    "modified": "2026-09-04T00:57:51.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=222",
+   "thumb": "/images/listings-fixtures/apt-03.jpg",
    "thumbAlt": "Sample photo 1 of 8 — synthetic listing"
   },
   {
@@ -50,7 +50,7 @@
    "office": "Demo Commercial Realty Corp., Brokerage",
    "dom": 5,
    "modified": "2026-09-06T13:55:54.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=288",
+   "thumb": "/images/listings-fixtures/apt-21.jpg",
    "thumbAlt": "Sample photo 1 of 7 — synthetic listing"
   },
   {
@@ -67,7 +67,7 @@
    "office": "Placeholder Real Estate Group, Brokerage",
    "dom": 5,
    "modified": "2026-09-06T12:50:21.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=143",
+   "thumb": "/images/listings-fixtures/apt-04.jpg",
    "thumbAlt": "Sample photo 1 of 6 — synthetic listing"
   },
   {
@@ -84,7 +84,7 @@
    "office": "Example Realty Inc., Brokerage",
    "dom": 5,
    "modified": "2026-09-02T22:02:47.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=100",
+   "thumb": "/images/listings-fixtures/apt-12.jpg",
    "thumbAlt": "Sample photo 1 of 6 — synthetic listing"
   },
   {
@@ -101,7 +101,7 @@
    "office": "Demo Commercial Realty Corp., Brokerage",
    "dom": 11,
    "modified": "2026-09-04T04:17:24.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=266",
+   "thumb": "/images/listings-fixtures/apt-13.jpg",
    "thumbAlt": "Sample photo 1 of 6 — synthetic listing"
   },
   {
@@ -118,7 +118,7 @@
    "office": "Specimen Realty Co., Brokerage",
    "dom": 17,
    "modified": "2026-09-03T06:56:14.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=181",
+   "thumb": "/images/listings-fixtures/apt-18.jpg",
    "thumbAlt": "Sample photo 1 of 5 — synthetic listing"
   },
   {
@@ -135,7 +135,7 @@
    "office": "Demo Commercial Realty Corp., Brokerage",
    "dom": 17,
    "modified": "2026-09-02T14:51:54.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=205",
+   "thumb": "/images/listings-fixtures/apt-12.jpg",
    "thumbAlt": "Sample photo 1 of 7 — synthetic listing"
   },
   {
@@ -152,7 +152,7 @@
    "office": "Sample Properties Ltd., Brokerage",
    "dom": 18,
    "modified": "2026-09-06T03:14:36.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=306",
+   "thumb": "/images/listings-fixtures/apt-21.jpg",
    "thumbAlt": "Sample photo 1 of 8 — synthetic listing"
   },
   {
@@ -169,7 +169,7 @@
    "office": "Specimen Realty Co., Brokerage",
    "dom": 18,
    "modified": "2026-09-03T13:14:47.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=295",
+   "thumb": "/images/listings-fixtures/apt-18.jpg",
    "thumbAlt": "Sample photo 1 of 4 — synthetic listing"
   },
   {
@@ -186,7 +186,7 @@
    "office": "Sample Properties Ltd., Brokerage",
    "dom": 19,
    "modified": "2026-09-01T17:30:05.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=166",
+   "thumb": "/images/listings-fixtures/apt-20.jpg",
    "thumbAlt": "Sample photo 1 of 7 — synthetic listing"
   },
   {
@@ -203,7 +203,7 @@
    "office": "Example Realty Inc., Brokerage",
    "dom": 20,
    "modified": "2026-09-01T17:53:31.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=186",
+   "thumb": "/images/listings-fixtures/apt-19.jpg",
    "thumbAlt": "Sample photo 1 of 7 — synthetic listing"
   },
   {
@@ -220,7 +220,7 @@
    "office": "Example Realty Inc., Brokerage",
    "dom": 21,
    "modified": "2026-09-04T02:01:19.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=248",
+   "thumb": "/images/listings-fixtures/apt-04.jpg",
    "thumbAlt": "Sample photo 1 of 6 — synthetic listing"
   },
   {
@@ -237,7 +237,7 @@
    "office": "Specimen Realty Co., Brokerage",
    "dom": 37,
    "modified": "2026-09-02T02:48:36.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=123",
+   "thumb": "/images/listings-fixtures/apt-11.jpg",
    "thumbAlt": "Sample photo 1 of 7 — synthetic listing"
   },
   {
@@ -254,7 +254,7 @@
    "office": "Specimen Realty Co., Brokerage",
    "dom": 38,
    "modified": "2026-09-06T15:01:30.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=272",
+   "thumb": "/images/listings-fixtures/apt-04.jpg",
    "thumbAlt": "Sample photo 1 of 3 — synthetic listing"
   },
   {
@@ -271,7 +271,7 @@
    "office": "Placeholder Real Estate Group, Brokerage",
    "dom": 48,
    "modified": "2026-09-03T06:31:08.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=173",
+   "thumb": "/images/listings-fixtures/apt-14.jpg",
    "thumbAlt": "Sample photo 1 of 3 — synthetic listing"
   },
   {
@@ -288,7 +288,7 @@
    "office": "Sample Properties Ltd., Brokerage",
    "dom": 59,
    "modified": "2026-09-04T08:46:55.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=254",
+   "thumb": "/images/listings-fixtures/apt-21.jpg",
    "thumbAlt": "Sample photo 1 of 6 — synthetic listing"
   },
   {
@@ -305,7 +305,7 @@
    "office": "Placeholder Real Estate Group, Brokerage",
    "dom": 79,
    "modified": "2026-09-02T15:46:17.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=283",
+   "thumb": "/images/listings-fixtures/apt-19.jpg",
    "thumbAlt": "Sample photo 1 of 5 — synthetic listing"
   },
   {
@@ -322,7 +322,7 @@
    "office": "Sample Properties Ltd., Brokerage",
    "dom": 97,
    "modified": "2026-09-02T19:43:47.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=106",
+   "thumb": "/images/listings-fixtures/apt-03.jpg",
    "thumbAlt": "Sample photo 1 of 4 — synthetic listing"
   },
   {
@@ -339,7 +339,7 @@
    "office": "Example Realty Inc., Brokerage",
    "dom": 97,
    "modified": "2026-09-02T17:10:15.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=275",
+   "thumb": "/images/listings-fixtures/apt-06.jpg",
    "thumbAlt": "Sample photo 1 of 4 — synthetic listing"
   },
   {
@@ -356,7 +356,7 @@
    "office": "Sample Properties Ltd., Brokerage",
    "dom": 108,
    "modified": "2026-09-06T23:35:46.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=279",
+   "thumb": "/images/listings-fixtures/apt-03.jpg",
    "thumbAlt": "Sample photo 1 of 4 — synthetic listing"
   },
   {
@@ -373,7 +373,7 @@
    "office": "Demo Commercial Realty Corp., Brokerage",
    "dom": 108,
    "modified": "2026-09-05T15:33:21.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=115",
+   "thumb": "/images/listings-fixtures/apt-22.jpg",
    "thumbAlt": "Sample photo 1 of 8 — synthetic listing"
   },
   {
@@ -390,7 +390,7 @@
    "office": "Demo Commercial Realty Corp., Brokerage",
    "dom": 112,
    "modified": "2026-09-02T03:11:18.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=233",
+   "thumb": "/images/listings-fixtures/apt-17.jpg",
    "thumbAlt": "Sample photo 1 of 8 — synthetic listing"
   },
   {
@@ -407,7 +407,7 @@
    "office": "Specimen Realty Co., Brokerage",
    "dom": 117,
    "modified": "2026-09-06T23:40:23.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=329",
+   "thumb": "/images/listings-fixtures/apt-22.jpg",
    "thumbAlt": "Sample photo 1 of 7 — synthetic listing"
   },
   {
@@ -424,7 +424,7 @@
    "office": "Demo Commercial Realty Corp., Brokerage",
    "dom": 118,
    "modified": "2026-09-03T00:03:22.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=321",
+   "thumb": "/images/listings-fixtures/apt-20.jpg",
    "thumbAlt": "Sample photo 1 of 8 — synthetic listing"
   },
   {
@@ -441,7 +441,7 @@
    "office": "Sample Properties Ltd., Brokerage",
    "dom": 120,
    "modified": "2026-09-02T21:49:33.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=138",
+   "thumb": "/images/listings-fixtures/apt-21.jpg",
    "thumbAlt": "Sample photo 1 of 5 — synthetic listing"
   },
   {
@@ -458,7 +458,7 @@
    "office": "Example Realty Inc., Brokerage",
    "dom": 122,
    "modified": "2026-09-05T16:21:01.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=130",
+   "thumb": "/images/listings-fixtures/apt-18.jpg",
    "thumbAlt": "Sample photo 1 of 8 — synthetic listing"
   },
   {
@@ -475,7 +475,7 @@
    "office": "Specimen Realty Co., Brokerage",
    "dom": 124,
    "modified": "2026-09-05T08:34:14.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=156",
+   "thumb": "/images/listings-fixtures/apt-12.jpg",
    "thumbAlt": "Sample photo 1 of 3 — synthetic listing"
   },
   {
@@ -492,7 +492,7 @@
    "office": "Demo Commercial Realty Corp., Brokerage",
    "dom": 124,
    "modified": "2026-09-03T22:40:37.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=149",
+   "thumb": "/images/listings-fixtures/apt-11.jpg",
    "thumbAlt": "Sample photo 1 of 7 — synthetic listing"
   },
   {
@@ -509,7 +509,7 @@
    "office": "Placeholder Real Estate Group, Brokerage",
    "dom": 127,
    "modified": "2026-09-07T14:35:02.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=260",
+   "thumb": "/images/listings-fixtures/apt-06.jpg",
    "thumbAlt": "Sample photo 1 of 6 — synthetic listing"
   },
   {
@@ -526,7 +526,7 @@
    "office": "Specimen Realty Co., Brokerage",
    "dom": 130,
    "modified": "2026-09-05T12:31:44.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=212",
+   "thumb": "/images/listings-fixtures/apt-04.jpg",
    "thumbAlt": "Sample photo 1 of 7 — synthetic listing"
   },
   {
@@ -543,7 +543,7 @@
    "office": "Placeholder Real Estate Group, Brokerage",
    "dom": 140,
    "modified": "2026-09-02T05:12:50.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=314",
+   "thumb": "/images/listings-fixtures/apt-06.jpg",
    "thumbAlt": "Sample photo 1 of 7 — synthetic listing"
   },
   {
@@ -560,7 +560,7 @@
    "office": "Placeholder Real Estate Group, Brokerage",
    "dom": 141,
    "modified": "2026-09-04T21:59:43.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=200",
+   "thumb": "/images/listings-fixtures/apt-05.jpg",
    "thumbAlt": "Sample photo 1 of 5 — synthetic listing"
   },
   {
@@ -577,7 +577,7 @@
    "office": "Example Realty Inc., Brokerage",
    "dom": 141,
    "modified": "2026-09-01T17:58:07.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=219",
+   "thumb": "/images/listings-fixtures/apt-02.jpg",
    "thumbAlt": "Sample photo 1 of 3 — synthetic listing"
   },
   {
@@ -594,7 +594,7 @@
    "office": "Example Realty Inc., Brokerage",
    "dom": 145,
    "modified": "2026-09-03T23:35:05.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=159",
+   "thumb": "/images/listings-fixtures/apt-02.jpg",
    "thumbAlt": "Sample photo 1 of 7 — synthetic listing"
   },
   {
@@ -611,7 +611,7 @@
    "office": "Sample Properties Ltd., Brokerage",
    "dom": 147,
    "modified": "2026-09-04T17:22:01.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=193",
+   "thumb": "/images/listings-fixtures/apt-02.jpg",
    "thumbAlt": "Sample photo 1 of 7 — synthetic listing"
   },
   {
@@ -628,7 +628,7 @@
    "office": "Specimen Realty Co., Brokerage",
    "dom": 151,
    "modified": "2026-09-04T06:43:26.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=241",
+   "thumb": "/images/listings-fixtures/apt-01.jpg",
    "thumbAlt": "Sample photo 1 of 7 — synthetic listing"
   },
   {
@@ -645,7 +645,7 @@
    "office": "Placeholder Real Estate Group, Brokerage",
    "dom": 156,
    "modified": "2026-09-07T03:45:54.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=230",
+   "thumb": "/images/listings-fixtures/apt-02.jpg",
    "thumbAlt": "Sample photo 1 of 3 — synthetic listing"
   },
   {
@@ -662,7 +662,7 @@
    "office": "Placeholder Real Estate Group, Brokerage",
    "dom": 162,
    "modified": "2026-09-01T19:39:24.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=110",
+   "thumb": "/images/listings-fixtures/apt-14.jpg",
    "thumbAlt": "Sample photo 1 of 5 — synthetic listing"
   },
   {
@@ -679,7 +679,7 @@
    "office": "Example Realty Inc., Brokerage",
    "dom": 167,
    "modified": "2026-09-01T17:15:27.000Z",
-   "thumb": "https://loremflickr.com/1200/800/apartment,building?lock=299",
+   "thumb": "/images/listings-fixtures/apt-05.jpg",
    "thumbAlt": "Sample photo 1 of 7 — synthetic listing"
   }
  ]
