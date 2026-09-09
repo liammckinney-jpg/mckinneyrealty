@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-09-07T16:00:00.000Z",
-  "note": "SYNTHETIC FIXTURE DATA — obviously fictional, staging only, never production. See fixtures/README.md.",
+  "note": "SYNTHETIC FIXTURE DATA \u2014 obviously fictional, staging only, never production. See fixtures/README.md.",
   "listings": [
     {
       "listingKey": "fixture-001",
@@ -41,37 +41,37 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-001-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=100",
           "order": 1,
-          "caption": "Sample photo 1 of 6 — synthetic listing"
+          "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-001-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=101",
           "order": 2,
-          "caption": "Sample photo 2 of 6 — synthetic listing"
+          "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-001-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=102",
           "order": 3,
-          "caption": "Sample photo 3 of 6 — synthetic listing"
+          "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-001-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=103",
           "order": 4,
-          "caption": "Sample photo 4 of 6 — synthetic listing"
+          "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-001-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=104",
           "order": 5,
-          "caption": "Sample photo 5 of 6 — synthetic listing"
+          "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-001-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=105",
           "order": 6,
-          "caption": "Sample photo 6 of 6 — synthetic listing"
+          "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 01. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 01. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 5,
@@ -117,27 +117,27 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-002-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=106",
           "order": 1,
-          "caption": "Sample photo 1 of 4 — synthetic listing"
+          "caption": "Sample photo 1 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-002-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=107",
           "order": 2,
-          "caption": "Sample photo 2 of 4 — synthetic listing"
+          "caption": "Sample photo 2 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-002-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=108",
           "order": 3,
-          "caption": "Sample photo 3 of 4 — synthetic listing"
+          "caption": "Sample photo 3 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-002-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=109",
           "order": 4,
-          "caption": "Sample photo 4 of 4 — synthetic listing"
+          "caption": "Sample photo 4 of 4 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 02. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 02. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 97,
@@ -183,32 +183,32 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-003-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=110",
           "order": 1,
-          "caption": "Sample photo 1 of 5 — synthetic listing"
+          "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-003-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=111",
           "order": 2,
-          "caption": "Sample photo 2 of 5 — synthetic listing"
+          "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-003-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=112",
           "order": 3,
-          "caption": "Sample photo 3 of 5 — synthetic listing"
+          "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-003-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=113",
           "order": 4,
-          "caption": "Sample photo 4 of 5 — synthetic listing"
+          "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-003-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=114",
           "order": 5,
-          "caption": "Sample photo 5 of 5 — synthetic listing"
+          "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 03. This text exists to test page layout and does not describe a real property. 25-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 03. This text exists to test page layout and does not describe a real property. 25-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
       "listAgentName": null,
       "daysOnMarket": 162,
@@ -251,47 +251,47 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-004-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=115",
           "order": 1,
-          "caption": "Sample photo 1 of 8 — synthetic listing"
+          "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-004-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=116",
           "order": 2,
-          "caption": "Sample photo 2 of 8 — synthetic listing"
+          "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-004-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=117",
           "order": 3,
-          "caption": "Sample photo 3 of 8 — synthetic listing"
+          "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-004-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=118",
           "order": 4,
-          "caption": "Sample photo 4 of 8 — synthetic listing"
+          "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-004-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=119",
           "order": 5,
-          "caption": "Sample photo 5 of 8 — synthetic listing"
+          "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-004-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=120",
           "order": 6,
-          "caption": "Sample photo 6 of 8 — synthetic listing"
+          "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-004-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=121",
           "order": 7,
-          "caption": "Sample photo 7 of 8 — synthetic listing"
+          "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-004-8/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=122",
           "order": 8,
-          "caption": "Sample photo 8 of 8 — synthetic listing"
+          "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 04. This text exists to test page layout and does not describe a real property. 54-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 04. This text exists to test page layout and does not describe a real property. 54-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 108,
@@ -334,42 +334,42 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-005-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=123",
           "order": 1,
-          "caption": "Sample photo 1 of 7 — synthetic listing"
+          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-005-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=124",
           "order": 2,
-          "caption": "Sample photo 2 of 7 — synthetic listing"
+          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-005-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=125",
           "order": 3,
-          "caption": "Sample photo 3 of 7 — synthetic listing"
+          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-005-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=126",
           "order": 4,
-          "caption": "Sample photo 4 of 7 — synthetic listing"
+          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-005-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=127",
           "order": 5,
-          "caption": "Sample photo 5 of 7 — synthetic listing"
+          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-005-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=128",
           "order": 6,
-          "caption": "Sample photo 6 of 7 — synthetic listing"
+          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-005-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=129",
           "order": 7,
-          "caption": "Sample photo 7 of 7 — synthetic listing"
+          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 05. This text exists to test page layout and does not describe a real property. 8-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 05. This text exists to test page layout and does not describe a real property. 8-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
       "listAgentName": "Sam Sample",
       "daysOnMarket": 37,
@@ -415,47 +415,47 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-006-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=130",
           "order": 1,
-          "caption": "Sample photo 1 of 8 — synthetic listing"
+          "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-006-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=131",
           "order": 2,
-          "caption": "Sample photo 2 of 8 — synthetic listing"
+          "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-006-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=132",
           "order": 3,
-          "caption": "Sample photo 3 of 8 — synthetic listing"
+          "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-006-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=133",
           "order": 4,
-          "caption": "Sample photo 4 of 8 — synthetic listing"
+          "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-006-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=134",
           "order": 5,
-          "caption": "Sample photo 5 of 8 — synthetic listing"
+          "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-006-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=135",
           "order": 6,
-          "caption": "Sample photo 6 of 8 — synthetic listing"
+          "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-006-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=136",
           "order": 7,
-          "caption": "Sample photo 7 of 8 — synthetic listing"
+          "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-006-8/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=137",
           "order": 8,
-          "caption": "Sample photo 8 of 8 — synthetic listing"
+          "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 06. This text exists to test page layout and does not describe a real property. 96-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 06. This text exists to test page layout and does not describe a real property. 96-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 122,
@@ -501,32 +501,32 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-007-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=138",
           "order": 1,
-          "caption": "Sample photo 1 of 5 — synthetic listing"
+          "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-007-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=139",
           "order": 2,
-          "caption": "Sample photo 2 of 5 — synthetic listing"
+          "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-007-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=140",
           "order": 3,
-          "caption": "Sample photo 3 of 5 — synthetic listing"
+          "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-007-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=141",
           "order": 4,
-          "caption": "Sample photo 4 of 5 — synthetic listing"
+          "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-007-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=142",
           "order": 5,
-          "caption": "Sample photo 5 of 5 — synthetic listing"
+          "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 07. This text exists to test page layout and does not describe a real property. 5-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 07. This text exists to test page layout and does not describe a real property. 5-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 120,
@@ -569,37 +569,37 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-008-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=143",
           "order": 1,
-          "caption": "Sample photo 1 of 6 — synthetic listing"
+          "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-008-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=144",
           "order": 2,
-          "caption": "Sample photo 2 of 6 — synthetic listing"
+          "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-008-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=145",
           "order": 3,
-          "caption": "Sample photo 3 of 6 — synthetic listing"
+          "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-008-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=146",
           "order": 4,
-          "caption": "Sample photo 4 of 6 — synthetic listing"
+          "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-008-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=147",
           "order": 5,
-          "caption": "Sample photo 5 of 6 — synthetic listing"
+          "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-008-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=148",
           "order": 6,
-          "caption": "Sample photo 6 of 6 — synthetic listing"
+          "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 08. This text exists to test page layout and does not describe a real property. 11-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 08. This text exists to test page layout and does not describe a real property. 11-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
       "listAgentName": null,
       "daysOnMarket": 5,
@@ -645,42 +645,42 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-009-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=149",
           "order": 1,
-          "caption": "Sample photo 1 of 7 — synthetic listing"
+          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-009-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=150",
           "order": 2,
-          "caption": "Sample photo 2 of 7 — synthetic listing"
+          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-009-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=151",
           "order": 3,
-          "caption": "Sample photo 3 of 7 — synthetic listing"
+          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-009-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=152",
           "order": 4,
-          "caption": "Sample photo 4 of 7 — synthetic listing"
+          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-009-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=153",
           "order": 5,
-          "caption": "Sample photo 5 of 7 — synthetic listing"
+          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-009-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=154",
           "order": 6,
-          "caption": "Sample photo 6 of 7 — synthetic listing"
+          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-009-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=155",
           "order": 7,
-          "caption": "Sample photo 7 of 7 — synthetic listing"
+          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 09. This text exists to test page layout and does not describe a real property. 18-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 09. This text exists to test page layout and does not describe a real property. 18-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 124,
@@ -723,22 +723,22 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-010-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=156",
           "order": 1,
-          "caption": "Sample photo 1 of 3 — synthetic listing"
+          "caption": "Sample photo 1 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-010-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=157",
           "order": 2,
-          "caption": "Sample photo 2 of 3 — synthetic listing"
+          "caption": "Sample photo 2 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-010-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=158",
           "order": 3,
-          "caption": "Sample photo 3 of 3 — synthetic listing"
+          "caption": "Sample photo 3 of 3 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 10. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 10. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 124,
@@ -784,42 +784,42 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-011-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=159",
           "order": 1,
-          "caption": "Sample photo 1 of 7 — synthetic listing"
+          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-011-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=160",
           "order": 2,
-          "caption": "Sample photo 2 of 7 — synthetic listing"
+          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-011-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=161",
           "order": 3,
-          "caption": "Sample photo 3 of 7 — synthetic listing"
+          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-011-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=162",
           "order": 4,
-          "caption": "Sample photo 4 of 7 — synthetic listing"
+          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-011-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=163",
           "order": 5,
-          "caption": "Sample photo 5 of 7 — synthetic listing"
+          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-011-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=164",
           "order": 6,
-          "caption": "Sample photo 6 of 7 — synthetic listing"
+          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-011-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=165",
           "order": 7,
-          "caption": "Sample photo 7 of 7 — synthetic listing"
+          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 11. This text exists to test page layout and does not describe a real property. 30-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 11. This text exists to test page layout and does not describe a real property. 30-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 145,
@@ -862,42 +862,42 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-012-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=166",
           "order": 1,
-          "caption": "Sample photo 1 of 7 — synthetic listing"
+          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-012-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=167",
           "order": 2,
-          "caption": "Sample photo 2 of 7 — synthetic listing"
+          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-012-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=168",
           "order": 3,
-          "caption": "Sample photo 3 of 7 — synthetic listing"
+          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-012-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=169",
           "order": 4,
-          "caption": "Sample photo 4 of 7 — synthetic listing"
+          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-012-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=170",
           "order": 5,
-          "caption": "Sample photo 5 of 7 — synthetic listing"
+          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-012-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=171",
           "order": 6,
-          "caption": "Sample photo 6 of 7 — synthetic listing"
+          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-012-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=172",
           "order": 7,
-          "caption": "Sample photo 7 of 7 — synthetic listing"
+          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 12. This text exists to test page layout and does not describe a real property. 9-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 12. This text exists to test page layout and does not describe a real property. 9-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 19,
@@ -943,22 +943,22 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-013-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=173",
           "order": 1,
-          "caption": "Sample photo 1 of 3 — synthetic listing"
+          "caption": "Sample photo 1 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-013-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=174",
           "order": 2,
-          "caption": "Sample photo 2 of 3 — synthetic listing"
+          "caption": "Sample photo 2 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-013-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=175",
           "order": 3,
-          "caption": "Sample photo 3 of 3 — synthetic listing"
+          "caption": "Sample photo 3 of 3 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 13. This text exists to test page layout and does not describe a real property. 24-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 13. This text exists to test page layout and does not describe a real property. 24-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
       "listAgentName": "Sam Sample",
       "daysOnMarket": 48,
@@ -1004,32 +1004,32 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-014-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=176",
           "order": 1,
-          "caption": "Sample photo 1 of 5 — synthetic listing"
+          "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-014-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=177",
           "order": 2,
-          "caption": "Sample photo 2 of 5 — synthetic listing"
+          "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-014-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=178",
           "order": 3,
-          "caption": "Sample photo 3 of 5 — synthetic listing"
+          "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-014-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=179",
           "order": 4,
-          "caption": "Sample photo 4 of 5 — synthetic listing"
+          "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-014-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=180",
           "order": 5,
-          "caption": "Sample photo 5 of 5 — synthetic listing"
+          "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 14. This text exists to test page layout and does not describe a real property. 7-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 14. This text exists to test page layout and does not describe a real property. 7-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 3,
@@ -1072,32 +1072,32 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-015-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=181",
           "order": 1,
-          "caption": "Sample photo 1 of 5 — synthetic listing"
+          "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-015-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=182",
           "order": 2,
-          "caption": "Sample photo 2 of 5 — synthetic listing"
+          "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-015-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=183",
           "order": 3,
-          "caption": "Sample photo 3 of 5 — synthetic listing"
+          "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-015-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=184",
           "order": 4,
-          "caption": "Sample photo 4 of 5 — synthetic listing"
+          "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-015-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=185",
           "order": 5,
-          "caption": "Sample photo 5 of 5 — synthetic listing"
+          "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 15. This text exists to test page layout and does not describe a real property. 44-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 15. This text exists to test page layout and does not describe a real property. 44-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 17,
@@ -1140,42 +1140,42 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-016-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=186",
           "order": 1,
-          "caption": "Sample photo 1 of 7 — synthetic listing"
+          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-016-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=187",
           "order": 2,
-          "caption": "Sample photo 2 of 7 — synthetic listing"
+          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-016-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=188",
           "order": 3,
-          "caption": "Sample photo 3 of 7 — synthetic listing"
+          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-016-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=189",
           "order": 4,
-          "caption": "Sample photo 4 of 7 — synthetic listing"
+          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-016-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=190",
           "order": 5,
-          "caption": "Sample photo 5 of 7 — synthetic listing"
+          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-016-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=191",
           "order": 6,
-          "caption": "Sample photo 6 of 7 — synthetic listing"
+          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-016-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=192",
           "order": 7,
-          "caption": "Sample photo 7 of 7 — synthetic listing"
+          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 16. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 16. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 20,
@@ -1221,42 +1221,42 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-017-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=193",
           "order": 1,
-          "caption": "Sample photo 1 of 7 — synthetic listing"
+          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-017-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=194",
           "order": 2,
-          "caption": "Sample photo 2 of 7 — synthetic listing"
+          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-017-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=195",
           "order": 3,
-          "caption": "Sample photo 3 of 7 — synthetic listing"
+          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-017-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=196",
           "order": 4,
-          "caption": "Sample photo 4 of 7 — synthetic listing"
+          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-017-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=197",
           "order": 5,
-          "caption": "Sample photo 5 of 7 — synthetic listing"
+          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-017-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=198",
           "order": 6,
-          "caption": "Sample photo 6 of 7 — synthetic listing"
+          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-017-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=199",
           "order": 7,
-          "caption": "Sample photo 7 of 7 — synthetic listing"
+          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 17. This text exists to test page layout and does not describe a real property. 66-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 17. This text exists to test page layout and does not describe a real property. 66-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 147,
@@ -1302,32 +1302,32 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-018-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=200",
           "order": 1,
-          "caption": "Sample photo 1 of 5 — synthetic listing"
+          "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-018-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=201",
           "order": 2,
-          "caption": "Sample photo 2 of 5 — synthetic listing"
+          "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-018-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=202",
           "order": 3,
-          "caption": "Sample photo 3 of 5 — synthetic listing"
+          "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-018-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=203",
           "order": 4,
-          "caption": "Sample photo 4 of 5 — synthetic listing"
+          "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-018-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=204",
           "order": 5,
-          "caption": "Sample photo 5 of 5 — synthetic listing"
+          "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 18. This text exists to test page layout and does not describe a real property. 10-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 18. This text exists to test page layout and does not describe a real property. 10-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
       "listAgentName": null,
       "daysOnMarket": 141,
@@ -1373,42 +1373,42 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-019-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=205",
           "order": 1,
-          "caption": "Sample photo 1 of 7 — synthetic listing"
+          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-019-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=206",
           "order": 2,
-          "caption": "Sample photo 2 of 7 — synthetic listing"
+          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-019-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=207",
           "order": 3,
-          "caption": "Sample photo 3 of 7 — synthetic listing"
+          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-019-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=208",
           "order": 4,
-          "caption": "Sample photo 4 of 7 — synthetic listing"
+          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-019-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=209",
           "order": 5,
-          "caption": "Sample photo 5 of 7 — synthetic listing"
+          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-019-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=210",
           "order": 6,
-          "caption": "Sample photo 6 of 7 — synthetic listing"
+          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-019-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=211",
           "order": 7,
-          "caption": "Sample photo 7 of 7 — synthetic listing"
+          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 19. This text exists to test page layout and does not describe a real property. 5-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 19. This text exists to test page layout and does not describe a real property. 5-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 17,
@@ -1448,42 +1448,42 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-020-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=212",
           "order": 1,
-          "caption": "Sample photo 1 of 7 — synthetic listing"
+          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-020-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=213",
           "order": 2,
-          "caption": "Sample photo 2 of 7 — synthetic listing"
+          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-020-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=214",
           "order": 3,
-          "caption": "Sample photo 3 of 7 — synthetic listing"
+          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-020-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=215",
           "order": 4,
-          "caption": "Sample photo 4 of 7 — synthetic listing"
+          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-020-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=216",
           "order": 5,
-          "caption": "Sample photo 5 of 7 — synthetic listing"
+          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-020-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=217",
           "order": 6,
-          "caption": "Sample photo 6 of 7 — synthetic listing"
+          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-020-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=218",
           "order": 7,
-          "caption": "Sample photo 7 of 7 — synthetic listing"
+          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 20. This text exists to test page layout and does not describe a real property. 21-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 20. This text exists to test page layout and does not describe a real property. 21-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 130,
@@ -1529,22 +1529,22 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-021-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=219",
           "order": 1,
-          "caption": "Sample photo 1 of 3 — synthetic listing"
+          "caption": "Sample photo 1 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-021-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=220",
           "order": 2,
-          "caption": "Sample photo 2 of 3 — synthetic listing"
+          "caption": "Sample photo 2 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-021-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=221",
           "order": 3,
-          "caption": "Sample photo 3 of 3 — synthetic listing"
+          "caption": "Sample photo 3 of 3 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 21. This text exists to test page layout and does not describe a real property. 15-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 21. This text exists to test page layout and does not describe a real property. 15-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
       "listAgentName": "Sam Sample",
       "daysOnMarket": 141,
@@ -1590,47 +1590,47 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-022-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=222",
           "order": 1,
-          "caption": "Sample photo 1 of 8 — synthetic listing"
+          "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-022-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=223",
           "order": 2,
-          "caption": "Sample photo 2 of 8 — synthetic listing"
+          "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-022-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=224",
           "order": 3,
-          "caption": "Sample photo 3 of 8 — synthetic listing"
+          "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-022-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=225",
           "order": 4,
-          "caption": "Sample photo 4 of 8 — synthetic listing"
+          "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-022-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=226",
           "order": 5,
-          "caption": "Sample photo 5 of 8 — synthetic listing"
+          "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-022-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=227",
           "order": 6,
-          "caption": "Sample photo 6 of 8 — synthetic listing"
+          "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-022-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=228",
           "order": 7,
-          "caption": "Sample photo 7 of 8 — synthetic listing"
+          "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-022-8/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=229",
           "order": 8,
-          "caption": "Sample photo 8 of 8 — synthetic listing"
+          "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 22. This text exists to test page layout and does not describe a real property. 36-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 22. This text exists to test page layout and does not describe a real property. 36-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 3,
@@ -1676,22 +1676,22 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-023-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=230",
           "order": 1,
-          "caption": "Sample photo 1 of 3 — synthetic listing"
+          "caption": "Sample photo 1 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-023-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=231",
           "order": 2,
-          "caption": "Sample photo 2 of 3 — synthetic listing"
+          "caption": "Sample photo 2 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-023-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=232",
           "order": 3,
-          "caption": "Sample photo 3 of 3 — synthetic listing"
+          "caption": "Sample photo 3 of 3 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 23. This text exists to test page layout and does not describe a real property. 120-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 23. This text exists to test page layout and does not describe a real property. 120-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
       "listAgentName": null,
       "daysOnMarket": 156,
@@ -1734,47 +1734,47 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-024-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=233",
           "order": 1,
-          "caption": "Sample photo 1 of 8 — synthetic listing"
+          "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-024-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=234",
           "order": 2,
-          "caption": "Sample photo 2 of 8 — synthetic listing"
+          "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-024-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=235",
           "order": 3,
-          "caption": "Sample photo 3 of 8 — synthetic listing"
+          "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-024-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=236",
           "order": 4,
-          "caption": "Sample photo 4 of 8 — synthetic listing"
+          "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-024-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=237",
           "order": 5,
-          "caption": "Sample photo 5 of 8 — synthetic listing"
+          "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-024-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=238",
           "order": 6,
-          "caption": "Sample photo 6 of 8 — synthetic listing"
+          "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-024-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=239",
           "order": 7,
-          "caption": "Sample photo 7 of 8 — synthetic listing"
+          "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-024-8/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=240",
           "order": 8,
-          "caption": "Sample photo 8 of 8 — synthetic listing"
+          "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 24. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 24. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 112,
@@ -1817,42 +1817,42 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-025-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=241",
           "order": 1,
-          "caption": "Sample photo 1 of 7 — synthetic listing"
+          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-025-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=242",
           "order": 2,
-          "caption": "Sample photo 2 of 7 — synthetic listing"
+          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-025-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=243",
           "order": 3,
-          "caption": "Sample photo 3 of 7 — synthetic listing"
+          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-025-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=244",
           "order": 4,
-          "caption": "Sample photo 4 of 7 — synthetic listing"
+          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-025-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=245",
           "order": 5,
-          "caption": "Sample photo 5 of 7 — synthetic listing"
+          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-025-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=246",
           "order": 6,
-          "caption": "Sample photo 6 of 7 — synthetic listing"
+          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-025-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=247",
           "order": 7,
-          "caption": "Sample photo 7 of 7 — synthetic listing"
+          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 25. This text exists to test page layout and does not describe a real property. 50-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 25. This text exists to test page layout and does not describe a real property. 50-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 151,
@@ -1898,37 +1898,37 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-026-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=248",
           "order": 1,
-          "caption": "Sample photo 1 of 6 — synthetic listing"
+          "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-026-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=249",
           "order": 2,
-          "caption": "Sample photo 2 of 6 — synthetic listing"
+          "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-026-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=250",
           "order": 3,
-          "caption": "Sample photo 3 of 6 — synthetic listing"
+          "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-026-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=251",
           "order": 4,
-          "caption": "Sample photo 4 of 6 — synthetic listing"
+          "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-026-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=252",
           "order": 5,
-          "caption": "Sample photo 5 of 6 — synthetic listing"
+          "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-026-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=253",
           "order": 6,
-          "caption": "Sample photo 6 of 6 — synthetic listing"
+          "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 26. This text exists to test page layout and does not describe a real property. 8-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 26. This text exists to test page layout and does not describe a real property. 8-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 21,
@@ -1974,37 +1974,37 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-027-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=254",
           "order": 1,
-          "caption": "Sample photo 1 of 6 — synthetic listing"
+          "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-027-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=255",
           "order": 2,
-          "caption": "Sample photo 2 of 6 — synthetic listing"
+          "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-027-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=256",
           "order": 3,
-          "caption": "Sample photo 3 of 6 — synthetic listing"
+          "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-027-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=257",
           "order": 4,
-          "caption": "Sample photo 4 of 6 — synthetic listing"
+          "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-027-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=258",
           "order": 5,
-          "caption": "Sample photo 5 of 6 — synthetic listing"
+          "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-027-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=259",
           "order": 6,
-          "caption": "Sample photo 6 of 6 — synthetic listing"
+          "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 27. This text exists to test page layout and does not describe a real property. 27-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 27. This text exists to test page layout and does not describe a real property. 27-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 59,
@@ -2047,37 +2047,37 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-028-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=260",
           "order": 1,
-          "caption": "Sample photo 1 of 6 — synthetic listing"
+          "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-028-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=261",
           "order": 2,
-          "caption": "Sample photo 2 of 6 — synthetic listing"
+          "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-028-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=262",
           "order": 3,
-          "caption": "Sample photo 3 of 6 — synthetic listing"
+          "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-028-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=263",
           "order": 4,
-          "caption": "Sample photo 4 of 6 — synthetic listing"
+          "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-028-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=264",
           "order": 5,
-          "caption": "Sample photo 5 of 6 — synthetic listing"
+          "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-028-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=265",
           "order": 6,
-          "caption": "Sample photo 6 of 6 — synthetic listing"
+          "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 28. This text exists to test page layout and does not describe a real property. 14-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 28. This text exists to test page layout and does not describe a real property. 14-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
       "listAgentName": null,
       "daysOnMarket": 127,
@@ -2123,37 +2123,37 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-029-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=266",
           "order": 1,
-          "caption": "Sample photo 1 of 6 — synthetic listing"
+          "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-029-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=267",
           "order": 2,
-          "caption": "Sample photo 2 of 6 — synthetic listing"
+          "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-029-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=268",
           "order": 3,
-          "caption": "Sample photo 3 of 6 — synthetic listing"
+          "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-029-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=269",
           "order": 4,
-          "caption": "Sample photo 4 of 6 — synthetic listing"
+          "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-029-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=270",
           "order": 5,
-          "caption": "Sample photo 5 of 6 — synthetic listing"
+          "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-029-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=271",
           "order": 6,
-          "caption": "Sample photo 6 of 6 — synthetic listing"
+          "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 29. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 29. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
       "listAgentName": "Sam Sample",
       "daysOnMarket": 11,
@@ -2196,22 +2196,22 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-030-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=272",
           "order": 1,
-          "caption": "Sample photo 1 of 3 — synthetic listing"
+          "caption": "Sample photo 1 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-030-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=273",
           "order": 2,
-          "caption": "Sample photo 2 of 3 — synthetic listing"
+          "caption": "Sample photo 2 of 3 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-030-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=274",
           "order": 3,
-          "caption": "Sample photo 3 of 3 — synthetic listing"
+          "caption": "Sample photo 3 of 3 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 30. This text exists to test page layout and does not describe a real property. 40-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 30. This text exists to test page layout and does not describe a real property. 40-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 38,
@@ -2257,27 +2257,27 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-031-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=275",
           "order": 1,
-          "caption": "Sample photo 1 of 4 — synthetic listing"
+          "caption": "Sample photo 1 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-031-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=276",
           "order": 2,
-          "caption": "Sample photo 2 of 4 — synthetic listing"
+          "caption": "Sample photo 2 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-031-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=277",
           "order": 3,
-          "caption": "Sample photo 3 of 4 — synthetic listing"
+          "caption": "Sample photo 3 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-031-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=278",
           "order": 4,
-          "caption": "Sample photo 4 of 4 — synthetic listing"
+          "caption": "Sample photo 4 of 4 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 31. This text exists to test page layout and does not describe a real property. 11-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 31. This text exists to test page layout and does not describe a real property. 11-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 97,
@@ -2320,27 +2320,27 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-032-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=279",
           "order": 1,
-          "caption": "Sample photo 1 of 4 — synthetic listing"
+          "caption": "Sample photo 1 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-032-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=280",
           "order": 2,
-          "caption": "Sample photo 2 of 4 — synthetic listing"
+          "caption": "Sample photo 2 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-032-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=281",
           "order": 3,
-          "caption": "Sample photo 3 of 4 — synthetic listing"
+          "caption": "Sample photo 3 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-032-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=282",
           "order": 4,
-          "caption": "Sample photo 4 of 4 — synthetic listing"
+          "caption": "Sample photo 4 of 4 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 32. This text exists to test page layout and does not describe a real property. 16-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 32. This text exists to test page layout and does not describe a real property. 16-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 108,
@@ -2386,32 +2386,32 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-033-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=283",
           "order": 1,
-          "caption": "Sample photo 1 of 5 — synthetic listing"
+          "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-033-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=284",
           "order": 2,
-          "caption": "Sample photo 2 of 5 — synthetic listing"
+          "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-033-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=285",
           "order": 3,
-          "caption": "Sample photo 3 of 5 — synthetic listing"
+          "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-033-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=286",
           "order": 4,
-          "caption": "Sample photo 4 of 5 — synthetic listing"
+          "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-033-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=287",
           "order": 5,
-          "caption": "Sample photo 5 of 5 — synthetic listing"
+          "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 33. This text exists to test page layout and does not describe a real property. 7-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 33. This text exists to test page layout and does not describe a real property. 7-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
       "listAgentName": null,
       "daysOnMarket": 79,
@@ -2457,42 +2457,42 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-034-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=288",
           "order": 1,
-          "caption": "Sample photo 1 of 7 — synthetic listing"
+          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-034-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=289",
           "order": 2,
-          "caption": "Sample photo 2 of 7 — synthetic listing"
+          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-034-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=290",
           "order": 3,
-          "caption": "Sample photo 3 of 7 — synthetic listing"
+          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-034-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=291",
           "order": 4,
-          "caption": "Sample photo 4 of 7 — synthetic listing"
+          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-034-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=292",
           "order": 5,
-          "caption": "Sample photo 5 of 7 — synthetic listing"
+          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-034-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=293",
           "order": 6,
-          "caption": "Sample photo 6 of 7 — synthetic listing"
+          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-034-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=294",
           "order": 7,
-          "caption": "Sample photo 7 of 7 — synthetic listing"
+          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 34. This text exists to test page layout and does not describe a real property. 5-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 34. This text exists to test page layout and does not describe a real property. 5-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 5,
@@ -2535,27 +2535,27 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-035-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=295",
           "order": 1,
-          "caption": "Sample photo 1 of 4 — synthetic listing"
+          "caption": "Sample photo 1 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-035-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=296",
           "order": 2,
-          "caption": "Sample photo 2 of 4 — synthetic listing"
+          "caption": "Sample photo 2 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-035-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=297",
           "order": 3,
-          "caption": "Sample photo 3 of 4 — synthetic listing"
+          "caption": "Sample photo 3 of 4 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-035-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=298",
           "order": 4,
-          "caption": "Sample photo 4 of 4 — synthetic listing"
+          "caption": "Sample photo 4 of 4 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 35. This text exists to test page layout and does not describe a real property. 20-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 35. This text exists to test page layout and does not describe a real property. 20-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 18,
@@ -2598,42 +2598,42 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-036-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=299",
           "order": 1,
-          "caption": "Sample photo 1 of 7 — synthetic listing"
+          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-036-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=300",
           "order": 2,
-          "caption": "Sample photo 2 of 7 — synthetic listing"
+          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-036-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=301",
           "order": 3,
-          "caption": "Sample photo 3 of 7 — synthetic listing"
+          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-036-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=302",
           "order": 4,
-          "caption": "Sample photo 4 of 7 — synthetic listing"
+          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-036-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=303",
           "order": 5,
-          "caption": "Sample photo 5 of 7 — synthetic listing"
+          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-036-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=304",
           "order": 6,
-          "caption": "Sample photo 6 of 7 — synthetic listing"
+          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-036-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=305",
           "order": 7,
-          "caption": "Sample photo 7 of 7 — synthetic listing"
+          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 36. This text exists to test page layout and does not describe a real property. 9-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 36. This text exists to test page layout and does not describe a real property. 9-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 167,
@@ -2679,47 +2679,47 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-037-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=306",
           "order": 1,
-          "caption": "Sample photo 1 of 8 — synthetic listing"
+          "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-037-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=307",
           "order": 2,
-          "caption": "Sample photo 2 of 8 — synthetic listing"
+          "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-037-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=308",
           "order": 3,
-          "caption": "Sample photo 3 of 8 — synthetic listing"
+          "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-037-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=309",
           "order": 4,
-          "caption": "Sample photo 4 of 8 — synthetic listing"
+          "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-037-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=310",
           "order": 5,
-          "caption": "Sample photo 5 of 8 — synthetic listing"
+          "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-037-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=311",
           "order": 6,
-          "caption": "Sample photo 6 of 8 — synthetic listing"
+          "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-037-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=312",
           "order": 7,
-          "caption": "Sample photo 7 of 8 — synthetic listing"
+          "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-037-8/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=313",
           "order": 8,
-          "caption": "Sample photo 8 of 8 — synthetic listing"
+          "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 37. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 37. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
       "listAgentName": "Sam Sample",
       "daysOnMarket": 18,
@@ -2765,42 +2765,42 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-038-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=314",
           "order": 1,
-          "caption": "Sample photo 1 of 7 — synthetic listing"
+          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-038-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,facade?lock=315",
           "order": 2,
-          "caption": "Sample photo 2 of 7 — synthetic listing"
+          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-038-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=316",
           "order": 3,
-          "caption": "Sample photo 3 of 7 — synthetic listing"
+          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-038-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=317",
           "order": 4,
-          "caption": "Sample photo 4 of 7 — synthetic listing"
+          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-038-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=318",
           "order": 5,
-          "caption": "Sample photo 5 of 7 — synthetic listing"
+          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-038-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=319",
           "order": 6,
-          "caption": "Sample photo 6 of 7 — synthetic listing"
+          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-038-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=320",
           "order": 7,
-          "caption": "Sample photo 7 of 7 — synthetic listing"
+          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 38. This text exists to test page layout and does not describe a real property. 26-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 38. This text exists to test page layout and does not describe a real property. 26-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
       "listAgentName": null,
       "daysOnMarket": 140,
@@ -2846,47 +2846,47 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-039-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=321",
           "order": 1,
-          "caption": "Sample photo 1 of 8 — synthetic listing"
+          "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-039-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/bathroom,interior?lock=322",
           "order": 2,
-          "caption": "Sample photo 2 of 8 — synthetic listing"
+          "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-039-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=323",
           "order": 3,
-          "caption": "Sample photo 3 of 8 — synthetic listing"
+          "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-039-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=324",
           "order": 4,
-          "caption": "Sample photo 4 of 8 — synthetic listing"
+          "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-039-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=325",
           "order": 5,
-          "caption": "Sample photo 5 of 8 — synthetic listing"
+          "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-039-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=326",
           "order": 6,
-          "caption": "Sample photo 6 of 8 — synthetic listing"
+          "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-039-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=327",
           "order": 7,
-          "caption": "Sample photo 7 of 8 — synthetic listing"
+          "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-039-8/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=328",
           "order": 8,
-          "caption": "Sample photo 8 of 8 — synthetic listing"
+          "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 39. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 39. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 118,
@@ -2926,42 +2926,42 @@
       },
       "media": [
         {
-          "url": "https://picsum.photos/seed/mck-fixture-040-1/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=329",
           "order": 1,
-          "caption": "Sample photo 1 of 7 — synthetic listing"
+          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-040-2/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,building?lock=330",
           "order": 2,
-          "caption": "Sample photo 2 of 7 — synthetic listing"
+          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-040-3/1200/800",
+          "url": "https://loremflickr.com/1200/800/building,architecture?lock=331",
           "order": 3,
-          "caption": "Sample photo 3 of 7 — synthetic listing"
+          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-040-4/1200/800",
+          "url": "https://loremflickr.com/1200/800/apartment,interior?lock=332",
           "order": 4,
-          "caption": "Sample photo 4 of 7 — synthetic listing"
+          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-040-5/1200/800",
+          "url": "https://loremflickr.com/1200/800/kitchen,interior?lock=333",
           "order": 5,
-          "caption": "Sample photo 5 of 7 — synthetic listing"
+          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-040-6/1200/800",
+          "url": "https://loremflickr.com/1200/800/brick,building?lock=334",
           "order": 6,
-          "caption": "Sample photo 6 of 7 — synthetic listing"
+          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
         },
         {
-          "url": "https://picsum.photos/seed/mck-fixture-040-7/1200/800",
+          "url": "https://loremflickr.com/1200/800/bedroom,interior?lock=335",
           "order": 7,
-          "caption": "Sample photo 7 of 7 — synthetic listing"
+          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 40. This text exists to test page layout and does not describe a real property. 75-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 40. This text exists to test page layout and does not describe a real property. 75-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
       "listAgentName": null,
       "daysOnMarket": 117,
