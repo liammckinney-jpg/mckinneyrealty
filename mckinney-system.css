@@ -118,21 +118,6 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
 .nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
 
-/* RE/MAX brokerage identification band (brand preview; RECO 5.1/5.3) —
-   part of the header on every page, directly beneath the nav bar.
-   Logotype used as supplied, never recoloured; office name is set at
-   1rem, no smaller than the nav wordmark. First child of .nav so the
-   open mobile menu (a later positioned descendant) paints above it. */
-.nav-band {
-  position: absolute; top: 100%; left: 0; right: 0;
-  display: flex; align-items: center; justify-content: center;
-  gap: 0.875rem; flex-wrap: wrap;
-  background: var(--white); border-bottom: 1px solid var(--border);
-  padding: 0.4375rem var(--side);
-}
-.nav-band img { height: 20px; width: auto; }
-.nav-band span { font-size: 1rem; color: var(--navy); letter-spacing: 0.02em; }
-
 /* Nav dropdown (Calculators) */
 .nav-drop { position: relative; }
 .nav-drop > a { display: inline-flex; align-items: center; gap: 0.4375rem; }
@@ -262,10 +247,21 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
    FOOTER
    ============================================================ */
 .footer { background: var(--navy); padding: var(--s-5) 0 var(--s-3); }
-.footer-brand {
-  text-align: center; padding-bottom: var(--s-4);
+/* Brand row: McKinney block · thin gold separator · RE/MAX mark.
+   Side by side on desktop, stacked on mobile. */
+.footer-brand-row {
+  display: flex; align-items: center; justify-content: center;
+  gap: var(--s-5);
+  padding-bottom: var(--s-4);
   border-bottom: 1px solid rgba(255,255,255,0.06);
   margin-bottom: var(--s-4);
+}
+.footer-brand { text-align: center; }
+.footer-brand-sep { width: 1px; height: 76px; background: var(--gold-dark); flex: none; }
+.footer-remax { height: 38px; width: auto; flex: none; }
+@media (max-width: 768px) {
+  .footer-brand-row { flex-direction: column; gap: var(--s-3); }
+  .footer-brand-sep { width: 64px; height: 1px; }
 }
 .footer-brand-mono { height: 40px; width: auto; opacity: 1; margin: 0 auto var(--s-2); filter: brightness(0) invert(1); }
 .footer-brand-name {
