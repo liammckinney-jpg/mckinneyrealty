@@ -27,7 +27,7 @@
       {
         "@type": "Person",
         "name": "Liam McKinney",
-        "jobTitle": "Broker, RE/MAX Quinte Ltd., Brokerage",
+        "jobTitle": "Broker · Managing Partner",
         "email": "liam@mckinneyrealty.ca"
       },
       {
