@@ -17,6 +17,7 @@ const fs = require('fs');
 const path = require('path');
 const { createProvider, validateSnapshot } = require('./provider');
 const { MARKETS, listingSlug } = require('./markets');
+const OWN_LISTINGS = require('./own-listings');
 const R = require('./render');
 
 const ROOT = path.join(__dirname, '..', '..');
@@ -69,6 +70,9 @@ function project(l) {
     modified: l.modified,
     thumb: l.media && l.media.length ? l.media[0].url : null,
     thumbAlt: l.media && l.media.length ? (l.media[0].caption || '') : '',
+    // Own-listing cross-link (brief §2): resolved from config at build
+    // time so the map itself never ships in fixture data.
+    own: OWN_LISTINGS[l.mlsId] || null,
   };
 }
 
@@ -245,10 +249,18 @@ async function main() {
     const slug = listingSlug(l);
     const canonical = SITE + '/apartment-buildings-for-sale/' + m.slug + '/' + slug + '/';
     const h1 = l.address.street + ', ' + l.address.city;
+    const own = OWN_LISTINGS[l.mlsId] || null;
+    // §2.2: own listings swap the secondary CTA for the full-listing link
+    // (Request the package remains on the /listings/ page itself, so the
+    // request form section is omitted on those detail pages).
+    const ARROW = '<svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+    const secondaryCta = own
+      ? '<div class="det-cta">\n        <a class="btn btn--outline" href="' + R.esc(own) + '">View the full listing ' + ARROW + '</a>\n      </div>'
+      : '<div class="det-cta">\n        <a class="btn btn--outline" href="#request">Request the package ' + ARROW + '</a>\n        <p class="det-cta-help">We\'ll send the full listing package and, if useful, our read on the numbers.</p>\n      </div>';
     // Sub: `{units} units · Built {yearBuilt} · MLS® {mlsId}` — the Built
     // segment is omitted when the feed carries no year.
     const sub = l.units + ' units · ' + (l.yearBuilt != null ? 'Built ' + l.yearBuilt + ' · ' : '') + 'MLS® ' + l.mlsId;
-    writePage(path.join(m.slug, slug), renderPage(detailTemplate, {
+    let detailHtml = renderPage(detailTemplate, {
       TITLE: R.esc(h1 + ' — McKinney Multifamily Group'),
       META_DESC: R.esc(sub + '. Listed by ' + l.listOfficeName + '.'),
       CANONICAL_URL: canonical,
@@ -275,7 +287,17 @@ async function main() {
       }),
       STAGING_BANNER: stagingBanner,
       REFRESHED: R.esc(refreshed),
-    }));
+    });
+    if (own) {
+      // swap the secondary CTA and drop the request form section —
+      // "Request the package remains on the /listings/ page itself" (§2.2)
+      detailHtml = detailHtml.replace(
+        /<div class="det-cta">\s*<a class="btn btn--outline" href="#request">Request the package[\s\S]*?<\/div>/,
+        secondaryCta);
+      detailHtml = detailHtml.replace(
+        /<!-- =+\n     REQUEST THE PACKAGE[\s\S]*?<\/section>\n/, '');
+    }
+    writePage(path.join(m.slug, slug), detailHtml);
   });
 
   // §8 sitemap — index + market pages + all active detail pages,

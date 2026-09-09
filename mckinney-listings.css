@@ -106,18 +106,27 @@
 .lst-empty { font-size: var(--b-md); color: var(--text-2); padding: 3rem 0; }
 
 /* ---- card (spec §6) -------------------------------------------- */
+/* The card is a div with a stretched cover link; the own-listing tag
+   (restoration brief §2) is its own link layered above the cover. */
 .lst-card {
-  display: block; background: var(--white);
+  position: relative; display: block; background: var(--white);
   border: 1px solid var(--border); transition: all 0.25s;
 }
 .lst-card:hover { border-color: var(--border-strong); box-shadow: 0 16px 40px rgba(26,31,46,0.10); transform: translateY(-2px); }
+.lst-card-cover { position: absolute; inset: 0; z-index: 1; }
 .lst-card-media { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: var(--cream); }
 .lst-card-media img { width: 100%; height: 100%; object-fit: cover; }
-.lst-badge {
-  position: absolute; top: 0.75rem; left: 0.75rem;
-  font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
-  background: var(--gold-dark); color: var(--white); padding: 0.25rem 0.625rem;
+.lst-flags {
+  position: absolute; top: 0.75rem; left: 0.75rem; z-index: 2;
+  display: flex; gap: 0.5rem; flex-wrap: wrap;
 }
+.lst-badge, .lst-tag {
+  font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--white); padding: 0.25rem 0.625rem;
+}
+.lst-badge { background: var(--gold-dark); }
+.lst-tag { background: var(--navy); transition: background 0.2s; }
+.lst-tag:hover { background: var(--navy-light); }
 .lst-card-body { padding: 1.25rem 1.375rem 1.375rem; }
 .lst-card-l1 { font-family: var(--font-d); font-size: 1.3125rem; font-weight: 500; color: var(--text-1); line-height: 1.25; }
 .lst-card-l2 { margin-top: 0.5rem; font-size: var(--b-md); color: var(--text-1); }

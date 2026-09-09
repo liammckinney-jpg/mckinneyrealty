@@ -38,14 +38,20 @@
   }
 
   function renderCard(l) {
+    // Card is a <div> with a stretched cover link; the own-listing tag is
+    // its own <a> above the cover (nested anchors are invalid HTML).
     var badge = (typeof l.dom === 'number' && l.dom <= 7)
       ? '<span class="lst-badge">New</span>' : '';
+    var tag = l.own
+      ? '<a class="lst-tag" href="' + esc(l.own) + '">Full package available</a>' : '';
+    var flags = (badge || tag) ? '<div class="lst-flags">' + badge + tag + '</div>' : '';
     var media = l.thumb
-      ? '<div class="lst-card-media"><img src="' + esc(l.thumb) + '" alt="' + esc(l.thumbAlt || '') + '" loading="lazy" width="1200" height="800">' + badge + '</div>'
-      : (badge ? '<div class="lst-card-media lst-card-media--empty">' + badge + '</div>' : '');
+      ? '<div class="lst-card-media"><img src="' + esc(l.thumb) + '" alt="' + esc(l.thumbAlt || '') + '" loading="lazy" width="1200" height="800">' + flags + '</div>'
+      : (flags ? '<div class="lst-card-media lst-card-media--empty">' + flags + '</div>' : '');
     var line3 = (l.cap != null)
       ? '<div class="lst-card-l3">Reported cap rate ' + fmtCap(l.cap) + '</div>' : '';
-    return '<a class="lst-card" href="' + esc(detailPath(l)) + '">' +
+    return '<div class="lst-card">' +
+      '<a class="lst-card-cover" href="' + esc(detailPath(l)) + '" aria-label="' + esc(l.street) + ', ' + esc(l.city) + '"></a>' +
       media +
       '<div class="lst-card-body">' +
         '<div class="lst-card-l1">' + esc(l.street) + ', ' + esc(l.city) + '</div>' +
@@ -53,7 +59,7 @@
         line3 +
         '<div class="lst-card-l4">Listed by ' + esc(l.office) + '</div>' +
       '</div>' +
-    '</a>';
+    '</div>';
   }
 
   return { esc: esc, fmtMoney: fmtMoney, fmtCap: fmtCap, detailPath: detailPath, renderCard: renderCard };
