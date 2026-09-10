@@ -3,7 +3,8 @@
    our listing values (Homepage Restructure v2 §4.2, KB-05 lockstep rule).
    Values mirror the /listings/ detail page; the build fails if they drift
    (lockstep assertion in scripts/listings/status-check.js). Never hand-type
-   listing numbers in page markup.
+   listing numbers in page markup. `blurb` is the detail page's one-line
+   thesis, verbatim — the lockstep check asserts it too.
    ========================================================================= */
 window.MCK_OWN_LISTINGS_DATA = [
   {
@@ -13,6 +14,7 @@ window.MCK_OWN_LISTINGS_DATA = [
     units: 24,
     listPrice: 3890000,
     capReportedPct: 5.7,
+    blurb: 'Two freestanding 12-plex buildings on adjacent lots — 24 units of portfolio-level scale at small-building pricing.',
     photo: 'images/listings/elgin-hero.jpg',
     underwriter: '/tools/underwrite?price=3890000&units=24&tax=54219&rentmo=27858&laundrymo=250&ins=6624&src=elgin'
   }

@@ -74,13 +74,15 @@ async function main() {
   // match what the /listings/ detail page states.
   try {
     const dataSrc = fs.readFileSync(path.join(ROOT, 'mckinney-own-listings-data.js'), 'utf8');
-    const entryRe = /slug:\s*'([^']+)'[\s\S]*?listPrice:\s*(\d+)[\s\S]*?capReportedPct:\s*([\d.]+)/g;
+    const entryRe = /slug:\s*'([^']+)'[\s\S]*?listPrice:\s*(\d+)[\s\S]*?capReportedPct:\s*([\d.]+)[\s\S]*?blurb:\s*'((?:[^'\\]|\\.)*)'/g;
     let m;
     while ((m = entryRe.exec(dataSrc)) !== null) {
       const page = fs.readFileSync(path.join(ROOT, 'listings', m[1] + '.html'), 'utf8');
       const priceStr = '$' + Number(m[2]).toLocaleString('en-CA');
       if (page.indexOf(priceStr) === -1) fail.push('lockstep: ' + priceStr + ' not stated on listings/' + m[1] + '.html');
       if (page.indexOf(m[3] + '%') === -1) fail.push('lockstep: cap ' + m[3] + '% not stated on listings/' + m[1] + '.html');
+      const blurb = m[4].replace(/\\'/g, "'");
+      if (page.indexOf(blurb) === -1) fail.push('lockstep: blurb not stated verbatim on listings/' + m[1] + '.html');
     }
   } catch (e) { fail.push('lockstep check failed: ' + e.message); }
 
