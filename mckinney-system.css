@@ -453,10 +453,6 @@ html:not([data-header-band]) .nav-band { display: none !important; }
 /* ============================================================
    RESPONSIVE — shared components only
    ============================================================ */
-@media (max-width: 1024px) {
-  .footer-legal-row { flex-direction: column; gap: 0.25rem; }
-  .footer-copy { white-space: normal; }
-}
 /* Nav collapses to the hamburger below 1100px — the Multifamily Group
    wordmark plus eight links no longer fit side by side at mid widths. */
 @media (max-width: 1100px) {
@@ -489,42 +485,12 @@ html:not([data-header-band]) .nav-band { display: none !important; }
   .nav-drop::after { display: none; }
 }
 
-@media (max-width: 560px) {
-  /* phone: the full wordmark collides with the hamburger — tighten it */
-  .nav-name { font-size: 0.8125rem; letter-spacing: 0.1em; }
-  .nav-sub { font-size: 0.4375rem; }
-  .nav-mono { height: 30px; }
-  .nav-inner { gap: 0.75rem; }
+@media (max-width: 1024px) {
+  .footer-legal-row { flex-direction: column; gap: 0.25rem; }
+  .footer-copy { white-space: normal; }
 }
 
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-toggle { display: block; }
-  .nav-links.open {
-    display: flex; flex-direction: column;
-    position: fixed; top: 4.5rem; left: 0; right: 0;
-    background: rgba(255,255,255,0.98); backdrop-filter: blur(16px);
-    padding: var(--s-4); gap: var(--s-3);
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-  }
-  /* Dropdown flattens to a centered, always-expanded group in the
-     hamburger menu — hover has no meaning on touch */
-  .nav-drop { text-align: center; }
-  .nav-drop-menu {
-    position: static; transform: none; opacity: 1; visibility: visible;
-    border: none; box-shadow: none;
-    min-width: 0; padding: 0.125rem 0 0; margin-top: 0.625rem;
-  }
-  .nav-drop-menu a {
-    padding: 0.4375rem 0;
-    font-size: var(--b-xs); font-weight: 500;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--gold-dark);
-  }
-  .nav-drop > a::after, .nav-drop-label::after { display: none; }
-  .nav-drop-label { justify-content: center; width: 100%; font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); }
-  .nav-drop::after { display: none; }
   .deal-grid { grid-template-columns: 1fr 1fr; }
   .track-metrics { grid-template-columns: 1fr 1fr; }
   .track-metric:nth-child(2) { border-right: none; }
@@ -533,15 +499,29 @@ html:not([data-header-band]) .nav-band { display: none !important; }
   .footer-offices { flex-direction: column; gap: var(--s-4); align-items: center; text-align: center; }
   .track-header-top { flex-direction: column; align-items: flex-start; }
 }
+
+@media (max-width: 560px) {
+  /* phone: the full wordmark collides with the hamburger — tighten it */
+  .nav-name { font-size: 0.8125rem; letter-spacing: 0.1em; }
+  .nav-sub { font-size: 0.4375rem; }
+  .nav-mono { height: 30px; }
+  .nav-inner { gap: 0.75rem; }
+}
+
 @media (max-width: 480px) {
   /* Brand block must fit beside the toggle on narrow phones (380px pass) */
   .nav-inner { padding: 0 16px; }
   .nav-brand { min-width: 0; }
-  .nav-sub { font-size: 0.5rem; letter-spacing: 0.14em; white-space: normal; }
   .deal-grid { grid-template-columns: 1fr; }
   .track-metrics { grid-template-columns: 1fr; }
   .track-metric { border-right: none; border-bottom: 1px solid var(--border); }
   .track-metric:last-child { border-bottom: none; }
+}
+
+@media (max-width: 380px) {
+  .nav-sub { display: none; }
+  .nav-text { min-width: 0; }
+  .nav-name { white-space: normal; overflow-wrap: anywhere; line-height: 1.1; }
 }
 
 /* ---- share affordances (mck-share) ---------------------------------- */
