@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="McKinney Multifamily Group">
 <meta property="og:title" content="McKinney Multifamily Group — Investment Real Estate Brokers | Ontario">
-<meta property="og:description" content="Father-and-son multifamily brokers serving all of Ontario — with free underwriting and financing tools built for apartment investors.">
+<meta property="og:description" content="Apartment building and investment property brokers across Ontario. $250M+ in career transactions, principal-led on every deal, and Ontario's apartment listings searchable by market.">
 <meta property="og:url" content="https://www.mckinneyrealty.ca/">
 <meta property="og:image" content="https://www.mckinneyrealty.ca/images/og/home.png">
 <meta property="og:image:width" content="1200">
@@ -20,9 +20,9 @@
 <meta property="og:image:alt" content="McKinney Multifamily Group — Investment Real Estate Brokers | Ontario">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="McKinney Multifamily Group — Investment Real Estate Brokers | Ontario">
-<meta name="twitter:description" content="Father-and-son multifamily brokers serving all of Ontario — with free underwriting and financing tools built for apartment investors.">
+<meta name="twitter:description" content="Apartment building and investment property brokers across Ontario. $250M+ in career transactions, principal-led on every deal, and Ontario's apartment listings searchable by market.">
 <meta name="twitter:image" content="https://www.mckinneyrealty.ca/images/og/home.png">
-<meta name="description" content="Father-and-son multifamily brokers serving all of Ontario — with free underwriting and financing tools built for apartment investors.">
+<meta name="description" content="Apartment building and investment property brokers across Ontario. $250M+ in career transactions, principal-led on every deal, and Ontario's apartment listings searchable by market.">
 <script src="/mckinney-flags.js"></script>
 <script src="mckinney-consent.js"></script>
 <script src="mckinney-schema.js" defer></script>
@@ -37,14 +37,17 @@
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="mckinney-system.css?v=3">
+<link rel="stylesheet" href="mckinney-system.css?v=4">
 <script src="/mckinney-nav.js" defer></script>
 <style>
 /* ============================================================
-   PAGE-SPECIFIC: index.html (homepage) — Restructure v2.
+   PAGE-SPECIFIC: index.html (homepage) — Restructure v2, Phase 1.5.
    Section sizes come from --sec-a / --sec-b (system css); the hero
    uses its own two tokens below (--sec-hero / --sec-hero-b) — the only
    padding values defined on this page.
+   Rhythm: hero navy → router cream → What We Do white → Buildings for
+   Sale navy → Track Record white → Principals cream → Beyond white →
+   Market Intelligence cream → Next Step white → footer navy.
    ============================================================ */
 :root {
   --sec-hero: clamp(6.75rem, 10vw, 8.5rem);   /* hero top: clears the nav, scales with width */
@@ -85,17 +88,17 @@
 .btn--outline-light { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.35); }
 .btn--outline-light:hover { border-color: var(--white); }
 .hero-statband { border-top: 1px solid rgba(255,255,255,0.05); padding: 1.75rem 0; position: relative; z-index: 1; }
-/* Four figures spread across the content column (fix spec 1.1, D-4a) */
-.hero-statband-row { display: grid; grid-template-columns: repeat(4, max-content); justify-content: space-between; gap: var(--s-4); }
+/* Three figures spread across the content column (Phase 1.5 §2.2) */
+.hero-statband-row { display: grid; grid-template-columns: repeat(3, max-content); justify-content: space-between; gap: var(--s-4); }
 .hero-stat-num { font-family: var(--font-d); font-size: var(--d-stat); font-weight: 300; color: var(--white); line-height: 1; }
-.hero-stat-label { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 0.375rem; }
+.hero-stat-label { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 0.375rem; }
 
 /* ---- ROUTER BAND (cream, Type B) ---- */
 .router { background: var(--cream); border-top: 1px solid var(--border); }
 .router > .wrap > .sec-h2--label { margin-bottom: var(--s-3); }
 .router-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
-/* Doors: always-on gold top rule, larger serif title, and a ghosted
-   Cormorant ordinal in the corner that warms to gold on hover. */
+/* Three identical doors: always-on gold top rule, ghost ordinal, three
+   links each with the last emphasised — hierarchy is order only (§2.1). */
 /* Corner reservation so links never intersect the ordinal (fix spec 0.6);
    shared min-height so the three link stacks share a baseline. */
 .router-grid .card { overflow: hidden; padding-right: 5.5rem; padding-bottom: 4rem; min-height: 15.5rem; }
@@ -111,46 +114,54 @@
   transition: opacity 0.4s, color 0.4s;
 }
 .router-grid .card:hover .door-num { color: var(--gold-dark); opacity: 0.22; }
-/* the one dark door (fix spec 1.2 / D-6) */
-.card--dark .door-num { color: var(--white); opacity: 0.08; }
-.router-grid .card--dark:hover .door-num { color: var(--gold-light); opacity: 0.3; }
 
-/* ---- BUILDINGS FOR SALE (white, Type A) — returns once >= 3 own listings ---- */
-.bfs { background: var(--white); border-top: 1px solid var(--border); }
+/* ---- BUILDINGS FOR SALE (navy, Type A) — the focal section and the
+        page's one lead-register heading (§2.5) ---- */
+.bfs { background: var(--navy); }
+.bfs .sec-head { max-width: 960px; }
 .bfs-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
 /* Row listing card: photo left (3:2), details right (fix spec 1.8) */
 .card--row { flex-direction: row; padding: 0; }
-/* the photo box is always 3:2 — the media column centres it if the text
-   column runs taller (it does not at the widths below) */
-.card--row .card-media { margin: 0; flex: 0 0 40%; display: flex; align-items: center; }
+.card--row .card-media { margin: 0; flex: 0 0 36%; display: flex; align-items: center; }
 .card--row .card-media img { width: 100%; aspect-ratio: 3 / 2; height: auto; object-fit: cover; }
 .card--row .card-inner { flex: 1; display: flex; flex-direction: column; padding: clamp(1.5rem, 2.25vw, 2rem) clamp(1.75rem, 2.75vw, 2.5rem); }
 .card--row .card-title { margin-bottom: 0.375rem; }
 /* whole card opens the listing; the links row stays above the cover link */
 .card--row .card-title a::after { content: ''; position: absolute; inset: 0; }
 .card--row .card-links { position: relative; z-index: 1; }
-.card-tag {
-  display: inline-block; margin-left: 0.75rem; padding: 0.1875rem 0.5rem;
-  border: 1px solid var(--border-strong); color: var(--text-2);
-  font-size: 0.625rem; letter-spacing: 0.08em; vertical-align: middle;
-}
 .card-price { font-family: var(--font-d); font-size: var(--d-sub); font-weight: 400; color: var(--navy); line-height: 1.2; margin-bottom: 0.375rem; }
 .card-line2 { font-size: var(--b-md); color: var(--text-1); margin-bottom: 0.25rem; }
 .card-line3 { font-size: var(--b-md); color: var(--gold-text); margin-bottom: var(--s-2); }
 .card--row .card-body { flex-grow: 0; max-width: 60ch; }
+/* dark row on the navy field: a faint lift plus the hairline border */
+.bfs .card--dark { background: rgba(255,255,255,0.035); }
+.card--dark .card-price { color: var(--white); }
+.card--dark .card-line2 { color: rgba(255,255,255,0.85); }
+.card--dark .card-line3 { color: var(--gold-light); }
+/* market grid: sixteen hairline cells, four across */
+.bfs-markets { margin-top: var(--s-6); }
+.bfs-markets .label { display: block; margin-bottom: var(--s-3); }
+.bfs-market-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.10);
+}
+.bfs-market-grid a {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: 1.125rem 1.25rem; background: var(--navy);
+  font-family: var(--font-d); font-size: 1.25rem; font-weight: 400; color: var(--white); line-height: 1.2;
+  transition: background 0.3s;
+}
+.bfs-market-grid a svg { width: 14px; height: 14px; flex: none; fill: none; stroke: var(--gold-light); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; opacity: 0; transform: translateX(-4px); transition: opacity 0.3s, transform 0.3s; }
+.bfs-market-grid a:hover { background: var(--navy-light); }
+.bfs-market-grid a:hover svg { opacity: 1; transform: none; }
+.bfs-market-foot { display: flex; justify-content: flex-end; align-items: center; gap: var(--s-4); margin-top: 1.5rem; }
+.bfs-actions { margin-top: var(--s-5); }
 
-/* ---- WHAT WE DO (off-white, Type A) ---- */
-.wwd { background: var(--offwhite); border-top: 1px solid var(--border); }
+/* ---- WHAT WE DO (white, Type A) ---- */
+.wwd { background: var(--white); border-top: 1px solid var(--border); }
 .wwd-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
 
-/* ---- TRACK RECORD (white, Type A) — the page's one mega moment ---- */
-.track-head { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--s-4); margin-bottom: var(--sec-head-gap); flex-wrap: wrap; }
-.track-head .sec-head { margin-bottom: 0; }
-.track-mega { text-align: right; }
-.track-mega-num { font-family: var(--font-d); font-size: var(--d-mega); font-weight: 300; color: var(--navy); line-height: 0.9; }
-.track-mega-label { font-size: var(--b-xs); font-weight: 400; color: var(--text-3); max-width: 280px; margin: 0.625rem 0 0 auto; line-height: 1.4; }
-.track-listing { margin-bottom: 1.5rem; }
-.track-cta { display: flex; justify-content: center; align-items: center; gap: var(--s-4); flex-wrap: wrap; }
+/* ---- TRACK RECORD (white, Type A): eight tombstones ---- */
 
 /* ---- THE PRINCIPALS (cream, Type A, centred column) ---- */
 .principals { background: var(--cream); border-top: 1px solid var(--border); }
@@ -158,18 +169,19 @@
 .principals-photos { display: flex; justify-content: center; gap: var(--s-5); flex-wrap: wrap; }
 .pr-portrait { width: clamp(320px, 28vw, 420px); max-width: 100%; }
 .pr-portrait-frame { border: 1px solid rgba(26,31,46,0.12); padding: 0.5rem; background: var(--white); }
-.pr-portrait-frame img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.pr-portrait-frame img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; }
 .pr-portrait-info { padding-top: var(--s-2); text-align: center; }
 .pr-portrait-name { font-family: var(--font-d); font-size: 1.25rem; font-weight: 400; color: var(--navy); }
 .pr-portrait-role { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-text); margin-top: 2px; }
-.principals-narr { text-align: center; margin: var(--s-5) auto 0; }
-.quote--inline { background: transparent; padding: var(--s-4) 0 0; border-top: 0; }
+.quote--inline { background: transparent; padding: var(--s-5) 0 0; border-top: 0; }
 .quote--inline .quote-text { color: var(--navy); max-width: 760px; }
 .principals-actions { display: flex; justify-content: center; gap: var(--s-2); margin-top: var(--s-5); flex-wrap: wrap; }
 
-/* ---- BEYOND THE TRANSACTION (cream, Type A, two columns) — D-1 cream ---- */
-.beyond { background: var(--cream); border-top: 1px solid var(--border); }
-.beyond-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: start; }
+/* ---- BEYOND THE TRANSACTION (white, Type A, two columns) ---- */
+.beyond { background: var(--white); border-top: 1px solid var(--border); }
+/* 2:1 with a fixed gap keeps the 14-word H2 to three lines at 1440 while
+   the right column stays above 30% of the content width (addendum A2b) */
+.beyond-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; align-items: center; }
 .beyond .sec-head { margin-bottom: 0; border-left: 1px solid var(--gold); padding-left: clamp(1.5rem, 3vw, 2.5rem); }
 .beyond-cta { margin-top: var(--s-4); display: flex; align-items: center; gap: var(--s-4); flex-wrap: wrap; }
 .beyond-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border-strong); }
@@ -178,9 +190,26 @@
   font-family: var(--font-d); font-size: 1.375rem; font-weight: 400; color: var(--text-1); line-height: 1.3;
 }
 
-/* ---- MARKET INTELLIGENCE (off-white, Type A) ---- */
-.intelband { background: var(--offwhite); border-top: 1px solid var(--border); }
-.intelband-row { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: start; }
+/* ---- MARKET INTELLIGENCE (cream, Type A): evidence first, then the ask ---- */
+.intelband { background: var(--cream); border-top: 1px solid var(--border); }
+/* one cell treatment for the strip and the watch list */
+.intel-strip, .intel-watch {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+}
+.intel-watch { grid-template-columns: repeat(3, 1fr); border-top: 0; }
+.intel-card, .intel-sidebar-item { background: var(--white); padding: var(--s-4); transition: background 0.3s; }
+.intel-card:hover, .intel-sidebar-item:hover { background: var(--offwhite); }
+.intel-card-num { font-family: var(--font-d); font-size: var(--d-stat-sm); font-weight: 300; color: var(--navy); line-height: 1; margin-bottom: var(--s-2); }
+.intel-card-text, .intel-sidebar-item { font-size: var(--b-sm); font-weight: 300; line-height: 1.6; color: var(--text-2); }
+.intel-card-text strong { font-weight: 400; color: var(--text-1); }
+.intel-watch .intel-sidebar-title {
+  grid-column: 1 / -1; background: var(--white); padding: 0.875rem var(--s-4);
+  font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-text);
+}
+.intel-sidebar-item strong { display: block; font-weight: 400; color: var(--text-1); font-size: var(--b-xs); letter-spacing: 0.03em; text-transform: uppercase; margin-bottom: 0.25rem; }
+.intelband-row { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: start; margin-top: var(--s-6); }
+.intel-sub-head { display: block; margin-bottom: var(--s-2); }
 .intel-sub { display: flex; gap: 0.6rem; flex-wrap: nowrap; max-width: 640px; }
 .intel-sub input[type="text"] {
   flex: 1 1 160px; min-width: 0; padding: 0.8rem 1rem;
@@ -191,7 +220,7 @@
 .intel-sub .btn { white-space: nowrap; }
 .intel-hp { position: absolute; left: -9999px; }
 .intel-consent { font-size: var(--b-xs); font-weight: 300; line-height: 1.6; color: var(--gold-text); margin-top: 0.875rem; max-width: 46ch; }
-.intel-consent a { color: inherit; text-decoration: underline; text-underline-offset: 2px; padding-block: 5px; }
+.intel-consent a { color: inherit; text-decoration: underline; text-underline-offset: 2px; padding-block: 6px; }
 .intel-sub-sent { font-size: var(--b-md); font-weight: 300; color: var(--text-1); padding: 0.5rem 0; }
 /* adjacent article list */
 .intel-articles .label { display: block; margin-bottom: var(--s-2); }
@@ -206,18 +235,6 @@
 .intel-article-list a:hover { color: var(--gold-dark); }
 .intel-article-list a:hover svg { transform: translateX(3px); }
 .intel-all { margin-top: var(--s-3); }
-/* restored data strip + watch list (fix spec 1.5, D-5) — rendered by mckinney-mi.js */
-.intel-dateline { margin-top: var(--s-6); }
-.intel-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
-.intel-card { background: var(--white); padding: var(--s-4); transition: background 0.3s; }
-.intel-card:hover { background: var(--cream); }
-.intel-card-num { font-family: var(--font-d); font-size: var(--d-stat-sm); font-weight: 300; color: var(--navy); line-height: 1; margin-bottom: var(--s-2); }
-.intel-card-text { font-size: var(--b-sm); font-weight: 300; line-height: 1.6; color: var(--text-2); }
-.intel-card-text strong { font-weight: 400; color: var(--text-1); }
-.intel-watch { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
-.intel-watch .intel-sidebar-title { grid-column: 1 / -1; font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-text); margin-top: var(--s-2); }
-.intel-sidebar-item { background: var(--white); border: 1px solid var(--border); padding: var(--s-3) var(--s-4); font-size: var(--b-sm); font-weight: 300; color: var(--text-2); line-height: 1.6; }
-.intel-sidebar-item strong { display: block; font-weight: 400; color: var(--text-1); font-size: var(--b-xs); letter-spacing: 0.03em; text-transform: uppercase; margin-bottom: 0.25rem; }
 
 /* ---- YOUR NEXT STEP (white, Type A) ---- */
 .nextstep { background: var(--white); border-top: 1px solid var(--border); }
@@ -238,13 +255,26 @@
   .card--row .card-inner { padding: 1.5rem 1.75rem; }
 }
 @media (max-width: 1024px) { .door-num { font-size: 4.5rem; } }
-/* phones: hero dek a step smaller and a tighter router band so the hero +
-   doors stay near one scroll with the four-stat band and owner links (§8) */
+/* blocks run widest → narrowest from here so the narrower rule always wins */
+@media (max-width: 900px) {
+  .intelband-row { grid-template-columns: 1fr; gap: var(--s-5); }
+  .beyond-grid { grid-template-columns: 1fr; gap: var(--s-5); }
+  .intel-strip { grid-template-columns: 1fr 1fr; }
+  .intel-watch { grid-template-columns: 1fr; }
+  .bfs-market-grid { grid-template-columns: 1fr 1fr; }
+  .card--row { flex-direction: column; }
+  .card--row .card-media { flex: none; }
+}
+/* phones: hero dek a step smaller and a tighter router band (§8) */
 @media (max-width: 480px) {
   .hero-desc { font-size: var(--b-md); line-height: 1.65; }
   .hero-statband { padding: 1.5rem 0; }
   .router.sec-b { padding-bottom: 2rem; }
   .router > .wrap > .sec-h2--label { margin-bottom: var(--s-2); }
+  .bfs-market-grid { grid-template-columns: 1fr; }
+  .bfs-market-grid a { min-height: 44px; padding: 0.625rem 1.25rem; }
+  .bfs-market-foot { justify-content: stretch; }
+  .bfs-market-foot .btn { flex: 1 1 100%; }
 }
 /* small phones: compact hero so both CTAs clear a 568px fold (0.9) */
 @media (max-width: 360px) {
@@ -254,6 +284,7 @@
   .hero-desc { font-size: var(--b-sm); line-height: 1.6; margin-bottom: var(--s-3); }
   .hero-actions { gap: 0.625rem; }
   .hero-actions .btn { padding: 0.75rem 1.25rem; font-size: 0.6875rem; }
+  .intel-sub .btn { min-width: 0; white-space: normal; }
 }
 @media (max-width: 600px) {
   .door-num { display: none; }
@@ -264,25 +295,12 @@
   .intel-strip { grid-template-columns: 1fr; }
   .intel-watch { grid-template-columns: 1fr; }
 }
-@media (max-width: 900px) {
-  .intelband-row { grid-template-columns: 1fr; gap: var(--s-5); }
-  .beyond-grid { grid-template-columns: 1fr; gap: var(--s-5); }
-  .intel-strip { grid-template-columns: 1fr 1fr; }
-  .intel-watch { grid-template-columns: 1fr; gap: 1px; }
-  .card--row { flex-direction: column; }
-  .card--row .card-media { flex: none; }
-  .track-head { flex-direction: column; align-items: flex-start; }
-  .track-mega { text-align: left; }
-  .track-mega-label { margin-left: 0; }
-  .track-mega-num { font-size: clamp(3.5rem, 12vw, 6rem); }
-}
 @media (max-width: 768px) {
   .hero-watermark { display: none; }
-  /* stat strip stays one compact block on mobile so the hero + router
-     doors land within one scroll (acceptance §8) */
-  .hero-statband-row { grid-template-columns: repeat(4, 1fr); gap: var(--s-2) 0.5rem; }
-  .hero-stat-num { font-size: 1.375rem; }
-  .hero-stat-label { font-size: 0.5rem; letter-spacing: 0.06em; line-height: 1.3; }
+  /* stat strip stays one compact row on mobile (measured: no label wraps at 390) */
+  .hero-statband-row { grid-template-columns: repeat(3, auto); gap: var(--s-2); }
+  .hero-stat-num { font-size: 1.5rem; }
+  .hero-stat-label { font-size: 0.5625rem; letter-spacing: 0.08em; line-height: 1.3; }
   .router-grid, .bfs-grid, .wwd-grid, .nextstep-grid { grid-template-columns: 1fr; }
   .router-grid .card-title { font-size: 1.375rem; }
   .router-grid .card-links { gap: 0.75rem; }
@@ -336,7 +354,7 @@
       <div class="nav-drop-menu" id="nav-menu-about">
         <a href="/team">Our Team</a>
         <a href="/services">Services</a>
-        <!-- COPY PLACEHOLDER: nav label for the owner intake page (fix spec 1.4) --><a href="/disposition-intake">Sell a Building</a>
+        <a href="/disposition-intake">Sell Your Building</a>
         <a href="/track-record">Track Record</a>
       </div>
     </div>
@@ -353,11 +371,11 @@
   <img class="hero-watermark" src="images/brand/M_white_transparent.png" alt="" width="583" height="587">
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="label label--light hero-label">Investment Real Estate Brokers</div>
+      <div class="label label--light hero-label">Ontario's apartment building specialists</div>
       <h1 class="hero-title">Generational expertise.<br><em class="gi">Province-wide</em> reach.</h1>
       <p class="hero-desc">McKinney Multifamily Group is a specialized multifamily practice combining forty years of owner relationships with current analysis tools &mdash; serving property owners and investors across Ontario.</p>
       <div class="hero-actions">
-        <a href="/contact" data-mr-modal="seller" class="btn btn--gold" data-cta="hero-consult"><span class="btn-label">Schedule a Consultation</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/contact" data-mr-modal="seller" class="btn btn--gold" data-cta="hero-consult"><span class="btn-label">Request a Consultation</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         <a href="/track-record" class="btn btn--outline-light" data-cta="hero-track"><span class="btn-label">View Track Record</span></a>
       </div>
     </div>
@@ -366,8 +384,7 @@
     <div class="wrap hero-statband-row">
       <div class="hero-stat"><div class="hero-stat-num">$250M+</div><div class="hero-stat-label">Transaction volume</div></div>
       <div class="hero-stat"><div class="hero-stat-num">50+</div><div class="hero-stat-label">Combined years</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">250+</div><div class="hero-stat-label">Career transactions</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">40+</div><div class="hero-stat-label">Years in market</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-label">Generations</div></div>
     </div>
   </div>
 </section>
@@ -389,7 +406,7 @@
           <a class="card-link card-link--strong" href="/contact" data-mr-modal="seller" data-router="owners" data-cta="router-owner-consult">Request a Consultation <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
-      <div class="card card--compact card--dark">
+      <div class="card card--compact">
         <span class="door-num" aria-hidden="true">02</span>
         <h3 class="card-title">For Buyers</h3>
         <p class="card-body">Current listings, and the tool to underwrite any building in Ontario.</p>
@@ -407,6 +424,7 @@
         <div class="card-links">
           <a class="card-link" href="/learn/why-multi-family" data-router="starting">Why multifamily <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           <a class="card-link" href="/tools/compounding-modeler" data-tool="compounding-modeler">Compounding Modeler <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="card-link card-link--strong" href="/learn/" data-router="starting" data-cta="router-course">The First Building course <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
     </div>
@@ -414,7 +432,7 @@
 </section>
 
 <!-- ============================================================
-     3. WHAT WE DO (off-white, Type A) — §5.5
+     3. WHAT WE DO (white, Type A) — §5.5
      ============================================================ -->
 <section class="wwd sec-a">
   <div class="wrap">
@@ -449,24 +467,59 @@
 </section>
 
 <!-- ============================================================
-     4. TRACK RECORD (white, Type A) — §5.6; carries the folded
-        own-listing row until three or more listings exist (D-7)
+     4. BUILDINGS FOR SALE (navy, Type A) — §5.4, §4.2, Phase 1.5 §2.5.
+        Flag-on: lead H2 + dek + own-listing row + market grid.
+        Flag-off: H2 + own-listing row + one investor button.
+     ============================================================ -->
+<section class="bfs sec-a on-dark" id="listings">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="label label--light">Buildings for Sale</div>
+      <h2 class="sec-h2 sec-h2--lead flag-listings-public">Search apartment buildings for sale in <em class="gi">every Ontario market</em>.</h2>
+      <p class="sec-dek flag-listings-public">Current listings from across the province, searchable by market. Underwrite any building before you make the call.</p>
+      <h2 class="sec-h2 flag-listings-private">Our current <em class="gi">listings</em>.</h2>
+    </div>
+    <div class="bfs-grid" id="bfs-grid">
+      <!-- own-listing cards render here from MCK_OWN_LISTINGS_DATA (§4.2, never hand-typed) -->
+    </div>
+    <div class="bfs-markets flag-listings-public">
+      <div class="label label--light">Search by market</div>
+      <div class="bfs-market-grid">
+        <a href="/apartment-buildings-for-sale/toronto/" data-cta="bfs-market-toronto">Toronto <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/apartment-buildings-for-sale/ottawa/" data-cta="bfs-market-ottawa">Ottawa <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/apartment-buildings-for-sale/hamilton-niagara/" data-cta="bfs-market-hamilton-niagara">Hamilton&ndash;Niagara <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/apartment-buildings-for-sale/kitchener-waterloo-guelph/" data-cta="bfs-market-kitchener-waterloo-guelph">Kitchener&ndash;Waterloo&ndash;Guelph <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/apartment-buildings-for-sale/london/" data-cta="bfs-market-london">London <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/apartment-buildings-for-sale/windsor-essex/" data-cta="bfs-market-windsor-essex">Windsor&ndash;Essex <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/apartment-buildings-for-sale/durham/" data-cta="bfs-market-durham">Durham <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/apartment-buildings-for-sale/barrie-simcoe/" data-cta="bfs-market-barrie-simcoe">Barrie&ndash;Simcoe <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/apartment-buildings-for-sale/peterborough-kawartha/" data-cta="bfs-market-peterborough-kawartha">Peterborough&ndash;Kawartha <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/apartment-buildings-for-sale/northumberland/" data-cta="bfs-market-northumberland">Northumberland <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/apartment-buildings-for-sale/quinte/" data-cta="bfs-market-quinte">Quinte <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/apartment-buildings-for-sale/prince-edward-county/" data-cta="bfs-market-prince-edward-county">Prince Edward County <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/apartment-buildings-for-sale/kingston/" data-cta="bfs-market-kingston">Kingston <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/apartment-buildings-for-sale/brockville-leeds/" data-cta="bfs-market-brockville-leeds">Brockville&ndash;Leeds <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/apartment-buildings-for-sale/cornwall/" data-cta="bfs-market-cornwall">Cornwall <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/apartment-buildings-for-sale/northern-ontario/" data-cta="bfs-market-northern-ontario">Northern Ontario <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+      <div class="bfs-market-foot">
+        <a class="btn btn--gold" href="/apartment-buildings-for-sale/" data-cta="bfs-all"><span class="btn-label">All of Ontario</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+    <div class="bfs-actions flag-listings-private">
+      <a class="btn btn--gold" href="/acquisition-intake" data-mr-modal="investor" data-cta="bfs-register"><span class="btn-label">Register as an Investor</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5. TRACK RECORD (white, Type A) — §5.6
      ============================================================ -->
 <section class="track sec-a">
   <div class="wrap">
-    <div class="track-head">
-      <div class="sec-head">
-        <div class="label">Track Record</div>
-        <h2 class="sec-h2 sec-h2--lead">Selected <em class="gi">transactions</em></h2>
-      </div>
-      <div class="track-mega">
-        <div class="track-mega-num">$250M+</div>
-        <div class="track-mega-label">multifamily, commercial, and investment transactions across Ontario</div>
-      </div>
-    </div>
-
-    <div class="track-listing" id="track-listing">
-      <!-- own-listing row renders here from MCK_OWN_LISTINGS_DATA (§4.2, never hand-typed) -->
+    <div class="sec-head">
+      <div class="label">Track Record</div>
+      <h2 class="sec-h2">Selected <em class="gi">transactions</em></h2>
     </div>
 
     <div class="deal-grid">
@@ -482,28 +535,12 @@
 
     <div class="track-cta">
       <a href="/track-record" class="btn btn--outline" data-cta="track-more"><span class="btn-label">View More Transactions</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      <a class="card-link flag-listings-public" href="/apartment-buildings-for-sale/" data-cta="bfs-search"><span class="u-desktop-only">Search all Ontario multifamily listings</span><span class="u-mobile-only">Search all Ontario listings</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     BUILDINGS FOR SALE (white, Type A) — §5.4, §4.2. Hidden until
-     MCK_OWN_LISTINGS_DATA holds three or more listings (D-7); the
-     script below reveals it and moves the cards here.
-     ============================================================ -->
-<section class="bfs sec-a" id="listings" hidden>
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="label">Buildings for Sale</div>
-      <h2 class="sec-h2">Our current <em class="gi">listings</em>.</h2>
-    </div>
-    <div class="bfs-grid" id="bfs-grid"></div>
-  </div>
-</section>
-
-<!-- ============================================================
-     5. THE PRINCIPALS (cream, Type A) — §5.7
+     6. THE PRINCIPALS (cream, Type A) — §5.7
      ============================================================ -->
 <section class="principals sec-a">
   <div class="wrap">
@@ -515,7 +552,7 @@
         <div class="pr-portrait-frame">
           <picture>
             <source srcset="images/liam-mckinney.webp" type="image/webp">
-            <img src="images/liam-mckinney.jpg" alt="Liam McKinney" width="720" height="900" loading="lazy" decoding="async">
+            <img src="images/liam-mckinney.jpg" alt="Liam McKinney" width="720" height="960" loading="lazy" decoding="async">
           </picture>
         </div>
         <div class="pr-portrait-info"><div class="pr-portrait-name">Liam McKinney</div><div class="pr-portrait-role">Broker &middot; Managing Partner</div></div>
@@ -524,15 +561,12 @@
         <div class="pr-portrait-frame">
           <picture>
             <source srcset="images/sean-mckinney.webp" type="image/webp">
-            <img src="images/sean-mckinney.jpg" alt="Sean McKinney" width="720" height="900" loading="lazy" decoding="async">
+            <img src="images/sean-mckinney.jpg" alt="Sean McKinney" width="720" height="960" loading="lazy" decoding="async">
           </picture>
         </div>
         <div class="pr-portrait-info"><div class="pr-portrait-name">Sean McKinney</div><div class="pr-portrait-role">Broker of Record</div></div>
       </div>
     </div>
-    <!-- COPY PLACEHOLDER: principals narrative (fix spec 1.5) -->
-    <p class="sec-dek principals-narr">[COPY &mdash; project: two sentences stating what the firm is and who it serves]</p>
-    <!-- /COPY PLACEHOLDER -->
     <div class="quote quote--inline">
       <p class="quote-text">"The relationships that surface <em class="gi">off-market</em> opportunities aren&#39;t built overnight. Ours span <em class="gi">four decades</em>."</p>
       <div class="quote-rule"></div>
@@ -545,14 +579,14 @@
 </section>
 
 <!-- ============================================================
-     6. BEYOND THE TRANSACTION (cream, Type A, two columns) — §5.8
+     7. BEYOND THE TRANSACTION (white, Type A, two columns) — §5.8
      ============================================================ -->
 <section class="beyond sec-a">
   <div class="wrap">
     <div class="beyond-grid">
       <div class="sec-head">
         <div class="label">Beyond the Transaction</div>
-        <h2 class="sec-h2 sec-h2--lead">The difference between a well-structured and a poorly-structured disposition can be <em class="gi">hundreds of thousands of dollars</em>.</h2>
+        <h2 class="sec-h2">The difference between a well-structured and a poorly-structured disposition can be <em class="gi">hundreds of thousands of dollars</em>.</h2>
         <p class="sec-dek">Entity structure, CCA recapture exposure, share versus asset sale, net after-tax proceeds &mdash; we work alongside your accountant and legal counsel so that every decision is informed before it&#39;s final.</p>
         <div class="beyond-cta">
           <a href="/contact" class="btn btn--gold" data-mr-modal="seller" data-cta="beyond-consult"><span class="btn-label">Request a Consultation</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -570,19 +604,23 @@
 </section>
 
 <!-- ============================================================
-     7. MARKET INTELLIGENCE (off-white, Type A) — §5.10; data strip
-        and watch list render from mckinney-mi.js (single source)
+     8. MARKET INTELLIGENCE (cream, Type A) — §5.10; the data strip
+        and watch list render from mckinney-mi.js (single source),
+        the subscribe row follows the evidence (Phase 1.5 §2.6)
      ============================================================ -->
 <section class="intelband sec-a" id="insights">
   <div class="wrap">
     <div class="sec-head">
       <div class="label">Market Intelligence</div>
-      <!-- COPY PLACEHOLDER: Market Intelligence H2 — branch-2 string reused pending confirmation (fix spec 1.5) -->
       <h2 class="sec-h2">Ontario multifamily in <em class="gi">2026</em>.</h2>
       <p class="sec-dek">Published quarterly. Cap rates, vacancy, transaction volume, and regulatory developments.</p>
     </div>
+    <div class="intel-dateline" data-mi="dateline"></div>
+    <div class="intel-strip" data-mi="cards"></div>
+    <div class="intel-watch" data-mi="watch"></div>
     <div class="intelband-row">
       <div>
+        <div class="label intel-sub-head">Market Updates</div>
         <form class="intel-sub" id="intel-sub-form" novalidate>
           <input type="text" id="intel-sub-email" name="email" placeholder="Email address" inputmode="email" autocomplete="email" required aria-label="Email address">
           <div class="intel-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
@@ -600,14 +638,11 @@
         <a class="card-link intel-all" href="/insights">View All Insights <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
-    <div class="intel-dateline" data-mi="dateline"></div>
-    <div class="intel-strip" data-mi="cards"></div>
-    <div class="intel-watch" data-mi="watch"></div>
   </div>
 </section>
 
 <!-- ============================================================
-     8. YOUR NEXT STEP (white, Type A) — §5.9
+     9. YOUR NEXT STEP (white, Type A) — §5.9
      ============================================================ -->
 <section class="nextstep sec-a">
   <div class="wrap">
@@ -649,7 +684,7 @@
       <img class="footer-remax" src="images/brand/remax-commercial-white.png" alt="RE/MAX Commercial" width="640" height="228" loading="lazy" decoding="async">
     </div>
     <div class="footer-bottom">
-      <div class="footer-nav"><a href="/listings/">Our Listings</a><a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a><a href="/tools/">Tools</a><a href="/learn/">Learn</a><a href="/insights">Insights</a><a href="/team">Our Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="/contact">Contact</a></div>
+      <div class="footer-nav"><a href="/listings/">Our Listings</a><a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a><a href="/tools/">Tools</a><a href="/learn/">Learn</a><a href="/insights">Insights</a><a href="/team">Our Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a></div>
       <div class="footer-legal-row">
         <div class="footer-legal">McKinney Multifamily Group &middot; RE/MAX Quinte Ltd., Brokerage &middot; 106 North Front St, Belleville, ON K8P 3B4 &middot; <a href="tel:+16139699907">613.969.9907</a> &middot; Each Office Independently Owned and Operated</div>
         <div class="footer-copy">&copy; 2026 McKinney Multifamily Group &middot; mckinneyrealty.ca</div>
@@ -700,30 +735,23 @@
      ============================================================ -->
 <script src="mckinney-own-listings-data.js?v=2"></script>
 <script>
-/* Own-listing cards render from the shared data file (§4.2; values never
-   hand-typed). Fewer than three listings: one row card folded into Track
-   Record (D-7). Three or more: the Buildings for Sale section returns and
-   the cards render there instead. */
+/* Own-listing cards render into Buildings for Sale from the shared data
+   file (§4.2; values never hand-typed) — dark row cards on the navy field. */
 (function () {
-  var data = window.MCK_OWN_LISTINGS_DATA || [];
-  var track = document.getElementById('track-listing');
-  var bfs = document.getElementById('listings');
   var grid = document.getElementById('bfs-grid');
-  if (!data.length) return;
-  var target = track;
-  if (data.length >= 3 && bfs && grid) { bfs.hidden = false; target = grid; }
-  if (!target) return;
+  var data = window.MCK_OWN_LISTINGS_DATA || [];
+  if (!grid || !data.length) return;
   function money(n) { return '$' + Math.round(n).toLocaleString('en-CA'); }
   var frag = document.createDocumentFragment();
   data.forEach(function (l) {
     var card = document.createElement('div');
-    card.className = 'card card--row';
+    card.className = 'card card--row card--dark';
     var cap = (l.capReportedPct != null)
       ? '<div class="card-line3">Cap rate on list price ' + l.capReportedPct.toFixed(1) + '%</div>' : '';
     card.innerHTML =
       (l.photo ? '<div class="card-media"><img src="' + l.photo + '" alt="' + l.street + ', ' + l.city + '" width="1200" height="675" loading="lazy" decoding="async"></div>' : '') +
       '<div class="card-inner">' +
-      '<div class="card-kicker">Sell-Side<span class="card-tag">Currently offered</span></div>' +
+      '<div class="card-kicker">Sell-Side</div>' +
       '<h3 class="card-title"><a href="/listings/' + l.slug + '" data-listing="' + l.slug + '" data-cta="view">' + l.street + ', ' + l.city + '</a></h3>' +
       '<div class="card-price">' + money(l.listPrice) + '</div>' +
       '<div class="card-line2">' + l.units + ' units &middot; ' + money(l.listPrice / l.units) + ' per unit</div>' +
@@ -736,7 +764,7 @@
       '</div>';
     frag.appendChild(card);
   });
-  target.appendChild(frag);
+  grid.appendChild(frag);
 })();
 </script>
 <script src="mckinney-mi.js"></script>
@@ -745,7 +773,7 @@
 <!-- ============================================================
      Modal CTA system — seller / investor / subscribe flows
      ============================================================ -->
-<script src="mckinney-modal-cta.js?v=2"></script>
+<script src="mckinney-modal-cta.js?v=3"></script>
 
 <script>
 (function () {
