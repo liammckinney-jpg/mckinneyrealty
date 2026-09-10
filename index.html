@@ -67,7 +67,7 @@
 }
 .hero-desc {
   font-size: var(--b-lg); font-weight: 300; line-height: 1.7;
-  color: rgba(255,255,255,0.72); max-width: 560px; margin-bottom: var(--s-5);
+  color: rgba(255,255,255,0.72); max-width: 600px; margin-bottom: var(--s-5);
   opacity: 0; animation: fadeUp 0.7s ease 0.5s forwards;
 }
 .hero-actions { display: flex; gap: var(--s-2); opacity: 0; animation: fadeUp 0.7s ease 0.65s forwards; }
@@ -82,11 +82,19 @@
 .router { background: var(--cream); border-top: 1px solid var(--border); }
 .router > .wrap > .label { display: block; margin-bottom: var(--s-3); }
 .router-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
+/* door links stack uniformly so all three doors align */
+.router-grid .card-links { flex-direction: column; align-items: flex-start; gap: 0.625rem; }
 
 /* ---- BUILDINGS FOR SALE (white, Type A) ---- */
 .bfs { background: var(--white); border-top: 1px solid var(--border); }
 .bfs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
 .card--span2 { grid-column: span 2; }
+/* flag-gated tiles centre their content; the link stays with the group */
+.card--center { justify-content: center; }
+.card--center .card-body { flex-grow: 0; }
+.card--center .card-links { margin-top: var(--s-3); }
+/* span-2 listing card: wider media crop so the photo doesn't dominate */
+.card--span2 .card-media img { aspect-ratio: 21 / 9; }
 .card-line2 { font-size: var(--b-md); color: var(--text-1); margin-bottom: 0.25rem; }
 .card-line3 { font-size: var(--b-md); color: var(--gold-dark); margin-bottom: var(--s-2); }
 
@@ -290,7 +298,7 @@
     </div>
     <div class="bfs-grid" id="bfs-grid">
       <!-- own-listing cards render here from MCK_OWN_LISTINGS_DATA (§4.2, never hand-typed) -->
-      <div class="card flag-listings-public" id="bfs-tile-ontario">
+      <div class="card card--center flag-listings-public" id="bfs-tile-ontario">
         <div class="card-kicker">All Ontario</div>
         <div class="card-title">Every apartment building for sale in Ontario</div>
         <p class="card-body">Every building with five or more units listed on the MLS&reg; across the province, updated through the day. Filter by units, market and price per unit, then run the numbers on any listing.</p>
@@ -298,7 +306,7 @@
           <a class="card-link" href="/apartment-buildings-for-sale/">See all listings <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
-      <div class="card flag-listings-private" id="bfs-tile-offmarket">
+      <div class="card card--center flag-listings-private" id="bfs-tile-offmarket">
         <div class="card-kicker">Off-Market</div>
         <div class="card-title">Not every building we sell is listed.</div>
         <p class="card-body">Some of the buildings we sell never reach public marketing. Register to hear about them first.</p>
@@ -350,10 +358,6 @@
     <div class="sec-head">
       <div class="label">Track Record</div>
       <h2 class="sec-h2">Selected <em class="gi">transactions</em></h2>
-    </div>
-    </div>
-      <div class="track-metric"><div class="track-metric-num">40+</div><div class="track-metric-label">Years in market</div></div>
-      <div class="track-metric"><div class="track-metric-num">2</div><div class="track-metric-label">Generations</div></div>
     </div>
 
     <div class="deal-grid">

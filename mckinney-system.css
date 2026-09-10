@@ -471,6 +471,14 @@ html:not([data-header-band]) .nav-band { display: none !important; }
   .nav-drop::after { display: none; }
 }
 
+@media (max-width: 560px) {
+  /* phone: the full wordmark collides with the hamburger — tighten it */
+  .nav-name { font-size: 0.8125rem; letter-spacing: 0.1em; }
+  .nav-sub { font-size: 0.4375rem; }
+  .nav-mono { height: 30px; }
+  .nav-inner { gap: 0.75rem; }
+}
+
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-toggle { display: block; }
