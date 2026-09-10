@@ -48,12 +48,14 @@
 .hero { background: var(--navy); position: relative; overflow: hidden; }
 .hero-inner {
   max-width: var(--max-w); margin: 0 auto;
-  padding: 10.5rem var(--side) 4.5rem;
+  padding: 11rem var(--side) 5.25rem;
   position: relative;
 }
+/* The M runs large and bleeds off the right edge on purpose — the
+   hero's one oversized moment (section overflow clips it cleanly). */
 .hero-watermark {
-  position: absolute; right: var(--side); top: 46%; transform: translateY(-50%);
-  height: clamp(300px, 34vw, 540px); width: auto;
+  position: absolute; right: -5vw; top: 50%; transform: translateY(-50%);
+  height: min(clamp(420px, 52vw, 820px), 92vh); width: auto;
   pointer-events: none;
   animation: heroFade 1.5s ease 0.3s forwards; opacity: 0;
 }
@@ -73,7 +75,7 @@
 .hero-actions { display: flex; gap: var(--s-2); opacity: 0; animation: fadeUp 0.7s ease 0.65s forwards; }
 .btn--outline-light { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.35); }
 .btn--outline-light:hover { border-color: var(--white); }
-.hero-statband { border-top: 1px solid rgba(255,255,255,0.08); padding: var(--sec-b) 0; position: relative; z-index: 1; }
+.hero-statband { border-top: 1px solid rgba(255,255,255,0.05); padding: var(--sec-b) 0; position: relative; z-index: 1; }
 .hero-statband-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-4); }
 .hero-stat-num { font-family: var(--font-d); font-size: var(--d-stat); font-weight: 300; color: var(--white); line-height: 1; }
 .hero-stat-label { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 0.375rem; }
@@ -105,15 +107,15 @@
 /* ---- THE PRINCIPALS (cream, Type B band) ---- */
 .principals { background: var(--cream); border-top: 1px solid var(--border); }
 .principals > .wrap > .label { display: block; margin-bottom: var(--s-3); }
-.principals-row { display: grid; grid-template-columns: minmax(280px, 420px) 1fr; gap: var(--s-6); align-items: center; }
-.principals-photos { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3); }
+.principals-row { display: grid; grid-template-columns: minmax(320px, 560px) 1fr; gap: var(--s-7); align-items: center; }
+.principals-photos { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); }
 .pr-portrait-frame { border: 1px solid rgba(26,31,46,0.12); padding: 0.5rem; background: var(--white); }
 .pr-portrait-frame img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
 .pr-portrait-info { padding-top: var(--s-2); }
 .pr-portrait-name { font-family: var(--font-d); font-size: 1.25rem; font-weight: 400; color: var(--navy); }
 .pr-portrait-role { font-size: 0.625rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-dark); margin-top: 2px; }
 .principals-line {
-  font-family: var(--font-d); font-size: clamp(1.5rem, 2.2vw, 2.125rem); font-weight: 300;
+  font-family: var(--font-d); font-size: clamp(1.75rem, 2.6vw, 2.5rem); font-weight: 300;
   line-height: 1.35; color: var(--navy);
 }
 .principals-link {
@@ -126,7 +128,7 @@
 
 /* ---- BEYOND THE TRANSACTION (navy, Type A header-only) ---- */
 .beyond { background: var(--navy); }
-.beyond .sec-head { margin-bottom: 0; max-width: 900px; }
+.beyond .sec-head { margin-bottom: 0; max-width: 900px; border-left: 1px solid var(--gold); padding-left: clamp(1.5rem, 3vw, 2.5rem); }
 .beyond-cta { margin-top: var(--s-4); }
 
 /* ---- YOUR NEXT STEP (white, Type A) ---- */
@@ -303,7 +305,7 @@
     </div>
     <div class="bfs-grid" id="bfs-grid">
       <!-- own-listing cards render here from MCK_OWN_LISTINGS_DATA (§4.2, never hand-typed) -->
-      <div class="card card--center flag-listings-public" id="bfs-tile-ontario">
+      <div class="card card--center card--dark flag-listings-public" id="bfs-tile-ontario">
         <div class="card-kicker">All Ontario</div>
         <div class="card-title">Every apartment building for sale in Ontario</div>
         <p class="card-body">Every building with five or more units listed on the MLS&reg; across the province, updated through the day. Filter by units, market and price per unit, then run the numbers on any listing.</p>
@@ -311,7 +313,7 @@
           <a class="card-link" href="/apartment-buildings-for-sale/">See all listings <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
-      <div class="card card--center flag-listings-private" id="bfs-tile-offmarket">
+      <div class="card card--center card--dark flag-listings-private" id="bfs-tile-offmarket">
         <div class="card-kicker">Off-Market</div>
         <div class="card-title">Not every building we sell is listed.</div>
         <p class="card-body">Some of the buildings we sell never reach public marketing. Register to hear about them first.</p>
@@ -334,18 +336,21 @@
     </div>
     <div class="wwd-grid">
       <div class="card card--compact">
+        <div class="card-num">01</div>
         <div class="card-title">Acquisition &amp; Disposition</div>
         <div class="card-sub">Sell-Side &amp; Buy-Side Advisory</div>
         <p class="card-body">Representing buyers and sellers of apartment buildings across Ontario &mdash; from four-unit walkups to 40+ unit purpose-built rentals.</p>
         <div class="card-links"><a class="card-link" href="/services#acquisition-disposition">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
       </div>
       <div class="card card--compact">
+        <div class="card-num">02</div>
         <div class="card-title">Off-Market Deal Sourcing</div>
         <div class="card-sub">Private Sales &amp; Targeted Matching</div>
         <p class="card-body">The buyer for your building isn&#39;t browsing MLS. They already own a similar asset in the next town. We know who they are.</p>
         <div class="card-links"><a class="card-link" href="/services#off-market">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
       </div>
       <div class="card card--compact">
+        <div class="card-num">03</div>
         <div class="card-title">Development Land &amp; Assemblies</div>
         <div class="card-sub">Land Advisory &amp; Site Identification</div>
         <p class="card-body">Identifying and facilitating land acquisitions for multifamily development along Ontario&#39;s growth corridors.</p>
