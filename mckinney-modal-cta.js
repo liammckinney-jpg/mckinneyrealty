@@ -419,6 +419,18 @@
   --------------------------------------------------- */
   let overlay = null;
   let currentFlow = null;
+  let lastTrigger = null;   // element to return focus to on close (fix spec 0.8)
+
+  function labelModal(modal) {
+    var h = modal.querySelector('h1, h2, h3, .mr-modal-title');
+    if (h) { if (!h.id) h.id = 'mr-modal-title'; modal.setAttribute('aria-labelledby', h.id); }
+    else modal.removeAttribute('aria-labelledby');
+  }
+  function focusables(modal) {
+    return Array.prototype.filter.call(
+      modal.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'),
+      function (el) { return el.offsetParent !== null; });
+  }
 
   function createOverlay() {
     if (overlay) return overlay;
@@ -433,16 +445,30 @@
 
   function openModal(html, wide) {
     const ov = createOverlay();
-    ov.innerHTML = '<div class="mr-modal' + (wide ? ' mr-modal--wide' : '') + '">' +
+    lastTrigger = document.activeElement;
+    ov.innerHTML = '<div class="mr-modal' + (wide ? ' mr-modal--wide' : '') + '" role="dialog" aria-modal="true">' +
       '<button class="mr-modal-close" aria-label="Close">' + CLOSE + '</button>' +
       html + '</div>';
+    var modal = ov.querySelector('.mr-modal');
+    labelModal(modal);
     ov.querySelector('.mr-modal-close').addEventListener('click', closeModal);
+    // Tab / Shift-Tab cycle inside the dialog
+    modal.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      var f = focusables(modal);
+      if (!f.length) { e.preventDefault(); return; }
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
     // Prevent body scroll
     document.body.style.overflow = 'hidden';
-    // Trigger transition
+    // Trigger transition, then move focus into the dialog
     requestAnimationFrame(function() {
       requestAnimationFrame(function() {
         ov.classList.add('is-visible');
+        var c = ov.querySelector('.mr-modal-close');
+        if (c) c.focus();
       });
     });
   }
@@ -454,6 +480,11 @@
     setTimeout(function() {
       if (overlay) overlay.innerHTML = '';
     }, 350);
+    // return focus to whatever opened the dialog
+    if (lastTrigger && typeof lastTrigger.focus === 'function' && document.contains(lastTrigger)) {
+      lastTrigger.focus();
+    }
+    lastTrigger = null;
   }
 
   function replaceModalContent(html, wide) {
@@ -468,6 +499,8 @@
     modal.appendChild(closeBtn);
     modal.insertAdjacentHTML('beforeend', html);
     modal.scrollTop = 0;
+    labelModal(modal);
+    closeBtn.focus();
   }
 
   // ESC key
@@ -490,12 +523,12 @@
       '<div class="mr-modal-body">' +
         '<form id="mr-seller-step1">' +
           '<div class="mr-modal-row">' +
-            '<div class="mr-modal-field"><label>First Name</label><input type="text" name="first_name" required></div>' +
-            '<div class="mr-modal-field"><label>Last Name</label><input type="text" name="last_name" required></div>' +
+            '<div class="mr-modal-field"><label for="mr-first_name">First Name</label><input id="mr-first_name" autocomplete="given-name" type="text" name="first_name" required></div>' +
+            '<div class="mr-modal-field"><label for="mr-last_name">Last Name</label><input id="mr-last_name" autocomplete="family-name" type="text" name="last_name" required></div>' +
           '</div>' +
           '<div class="mr-modal-row">' +
-            '<div class="mr-modal-field"><label>Email</label><input type="email" name="email" required></div>' +
-            '<div class="mr-modal-field"><label>Phone</label><input type="tel" name="phone"></div>' +
+            '<div class="mr-modal-field"><label for="mr-email">Email</label><input id="mr-email" autocomplete="email" type="email" name="email" required></div>' +
+            '<div class="mr-modal-field"><label for="mr-phone">Phone</label><input id="mr-phone" autocomplete="tel" type="tel" name="phone"></div>' +
           '</div>' +
           '<div class="mr-modal-row single">' +
             '<div class="mr-modal-field"><label>I\u2019m interested in</label>' +
@@ -566,11 +599,11 @@
           '<div class="mr-modal-section">' +
             '<div class="mr-modal-section-title">Property Overview</div>' +
             '<div class="mr-modal-row single">' +
-              '<div class="mr-modal-field"><label>Property Address</label><input type="text" name="address" placeholder="Street address, city"></div>' +
+              '<div class="mr-modal-field"><label for="mr-address">Property Address</label><input id="mr-address" type="text" name="address" placeholder="Street address, city"></div>' +
             '</div>' +
             '<div class="mr-modal-row triple">' +
-              '<div class="mr-modal-field"><label>Total Units</label><input type="number" name="total_units"></div>' +
-              '<div class="mr-modal-field"><label>Year Built</label><input type="text" name="year_built"></div>' +
+              '<div class="mr-modal-field"><label for="mr-total_units">Total Units</label><input id="mr-total_units" type="number" name="total_units"></div>' +
+              '<div class="mr-modal-field"><label for="mr-year_built">Year Built</label><input id="mr-year_built" type="text" name="year_built"></div>' +
               '<div class="mr-modal-field"><label>Building Type</label>' +
                 '<select name="building_type">' +
                   '<option value="" disabled selected>Select</option>' +
@@ -589,12 +622,12 @@
           '<div class="mr-modal-section">' +
             '<div class="mr-modal-section-title">Financial Overview</div>' +
             '<div class="mr-modal-row">' +
-              '<div class="mr-modal-field"><label>Monthly Rental Income</label><input type="text" name="monthly_rent" placeholder="$"></div>' +
-              '<div class="mr-modal-field"><label>Current Vacancy</label><input type="text" name="vacancy" placeholder="# of vacant units"></div>' +
+              '<div class="mr-modal-field"><label for="mr-monthly_rent">Monthly Rental Income</label><input id="mr-monthly_rent" type="text" name="monthly_rent" placeholder="$"></div>' +
+              '<div class="mr-modal-field"><label for="mr-vacancy">Current Vacancy</label><input id="mr-vacancy" type="text" name="vacancy" placeholder="# of vacant units"></div>' +
             '</div>' +
             '<div class="mr-modal-row">' +
-              '<div class="mr-modal-field"><label>Annual Operating Expenses</label><input type="text" name="annual_expenses" placeholder="$"></div>' +
-              '<div class="mr-modal-field"><label>Outstanding Mortgage</label><input type="text" name="mortgage_balance" placeholder="$"></div>' +
+              '<div class="mr-modal-field"><label for="mr-annual_expenses">Annual Operating Expenses</label><input id="mr-annual_expenses" type="text" name="annual_expenses" placeholder="$"></div>' +
+              '<div class="mr-modal-field"><label for="mr-mortgage_balance">Outstanding Mortgage</label><input id="mr-mortgage_balance" type="text" name="mortgage_balance" placeholder="$"></div>' +
             '</div>' +
           '</div>' +
 
@@ -613,7 +646,7 @@
               '</div>' +
             '</div>' +
             '<div class="mr-modal-row">' +
-              '<div class="mr-modal-field"><label>Target Timeline</label><input type="text" name="timeline" placeholder="e.g. Within 6 months, no rush"></div>' +
+              '<div class="mr-modal-field"><label for="mr-timeline">Target Timeline</label><input id="mr-timeline" type="text" name="timeline" placeholder="e.g. Within 6 months, no rush"></div>' +
               '<div class="mr-modal-field"><label>Marketing Preference</label>' +
                 '<select name="marketing_preference">' +
                   '<option value="" disabled selected>Select</option>' +
@@ -628,7 +661,7 @@
           // Additional
           '<div class="mr-modal-section">' +
             '<div class="mr-modal-row single">' +
-              '<div class="mr-modal-field"><label>Anything else we should know</label><textarea name="notes" rows="3" placeholder="Building condition, motivation, concerns, price expectations"></textarea></div>' +
+              '<div class="mr-modal-field"><label for="mr-notes">Anything else we should know</label><textarea id="mr-notes" name="notes" rows="3" placeholder="Building condition, motivation, concerns, price expectations"></textarea></div>' +
             '</div>' +
           '</div>' +
 
@@ -666,15 +699,15 @@
       '<div class="mr-modal-body">' +
         '<form id="mr-investor-step1">' +
           '<div class="mr-modal-row">' +
-            '<div class="mr-modal-field"><label>First Name</label><input type="text" name="first_name" required></div>' +
-            '<div class="mr-modal-field"><label>Last Name</label><input type="text" name="last_name" required></div>' +
+            '<div class="mr-modal-field"><label for="mr-first_name">First Name</label><input id="mr-first_name" autocomplete="given-name" type="text" name="first_name" required></div>' +
+            '<div class="mr-modal-field"><label for="mr-last_name">Last Name</label><input id="mr-last_name" autocomplete="family-name" type="text" name="last_name" required></div>' +
           '</div>' +
           '<div class="mr-modal-row">' +
-            '<div class="mr-modal-field"><label>Email</label><input type="email" name="email" required></div>' +
-            '<div class="mr-modal-field"><label>Phone</label><input type="tel" name="phone"></div>' +
+            '<div class="mr-modal-field"><label for="mr-email">Email</label><input id="mr-email" autocomplete="email" type="email" name="email" required></div>' +
+            '<div class="mr-modal-field"><label for="mr-phone">Phone</label><input id="mr-phone" autocomplete="tel" type="tel" name="phone"></div>' +
           '</div>' +
           '<div class="mr-modal-row">' +
-            '<div class="mr-modal-field"><label>Company / Entity</label><input type="text" name="company" placeholder="Optional"></div>' +
+            '<div class="mr-modal-field"><label for="mr-company">Company / Entity</label><input id="mr-company" type="text" name="company" placeholder="Optional"></div>' +
             '<div class="mr-modal-field"><label>Budget Range</label>' +
               '<select name="budget_range">' +
                 '<option value="" disabled selected>Select</option>' +
@@ -751,7 +784,7 @@
                   '<option value="flexible">Flexible</option>' +
                 '</select>' +
               '</div>' +
-              '<div class="mr-modal-field"><label>Target Markets</label><input type="text" name="target_markets" placeholder="e.g. Kingston, Belleville, 401 corridor"></div>' +
+              '<div class="mr-modal-field"><label for="mr-target_markets">Target Markets</label><input id="mr-target_markets" type="text" name="target_markets" placeholder="e.g. Kingston, Belleville, 401 corridor"></div>' +
             '</div>' +
             '<div class="mr-modal-row single">' +
               '<div class="mr-modal-field"><label>Building Type Preference</label>' +
@@ -831,7 +864,7 @@
           // Additional
           '<div class="mr-modal-section">' +
             '<div class="mr-modal-row single">' +
-              '<div class="mr-modal-field"><label>Anything else</label><textarea name="notes" rows="3" placeholder="Specific requirements, preferred deal structures, other preferences"></textarea></div>' +
+              '<div class="mr-modal-field"><label for="mr-notes">Anything else</label><textarea id="mr-notes" name="notes" rows="3" placeholder="Specific requirements, preferred deal structures, other preferences"></textarea></div>' +
             '</div>' +
           '</div>' +
 
@@ -868,8 +901,8 @@
       '<div class="mr-modal-body">' +
         '<form id="mr-subscribe-form">' +
           '<div class="mr-modal-row">' +
-            '<div class="mr-modal-field"><label>First Name</label><input type="text" name="first_name" required></div>' +
-            '<div class="mr-modal-field"><label>Last Name</label><input type="text" name="last_name" required></div>' +
+            '<div class="mr-modal-field"><label for="mr-first_name">First Name</label><input id="mr-first_name" autocomplete="given-name" type="text" name="first_name" required></div>' +
+            '<div class="mr-modal-field"><label for="mr-last_name">Last Name</label><input id="mr-last_name" autocomplete="family-name" type="text" name="last_name" required></div>' +
           '</div>' +
           '<div class="mr-modal-subscribe-row">' +
             '<input type="email" name="email" placeholder="Your email address" required>' +
