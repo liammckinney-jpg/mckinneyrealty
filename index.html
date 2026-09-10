@@ -14,6 +14,7 @@
 <meta property="og:title" content="McKinney Multifamily Group — Investment Real Estate Brokers | Ontario">
 <meta property="og:description" content="Apartment building and investment property brokers across Ontario. $250M+ in career transactions, principal-led on every deal, and Ontario's apartment listings searchable by market.">
 <meta property="og:url" content="https://www.mckinneyrealty.ca/">
+<link rel="canonical" href="https://www.mckinneyrealty.ca/">
 <meta property="og:image" content="https://www.mckinneyrealty.ca/images/og/home.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -23,9 +24,9 @@
 <meta name="twitter:description" content="Apartment building and investment property brokers across Ontario. $250M+ in career transactions, principal-led on every deal, and Ontario's apartment listings searchable by market.">
 <meta name="twitter:image" content="https://www.mckinneyrealty.ca/images/og/home.png">
 <meta name="description" content="Apartment building and investment property brokers across Ontario. $250M+ in career transactions, principal-led on every deal, and Ontario's apartment listings searchable by market.">
-<script src="/mckinney-flags.js"></script>
-<script src="mckinney-consent.js"></script>
-<script src="mckinney-schema.js" defer></script>
+<script src="/mckinney-flags.js?v=2"></script>
+<script src="mckinney-consent.js?v=2"></script>
+<script src="mckinney-schema.js?v=2" defer></script>
 <!-- Google Analytics (GA4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
 <script>
@@ -74,7 +75,7 @@
 .hero-watermark {
   /* anchored below the nav so the top of the M always shows; bottom may
      run under the stat strip / hero edge (clipped by the section). */
-  position: absolute; right: var(--side); top: 5.5rem;
+  position: absolute; right: max(var(--side), calc((100vw - var(--max-w)) / 2 + var(--side))); top: 5.5rem;
   height: min(clamp(420px, 52vw, 820px), calc(100% - 5.5rem)); width: auto;
   pointer-events: none;
   animation: heroFade 1.5s ease 0.3s forwards; opacity: 0;
@@ -121,7 +122,10 @@
   color: var(--navy); opacity: 0.05; pointer-events: none;
   transition: opacity 0.4s, color 0.4s;
 }
-.router-grid .card:hover .door-num { color: var(--gold-dark); opacity: 0.22; }
+.card:hover .door-num { color: var(--gold-dark); opacity: 0.22; }
+/* What We Do shares the ordinal component and its corner reservation (Phase 2 §2.2) */
+.wwd-grid .card { overflow: hidden; padding-right: 5.5rem; padding-bottom: 4rem; }
+.wwd-grid .card-links a { max-width: calc(100% - 4.5rem); }
 
 /* ---- BUILDINGS FOR SALE (navy, Type A) — the focal section and the
         page's one lead-register heading (§2.5) ---- */
@@ -141,6 +145,7 @@
 .card-line2 { font-size: var(--b-md); color: var(--text-1); margin-bottom: 0.25rem; }
 .card-line3 { font-size: var(--b-md); color: var(--gold-text); margin-bottom: var(--s-2); }
 .card--row .card-body { flex-grow: 0; max-width: 60ch; }
+.bfs-fallback { margin: 0; }
 /* dark row on the navy field: a faint lift plus the hairline border */
 .bfs .card--dark { background: rgba(255,255,255,0.035); }
 .card--dark .card-price { color: var(--white); }
@@ -296,8 +301,8 @@
 }
 @media (max-width: 600px) {
   .door-num { display: none; }
-  .router-grid .card { padding: 1.5rem 1.625rem; min-height: 0; }
-  .router-grid .card-links a { max-width: none; }
+  .router-grid .card, .wwd-grid .card { padding: 1.5rem 1.625rem; min-height: 0; }
+  .router-grid .card-links a, .wwd-grid .card-links a { max-width: none; }
   .intel-sub { flex-wrap: wrap; }
   .intel-sub .btn { flex: 1 1 100%; }
   .intel-strip { grid-template-columns: 1fr; }
@@ -328,7 +333,7 @@
   <div class="nav-band"><img src="/images/brand/REMAX_logo_RGB_dark.svg" alt="RE/MAX" width="288" height="144"><span>RE/MAX Quinte Ltd., Brokerage</span></div>
   <div class="nav-inner">
   <a href="/" class="nav-brand">
-    <img class="nav-mono" src="images/brand/M_navy_transparent.png" alt="M" width="583" height="587">
+    <img class="nav-mono" src="images/brand/M_navy_transparent.png" alt="" width="583" height="587">
     <div class="nav-text">
       <span class="nav-name">McKinney Multifamily Group</span>
       <span class="nav-sub">Investment Real Estate Brokers</span>
@@ -401,7 +406,7 @@
 <!-- ============================================================
      2. ROUTER BAND (cream, Type B) — §5.3
      ============================================================ -->
-<section class="router sec-b" id="tools">
+<section class="router sec-b" id="start">
   <div class="wrap">
     <h2 class="sec-h2 sec-h2--label">Start Here</h2>
     <div class="router-grid">
@@ -451,25 +456,25 @@
     </div>
     <div class="wwd-grid">
       <div class="card card--compact">
-        <div class="card-num">01</div>
+        <span class="door-num" aria-hidden="true">01</span>
         <h3 class="card-title">Acquisition &amp; Disposition</h3>
         <div class="card-sub">Sell-Side &amp; Buy-Side Advisory</div>
         <p class="card-body">Representing buyers and sellers of apartment buildings across Ontario &mdash; from four-unit walkups to 40+ unit purpose-built rentals.</p>
-        <div class="card-links"><a class="card-link" href="/services#acquisition-disposition">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        <div class="card-links"><a class="card-link" href="/services#acquisition-disposition" aria-label="Learn more about Acquisition &amp; Disposition">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
       </div>
       <div class="card card--compact">
-        <div class="card-num">02</div>
+        <span class="door-num" aria-hidden="true">02</span>
         <h3 class="card-title">Off-Market Deal Sourcing</h3>
         <div class="card-sub">Private Sales &amp; Targeted Matching</div>
         <p class="card-body">The buyer for your building isn&#39;t browsing MLS. They already own a similar asset in the next town. We know who they are.</p>
-        <div class="card-links"><a class="card-link" href="/services#off-market">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        <div class="card-links"><a class="card-link" href="/services#off-market" aria-label="Learn more about Off-Market Deal Sourcing">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
       </div>
       <div class="card card--compact">
-        <div class="card-num">03</div>
+        <span class="door-num" aria-hidden="true">03</span>
         <h3 class="card-title">Development Land &amp; Assemblies</h3>
         <div class="card-sub">Land Advisory &amp; Site Identification</div>
         <p class="card-body">Identifying and facilitating land acquisitions for multifamily development along Ontario&#39;s growth corridors.</p>
-        <div class="card-links"><a class="card-link" href="/services#development-land">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        <div class="card-links"><a class="card-link" href="/services#development-land" aria-label="Learn more about Development Land &amp; Assemblies">Learn More <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
       </div>
     </div>
   </div>
@@ -489,7 +494,8 @@
       <h2 class="sec-h2 flag-listings-private">Our current <em class="gi">listings</em>.</h2>
     </div>
     <div class="bfs-grid" id="bfs-grid">
-      <!-- own-listing cards render here from MCK_OWN_LISTINGS_DATA (§4.2, never hand-typed) -->
+      <!-- own-listing cards render here from MCK_OWN_LISTINGS_DATA (§4.2, never hand-typed); the script replaces this fallback -->
+      <p class="bfs-fallback"><a class="card-link" href="/listings/">Our Listings <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
     </div>
     <div class="bfs-markets flag-listings-public">
       <div class="label label--light">Search by market</div>
@@ -561,7 +567,7 @@
         <div class="pr-portrait-frame">
           <picture>
             <source srcset="images/liam-mckinney.webp" type="image/webp">
-            <img src="images/liam-mckinney.jpg" alt="Liam McKinney" width="720" height="960" loading="lazy" decoding="async">
+            <img src="images/liam-mckinney.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
           </picture>
         </div>
         <div class="pr-portrait-info"><div class="pr-portrait-name">Liam McKinney</div><div class="pr-portrait-role">Broker &middot; Managing Partner</div></div>
@@ -570,7 +576,7 @@
         <div class="pr-portrait-frame">
           <picture>
             <source srcset="images/sean-mckinney.webp" type="image/webp">
-            <img src="images/sean-mckinney.jpg" alt="Sean McKinney" width="720" height="960" loading="lazy" decoding="async">
+            <img src="images/sean-mckinney.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
           </picture>
         </div>
         <div class="pr-portrait-info"><div class="pr-portrait-name">Sean McKinney</div><div class="pr-portrait-role">Broker of Record</div></div>
@@ -682,9 +688,10 @@
      ============================================================ -->
 <footer class="footer">
   <div class="wrap">
-    <div class="footer-brand-row">
+    <div class="footer-top">
+<div class="footer-brand-row">
       <div class="footer-brand">
-      <img class="footer-brand-mono" src="images/brand/M_white_transparent.png" alt="McKinney Multifamily Group" width="583" height="587" loading="lazy" decoding="async">
+      <img class="footer-brand-mono" src="images/brand/M_white_transparent.png" alt="" width="583" height="587" loading="lazy" decoding="async">
       <div class="footer-brand-name">McKinney Multifamily Group</div>
       <div class="footer-brand-byline">Investment Real Estate Brokers</div>
       <div class="footer-brand-scope">Serving property owners and investors across Ontario's multifamily markets.</div>
@@ -692,8 +699,14 @@
       <div class="footer-brand-sep" aria-hidden="true"></div>
       <img class="footer-remax" src="images/brand/remax-commercial-white.png" alt="RE/MAX Commercial" width="640" height="228" loading="lazy" decoding="async">
     </div>
+      <div class="footer-nav">
+        <div class="footer-col"><div class="footer-col-label">Buildings</div><a href="/listings/">Our Listings</a><a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a></div>
+        <div class="footer-col"><div class="footer-col-label">Tools</div><a href="/tools/underwrite">The Underwriter</a><a href="/tools/financing-modeler">Financing Modeler</a><a href="/tools/disposition-calculator">Disposition Proceeds</a><a href="/tools/compounding-modeler">Compounding Modeler</a></div>
+        <div class="footer-col"><div class="footer-col-label">Firm</div><a href="/team">Our Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a></div>
+        <div class="footer-col"><div class="footer-col-label">Insights</div><a href="/insights">Insights</a><a href="/learn/">Learn</a></div>
+      </div>
+    </div>
     <div class="footer-bottom">
-      <div class="footer-nav"><a href="/listings/">Our Listings</a><a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a><a href="/tools/">Tools</a><a href="/learn/">Learn</a><a href="/insights">Insights</a><a href="/team">Our Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a></div>
       <div class="footer-legal-row">
         <div class="footer-legal">McKinney Multifamily Group &middot; RE/MAX Quinte Ltd., Brokerage &middot; 106 North Front St, Belleville, ON K8P 3B4 &middot; <a href="tel:+16139699907">613.969.9907</a> &middot; Each Office Independently Owned and Operated</div>
         <div class="footer-copy">&copy; 2026 McKinney Multifamily Group &middot; mckinneyrealty.ca</div>
@@ -758,7 +771,7 @@
     var cap = (l.capReportedPct != null)
       ? '<div class="card-line3">Cap rate on list price ' + l.capReportedPct.toFixed(1) + '%</div>' : '';
     card.innerHTML =
-      (l.photo ? '<div class="card-media"><img src="' + l.photo + '" alt="' + l.street + ', ' + l.city + '" width="1200" height="675" loading="lazy" decoding="async"></div>' : '') +
+      (l.photo ? '<div class="card-media"><img src="' + l.photo + '" alt="' + (l.photoAlt || (l.street + ', ' + l.city)) + '" width="1200" height="675" loading="lazy" decoding="async"></div>' : '') +
       '<div class="card-inner">' +
       '<div class="card-kicker">Sell-Side</div>' +
       '<h3 class="card-title"><a href="/listings/' + l.slug + '" data-listing="' + l.slug + '" data-cta="view">' + l.street + ', ' + l.city + '</a></h3>' +
@@ -773,6 +786,7 @@
       '</div>';
     frag.appendChild(card);
   });
+  grid.innerHTML = '';
   grid.appendChild(frag);
 })();
 </script>
