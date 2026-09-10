@@ -5,3 +5,5 @@ mockups/
 copy-audit-report.md
 audit/
 emails/
+# unoptimised image sources (fix spec 1.10)
+images/src/
