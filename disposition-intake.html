@@ -36,6 +36,7 @@
   gtag('config', 'G-VFY0V42GLR');
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mckinney-system.css?v=2">
 <style>
 /* McKinney Multifamily Group — Brand System CSS
    Source of truth: KB-02 Brand Identity & Visual System
@@ -86,42 +87,22 @@ img { max-width: 100%; height: auto; }
 /* =========================================================================
    NAVIGATION
    ========================================================================= */
-.nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 0; padding-left: var(--side-padding); padding-right: var(--side-padding); height: 72px;
-  display: flex; align-items: center; justify-content: space-between;
-  background: rgba(255,255,255,0.92); backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  animation: fadeDown 0.8s ease;
-}
-.nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
-.nav-monogram { height: 36px; width: auto; }
-.nav-logo-text { display: flex; flex-direction: column; }
-.nav-logo-name {
-  font-family: var(--font-display); font-size: 18px; font-weight: 500;
-  letter-spacing: 0.22em; color: var(--navy); text-transform: uppercase; line-height: 1.1;
-}
-.nav-logo-sub {
-  font-family: var(--font-body); font-size: 8px; letter-spacing: 0.16em;
-  color: var(--stone-gold-dark); text-transform: uppercase; font-weight: 400; margin-top: 2px;
-}
-.nav-links { display: flex; gap: 36px; align-items: center; }
-.nav-links a {
-  font-size: 13px; font-weight: 400; color: var(--text-secondary);
-  text-decoration: none; letter-spacing: 0.04em; transition: color 0.3s;
-}
-.nav-links a:hover { color: var(--text-primary); }
-.nav-links a.active { color: var(--text-primary); }
-.nav-cta {
-  font-size: 12px !important; font-weight: 500 !important; color: var(--navy) !important;
-  padding: 10px 24px; border: 1px solid var(--navy);
-  letter-spacing: 0.08em !important; text-transform: uppercase; transition: all 0.3s !important;
-}
-.nav-cta:hover { background: var(--navy) !important; color: var(--white) !important; }
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Mobile nav toggle */
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-.nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
+
+
 
 /* =========================================================================
    BUTTONS
@@ -376,19 +357,11 @@ img { max-width: 100%; height: auto; }
 /* =========================================================================
    FOOTER
    ========================================================================= */
-.footer {
-  padding: 48px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); border-top: 1px solid var(--border);
-  display: flex; justify-content: space-between; align-items: center;
-}
-.footer-left { display: flex; align-items: center; gap: 16px; }
-.footer-monogram { height: 28px; width: auto; opacity: 0.6; }
-.footer-logo {
-  font-family: var(--font-display); font-size: 16px; font-weight: 500;
-  letter-spacing: 0.2em; color: var(--navy); text-transform: uppercase;
-}
-.footer-legal {
-  font-size: 11px; color: var(--text-tertiary); line-height: 1.6; text-align: right;
-}
+
+
+
+
+
 
 /* =========================================================================
    TEAM PAGE
@@ -443,6 +416,9 @@ img { max-width: 100%; height: auto; }
   padding: 160px 0 80px; padding-left: var(--side-padding); padding-right: var(--side-padding); border-bottom: 1px solid var(--border);
 }
 .page-hero .section-label { margin-bottom: 24px; }
+.page-hero--intake { text-align: center; border-bottom: none; padding-bottom: 48px; }
+.page-hero--intake .page-hero-title, .page-hero--intake .page-hero-desc { margin-left: auto; margin-right: auto; }
+.page-hero--intake .page-hero-desc { max-width: 600px; }
 .page-hero-title {
   font-family: var(--font-display); font-size: 52px; font-weight: 300;
   color: var(--navy); line-height: 1.1; margin-bottom: 24px; max-width: 680px;
@@ -609,7 +585,7 @@ img { max-width: 100%; height: auto; }
   }
 }
 @media (max-width: 1024px) {
-  .nav { padding: 0 32px; }
+  
   .hero { padding: 120px 32px 60px; }
   .hero-stats { right: 32px; bottom: 32px; gap: 32px; }
   .hero-watermark { right: 32px; height: 320px; }
@@ -620,7 +596,7 @@ img { max-width: 100%; height: auto; }
   .tombstones-grid { grid-template-columns: repeat(2, 1fr); }
   .cta-section { padding: 80px 32px; }
   .dual-cta-panel { padding: 60px 32px; }
-  .footer { padding: 32px; }
+  
   .page-hero { padding: 120px 32px 60px; }
   .service-detail { padding: 60px 32px; }
   .team-hero { padding: 120px 32px 80px; }
@@ -631,16 +607,11 @@ img { max-width: 100%; height: auto; }
 }
 
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-links.open {
-    display: flex; flex-direction: column; position: fixed;
-    top: 72px; left: 0; right: 0; background: var(--white);
-    padding: 32px; gap: 24px; border-bottom: 1px solid var(--border);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-  }
-  .nav-toggle { display: block; }
+  
+  
+  
 
-  .nav-logo-sub { display: none; }
+  
   .hero-actions .btn-primary,
   .hero-actions .btn-secondary { width: 100%; justify-content: center; }
 
@@ -681,10 +652,10 @@ img { max-width: 100%; height: auto; }
   .contact-grid { grid-template-columns: 1fr; }
   .form-row-inline { grid-template-columns: 1fr; }
 
-  .footer { flex-direction: column; gap: 24px; text-align: center; }
-  .footer-legal { text-align: center; }
+  
+  
 
-  .nav { padding: 0 24px; }
+  
   .services, .tombstones { padding: 60px 24px; }
   .cta-section { padding: 60px 24px; }
   .cta-title { font-size: 32px; }
@@ -1096,14 +1067,15 @@ img { max-width: 100%; height: auto; }
 
 <nav class="nav">
   <div class="nav-band"><img src="/images/brand/REMAX_logo_RGB_dark.svg" alt="RE/MAX"><span>RE/MAX Quinte Ltd., Brokerage</span></div>
-  <a href="/" class="nav-logo">
-    <img class="nav-monogram" src="images/brand/M_navy_transparent.png" alt="M">
-    <div class="nav-logo-text">
-      <span class="nav-logo-name">McKinney Multifamily Group</span>
-      <span class="nav-logo-sub">Investment Real Estate Brokers</span>
+  <div class="nav-inner">
+  <a href="/" class="nav-brand">
+    <img class="nav-mono" src="images/brand/M_navy_transparent.png" alt="M">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Multifamily Group</span>
+      <span class="nav-sub">Investment Real Estate Brokers</span>
     </div>
   </a>
-  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+  <button class="nav-toggle" aria-label="Menu">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
   <div class="nav-links">
@@ -1138,10 +1110,10 @@ img { max-width: 100%; height: auto; }
   </div>
 </nav>
 
-<section class="page-hero" style="text-align: center; border-bottom: none; padding-bottom: 48px;">
+<section class="page-hero page-hero--intake">
     <div class="section-label">For Property Owners</div>
-    <h1 class="page-hero-title" style="margin-left: auto; margin-right: auto;">Property disposition intake.</h1>
-    <p class="page-hero-desc" style="margin-left: auto; margin-right: auto; max-width: 600px;">Share your property details below for a confidential valuation and disposition strategy. All information is held in strict confidence.</p>
+    <h1 class="page-hero-title">Property disposition intake.</h1>
+    <p class="page-hero-desc">Share your property details below for a confidential valuation and disposition strategy. All information is held in strict confidence.</p>
 </section>
 
 <div class="intake-wrap">
@@ -1158,7 +1130,7 @@ img { max-width: 100%; height: auto; }
     </div>
     <div class="intake-row">
       <div class="intake-field"><label for="owner-email">Email</label><input type="email" id="owner-email" name="owner_email" required></div>
-      <div class="intake-field"><label>Preferred Contact Method</label><select name="contact_method"><option value="" disabled selected>Select</option><option value="email">Email</option><option value="phone">Phone</option><option value="either">No preference</option></select></div>
+      <div class="intake-field"><label for="contact_method">Preferred Contact Method</label><select id="contact_method" name="contact_method"><option value="" disabled selected>Select</option><option value="email">Email</option><option value="phone">Phone</option><option value="either">No preference</option></select></div>
     </div>
     <div class="intake-row single">
       <div class="intake-field">
@@ -1201,7 +1173,7 @@ img { max-width: 100%; height: auto; }
       <div class="intake-field"><label for="purchase-price">Purchase Price</label><input type="text" id="purchase-price" name="purchase_price"></div>
     </div>
     <div class="intake-row single">
-      <div class="intake-field"><label>Building Type</label><select name="building_type"><option value="" disabled selected>Select</option><option value="walkup">Walkup</option><option value="lowrise">Low-rise (elevator)</option><option value="midrise">Mid-rise</option><option value="townhouse">Townhouse / Row</option><option value="mixed">Mixed-use</option><option value="other">Other</option></select></div>
+      <div class="intake-field"><label for="building_type">Building Type</label><select id="building_type" name="building_type"><option value="" disabled selected>Select</option><option value="walkup">Walkup</option><option value="lowrise">Low-rise (elevator)</option><option value="midrise">Mid-rise</option><option value="townhouse">Townhouse / Row</option><option value="mixed">Mixed-use</option><option value="other">Other</option></select></div>
     </div>
   </div>
 
@@ -1242,7 +1214,7 @@ img { max-width: 100%; height: auto; }
     <div class="intake-row triple">
       <div class="intake-field"><label for="rate">Interest Rate</label><input type="text" id="rate" name="interest_rate"></div>
       <div class="intake-field"><label for="maturity">Maturity Date</label><input type="text" id="maturity" name="maturity_date"></div>
-      <div class="intake-field"><label>Mortgage Type</label><select name="mortgage_type"><option value="" disabled selected>Select</option><option value="cmhc">CMHC Insured</option><option value="conventional">Conventional</option><option value="private">Private</option><option value="vtb">VTB in place</option><option value="free">Mortgage-free</option></select></div>
+      <div class="intake-field"><label for="mortgage_type">Mortgage Type</label><select id="mortgage_type" name="mortgage_type"><option value="" disabled selected>Select</option><option value="cmhc">CMHC Insured</option><option value="conventional">Conventional</option><option value="private">Private</option><option value="vtb">VTB in place</option><option value="free">Mortgage-free</option></select></div>
     </div>
   </div>
 
@@ -1265,7 +1237,7 @@ img { max-width: 100%; height: auto; }
     </div>
     <div class="intake-row">
       <div class="intake-field"><label for="timeline">Target Timeline</label><input type="text" id="timeline" name="timeline" placeholder="e.g. Within 6 months, no rush, exploring"></div>
-      <div class="intake-field"><label>Marketing Preference</label><select name="marketing_preference"><option value="" disabled selected>Select</option><option value="public">Public marketing</option><option value="offmarket">Off-market / discreet</option><option value="no_pref">No preference</option></select></div>
+      <div class="intake-field"><label for="marketing_preference">Marketing Preference</label><select id="marketing_preference" name="marketing_preference"><option value="" disabled selected>Select</option><option value="public">Public marketing</option><option value="offmarket">Off-market / discreet</option><option value="no_pref">No preference</option></select></div>
     </div>
     <div class="intake-row single">
       <div class="intake-field"><label for="price-expectation">Price Expectation (if any)</label><input type="text" id="price-expectation" name="price_expectation"></div>
@@ -1303,14 +1275,24 @@ img { max-width: 100%; height: auto; }
 </div>
 
 <footer class="footer">
-  <div class="footer-left">
-    <img class="footer-monogram" src="images/brand/M_navy_transparent.png" alt="M">
-    <div class="footer-logo">McKinney Multifamily Group</div>
-  </div>
-  <div class="footer-legal">
-    Liam McKinney, Broker &middot; Managing Partner &bull; (647) 467-1467 &bull; liam@mckinneyrealty.ca<br>
-    Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &bull; (613) 969-9907 &bull; sean@remaxquinte.com<br>
-    36 Distillery Lane, Suite 500, Toronto ON &bull; 106 North Front St, Belleville, ON
+  <div class="wrap">
+    <div class="footer-brand-row">
+      <div class="footer-brand">
+      <img class="footer-brand-mono" src="images/brand/M_white_transparent.png" alt="McKinney Multifamily Group">
+      <div class="footer-brand-name">McKinney Multifamily Group</div>
+      <div class="footer-brand-byline">Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multifamily markets.</div>
+    </div>
+      <div class="footer-brand-sep" aria-hidden="true"></div>
+      <img class="footer-remax" src="images/brand/remax-commercial-white.png" alt="RE/MAX Commercial">
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-nav"><a href="/listings/">Our Listings</a><a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a><a href="/tools/">Tools</a><a href="/learn/">Learn</a><a href="/insights">Insights</a><a href="/team">Our Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="/contact">Contact</a></div>
+      <div class="footer-legal-row">
+        <div class="footer-legal">McKinney Multifamily Group &middot; RE/MAX Quinte Ltd., Brokerage &middot; 106 North Front St, Belleville, ON K8P 3B4 &middot; 613.969.9907 &middot; Each Office Independently Owned and Operated</div>
+        <div class="footer-copy">&copy; 2026 McKinney Multifamily Group &middot; mckinneyrealty.ca</div>
+      </div>
+    </div>
   </div>
 </footer>
 
