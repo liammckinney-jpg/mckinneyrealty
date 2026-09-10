@@ -6,7 +6,7 @@ Standing context for every session in this repo. The strategic source of truth i
 - Brand: **McKinney Realty** — "Multi-Family & Investment Real Estate Brokers." A co-listing team brand, not a legal entity.
 - Liam McKinney, Broker — **"Property.ca Inc., Brokerage"** (NEVER "Property.ca Realty Inc."). Sean McKinney, Broker of Record — RE/MAX Quinte Ltd., Brokerage (**"75+ agents"** if stated).
 - Sean's email on materials: **sean@remaxquinte.com** (the @mckinneyrealty.ca alias is dead).
-- Headline stats: **$200M+** combined career volume; **$100M+** multi-family/land/commercial. No other volume figures.
+- Headline stats: **$250M+** combined career volume (revised from $200M+ on Liam's direction, Sept 9 2026 — the KB-10 April 21 threshold reached; the "+" is part of the figure); **$100M+** multi-family/land/commercial. No other volume figures.
 - Coverage: **province-wide Ontario**. Never a count of markets.
 - Three-generation history may be stated as historical fact. **The grandfather's name and the founding year are deliberately omitted (open TBD)** — never invent, infer, or "complete" them. Naming Sean is fine and does not resolve this TBD.
 
