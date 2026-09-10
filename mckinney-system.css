@@ -302,7 +302,7 @@ html:not([data-header-band]) .nav-band { display: none !important; }
   text-transform: uppercase; color: var(--gold-dark); margin-bottom: var(--s-2);
 }
 .footer-brand-scope {
-  font-size: var(--b-sm); font-weight: 300; color: rgba(255,255,255,0.2);
+  font-size: var(--b-sm); font-weight: 300; color: rgba(255,255,255,0.55);
   line-height: 1.5;
 }
 .footer-offices {
@@ -326,10 +326,11 @@ html:not([data-header-band]) .nav-band { display: none !important; }
   display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-4);
   padding-top: var(--s-3); border-top: 1px solid rgba(255,255,255,0.06);
 }
-.footer-legal, .footer-copy { font-size: 0.6875rem; font-weight: 300; color: rgba(255,255,255,0.15); line-height: 1.7; }
+.footer-legal, .footer-copy { font-size: 0.6875rem; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.7; }
+.footer-legal a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .footer-copy { flex: none; white-space: nowrap; }
-.footer-nav a { font-size: 0.6875rem; font-weight: 400; color: rgba(255,255,255,0.2); letter-spacing: 0.03em; transition: color 0.3s; }
-.footer-nav a:hover { color: rgba(255,255,255,0.5); }
+.footer-nav a { font-size: 0.6875rem; font-weight: 400; color: rgba(255,255,255,0.6); letter-spacing: 0.03em; transition: color 0.3s; }
+.footer-nav a:hover { color: rgba(255,255,255,0.92); }
 
 /* ============================================================
    SECTION-SIZE SYSTEM + UNIFIED CARD (Homepage Restructure v2 §3)
