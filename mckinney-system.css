@@ -324,7 +324,7 @@ html:not([data-header-band]) .nav-band { display: none !important; }
    single rule beneath. */
 .footer-top {
   display: grid; grid-template-columns: minmax(300px, 1fr) 2fr; gap: var(--s-6);
-  align-items: start; padding-bottom: var(--s-3);
+  align-items: center; padding-bottom: var(--s-3);   /* sitemap sits on the brand stack's optical middle */
 }
 .footer-brand-row { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s-3); }
 .footer-brand { text-align: left; }

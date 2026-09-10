@@ -190,18 +190,12 @@
 .quote--inline .quote-text { color: var(--navy); max-width: 760px; }
 .principals-actions { display: flex; justify-content: center; gap: var(--s-2); margin-top: var(--s-5); flex-wrap: wrap; }
 
-/* ---- BEYOND THE TRANSACTION (white, Type A, two columns) ---- */
+/* ---- BEYOND THE TRANSACTION (white, Type A, header-only) — the four
+        items live in the dek; the right-column list came out (Liam, Sept 10) ---- */
 .beyond { background: var(--white); border-top: 1px solid var(--border); }
-/* 2:1 with a fixed gap keeps the 14-word H2 to three lines at 1440 while
-   the right column stays above 30% of the content width (addendum A2b) */
-.beyond-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; align-items: center; }
-.beyond .sec-head { margin-bottom: 0; border-left: 1px solid var(--gold); padding-left: clamp(1.5rem, 3vw, 2.5rem); }
+.beyond-grid { display: block; }
+.beyond .sec-head { margin-bottom: 0; max-width: 900px; border-left: 1px solid var(--gold); padding-left: clamp(1.5rem, 3vw, 2.5rem); }
 .beyond-cta { margin-top: var(--s-4); display: flex; align-items: center; gap: var(--s-4); flex-wrap: wrap; }
-.beyond-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border-strong); }
-.beyond-list li {
-  padding: 1.125rem 0; border-bottom: 1px solid var(--border);
-  font-family: var(--font-d); font-size: 1.375rem; font-weight: 400; color: var(--text-1); line-height: 1.3;
-}
 
 /* ---- MARKET INTELLIGENCE (cream, Type A): evidence first, then the ask ---- */
 .intelband { background: var(--cream); border-top: 1px solid var(--border); }
@@ -271,7 +265,6 @@
 /* blocks run widest → narrowest from here so the narrower rule always wins */
 @media (max-width: 900px) {
   .intelband-row { grid-template-columns: 1fr; gap: var(--s-5); }
-  .beyond-grid { grid-template-columns: 1fr; gap: var(--s-5); }
   .intel-strip { grid-template-columns: 1fr 1fr; }
   .intel-watch { grid-template-columns: 1fr; }
   .bfs-market-grid { grid-template-columns: 1fr 1fr; }
@@ -608,12 +601,6 @@
           <a href="/services" class="card-link" data-cta="beyond">Learn About Our Approach <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
-      <ul class="beyond-list">
-        <li>Entity structure</li>
-        <li>CCA recapture exposure</li>
-        <li>Share versus asset sale</li>
-        <li>Net after-tax proceeds</li>
-      </ul>
     </div>
   </div>
 </section>
