@@ -898,7 +898,7 @@
       '<div class="mr-modal-header">' +
         '<div class="mr-modal-label">Market Intelligence</div>' +
         '<div class="mr-modal-title">Ontario multifamily <em>insights</em>, delivered.</div>' +
-        '<div class="mr-modal-desc">Monthly market updates and quarterly in-depth reports covering cap rates, vacancy, transaction volume, and regulatory developments.</div>' +
+        '<div class="mr-modal-desc">Quarterly market intelligence — cap rates, vacancy, transaction volume, and regulatory developments.</div>' +
       '</div>' +
       '<div class="mr-modal-body">' +
         '<form id="mr-subscribe-form">' +
@@ -910,7 +910,7 @@
             '<input type="email" name="email" placeholder="Your email address" required>' +
             '<button type="submit">Subscribe</button>' +
           '</div>' +
-          '<div class="mr-modal-subscribe-note">No spam. Unsubscribe anytime. Published monthly, minimum quarterly.</div>' +
+          '<div class="mr-modal-subscribe-note">Published quarterly. Unsubscribe anytime.</div>' +
         '</form>' +
       '</div>';
     openModal(html, false);
