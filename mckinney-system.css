@@ -89,8 +89,10 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
 .btn--navy:hover { background: var(--navy-light); }
 .btn--outline { background: transparent; color: var(--navy); border: 1px solid var(--border-strong); }
 .btn--outline:hover { border-color: var(--navy); }
-.btn--gold { background: var(--gold-dark); color: var(--white); }
-.btn--gold:hover { background: var(--gold); }
+/* gold = the single primary action in its section; navy = secondary solid;
+   outline = tertiary. Navy-on-gold for label contrast (fix spec 0.5, D-3 option A). */
+.btn--gold { background: var(--gold); color: var(--navy); }
+.btn--gold:hover { background: var(--gold-light); }
 
 /* ============================================================
    NAV — with hamburger toggle
