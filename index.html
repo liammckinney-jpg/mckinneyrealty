@@ -55,11 +55,19 @@
 }
 
 /* ---- HERO (navy) + stat strip band ---- */
-.hero { background: var(--navy); position: relative; overflow: hidden; }
+/* The hero fills the first viewport: its bottom edge sits 8rem above the
+   fold so the router's label and the tops of the three doors just creep
+   into view (≈24px at 1440×900; Liam, Sept 10). Natural height wins when
+   the viewport is short (phones, 1366×768), so the mobile budget holds. */
+.hero {
+  background: var(--navy); position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  min-height: calc(100vh - 8rem); min-height: calc(100svh - 8rem);
+}
 .hero-inner {
-  max-width: var(--max-w); margin: 0 auto;
+  max-width: var(--max-w); margin: 0 auto; width: 100%;
   padding: var(--sec-hero) var(--side) var(--sec-hero-b);
-  position: relative;
+  position: relative; flex: 1; display: flex; flex-direction: column; justify-content: center;
 }
 /* The M runs large — the hero's one oversized moment — but sits fully
    inside the viewport, its right edge on the content margin. */
@@ -376,7 +384,8 @@
       <p class="hero-desc">McKinney Multifamily Group is a specialized multifamily practice combining forty years of owner relationships with current analysis tools &mdash; serving property owners and investors across Ontario.</p>
       <div class="hero-actions">
         <a href="/contact" data-mr-modal="seller" class="btn btn--gold" data-cta="hero-consult"><span class="btn-label">Request a Consultation</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <a href="/track-record" class="btn btn--outline-light" data-cta="hero-track"><span class="btn-label">View Track Record</span></a>
+        <a href="/apartment-buildings-for-sale/" class="btn btn--outline-light flag-listings-public" data-cta="hero-search"><span class="btn-label"><span class="u-desktop-only">Search all Ontario multifamily listings</span><span class="u-mobile-only">Search all Ontario listings</span></span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/listings/" class="btn btn--outline-light flag-listings-private" data-cta="hero-listings"><span class="btn-label">Our Listings</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
