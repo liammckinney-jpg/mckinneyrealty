@@ -16,6 +16,7 @@ window.MCK_OWN_LISTINGS_DATA = [
     capReportedPct: 5.7,
     blurb: 'Two freestanding 12-plex buildings on adjacent lots — 24 units of portfolio-level scale at small-building pricing.',
     photo: 'images/listings/elgin-hero.jpg',
+    photoAlt: 'Aerial view of 58-60 Elgin Street, a 24-unit apartment building in Belleville',
     underwriter: '/tools/underwrite?price=3890000&units=24&tax=54219&rentmo=27858&laundrymo=250&ins=6624&src=elgin'
   }
 ];

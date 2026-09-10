@@ -8,7 +8,9 @@
        formType: 'acquisition' | 'disposition' | 'general',
        keyMap: { 'first-name': 'first_name', ... }   // optional
        excludeFields: ['attachments'],                // optional
-       confirmationMessage: '...'                     // required
+       confirmationMessage: '...',                    // required
+       step: 'primary' | 'detail',                    // optional, GA4 lead_submit step
+       onSuccess: function (payload) {}               // optional, after confirmation
      });
 
    The Apps Script emails Liam on every submission (real notification path).
@@ -212,7 +214,9 @@
         .then(function() {
           // only a confirmed {ok:true} from the relay reaches here
           swapFormForConfirmation(form, options.confirmationMessage);
-          fireLeadSubmit(options.formType, 'primary');
+          fireLeadSubmit(options.formType, options.step || 'primary');
+          // two-step intakes reveal their optional detail form here
+          if (typeof options.onSuccess === 'function') options.onSuccess(payload);
         })
         .catch(function() {
           if (submitBtn) {

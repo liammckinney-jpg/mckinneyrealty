@@ -30,20 +30,19 @@
   function show() {
     var style = document.createElement('style');
     style.textContent =
-      '.mck-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9998;' +
-      'display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;' +
-      'max-width:640px;margin:0 auto;background:#1A1F2E;color:rgba(255,255,255,0.75);' +
-      'padding:0.875rem 1.25rem;font-family:"DM Sans",-apple-system,sans-serif;' +
-      'font-size:0.8125rem;font-weight:300;line-height:1.5;' +
+      '.mck-consent{position:fixed;left:16px;bottom:16px;z-index:9998;' +
+      'display:flex;align-items:center;justify-content:flex-start;gap:0.625rem 0.75rem;flex-wrap:wrap;' +
+      'width:calc(100% - 32px);max-width:520px;margin:0;background:#1A1F2E;color:rgba(255,255,255,0.75);' +
+      'padding:0.75rem 1rem;font-family:"DM Sans",-apple-system,sans-serif;' +
+      'font-size:0.75rem;font-weight:300;line-height:1.45;' +
       'box-shadow:0 16px 48px rgba(0,0,0,0.25);}' +
       '.mck-consent button{font-family:inherit;font-size:0.6875rem;font-weight:500;' +
       'letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;padding:0.5rem 1rem;' +
       'border-radius:0;transition:all .3s;}' +
-      '.mck-consent-accept{background:#9A8B6F;color:#fff;border:1px solid #9A8B6F;}' +
-      '.mck-consent-accept:hover{background:#B8A88A;border-color:#B8A88A;}' +
-      '.mck-consent-decline{background:transparent;color:rgba(255,255,255,0.6);' +
-      'border:1px solid rgba(255,255,255,0.25);}' +
-      '.mck-consent-decline:hover{color:#fff;border-color:rgba(255,255,255,0.6);}';
+      // both choices carry the same outline-light weight — no gold in the bar (Phase 2 §2.6)
+      '.mck-consent-accept,.mck-consent-decline{background:transparent;color:#fff;' +
+      'border:1px solid rgba(255,255,255,0.35);}' +
+      '.mck-consent-accept:hover,.mck-consent-decline:hover{border-color:#fff;}';
     document.head.appendChild(style);
 
     var bar = document.createElement('div');

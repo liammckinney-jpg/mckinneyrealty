@@ -15,6 +15,17 @@
     "description": "Father-and-son multifamily and investment real estate team serving all of Ontario, focused on apartment buildings and investment properties in the $2M–$10M range.",
     "url": "https://www.mckinneyrealty.ca",
     "email": "liam@mckinneyrealty.ca",
+    "telephone": "+1-613-969-9907",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "106 North Front St",
+      "addressLocality": "Belleville",
+      "addressRegion": "ON",
+      "postalCode": "K8P 3B4",
+      "addressCountry": "CA"
+    },
+    "logo": "https://www.mckinneyrealty.ca/images/brand/M_navy_transparent.png",
+    "image": "https://www.mckinneyrealty.ca/images/og/home.png",
     "areaServed": { "@type": "State", "name": "Ontario" },
     "knowsAbout": [
       "multifamily real estate",

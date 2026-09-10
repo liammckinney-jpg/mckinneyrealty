@@ -42,7 +42,7 @@
   /* Section-size system (Homepage Restructure v2 §3) */
   --sec-a: clamp(5rem, 8.5vw, 8rem);        /* Type A section: 80 -> 128px */
   --sec-b: clamp(3rem, 4.75vw, 4.5rem);     /* Type B band: 48 -> 72px */
-  --sec-head-gap: 3rem;                     /* header block -> content */
+  --sec-head-gap: clamp(1.75rem, 3vw, 3rem); /* header block -> content */
   --sec-h2: clamp(2.25rem, 3.5vw, 3.5rem);  /* one H2 size: 36 -> 56px */
   --sec-h2-lead: clamp(2.75rem, 4.75vw, 4.25rem); /* lead register: Track Record + Beyond only */
   /* Small-label gold: --gold-dark is 3.3:1 on white, so every 11px label,
@@ -317,48 +317,43 @@ html:not([data-header-band]) .nav-band { display: none !important; }
 /* ============================================================
    FOOTER
    ============================================================ */
-.footer { background: var(--navy); padding: var(--s-5) 0 var(--s-3); }
-/* Brand stack: McKinney block centred, a short hairline beneath, then the
-   RE/MAX Commercial mark centred on its own line. No bottom hairline of
-   its own — footer-bottom's top border is the single rule beneath. */
-.footer-brand-row {
-  display: flex; flex-direction: column; align-items: center; gap: var(--s-4);
-  padding-bottom: var(--s-4);
+.footer { background: var(--navy); padding: var(--s-4) 0 var(--s-3); }
+.footer .wrap { max-width: 1560px; }   /* the footer keeps the full envelope on editorial pages too */
+/* Top row: brand stack left, four-column sitemap right (Phase 2 §2.1);
+   both centre and stack below 1024. footer-bottom's top border is the
+   single rule beneath. */
+.footer-top {
+  display: grid; grid-template-columns: minmax(300px, 1fr) 2fr; gap: var(--s-6);
+  align-items: start; padding-bottom: var(--s-3);
 }
-.footer-brand { text-align: center; }
+.footer-brand-row { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s-3); }
+.footer-brand { text-align: left; }
 .footer-brand-sep { width: 72px; height: 1px; background: rgba(255,255,255,0.06); }
 .footer-remax { height: 46px; width: auto; }
-.footer-brand-mono { height: 40px; width: auto; opacity: 1; margin: 0 auto var(--s-2); filter: brightness(0) invert(1); }
+.footer-brand-mono { height: 52px; width: auto; opacity: 1; margin: 0 0 var(--s-2); filter: brightness(0) invert(1); }
 .footer-brand-name {
-  font-family: var(--font-d); font-size: 0.9375rem; font-weight: 500;
-  letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5);
+  font-family: var(--font-d); font-size: 1.125rem; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.85);
   margin-bottom: 0.1875rem;
 }
 .footer-brand-byline {
   font-size: 0.5rem; font-weight: 400; letter-spacing: 0.15em;
-  text-transform: uppercase; color: var(--gold-dark); margin-bottom: var(--s-2);
+  text-transform: uppercase; color: var(--gold-light); margin-bottom: var(--s-2);
 }
 .footer-brand-scope {
   font-size: var(--b-sm); font-weight: 300; color: rgba(255,255,255,0.55);
-  line-height: 1.5;
+  line-height: 1.5; max-width: 34ch;
 }
-.footer-offices {
-  display: flex; justify-content: center; gap: var(--s-8);
-  margin-bottom: var(--s-3);
+/* Sitemap: Buildings · Tools · Firm · Insights, links stacked */
+.footer-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3) var(--s-4); }
+.footer-col { display: flex; flex-direction: column; align-items: flex-start; }
+.footer-col-label {
+  font-size: 0.5625rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-light); margin-bottom: 0.5rem;
 }
-.footer-office-region { font-size: 0.5625rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.625rem; }
-.footer-office-brokerage { font-size: var(--b-sm); font-weight: 300; color: rgba(255,255,255,0.35); line-height: 1.5; }
-.footer-office-line { font-size: var(--b-sm); font-weight: 300; color: rgba(255,255,255,0.35); line-height: 1.5; }
-.footer-office-line a { transition: color 0.3s; }
-.footer-office-line a:hover { color: var(--white); }
-/* Footer bottom: two rows aligned to the content margins —
-   sitemap links spread across the first, compliance line left and
-   copyright right on the second, sharing a baseline. */
+.footer-nav a { font-size: 0.6875rem; font-weight: 400; line-height: 1.2; color: rgba(255,255,255,0.6); letter-spacing: 0.03em; transition: color 0.3s; }
+.footer-nav a:hover { color: rgba(255,255,255,0.92); }
 .footer-bottom { display: block; }
-.footer-nav {
-  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px var(--s-3);
-  padding: var(--s-3) 0; border-top: 1px solid rgba(255,255,255,0.06);
-}
 .footer-legal-row {
   display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-4);
   padding-top: var(--s-3); border-top: 1px solid rgba(255,255,255,0.06);
@@ -366,8 +361,6 @@ html:not([data-header-band]) .nav-band { display: none !important; }
 .footer-legal, .footer-copy { font-size: 0.6875rem; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.7; }
 .footer-legal a { color: inherit; text-decoration: underline; text-underline-offset: 2px; padding-block: 6px; }
 .footer-copy { flex: none; white-space: nowrap; }
-.footer-nav a { font-size: 0.6875rem; font-weight: 400; color: rgba(255,255,255,0.6); letter-spacing: 0.03em; transition: color 0.3s; }
-.footer-nav a:hover { color: rgba(255,255,255,0.92); }
 
 /* ============================================================
    SECTION-SIZE SYSTEM + UNIFIED CARD (Homepage Restructure v2 §3)
@@ -427,7 +420,6 @@ html:not([data-header-band]) .nav-band { display: none !important; }
 .card .card-link { color: var(--navy); letter-spacing: 0.08em; }
 .card .card-link svg { color: var(--gold-dark); }
 .card .card-link:hover { color: var(--gold-dark); }
-.card-num { font-family: var(--font-d); font-size: 0.875rem; font-weight: 400; color: var(--text-3); letter-spacing: 0.05em; margin-bottom: var(--s-3); }
 .card-media { margin: calc(-1 * clamp(1.75rem, 2.75vw, 2.5rem)); margin-bottom: var(--s-3); }
 .card-media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
 .card--compact { padding: 1.75rem 1.875rem; }
@@ -453,7 +445,6 @@ html:not([data-header-band]) .nav-band { display: none !important; }
   margin-top: 3px; flex-shrink: 0; accent-color: var(--gold-dark, #9A8B6F);
   width: 15px; height: 15px; cursor: pointer;
 }
-.mck-consent.is-invalid { color: #B0413E; }
 
 /* ============================================================
    FORM SUBMISSION — confirmation & error panels
@@ -534,6 +525,10 @@ html:not([data-header-band]) .nav-band { display: none !important; }
 }
 
 @media (max-width: 1024px) {
+  .footer-top { grid-template-columns: 1fr; gap: var(--s-5); }
+  .footer-brand-row { align-items: center; }
+  .footer-brand { text-align: center; }
+  .footer-brand-mono { margin-inline: auto; }
   .footer-legal-row { flex-direction: column; gap: 0.25rem; }
   .footer-copy { white-space: normal; }
 }
@@ -551,8 +546,11 @@ html:not([data-header-band]) .nav-band { display: none !important; }
   .track-metric:nth-child(2) { border-right: none; }
   .dual-cta { grid-template-columns: 1fr; }
   .dual-cta-panel:first-child { border-right: none; border-bottom: 1px solid var(--border); }
-  .footer-offices { flex-direction: column; gap: var(--s-4); align-items: center; text-align: center; }
   .track-header-top { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 600px) {
+  .footer-nav { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 560px) {
@@ -568,7 +566,12 @@ html:not([data-header-band]) .nav-band { display: none !important; }
   .nav-inner { padding: 0 16px; }
   .nav-brand { min-width: 0; }
   .btn { font-size: 0.75rem; padding: 0.8125rem 1.5rem; }
-  .deal-grid { grid-template-columns: 1fr; }
+  /* compact tombstones two-up on phones (Phase 2 §2.3) */
+  .deal { padding: var(--s-2); }
+  .deal-side, .deal-value, .deal-line { margin-bottom: var(--s-1); }
+  .deal-value { font-size: 1.5rem; }
+  .track.sec-a { padding: 3rem 0; }
+  .track-cta { margin-top: var(--s-4); }
   .track-metrics { grid-template-columns: 1fr; }
   .track-metric { border-right: none; border-bottom: 1px solid var(--border); }
   .track-metric:last-child { border-bottom: none; }
@@ -576,6 +579,10 @@ html:not([data-header-band]) .nav-band { display: none !important; }
 
 /* phones to 430: the byline goes and the wordmark may wrap, so the phone
    glyph and hamburger never overprint it (addendum A1) */
+/* tombstones stay two-up down to 360 (Phase 2 §2.3) */
+@media (max-width: 359px) {
+  .deal-grid { grid-template-columns: 1fr; }
+}
 @media (max-width: 430px) {
   .nav-sub { display: none; }
   .nav-text { min-width: 0; }
