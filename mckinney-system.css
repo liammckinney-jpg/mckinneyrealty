@@ -279,23 +279,16 @@ html:not([data-header-band]) .nav-band { display: none !important; }
    FOOTER
    ============================================================ */
 .footer { background: var(--navy); padding: var(--s-5) 0 var(--s-3); }
-/* Brand row: McKinney block · thin separator · RE/MAX mark.
-   Side by side on desktop, stacked on mobile. No bottom hairline of its
-   own — footer-bottom's top border is the single separator beneath. */
+/* Brand stack: McKinney block centred, a short hairline beneath, then the
+   RE/MAX Commercial mark centred on its own line. No bottom hairline of
+   its own — footer-bottom's top border is the single rule beneath. */
 .footer-brand-row {
-  display: grid; grid-template-columns: 1fr 1px 1fr; align-items: center;
+  display: flex; flex-direction: column; align-items: center; gap: var(--s-4);
   padding-bottom: var(--s-4);
 }
-.footer-brand { text-align: center; justify-self: center; }
-/* Separator sits at the exact page centre; each mark is centred in its
-   half, so both logo centres are equidistant from the bar. Same subtle
-   hairline treatment as the other footer separators. */
-.footer-brand-sep { width: 1px; height: 76px; background: rgba(255,255,255,0.06); }
-.footer-remax { height: 46px; width: auto; justify-self: center; }
-@media (max-width: 768px) {
-  .footer-brand-row { display: flex; flex-direction: column; gap: var(--s-3); }
-  .footer-brand-sep { width: 64px; height: 1px; }
-}
+.footer-brand { text-align: center; }
+.footer-brand-sep { width: 72px; height: 1px; background: rgba(255,255,255,0.06); }
+.footer-remax { height: 46px; width: auto; }
 .footer-brand-mono { height: 40px; width: auto; opacity: 1; margin: 0 auto var(--s-2); filter: brightness(0) invert(1); }
 .footer-brand-name {
   font-family: var(--font-d); font-size: 0.9375rem; font-weight: 500;
@@ -319,13 +312,15 @@ html:not([data-header-band]) .nav-band { display: none !important; }
 .footer-office-line { font-size: var(--b-sm); font-weight: 300; color: rgba(255,255,255,0.35); line-height: 1.5; }
 .footer-office-line a { transition: color 0.3s; }
 .footer-office-line a:hover { color: var(--white); }
+/* Compliance line left, sitemap links right, on one row; the legal text
+   wraps inside its own column so the links never drop to a second line. */
 .footer-bottom {
   display: flex; justify-content: space-between; align-items: center;
   padding-top: var(--s-2); border-top: 1px solid rgba(255,255,255,0.06);
-  flex-wrap: wrap; gap: var(--s-2);
+  flex-wrap: nowrap; gap: var(--s-4);
 }
-.footer-legal { font-size: 0.6875rem; font-weight: 300; color: rgba(255,255,255,0.15); line-height: 1.7; }
-.footer-nav { display: flex; flex-wrap: wrap; gap: 8px var(--s-3); }
+.footer-legal { flex: 1 1 auto; font-size: 0.6875rem; font-weight: 300; color: rgba(255,255,255,0.15); line-height: 1.7; }
+.footer-nav { flex: 0 0 auto; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px var(--s-3); }
 .footer-nav a { font-size: 0.6875rem; font-weight: 400; color: rgba(255,255,255,0.2); letter-spacing: 0.03em; transition: color 0.3s; }
 .footer-nav a:hover { color: rgba(255,255,255,0.5); }
 
