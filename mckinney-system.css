@@ -44,6 +44,12 @@
   --sec-b: clamp(3rem, 4.75vw, 4.5rem);     /* Type B band: 48 -> 72px */
   --sec-head-gap: 3rem;                     /* header block -> content */
   --sec-h2: clamp(2.25rem, 3.5vw, 3.5rem);  /* one H2 size: 36 -> 56px */
+  --sec-h2-lead: clamp(2.75rem, 4.75vw, 4.25rem); /* lead register: Track Record + Beyond only */
+  /* Small-label gold: --gold-dark is 3.3:1 on white, so every 11px label,
+     kicker and text link uses this darker step (>= 4.5:1 on white, off-white
+     and cream — computed, fix spec 1.6 / D-2). Rules, borders, buttons,
+     arrows and em.gi stay on --gold / --gold-dark. */
+  --gold-text: #776A52;
 }
 
 /* ============================================================
@@ -65,12 +71,33 @@ html { -webkit-font-smoothing: antialiased; }
 body { font-family: var(--font-b); color: var(--text-1); background: var(--white); overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
+html { scroll-padding-top: 5.5rem; }
+
+/* ============================================================
+   ACCESSIBILITY — skip link, visible focus, reduced motion
+   ============================================================ */
+.skip {
+  position: absolute; left: -9999px; top: 0.5rem; z-index: 1000;
+  background: var(--navy); color: var(--white); padding: 0.75rem 1.25rem;
+  font-size: var(--b-sm); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.skip:focus { left: var(--side); }
+:where(a, button, input, select, textarea, [tabindex]):focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 3px; }
+.on-dark :where(a, button, input, select, textarea, [tabindex]):focus-visible,
+.footer :where(a):focus-visible { outline-color: var(--gold-light); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important; scroll-behavior: auto !important;
+  }
+}
 
 /* ============================================================
    UTILITIES
    ============================================================ */
 .wrap { max-width: var(--max-w); margin: 0 auto; padding-left: var(--side); padding-right: var(--side); }
-.label { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dark); }
+.label { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-text); }
+.u-mobile-only { display: none; }
 .label--light { color: var(--gold-light); }
 em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color: var(--gold-dark); }
 .on-dark em.gi { color: var(--gold-light); }
@@ -93,6 +120,10 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
    outline = tertiary. Navy-on-gold for label contrast (fix spec 0.5, D-3 option A). */
 .btn--gold { background: var(--gold); color: var(--navy); }
 .btn--gold:hover { background: var(--gold-light); }
+/* Labelled buttons flow inline so the arrow follows the last word when the
+   label wraps on narrow screens (fix spec 1.9). */
+.btn:has(.btn-label) { display: inline-block; text-align: center; line-height: 1.4; }
+.btn:has(.btn-label) svg { display: inline-block; vertical-align: -2px; margin-left: 0.625rem; }
 
 /* ============================================================
    NAV — with hamburger toggle
@@ -124,6 +155,9 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
 .nav-cta:hover { background: var(--navy) !important; color: var(--white) !important; }
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
 .nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
+/* Phone glyph beside the hamburger — phones only (<= 768), 44px hit area */
+.nav-phone { display: none; }
+.nav-phone svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 
 /* ---- feature-flag gates (mckinney-flags.js, restoration brief §5) --- */
 html:not([data-listings-public]) .flag-listings-public { display: none !important; }
@@ -150,17 +184,20 @@ html:not([data-header-band]) .nav-band { display: none !important; }
 .nav-drop { position: relative; }
 .nav-drop > a, .nav-drop-label { display: inline-flex; align-items: center; gap: 0.4375rem; }
 .nav-drop-label {
-  font-size: var(--b-sm); font-weight: 400; color: var(--text-2);
-  letter-spacing: 0.03em; transition: color 0.3s; cursor: default;
+  font-family: inherit; font-size: var(--b-sm); font-weight: 400; color: var(--text-2);
+  letter-spacing: 0.03em; transition: color 0.3s; cursor: pointer;
+  background: none; border: 0; padding: 0;
 }
-.nav-drop:hover .nav-drop-label, .nav-drop:focus-within .nav-drop-label { color: var(--text-1); }
+/* Open state: hover on desktop, or .is-open set by mckinney-nav.js (click
+   toggle, keyboard focus, Escape) so aria-expanded always matches. */
+.nav-drop:hover .nav-drop-label, .nav-drop.is-open .nav-drop-label { color: var(--text-1); }
 .nav-drop > a::after, .nav-drop-label::after {
   content: ''; width: 5px; height: 5px; margin-top: -4px;
   border-right: 1px solid currentColor; border-bottom: 1px solid currentColor;
   transform: rotate(45deg); transition: transform 0.3s;
 }
-.nav-drop:hover > a::after, .nav-drop:focus-within > a::after,
-.nav-drop:hover .nav-drop-label::after, .nav-drop:focus-within .nav-drop-label::after { transform: rotate(225deg); margin-top: 2px; }
+.nav-drop:hover > a::after, .nav-drop.is-open > a::after,
+.nav-drop:hover .nav-drop-label::after, .nav-drop.is-open .nav-drop-label::after { transform: rotate(225deg); margin-top: 2px; }
 /* invisible bridge so the pointer can cross the gap to the menu */
 .nav-drop::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 1rem; }
 .nav-drop-menu {
@@ -173,7 +210,7 @@ html:not([data-header-band]) .nav-band { display: none !important; }
   opacity: 0; visibility: hidden;
   transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
 }
-.nav-drop:hover .nav-drop-menu, .nav-drop:focus-within .nav-drop-menu {
+.nav-drop:hover .nav-drop-menu, .nav-drop.is-open .nav-drop-menu {
   opacity: 1; visibility: visible; transform: translate(-50%, 0);
 }
 .nav-drop-menu a {
@@ -235,8 +272,8 @@ html:not([data-header-band]) .nav-band { display: none !important; }
 .deal:hover::before { height: 100%; }
 .deal:hover { background: var(--cream); }
 .deal-side {
-  font-size: 0.5625rem; font-weight: 500; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--gold-dark); margin-bottom: var(--s-2);
+  font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--gold-text); margin-bottom: var(--s-2);
 }
 .deal-value {
   font-family: var(--font-d); font-size: 1.75rem; font-weight: 300;
@@ -327,7 +364,7 @@ html:not([data-header-band]) .nav-band { display: none !important; }
   padding-top: var(--s-3); border-top: 1px solid rgba(255,255,255,0.06);
 }
 .footer-legal, .footer-copy { font-size: 0.6875rem; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.7; }
-.footer-legal a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.footer-legal a { color: inherit; text-decoration: underline; text-underline-offset: 2px; padding-block: 5px; }
 .footer-copy { flex: none; white-space: nowrap; }
 .footer-nav a { font-size: 0.6875rem; font-weight: 400; color: rgba(255,255,255,0.6); letter-spacing: 0.03em; transition: color 0.3s; }
 .footer-nav a:hover { color: rgba(255,255,255,0.92); }
@@ -346,6 +383,13 @@ html:not([data-header-band]) .nav-band { display: none !important; }
   line-height: 1.15; color: var(--navy);
 }
 .on-dark .sec-h2 { color: var(--white); }
+.sec-h2--lead { font-size: var(--sec-h2-lead); }
+/* Band headings that must read as a small label (router, principals,
+   intelligence) keep the heading level without the display size. */
+.sec-h2--label {
+  font: 500 0.6875rem/1 var(--font-b); letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-text);
+}
 .sec-dek {
   margin-top: var(--s-3); font-size: var(--b-lg); font-weight: 300;
   line-height: 1.7; color: var(--text-2); max-width: 62ch;
@@ -364,16 +408,19 @@ html:not([data-header-band]) .nav-band { display: none !important; }
 }
 .card:hover::before { transform: scaleX(1); }
 .card:hover { border-color: rgba(26,31,46,0.16); }
-.card-kicker { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: var(--s-2); }
+.card-kicker { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-text); margin-bottom: var(--s-2); }
 .card-title { font-family: var(--font-d); font-size: var(--d-sub); font-weight: 400; color: var(--navy); line-height: 1.25; margin-bottom: var(--s-1); }
-.card-sub { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: var(--s-2); }
+.card-sub { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-text); margin-bottom: var(--s-2); }
 .card-body { font-size: var(--b-sm); font-weight: 300; line-height: 1.75; color: var(--text-2); flex-grow: 1; }
 .card-links { margin-top: auto; padding-top: var(--s-3); display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
 .card-link {
   font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--gold-dark); display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.3s, color 0.3s;
+  color: var(--gold-text); display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.3s, color 0.3s;
 }
 .card-link:hover { gap: 0.875rem; }
+.card-link--strong { margin-top: 0.25rem; }
+/* 24px+ touch targets for text links (fix spec 1.9) */
+.card-link, .principals-link, .footer-nav a { padding-block: 6px; }
 .card-link svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 /* Gold discipline: inside cards the link text is navy and only the arrow
    carries gold, so gold stays concentrated in kickers and em-words. */
@@ -492,6 +539,13 @@ html:not([data-header-band]) .nav-band { display: none !important; }
 }
 
 @media (max-width: 768px) {
+  .u-mobile-only { display: inline; }
+  .u-desktop-only { display: none; }
+  .nav-phone {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; flex: none; margin-left: auto; color: var(--navy);
+  }
+  .nav-toggle { margin-left: 0.125rem; }
   .deal-grid { grid-template-columns: 1fr 1fr; }
   .track-metrics { grid-template-columns: 1fr 1fr; }
   .track-metric:nth-child(2) { border-right: none; }
@@ -513,6 +567,7 @@ html:not([data-header-band]) .nav-band { display: none !important; }
   /* Brand block must fit beside the toggle on narrow phones (380px pass) */
   .nav-inner { padding: 0 16px; }
   .nav-brand { min-width: 0; }
+  .btn { font-size: 0.75rem; padding: 0.8125rem 1.5rem; }
   .deal-grid { grid-template-columns: 1fr; }
   .track-metrics { grid-template-columns: 1fr; }
   .track-metric { border-right: none; border-bottom: 1px solid var(--border); }
@@ -524,6 +579,24 @@ html:not([data-header-band]) .nav-band { display: none !important; }
   .nav-text { min-width: 0; }
   .nav-name { white-space: normal; overflow-wrap: anywhere; line-height: 1.1; }
 }
+
+/* ---- persistent mobile action bar (MCK_FLAGS.MOBILE_BAR, fix spec 1.9) --
+   Two links, navy, hairline top; shown by mckinney-nav.js on phones once
+   the reader is 40% down the page, hidden while the modal is open, the
+   consent bar is up, or Your Next Step is in view. */
+.mck-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 900; height: 56px;
+  display: flex; background: var(--navy); border-top: 1px solid rgba(255,255,255,0.12);
+  transform: translateY(100%); transition: transform 0.3s ease;
+}
+.mck-bar.is-shown { transform: translateY(0); }
+.mck-bar a {
+  flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white);
+}
+.mck-bar a + a { border-left: 1px solid rgba(255,255,255,0.12); }
+.mck-bar svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+@media (min-width: 769px) { .mck-bar { display: none; } }
 
 /* ---- share affordances (mck-share) ---------------------------------- */
 /* One placement per page: end of essay, above the CTA band. Thin gold

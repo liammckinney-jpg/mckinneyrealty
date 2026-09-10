@@ -13,10 +13,15 @@
      and strings stay in the pages; this flag alone controls rendering,
      so restoring the band is a flag flip, not a rebuild. Decision
      recorded in KB-10, Sept 9 (Liam).
+
+   MOBILE_BAR — the phone-only persistent action bar on the homepage
+     (call + Request a Consultation; fix spec 1.9, D-8). On for the
+     staging preview so it can be measured; mckinney-nav.js reads it.
    ========================================================================= */
 window.MCK_FLAGS = {
   LISTINGS_PUBLIC: true,
   HEADER_BROKERAGE_BAND: false,
+  MOBILE_BAR: true,
 };
 (function () {
   var d = document.documentElement;
