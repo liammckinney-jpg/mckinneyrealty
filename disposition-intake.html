@@ -15,6 +15,7 @@
 <meta property="og:title" content="McKinney Multifamily Group — Property Disposition Intake">
 <meta property="og:description" content="Submit your property information for a confidential valuation and disposition strategy from McKinney Multifamily Group.">
 <meta property="og:url" content="https://www.mckinneyrealty.ca/disposition-intake">
+<link rel="canonical" href="https://www.mckinneyrealty.ca/disposition-intake">
 <meta property="og:image" content="https://www.mckinneyrealty.ca/images/og/disposition-intake.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,9 +25,9 @@
 <meta name="twitter:description" content="Submit your property information for a confidential valuation and disposition strategy from McKinney Multifamily Group.">
 <meta name="twitter:image" content="https://www.mckinneyrealty.ca/images/og/disposition-intake.png">
 <meta name="description" content="Submit your property information for a confidential valuation and disposition strategy from McKinney Multifamily Group.">
-<script src="/mckinney-flags.js"></script>
-<script src="mckinney-consent.js"></script>
-<script src="mckinney-schema.js"></script>
+<script src="/mckinney-flags.js?v=2"></script>
+<script src="mckinney-consent.js?v=2"></script>
+<script src="mckinney-schema.js?v=2"></script>
 <!-- Google Analytics (GA4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
 <script>
@@ -418,6 +419,9 @@ img { max-width: 100%; height: auto; }
 }
 .page-hero .section-label { margin-bottom: 24px; }
 .page-hero--intake { text-align: center; border-bottom: none; padding-bottom: 48px; }
+.page-hero-tel { margin: 16px auto 0; font-size: 14px; color: var(--text-secondary); }
+.page-hero-tel a { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
+.intake-detail { margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--border); }
 .page-hero--intake .page-hero-title, .page-hero--intake .page-hero-desc { margin-left: auto; margin-right: auto; }
 .page-hero--intake .page-hero-desc { max-width: 600px; }
 .page-hero-title {
@@ -1062,6 +1066,14 @@ img { max-width: 100%; height: auto; }
     padding: 0 24px 60px;
   }
 }
+/* phones: tighter rhythm so the step-1 submit lands within 1,400px of the top (Phase 2 §2.5) */
+@media (max-width: 480px) {
+  .page-hero--intake { padding-top: 88px; padding-bottom: 24px; }
+  .page-hero-tel { margin-top: 12px; }
+  #disposition-form .intake-section { margin-bottom: 32px; }
+  #disposition-form .intake-section-head { margin-bottom: 16px; }
+  #disposition-form .intake-row { margin-bottom: 16px; gap: 16px; }
+}
 </style>
 </head>
 <body>
@@ -1071,7 +1083,7 @@ img { max-width: 100%; height: auto; }
   <div class="nav-band"><img src="/images/brand/REMAX_logo_RGB_dark.svg" alt="RE/MAX" width="288" height="144"><span>RE/MAX Quinte Ltd., Brokerage</span></div>
   <div class="nav-inner">
   <a href="/" class="nav-brand">
-    <img class="nav-mono" src="images/brand/M_navy_transparent.png" alt="M" width="583" height="587">
+    <img class="nav-mono" src="images/brand/M_navy_transparent.png" alt="" width="583" height="587">
     <div class="nav-text">
       <span class="nav-name">McKinney Multifamily Group</span>
       <span class="nav-sub">Investment Real Estate Brokers</span>
@@ -1120,10 +1132,15 @@ img { max-width: 100%; height: auto; }
     <div class="section-label">For Property Owners</div>
     <h1 class="page-hero-title">Property disposition intake.</h1>
     <p class="page-hero-desc">Share your property details below for a confidential valuation and disposition strategy. All information is held in strict confidence.</p>
+    <p class="page-hero-tel">Or call <a href="tel:+16139699907">613.969.9907</a></p>
 </section>
 
 <div class="intake-wrap">
+<!-- Step 1 (Phase 2 §2.5): contact, address, unit count, intent, timeline —
+     submits on its own and fires lead_submit step:primary. Step 2 below is
+     optional financial detail, revealed after the confirmation. -->
 <form id="disposition-form">
+  <input type="hidden" name="stage" value="primary">
 
   <div class="intake-section">
     <div class="intake-section-head">
@@ -1131,12 +1148,69 @@ img { max-width: 100%; height: auto; }
       <div class="intake-section-title">Owner Information</div>
     </div>
     <div class="intake-row">
-      <div class="intake-field"><label for="owner-name">Owner Name(s)</label><input type="text" id="owner-name" name="owner_name" required></div>
-      <div class="intake-field"><label for="owner-phone">Phone</label><input type="tel" id="owner-phone" name="owner_phone"></div>
+      <div class="intake-field"><label for="owner-name">Owner Name(s)</label><input type="text" id="owner-name" name="owner_name" autocomplete="name" required></div>
+      <div class="intake-field"><label for="owner-phone">Phone</label><input type="tel" id="owner-phone" name="owner_phone" autocomplete="tel"></div>
+    </div>
+    <div class="intake-row single">
+      <div class="intake-field"><label for="owner-email">Email</label><input type="email" id="owner-email" name="owner_email" autocomplete="email" required></div>
+    </div>
+  </div>
+
+  <div class="intake-section">
+    <div class="intake-section-head">
+      <div class="intake-section-line"></div>
+      <div class="intake-section-title">Property Overview</div>
+    </div>
+    <div class="intake-row single">
+      <div class="intake-field"><label for="address">Property Address</label><input type="text" id="address" name="address" autocomplete="street-address" required></div>
     </div>
     <div class="intake-row">
-      <div class="intake-field"><label for="owner-email">Email</label><input type="email" id="owner-email" name="owner_email" required></div>
+      <div class="intake-field"><label for="city">City / Municipality</label><input type="text" id="city" name="city" autocomplete="address-level2" required></div>
+      <div class="intake-field"><label for="units">Total Units</label><input type="number" id="units" name="total_units" required></div>
+    </div>
+  </div>
+
+  <div class="intake-section">
+    <div class="intake-section-head">
+      <div class="intake-section-line"></div>
+      <div class="intake-section-title">Disposition Objectives</div>
+    </div>
+    <div class="intake-row single">
+      <div class="intake-field">
+        <label>What are you looking to do?</label>
+        <div class="intake-checkboxes">
+          <label class="intake-check"><input type="radio" name="disposition_intent" value="full_sale"> Full sale</label>
+          <label class="intake-check"><input type="radio" name="disposition_intent" value="partial"> Partial sale / JV</label>
+          <label class="intake-check"><input type="radio" name="disposition_intent" value="restructure"> Portfolio restructuring</label>
+          <label class="intake-check"><input type="radio" name="disposition_intent" value="succession"> Succession / estate planning</label>
+          <label class="intake-check"><input type="radio" name="disposition_intent" value="exploring"> Exploring options</label>
+        </div>
+      </div>
+    </div>
+    <div class="intake-row single">
+      <div class="intake-field"><label for="timeline">Target Timeline</label><input type="text" id="timeline" name="timeline" placeholder="e.g. Within 6 months, no rush, exploring"></div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn-primary">Submit Property Information <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+</form>
+
+<form id="disposition-detail-form" class="intake-detail" hidden>
+  <input type="hidden" name="stage" value="detail">
+  <input type="hidden" name="owner_name" value="">
+  <input type="hidden" name="owner_email" value="">
+  <input type="hidden" name="owner_phone" value="">
+  <input type="hidden" name="address" value="">
+
+  <div class="intake-section">
+    <div class="intake-section-head">
+      <div class="intake-section-line"></div>
+      <div class="intake-section-title">Optional Details</div>
+    </div>
+    <div class="intake-row">
       <div class="intake-field"><label for="contact_method">Preferred Contact Method</label><select id="contact_method" name="contact_method"><option value="" disabled selected>Select</option><option value="email">Email</option><option value="phone">Phone</option><option value="either">No preference</option></select></div>
+      <div class="intake-field"><label for="postal">Postal Code</label><input type="text" id="postal" name="postal_code" autocomplete="postal-code"></div>
     </div>
     <div class="intake-row single">
       <div class="intake-field">
@@ -1161,15 +1235,7 @@ img { max-width: 100%; height: auto; }
       <div class="intake-section-line"></div>
       <div class="intake-section-title">Property Overview</div>
     </div>
-    <div class="intake-row single">
-      <div class="intake-field"><label for="address">Property Address</label><input type="text" id="address" name="address" required></div>
-    </div>
     <div class="intake-row">
-      <div class="intake-field"><label for="city">City / Municipality</label><input type="text" id="city" name="city" required></div>
-      <div class="intake-field"><label for="postal">Postal Code</label><input type="text" id="postal" name="postal_code"></div>
-    </div>
-    <div class="intake-row triple">
-      <div class="intake-field"><label for="units">Total Units</label><input type="number" id="units" name="total_units" required></div>
       <div class="intake-field"><label for="sqft">Total Sq Ft (approx)</label><input type="text" id="sqft" name="total_sqft"></div>
       <div class="intake-field"><label for="lot">Lot Size</label><input type="text" id="lot" name="lot_size"></div>
     </div>
@@ -1229,23 +1295,8 @@ img { max-width: 100%; height: auto; }
       <div class="intake-section-line"></div>
       <div class="intake-section-title">Disposition Objectives</div>
     </div>
-    <div class="intake-row single">
-      <div class="intake-field">
-        <label>What are you looking to do?</label>
-        <div class="intake-checkboxes">
-          <label class="intake-check"><input type="radio" name="disposition_intent" value="full_sale"> Full sale</label>
-          <label class="intake-check"><input type="radio" name="disposition_intent" value="partial"> Partial sale / JV</label>
-          <label class="intake-check"><input type="radio" name="disposition_intent" value="restructure"> Portfolio restructuring</label>
-          <label class="intake-check"><input type="radio" name="disposition_intent" value="succession"> Succession / estate planning</label>
-          <label class="intake-check"><input type="radio" name="disposition_intent" value="exploring"> Exploring options</label>
-        </div>
-      </div>
-    </div>
     <div class="intake-row">
-      <div class="intake-field"><label for="timeline">Target Timeline</label><input type="text" id="timeline" name="timeline" placeholder="e.g. Within 6 months, no rush, exploring"></div>
       <div class="intake-field"><label for="marketing_preference">Marketing Preference</label><select id="marketing_preference" name="marketing_preference"><option value="" disabled selected>Select</option><option value="public">Public marketing</option><option value="offmarket">Off-market / discreet</option><option value="no_pref">No preference</option></select></div>
-    </div>
-    <div class="intake-row single">
       <div class="intake-field"><label for="price-expectation">Price Expectation (if any)</label><input type="text" id="price-expectation" name="price_expectation"></div>
     </div>
   </div>
@@ -1260,7 +1311,7 @@ img { max-width: 100%; height: auto; }
     </div>
   </div>
 
-  <button type="submit" class="btn-primary">Submit Property Information <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button type="submit" class="btn-primary">Send Details <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 
 </form>
 </div>
@@ -1269,9 +1320,10 @@ img { max-width: 100%; height: auto; }
 
 <footer class="footer">
   <div class="wrap">
-    <div class="footer-brand-row">
+    <div class="footer-top">
+<div class="footer-brand-row">
       <div class="footer-brand">
-      <img class="footer-brand-mono" src="images/brand/M_white_transparent.png" alt="McKinney Multifamily Group" width="583" height="587" loading="lazy" decoding="async">
+      <img class="footer-brand-mono" src="images/brand/M_white_transparent.png" alt="" width="583" height="587" loading="lazy" decoding="async">
       <div class="footer-brand-name">McKinney Multifamily Group</div>
       <div class="footer-brand-byline">Investment Real Estate Brokers</div>
       <div class="footer-brand-scope">Serving property owners and investors across Ontario's multifamily markets.</div>
@@ -1279,8 +1331,14 @@ img { max-width: 100%; height: auto; }
       <div class="footer-brand-sep" aria-hidden="true"></div>
       <img class="footer-remax" src="images/brand/remax-commercial-white.png" alt="RE/MAX Commercial" width="640" height="228" loading="lazy" decoding="async">
     </div>
+      <div class="footer-nav">
+        <div class="footer-col"><div class="footer-col-label">Buildings</div><a href="/listings/">Our Listings</a><a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a></div>
+        <div class="footer-col"><div class="footer-col-label">Tools</div><a href="/tools/underwrite">The Underwriter</a><a href="/tools/financing-modeler">Financing Modeler</a><a href="/tools/disposition-calculator">Disposition Proceeds</a><a href="/tools/compounding-modeler">Compounding Modeler</a></div>
+        <div class="footer-col"><div class="footer-col-label">Firm</div><a href="/team">Our Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a></div>
+        <div class="footer-col"><div class="footer-col-label">Insights</div><a href="/insights">Insights</a><a href="/learn/">Learn</a></div>
+      </div>
+    </div>
     <div class="footer-bottom">
-      <div class="footer-nav"><a href="/listings/">Our Listings</a><a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a><a href="/tools/">Tools</a><a href="/learn/">Learn</a><a href="/insights">Insights</a><a href="/team">Our Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a></div>
       <div class="footer-legal-row">
         <div class="footer-legal">McKinney Multifamily Group &middot; RE/MAX Quinte Ltd., Brokerage &middot; 106 North Front St, Belleville, ON K8P 3B4 &middot; <a href="tel:+16139699907">613.969.9907</a> &middot; Each Office Independently Owned and Operated</div>
         <div class="footer-copy">&copy; 2026 McKinney Multifamily Group &middot; mckinneyrealty.ca</div>
@@ -1324,15 +1382,31 @@ img { max-width: 100%; height: auto; }
      ============================================================ -->
 <script src="mckinney-forms.js?v=2"></script>
 <script>
+  // Two-step intake (Phase 2 §2.5): step 1 posts on its own; the optional
+  // detail form is revealed under the confirmation and posts as step:detail
+  // carrying the owner/address keys so the two rows can be matched.
+  var CONFIRM = "Thank you. Your property details have been received. We'll follow up within one business day with a secure upload link for T12 financials, rent roll, and photos, and to schedule an initial conversation.";
+  var CANON = { name: 'owner_name', email: 'owner_email', phone: 'owner_phone' };
+  var detailForm = document.getElementById('disposition-detail-form');
   McKinneyForms.init(document.getElementById('disposition-form'), {
     formType: 'disposition',
-    excludeFields: ['attachments'],
-    canonicalFields: {
-      name: 'owner_name',
-      email: 'owner_email',
-      phone: 'owner_phone'
-    },
-    confirmationMessage: "Thank you. Your property details have been received. We'll follow up within one business day with a secure upload link for T12 financials, rent roll, and photos, and to schedule an initial conversation."
+    step: 'primary',
+    canonicalFields: CANON,
+    confirmationMessage: CONFIRM,
+    onSuccess: function (payload) {
+      if (!detailForm) return;
+      ['owner_name', 'owner_email', 'owner_phone', 'address'].forEach(function (k) {
+        var el = detailForm.elements[k];
+        if (el) el.value = payload[k] || '';
+      });
+      detailForm.hidden = false;
+    }
+  });
+  McKinneyForms.init(detailForm, {
+    formType: 'disposition',
+    step: 'detail',
+    canonicalFields: CANON,
+    confirmationMessage: CONFIRM
   });
 
   // Chip selection state — JS fallback for browsers/contexts where
