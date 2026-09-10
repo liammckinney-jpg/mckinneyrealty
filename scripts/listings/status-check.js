@@ -70,6 +70,20 @@ async function main() {
     }
   });
 
+  // KB-05 lockstep (Homepage v2 §4.2): homepage own-listing values must
+  // match what the /listings/ detail page states.
+  try {
+    const dataSrc = fs.readFileSync(path.join(ROOT, 'mckinney-own-listings-data.js'), 'utf8');
+    const entryRe = /slug:\s*'([^']+)'[\s\S]*?listPrice:\s*(\d+)[\s\S]*?capReportedPct:\s*([\d.]+)/g;
+    let m;
+    while ((m = entryRe.exec(dataSrc)) !== null) {
+      const page = fs.readFileSync(path.join(ROOT, 'listings', m[1] + '.html'), 'utf8');
+      const priceStr = '$' + Number(m[2]).toLocaleString('en-CA');
+      if (page.indexOf(priceStr) === -1) fail.push('lockstep: ' + priceStr + ' not stated on listings/' + m[1] + '.html');
+      if (page.indexOf(m[3] + '%') === -1) fail.push('lockstep: cap ' + m[3] + '% not stated on listings/' + m[1] + '.html');
+    }
+  } catch (e) { fail.push('lockstep check failed: ' + e.message); }
+
   if (fail.length) {
     console.error('listings:check FAILED (' + fail.length + '):');
     fail.forEach(function (e) { console.error('  - ' + e); });
