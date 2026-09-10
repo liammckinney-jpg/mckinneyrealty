@@ -51,12 +51,12 @@
   padding: 11rem var(--side) 5.25rem;
   position: relative;
 }
-/* The M runs large and bleeds off the right edge on purpose — the
-   hero's one oversized moment (section overflow clips it cleanly). */
+/* The M runs large — the hero's one oversized moment — but sits fully
+   inside the viewport, its right edge on the content margin. */
 .hero-watermark {
   /* anchored below the nav so the top of the M always shows; bottom may
      run under the stat strip / hero edge (clipped by the section). */
-  position: absolute; right: -5vw; top: 5.5rem;
+  position: absolute; right: var(--side); top: 5.5rem;
   height: min(clamp(420px, 52vw, 820px), calc(100% - 5.5rem)); width: auto;
   pointer-events: none;
   animation: heroFade 1.5s ease 0.3s forwards; opacity: 0;
