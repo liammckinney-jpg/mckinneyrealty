@@ -54,8 +54,10 @@
 /* The M runs large and bleeds off the right edge on purpose — the
    hero's one oversized moment (section overflow clips it cleanly). */
 .hero-watermark {
-  position: absolute; right: -5vw; top: 50%; transform: translateY(-50%);
-  height: min(clamp(420px, 52vw, 820px), 92vh); width: auto;
+  /* anchored below the nav so the top of the M always shows; bottom may
+     run under the stat strip / hero edge (clipped by the section). */
+  position: absolute; right: -5vw; top: 5.5rem;
+  height: min(clamp(420px, 52vw, 820px), calc(100% - 5.5rem)); width: auto;
   pointer-events: none;
   animation: heroFade 1.5s ease 0.3s forwards; opacity: 0;
 }
@@ -76,7 +78,7 @@
 .btn--outline-light { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.35); }
 .btn--outline-light:hover { border-color: var(--white); }
 .hero-statband { border-top: 1px solid rgba(255,255,255,0.05); padding: var(--sec-b) 0; position: relative; z-index: 1; }
-.hero-statband-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-4); }
+.hero-statband-row { display: grid; grid-template-columns: repeat(2, max-content); gap: clamp(3rem, 8vw, 8rem); }
 .hero-stat-num { font-family: var(--font-d); font-size: var(--d-stat); font-weight: 300; color: var(--white); line-height: 1; }
 .hero-stat-label { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 0.375rem; }
 
@@ -84,19 +86,33 @@
 .router { background: var(--cream); border-top: 1px solid var(--border); }
 .router > .wrap > .label { display: block; margin-bottom: var(--s-3); }
 .router-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
-/* door links stack uniformly so all three doors align */
-.router-grid .card-links { flex-direction: column; align-items: flex-start; gap: 0.625rem; }
+/* Doors: always-on gold top rule, larger serif title, and a ghosted
+   Cormorant ordinal in the corner that warms to gold on hover. */
+.router-grid .card { overflow: hidden; padding-bottom: 2.25rem; }
+.router-grid .card::before { transform: scaleX(1); }
+.router-grid .card-title { font-size: 1.75rem; margin-bottom: 0.625rem; }
+.router-grid .card-body { max-width: 30ch; }
+.router-grid .card-links { flex-direction: column; align-items: flex-start; gap: 0.625rem; position: relative; z-index: 1; }
+.door-num {
+  position: absolute; right: 1.25rem; bottom: -0.35rem;
+  font-family: var(--font-d); font-size: 6rem; line-height: 1; font-weight: 300;
+  color: var(--navy); opacity: 0.05; pointer-events: none;
+  transition: opacity 0.4s, color 0.4s;
+}
+.router-grid .card:hover .door-num { color: var(--gold-dark); opacity: 0.22; }
 
 /* ---- BUILDINGS FOR SALE (white, Type A) ---- */
 .bfs { background: var(--white); border-top: 1px solid var(--border); }
-.bfs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
-.card--span2 { grid-column: span 2; }
-/* flag-gated tiles centre their content; the link stays with the group */
-.card--center { justify-content: center; }
-.card--center .card-body { flex-grow: 0; }
-.card--center .card-links { margin-top: var(--s-3); }
-/* span-2 listing card: wider media crop so the photo doesn't dominate */
-.card--span2 .card-media img { aspect-ratio: 21 / 9; }
+/* Header row: kicker + H2 left, the single search/register action right */
+.bfs-head { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--s-4); margin-bottom: var(--sec-head-gap); flex-wrap: wrap; }
+.bfs-head .sec-head { margin-bottom: 0; }
+.bfs-actions { padding-bottom: 0.375rem; }
+.bfs-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+/* Row listing card: photo left, details right, compact height */
+.card--row { flex-direction: row; padding: 0; }
+.card--row .card-media { margin: 0; flex: 0 0 38%; }
+.card--row .card-media img { aspect-ratio: auto; height: 100%; min-height: 220px; }
+.card--row .card-inner { flex: 1; display: flex; flex-direction: column; padding: clamp(1.5rem, 2.25vw, 2rem) clamp(1.75rem, 2.75vw, 2.5rem); }
 .card-line2 { font-size: var(--b-md); color: var(--text-1); margin-bottom: 0.25rem; }
 .card-line3 { font-size: var(--b-md); color: var(--gold-dark); margin-bottom: var(--s-2); }
 
@@ -140,7 +156,7 @@
 
 /* ---- MARKET INTELLIGENCE (off-white, Type B band) ---- */
 .intelband { background: var(--offwhite); border-top: 1px solid var(--border); }
-.intelband-row { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: center; }
+.intelband-row { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: start; }
 .intelband .label { display: block; }
 /* Band line carries the section's display moment — same reduced-H2
    Cormorant treatment as the principals band line. */
@@ -148,7 +164,20 @@
   font-family: var(--font-d); font-size: clamp(1.375rem, 1.9vw, 1.875rem); font-weight: 300;
   line-height: 1.45; color: var(--navy); margin-top: var(--s-3); max-width: 30ch;
 }
-.intel-sub { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.intel-sub { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: var(--s-4); max-width: 640px; }
+/* adjacent article list */
+.intel-articles .label { display: block; margin-bottom: var(--s-2); }
+.intel-article-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border-strong); }
+.intel-article-list li { border-bottom: 1px solid var(--border); }
+.intel-article-list a {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: 0.9375rem 0; font-family: var(--font-d); font-size: 1.375rem; font-weight: 400;
+  color: var(--navy); transition: color 0.3s;
+}
+.intel-article-list a svg { width: 14px; height: 14px; fill: none; stroke: var(--gold-dark); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex: none; transition: transform 0.3s; }
+.intel-article-list a:hover { color: var(--gold-dark); }
+.intel-article-list a:hover svg { transform: translateX(3px); }
+.intel-all { margin-top: var(--s-3); }
 .intel-sub input[type="text"] {
   flex: 1 1 220px; padding: 0.8rem 1rem;
   font-family: var(--font-b); font-size: var(--b-sm); color: var(--text-1);
@@ -158,24 +187,31 @@
 .intel-hp { position: absolute; left: -9999px; }
 .intel-consent { font-size: var(--b-xs); font-weight: 300; line-height: 1.6; color: var(--text-3); margin-top: 0.875rem; max-width: 46ch; }
 .intel-consent a { color: var(--gold-dark); }
-.intel-links { margin-top: var(--s-3); }
+
 .intel-sub-sent { font-size: var(--b-md); font-weight: 300; color: var(--text-1); padding: 0.5rem 0; }
 
 /* ---- responsive ---- */
 @media (max-width: 900px) {
   .hero-inner { padding: 8.5rem var(--side) 3rem; }
   .principals-row { grid-template-columns: 1fr; gap: var(--s-4); }
-  .intelband-row { grid-template-columns: 1fr; gap: var(--s-3); }
+  .intelband-row { grid-template-columns: 1fr; gap: var(--s-5); }
 }
 @media (max-width: 768px) {
   .hero-watermark { display: none; }
-  .hero-inner { padding: 7.5rem var(--side) 2.5rem; }
+  .hero-inner { padding: 6.75rem var(--side) 2rem; }
+  .router-grid .card { padding-bottom: 1.75rem; }
   /* stat strip stays one compact row on mobile so the hero + router
      doors land within one scroll (acceptance §8) */
-  .hero-statband-row { grid-template-columns: repeat(3, 1fr); gap: var(--s-2); }
+  .hero-statband-row { grid-template-columns: repeat(2, 1fr); gap: var(--s-2); }
   .hero-stat-num { font-size: 1.5rem; }
   .hero-stat-label { font-size: 0.5625rem; letter-spacing: 0.08em; }
   .router-grid, .bfs-grid, .wwd-grid, .nextstep-grid { grid-template-columns: 1fr; }
+  .router-grid .card-title { font-size: 1.375rem; }
+  .door-num { font-size: 4.5rem; }
+  .card--row { flex-direction: column; }
+  .card--row .card-media { flex: none; }
+  .card--row .card-media img { aspect-ratio: 16 / 9; min-height: 0; }
+  .bfs-head { align-items: flex-start; }
   .router-grid { gap: 0.875rem; }
   .card--span2 { grid-column: auto; }
   .hero-actions { flex-wrap: wrap; }
@@ -241,7 +277,7 @@
     <div class="hero-content">
       <div class="label label--light hero-label">Investment Real Estate Brokers</div>
       <h1 class="hero-title">Generational expertise.<br><em class="gi">Province-wide</em> reach.</h1>
-      <p class="hero-desc">Brokers for apartment buildings and investment property across Ontario &mdash; serving the owners who hold them and the investors buying them.</p>
+      <p class="hero-desc">McKinney Multifamily Group is a specialized multifamily practice combining forty years of owner relationships with current analysis tools &mdash; serving property owners and investors across Ontario.</p>
       <div class="hero-actions">
         <a href="/contact" class="btn btn--gold">Schedule a Consultation <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         <a href="/track-record" class="btn btn--outline-light">View Track Record</a>
@@ -250,8 +286,7 @@
   </div>
   <div class="hero-statband">
     <div class="wrap hero-statband-row">
-      <div class="hero-stat"><div class="hero-stat-num">$200M+</div><div class="hero-stat-label">Transaction Volume</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">250+</div><div class="hero-stat-label">Career Transactions</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">$250M+</div><div class="hero-stat-label">Transaction Volume</div></div>
       <div class="hero-stat"><div class="hero-stat-num">50+</div><div class="hero-stat-label">Combined Years</div></div>
     </div>
   </div>
@@ -265,6 +300,7 @@
     <div class="label">Start Here</div>
     <div class="router-grid">
       <div class="card card--compact">
+        <span class="door-num" aria-hidden="true">01</span>
         <div class="card-title">For Owners</div>
         <p class="card-body">Valuation, structuring and disposition advisory for owners weighing their options.</p>
         <div class="card-links">
@@ -273,6 +309,7 @@
         </div>
       </div>
       <div class="card card--compact">
+        <span class="door-num" aria-hidden="true">02</span>
         <div class="card-title">For Buyers</div>
         <p class="card-body">Current listings, and the tool to underwrite any building in Ontario.</p>
         <div class="card-links">
@@ -282,6 +319,7 @@
         </div>
       </div>
       <div class="card card--compact">
+        <span class="door-num" aria-hidden="true">03</span>
         <div class="card-title">Starting Out</div>
         <p class="card-body">Why apartment buildings, how the numbers work, and a course for a first building.</p>
         <div class="card-links">
@@ -298,29 +336,18 @@
      ============================================================ -->
 <section class="bfs sec-a" id="listings">
   <div class="wrap">
-    <div class="sec-head">
-      <div class="label">Buildings for Sale</div>
-      <h2 class="sec-h2">Our current <em class="gi">listings</em>.</h2>
-      <p class="sec-dek">Each of our listings comes with a full investment summary on request. Every apartment building with five or more units listed for sale across Ontario is on one page &mdash; including other brokerages&#39; listings.</p>
+    <div class="bfs-head">
+      <div class="sec-head">
+        <div class="label">Buildings for Sale</div>
+        <h2 class="sec-h2">Our current <em class="gi">listings</em>.</h2>
+      </div>
+      <div class="bfs-actions">
+        <a class="btn btn--navy flag-listings-public" href="/apartment-buildings-for-sale/">Search all Ontario multifamily listings <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn btn--gold flag-listings-private" href="/acquisition-intake">Register as an Investor <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
     </div>
     <div class="bfs-grid" id="bfs-grid">
       <!-- own-listing cards render here from MCK_OWN_LISTINGS_DATA (§4.2, never hand-typed) -->
-      <div class="card card--center card--dark flag-listings-public" id="bfs-tile-ontario">
-        <div class="card-kicker">All Ontario</div>
-        <div class="card-title">Every apartment building for sale in Ontario</div>
-        <p class="card-body">Every building with five or more units listed on the MLS&reg; across the province, updated through the day. Filter by units, market and price per unit, then run the numbers on any listing.</p>
-        <div class="card-links">
-          <a class="card-link" href="/apartment-buildings-for-sale/">See all listings <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        </div>
-      </div>
-      <div class="card card--center card--dark flag-listings-private" id="bfs-tile-offmarket">
-        <div class="card-kicker">Off-Market</div>
-        <div class="card-title">Not every building we sell is listed.</div>
-        <p class="card-body">Some of the buildings we sell never reach public marketing. Register to hear about them first.</p>
-        <div class="card-links">
-          <a class="card-link" href="/acquisition-intake">Register as an Investor <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -461,15 +488,21 @@
       <div>
         <div class="label">Market Intelligence</div>
         <p class="intel-line">Published quarterly. Cap rates, vacancy, transaction volume, and regulatory developments.</p>
-      </div>
-      <div>
         <form class="intel-sub" id="intel-sub-form" novalidate>
           <input type="text" id="intel-sub-email" name="email" placeholder="Email address" inputmode="email" autocomplete="email" required aria-label="Email address">
           <div class="intel-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
           <button type="submit" class="btn btn--navy" id="intel-sub-submit">Subscribe to Market Updates <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
         </form>
         <p class="intel-consent">Subscribing consents to receiving them by email; unsubscribe anytime. Full analyses on the <a href="/insights">Insights</a> page.</p>
-        <div class="intel-links"><a href="/insights" class="card-link">View All Insights <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+      </div>
+      <div class="intel-articles">
+        <div class="label">Insights</div>
+        <ul class="intel-article-list">
+          <li><a href="/price-of-holding">The Price of Holding <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+          <li><a href="/the-50000-problem">The $50,000 Problem <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+          <li><a href="/cashflow">Cash Flow vs. Hope <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+        </ul>
+        <a class="card-link intel-all" href="/insights">View All Insights <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
@@ -544,11 +577,12 @@
   var frag = document.createDocumentFragment();
   data.forEach(function (l) {
     var card = document.createElement('div');
-    card.className = 'card' + (data.length === 1 ? ' card--span2' : '');
+    card.className = 'card card--row';
     var cap = (l.capReportedPct != null)
       ? '<div class="card-line3">Cap rate on list price ' + l.capReportedPct.toFixed(1) + '%</div>' : '';
     card.innerHTML =
       (l.photo ? '<div class="card-media"><img src="' + l.photo + '" alt="' + l.street + ', ' + l.city + '"></div>' : '') +
+      '<div class="card-inner">' +
       '<div class="card-kicker">Sell-Side</div>' +
       '<div class="card-title">' + l.street + ', ' + l.city + '</div>' +
       '<div class="card-line2">' + l.units + ' units &middot; ' + money(l.listPrice) + ' &middot; ' + money(l.listPrice / l.units) + ' per unit</div>' +
@@ -556,10 +590,11 @@
       '<div class="card-links">' +
         '<a class="card-link" href="/listings/' + l.slug + '" data-listing="' + l.slug + '" data-cta="view">View Listing <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>' +
         '<a class="card-link" href="' + l.underwriter + '" data-listing="' + l.slug + '" data-cta="underwrite">Underwrite this building <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>' +
+      '</div>' +
       '</div>';
     frag.appendChild(card);
   });
-  grid.insertBefore(frag, grid.firstElementChild);
+  grid.appendChild(frag);
 })();
 </script>
 <script src="mckinney-forms.js?v=2"></script>
