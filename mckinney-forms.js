@@ -186,6 +186,7 @@
         .then(function() {
           // no-cors = opaque response; treat as success
           swapFormForConfirmation(form, options.confirmationMessage);
+          fireLeadSubmit(options.formType, 'primary');
         })
         .catch(function() {
           if (submitBtn) {
@@ -211,7 +212,20 @@
     });
   }
 
+  // GA4 lead_submit (fix spec 0.1). form_type is normalised to the
+  // analytics vocabulary: contact | seller_modal | investor_modal |
+  // acquisition_intake | disposition_intake | newsletter.
+  var FORM_TYPE_MAP = { general: 'contact', contact: 'contact', acquisition: 'acquisition_intake',
+    disposition: 'disposition_intake', subscribe: 'newsletter', newsletter: 'newsletter' };
+  function fireLeadSubmit(formType, step) {
+    if (typeof window.gtag !== 'function') return;
+    var ft = String(formType || '');
+    var norm = FORM_TYPE_MAP[ft] || (/seller/.test(ft) ? 'seller_modal' : /investor/.test(ft) ? 'investor_modal' : ft);
+    window.gtag('event', 'lead_submit', { form_type: norm, source: location.pathname, step: step || 'primary' });
+  }
+
   window.McKinneyForms = {
+    fireLeadSubmit: fireLeadSubmit,
     init: init,
     submit: submit,
     collectPayload: collectPayload,

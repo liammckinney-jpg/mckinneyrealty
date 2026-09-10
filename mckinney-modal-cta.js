@@ -1028,7 +1028,13 @@
     mirrorContactToFormTypeFields(payload);
 
     try {
-      window.McKinneyForms.submit(payload);
+      var step = /detail|2/.test(String(meta.step || '')) ? 'detail' : 'primary';
+      var p = window.McKinneyForms.submit(payload);
+      if (p && typeof p.then === 'function') {
+        p.then(function () {
+          if (window.McKinneyForms.fireLeadSubmit) window.McKinneyForms.fireLeadSubmit(meta.form_type, step);
+        }).catch(function () {});
+      }
     } catch (err) {
       // Silent — modal UI continues regardless.
     }

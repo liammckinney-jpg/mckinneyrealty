@@ -279,8 +279,8 @@
       <h1 class="hero-title">Generational expertise.<br><em class="gi">Province-wide</em> reach.</h1>
       <p class="hero-desc">McKinney Multifamily Group is a specialized multifamily practice combining forty years of owner relationships with current analysis tools &mdash; serving property owners and investors across Ontario.</p>
       <div class="hero-actions">
-        <a href="/contact" class="btn btn--gold">Schedule a Consultation <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <a href="/track-record" class="btn btn--outline-light">View Track Record</a>
+        <a href="/contact" class="btn btn--gold" data-cta="hero-consult">Schedule a Consultation <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/track-record" class="btn btn--outline-light" data-cta="hero-track">View Track Record</a>
       </div>
     </div>
   </div>
@@ -342,8 +342,8 @@
         <h2 class="sec-h2">Our current <em class="gi">listings</em>.</h2>
       </div>
       <div class="bfs-actions">
-        <a class="btn btn--navy flag-listings-public" href="/apartment-buildings-for-sale/">Search all Ontario multifamily listings <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <a class="btn btn--gold flag-listings-private" href="/acquisition-intake">Register as an Investor <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn btn--navy flag-listings-public" href="/apartment-buildings-for-sale/" data-cta="bfs-search">Search all Ontario multifamily listings <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn btn--gold flag-listings-private" href="/acquisition-intake" data-cta="bfs-register">Register as an Investor <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
     <div class="bfs-grid" id="bfs-grid">
@@ -409,7 +409,7 @@
     </div>
 
     <div class="track-cta">
-      <a href="/track-record" class="btn btn--outline">View More Transactions <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a href="/track-record" class="btn btn--outline" data-cta="track-more">View More Transactions <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div>
   </div>
 </section>
@@ -448,7 +448,7 @@
       <div class="label label--light">Beyond the Transaction</div>
       <h2 class="sec-h2">The difference between a well-structured and a poorly-structured disposition can be <em class="gi">hundreds of thousands of dollars</em>.</h2>
       <p class="sec-dek">Entity structure, CCA recapture exposure, share versus asset sale, net after-tax proceeds &mdash; we work alongside your accountant and legal counsel so that every decision is informed before it&#39;s final.</p>
-      <div class="beyond-cta"><a href="/services" class="btn btn--gold">Learn About Our Approach <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+      <div class="beyond-cta"><a href="/services" class="btn btn--gold" data-cta="beyond">Learn About Our Approach <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
     </div>
   </div>
 </section>
@@ -465,7 +465,7 @@
         <form class="intel-sub" id="intel-sub-form" novalidate>
           <input type="text" id="intel-sub-email" name="email" placeholder="Email address" inputmode="email" autocomplete="email" required aria-label="Email address">
           <div class="intel-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
-          <button type="submit" class="btn btn--navy" id="intel-sub-submit">Subscribe to Market Updates <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+          <button type="submit" class="btn btn--navy" id="intel-sub-submit" data-cta="subscribe">Subscribe to Market Updates <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
         </form>
         <p class="intel-consent">Subscribing consents to receiving them by email; unsubscribe anytime. Full analyses on the <a href="/insights">Insights</a> page.</p>
       </div>
@@ -496,13 +496,13 @@
         <div class="card-kicker">For Property Owners</div>
         <h3 class="card-title">Considering a disposition?</h3>
         <p class="card-body">Confidential valuations, tax-informed structuring guidance, and strategic advisory for apartment building owners evaluating their options.</p>
-        <a href="/contact" data-mr-modal="seller" class="btn btn--navy">Request a Consultation <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/contact" data-mr-modal="seller" class="btn btn--navy" data-cta="next-owner">Request a Consultation <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
       <div class="card">
         <div class="card-kicker">For Investors</div>
         <h3 class="card-title">Access off-market opportunities.</h3>
         <p class="card-body">Early access to investment opportunities, quarterly market reports, and cap rate data across Ontario&#39;s secondary markets.</p>
-        <a href="/acquisition-intake" data-mr-modal="investor" class="btn btn--gold">Register as an Investor <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/acquisition-intake" data-mr-modal="investor" class="btn btn--gold" data-cta="next-investor">Register as an Investor <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
@@ -636,7 +636,7 @@
       note: '[subscribe: quarterly market updates]',
       ts: new Date().toISOString()
     }).then(function () {
-      if (typeof window.gtag === 'function') window.gtag('event', 'lead_submit', { form_type: 'subscribe', campaign: 'market-updates' });
+      if (typeof window.gtag === 'function') window.gtag('event', 'lead_submit', { form_type: 'newsletter', source: location.pathname, step: 'primary' });
       var sent = document.createElement('div');
       sent.className = 'intel-sub-sent';
       sent.setAttribute('role', 'status');
@@ -650,10 +650,12 @@
 })();
 </script>
 <script>
-  document.querySelectorAll('.tools-home a[data-tool]').forEach(function (a) {
-    a.addEventListener('click', function () {
-      if (typeof gtag !== 'undefined') gtag('event', 'home_tools_click', { tool: a.dataset.tool });
-    });
+  /* Homepage navigation analytics (fix spec 0.1) — one delegated listener
+     covers router links (data-router), tool links (data-tool) and every
+     button/CTA (data-cta). */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-router],[data-tool],[data-cta]');
+    if (a && window.gtag) gtag('event', 'home_nav_click', { router: a.dataset.router || '', tool: a.dataset.tool || '', cta: a.dataset.cta || '' });
   });
 </script>
 </body>
