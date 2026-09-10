@@ -312,15 +312,20 @@ html:not([data-header-band]) .nav-band { display: none !important; }
 .footer-office-line { font-size: var(--b-sm); font-weight: 300; color: rgba(255,255,255,0.35); line-height: 1.5; }
 .footer-office-line a { transition: color 0.3s; }
 .footer-office-line a:hover { color: var(--white); }
-/* Compliance line left, sitemap links right, on one row; the legal text
-   wraps inside its own column so the links never drop to a second line. */
-.footer-bottom {
-  display: flex; justify-content: space-between; align-items: center;
-  padding-top: var(--s-2); border-top: 1px solid rgba(255,255,255,0.06);
-  flex-wrap: nowrap; gap: var(--s-4);
+/* Footer bottom: two rows aligned to the content margins —
+   sitemap links spread across the first, compliance line left and
+   copyright right on the second, sharing a baseline. */
+.footer-bottom { display: block; }
+.footer-nav {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px var(--s-3);
+  padding: var(--s-3) 0; border-top: 1px solid rgba(255,255,255,0.06);
 }
-.footer-legal { flex: 1 1 auto; font-size: 0.6875rem; font-weight: 300; color: rgba(255,255,255,0.15); line-height: 1.7; }
-.footer-nav { flex: 0 0 auto; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px var(--s-3); }
+.footer-legal-row {
+  display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-4);
+  padding-top: var(--s-3); border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-legal, .footer-copy { font-size: 0.6875rem; font-weight: 300; color: rgba(255,255,255,0.15); line-height: 1.7; }
+.footer-copy { flex: none; white-space: nowrap; }
 .footer-nav a { font-size: 0.6875rem; font-weight: 400; color: rgba(255,255,255,0.2); letter-spacing: 0.03em; transition: color 0.3s; }
 .footer-nav a:hover { color: rgba(255,255,255,0.5); }
 
@@ -447,7 +452,8 @@ html:not([data-header-band]) .nav-band { display: none !important; }
    RESPONSIVE — shared components only
    ============================================================ */
 @media (max-width: 1024px) {
-  .footer-bottom { flex-direction: column; text-align: center; }
+  .footer-legal-row { flex-direction: column; gap: 0.25rem; }
+  .footer-copy { white-space: normal; }
 }
 /* Nav collapses to the hamburger below 1100px — the Multifamily Group
    wordmark plus eight links no longer fit side by side at mid widths. */
