@@ -138,9 +138,14 @@
 
 /* ---- MARKET INTELLIGENCE (off-white, Type B band) ---- */
 .intelband { background: var(--offwhite); border-top: 1px solid var(--border); }
-.intelband-row { display: grid; grid-template-columns: 1.1fr 1fr; gap: var(--s-5); align-items: center; }
+.intelband-row { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: center; }
 .intelband .label { display: block; }
-.intel-line { font-size: var(--b-md); font-weight: 300; line-height: 1.7; color: var(--text-2); margin-top: var(--s-2); max-width: 52ch; }
+/* Band line carries the section's display moment — same reduced-H2
+   Cormorant treatment as the principals band line. */
+.intel-line {
+  font-family: var(--font-d); font-size: clamp(1.375rem, 1.9vw, 1.875rem); font-weight: 300;
+  line-height: 1.45; color: var(--navy); margin-top: var(--s-3); max-width: 30ch;
+}
 .intel-sub { display: flex; gap: 0.6rem; flex-wrap: wrap; }
 .intel-sub input[type="text"] {
   flex: 1 1 220px; padding: 0.8rem 1rem;
@@ -149,9 +154,9 @@
 }
 .intel-sub input:focus { outline: none; border-color: var(--gold-dark); }
 .intel-hp { position: absolute; left: -9999px; }
-.intel-consent { font-size: var(--b-xs); font-weight: 300; line-height: 1.6; color: var(--text-3); margin-top: 0.75rem; }
+.intel-consent { font-size: var(--b-xs); font-weight: 300; line-height: 1.6; color: var(--text-3); margin-top: 0.875rem; max-width: 46ch; }
 .intel-consent a { color: var(--gold-dark); }
-.intel-links { margin-top: var(--s-2); }
+.intel-links { margin-top: var(--s-3); }
 .intel-sub-sent { font-size: var(--b-md); font-weight: 300; color: var(--text-1); padding: 0.5rem 0; }
 
 /* ---- responsive ---- */
@@ -459,7 +464,7 @@
           <button type="submit" class="btn btn--navy" id="intel-sub-submit">Subscribe to Market Updates <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
         </form>
         <p class="intel-consent">Subscribing consents to receiving them by email; unsubscribe anytime. Full analyses on the <a href="/insights">Insights</a> page.</p>
-        <div class="intel-links"><a href="/insights" class="btn btn--outline">View All Insights <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        <div class="intel-links"><a href="/insights" class="card-link">View All Insights <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
       </div>
     </div>
   </div>
