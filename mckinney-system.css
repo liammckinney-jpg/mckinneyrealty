@@ -326,9 +326,11 @@ html:not([data-header-band]) .nav-band { display: none !important; }
   display: grid; grid-template-columns: minmax(300px, 1fr) 2fr; gap: var(--s-6);
   align-items: center; padding-bottom: var(--s-3);   /* sitemap sits on the brand stack's optical middle */
 }
-/* brand stack: centred on its own axis inside the left column */
-.footer-brand-row { display: flex; flex-direction: column; align-items: center; gap: var(--s-3); }
-.footer-brand { text-align: center; }
+/* brand stack sits on the left edge; the mark and byline stay centred on
+   the wordmark, the scope line, hairline and RE/MAX mark are left-justified */
+.footer-brand-row { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s-3); }
+.footer-brand { display: inline-grid; grid-template-columns: max-content; justify-items: center; text-align: center; }
+.footer-brand-scope { justify-self: start; text-align: left; }
 .footer-brand-sep { width: 72px; height: 1px; background: rgba(255,255,255,0.06); }
 .footer-remax { height: 46px; width: auto; }
 .footer-brand-mono { height: 52px; width: auto; opacity: 1; margin: 0 auto var(--s-2); filter: brightness(0) invert(1); }
@@ -527,6 +529,8 @@ html:not([data-header-band]) .nav-band { display: none !important; }
 
 @media (max-width: 1024px) {
   .footer-top { grid-template-columns: 1fr; gap: var(--s-5); }
+  .footer-brand-row { align-items: center; }
+  .footer-brand-scope { justify-self: center; text-align: center; }
   .footer-legal-row { flex-direction: column; gap: 0.25rem; }
   .footer-copy { white-space: normal; }
 }
