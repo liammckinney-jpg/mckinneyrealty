@@ -463,14 +463,16 @@
     });
     // Prevent body scroll
     document.body.style.overflow = 'hidden';
-    // Trigger transition, then move focus into the dialog
-    requestAnimationFrame(function() {
-      requestAnimationFrame(function() {
-        ov.classList.add('is-visible');
+    // Reveal on a short timer (not rAF — rAF is paused in background
+    // tabs, which would also stall the focus move), then focus the
+    // close button once the overlay is visible.
+    setTimeout(function() {
+      ov.classList.add('is-visible');
+      setTimeout(function () {
         var c = ov.querySelector('.mr-modal-close');
         if (c) c.focus();
-      });
-    });
+      }, 60);
+    }, 20);
   }
 
   function closeModal() {
@@ -531,8 +533,8 @@
             '<div class="mr-modal-field"><label for="mr-phone">Phone</label><input id="mr-phone" autocomplete="tel" type="tel" name="phone"></div>' +
           '</div>' +
           '<div class="mr-modal-row single">' +
-            '<div class="mr-modal-field"><label>I\u2019m interested in</label>' +
-              '<select name="interest">' +
+            '<div class="mr-modal-field"><label for="mr-interest">I\u2019m interested in</label>' +
+              '<select id="mr-interest" name="interest">' +
                 '<option value="" disabled selected>Select one</option>' +
                 '<option value="selling">Selling a multifamily property</option>' +
                 '<option value="buying">Acquiring a multifamily property</option>' +
@@ -604,8 +606,8 @@
             '<div class="mr-modal-row triple">' +
               '<div class="mr-modal-field"><label for="mr-total_units">Total Units</label><input id="mr-total_units" type="number" name="total_units"></div>' +
               '<div class="mr-modal-field"><label for="mr-year_built">Year Built</label><input id="mr-year_built" type="text" name="year_built"></div>' +
-              '<div class="mr-modal-field"><label>Building Type</label>' +
-                '<select name="building_type">' +
+              '<div class="mr-modal-field"><label for="mr-building_type">Building Type</label>' +
+                '<select id="mr-building_type" name="building_type">' +
                   '<option value="" disabled selected>Select</option>' +
                   '<option value="walkup">Walkup</option>' +
                   '<option value="lowrise">Low-rise (elevator)</option>' +
@@ -647,8 +649,8 @@
             '</div>' +
             '<div class="mr-modal-row">' +
               '<div class="mr-modal-field"><label for="mr-timeline">Target Timeline</label><input id="mr-timeline" type="text" name="timeline" placeholder="e.g. Within 6 months, no rush"></div>' +
-              '<div class="mr-modal-field"><label>Marketing Preference</label>' +
-                '<select name="marketing_preference">' +
+              '<div class="mr-modal-field"><label for="mr-marketing_preference">Marketing Preference</label>' +
+                '<select id="mr-marketing_preference" name="marketing_preference">' +
                   '<option value="" disabled selected>Select</option>' +
                   '<option value="public">Public marketing</option>' +
                   '<option value="offmarket">Off-market / discreet</option>' +
@@ -708,8 +710,8 @@
           '</div>' +
           '<div class="mr-modal-row">' +
             '<div class="mr-modal-field"><label for="mr-company">Company / Entity</label><input id="mr-company" type="text" name="company" placeholder="Optional"></div>' +
-            '<div class="mr-modal-field"><label>Budget Range</label>' +
-              '<select name="budget_range">' +
+            '<div class="mr-modal-field"><label for="mr-budget_range">Budget Range</label>' +
+              '<select id="mr-budget_range" name="budget_range">' +
                 '<option value="" disabled selected>Select</option>' +
                 '<option value="under_2m">Under $2M</option>' +
                 '<option value="2m_5m">$2M \u2013 $5M</option>' +
@@ -774,8 +776,8 @@
           '<div class="mr-modal-section">' +
             '<div class="mr-modal-section-title">Investment Criteria</div>' +
             '<div class="mr-modal-row">' +
-              '<div class="mr-modal-field"><label>Target Unit Count</label>' +
-                '<select name="unit_range">' +
+              '<div class="mr-modal-field"><label for="mr-unit_range">Target Unit Count</label>' +
+                '<select id="mr-unit_range" name="unit_range">' +
                   '<option value="" disabled selected>Select</option>' +
                   '<option value="4_10">4 \u2013 10 units</option>' +
                   '<option value="10_20">10 \u2013 20 units</option>' +
@@ -814,8 +816,8 @@
           '<div class="mr-modal-section">' +
             '<div class="mr-modal-section-title">Financing &amp; Readiness</div>' +
             '<div class="mr-modal-row">' +
-              '<div class="mr-modal-field"><label>Financing Status</label>' +
-                '<select name="financing_status">' +
+              '<div class="mr-modal-field"><label for="mr-financing_status">Financing Status</label>' +
+                '<select id="mr-financing_status" name="financing_status">' +
                   '<option value="" disabled selected>Select</option>' +
                   '<option value="preapproved">Pre-approved</option>' +
                   '<option value="cash">Cash buyer</option>' +
@@ -823,8 +825,8 @@
                   '<option value="exploring">Still exploring</option>' +
                 '</select>' +
               '</div>' +
-              '<div class="mr-modal-field"><label>Timeline</label>' +
-                '<select name="timeline">' +
+              '<div class="mr-modal-field"><label for="mr-timeline">Timeline</label>' +
+                '<select id="mr-timeline" name="timeline">' +
                   '<option value="" disabled selected>Select</option>' +
                   '<option value="immediate">Ready now</option>' +
                   '<option value="3months">Within 3 months</option>' +
