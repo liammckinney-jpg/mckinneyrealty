@@ -96,7 +96,7 @@
    SERVICES — 3-card grid on cream
    ============================================================ */
 .services {
-  padding: var(--s-section) 0; background: var(--cream);
+  padding: var(--sec-a) 0; background: var(--cream);
   border-top: 1px solid var(--border);
 }
 .services-header { margin-bottom: var(--s-6); }
@@ -134,7 +134,7 @@
 /* ============================================================
    TOOLS — navy section surfacing the /tools/ suite
    ============================================================ */
-.tools-home { background: var(--navy); padding: clamp(3.25rem, 6vw, 5rem) 0; position: relative; overflow: hidden; }
+.tools-home { background: var(--navy); padding: var(--sec-b) 0; position: relative; overflow: hidden; }
 .tools-home::before {
   content: ''; position: absolute; inset: 0;
   background: radial-gradient(ellipse 70% 90% at 80% 0%, rgba(184,168,138,0.12), transparent 60%);
@@ -186,7 +186,7 @@
 /* ============================================================
    ABOUT — navy section with framed portraits
    ============================================================ */
-.about { background: var(--navy); padding: var(--s-section) 0; position: relative; overflow: hidden; }
+.about { background: var(--navy); padding: var(--sec-a) 0; position: relative; overflow: hidden; }
 .about-inner {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: var(--s-7); align-items: center;
@@ -233,7 +233,7 @@
 /* ============================================================
    STRUCTURING HIGHLIGHT
    ============================================================ */
-.structuring { padding: var(--s-section) 0; background: var(--white); border-top: 1px solid var(--border); }
+.structuring { padding: var(--sec-a) 0; background: var(--white); border-top: 1px solid var(--border); }
 .structuring-inner { max-width: 860px; border-left: 2px solid var(--gold); padding-left: var(--s-5); }
 .structuring-title {
   font-family: var(--font-d); font-size: clamp(1.5rem, 2.5vw, 2.25rem);
@@ -244,7 +244,7 @@
 /* ============================================================
    MARKET INTELLIGENCE
    ============================================================ */
-.intel { padding: var(--s-section) 0; background: var(--cream); border-top: 1px solid var(--border); }
+.intel { padding: var(--sec-b) 0; background: var(--cream); border-top: 1px solid var(--border); }
 .intel-header {
   display: flex; justify-content: space-between; align-items: flex-end;
   margin-bottom: var(--s-6); flex-wrap: wrap; gap: var(--s-3);
@@ -391,9 +391,9 @@
      ============================================================ -->
 <section class="services">
   <div class="wrap">
-    <div class="services-header">
+    <div class="sec-head">
       <div class="label">What We Do</div>
-      <h2 class="services-title">Specialized advisory for Ontario's <em class="gi">multifamily</em> market.</h2>
+      <h2 class="sec-h2">Specialized advisory for Ontario's <em class="gi">multifamily</em> market.</h2>
     </div>
     <div class="services-grid">
       <a href="/services#acquisition-disposition" class="service-card">
@@ -424,12 +424,12 @@
 <!-- ============================================================
      TRACK RECORD (summary on homepage)
      ============================================================ -->
-<section class="track">
+<section class="track sec-a">
   <div class="wrap">
     <div class="track-header">
       <div class="label">Track Record</div>
       <div class="track-header-top">
-        <h2 class="track-title">Selected <em class="gi">transactions</em></h2>
+        <h2 class="sec-h2">Selected <em class="gi">transactions</em></h2>
         <div class="track-agg">
           <div class="track-agg-num">$200M+</div>
           <div class="track-agg-label">multifamily, commercial, and investment transactions across Ontario</div>
@@ -467,7 +467,7 @@
   <div class="wrap about-inner">
     <div class="about-text-block">
       <div class="label label--light" style="margin-bottom: var(--s-3)">About McKinney Multifamily Group</div>
-      <h2 class="about-title">Principal-led advisory at every stage.</h2>
+      <h2 class="sec-h2">Principal-led advisory at every stage.</h2>
       <p class="about-prose">McKinney Multifamily Group pairs long-standing owner relationships in secondary markets with modern deal tools — serving as trusted advisor to multifamily building owners, institutional investors, and developers across Ontario's secondary markets.</p>
       <p class="about-prose">Our competitive advantage is structural: four decades of relationship depth in markets where institutional firms don't operate, combined with the analytical tools and marketing sophistication those markets now demand.</p>
       <a href="/team" class="about-link">Meet the Team <svg width="12" height="12" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -505,7 +505,7 @@
   <div class="wrap">
     <div class="structuring-inner">
       <div class="label" style="margin-bottom: var(--s-3)">Beyond the Transaction</div>
-      <h2 class="structuring-title">The difference between a well-structured and a poorly-structured disposition can be <em class="gi">hundreds of thousands of dollars</em>.</h2>
+      <h2 class="sec-h2">The difference between a well-structured and a poorly-structured disposition can be <em class="gi">hundreds of thousands of dollars</em>.</h2>
       <p class="structuring-prose">Before we discuss pricing, we ensure our clients understand their full disposition picture — entity structure, CCA recapture exposure, share versus asset sale implications, and net after-tax proceeds. We work alongside your accountant and legal counsel so that every decision is informed before it's final.</p>
       <a href="/services" class="btn btn--outline">Learn About Our Approach <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div>
