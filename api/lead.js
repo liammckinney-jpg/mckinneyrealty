@@ -22,7 +22,11 @@ module.exports = async function (req, res) {
   if (typeof body !== 'string') body = JSON.stringify(body || {});
 
   const ctrl = new AbortController();
-  const timer = setTimeout(function () { ctrl.abort(); }, 10000);
+  // The calculator path in Apps Script renders a PDF and mails it as an
+  // attachment before doPost returns, which routinely exceeds 10s. Budget for
+  // the slowest legitimate path; vercel.json raises the function maxDuration
+  // to match, or the platform would kill us first and swallow the 502.
+  const timer = setTimeout(function () { ctrl.abort(); }, 30000);
   try {
     // Apps Script answers a POST with a 302 to a one-time URL; follow it.
     const upstream = await fetch(target, {
