@@ -4,27 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1A1F2E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/favicon.png">
-<title>McKinney Realty — Meet the Principals</title>
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>McKinney Multifamily Group — Meet the Principals</title>
 <!-- Social cards — required on every indexable page. Audited at build (npm run og:check). -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="McKinney Realty">
-<meta property="og:title" content="McKinney Realty — Meet the Principals">
-<meta property="og:description" content="Liam McKinney, Broker, Property.ca Inc., Brokerage, and Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage — a father-and-son multi-family and investment real estate team serving all of Ontario.">
+<meta property="og:site_name" content="McKinney Multifamily Group">
+<meta property="og:title" content="McKinney Multifamily Group — Meet the Principals">
+<meta property="og:description" content="Liam McKinney, Broker &middot; Managing Partner, and Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage — a father-and-son multifamily and investment real estate team serving all of Ontario.">
 <meta property="og:url" content="https://www.mckinneyrealty.ca/team">
+<link rel="canonical" href="https://www.mckinneyrealty.ca/team">
 <meta property="og:image" content="https://www.mckinneyrealty.ca/images/og/team.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="McKinney Realty — Meet the Principals">
+<meta property="og:image:alt" content="McKinney Multifamily Group — Meet the Principals">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="McKinney Realty — Meet the Principals">
-<meta name="twitter:description" content="Liam McKinney, Broker, Property.ca Inc., Brokerage, and Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage — a father-and-son multi-family and investment real estate team serving all of Ontario.">
+<meta name="twitter:title" content="McKinney Multifamily Group — Meet the Principals">
+<meta name="twitter:description" content="Liam McKinney, Broker &middot; Managing Partner, and Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage — a father-and-son multifamily and investment real estate team serving all of Ontario.">
 <meta name="twitter:image" content="https://www.mckinneyrealty.ca/images/og/team.png">
-<meta name="description" content="Liam McKinney, Broker, Property.ca Inc., Brokerage, and Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage — a father-and-son multi-family and investment real estate team serving all of Ontario.">
-<script src="mckinney-consent.js"></script>
-<script src="mckinney-schema.js"></script>
+<meta name="description" content="Liam McKinney, Broker &middot; Managing Partner, and Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage — a father-and-son multifamily and investment real estate team serving all of Ontario.">
+<script src="/mckinney-flags.js?v=2"></script>
+<script src="mckinney-consent.js?v=2"></script>
+<script src="mckinney-schema.js?v=2"></script>
 <!-- Google Analytics (GA4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
 <script>
@@ -35,7 +39,8 @@
 </script>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="mckinney-system.css?v=2">
+<link rel="stylesheet" href="mckinney-system.css?v=4">
+<script src="/mckinney-nav.js" defer></script>
 <style>
 /* ============================================================
    PAGE-SPECIFIC: team.html
@@ -205,41 +210,59 @@
 </style>
 </head>
 <body class="page-editorial">
+<a class="skip" href="#main">Skip to content</a>
 
 <!-- ============================================================
      NAV
      ============================================================ -->
 <nav class="nav">
+  <div class="nav-band"><img src="/images/brand/REMAX_logo_RGB_dark.svg" alt="RE/MAX" width="288" height="144"><span>RE/MAX Quinte Ltd., Brokerage</span></div>
   <div class="nav-inner">
   <a href="/" class="nav-brand">
-    <img class="nav-mono" src="images/mr-monogram-sm.png" alt="MR">
+    <img class="nav-mono" src="images/brand/M_navy_transparent.png" alt="" width="583" height="587">
     <div class="nav-text">
-      <span class="nav-name">McKinney Realty</span>
-      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+      <span class="nav-name">McKinney Multifamily Group</span>
+      <span class="nav-sub">Investment Real Estate Brokers</span>
     </div>
   </a>
-  <button class="nav-toggle" aria-label="Menu">
+    <a class="nav-phone" href="tel:+16139699907" aria-label="Call 613-969-9907"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
-  <div class="nav-links">
-    <a href="listings/">Listings</a>
-    <a href="/team" class="active">Our Team</a>
-    <a href="/services">Services</a>
-    <a href="/track-record">Track Record</a>
+  <div class="nav-links" id="nav-links">
     <div class="nav-drop">
-      <a href="tools/">Calculators</a>
-      <div class="nav-drop-menu">
+      <button type="button" class="nav-drop-label" aria-expanded="false" aria-controls="nav-menu-buildings">Buildings for Sale</button>
+      <div class="nav-drop-menu" id="nav-menu-buildings">
+        <a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a>
+        <a href="/listings/">Our Listings</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button type="button" class="nav-drop-label" aria-expanded="false" aria-controls="nav-menu-tools">Tools</button>
+      <div class="nav-drop-menu" id="nav-menu-tools">
         <a href="/tools/underwrite">The Underwriter</a>
         <a href="/tools/financing-modeler">Financing Modeler</a>
         <a href="/tools/disposition-calculator">Disposition Proceeds</a>
         <a href="/tools/compounding-modeler">Compounding Modeler</a>
       </div>
     </div>
-    <a href="learn/">Learn</a><a href="/insights">Insights</a>
+    <a href="/learn/">Learn</a>
+    <a href="/insights">Insights</a>
+    <div class="nav-drop">
+      <button type="button" class="nav-drop-label" aria-expanded="false" aria-controls="nav-menu-about">About</button>
+      <div class="nav-drop-menu" id="nav-menu-about">
+        <a href="/team">Our Team</a>
+        <a href="/services">Services</a>
+        <a href="/disposition-intake">Sell Your Building</a>
+        <a href="/track-record">Track Record</a>
+      </div>
+    </div>
     <a class="nav-cta" href="/contact">Contact</a>
   </div>
   </div>
 </nav>
+
+<main id="main">
 
 <!-- ============================================================
      HERO
@@ -248,7 +271,7 @@
   <div class="wrap">
     <div class="label">Meet the Principals</div>
     <h1 class="tm-hero-title">Two generations. One perspective.</h1>
-    <p class="tm-hero-desc">McKinney Realty is led by two Brokers whose combined half-century of experience spans every corner of Ontario's investment real estate market.</p>
+    <p class="tm-hero-desc">McKinney Multifamily Group is led by two Brokers whose combined half-century of experience spans every corner of Ontario's investment real estate market.</p>
   </div>
 </section>
 
@@ -260,7 +283,10 @@
     <div class="tm-bio-grid">
       <div class="tm-bio-photo">
         <div class="tm-portrait-frame">
-          <img src="images/liam-mckinney.jpg" alt="Liam McKinney">
+          <picture>
+            <source srcset="images/liam-mckinney.webp" type="image/webp">
+            <img src="images/liam-mckinney.jpg" alt="Liam McKinney" width="720" height="960" decoding="async">
+          </picture>
         </div>
       </div>
       <div class="tm-bio-content">
@@ -271,7 +297,7 @@
             <div class="tm-bio-location">Based in Toronto &amp; Prince Edward County</div>
           </div>
           <div class="tm-bio-brokerage">
-            <img src="images/propertyca-logo.png" alt="Property.ca Inc., Brokerage">
+            <img src="images/remax-quinte-logo.png" alt="RE/MAX Quinte Ltd., Brokerage">
           </div>
         </div>
 
@@ -280,8 +306,8 @@
           <div class="track-metric"><div class="track-metric-num">250+</div><div class="track-metric-label">Career Transactions</div></div>
         </div>
 
-        <p class="tm-bio-prose">Liam McKinney brings thirteen years of real estate transaction experience to McKinney Realty's multi-family and investment practice. Based between Toronto and Prince Edward County, Liam built his career managing high-volume condo transactions at Property.ca, developing deep expertise in deal structuring, marketing strategy, and digital-first client acquisition.</p>
-        <p class="tm-bio-prose">As Managing Partner, Liam leads deal execution, investor relations, and strategic growth across Ontario's multi-family and investment real estate market. His approach combines rigorous financial analysis with a modern marketing methodology that ensures maximum exposure for every listing.</p>
+        <p class="tm-bio-prose">Liam McKinney brings thirteen years of real estate transaction experience to McKinney Multifamily Group's multifamily and investment practice. Based between Toronto and Prince Edward County, Liam built his career managing high-volume condo transactions, developing deep expertise in deal structuring, marketing strategy, and digital-first client acquisition.</p>
+        <p class="tm-bio-prose">As Managing Partner, Liam leads deal execution, investor relations, and strategic growth across Ontario's multifamily and investment real estate market. His approach combines rigorous financial analysis with a modern marketing methodology that ensures maximum exposure for every listing.</p>
 
         <div class="tm-bio-contact">
           <div class="tm-contact-item">
@@ -291,10 +317,6 @@
           <div class="tm-contact-item">
             <span class="tm-contact-label">Direct</span>
             <div class="tm-contact-value"><a href="tel:+16474671467">(647) 467-1467</a></div>
-          </div>
-          <div class="tm-contact-item">
-            <span class="tm-contact-label">Address</span>
-            <div class="tm-contact-value">36 Distillery Lane, Suite 500, Toronto, ON</div>
           </div>
         </div>
       </div>
@@ -306,7 +328,7 @@
      QUOTE DIVIDER — navy
      ============================================================ -->
 <div class="quote on-dark">
-  <img class="quote-mark" src="images/mr-monogram-lg.png" alt="" style="filter: brightness(0) invert(1);">
+  <img class="quote-mark" src="images/brand/M_white_transparent.png" alt="" style="filter: brightness(0) invert(1);">
   <div class="wrap">
     <p class="quote-text">"The relationships that surface <em class="gi">off-market</em> opportunities aren't built overnight. Ours span <em class="gi">four decades</em>."</p>
     <div class="quote-rule"></div>
@@ -336,8 +358,8 @@
           <div class="track-metric"><div class="track-metric-num">75+</div><div class="track-metric-label">Agent Brokerage</div></div>
         </div>
 
-        <p class="tm-bio-prose">Sean McKinney has spent over <em class="gi">four decades</em> closing commercial and multi-family transactions across the Quinte region, Eastern Ontario, and beyond. As owner and Broker of Record of RE/MAX Quinte — a brokerage of 75+ agents — Sean's network of property owners, investors, developers, and industry professionals has been built one relationship at a time.</p>
-        <p class="tm-bio-prose">As Co-Principal of McKinney Realty, Sean brings the relationship depth, market intelligence, and advisory credibility that defines the firm's approach.</p>
+        <p class="tm-bio-prose">Sean McKinney has spent over <em class="gi">four decades</em> closing commercial and multifamily transactions across the Quinte region, Eastern Ontario, and beyond. As owner and Broker of Record of RE/MAX Quinte — a brokerage of 75+ agents — Sean's network of property owners, investors, developers, and industry professionals has been built one relationship at a time.</p>
+        <p class="tm-bio-prose">Sean brings the relationship depth, market intelligence, and advisory credibility that defines the firm's approach.</p>
 
         <div class="tm-bio-contact">
           <div class="tm-contact-item">
@@ -356,7 +378,10 @@
       </div>
       <div class="tm-bio-photo">
         <div class="tm-portrait-frame">
-          <img src="images/sean-mckinney.jpg" alt="Sean McKinney">
+          <picture>
+            <source srcset="images/sean-mckinney.webp" type="image/webp">
+            <img src="images/sean-mckinney.jpg" alt="Sean McKinney" width="720" height="960" loading="lazy" decoding="async">
+          </picture>
         </div>
       </div>
     </div>
@@ -378,29 +403,32 @@
 <!-- ============================================================
      FOOTER
      ============================================================ -->
+</main>
+
 <footer class="footer">
   <div class="wrap">
-    <div class="footer-brand">
-      <img class="footer-brand-mono" src="images/mr-monogram-lg.png" alt="McKinney Realty">
-      <div class="footer-brand-name">McKinney Realty</div>
-      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
-      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    <div class="footer-top">
+<div class="footer-brand-row">
+      <div class="footer-brand">
+      <img class="footer-brand-mono" src="images/brand/M_white_transparent.png" alt="" width="583" height="587" loading="lazy" decoding="async">
+      <div class="footer-brand-name">McKinney Multifamily Group</div>
+      <div class="footer-brand-byline">Investment Real Estate Brokers</div>
     </div>
-    <div class="footer-offices">
-      <div class="footer-office">
-        <div class="footer-office-region">Quinte &amp; Eastern Ontario</div>
-        <div class="footer-office-brokerage">RE/MAX Quinte Ltd.</div><div class="footer-office-line">106 North Front St, Belleville, ON K8P 3B4</div>
-        <div class="footer-office-line"><a href="tel:6139699907">(613) 969-9907</a> &middot; <a href="mailto:sean@remaxquinte.com">sean@remaxquinte.com</a></div>
-      </div>
-      <div class="footer-office">
-        <div class="footer-office-region">Toronto &amp; GTA</div>
-        <div class="footer-office-brokerage">Property.ca Inc., Brokerage</div><div class="footer-office-line">36 Distillery Lane, Suite 500, Toronto, ON M5A 3C4</div>
-        <div class="footer-office-line"><a href="tel:6474671467">(647) 467-1467</a> &middot; <a href="mailto:liam@mckinneyrealty.ca">liam@mckinneyrealty.ca</a></div>
+      <div class="footer-brand-sep" aria-hidden="true"></div>
+      <img class="footer-remax" src="images/brand/remax-commercial-white.png" alt="RE/MAX Commercial" width="640" height="228" loading="lazy" decoding="async">
+    </div>
+      <div class="footer-nav">
+        <div class="footer-col"><div class="footer-col-label">Buildings</div><a href="/listings/">Our Listings</a><a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a></div>
+        <div class="footer-col"><div class="footer-col-label">Tools</div><a href="/tools/underwrite">The Underwriter</a><a href="/tools/financing-modeler">Financing Modeler</a><a href="/tools/disposition-calculator">Disposition Proceeds</a><a href="/tools/compounding-modeler">Compounding Modeler</a></div>
+        <div class="footer-col"><div class="footer-col-label">Firm</div><a href="/team">Our Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a></div>
+        <div class="footer-col"><div class="footer-col-label">Insights</div><a href="/insights">Insights</a><a href="/learn/">Learn</a></div>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-legal">Liam McKinney, Broker, Property.ca Inc., Brokerage &middot; Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
-      <div class="footer-nav"><a href="listings/">Listings</a><a href="/team">Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="tools/">Calculators</a><a href="learn/">Learn</a><a href="/insights">Insights</a><a href="/contact">Contact</a></div>
+      <div class="footer-legal-row">
+        <div class="footer-legal">Liam McKinney, Broker &middot; Sean McKinney, Broker of Record &middot; RE/MAX Quinte Ltd., Brokerage &middot; Each Office Independently Owned and Operated</div>
+        <div class="footer-copy">&copy; 2026 McKinney Multifamily Group &middot; mckinneyrealty.ca</div>
+      </div>
     </div>
   </div>
 </footer>
@@ -443,7 +471,7 @@
 <!-- ============================================================
      Modal CTA system — seller / investor / subscribe flows
      ============================================================ -->
-<script src="mckinney-modal-cta.js?v=2"></script>
+<script src="mckinney-modal-cta.js?v=3"></script>
 
 </body>
 </html>

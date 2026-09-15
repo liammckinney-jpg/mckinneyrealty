@@ -4,27 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1A1F2E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/favicon.png">
-<title>McKinney Realty — Contact Us</title>
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>McKinney Multifamily Group — Contact Us</title>
 <!-- Social cards — required on every indexable page. Audited at build (npm run og:check). -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="McKinney Realty">
-<meta property="og:title" content="McKinney Realty — Contact Us">
-<meta property="og:description" content="Schedule a confidential consultation with McKinney Realty. Multi-family and investment real estate advisory across Ontario.">
+<meta property="og:site_name" content="McKinney Multifamily Group">
+<meta property="og:title" content="McKinney Multifamily Group — Contact Us">
+<meta property="og:description" content="Schedule a confidential consultation with McKinney Multifamily Group. Multifamily and investment real estate advisory across Ontario.">
 <meta property="og:url" content="https://www.mckinneyrealty.ca/contact">
+<link rel="canonical" href="https://www.mckinneyrealty.ca/contact">
 <meta property="og:image" content="https://www.mckinneyrealty.ca/images/og/contact.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="McKinney Realty — Contact Us">
+<meta property="og:image:alt" content="McKinney Multifamily Group — Contact Us">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="McKinney Realty — Contact Us">
-<meta name="twitter:description" content="Schedule a confidential consultation with McKinney Realty. Multi-family and investment real estate advisory across Ontario.">
+<meta name="twitter:title" content="McKinney Multifamily Group — Contact Us">
+<meta name="twitter:description" content="Schedule a confidential consultation with McKinney Multifamily Group. Multifamily and investment real estate advisory across Ontario.">
 <meta name="twitter:image" content="https://www.mckinneyrealty.ca/images/og/contact.png">
-<meta name="description" content="Schedule a confidential consultation with McKinney Realty. Multi-family and investment real estate advisory across Ontario.">
-<script src="mckinney-consent.js"></script>
-<script src="mckinney-schema.js"></script>
+<meta name="description" content="Schedule a confidential consultation with McKinney Multifamily Group. Multifamily and investment real estate advisory across Ontario.">
+<script src="/mckinney-flags.js?v=2"></script>
+<script src="mckinney-consent.js?v=2"></script>
+<script src="mckinney-schema.js?v=2"></script>
 <!-- Google Analytics (GA4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
 <script>
@@ -35,7 +39,8 @@
 </script>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="mckinney-system.css?v=2">
+<link rel="stylesheet" href="mckinney-system.css?v=4">
+<script src="/mckinney-nav.js" defer></script>
 <style>
 /* ============================================================
    PAGE-SPECIFIC: contact.html
@@ -43,7 +48,7 @@
 
 /* Hero — left-aligned, white */
 .ct-hero {
-  padding: 8rem 0 var(--s-section);
+  padding: 5.5rem 0 var(--s-section);
   background: var(--white);
 }
 .ct-hero .label { margin-bottom: var(--s-4); }
@@ -93,9 +98,10 @@
 .ct-form label {
   display: block;
   font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.15em;
-  text-transform: uppercase; color: var(--text-3);
+  text-transform: uppercase; color: var(--text-2);
   margin-bottom: 0.625rem;
 }
+.ct-consent { margin-top: var(--s-3); font-size: var(--b-xs); font-weight: 300; line-height: 1.6; color: var(--text-2); max-width: 52ch; }
 .ct-form input,
 .ct-form select,
 .ct-form textarea {
@@ -183,18 +189,20 @@
 }
 .ct-office-contact {
   font-size: var(--b-sm); font-weight: 300;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.75);
   line-height: 1.8;
 }
 .ct-office-contact a {
   color: inherit;
+  text-decoration: underline; text-underline-offset: 3px;
   transition: color 0.3s;
 }
 .ct-office-contact a:hover { color: var(--white); }
 
 @media (max-width: 1024px) {
   .ct-grid { grid-template-columns: 1fr; }
-  .ct-offices { padding: var(--s-6); }
+  /* phone numbers above the form on narrow screens (fix spec 1.4) */
+  .ct-offices { order: -1; padding: var(--s-6); }
   .ct-form-col { padding: var(--s-6) 0; }
 }
 @media (max-width: 768px) {
@@ -205,41 +213,59 @@
 </style>
 </head>
 <body class="page-editorial">
+<a class="skip" href="#main">Skip to content</a>
 
 <!-- ============================================================
      NAV
      ============================================================ -->
 <nav class="nav">
+  <div class="nav-band"><img src="/images/brand/REMAX_logo_RGB_dark.svg" alt="RE/MAX" width="288" height="144"><span>RE/MAX Quinte Ltd., Brokerage</span></div>
   <div class="nav-inner">
   <a href="/" class="nav-brand">
-    <img class="nav-mono" src="images/mr-monogram-sm.png" alt="MR">
+    <img class="nav-mono" src="images/brand/M_navy_transparent.png" alt="" width="583" height="587">
     <div class="nav-text">
-      <span class="nav-name">McKinney Realty</span>
-      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+      <span class="nav-name">McKinney Multifamily Group</span>
+      <span class="nav-sub">Investment Real Estate Brokers</span>
     </div>
   </a>
-  <button class="nav-toggle" aria-label="Menu">
+    <a class="nav-phone" href="tel:+16139699907" aria-label="Call 613-969-9907"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
-  <div class="nav-links">
-    <a href="listings/">Listings</a>
-    <a href="/team">Our Team</a>
-    <a href="/services">Services</a>
-    <a href="/track-record">Track Record</a>
+  <div class="nav-links" id="nav-links">
     <div class="nav-drop">
-      <a href="tools/">Calculators</a>
-      <div class="nav-drop-menu">
+      <button type="button" class="nav-drop-label" aria-expanded="false" aria-controls="nav-menu-buildings">Buildings for Sale</button>
+      <div class="nav-drop-menu" id="nav-menu-buildings">
+        <a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a>
+        <a href="/listings/">Our Listings</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button type="button" class="nav-drop-label" aria-expanded="false" aria-controls="nav-menu-tools">Tools</button>
+      <div class="nav-drop-menu" id="nav-menu-tools">
         <a href="/tools/underwrite">The Underwriter</a>
         <a href="/tools/financing-modeler">Financing Modeler</a>
         <a href="/tools/disposition-calculator">Disposition Proceeds</a>
         <a href="/tools/compounding-modeler">Compounding Modeler</a>
       </div>
     </div>
-    <a href="learn/">Learn</a><a href="/insights">Insights</a>
-    <a class="nav-cta active" href="/contact" style="background: var(--navy); color: var(--white) !important;">Contact</a>
+    <a href="/learn/">Learn</a>
+    <a href="/insights">Insights</a>
+    <div class="nav-drop">
+      <button type="button" class="nav-drop-label" aria-expanded="false" aria-controls="nav-menu-about">About</button>
+      <div class="nav-drop-menu" id="nav-menu-about">
+        <a href="/team">Our Team</a>
+        <a href="/services">Services</a>
+        <a href="/disposition-intake">Sell Your Building</a>
+        <a href="/track-record">Track Record</a>
+      </div>
+    </div>
+    <a class="nav-cta" href="/contact">Contact</a>
   </div>
   </div>
 </nav>
+
+<main id="main">
 
 <!-- ============================================================
      HERO
@@ -293,12 +319,13 @@
           <label for="interest">I'm interested in</label>
           <select id="interest" name="interest" required>
             <option value="" disabled selected>Select one</option>
-            <option value="selling-multifamily">Selling a multi-family property</option>
+            <option value="selling-multifamily">Selling a multifamily property</option>
             <option value="selling-commercial-land">Selling commercial or development land</option>
-            <option value="acquiring-multifamily">Acquiring multi-family properties</option>
+            <option value="acquiring-multifamily">Acquiring multifamily properties</option>
             <option value="off-market-alerts">Off-market deal alerts</option>
             <option value="development-land">Development land advisory</option>
             <option value="portfolio-succession">Portfolio or succession planning</option>
+            <option value="sample-summary">A sample investment summary</option>
             <option value="other">Other</option>
           </select>
         </div>
@@ -309,23 +336,20 @@
         </div>
 
         <div class="ct-form-submit">
-          <button type="submit" class="btn btn--navy">Send Message <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+          <button type="submit" class="btn btn--navy">Send Request <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+          <p class="ct-consent">Read by Liam and Sean only. Nothing sent here is shared or added to a mailing list.</p>
         </div>
       </form>
     </div>
 
     <!-- OFFICES (navy panel) -->
     <aside class="ct-offices">
-      <h2 class="ct-offices-title">Our offices</h2>
+      <h2 class="ct-offices-title">Principals</h2>
 
       <div class="ct-office">
         <div class="ct-office-region">Toronto &amp; GTA</div>
-        <div class="ct-office-principal">Liam McKinney, Broker</div>
-        <div class="ct-office-brokerage">Property.ca Inc., Brokerage</div>
-        <div class="ct-office-address">
-          36 Distillery Lane, Suite 500<br>
-          Toronto, ON M5A 3C4
-        </div>
+        <div class="ct-office-principal">Liam McKinney, Broker &middot; Managing Partner</div>
+        <div class="ct-office-brokerage">RE/MAX Quinte Ltd., Brokerage</div>
         <div class="ct-office-contact">
           <a href="tel:+16474671467">(647) 467-1467</a><br>
           <a href="mailto:liam@mckinneyrealty.ca">liam@mckinneyrealty.ca</a>
@@ -354,29 +378,32 @@
 <!-- ============================================================
      FOOTER
      ============================================================ -->
+</main>
+
 <footer class="footer">
   <div class="wrap">
-    <div class="footer-brand">
-      <img class="footer-brand-mono" src="images/mr-monogram-lg.png" alt="McKinney Realty">
-      <div class="footer-brand-name">McKinney Realty</div>
-      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
-      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    <div class="footer-top">
+<div class="footer-brand-row">
+      <div class="footer-brand">
+      <img class="footer-brand-mono" src="images/brand/M_white_transparent.png" alt="" width="583" height="587" loading="lazy" decoding="async">
+      <div class="footer-brand-name">McKinney Multifamily Group</div>
+      <div class="footer-brand-byline">Investment Real Estate Brokers</div>
     </div>
-    <div class="footer-offices">
-      <div class="footer-office">
-        <div class="footer-office-region">Quinte &amp; Eastern Ontario</div>
-        <div class="footer-office-brokerage">RE/MAX Quinte Ltd.</div><div class="footer-office-line">106 North Front St, Belleville, ON K8P 3B4</div>
-        <div class="footer-office-line"><a href="tel:6139699907">(613) 969-9907</a> &middot; <a href="mailto:sean@remaxquinte.com">sean@remaxquinte.com</a></div>
-      </div>
-      <div class="footer-office">
-        <div class="footer-office-region">Toronto &amp; GTA</div>
-        <div class="footer-office-brokerage">Property.ca Inc., Brokerage</div><div class="footer-office-line">36 Distillery Lane, Suite 500, Toronto, ON M5A 3C4</div>
-        <div class="footer-office-line"><a href="tel:6474671467">(647) 467-1467</a> &middot; <a href="mailto:liam@mckinneyrealty.ca">liam@mckinneyrealty.ca</a></div>
+      <div class="footer-brand-sep" aria-hidden="true"></div>
+      <img class="footer-remax" src="images/brand/remax-commercial-white.png" alt="RE/MAX Commercial" width="640" height="228" loading="lazy" decoding="async">
+    </div>
+      <div class="footer-nav">
+        <div class="footer-col"><div class="footer-col-label">Buildings</div><a href="/listings/">Our Listings</a><a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a></div>
+        <div class="footer-col"><div class="footer-col-label">Tools</div><a href="/tools/underwrite">The Underwriter</a><a href="/tools/financing-modeler">Financing Modeler</a><a href="/tools/disposition-calculator">Disposition Proceeds</a><a href="/tools/compounding-modeler">Compounding Modeler</a></div>
+        <div class="footer-col"><div class="footer-col-label">Firm</div><a href="/team">Our Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a></div>
+        <div class="footer-col"><div class="footer-col-label">Insights</div><a href="/insights">Insights</a><a href="/learn/">Learn</a></div>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-legal">Liam McKinney, Broker, Property.ca Inc., Brokerage &middot; Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
-      <div class="footer-nav"><a href="listings/">Listings</a><a href="/team">Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="tools/">Calculators</a><a href="learn/">Learn</a><a href="/insights">Insights</a><a href="/contact">Contact</a></div>
+      <div class="footer-legal-row">
+        <div class="footer-legal">Liam McKinney, Broker &middot; Sean McKinney, Broker of Record &middot; RE/MAX Quinte Ltd., Brokerage &middot; Each Office Independently Owned and Operated</div>
+        <div class="footer-copy">&copy; 2026 McKinney Multifamily Group &middot; mckinneyrealty.ca</div>
+      </div>
     </div>
   </div>
 </footer>
@@ -414,7 +441,7 @@
 <!-- ============================================================
      Modal CTA system — seller / investor / subscribe flows
      ============================================================ -->
-<script src="mckinney-modal-cta.js?v=2"></script>
+<script src="mckinney-modal-cta.js?v=3"></script>
 
 <!-- ============================================================
      Form submission — POST to Apps Script backend

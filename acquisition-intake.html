@@ -4,28 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1A1F2E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
 
-<title>McKinney Realty — Investor Acquisition Intake</title>
+<title>McKinney Multifamily Group — Investor Acquisition Intake</title>
 <!-- Social cards — required on every indexable page. Audited at build (npm run og:check). -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="McKinney Realty">
-<meta property="og:title" content="McKinney Realty — Investor Acquisition Intake">
-<meta property="og:description" content="Register your investment criteria to receive matched multi-family acquisition opportunities across Ontario, including off-market deals.">
+<meta property="og:site_name" content="McKinney Multifamily Group">
+<meta property="og:title" content="McKinney Multifamily Group — Investor Acquisition Intake">
+<meta property="og:description" content="Register your investment criteria to receive matched multifamily acquisition opportunities across Ontario, including off-market deals.">
 <meta property="og:url" content="https://www.mckinneyrealty.ca/acquisition-intake">
+<link rel="canonical" href="https://www.mckinneyrealty.ca/acquisition-intake">
 <meta property="og:image" content="https://www.mckinneyrealty.ca/images/og/acquisition-intake.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="McKinney Realty — Investor Acquisition Intake">
+<meta property="og:image:alt" content="McKinney Multifamily Group — Investor Acquisition Intake">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="McKinney Realty — Investor Acquisition Intake">
-<meta name="twitter:description" content="Register your investment criteria to receive matched multi-family acquisition opportunities across Ontario, including off-market deals.">
+<meta name="twitter:title" content="McKinney Multifamily Group — Investor Acquisition Intake">
+<meta name="twitter:description" content="Register your investment criteria to receive matched multifamily acquisition opportunities across Ontario, including off-market deals.">
 <meta name="twitter:image" content="https://www.mckinneyrealty.ca/images/og/acquisition-intake.png">
-<meta name="description" content="Register your investment criteria to receive matched multi-family acquisition opportunities across Ontario, including off-market deals.">
-<script src="mckinney-consent.js"></script>
-<script src="mckinney-schema.js"></script>
+<meta name="description" content="Register your investment criteria to receive matched multifamily acquisition opportunities across Ontario, including off-market deals.">
+<script src="/mckinney-flags.js?v=2"></script>
+<script src="mckinney-consent.js?v=2"></script>
+<script src="mckinney-schema.js?v=2"></script>
 <!-- Google Analytics (GA4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
 <script>
@@ -35,8 +39,10 @@
   gtag('config', 'G-VFY0V42GLR');
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mckinney-system.css?v=4">
+<script src="/mckinney-nav.js" defer></script>
 <style>
-/* McKinney Realty — Brand System CSS
+/* McKinney Multifamily Group — Brand System CSS
    Source of truth: KB-02 Brand Identity & Visual System
    Extracted from approved prototypes: mckinney_brand_concept_v2.html, mckinney_team_full.html
    ========================================================================= */
@@ -85,42 +91,22 @@ img { max-width: 100%; height: auto; }
 /* =========================================================================
    NAVIGATION
    ========================================================================= */
-.nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 0; padding-left: var(--side-padding); padding-right: var(--side-padding); height: 72px;
-  display: flex; align-items: center; justify-content: space-between;
-  background: rgba(255,255,255,0.92); backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  animation: fadeDown 0.8s ease;
-}
-.nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
-.nav-monogram { height: 36px; width: auto; }
-.nav-logo-text { display: flex; flex-direction: column; }
-.nav-logo-name {
-  font-family: var(--font-display); font-size: 18px; font-weight: 500;
-  letter-spacing: 0.22em; color: var(--navy); text-transform: uppercase; line-height: 1.1;
-}
-.nav-logo-sub {
-  font-family: var(--font-body); font-size: 8px; letter-spacing: 0.16em;
-  color: var(--stone-gold-dark); text-transform: uppercase; font-weight: 400; margin-top: 2px;
-}
-.nav-links { display: flex; gap: 36px; align-items: center; }
-.nav-links a {
-  font-size: 13px; font-weight: 400; color: var(--text-secondary);
-  text-decoration: none; letter-spacing: 0.04em; transition: color 0.3s;
-}
-.nav-links a:hover { color: var(--text-primary); }
-.nav-links a.active { color: var(--text-primary); }
-.nav-cta {
-  font-size: 12px !important; font-weight: 500 !important; color: var(--navy) !important;
-  padding: 10px 24px; border: 1px solid var(--navy);
-  letter-spacing: 0.08em !important; text-transform: uppercase; transition: all 0.3s !important;
-}
-.nav-cta:hover { background: var(--navy) !important; color: var(--white) !important; }
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Mobile nav toggle */
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-.nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
+
+
 
 /* =========================================================================
    BUTTONS
@@ -159,7 +145,7 @@ img { max-width: 100%; height: auto; }
    ========================================================================= */
 .section-label {
   font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--stone-gold-dark); font-weight: 500; margin-bottom: 20px;
+  color: var(--gold-text); font-weight: 500; margin-bottom: 20px;
 }
 .section-title {
   font-family: var(--font-display); font-size: 40px; font-weight: 300;
@@ -375,19 +361,11 @@ img { max-width: 100%; height: auto; }
 /* =========================================================================
    FOOTER
    ========================================================================= */
-.footer {
-  padding: 48px 0; padding-left: var(--side-padding); padding-right: var(--side-padding); border-top: 1px solid var(--border);
-  display: flex; justify-content: space-between; align-items: center;
-}
-.footer-left { display: flex; align-items: center; gap: 16px; }
-.footer-monogram { height: 28px; width: auto; opacity: 0.6; }
-.footer-logo {
-  font-family: var(--font-display); font-size: 16px; font-weight: 500;
-  letter-spacing: 0.2em; color: var(--navy); text-transform: uppercase;
-}
-.footer-legal {
-  font-size: 11px; color: var(--text-tertiary); line-height: 1.6; text-align: right;
-}
+
+
+
+
+
 
 /* =========================================================================
    TEAM PAGE
@@ -442,6 +420,9 @@ img { max-width: 100%; height: auto; }
   padding: 160px 0 80px; padding-left: var(--side-padding); padding-right: var(--side-padding); border-bottom: 1px solid var(--border);
 }
 .page-hero .section-label { margin-bottom: 24px; }
+.page-hero--intake { text-align: center; border-bottom: none; padding-bottom: 48px; }
+.page-hero--intake .page-hero-title, .page-hero--intake .page-hero-desc { margin-left: auto; margin-right: auto; }
+.page-hero--intake .page-hero-desc { max-width: 600px; }
 .page-hero-title {
   font-family: var(--font-display); font-size: 52px; font-weight: 300;
   color: var(--navy); line-height: 1.1; margin-bottom: 24px; max-width: 680px;
@@ -563,7 +544,7 @@ img { max-width: 100%; height: auto; }
 .form-row { margin-bottom: 24px; }
 .form-row label {
   display: block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--text-tertiary); font-weight: 500; margin-bottom: 8px;
+  color: var(--text-2); font-weight: 500; margin-bottom: 8px;
 }
 .form-row input, .form-row select, .form-row textarea {
   width: 100%; padding: 14px 16px; border: 1px solid var(--border);
@@ -608,7 +589,7 @@ img { max-width: 100%; height: auto; }
   }
 }
 @media (max-width: 1024px) {
-  .nav { padding: 0 32px; }
+  
   .hero { padding: 120px 32px 60px; }
   .hero-stats { right: 32px; bottom: 32px; gap: 32px; }
   .hero-watermark { right: 32px; height: 320px; }
@@ -619,7 +600,7 @@ img { max-width: 100%; height: auto; }
   .tombstones-grid { grid-template-columns: repeat(2, 1fr); }
   .cta-section { padding: 80px 32px; }
   .dual-cta-panel { padding: 60px 32px; }
-  .footer { padding: 32px; }
+  
   .page-hero { padding: 120px 32px 60px; }
   .service-detail { padding: 60px 32px; }
   .team-hero { padding: 120px 32px 80px; }
@@ -630,16 +611,11 @@ img { max-width: 100%; height: auto; }
 }
 
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-links.open {
-    display: flex; flex-direction: column; position: fixed;
-    top: 72px; left: 0; right: 0; background: var(--white);
-    padding: 32px; gap: 24px; border-bottom: 1px solid var(--border);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-  }
-  .nav-toggle { display: block; }
+  
+  
+  
 
-  .nav-logo-sub { display: none; }
+  
   .hero-actions .btn-primary,
   .hero-actions .btn-secondary { width: 100%; justify-content: center; }
 
@@ -680,10 +656,10 @@ img { max-width: 100%; height: auto; }
   .contact-grid { grid-template-columns: 1fr; }
   .form-row-inline { grid-template-columns: 1fr; }
 
-  .footer { flex-direction: column; gap: 24px; text-align: center; }
-  .footer-legal { text-align: center; }
+  
+  
 
-  .nav { padding: 0 24px; }
+  
   .services, .tombstones { padding: 60px 24px; }
   .cta-section { padding: 60px 24px; }
   .cta-title { font-size: 32px; }
@@ -929,7 +905,7 @@ img { max-width: 100%; height: auto; }
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-tertiary);
+  color: var(--text-2);
   font-weight: 500;
   margin-bottom: 6px;
 }
@@ -1092,34 +1068,61 @@ img { max-width: 100%; height: auto; }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <nav class="nav">
-  <a href="/" class="nav-logo">
-    <img class="nav-monogram" src="images/mr-monogram-sm.png" alt="MR">
-    <div class="nav-logo-text">
-      <span class="nav-logo-name">McKinney Realty</span>
-      <span class="nav-logo-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+  <div class="nav-band"><img src="/images/brand/REMAX_logo_RGB_dark.svg" alt="RE/MAX" width="288" height="144"><span>RE/MAX Quinte Ltd., Brokerage</span></div>
+  <div class="nav-inner">
+  <a href="/" class="nav-brand">
+    <img class="nav-mono" src="images/brand/M_navy_transparent.png" alt="" width="583" height="587">
+    <div class="nav-text">
+      <span class="nav-name">McKinney Multifamily Group</span>
+      <span class="nav-sub">Investment Real Estate Brokers</span>
     </div>
   </a>
-  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <a class="nav-phone" href="tel:+16139699907" aria-label="Call 613-969-9907"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
-  <div class="nav-links">
-    <a href="/">Home</a>
-    <a href="listings/">Listings</a>
-    <a href="/team">Our Team</a>
-    <a href="/services">Services</a>
-    <a href="/track-record">Track Record</a>
-    <a href="tools/">Calculators</a>
-    <a href="learn/">Learn</a><a href="/insights">Insights</a>
+  <div class="nav-links" id="nav-links">
+    <div class="nav-drop">
+      <button type="button" class="nav-drop-label" aria-expanded="false" aria-controls="nav-menu-buildings">Buildings for Sale</button>
+      <div class="nav-drop-menu" id="nav-menu-buildings">
+        <a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a>
+        <a href="/listings/">Our Listings</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button type="button" class="nav-drop-label" aria-expanded="false" aria-controls="nav-menu-tools">Tools</button>
+      <div class="nav-drop-menu" id="nav-menu-tools">
+        <a href="/tools/underwrite">The Underwriter</a>
+        <a href="/tools/financing-modeler">Financing Modeler</a>
+        <a href="/tools/disposition-calculator">Disposition Proceeds</a>
+        <a href="/tools/compounding-modeler">Compounding Modeler</a>
+      </div>
+    </div>
+    <a href="/learn/">Learn</a>
+    <a href="/insights">Insights</a>
+    <div class="nav-drop">
+      <button type="button" class="nav-drop-label" aria-expanded="false" aria-controls="nav-menu-about">About</button>
+      <div class="nav-drop-menu" id="nav-menu-about">
+        <a href="/team">Our Team</a>
+        <a href="/services">Services</a>
+        <a href="/disposition-intake">Sell Your Building</a>
+        <a href="/track-record">Track Record</a>
+      </div>
+    </div>
     <a class="nav-cta" href="/contact">Contact</a>
+  </div>
   </div>
 </nav>
 
-<section class="page-hero" style="text-align: center; border-bottom: none; padding-bottom: 48px;">
+<main id="main">
+
+<section class="page-hero page-hero--intake">
     <div class="section-label">For Investors</div>
-    <h1 class="page-hero-title" style="margin-left: auto; margin-right: auto;">Investor acquisition intake.</h1>
-    <p class="page-hero-desc" style="margin-left: auto; margin-right: auto; max-width: 600px;">Tell us what you're looking for and we'll match you with opportunities across Ontario's multi-family market — including off-market deals that never reach the open market.</p>
+    <h1 class="page-hero-title">Investor acquisition intake.</h1>
+    <p class="page-hero-desc">Tell us what you're looking for and we'll match you with opportunities across Ontario's multifamily market — including off-market deals that never reach the open market.</p>
 </section>
 
 <div class="intake-wrap">
@@ -1161,8 +1164,8 @@ img { max-width: 100%; height: auto; }
     </div>
     <div class="intake-row">
       <div class="intake-field">
-        <label>Budget Range</label>
-        <select name="budget_range">
+        <label for="budget_range">Budget Range</label>
+        <select id="budget_range" name="budget_range">
           <option value="" disabled selected>Select</option>
           <option value="under_2m">Under $2M</option>
           <option value="2m_5m">$2M – $5M</option>
@@ -1172,8 +1175,8 @@ img { max-width: 100%; height: auto; }
         </select>
       </div>
       <div class="intake-field">
-        <label>Target Unit Count</label>
-        <select name="unit_range">
+        <label for="unit_range">Target Unit Count</label>
+        <select id="unit_range" name="unit_range">
           <option value="" disabled selected>Select</option>
           <option value="4_10">4 – 10 units</option>
           <option value="10_20">10 – 20 units</option>
@@ -1229,8 +1232,8 @@ img { max-width: 100%; height: auto; }
     </div>
     <div class="intake-row">
       <div class="intake-field">
-        <label>Financing Status</label>
-        <select name="financing_status">
+        <label for="financing_status">Financing Status</label>
+        <select id="financing_status" name="financing_status">
           <option value="" disabled selected>Select</option>
           <option value="preapproved">Pre-approved financing</option>
           <option value="cash">Cash buyer</option>
@@ -1239,8 +1242,8 @@ img { max-width: 100%; height: auto; }
         </select>
       </div>
       <div class="intake-field">
-        <label>Acquisition Timeline</label>
-        <select name="timeline">
+        <label for="timeline">Acquisition Timeline</label>
+        <select id="timeline" name="timeline">
           <option value="" disabled selected>Select</option>
           <option value="immediate">Ready now — actively looking</option>
           <option value="3months">Within 3 months</option>
@@ -1254,7 +1257,7 @@ img { max-width: 100%; height: auto; }
       <div class="intake-field">
         <label>Current Portfolio</label>
         <div class="intake-checkboxes">
-          <label class="intake-check"><input type="radio" name="current_portfolio" value="first"> First multi-family acquisition</label>
+          <label class="intake-check"><input type="radio" name="current_portfolio" value="first"> First multifamily acquisition</label>
           <label class="intake-check"><input type="radio" name="current_portfolio" value="1_5"> Own 1–5 properties</label>
           <label class="intake-check"><input type="radio" name="current_portfolio" value="5_plus"> Own 5+ properties</label>
           <label class="intake-check"><input type="radio" name="current_portfolio" value="institutional"> Institutional / fund</label>
@@ -1298,15 +1301,33 @@ img { max-width: 100%; height: auto; }
 </form>
 </div>
 
+</main>
+
 <footer class="footer">
-  <div class="footer-left">
-    <img class="footer-monogram" src="images/mr-monogram-sm.png" alt="MR">
-    <div class="footer-logo">McKinney Realty</div>
-  </div>
-  <div class="footer-legal">
-    Liam McKinney, Broker, Property.ca Inc., Brokerage &bull; (647) 467-1467 &bull; liam@mckinneyrealty.ca<br>
-    Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &bull; (613) 969-9907 &bull; sean@remaxquinte.com<br>
-    36 Distillery Lane, Suite 500, Toronto ON &bull; 106 North Front St, Belleville, ON
+  <div class="wrap">
+    <div class="footer-top">
+<div class="footer-brand-row">
+      <div class="footer-brand">
+      <img class="footer-brand-mono" src="images/brand/M_white_transparent.png" alt="" width="583" height="587" loading="lazy" decoding="async">
+      <div class="footer-brand-name">McKinney Multifamily Group</div>
+      <div class="footer-brand-byline">Investment Real Estate Brokers</div>
+    </div>
+      <div class="footer-brand-sep" aria-hidden="true"></div>
+      <img class="footer-remax" src="images/brand/remax-commercial-white.png" alt="RE/MAX Commercial" width="640" height="228" loading="lazy" decoding="async">
+    </div>
+      <div class="footer-nav">
+        <div class="footer-col"><div class="footer-col-label">Buildings</div><a href="/listings/">Our Listings</a><a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a></div>
+        <div class="footer-col"><div class="footer-col-label">Tools</div><a href="/tools/underwrite">The Underwriter</a><a href="/tools/financing-modeler">Financing Modeler</a><a href="/tools/disposition-calculator">Disposition Proceeds</a><a href="/tools/compounding-modeler">Compounding Modeler</a></div>
+        <div class="footer-col"><div class="footer-col-label">Firm</div><a href="/team">Our Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a></div>
+        <div class="footer-col"><div class="footer-col-label">Insights</div><a href="/insights">Insights</a><a href="/learn/">Learn</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal-row">
+        <div class="footer-legal">Liam McKinney, Broker &middot; Sean McKinney, Broker of Record &middot; RE/MAX Quinte Ltd., Brokerage &middot; Each Office Independently Owned and Operated</div>
+        <div class="footer-copy">&copy; 2026 McKinney Multifamily Group &middot; mckinneyrealty.ca</div>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -1336,7 +1357,7 @@ img { max-width: 100%; height: auto; }
   });
 })();
 </script>
-<script src="mckinney-modal-cta.js?v=2"></script>
+<script src="mckinney-modal-cta.js?v=3"></script>
 
 <!-- ============================================================
      Form submission — POST to Apps Script backend
@@ -1350,7 +1371,7 @@ img { max-width: 100%; height: auto; }
       email: 'investor_email',
       phone: 'investor_phone'
     },
-    confirmationMessage: "Your criteria have been received. We'll be in touch within 24 hours and begin matching opportunities — including off-market deals — to your mandate."
+    confirmationMessage: "Your criteria have been received. We'll be in touch within one business day and begin matching opportunities — including off-market deals — to your mandate."
   });
 
   // Chip selection state — JS fallback for browsers/contexts where

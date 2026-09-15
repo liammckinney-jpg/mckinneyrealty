@@ -4,26 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1A1F2E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
 
-<title>How Buildings Become Worth More — The Mechanics | McKinney Realty</title>
+<title>How Buildings Become Worth More — The Mechanics | McKinney Multifamily Group</title>
 <!-- Social cards — required on every indexable page. Audited at build (npm run og:check). -->
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="McKinney Realty">
+<meta property="og:site_name" content="McKinney Multifamily Group">
 <meta property="og:title" content="How Buildings Become Worth More — The Mechanics">
 <meta property="og:description" content="Four levers move a building's NOI — metering, the rent gap, other income, expense recovery. Each one named with its cost beside it, and a widget to stack them.">
 <meta property="og:url" content="https://www.mckinneyrealty.ca/learn/mechanics/worth-more">
 <meta property="og:image" content="https://www.mckinneyrealty.ca/images/og/learn-mechanics-worth-more.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="How Buildings Become Worth More — The Mechanics — McKinney Realty">
+<meta property="og:image:alt" content="How Buildings Become Worth More — The Mechanics — McKinney Multifamily Group">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How Buildings Become Worth More — The Mechanics">
 <meta name="twitter:description" content="Four levers move a building's NOI — metering, the rent gap, other income, expense recovery. Each one named with its cost beside it, and a widget to stack them.">
 <meta name="twitter:image" content="https://www.mckinneyrealty.ca/images/og/learn-mechanics-worth-more.png">
 <meta name="description" content="Four levers move a building's NOI — metering, the rent gap, other income, expense recovery. Each one named with its cost beside it, and a widget to stack them.">
 <link rel="canonical" href="https://www.mckinneyrealty.ca/learn/mechanics/worth-more">
+<script src="/mckinney-flags.js"></script>
 <script src="../../mckinney-consent.js"></script>
 <script src="../../mckinney-schema.js"></script>
 <!-- Google Analytics (GA4) -->
@@ -49,8 +53,8 @@
   "headline": "How Buildings Become Worth More",
   "description": "Four levers move a building's NOI — metering, the rent gap, other income, expense recovery. Each one named with its cost beside it, and a widget to stack them.",
   "url": "https://www.mckinneyrealty.ca/learn/mechanics/worth-more",
-  "isPartOf": { "@type": "WebSite", "name": "McKinney Realty", "url": "https://www.mckinneyrealty.ca/" },
-  "author": { "@type": "Organization", "name": "McKinney Realty" }
+  "isPartOf": { "@type": "WebSite", "name": "McKinney Multifamily Group", "url": "https://www.mckinneyrealty.ca/" },
+  "author": { "@type": "Organization", "name": "McKinney Multifamily Group" }
 }
 </script>
 </head>
@@ -58,24 +62,28 @@
 
 <!-- NAV -->
 <nav class="nav">
+  <div class="nav-band"><img src="/images/brand/REMAX_logo_RGB_dark.svg" alt="RE/MAX"><span>RE/MAX Quinte Ltd., Brokerage</span></div>
   <div class="nav-inner">
   <a href="/" class="nav-brand">
-    <img class="nav-mono" src="../../images/mr-monogram-sm.png" alt="MR">
+    <img class="nav-mono" src="../../images/brand/M_navy_transparent.png" alt="M">
     <div class="nav-text">
-      <span class="nav-name">McKinney Realty</span>
-      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+      <span class="nav-name">McKinney Multifamily Group</span>
+      <span class="nav-sub">Investment Real Estate Brokers</span>
     </div>
   </a>
   <button class="nav-toggle" aria-label="Menu">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
   <div class="nav-links">
-    <a href="../../listings/">Listings</a>
-    <a href="/team">Our Team</a>
-    <a href="/services">Services</a>
-    <a href="/track-record">Track Record</a>
     <div class="nav-drop">
-      <a href="../../tools/">Calculators</a>
+      <span class="nav-drop-label" tabindex="0" role="button" aria-haspopup="true">Buildings for Sale</span>
+      <div class="nav-drop-menu">
+        <a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a>
+        <a href="/listings/">Our Listings</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <span class="nav-drop-label" tabindex="0" role="button" aria-haspopup="true">Tools</span>
       <div class="nav-drop-menu">
         <a href="/tools/underwrite">The Underwriter</a>
         <a href="/tools/financing-modeler">Financing Modeler</a>
@@ -83,7 +91,16 @@
         <a href="/tools/compounding-modeler">Compounding Modeler</a>
       </div>
     </div>
-    <a href="../" class="active">Learn</a><a href="/insights">Insights</a>
+    <a href="/learn/">Learn</a>
+    <a href="/insights">Insights</a>
+    <div class="nav-drop">
+      <span class="nav-drop-label" tabindex="0" role="button" aria-haspopup="true">About</span>
+      <div class="nav-drop-menu">
+        <a href="/team">Our Team</a>
+        <a href="/services">Services</a>
+        <a href="/track-record">Track Record</a>
+      </div>
+    </div>
     <a class="nav-cta" href="/contact">Contact</a>
   </div>
   </div>
@@ -187,27 +204,22 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
-    <div class="footer-brand">
-      <img class="footer-brand-mono" src="../../images/mr-monogram-lg.png" alt="McKinney Realty">
-      <div class="footer-brand-name">McKinney Realty</div>
-      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
-      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    <div class="footer-brand-row">
+      <div class="footer-brand">
+      <img class="footer-brand-mono" src="../../images/brand/M_white_transparent.png" alt="McKinney Multifamily Group">
+      <div class="footer-brand-name">McKinney Multifamily Group</div>
+      <div class="footer-brand-byline">Investment Real Estate Brokers</div>
+      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multifamily markets.</div>
     </div>
-    <div class="footer-offices">
-      <div class="footer-office">
-        <div class="footer-office-region">Quinte &amp; Eastern Ontario</div>
-        <div class="footer-office-brokerage">RE/MAX Quinte Ltd.</div><div class="footer-office-line">106 North Front St, Belleville, ON K8P 3B4</div>
-        <div class="footer-office-line"><a href="tel:6139699907">(613) 969-9907</a> &middot; <a href="mailto:sean@remaxquinte.com">sean@remaxquinte.com</a></div>
-      </div>
-      <div class="footer-office">
-        <div class="footer-office-region">Toronto &amp; GTA</div>
-        <div class="footer-office-brokerage">Property.ca Inc., Brokerage</div><div class="footer-office-line">36 Distillery Lane, Suite 500, Toronto, ON M5A 3C4</div>
-        <div class="footer-office-line"><a href="tel:6474671467">(647) 467-1467</a> &middot; <a href="mailto:liam@mckinneyrealty.ca">liam@mckinneyrealty.ca</a></div>
-      </div>
+      <div class="footer-brand-sep" aria-hidden="true"></div>
+      <img class="footer-remax" src="../../images/brand/remax-commercial-white.png" alt="RE/MAX Commercial">
     </div>
     <div class="footer-bottom">
-      <div class="footer-legal">Liam McKinney, Broker, Property.ca Inc., Brokerage &middot; Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
-      <div class="footer-nav"><a href="../../listings/">Listings</a><a href="/team">Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="../../tools/">Calculators</a><a href="../">Learn</a><a href="/insights">Insights</a><a href="/contact">Contact</a></div>
+      <div class="footer-nav"><a href="/listings/">Our Listings</a><a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a><a href="/tools/">Tools</a><a href="/learn/">Learn</a><a href="/insights">Insights</a><a href="/team">Our Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="/contact">Contact</a></div>
+      <div class="footer-legal-row">
+        <div class="footer-legal">Liam McKinney, Broker &middot; Sean McKinney, Broker of Record &middot; RE/MAX Quinte Ltd., Brokerage &middot; Each Office Independently Owned and Operated</div>
+        <div class="footer-copy">&copy; 2026 McKinney Multifamily Group &middot; mckinneyrealty.ca</div>
+      </div>
     </div>
   </div>
 </footer>

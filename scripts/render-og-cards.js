@@ -2,7 +2,7 @@
 /* =========================================================================
    OG card renderer — run locally (not in CI): `npm run og:render`
    Reads scripts/og-manifest.json; titles come from each page's <title>
-   verbatim (suffix " | McKinney Realty" stripped) — never composed here.
+   verbatim (suffix " | McKinney Multifamily Group" stripped) — never composed here.
    Renders images/og/{slug}.png at 2x (2400x1260) via the installed Chrome,
    downsampled to 1200x630 with sips for type crispness.
    (Brief named Puppeteer; system Chrome via CLI is the zero-dependency
@@ -32,7 +32,7 @@ function titleFor(p, entry) {
   return m[1]
     .replace(/&amp;/g, '&').replace(/&mdash;/g, '—').replace(/&ndash;/g, '–')
     .replace(/&rsquo;/g, '’').replace(/&middot;/g, '·')
-    .replace(/\s*\|\s*McKinney Realty\s*$/, '').trim();
+    .replace(/\s*\|\s*McKinney Multifamily Group\s*$/, '').trim();
 }
 
 function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
@@ -50,7 +50,7 @@ for (const [p, entry] of Object.entries(manifest)) {
     title = title.replace(re, '<em>$1</em>');
   }
   const html = template
-    .replace('{{KICKER}}', esc(entry.kicker || 'MCKINNEY REALTY'))
+    .replace('{{KICKER}}', esc(entry.kicker || 'MCKINNEY MULTIFAMILY GROUP'))
     .replace('{{TITLE}}', title)
     .replace('{{SIZE}}', '76');
   const tmp = path.join(__dirname, '_card-tmp.html');

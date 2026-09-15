@@ -1,5 +1,5 @@
 /* =========================================================================
-   McKinney Realty — Calculator Engine Unit Tests (Node)
+   McKinney Multifamily Group — Calculator Engine Unit Tests (Node)
    Run:  node tools/js/mck-calc-engine.test.js
 
    Worked-example expectations were computed independently (Python,

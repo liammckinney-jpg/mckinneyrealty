@@ -38,7 +38,7 @@ function canonicalPath(rel) {
 
 const REQUIRED = [
   /<meta property="og:type" content="[^"]+">/,
-  /<meta property="og:site_name" content="McKinney Realty">/,
+  /<meta property="og:site_name" content="McKinney Multifamily Group">/,
   /<meta property="og:title" content="[^"]+">/,
   /<meta property="og:description" content="[^"]+">/,
   /<meta property="og:url" content="https:\/\/www\.mckinneyrealty\.ca[^"]*">/,

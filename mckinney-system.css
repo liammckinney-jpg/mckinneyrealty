@@ -1,5 +1,5 @@
 /* ================================================================
-   McKinney Realty — Design System CSS v1.0
+   McKinney Multifamily Group — Design System CSS v1.0
    Shared tokens, utilities, and cross-page components.
    Page-specific sections live in each page's <style> block.
    ================================================================ */
@@ -39,6 +39,17 @@
   --s-section: clamp(5rem, 8vw, 7.5rem);
   --side: clamp(1.5rem, 4vw, 3.75rem);
   --max-w: 1560px;
+  /* Section-size system (Homepage Restructure v2 §3) */
+  --sec-a: clamp(5rem, 8.5vw, 8rem);        /* Type A section: 80 -> 128px */
+  --sec-b: clamp(3rem, 4.75vw, 4.5rem);     /* Type B band: 48 -> 72px */
+  --sec-head-gap: clamp(1.75rem, 3vw, 3rem); /* header block -> content */
+  --sec-h2: clamp(2.25rem, 3.5vw, 3.5rem);  /* one H2 size: 36 -> 56px */
+  --sec-h2-lead: clamp(2.75rem, 4.75vw, 4.25rem); /* lead register: Track Record + Beyond only */
+  /* Small-label gold: --gold-dark is 3.3:1 on white, so every 11px label,
+     kicker and text link uses this darker step (>= 4.5:1 on white, off-white
+     and cream — computed, fix spec 1.6 / D-2). Rules, borders, buttons,
+     arrows and em.gi stay on --gold / --gold-dark. */
+  --gold-text: #776A52;
 }
 
 /* ============================================================
@@ -59,13 +70,34 @@ body.page-editorial {
 html { -webkit-font-smoothing: antialiased; }
 body { font-family: var(--font-b); color: var(--text-1); background: var(--white); overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
-img { display: block; max-width: 100%; }
+img { display: block; max-width: 100%; height: auto; }   /* width/height attrs set the ratio, never the box */
+html { scroll-padding-top: 5.5rem; }
+
+/* ============================================================
+   ACCESSIBILITY — skip link, visible focus, reduced motion
+   ============================================================ */
+.skip {
+  position: absolute; left: -9999px; top: 0.5rem; z-index: 1000;
+  background: var(--navy); color: var(--white); padding: 0.75rem 1.25rem;
+  font-size: var(--b-sm); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.skip:focus { left: var(--side); }
+:where(a, button, input, select, textarea, [tabindex]):focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 3px; }
+.on-dark :where(a, button, input, select, textarea, [tabindex]):focus-visible,
+.footer :where(a):focus-visible { outline-color: var(--gold-light); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important; scroll-behavior: auto !important;
+  }
+}
 
 /* ============================================================
    UTILITIES
    ============================================================ */
 .wrap { max-width: var(--max-w); margin: 0 auto; padding-left: var(--side); padding-right: var(--side); }
-.label { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dark); }
+.label { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-text); }
+.u-mobile-only { display: none; }
 .label--light { color: var(--gold-light); }
 em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color: var(--gold-dark); }
 .on-dark em.gi { color: var(--gold-light); }
@@ -84,8 +116,14 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
 .btn--navy:hover { background: var(--navy-light); }
 .btn--outline { background: transparent; color: var(--navy); border: 1px solid var(--border-strong); }
 .btn--outline:hover { border-color: var(--navy); }
-.btn--gold { background: var(--gold-dark); color: var(--white); }
-.btn--gold:hover { background: var(--gold); }
+/* gold = the single primary action in its section; navy = secondary solid;
+   outline = tertiary. Navy-on-gold for label contrast (fix spec 0.5, D-3 option A). */
+.btn--gold { background: var(--gold); color: var(--navy); }
+.btn--gold:hover { background: var(--gold-light); }
+/* Labelled buttons flow inline so the arrow follows the last word when the
+   label wraps on narrow screens (fix spec 1.9). */
+.btn:has(.btn-label) { display: inline-block; text-align: center; line-height: 1.4; }
+.btn:has(.btn-label) svg { display: inline-block; vertical-align: -2px; margin-left: 0.625rem; }
 
 /* ============================================================
    NAV — with hamburger toggle
@@ -105,8 +143,10 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
 .nav-brand { display: flex; align-items: center; gap: 0.875rem; }
 .nav-mono { height: 36px; width: auto; }
 .nav-text { display: flex; flex-direction: column; }
-.nav-name { font-family: var(--font-d); font-size: 1.125rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy); line-height: 1; }
-.nav-sub { font-size: 0.5rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-dark); margin-top: 2px; }
+/* Wordmark: "McKinney Multifamily Group" is longer than the old name —
+   size/tracking tightened a step so the nav links keep clear space. */
+.nav-name { font-family: var(--font-d); font-size: 1rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy); line-height: 1; white-space: nowrap; }
+.nav-sub { font-size: 0.5625rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-text); margin-top: 2px; }
 .nav-links { display: flex; gap: 2.25rem; align-items: center; }
 .nav-links a { font-size: var(--b-sm); font-weight: 400; color: var(--text-2); letter-spacing: 0.03em; transition: color 0.3s; }
 .nav-links a:hover { color: var(--text-1); }
@@ -115,16 +155,49 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
 .nav-cta:hover { background: var(--navy) !important; color: var(--white) !important; }
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
 .nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
+/* Phone glyph beside the hamburger — phones only (<= 768), 44px hit area */
+.nav-phone { display: none; }
+.nav-phone svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 
-/* Nav dropdown (Calculators) */
+/* ---- feature-flag gates (mckinney-flags.js, restoration brief §5) --- */
+html:not([data-listings-public]) .flag-listings-public { display: none !important; }
+html[data-listings-public] .flag-listings-private { display: none !important; }
+html:not([data-header-band]) .nav-band { display: none !important; }
+
+/* RE/MAX brokerage identification band (spec §7.2, RECO 5.3) — kept
+   intact behind HEADER_BROKERAGE_BAND (default off; KB-10, Sept 9) so
+   restoring it is a flag flip, not a rebuild. Logotype never recoloured;
+   office name no smaller than the nav wordmark (1rem). */
+.nav-band {
+  position: absolute; top: 100%; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: center;
+  gap: 0.875rem; flex-wrap: wrap;
+  background: var(--white); border-bottom: 1px solid var(--border);
+  padding: 0.4375rem var(--side);
+}
+.nav-band img { height: 20px; width: auto; }
+.nav-band span { font-size: 1rem; color: var(--navy); letter-spacing: 0.02em; }
+
+/* Nav dropdowns (Buildings for Sale / Tools / About) — parent labels are
+   not links (restoration brief §3); hover opens on desktop, the flattened
+   hamburger menu covers tap on mobile. */
 .nav-drop { position: relative; }
-.nav-drop > a { display: inline-flex; align-items: center; gap: 0.4375rem; }
-.nav-drop > a::after {
+.nav-drop > a, .nav-drop-label { display: inline-flex; align-items: center; gap: 0.4375rem; }
+.nav-drop-label {
+  font-family: inherit; font-size: var(--b-sm); font-weight: 400; color: var(--text-2);
+  letter-spacing: 0.03em; transition: color 0.3s; cursor: pointer;
+  background: none; border: 0; padding: 0;
+}
+/* Open state: hover on desktop, or .is-open set by mckinney-nav.js (click
+   toggle, keyboard focus, Escape) so aria-expanded always matches. */
+.nav-drop:hover .nav-drop-label, .nav-drop.is-open .nav-drop-label { color: var(--text-1); }
+.nav-drop > a::after, .nav-drop-label::after {
   content: ''; width: 5px; height: 5px; margin-top: -4px;
   border-right: 1px solid currentColor; border-bottom: 1px solid currentColor;
   transform: rotate(45deg); transition: transform 0.3s;
 }
-.nav-drop:hover > a::after, .nav-drop:focus-within > a::after { transform: rotate(225deg); margin-top: 2px; }
+.nav-drop:hover > a::after, .nav-drop.is-open > a::after,
+.nav-drop:hover .nav-drop-label::after, .nav-drop.is-open .nav-drop-label::after { transform: rotate(225deg); margin-top: 2px; }
 /* invisible bridge so the pointer can cross the gap to the menu */
 .nav-drop::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 1rem; }
 .nav-drop-menu {
@@ -137,7 +210,7 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
   opacity: 0; visibility: hidden;
   transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
 }
-.nav-drop:hover .nav-drop-menu, .nav-drop:focus-within .nav-drop-menu {
+.nav-drop:hover .nav-drop-menu, .nav-drop.is-open .nav-drop-menu {
   opacity: 1; visibility: visible; transform: translate(-50%, 0);
 }
 .nav-drop-menu a {
@@ -199,8 +272,8 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
 .deal:hover::before { height: 100%; }
 .deal:hover { background: var(--cream); }
 .deal-side {
-  font-size: 0.5625rem; font-weight: 500; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--gold-dark); margin-bottom: var(--s-2);
+  font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--gold-text); margin-bottom: var(--s-2);
 }
 .deal-value {
   font-family: var(--font-d); font-size: 1.75rem; font-weight: 300;
@@ -244,44 +317,119 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
 /* ============================================================
    FOOTER
    ============================================================ */
-.footer { background: var(--navy); padding: var(--s-5) 0 var(--s-3); }
-.footer-brand {
-  text-align: center; padding-bottom: var(--s-4);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  margin-bottom: var(--s-4);
+.footer { background: var(--navy); padding: var(--s-4) 0 var(--s-3); }
+.footer .wrap { max-width: 1560px; }   /* the footer keeps the full envelope on editorial pages too */
+/* Top row: brand stack left, four-column sitemap right (Phase 2 §2.1);
+   both centre and stack below 1024. footer-bottom's top border is the
+   single rule beneath. */
+.footer-top {
+  display: grid; grid-template-columns: minmax(300px, 1fr) 2fr; gap: var(--s-6);
+  align-items: center; padding-bottom: var(--s-3);   /* sitemap sits on the brand stack's optical middle */
 }
-.footer-brand-mono { height: 40px; width: auto; opacity: 1; margin: 0 auto var(--s-2); filter: brightness(0) invert(1); }
+/* brand stack: centred on its own axis inside the left column */
+.footer-brand-row { display: flex; flex-direction: column; align-items: center; gap: var(--s-3); }
+.footer-brand { text-align: center; }
+.footer-brand-sep { width: 72px; height: 1px; background: rgba(255,255,255,0.06); }
+.footer-remax { height: 39px; width: auto; }   /* ~15% under the 46px Phase 2 size (Liam, Sept 10) */
+.footer-brand-mono { height: 44px; width: auto; opacity: 1; margin: 0 auto var(--s-2); filter: brightness(0) invert(1); }
 .footer-brand-name {
-  font-family: var(--font-d); font-size: 0.9375rem; font-weight: 500;
-  letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5);
+  font-family: var(--font-d); font-size: 0.95rem; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.85);
   margin-bottom: 0.1875rem;
 }
 .footer-brand-byline {
-  font-size: 0.5rem; font-weight: 400; letter-spacing: 0.15em;
-  text-transform: uppercase; color: var(--gold-dark); margin-bottom: var(--s-2);
+  font-size: 0.4375rem; font-weight: 400; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--gold-light); margin-bottom: var(--s-2);
 }
-.footer-brand-scope {
-  font-size: var(--b-sm); font-weight: 300; color: rgba(255,255,255,0.2);
-  line-height: 1.5;
+/* Sitemap: Buildings · Tools · Firm · Insights, links stacked */
+.footer-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3) var(--s-4); }
+.footer-col { display: flex; flex-direction: column; align-items: flex-start; }
+.footer-col-label {
+  font-size: 0.5625rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-light); margin-bottom: 0.5rem;
 }
-.footer-offices {
-  display: flex; justify-content: center; gap: var(--s-8);
-  margin-bottom: var(--s-3);
+.footer-nav a { font-size: 0.6875rem; font-weight: 400; line-height: 1.2; color: rgba(255,255,255,0.6); letter-spacing: 0.03em; transition: color 0.3s; }
+.footer-nav a:hover { color: rgba(255,255,255,0.92); }
+.footer-bottom { display: block; }
+.footer-legal-row {
+  display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-4);
+  padding-top: var(--s-3); border-top: 1px solid rgba(255,255,255,0.06);
 }
-.footer-office-region { font-size: 0.5625rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.625rem; }
-.footer-office-brokerage { font-size: var(--b-sm); font-weight: 300; color: rgba(255,255,255,0.35); line-height: 1.5; }
-.footer-office-line { font-size: var(--b-sm); font-weight: 300; color: rgba(255,255,255,0.35); line-height: 1.5; }
-.footer-office-line a { transition: color 0.3s; }
-.footer-office-line a:hover { color: var(--white); }
-.footer-bottom {
-  display: flex; justify-content: space-between; align-items: center;
-  padding-top: var(--s-2); border-top: 1px solid rgba(255,255,255,0.06);
-  flex-wrap: wrap; gap: var(--s-2);
+.footer-legal, .footer-copy { font-size: 0.6875rem; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.7; }
+.footer-legal a { color: inherit; text-decoration: underline; text-underline-offset: 2px; padding-block: 6px; }
+.footer-copy { flex: none; white-space: nowrap; }
+
+/* ============================================================
+   SECTION-SIZE SYSTEM + UNIFIED CARD (Homepage Restructure v2 §3)
+   Two paddings sitewide: Type A sections, Type B bands. One header
+   block; one card component with a compact variant.
+   ============================================================ */
+.sec-a { padding: var(--sec-a) 0; }
+.sec-b { padding: var(--sec-b) 0; }
+.sec-head { margin-bottom: var(--sec-head-gap); }
+.sec-head .label { display: block; margin-bottom: var(--s-2); }
+.sec-h2 {
+  font-family: var(--font-d); font-size: var(--sec-h2); font-weight: 300;
+  line-height: 1.15; color: var(--navy);
 }
-.footer-legal { font-size: 0.6875rem; font-weight: 300; color: rgba(255,255,255,0.15); line-height: 1.7; }
-.footer-nav { display: flex; flex-wrap: wrap; gap: 8px var(--s-3); }
-.footer-nav a { font-size: 0.6875rem; font-weight: 400; color: rgba(255,255,255,0.2); letter-spacing: 0.03em; transition: color 0.3s; }
-.footer-nav a:hover { color: rgba(255,255,255,0.5); }
+.on-dark .sec-h2 { color: var(--white); }
+.sec-h2--lead { font-size: var(--sec-h2-lead); }
+/* Band headings that must read as a small label (router, principals,
+   intelligence) keep the heading level without the display size. */
+.sec-h2--label {
+  font: 500 0.6875rem/1 var(--font-b); letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-text);
+}
+.sec-dek {
+  margin-top: var(--s-3); font-size: var(--b-lg); font-weight: 300;
+  line-height: 1.7; color: var(--text-2); max-width: 62ch;
+}
+.on-dark .sec-dek { color: rgba(255,255,255,0.72); }
+
+.card {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--white); border: 1px solid rgba(26,31,46,0.08);
+  padding: clamp(1.75rem, 2.75vw, 2.5rem);
+  transition: border-color 0.3s, background 0.3s;
+}
+.card::before {
+  content: ''; position: absolute; top: -1px; left: -1px; right: -1px; height: 2px;
+  background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+}
+.card:hover::before { transform: scaleX(1); }
+.card:hover { border-color: rgba(26,31,46,0.16); }
+.card-kicker { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-text); margin-bottom: var(--s-2); }
+.card-title { font-family: var(--font-d); font-size: var(--d-sub); font-weight: 400; color: var(--navy); line-height: 1.25; margin-bottom: var(--s-1); }
+.card-sub { font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-text); margin-bottom: var(--s-2); }
+.card-body { font-size: var(--b-sm); font-weight: 300; line-height: 1.75; color: var(--text-2); flex-grow: 1; }
+.card-links { margin-top: auto; padding-top: var(--s-3); display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+.card-link {
+  font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold-text); display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.3s, color 0.3s;
+}
+.card-link:hover { gap: 0.875rem; }
+.card-link--strong { margin-top: 0.25rem; }
+/* 24px+ touch targets for text links (fix spec 1.9) */
+.card-link, .principals-link, .footer-nav a { padding-block: 6px; }
+.card-link svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+/* Gold discipline: inside cards the link text is navy and only the arrow
+   carries gold, so gold stays concentrated in kickers and em-words. */
+.card .card-link { color: var(--navy); letter-spacing: 0.08em; }
+.card .card-link svg { color: var(--gold-dark); }
+.card .card-link:hover { color: var(--gold-dark); }
+.card-media { margin: calc(-1 * clamp(1.75rem, 2.75vw, 2.5rem)); margin-bottom: var(--s-3); }
+.card-media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+.card--compact { padding: 1.75rem 1.875rem; }
+.card--compact .card-title { font-size: 1.375rem; margin-bottom: 0.5rem; }
+/* Dark variant — one focal card in a light grid */
+.card--dark { background: var(--navy); border-color: rgba(255,255,255,0.08); }
+.card--dark:hover { border-color: rgba(255,255,255,0.18); }
+.card--dark .card-kicker { color: var(--gold-light); }
+.card--dark .card-title { color: var(--white); }
+.card--dark .card-body { color: rgba(255,255,255,0.68); }
+.card--dark .card-link { color: var(--white); }
+.card--dark .card-link svg { color: var(--gold-light); }
+.card--dark .card-link:hover { color: var(--gold-light); }
 
 /* Consent checkbox (CASL express consent — unchecked by default) */
 .mck-consent {
@@ -294,7 +442,6 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
   margin-top: 3px; flex-shrink: 0; accent-color: var(--gold-dark, #9A8B6F);
   width: 15px; height: 15px; cursor: pointer;
 }
-.mck-consent.is-invalid { color: #B0413E; }
 
 /* ============================================================
    FORM SUBMISSION — confirmation & error panels
@@ -342,10 +489,9 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
 /* ============================================================
    RESPONSIVE — shared components only
    ============================================================ */
-@media (max-width: 1024px) {
-  .footer-bottom { flex-direction: column; text-align: center; }
-}
-@media (max-width: 768px) {
+/* Nav collapses to the hamburger below 1100px — the Multifamily Group
+   wordmark plus eight links no longer fit side by side at mid widths. */
+@media (max-width: 1100px) {
   .nav-links { display: none; }
   .nav-toggle { display: block; }
   .nav-links.open {
@@ -370,26 +516,92 @@ em.gi { font-family: var(--font-d); font-style: italic; font-weight: 300; color:
     letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--gold-dark);
   }
-  .nav-drop > a::after { display: none; }
+  .nav-drop > a::after, .nav-drop-label::after { display: none; }
+  .nav-drop-label { justify-content: center; width: 100%; font-size: var(--b-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); }
   .nav-drop::after { display: none; }
+}
+
+@media (max-width: 1024px) {
+  .footer-top { grid-template-columns: 1fr; gap: var(--s-5); }
+  .footer-legal-row { flex-direction: column; gap: 0.25rem; }
+  .footer-copy { white-space: normal; }
+}
+
+@media (max-width: 768px) {
+  .u-mobile-only { display: inline; }
+  .u-desktop-only { display: none; }
+  .nav-phone {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; flex: none; margin-left: auto; color: var(--navy);
+  }
+  .nav-toggle { margin-left: 0.125rem; }
   .deal-grid { grid-template-columns: 1fr 1fr; }
   .track-metrics { grid-template-columns: 1fr 1fr; }
   .track-metric:nth-child(2) { border-right: none; }
   .dual-cta { grid-template-columns: 1fr; }
   .dual-cta-panel:first-child { border-right: none; border-bottom: 1px solid var(--border); }
-  .footer-offices { flex-direction: column; gap: var(--s-4); align-items: center; text-align: center; }
   .track-header-top { flex-direction: column; align-items: flex-start; }
 }
+
+@media (max-width: 600px) {
+  .footer-nav { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  /* phone: the full wordmark collides with the hamburger — tighten it */
+  .nav-name { font-size: 0.8125rem; letter-spacing: 0.1em; }
+  .nav-sub { font-size: 0.4375rem; }
+  .nav-mono { height: 30px; }
+  .nav-inner { gap: 0.75rem; }
+}
+
 @media (max-width: 480px) {
   /* Brand block must fit beside the toggle on narrow phones (380px pass) */
   .nav-inner { padding: 0 16px; }
   .nav-brand { min-width: 0; }
-  .nav-sub { font-size: 0.5rem; letter-spacing: 0.14em; white-space: normal; }
-  .deal-grid { grid-template-columns: 1fr; }
+  .btn { font-size: 0.75rem; padding: 0.8125rem 1.5rem; }
+  /* compact tombstones two-up on phones (Phase 2 §2.3) */
+  .deal { padding: var(--s-2); }
+  .deal-side, .deal-value, .deal-line { margin-bottom: var(--s-1); }
+  .deal-value { font-size: 1.5rem; }
+  .track.sec-a { padding: 3rem 0; }
+  .track-cta { margin-top: var(--s-4); }
   .track-metrics { grid-template-columns: 1fr; }
   .track-metric { border-right: none; border-bottom: 1px solid var(--border); }
   .track-metric:last-child { border-bottom: none; }
 }
+
+/* phones to 430: the byline goes and the wordmark may wrap, so the phone
+   glyph and hamburger never overprint it (addendum A1) */
+/* tombstones stay two-up down to 360 (Phase 2 §2.3) */
+@media (max-width: 359px) {
+  .deal-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 430px) {
+  .nav-sub { display: none; }
+  .nav-text { min-width: 0; }
+  .nav-name { white-space: normal; overflow-wrap: anywhere; line-height: 1.1; }
+}
+
+/* ---- persistent mobile action bar (MCK_FLAGS.MOBILE_BAR, fix spec 1.9) --
+   Two links, navy, hairline top; shown by mckinney-nav.js on phones once
+   the reader is 40% down the page, hidden while the modal is open, the
+   consent bar is up, or Your Next Step is in view. */
+.mck-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 900; height: 56px; overflow: hidden;
+  display: flex; background: var(--navy); border-top: 1px solid rgba(255,255,255,0.12);
+  transform: translateY(100%); transition: transform 0.3s ease;
+}
+.mck-bar.is-shown { transform: translateY(0); }
+.mck-bar a {
+  flex: 1 1 0; min-width: 0; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0 0.5rem; white-space: nowrap;
+  font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white);
+}
+@media (max-width: 360px) { .mck-bar a { font-size: 0.625rem; letter-spacing: 0.06em; } }
+.mck-bar a + a { border-left: 1px solid rgba(255,255,255,0.12); }
+.mck-bar svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+@media (min-width: 769px) { .mck-bar { display: none; } }
 
 /* ---- share affordances (mck-share) ---------------------------------- */
 /* One placement per page: end of essay, above the CTA band. Thin gold

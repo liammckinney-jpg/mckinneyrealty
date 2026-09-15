@@ -1,5 +1,5 @@
 /* =========================================================================
-   McKinney Realty — Form Submission Module
+   McKinney Multifamily Group — Form Submission Module
    Wires acquisition / disposition / general (contact) forms to the
    Google Apps Script Web App backend.
 
@@ -8,12 +8,14 @@
        formType: 'acquisition' | 'disposition' | 'general',
        keyMap: { 'first-name': 'first_name', ... }   // optional
        excludeFields: ['attachments'],                // optional
-       confirmationMessage: '...'                     // required
+       confirmationMessage: '...',                    // required
+       step: 'primary' | 'detail',                    // optional, GA4 lead_submit step
+       onSuccess: function (payload) {}               // optional, after confirmation
      });
 
    The Apps Script emails Liam on every submission (real notification path).
-   fetch uses mode:'no-cors' + Content-Type:text/plain to avoid preflight;
-   response is opaque so we treat the request as fire-and-forget.
+   Submissions post to /api/lead (Vercel function) which relays to the
+   Apps Script server-side and returns the real outcome (fix spec 0.3).
    ========================================================================= */
 
 (function() {
@@ -22,7 +24,38 @@
   // -------------------------------------------------------------------
   // CONFIG — single place to update the backend endpoint
   // -------------------------------------------------------------------
-  var WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbw7jMXR6CHQJp5VZzG3JtKJtnnGM0VKZNEF3HcKNXx8cWk6E2NjwU4ouiJmorBmTGSX/exec';
+  // Submissions go through /api/lead (Vercel function), which relays to
+  // the Apps Script web app server-side and reports the real outcome.
+  // The Apps Script URL lives only in the LEAD_WEBAPP_URL env var.
+  var LEAD_ENDPOINT = '/api/lead';
+  var LEAD_TIMEOUT_MS = 12000;
+  var FALLBACK_MSG = "We couldn't send your message. Please try again, or email us directly at liam@mckinneyrealty.ca.";
+
+  // POST JSON to the relay; resolves only when the relay confirms
+  // {ok:true}; rejects on network failure, timeout, or {ok:false}.
+  function postLead(payload) {
+    var ctrl = (typeof AbortController === 'function') ? new AbortController() : null;
+    var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, LEAD_TIMEOUT_MS) : null;
+    var opts = {
+      method: 'POST',
+      mode: 'cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    };
+    if (ctrl) opts.signal = ctrl.signal;
+    return fetch(LEAD_ENDPOINT, opts)
+      .then(function (res) {
+        if (timer) clearTimeout(timer);
+        return res.json().catch(function () { return {}; }).then(function (json) {
+          if (res.ok && json && json.ok === true) return json;
+          throw new Error((json && json.error) || ('http_' + res.status));
+        });
+      })
+      .catch(function (err) {
+        if (timer) clearTimeout(timer);
+        throw err;
+      });
+  }
 
   // -------------------------------------------------------------------
   // Data collection
@@ -177,15 +210,13 @@
         return;
       }
 
-      fetch(WEB_APP_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload)
-      })
+      postLead(payload)
         .then(function() {
-          // no-cors = opaque response; treat as success
+          // only a confirmed {ok:true} from the relay reaches here
           swapFormForConfirmation(form, options.confirmationMessage);
+          fireLeadSubmit(options.formType, options.step || 'primary');
+          // two-step intakes reveal their optional detail form here
+          if (typeof options.onSuccess === 'function') options.onSuccess(payload);
         })
         .catch(function() {
           if (submitBtn) {
@@ -193,28 +224,36 @@
             submitBtn.removeAttribute('aria-busy');
             submitBtn.innerHTML = originalHTML;
           }
-          showError(form, "We couldn't send your message. Please try again, or email us directly at liam@mckinneyrealty.ca.");
+          showError(form, FALLBACK_MSG);
         });
     });
   }
 
   // -------------------------------------------------------------------
-  // Fire-and-forget POST helper — reusable by modal-cta.js etc.
-  // Returns the fetch promise (response is opaque in no-cors mode).
+  // POST helper — reusable by modal-cta.js, listing pages, homepage.
+  // Resolves only on a confirmed submission; rejects otherwise.
   // -------------------------------------------------------------------
   function submit(payload) {
-    return fetch(WEB_APP_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(payload)
-    });
+    return postLead(payload);
+  }
+
+  // GA4 lead_submit (fix spec 0.1). form_type is normalised to the
+  // analytics vocabulary: contact | seller_modal | investor_modal |
+  // acquisition_intake | disposition_intake | newsletter.
+  var FORM_TYPE_MAP = { general: 'contact', contact: 'contact', acquisition: 'acquisition_intake',
+    disposition: 'disposition_intake', subscribe: 'newsletter', newsletter: 'newsletter' };
+  function fireLeadSubmit(formType, step) {
+    if (typeof window.gtag !== 'function') return;
+    var ft = String(formType || '');
+    var norm = FORM_TYPE_MAP[ft] || (/seller/.test(ft) ? 'seller_modal' : /investor/.test(ft) ? 'investor_modal' : ft);
+    window.gtag('event', 'lead_submit', { form_type: norm, source: location.pathname, step: step || 'primary' });
   }
 
   window.McKinneyForms = {
+    fireLeadSubmit: fireLeadSubmit,
     init: init,
     submit: submit,
     collectPayload: collectPayload,
-    WEB_APP_URL: WEB_APP_URL
+    LEAD_ENDPOINT: LEAD_ENDPOINT
   };
 })();

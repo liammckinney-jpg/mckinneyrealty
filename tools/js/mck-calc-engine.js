@@ -1,5 +1,5 @@
 /* =========================================================================
-   McKinney Realty — Calculator Engine
+   McKinney Multifamily Group — Calculator Engine
    Pure functions only: inputs → outputs. No DOM access, no globals
    mutated. Loadable in Node (unit tests) and the browser.
 

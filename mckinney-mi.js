@@ -1,5 +1,5 @@
 /* ============================================================
-   McKinney Realty — Market Intelligence block (single source)
+   McKinney Multifamily Group — Market Intelligence block (single source)
    Renders the MI data — date line, stat cards, narrative, watch
    list — into slot containers on index.html and /insights so the
    two pages cannot drift. Page-specific chrome (section header,

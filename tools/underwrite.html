@@ -4,29 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1A1F2E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
 
-<title>McKinney Realty — The Underwriter</title>
+<title>McKinney Multifamily Group — The Underwriter</title>
 <!-- Social cards — required on every indexable page. Audited at build (npm run og:check). -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="McKinney Realty">
-<meta property="og:title" content="McKinney Realty — The Underwriter">
-<meta property="og:description" content="A free multi-family underwriting tool. Enter your own assumptions and get a full annual pro forma — NOI, cap rate, DSCR, cash flow, and cash-on-cash.">
+<meta property="og:site_name" content="McKinney Multifamily Group">
+<meta property="og:title" content="McKinney Multifamily Group — The Underwriter">
+<meta property="og:description" content="A free multifamily underwriting tool. Enter your own assumptions and get a full annual pro forma — NOI, cap rate, DSCR, cash flow, and cash-on-cash.">
 <meta property="og:url" content="https://www.mckinneyrealty.ca/tools/underwrite">
 <meta property="og:image" content="https://www.mckinneyrealty.ca/images/og/tools-underwrite.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="McKinney Realty — The Underwriter">
+<meta property="og:image:alt" content="McKinney Multifamily Group — The Underwriter">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="McKinney Realty — The Underwriter">
-<meta name="twitter:description" content="A free multi-family underwriting tool. Enter your own assumptions and get a full annual pro forma — NOI, cap rate, DSCR, cash flow, and cash-on-cash.">
+<meta name="twitter:title" content="McKinney Multifamily Group — The Underwriter">
+<meta name="twitter:description" content="A free multifamily underwriting tool. Enter your own assumptions and get a full annual pro forma — NOI, cap rate, DSCR, cash flow, and cash-on-cash.">
 <meta name="twitter:image" content="https://www.mckinneyrealty.ca/images/og/tools-underwrite.png">
-<meta name="description" content="A free multi-family underwriting tool. Enter your own assumptions and get a full annual pro forma — NOI, cap rate, DSCR, cash flow, and cash-on-cash.">
+<meta name="description" content="A free multifamily underwriting tool. Enter your own assumptions and get a full annual pro forma — NOI, cap rate, DSCR, cash flow, and cash-on-cash.">
 <link rel="canonical" href="https://www.mckinneyrealty.ca/tools/underwrite">
-<script src="../mckinney-consent.js"></script>
-<script src="../mckinney-schema.js"></script>
+<script src="/mckinney-flags.js?v=2"></script>
+<script src="../mckinney-consent.js?v=2"></script>
+<script src="../mckinney-schema.js?v=2"></script>
 <!-- Google Analytics (GA4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFY0V42GLR"></script>
 <script>
@@ -36,7 +39,8 @@
   gtag('config', 'G-VFY0V42GLR');
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../mckinney-system.css">
+<link rel="stylesheet" href="../mckinney-system.css?v=4">
+<script src="/mckinney-nav.js" defer></script>
 <link rel="stylesheet" href="css/mck-tools.css">
 
 <style>
@@ -136,41 +140,57 @@ body.uw-adv fieldset.uw-a { display: block; }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <!-- NAV -->
 <nav class="nav">
+  <div class="nav-band"><img src="/images/brand/REMAX_logo_RGB_dark.svg" alt="RE/MAX" width="288" height="144"><span>RE/MAX Quinte Ltd., Brokerage</span></div>
   <div class="nav-inner">
   <a href="/" class="nav-brand">
-    <img class="nav-mono" src="../images/mr-monogram-sm.png" alt="MR">
+    <img class="nav-mono" src="../images/brand/M_navy_transparent.png" alt="" width="583" height="587">
     <div class="nav-text">
-      <span class="nav-name">McKinney Realty</span>
-      <span class="nav-sub">Multi-Family &amp; Investment Real Estate Brokers</span>
+      <span class="nav-name">McKinney Multifamily Group</span>
+      <span class="nav-sub">Investment Real Estate Brokers</span>
     </div>
   </a>
-  <button class="nav-toggle" aria-label="Menu">
+    <a class="nav-phone" href="tel:+16139699907" aria-label="Call 613-969-9907"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
-  <div class="nav-links">
-    <a href="../listings/">Listings</a>
-    <a href="/team">Our Team</a>
-    <a href="/services">Services</a>
-    <a href="/track-record">Track Record</a>
+  <div class="nav-links" id="nav-links">
     <div class="nav-drop">
-      <a href="/tools/">Calculators</a>
-      <div class="nav-drop-menu">
+      <button type="button" class="nav-drop-label" aria-expanded="false" aria-controls="nav-menu-buildings">Buildings for Sale</button>
+      <div class="nav-drop-menu" id="nav-menu-buildings">
+        <a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a>
+        <a href="/listings/">Our Listings</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button type="button" class="nav-drop-label" aria-expanded="false" aria-controls="nav-menu-tools">Tools</button>
+      <div class="nav-drop-menu" id="nav-menu-tools">
         <a href="/tools/underwrite">The Underwriter</a>
         <a href="/tools/financing-modeler">Financing Modeler</a>
         <a href="/tools/disposition-calculator">Disposition Proceeds</a>
         <a href="/tools/compounding-modeler">Compounding Modeler</a>
       </div>
     </div>
-    <a href="../learn/">Learn</a><a href="/insights">Insights</a>
+    <a href="/learn/">Learn</a>
+    <a href="/insights">Insights</a>
+    <div class="nav-drop">
+      <button type="button" class="nav-drop-label" aria-expanded="false" aria-controls="nav-menu-about">About</button>
+      <div class="nav-drop-menu" id="nav-menu-about">
+        <a href="/team">Our Team</a>
+        <a href="/services">Services</a>
+        <a href="/disposition-intake">Sell Your Building</a>
+        <a href="/track-record">Track Record</a>
+      </div>
+    </div>
     <a class="nav-cta" href="/contact">Contact</a>
   </div>
   </div>
 </nav>
 
-<main class="tool-main">
+<main class="tool-main" id="main">
 
 <!-- HERO -->
 <section class="tool-hero">
@@ -447,7 +467,7 @@ body.uw-adv fieldset.uw-a { display: block; }
             <div class="mck-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
             <button type="submit" class="btn btn--navy" id="uw-email-btn">Send <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
           </div>
-          <label class="uw-consent"><input type="checkbox" id="uw-email-consent"><span>Also email me McKinney Realty&rsquo;s quarterly market updates. Unsubscribe anytime.</span></label>
+          <label class="uw-consent"><input type="checkbox" id="uw-email-consent"><span>Also email me McKinney Multifamily Group&rsquo;s quarterly market updates. Unsubscribe anytime.</span></label>
         </form>
       </div>
 
@@ -472,8 +492,8 @@ body.uw-adv fieldset.uw-a { display: block; }
     <div class="uw-rail">
       <div class="uw-results" id="uw-results">
         <div class="mck-print-header">
-          <img src="../images/mr-monogram-sm.png" alt="MR">
-          <span class="mck-print-header-name">McKinney Realty — The Underwriter</span>
+          <img src="../images/brand/M_navy_transparent.png" alt="M">
+          <span class="mck-print-header-name">McKinney Multifamily Group — The Underwriter</span>
           <span class="mck-print-header-date" id="uw-print-date"></span>
         </div>
 
@@ -517,7 +537,7 @@ body.uw-adv fieldset.uw-a { display: block; }
 
         <div class="mck-print-footer">
           This tool performs arithmetic on figures you enter. It is not investment, lending, tax, or legal advice, and no output is a projection or promise of performance.<br>
-          Liam McKinney, Broker, Property.ca Inc., Brokerage &middot; Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; mckinneyrealty.ca
+          Liam McKinney, Broker &middot; Managing Partner &middot; Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage &middot; mckinneyrealty.ca
         </div>
       </div>
     </div>
@@ -537,27 +557,28 @@ body.uw-adv fieldset.uw-a { display: block; }
 <!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
-    <div class="footer-brand">
-      <img class="footer-brand-mono" src="../images/mr-monogram-lg.png" alt="McKinney Realty">
-      <div class="footer-brand-name">McKinney Realty</div>
-      <div class="footer-brand-byline">Multi-Family &amp; Investment Real Estate Brokers</div>
-      <div class="footer-brand-scope">Serving property owners and investors across Ontario's multi-family markets.</div>
+    <div class="footer-top">
+<div class="footer-brand-row">
+      <div class="footer-brand">
+      <img class="footer-brand-mono" src="../images/brand/M_white_transparent.png" alt="" width="583" height="587" loading="lazy" decoding="async">
+      <div class="footer-brand-name">McKinney Multifamily Group</div>
+      <div class="footer-brand-byline">Investment Real Estate Brokers</div>
     </div>
-    <div class="footer-offices">
-      <div class="footer-office">
-        <div class="footer-office-region">Quinte &amp; Eastern Ontario</div>
-        <div class="footer-office-brokerage">RE/MAX Quinte Ltd.</div><div class="footer-office-line">106 North Front St, Belleville, ON K8P 3B4</div>
-        <div class="footer-office-line"><a href="tel:6139699907">(613) 969-9907</a> &middot; <a href="mailto:sean@remaxquinte.com">sean@remaxquinte.com</a></div>
-      </div>
-      <div class="footer-office">
-        <div class="footer-office-region">Toronto &amp; GTA</div>
-        <div class="footer-office-brokerage">Property.ca Inc., Brokerage</div><div class="footer-office-line">36 Distillery Lane, Suite 500, Toronto, ON M5A 3C4</div>
-        <div class="footer-office-line"><a href="tel:6474671467">(647) 467-1467</a> &middot; <a href="mailto:liam@mckinneyrealty.ca">liam@mckinneyrealty.ca</a></div>
+      <div class="footer-brand-sep" aria-hidden="true"></div>
+      <img class="footer-remax" src="../images/brand/remax-commercial-white.png" alt="RE/MAX Commercial" width="640" height="228" loading="lazy" decoding="async">
+    </div>
+      <div class="footer-nav">
+        <div class="footer-col"><div class="footer-col-label">Buildings</div><a href="/listings/">Our Listings</a><a href="/apartment-buildings-for-sale/" class="flag-listings-public">All Ontario Listings</a></div>
+        <div class="footer-col"><div class="footer-col-label">Tools</div><a href="/tools/underwrite">The Underwriter</a><a href="/tools/financing-modeler">Financing Modeler</a><a href="/tools/disposition-calculator">Disposition Proceeds</a><a href="/tools/compounding-modeler">Compounding Modeler</a></div>
+        <div class="footer-col"><div class="footer-col-label">Firm</div><a href="/team">Our Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a></div>
+        <div class="footer-col"><div class="footer-col-label">Insights</div><a href="/insights">Insights</a><a href="/learn/">Learn</a></div>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-legal">Liam McKinney, Broker, Property.ca Inc., Brokerage &middot; Sean McKinney, Broker of Record, RE/MAX Quinte Ltd., Brokerage<br>&copy; 2026 McKinney Realty &middot; mckinneyrealty.ca</div>
-      <div class="footer-nav"><a href="../listings/">Listings</a><a href="/team">Team</a><a href="/services">Services</a><a href="/track-record">Track Record</a><a href="/tools/">Calculators</a><a href="../learn/">Learn</a><a href="/insights">Insights</a><a href="/contact">Contact</a></div>
+      <div class="footer-legal-row">
+        <div class="footer-legal">Liam McKinney, Broker &middot; Sean McKinney, Broker of Record &middot; RE/MAX Quinte Ltd., Brokerage &middot; Each Office Independently Owned and Operated</div>
+        <div class="footer-copy">&copy; 2026 McKinney Multifamily Group &middot; mckinneyrealty.ca</div>
+      </div>
     </div>
   </div>
 </footer>
@@ -829,6 +850,9 @@ body.uw-adv fieldset.uw-a { display: block; }
   // Listing pre-fill schema (public, documented) → internal fields.
   var PREFILL = { price:'p', units:'u', tax:'tx', rentmo:'rm', parkmo:'pk',
     laundrymo:'la', othermo:'om', ins:'in_' };
+  // Reported-figures keys from the listings front end, handled after the
+  // main loop: taxes (alias of tax), gross / opex / noi (annual figures as
+  // reported by the listing brokerage), mls (tracking only, appended to src).
 
   function markPrefilled(id) {
     var f = $(id).closest('.tool-field, .uw-util');
@@ -839,9 +863,11 @@ body.uw-adv fieldset.uw-a { display: block; }
     var q = new URLSearchParams(location.search);
     if (![...q.keys()].length) return;
     var prefilled = false, advancedTouched = false;
+    var lp = {};   // listing reported-figures keys, applied after the loop
 
     q.forEach(function (v, k) {
       if (k === 'src') { src = v; return; }
+      if (k === 'taxes' || k === 'gross' || k === 'opex' || k === 'noi' || k === 'mls') { lp[k] = v; return; }
       if (k === 'mode' && v === 'adv') { advancedTouched = true; return; }
       if (k === 'oxm') { setOxMode(v === 'pct' ? 'pct' : 'amt'); return; }
       if (k === 'pmm') { setPmMode(v === 'amt' ? 'amt' : 'pct'); return; }
@@ -864,6 +890,27 @@ body.uw-adv fieldset.uw-a { display: block; }
       if (fk) { $(FIELDS[fk]).value = v; markPrefilled(FIELDS[fk]); prefilled = true; return; }
       if (FIELDS[k]) { $(FIELDS[k]).value = v; return; }
     });
+
+    /* Reported-figures prefill (listings front end). The listing brokerage
+       reports annual gross / opex / noi (any subset) plus taxes. Complete
+       the identity gross = noi + opex from whichever two are present, then
+       allocate: rent field gets gross/12, tax field gets taxes, and the
+       opex lump gets opex minus taxes (the field is excl.-property-tax).
+       Computed NOI then reproduces the reported NOI exactly; every value
+       sits in a normal editable field behind the prefill banner. */
+    if (lp.mls) { src = (src ? src + ':' : '') + lp.mls; }
+    (function () {
+      var tax = parseFloat(lp.taxes), g = parseFloat(lp.gross),
+          ox = parseFloat(lp.opex), n = parseFloat(lp.noi);
+      if (!isNaN(tax)) { $('uw-tx').value = Math.round(tax); markPrefilled('uw-tx'); prefilled = true; }
+      if (isNaN(g) && !isNaN(n)) { g = n + (!isNaN(ox) ? ox : (isNaN(tax) ? 0 : tax)); }
+      if (isNaN(ox) && !isNaN(n) && !isNaN(g)) { ox = g - n; }
+      if (!isNaN(g)) { $('uw-rm').value = Math.round(g / 12); markPrefilled('uw-rm'); prefilled = true; }
+      if (!isNaN(ox)) {
+        $('uw-ox').value = Math.max(Math.round(ox - (isNaN(tax) ? 0 : tax)), 0);
+        markPrefilled('uw-ox'); prefilled = true;
+      }
+    })();
 
     $('uw-om2').value = $('uw-om').value;
     if (advancedTouched) setMode('adv');
