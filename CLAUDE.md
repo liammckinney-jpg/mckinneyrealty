@@ -1,15 +1,18 @@
-# CLAUDE.md — McKinney Realty (mckinneyrealty.ca)
+# CLAUDE.md — McKinney Multifamily Group (mckinneyrealty.ca)
 
-Standing context for every session in this repo. The strategic source of truth is the Notion KB (KB-01–KB-15), governed from the Claude "McKinney Realty" project — not this file and not this repo. When this file and a newer instruction from Liam conflict, Liam wins; flag the conflict.
+Standing context for every session in this repo. The strategic source of truth is the Notion KB (KB-01–KB-15), governed from the Claude project (still named "McKinney Realty", its pre-transfer name) — not this file and not this repo. When this file and a newer instruction from Liam conflict, Liam wins; flag the conflict.
 
 ## Identity & locked facts (never vary, never "improve")
-- Brand: **McKinney Realty** — "Multi-Family & Investment Real Estate Brokers." A co-listing team brand, not a legal entity.
-- Liam McKinney, Broker — **"Property.ca Inc., Brokerage"** (NEVER "Property.ca Realty Inc."). Sean McKinney, Broker of Record — RE/MAX Quinte Ltd., Brokerage (**"75+ agents"** if stated).
+- Brand: **McKinney Multifamily Group**, byline "Investment Real Estate Brokers". A named team inside RE/MAX Quinte Ltd., Brokerage; not a legal entity. Domain and email stay mckinneyrealty.ca. "McKinney Realty" is retired as a displayed name (RE/MAX team-name rule 4) as of the Sept 15, 2026 registration transfer.
+- Liam McKinney, Broker, and Sean McKinney, Broker of Record — both **RE/MAX Quinte Ltd., Brokerage** ("75+ agents" if stated). Liam first, Sean second, wherever both appear. Property.ca Inc., Brokerage is historical and never appears on the site.
+- Footer compliance line, verbatim on every page (stored with `&middot;` separators in HTML): "Liam McKinney, Broker · Sean McKinney, Broker of Record · RE/MAX Quinte Ltd., Brokerage · Each Office Independently Owned and Operated". No office block in the footer (Liam, Sept 15); the office address is on /contact and in the schema. No Toronto address anywhere until a real Toronto office exists.
 - Sean's email on materials: **sean@remaxquinte.com** (the @mckinneyrealty.ca alias is dead).
-- Headline stats: **$250M+** combined career volume (revised from $200M+ on Liam's direction, Sept 9 2026 — the KB-10 April 21 threshold reached; the "+" is part of the figure); **$100M+** multi-family/land/commercial. No other volume figures.
+- Spelling: **multifamily**, closed (KB-16 R19). URL slugs, route paths, payload fields (form_type, persona, campaign, consent_source), data-* values, file names and code identifiers keep their existing spelling.
+- Headline stats: **$250M+** combined career volume — never captioned as multifamily/commercial, never repeated as a second display figure on one page; **$100M+** multifamily/land/commercial — never on the homepage. **250+ Career transactions** appears only on the Team page (Liam's card) and the Track Record strip, labelled "Career transactions" — never on the homepage. The homepage hero is two figures: $250M+ Transaction volume · 50+ Combined years. No generations stat appears anywhere; the three-generation history is told in prose only. No other volume figures.
 - Coverage: **province-wide Ontario**. Never a count of markets.
 - Three-generation history may be stated as historical fact. **The grandfather's name and the founding year are deliberately omitted (open TBD)** — never invent, infer, or "complete" them. Naming Sean is fine and does not resolve this TBD.
-
+- Brand assets come from ~/Desktop/MCKINNEY REALTY CLAUDE CODE/BRAND/MMG-Logo-System/ (read its README first), never from this repo's images/brand/. The M's asymmetric top serif is intentional. Pure white on dark grounds. RE/MAX's cream (#F1ECE2) and cream logo files never enter this repo. The site's own `--cream: #F5F3EF` section background is a different colour and is correct.
+- Launch flags (mckinney-flags.js) on main: LISTINGS_PUBLIC false, MOBILE_BAR false, HEADER_BROKERAGE_BAND false (logged RE/MAX p. 107 deviation).
 ## Hard content rules (grep-enforced)
 - Forbidden in public copy: exclamation points, "astronomical", "fortune", "guarantee", "projected", "recommended" (as a value label). (MLI/CMHC program-content prohibition removed per Liam, Aug 20 2026 — the Financing Modeler's MLI Select content is sanctioned; individual specs may still impose page-scoped gates.)
 - **Projected-Figures Rule (KB-02, rev. Aug 20 2026):** outcome figures NEVER appear in paid creative, social tiles, or ad copy, and never in promissory framing. On-site hypothetical illustrations are allowed only when labeled illustrative, all assumptions disclosed adjacent, editable where interactive (conservative presets; appreciation defaults 0%), standard disclaimer, never framed as typical/likely/expected.
@@ -29,7 +32,7 @@ Standing context for every session in this repo. The strategic source of truth i
 - Widgets/tools: import the shared engines (`MCK_COMPOUND.DEFAULTS`, the Underwriter engine) — never fork math. Canadian semi-annual compounding for mortgage payments. Images via `images/` paths, never base64. No stock photography, no AI-generated property imagery, ever.
 
 ## Resolved — do not reopen or re-list as open items
-- Entity name: the site's "Property.ca Inc., Brokerage" is CORRECT; the old PDFs carrying "Property.ca Realty Inc." are a known error awaiting package regeneration with Sean's MLS printouts.
+- Entity name: Property.ca Inc., Brokerage is historical as of Sept 15, 2026. The Elgin investor-package PDFs still carry the old "Property.ca Realty Inc." error and regenerate in a separate pass.
 - Hub lesson-4 "CMHC" mention: stays (topic reference, allowed).
 - /learn model: open library; email is pacing, not access. The First Building is not deprecated by The Mechanics.
 - Homepage tools-section placement and de-gated copy: final as shipped.
@@ -40,9 +43,10 @@ Standing context for every session in this repo. The strategic source of truth i
 - Elgin MLS reprice → regenerate the 6-page package (fixes the PDF entity error).
 - Full-site copy audit (spec exists: three phases, audit report first, zero edits in phase 1).
 - IG tile 9 team photo (Shoot References / USE folders).
+- Email layer (emails/, Apps Script shells and lead emails, Brevo push) still carries the old name and Property.ca — separate pass, before any Brevo automation is switched on.
 
 ## Listings module (/apartment-buildings-for-sale)
-- Data provider is selected by LISTINGS_PROVIDER=fixture|proptx. Production builds must fail if set to fixture.
+- Data provider is selected by LISTINGS_PROVIDER=fixture|proptx. The provider guard throws on a production build with fixture, so scripts/build.js builds the IDX only for VERCEL_ENV=preview|development (or proptx) and otherwise strips the route, fixtures/ and images/listings-fixtures/ from the output. Never run a bare npm run build locally; use VERCEL_ENV=preview.
 - Public routes show StandardStatus=Active only. Sold, expired, withdrawn, suspended and pending listings never render on a public route. A build-time test enforces this.
 - "Listed by {listOfficeName}" appears on every card and detail page, never truncated or de-emphasized.
 - Derived metrics are limited to pricePerUnit and capRateReported (reported NOI / list price). Never compute NOI, stabilized or projected figures on these routes; projection lives only in the Underwriter with editable, disclosed assumptions.
