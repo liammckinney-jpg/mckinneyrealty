@@ -4,3 +4,4 @@
 guides-print/
 # local dev config
 .claude/
+.env*
