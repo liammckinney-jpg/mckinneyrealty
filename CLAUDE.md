@@ -1,6 +1,6 @@
 # CLAUDE.md — McKinney Multifamily Group (mckinneyrealty.ca)
 
-Standing context for every session in this repo. The strategic source of truth is the Notion KB (KB-01–KB-15), governed from the Claude project (still named "McKinney Realty", its pre-transfer name) — not this file and not this repo. When this file and a newer instruction from Liam conflict, Liam wins; flag the conflict.
+Standing context for every session in this repo. The strategic source of truth is the **Notion KB** (https://app.notion.com/p/35949c723d058187994af3f22fc4f78a) — not this file and not this repo. **The Notion MCP connector is attached: fetch KB pages live rather than trusting any local copy.** Local KB mirrors are never authoritative; the one in the workspace drifted until it asserted a retired brokerage registration and is now archived. The KB is governed from the Claude project (still named "McKinney Realty", its pre-transfer name). When a decision is made, update the Notion page **and** add a KB-10 entry. When this file and a newer instruction from Liam conflict, Liam wins; flag the conflict.
 
 ## Identity & locked facts (never vary, never "improve")
 - Brand: **McKinney Multifamily Group**, byline "Investment Real Estate Brokers". A named team inside RE/MAX Quinte Ltd., Brokerage; not a legal entity. Domain and email stay mckinneyrealty.ca. "McKinney Realty" is retired as a displayed name (RE/MAX team-name rule 4) as of the Sept 15, 2026 registration transfer.
