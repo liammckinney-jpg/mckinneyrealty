@@ -28,7 +28,11 @@
   // the Apps Script web app server-side and reports the real outcome.
   // The Apps Script URL lives only in the LEAD_WEBAPP_URL env var.
   var LEAD_ENDPOINT = '/api/lead';
-  var LEAD_TIMEOUT_MS = 12000;
+  // Must sit ABOVE /api/lead’s own 30s abort, or the browser gives up first
+  // and reports failure for a submission the relay is still completing. The
+  // calculator path renders a PDF and mails it before Apps Script responds
+  // (see api/lead.js), which routinely runs past 12s.
+  var LEAD_TIMEOUT_MS = 35000;
   var FALLBACK_MSG = "We couldn't send your message. Please try again, or email us directly at liam@mckinneyrealty.ca.";
 
   // POST JSON to the relay; resolves only when the relay confirms
