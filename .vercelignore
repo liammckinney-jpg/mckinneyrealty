@@ -5,5 +5,7 @@ mockups/
 copy-audit-report.md
 audit/
 emails/
+# gated guide masters + rendered PDFs (delivered from Drive, never from the site)
+guides-print/
 # unoptimised image sources (fix spec 1.10)
 images/src/
