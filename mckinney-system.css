@@ -317,21 +317,23 @@ html:not([data-header-band]) .nav-band { display: none !important; }
 /* ============================================================
    FOOTER
    ============================================================ */
-.footer { background: var(--navy); padding: var(--s-4) 0 var(--s-3); }
+.footer { background: var(--navy); padding: var(--s-5) 0 var(--s-4); }
 .footer .wrap { max-width: 1560px; }   /* the footer keeps the full envelope on editorial pages too */
 /* Top row: brand stack left, four-column sitemap right (Phase 2 §2.1);
    both centre and stack below 1024. footer-bottom's top border is the
    single rule beneath. */
 .footer-top {
   display: grid; grid-template-columns: minmax(300px, 1fr) 2fr; gap: var(--s-6);
-  align-items: center; padding-bottom: var(--s-3);   /* sitemap sits on the brand stack's optical middle */
+  /* Top-aligned: the M's top edge meets the sitemap category labels (Liam,
+     Sept 15). Was centred, which floated the M 12px above them. */
+  align-items: start; padding-bottom: var(--s-4);
 }
 /* brand stack: centred on its own axis inside the left column */
 .footer-brand-row { display: flex; flex-direction: column; align-items: center; gap: var(--s-3); }
 .footer-brand { text-align: center; }
 .footer-brand-sep { width: 72px; height: 1px; background: rgba(255,255,255,0.06); }
 .footer-remax { height: 28px; width: auto; }   /* desktop: ~28% under the Sept 10 size (Liam, Sept 15). Phones step back up below. */
-.footer-brand-mono { height: 31px; width: auto; opacity: 1; margin: 0 auto var(--s-2); filter: brightness(0) invert(1); }
+.footer-brand-mono { height: 26px; width: auto; opacity: 1; margin: 0 auto var(--s-2); filter: brightness(0) invert(1); }
 .footer-brand-name {
   font-family: var(--font-d); font-size: 0.95rem; font-weight: 500;
   letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.85);
@@ -339,7 +341,10 @@ html:not([data-header-band]) .nav-band { display: none !important; }
 }
 .footer-brand-byline {
   font-size: 0.4375rem; font-weight: 400; letter-spacing: 0.15em;
-  text-transform: uppercase; color: var(--gold-light); margin-bottom: var(--s-2);
+  /* No margin-bottom: it sat inside .footer-brand and pushed the separator
+     16px further from the byline than from the RE/MAX mark below it. The
+     flex gap on .footer-brand-row now sets both sides equally. */
+  text-transform: uppercase; color: var(--gold-light);
 }
 /* Sitemap: Buildings · Tools · Firm · Insights, links stacked */
 .footer-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3) var(--s-4); }
