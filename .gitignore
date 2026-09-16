@@ -1,7 +1,12 @@
 .DS_Store
 .vercel
-# gated guide masters + PDFs — must never deploy to the public site
-guides-print/
+# Guide masters are TRACKED on purpose: guides-print/ being wholly ignored is how the
+# Consolidation Math print master was lost (rebuilt Sept 16, 2026 from its PDF).
+# Rendered output and source images stay out of git; the deploy exclusion is in
+# .vercelignore, which is what actually keeps these off the public site.
+guides-print/*.pdf
+guides-print/*.png
+guides-print/images/*.png
 # local dev config
 .claude/
 .env*

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Steward's Guide — McKinney Multifamily Group</title>
+<!--
+  ============================================================
+  McKINNEY REALTY — THE STEWARD'S GUIDE (print master)
+  Generational Wealth series, Volume II
+  ============================================================
+  RENDER: headless Chrome print-to-PDF, Letter, backgrounds ON.
+  Fonts fully loaded before print. Mirrors builders-guide-master.html
+  (same stylesheet block — keep the two files' CSS in sync).
+
+  DATA REFRESH MAP — time-sensitive values in <span class="dv">:
+    dv-natl-vac   National PBR vacancy, current vs prior (CMHC) — Ch.2
+    dv-inst       Institutional deployment figure (JLL) — Ch.1
+    dv-asat       The single as-at date line (end of Ch.2)
+  TIME-ANCHORED PROSE (no span; revise at edition refresh):
+    Ch.1 "The past two years delivered record purpose-built rental
+      construction ... projected to decline each year through 2028"
+    Ch.2 value column: same forward-starts framing
+    Ch.6 "transaction activity has returned decisively ... opening
+      2026 sharply above the prior year"
+  This volume is deliberately lighter on hard figures than Vol. I;
+  the ledger and framework chapters are evergreen by design.
+  ============================================================
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FFFFFF; --offwhite:#FAFAF8; --cream:#F5F3EF; --stone-50:#E8E4DD;
+  --gold:#B8A88A; --gold-light:#C9BBAA; --gold-dark:#9A8B6F;
+  --navy:#1A1F2E; --navy-light:#2A3044;
+  --text-1:#1A1A1A; --text-2:#6B6B6B; --text-3:#999999;
+  --border:rgba(0,0,0,0.07); --border-strong:rgba(0,0,0,0.12);
+  --font-d:'Cormorant Garamond',Georgia,serif;
+  --font-b:'DM Sans',-apple-system,sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-font-smoothing:antialiased;}
+body{font-family:var(--font-b);font-weight:300;color:var(--text-1);background:var(--white);}
+@page{size:letter;margin:0;}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+.label{font-family:var(--font-b);font-size:0.6875rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dark);}
+.label--light{color:var(--gold-light);}
+em.gi{font-family:var(--font-d);font-style:italic;font-weight:300;color:var(--gold-dark);}
+.on-dark em.gi{color:var(--gold-light);}
+
+.cover{
+  position:relative;background:var(--navy);color:var(--white);
+  height:11in;display:flex;flex-direction:column;justify-content:space-between;
+  padding:1.1in 1in 0.85in;overflow:hidden;page-break-after:always;
+}
+.cover-mono{position:absolute;right:-1.4in;bottom:-1.2in;width:7.5in;opacity:0.05;pointer-events:none;}
+.cover-brand{display:flex;flex-direction:column;gap:6px;}
+.cover-name{font-family:var(--font-d);font-weight:500;font-size:1.25rem;letter-spacing:0.22em;text-transform:uppercase;}
+.cover-byline{font-size:0.625rem;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);}
+.cover-mid{margin-top:auto;margin-bottom:auto;padding:1.2in 0;}
+.cover-series{font-size:0.6875rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.4rem;}
+.cover-title{font-family:var(--font-d);font-weight:300;font-size:4.4rem;line-height:1.04;letter-spacing:0.01em;}
+.cover-title em{font-style:italic;color:var(--gold-light);}
+.cover-sub{margin-top:1.4rem;font-size:1rem;font-weight:300;color:rgba(255,255,255,0.68);max-width:5.4in;line-height:1.65;}
+.cover-rule{width:2.25rem;height:1px;background:var(--gold);margin:1.6rem 0 0;}
+.cover-foot{font-size:0.5625rem;font-weight:400;letter-spacing:0.06em;color:rgba(255,255,255,0.38);line-height:1.8;max-width:6.4in;}
+
+.contents{height:11in;padding:1.1in 1in;page-break-after:always;display:flex;flex-direction:column;}
+.contents .label{margin-bottom:2.2rem;}
+.toc-title{font-family:var(--font-d);font-weight:300;font-size:2.4rem;color:var(--navy);margin-bottom:2.6rem;}
+.toc{list-style:none;max-width:5.8in;}
+.toc li{display:flex;align-items:baseline;gap:1.1rem;padding:0.95rem 0;border-bottom:1px solid var(--border);}
+.toc-num{font-family:var(--font-d);font-weight:300;font-size:1.35rem;color:var(--gold-dark);min-width:1.6rem;}
+.toc-name{font-family:var(--font-d);font-weight:300;font-size:1.35rem;color:var(--navy);}
+.toc-desc{margin-left:auto;font-size:0.6875rem;color:var(--text-3);letter-spacing:0.04em;text-align:right;max-width:2.5in;}
+.contents-foot{margin-top:auto;font-size:0.5625rem;color:var(--text-3);letter-spacing:0.05em;line-height:1.8;max-width:6.2in;}
+
+.chapter{page-break-before:always;padding:0 1in 0.9in;}
+.ch-open{position:relative;padding-top:1.15in;margin-bottom:2.4rem;}
+.ch-big{position:absolute;top:0.45in;right:-0.15in;font-family:var(--font-d);font-weight:300;font-size:8.5rem;line-height:1;color:var(--stone-50);z-index:0;}
+.ch-kicker{position:relative;z-index:1;margin-bottom:1.1rem;}
+.ch-title{position:relative;z-index:1;font-family:var(--font-d);font-weight:300;font-size:2.9rem;line-height:1.1;color:var(--navy);max-width:6in;}
+.ch-rule{width:2.25rem;height:1px;background:var(--gold);margin-top:1.4rem;}
+
+h3{font-family:var(--font-d);font-weight:500;font-size:1.3rem;color:var(--navy);margin:2.1rem 0 0.85rem;page-break-after:avoid;}
+p{font-size:0.9375rem;line-height:1.78;color:var(--text-1);margin-bottom:0.95rem;max-width:6.3in;}
+p strong{font-weight:500;color:var(--navy);}
+.lede{font-size:1.0625rem;color:var(--text-2);}
+
+/* stack panel (Ch.4) — mirrors Vol. I's illustration panel */
+.illus{background:var(--cream);border-left:2px solid var(--gold);padding:1.5rem 1.7rem 1.35rem;margin:1.6rem 0;max-width:6.3in;page-break-inside:avoid;}
+.illus .label{display:block;margin-bottom:0.9rem;}
+.illus-rows{display:grid;grid-template-columns:auto 1fr;gap:0.55rem 1.5rem;margin:0.9rem 0;}
+.illus-k{font-family:var(--font-d);font-weight:500;font-size:1.05rem;color:var(--navy);white-space:nowrap;}
+.illus-v{font-size:0.8125rem;color:var(--text-2);align-self:center;}
+.illus-total{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;border-top:1px solid var(--border-strong);margin-top:0.7rem;padding-top:0.85rem;}
+.illus-total .illus-k{font-size:1.25rem;color:var(--gold-dark);}
+.illus-total .illus-v{font-weight:400;color:var(--navy);}
+.illus-note{font-size:0.6875rem;color:var(--text-3);line-height:1.6;margin-top:0.9rem;margin-bottom:0;}
+
+.asat{font-size:0.625rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);max-width:6.3in;margin-top:1.6rem;}
+
+.calc{position:relative;background:var(--navy);color:var(--white);padding:1.7rem 1.9rem 1.6rem;margin:1.9rem 0;max-width:6.3in;overflow:hidden;page-break-inside:avoid;}
+.calc-mono{position:absolute;right:-0.7in;bottom:-0.7in;width:3.4in;opacity:0.05;}
+.calc-rule{width:2rem;height:1px;background:var(--gold);margin:0 0 1rem;}
+.calc .label--light{display:block;margin-bottom:0.85rem;}
+.calc-name{font-family:var(--font-d);font-weight:300;font-size:1.75rem;line-height:1.15;margin-bottom:0.8rem;}
+.calc p{color:rgba(255,255,255,0.75);font-size:0.875rem;max-width:5.4in;}
+.calc-url{display:inline-block;margin-top:0.5rem;font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);border-bottom:1px solid rgba(201,187,170,0.4);padding-bottom:2px;}
+.calc-note{font-size:0.625rem;color:rgba(255,255,255,0.42);margin-top:1rem;margin-bottom:0;line-height:1.6;}
+
+.close-cta{background:var(--cream);padding:1.5rem 1.7rem;margin:1.8rem 0;max-width:6.3in;page-break-inside:avoid;}
+.close-cta p{margin-bottom:0.4rem;}
+.compliance{position:relative;background:var(--navy);color:var(--white);height:11in;display:flex;flex-direction:column;justify-content:space-between;padding:1.1in 1in 0.85in;overflow:hidden;}
+.comp-mid{margin-top:auto;margin-bottom:auto;padding:1.2in 0;}
+.comp-vol{font-family:var(--font-d);font-weight:300;font-size:2.1rem;line-height:1.15;margin-top:1.1rem;}
+.comp-url{display:inline-block;margin-top:1.5rem;font-size:0.6875rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-light);}
+.comp-brand{margin-bottom:2rem;}
+.comp-name{font-family:var(--font-d);font-weight:500;font-size:1.25rem;letter-spacing:0.22em;text-transform:uppercase;}
+.comp-byline{font-size:0.625rem;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-top:6px;}
+.comp-text{font-size:0.625rem;color:rgba(255,255,255,0.42);line-height:1.85;max-width:6.4in;}
+
+/* ---------- print pagination framework (added Aug 13 2026) ----------
+   The document is pre-paginated at render time into fixed 11in .pg
+   containers by the script at the end of the document. This preserves
+   the full-bleed cover (page margin stays 0) while giving chapter
+   continuation pages real margins - flowed content with zero page
+   margin would otherwise start at the paper edge. */
+body{width:8.5in;}
+.pg{position:relative;width:8.5in;height:11in;overflow:hidden;padding:1in 1in 0.9in;page-break-after:always;break-after:page;}
+.pg--bleed{padding:0;}
+.pg--chfirst{padding-top:0;}
+.pg:last-child{page-break-after:auto;break-after:auto;}
+.pgc{height:100%;overflow:visible;}
+.pg > .cover,.pg > .contents{page-break-after:auto;break-after:auto;}
+.pg > .compliance{page-break-before:auto;break-before:auto;height:11in;}
+.folio{position:absolute;left:1in;right:1in;bottom:0.42in;display:flex;justify-content:space-between;align-items:baseline;}
+.folio-name{font-family:var(--font-b);font-size:0.5625rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-3);}
+.folio-num{font-family:var(--font-d);font-weight:500;font-size:0.8125rem;color:var(--gold-dark);}
+p,li{text-wrap:pretty;}
+.ch-title,.cover-title,.toc-title{text-wrap:balance;}
+.toc-page{font-family:var(--font-d);font-weight:300;font-size:1.05rem;color:var(--text-3);min-width:1.3rem;text-align:right;}
+</style>
+</head>
+<body>
+
+<!-- ============================ COVER ============================ -->
+<section class="cover on-dark">
+  <img class="cover-mono" src="images/brand/M_white_transparent.png" alt="">
+  <div class="cover-brand">
+    <div class="cover-name">McKinney Multifamily Group</div>
+    <div class="cover-byline">Investment Real Estate Brokers</div>
+  </div>
+  <div class="cover-mid">
+    <div class="cover-series">Generational Wealth &middot; Volume II</div>
+    <h1 class="cover-title">The Steward’s<br><em>Guide</em></h1>
+    <p class="cover-sub">Holding, passing on, or selling an Ontario multifamily asset — the ledger, the framework, the tax position, and the transfer.</p>
+    <div class="cover-rule"></div>
+  </div>
+  <div class="cover-foot">Liam McKinney, Broker &middot; Sean McKinney, Broker of Record &middot; RE/MAX Quinte Ltd., Brokerage &middot; Each Office Independently Owned and Operated. Provided for general information purposes; not financial, legal, tax, or investment advice.</div>
+</section>
+
+<!-- ============================ CONTENTS ============================ -->
+<section class="contents">
+  <div class="label">Contents</div>
+  <div class="toc-title">Seven chapters, one <em class="gi">stewardship</em>.</div>
+  <ul class="toc">
+    <li><span class="toc-num">1</span><span class="toc-name">What You’ve Built</span><span class="toc-desc">Why the calls keep coming</span></li>
+    <li><span class="toc-num">2</span><span class="toc-name">The Economics of Holding</span><span class="toc-desc">Both columns</span></li>
+    <li><span class="toc-num">3</span><span class="toc-name">Hold, Refinance, or Sell</span><span class="toc-desc">Three legitimate answers</span></li>
+    <li><span class="toc-num">4</span><span class="toc-name">Your Tax Position Comes First</span><span class="toc-desc">Net proceeds before price</span></li>
+    <li><span class="toc-num">5</span><span class="toc-name">Succession Without a Forced Sale</span><span class="toc-desc">Crossing a generation intact</span></li>
+    <li><span class="toc-num">6</span><span class="toc-name">If You Sell: Maximizing the Outcome</span><span class="toc-desc">Deliberate, not reactive</span></li>
+    <li><span class="toc-num">7</span><span class="toc-name">Stewardship Across Generations</span><span class="toc-desc">What a held portfolio becomes</span></li>
+  </ul>
+  <div class="contents-foot">All figures and examples in this guide are illustrative only and do not constitute financial, legal, tax, or investment advice, nor a guarantee or projection of investment performance. Tax and succession mechanisms are described at an educational level only; readers should obtain advice from qualified accounting and legal professionals before acting.</div>
+</section>
+
+<!-- ============================ CHAPTER 1 ============================ -->
+<section class="chapter">
+  <div class="ch-open">
+    <div class="ch-big">1</div>
+    <div class="ch-kicker label">Chapter One</div>
+    <h2 class="ch-title">What You’ve <em class="gi">Built</em></h2>
+    <div class="ch-rule"></div>
+  </div>
+
+  <h3>The quiet asset</h3>
+  <p class="lede">Somewhere in your files is a closing statement with a date on it — fifteen, twenty-five, maybe forty years ago — recording the day you bought a building that has since done something remarkable, mostly without ceremony. It collected rent. It paid down its own mortgage. It sheltered its income while its value compounded. It may now be worth several times what you paid for it, and it almost certainly represents one of the largest positions on your family’s balance sheet.</p>
+  <p>Buildings like yours rarely make headlines, and their owners rarely advertise. But the arithmetic is not a secret to everyone: the unsolicited calls, the letters from brokers, the “buyer with strong interest in your area” — you have likely had them for years, and they have likely gotten more frequent. There is a reason for that, and it is worth understanding on your own terms rather than a caller’s.</p>
+  <p>This guide exists to put a framework around the decisions that eventually arrive with a long-held building: whether to keep holding, whether to refinance, whether to sell, and how — in any of those cases — the asset moves to the next generation without being diminished in transit. It does not conclude that you should sell. It does not conclude that you should hold. It concludes that owners who understand their position make better decisions than owners who respond to phone calls — and it is written to move you firmly into the first group.</p>
+
+  <h3>Why the calls keep coming</h3>
+  <p>Understand what you own in today’s terms. A stabilized, income-producing apartment building in an Ontario market has become a peculiar kind of asset: expensive to replicate and increasingly rare in prospect. The past two years delivered record purpose-built rental construction across the country — and the pipeline behind that surge is now visibly thinning, with national housing starts projected to decline each year through 2028 as construction costs, development charges, and financing conditions squeeze project feasibility. New buildings must lease at today’s costs; yours operates at yesterday’s basis. Analysts covering the Ontario market expect new supply to fall off materially within two to three years.</p>
+  <p>Institutional capital has noticed. Institutions <span class="dv" id="dv-inst">deployed nearly $15 billion into Canadian real estate in 2025 — roughly a third of the entire investment market and their largest share of acquisitions since 2021</span> — and multifamily investment outpaced every other asset class in the final quarter of the year. Transaction activity in the GTA opened 2026 up sharply from the year before. None of this obligates you to do anything. All of it explains your phone.</p>
+
+  <h3>What this guide covers</h3>
+  <p>Chapter 2 lays out the economics of continuing to hold — costs and value, both columns, no thumb on the scale. Chapter 3 presents the framework at the centre of this guide: hold, refinance, or sell as a structured decision rather than a reaction, with an interactive tool for the arithmetic. Chapter 4 explains why your tax position — not your asking price — is the first number that matters, and why that conversation precedes any listing conversation by months or years. Chapter 5 addresses succession: how a building crosses a generation without a forced sale. Chapter 6 covers what a properly run disposition involves, for the owner who chooses one. Chapter 7 closes where our own family’s story does — with what stewardship across generations actually looks like.</p>
+  <p>You have already done the hard part. You bought well, or held long enough that it no longer matters, and you let the asset work. What remains is to finish the job with the same discipline it started with.</p>
+</section>
+
+<!-- ============================ CHAPTER 2 ============================ -->
+<section class="chapter">
+  <div class="ch-open">
+    <div class="ch-big">2</div>
+    <div class="ch-kicker label">Chapter Two</div>
+    <h2 class="ch-title">The Economics of <em class="gi">Holding</em></h2>
+    <div class="ch-rule"></div>
+  </div>
+
+  <h3>Both columns</h3>
+  <p class="lede">Any adviser who tells a long-hold owner that the decision is obvious — in either direction — is selling something. The truthful version is a ledger with two columns, and it is worth writing both of them down without flinching.</p>
+
+  <h3>The cost column</h3>
+  <p><strong>Operating costs have outpaced regulated revenue.</strong> Insurance has repriced to a permanently higher base over the past decade; renewals have recently cooled. Utilities, maintenance labour, and materials have all repriced. Meanwhile, for buildings first occupied before November 2018, revenue growth on sitting tenancies is bounded by Ontario’s annual guideline — with above-guideline increases available only through a formal application process with its own costs, timelines, and limits. The squeeze between market-priced expenses and regulated revenue is real, and it compounds.</p>
+  <p><strong>The capital-needs curve bends upward.</strong> Buildings age on a schedule that does not consult their owners. Roofs, boilers, windows, balconies, electrical services — and, for mid-rise stock, elevators, where modernization is routinely a six-figure event. A building held for decades is often approaching several of these at once. The honest question is not whether the building has been maintained — it is what the next ten years of capital work costs, and who should be the one to fund it.</p>
+  <p><strong>The regulatory workload is heavier than it was.</strong> Landlord and Tenant Board timelines, documentation standards, and compliance obligations have made self-management more demanding than the era in which many long-hold owners learned the trade. For some families this is a manageable evolution; for others it is the quiet reason ownership has stopped being satisfying.</p>
+  <p><strong>The near-term market is softer than the headlines of three years ago.</strong> Record recent completions pushed <span class="dv" id="dv-natl-vac">national purpose-built vacancy to 3.1 percent — up from 2.2 percent a year earlier</span> — and rent growth has moderated, with CMHC expecting further easing in the near term as new units absorb. An owner underwriting the next few years should do so with those facts, not with 2022's.</p>
+
+  <h3>The value column</h3>
+  <p><strong>Scarcity is moving in your favour.</strong> The same data has a second half: the construction pipeline behind those record completions is contracting, with national starts projected to decline each year through 2028 and analysts expecting Ontario’s new supply to fall off materially within two to three years. Stabilized existing stock — your column of the ledger — becomes relatively scarcer as that happens. The near-term soft patch and the medium-term scarcity are both true. They are about different years.</p>
+  <p><strong>Your building carries embedded upside no new building has.</strong> Long tenancies at below-market rents are, viewed as an investor views them, purchasable future income — loss-to-lease, in underwriting language. Time closes that gap on its own schedule. The patient holder is positioned to receive it; equally, it is a significant part of what a buyer is paying for, which matters in Chapter 6.</p>
+  <p><strong>Refinance capacity is stored liquidity.</strong> Decades of amortization and appreciation mean the building can likely return substantial capital to your hands through refinancing — without a sale, and therefore without a taxable event. Chapter 3 treats this as the underused middle option it is.</p>
+  <p><strong>The income is durable.</strong> People need housing in every part of the cycle. Whatever else is true of the cost column, few assets your family could own produce income with this reliability, secured by something this tangible.</p>
+
+  <h3>What the ledger is for</h3>
+  <p>The ledger does not produce a verdict; it produces clarity about which column is growing faster <em>for your specific building and your specific family</em>. A well-maintained building with modest coming capex, engaged successors, and comfortable financing reads one way. A building facing an elevator, a roof, and a generation with no interest in operating it reads another. The next chapter turns that reading into a decision framework.</p>
+  <div class="asat" id="dv-asat">Market figures as at August 2026 &middot; Sources: CMHC Rental Market Survey &middot; CMHC Housing Market Outlook &middot; Colliers &middot; JLL</div>
+</section>
+
+<!-- ============================ CHAPTER 3 ============================ -->
+<section class="chapter">
+  <div class="ch-open">
+    <div class="ch-big">3</div>
+    <div class="ch-kicker label">Chapter Three</div>
+    <h2 class="ch-title">Hold, Refinance, or Sell: A <em class="gi">Framework</em></h2>
+    <div class="ch-rule"></div>
+  </div>
+
+  <h3>Three legitimate answers</h3>
+  <p class="lede">Most owners are only ever presented with two options, by people who earn a fee on exactly one of them. There are three, and every one of them is, in the right circumstances, the correct answer.</p>
+  <p><strong>Holding</strong> is the default that built the asset, and it remains correct when the income still serves its purpose, the family still wants the work, and the capital-needs curve is fundable from operations. Nothing in this guide argues with forty years of evidence that patient holding works.</p>
+  <p><strong>Refinancing</strong> is the under-discussed middle. A building with decades of accumulated equity can return a substantial portion of it through a new financing — capital to hand, no sale, no taxable event — while the building continues operating. Families use refinance proceeds to fund capital work without draining savings, to equalize among children where one will operate and others will not, or to diversify a concentrated balance sheet. It restores leverage, and leverage restored is risk restored — the same conservatism that governed the purchase must govern the refinancing. But for the owner whose reservations are about liquidity or concentration rather than about ownership itself, this is frequently the answer that fits.</p>
+  <p>And refinancing has a second form worth naming on its own: <strong>refinance and grow.</strong> The equity in a long-held building is not only stored liquidity — it is a down payment on the next one. An owner who refinances and acquires again is running the exact discipline that built most of this province’s quiet multifamily fortunes, described from the buyer’s side in Volume I of this series: equity redeployed instead of consumed, the tax never crystallizing because the sale never happens. For families with engaged successors, it is often the most elegant succession move available — the next generation cuts its teeth operating a building purchased with the first building’s equity, learning the trade on an asset the family controls rather than inheriting a decision they never practiced for. Growth is not every steward’s answer; an owner already stretched by one building’s capital needs should not borrow into two. But for the family whose hesitation is “we’re not done building” rather than “we’re done owning,” this is the option the cold-callers will never mention — because there is no listing in it.</p>
+  <p><strong>Selling</strong> is correct when the ledger says so: when the coming capital program belongs to the next owner, when no successor wants the operation, when the family’s capital has a genuinely better home, when concentration risk has become uncomfortable, or when the owner is simply done — a reason that requires no further justification after decades of stewardship. A sale executed deliberately, with the tax position engineered in advance and the asset positioned properly, is not the end of stewardship. It is its final act, done well or done poorly.</p>
+
+  <h3>The questions that sort them</h3>
+  <p>Five questions do most of the sorting work. What is the capital <em>for</em> — income, a project, the next generation, peace of mind? Who operates the building in ten years — and do they want to? What does the next decade of capital work cost, and who should fund it? What is the tax position today — and what would it be after the structuring moves of Chapters 4 and 5? And what does the arithmetic actually say — not felt, but computed?</p>
+  <p>The first four are conversations. The fifth is a calculation, and it should be done before any of the conversations harden into positions.</p>
+
+  <div class="calc on-dark">
+    <img class="calc-mono" src="images/brand/M_white_transparent.png" alt="">
+    <span class="label label--light">Interactive Tool</span>
+    <div class="calc-name">The Disposition Proceeds <em class="gi">Calculator</em></div>
+    <div class="calc-rule"></div>
+    <p>Run your own numbers. Our Disposition Proceeds Calculator works from your building’s value, debt, and cost basis toward the figure that actually matters — estimated net proceeds after debt, costs, and the tax components of a sale — and emails you a summary you can bring to your accountant.</p>
+    <span class="calc-url">mckinneyrealty.ca/tools</span>
+    <p class="calc-note">All outputs are illustrative only and do not constitute tax, legal, or financial advice. Your accountant’s numbers govern.</p>
+  </div>
+
+  <h3>A framework, not a forecast</h3>
+  <p>Notice what this chapter has not done: it has not told you what the market will do, and it has not told you which door to walk through. Markets reprice; frameworks hold. An owner who can articulate which of the three answers fits — and why, in terms of the five questions — is no longer a name on a cold-caller’s list. They are a principal with a plan, and every subsequent conversation, including any conversation with us, goes better because of it.</p>
+</section>
+
+<!-- ============================ CHAPTER 4 ============================ -->
+<section class="chapter">
+  <div class="ch-open">
+    <div class="ch-big">4</div>
+    <div class="ch-kicker label">Chapter Four</div>
+    <h2 class="ch-title">Your Tax Position Comes <em class="gi">First</em></h2>
+    <div class="ch-rule"></div>
+  </div>
+
+  <h3>The number on the cheque</h3>
+  <p class="lede">Every owner knows their building’s approximate value. Very few know their approximate net proceeds — and the distance between those two numbers is where most disposition planning fails before it begins.</p>
+  <p>A sale price is a headline. The cheque is what remains after a stack of deductions that has been quietly assembling for as long as you have owned the building: the mortgage discharge, including any prepayment penalty if the sale lands mid-term; transaction costs; and then the tax components — the recapture of every dollar of capital cost allowance claimed across the hold, and the capital gain on the appreciation itself, both crystallizing in a single tax year. For a building held for decades with CCA claimed throughout, the combined liability is routinely the largest single line in the stack, and it arrives all at once.</p>
+
+  <div class="illus">
+    <span class="label">From Price to Cheque — The Stack</span>
+    <div class="illus-rows">
+      <span class="illus-k">Sale price</span><span class="illus-v">The headline — the last number in this stack you should form a view on</span>
+      <span class="illus-k">Mortgage discharge</span><span class="illus-v">Outstanding balance, plus any prepayment penalty if the sale lands mid-term</span>
+      <span class="illus-k">Transaction costs</span><span class="illus-v">Advisory, legal, and closing costs</span>
+      <span class="illus-k">CCA recapture</span><span class="illus-v">Every dollar of capital cost allowance claimed across the hold, returned to income at once</span>
+      <span class="illus-k">Tax on the gain</span><span class="illus-v">The appreciation itself, crystallizing in the same tax year</span>
+    </div>
+    <div class="illus-total">
+      <span class="illus-k">Net proceeds</span><span class="illus-v">The cheque — the number every decision in this guide should be priced against</span>
+    </div>
+    <p class="illus-note">Components shown for orientation only; amounts, rates, and treatment depend on your structure and facts. Your accountant’s numbers govern. The Disposition Proceeds Calculator (Chapter 3) illustrates the arithmetic with your own inputs.</p>
+  </div>
+
+  <p>None of this is a reason not to sell. Decades of tax deferral had real value — that was the plan working, not failing. It is a reason to know the number <em>before</em> forming a view on price, because owners anchor on the headline and are ambushed by the cheque, and ambushed owners make poor decisions late in a process when their leverage is lowest.</p>
+
+  <h3>The sequence most owners get backwards</h3>
+  <p>The conventional sequence is: decide to sell, call a broker, list, and let the accountant sort out the taxes at filing time. That sequence forfeits money, and sometimes a great deal of it, because the most valuable tax planning happens <em>before</em> a transaction exists.</p>
+  <p>How the building is held determines what is possible. A personally held building and a corporately held one face different mechanics at sale. A corporately held building opens a question that a personal holding cannot: whether the transaction is a sale of the <em>asset</em> or a sale of the <em>shares</em> — structures with genuinely different tax outcomes for the seller, different risk profiles for the buyer, and therefore different prices at which each side should rationally transact. Owners who learn this vocabulary before negotiating have options; owners who learn it during diligence have regrets.</p>
+  <p>And Canada offers no escape hatch on a plain sale. American owners can defer through a like-kind exchange; a Canadian sale is a taxable event, full stop. What Canadian law offers instead are structuring tools — corporate rollovers, reorganizations, and the estate mechanisms of the next chapter — and nearly all of them share one property: they work when arranged in advance, and poorly or not at all when attempted mid-transaction.</p>
+
+  <h3>The two-conversation rule</h3>
+  <p>The practical discipline is simple: the accountant conversation precedes the broker conversation, ideally by a year or more. Bring your accountant the building’s cost base, the CCA history, the corporate structure if there is one, and the honest range of family intentions — hold, refinance, sell, transfer. Ask what each path costs in tax as things stand, and what advance structuring would change. Then, and only then, is a conversation about market value standing on solid ground.</p>
+  <p>We hold this position knowing it delays our own involvement, and we hold it anyway, because the alternative produces worse outcomes for owners. When McKinney Multifamily Group conducts a pre-sale consultation, the tax position is where it starts — not because we advise on tax, which we do not, but because no sound disposition strategy can be built without it.</p>
+</section>
+
+<!-- ============================ CHAPTER 5 ============================ -->
+<section class="chapter">
+  <div class="ch-open">
+    <div class="ch-big">5</div>
+    <div class="ch-kicker label">Chapter Five</div>
+    <h2 class="ch-title"><em class="gi">Succession</em> Without a Forced Sale</h2>
+    <div class="ch-rule"></div>
+  </div>
+
+  <h3>The transfer is the point</h3>
+  <p class="lede">If generational wealth means anything, it means the asset outlives its first owner without being broken on the way through. Yet that passage — not vacancy, not interest rates — is where long-held buildings are most often lost, because tax law treats death as a disposition: absent planning, the building is deemed sold at fair market value, the accumulated gain and recapture crystallize, and the estate must find the tax from somewhere. When “somewhere” turns out to be a hurried sale of the building itself, decades of stewardship end at the worst table an owner’s family will ever negotiate at: a deadline, a liability, and a buyer who knows both.</p>
+  <p>Planned succession exists to make sure that table is never set.</p>
+
+  <h3>The vocabulary of a planned transfer</h3>
+  <p>What follows is a map of the standard mechanisms — awareness-level, deliberately so. Each is a question for your accountant and your lawyer, and the right combination depends entirely on your family’s facts.</p>
+  <p><strong>The estate freeze.</strong> The cornerstone concept of Canadian succession planning: the current owner’s interest is fixed — frozen — at today’s value, while future growth accrues to the next generation, typically through new shares. The founder’s eventual tax liability becomes a known, plannable quantity instead of an open-ended one that grows with every year of appreciation; the growth from freeze-day forward is taxed a generation later.</p>
+  <p><strong>The Section 85 rollover.</strong> The mechanism that moves a personally held building into a corporation without triggering immediate tax — frequently the enabling first step, because most of the flexible succession structures require corporate ownership to exist at all. This is also why Volume I of this series urges buyers to settle structure before their first offer: options at the end of a hold are largely determined at its beginning. If your building is personally held today, this is the first question to bring to your accountant — the answer shapes everything after it.</p>
+  <p><strong>Family trusts and the 21-year rule.</strong> Trusts can hold growth shares, spread outcomes across children and grandchildren, and postpone hard allocation decisions. They come with their own clock: Canadian tax law deems a trust to dispose of its assets every 21 years, a horizon that must be planned for from the day the trust is settled, not discovered in year twenty.</p>
+  <p><strong>Insurance as liquidity.</strong> Where a terminal tax liability cannot be structured away, families frequently fund it in advance — life insurance sized to the projected liability, so the estate pays the tax without selling the asset. Not a tax strategy; a liquidity strategy. Often the difference between a building that stays and a building that goes.</p>
+
+  <h3>The part the professionals cannot do</h3>
+  <p>The mechanisms are the lawyers’ and accountants’ craft. What only the family can supply is the governance: who operates the building, who merely benefits from it, and how the two are kept from becoming the same argument every Thanksgiving. The most elegant freeze fails if no one wants to run the asset, and a modest structure succeeds if the operating question was answered honestly. Some families answer it by growing: a second building, purchased with the first one’s refinanced equity and operated by the successor, turns succession from a paperwork event into an apprenticeship — the next generation proves the operating answer years before the transfer depends on it. In our experience the families who transfer buildings well are not the ones with the most sophisticated structures — they are the ones who had the operating conversation early, out loud, and revisited it as children became adults.</p>
+  <p>Succession planning is where holding and selling stop being opposites: a family that has built the structure to hold across a generation has also, necessarily, built the clarity to sell well if it ever chooses to. The next chapter is for the owner who does.</p>
+</section>
+
+<!-- ============================ CHAPTER 6 ============================ -->
+<section class="chapter">
+  <div class="ch-open">
+    <div class="ch-big">6</div>
+    <div class="ch-kicker label">Chapter Six</div>
+    <h2 class="ch-title">If You Sell: Maximizing the <em class="gi">Outcome</em></h2>
+    <div class="ch-rule"></div>
+  </div>
+
+  <h3>Deliberate, not reactive</h3>
+  <p class="lede">There are two kinds of dispositions: the ones that begin with a plan, and the ones that begin with a phone call. The entire difference in outcome — and it is routinely a difference measured in six figures — lies in which one yours is.</p>
+  <p>A reactive sale accepts a buyer’s timing, a buyer’s information advantage, and a buyer’s framing of value. A deliberate sale reverses all three. Everything in this chapter is about that reversal, at the level of principle; the operational companion — our Disposition Readiness Checklist and the full disposition process — is the client deliverable McKinney Multifamily Group brings to an engagement, and this guide will not counterfeit it in summary form.</p>
+
+  <h3>Preparation is pricing</h3>
+  <p>By the time a building is on the market, most of its price has already been determined — by the state of its records. Multifamily assets are bought on their numbers, and numbers that cannot be verified are numbers a buyer discounts. Clean financial statements that reconcile; a current, accurate rent roll; organized tenancy files; utility and tax histories; documentation of capital work — these are not administrative niceties. They are the difference between a buyer underwriting your building’s actual income and a buyer underwriting their own skepticism.</p>
+  <p>The same is true of the physical asset, with a discipline worth stating plainly: the goal is not renovation, it is the removal of excuses. Deferred items that are cheap to fix and expensive to negotiate — the leak stain, the dead intercom, the mechanical room that photographs like a warning — get resolved. Major capital items get honest engineering assessments, because a priced, documented liability negotiates better than a discovered one. Buyers pay for certainty. Preparation manufactures it.</p>
+
+  <h3>Positioning is the second price</h3>
+  <p>The building sold as a listing and the building sold as an investment are the same building at different prices. An investment-grade process presents an underwritten package — normalized operating statement, documented upside, the loss-to-lease story told with evidence — to a curated universe of qualified purchasers, and runs a structured process that lets competition, not a single caller’s opening number, discover the price. Your decades of below-market tenancies, properly documented, are a purchasable asset to the right buyer; unexplained, they are a reason to bid low.</p>
+  <p>Discretion deserves its own word. Many owners have excellent reasons — tenants, staff, family, competitors — to prefer that a sale not be public. An off-market process, run properly against a known buyer pool, trades some breadth for confidentiality while preserving competitive tension. It is a legitimate strategy, not a lesser one, and the current market has depth enough to support it: transaction activity has returned decisively, with GTA multifamily volume opening 2026 sharply above the prior year. That is stated as a fact about liquidity, not an argument about timing — the framework of Chapter 3, not the market’s mood, decides whether you sell.</p>
+
+  <h3>The seat we take</h3>
+  <p>In a disposition engagement, McKinney Multifamily Group’s role is the one this guide has been describing throughout: the tax conversation first, the readiness work before the market ever hears the building’s address, the underwritten positioning, the curated process — on-market or off — and principal-led negotiation through to close. Two Brokers, one accountable relationship, and a standard set by the fact that we advise sellers the way our own family would expect to be advised. Which brings this guide to where it was always going.</p>
+</section>
+
+<!-- ============================ CHAPTER 7 ============================ -->
+<section class="chapter">
+  <div class="ch-open">
+    <div class="ch-big">7</div>
+    <div class="ch-kicker label">Chapter Seven</div>
+    <h2 class="ch-title">Stewardship Across <em class="gi">Generations</em></h2>
+    <div class="ch-rule"></div>
+  </div>
+
+  <h3>What a held portfolio becomes</h3>
+  <p class="lede">Volume I of this series ends with an arithmetic illustration: one building, ordinary assumptions, twenty patient years, and equity several times the original investment. This volume can end with something better than an illustration.</p>
+  <p>The original McKinney Realty was founded by the family’s first Broker — Sean’s father, Liam’s grandfather — who, alongside the brokerage, quietly practiced everything these two guides describe: he bought an apartment building, held it, refinanced it, and bought the next, until one building had become a portfolio. The portfolio was held. It crossed a generation. Sean carried the practice forward, purchased the local RE/MAX franchise, and grew it into the 75-plus-agent brokerage it is today. Liam is the third generation.</p>
+  <p>We advise on this work because our family has lived it — slowly, unevenly, and across three generations, which is how compounding actually happens. We have sat on your side of the decisions in this guide: the capex years, the refinancing conversations, the succession questions asked around an actual kitchen table. Reviving the McKinney Realty name for this practice was not nostalgia; it was accuracy. And it is why we bring a particular seriousness to every owner’s building: we know first-hand what one well-held property can become — and what it takes to keep it whole on the way through.</p>
+
+  <h3>The steward’s definition of success</h3>
+  <p>Success, for the steward, is not a number. It is optionality preserved: a building whose records would survive diligence tomorrow, a tax position known rather than feared, a structure that permits transfer without forcing sale, a family that has had the operating conversation, and a decision — hold, refinance, sell, or pass on — made from the framework of Chapter 3 rather than from a stranger’s phone call. An owner in that position wins on every path, including the paths not taken.</p>
+  <p>Getting there is not a transaction. It is a sequence of unhurried conversations — accountant, lawyer, family, and an advisor who understands the asset class — most of which cost nothing but candour, and all of which are worth more the earlier they happen.</p>
+
+  <h3>Where this guide ends</h3>
+  <p>If this volume has done its work, you now hold a ledger, a framework, and a vocabulary — and the next step is not a listing agreement. It is a conversation about your building, your structure, and your family’s intentions, with no conclusion presumed.</p>
+  <div class="close-cta">
+    <p><strong>Schedule a consultation</strong> at mckinneyrealty.ca/contact — or begin with the Disposition Proceeds Calculator at mckinneyrealty.ca/tools, which emails you a summary of your own scenario to bring to your accountant.</p>
+  </div>
+  <p>And keep this guide’s companion in mind. Somewhere in your circle — a son or daughter, a colleague, a professional you mentor — is the person your building’s story will one day belong to, or the person ready to begin a story of their own. Volume I of this series, <em class="gi">The Builder’s Guide</em>, is written for them. Some of the best stewardship happens before the first building is ever bought.</p>
+</section>
+
+<!-- ============================ COMPLIANCE ============================ -->
+<section class="compliance on-dark">
+  <img class="cover-mono" src="images/brand/M_white_transparent.png" alt="">
+  <div class="comp-brand">
+    <div class="comp-name">McKinney Multifamily Group</div>
+    <div class="comp-byline">Investment Real Estate Brokers</div>
+  </div>
+  <div class="comp-mid">
+    <div class="cover-series">The Generational Wealth Series</div>
+    <div class="comp-vol">Volume II &middot; The Steward’s <em class="gi">Guide</em></div>
+    <div class="cover-rule"></div>
+    <span class="comp-url">mckinneyrealty.ca</span>
+  </div>
+  <p class="comp-text">This guide is provided for general information purposes. All figures and examples are illustrative only and do not constitute financial, legal, tax, or investment advice, nor a guarantee or projection of investment performance. Tax and succession mechanisms are described at an educational level only; readers should obtain advice from qualified accounting and legal professionals before acting. Liam McKinney, Broker; Sean McKinney, Broker of Record; RE/MAX Quinte Ltd., Brokerage; Each Office Independently Owned and Operated. mckinneyrealty.ca &middot; liam@mckinneyrealty.ca &middot; sean@remaxquinte.com</p>
+</section>
+
+
+<script>
+// Greedy block-level paginator. Whole blocks move between pages (no
+// split paragraphs); h3 headings and chapter openers keep with their
+// next block; sparse chapter-final pages are balanced against the
+// page before them. Runs after fonts load so measurements are final.
+(function () {
+  function paginate() {
+    var body = document.body;
+    var sections = Array.prototype.slice.call(body.querySelectorAll('body > section'));
+    sections.forEach(function (s) { body.removeChild(s); });
+
+    var pages = [];
+    function newPage(cls) {
+      var pg = document.createElement('div');
+      pg.className = 'pg' + (cls ? ' ' + cls : '');
+      var inner = document.createElement('div');
+      inner.className = 'pgc';
+      pg.appendChild(inner);
+      body.appendChild(pg);
+      pages.push(pg);
+      return inner;
+    }
+    function overflows(inner) { return inner.scrollHeight > inner.clientHeight + 1; }
+    function usage(el) {
+      var last = el.lastElementChild;
+      if (!last) return 0;
+      var b = last.getBoundingClientRect().bottom - el.getBoundingClientRect().top;
+      return b / el.clientHeight;
+    }
+
+    var docTitle = document.title.split('\u2014')[0].trim();
+    var chapterStartPages = [];
+
+    sections.forEach(function (sec) {
+      if (sec.classList.contains('cover') || sec.classList.contains('contents') ||
+          sec.classList.contains('compliance')) {
+        var innerF = newPage('pg--bleed');
+        innerF.appendChild(sec);
+        return;
+      }
+      var kids = Array.prototype.slice.call(sec.children);
+      chapterStartPages.push(pages.length + 1);
+      var chapterInners = [];
+      var inner = newPage('pg--chfirst');
+      chapterInners.push(inner);
+      kids.forEach(function (node) {
+        inner.appendChild(node);
+        if (overflows(inner)) {
+          inner.removeChild(node);
+          var carry = [];
+          var last = inner.lastElementChild;
+          if (last && (last.tagName === 'H3' || last.classList.contains('ch-open'))) {
+            carry.unshift(last);
+            inner.removeChild(last);
+          }
+          inner = newPage();
+          chapterInners.push(inner);
+          carry.forEach(function (c) { inner.appendChild(c); });
+          inner.appendChild(node);
+        }
+      });
+      if (chapterInners.length >= 2) {
+        var prev = chapterInners[chapterInners.length - 2];
+        var tail = chapterInners[chapterInners.length - 1];
+        if (usage(tail) < 0.6) {
+          for (var guard = 0; guard < 20; guard++) {
+            if (usage(tail) >= usage(prev) - 0.12) break;
+            var cand = prev.lastElementChild;
+            if (!cand || prev.children.length <= 2) break;
+            tail.insertBefore(cand, tail.firstChild);
+            if (overflows(tail)) { prev.appendChild(cand); break; }
+            var trail = prev.lastElementChild;
+            if (trail && trail.tagName === 'H3') {
+              tail.insertBefore(trail, tail.firstChild);
+              if (overflows(tail)) { prev.appendChild(trail); break; }
+            }
+          }
+        }
+      }
+    });
+
+    var tocItems = document.querySelectorAll('.toc li');
+    tocItems.forEach(function (li, i) {
+      if (chapterStartPages[i] === undefined) return;
+      var pn = document.createElement('span');
+      pn.className = 'toc-page';
+      pn.textContent = chapterStartPages[i];
+      li.appendChild(pn);
+    });
+    pages.forEach(function (pg, i) {
+      if (i === 0 || i === pages.length - 1) return;
+      var f = document.createElement('div');
+      f.className = 'folio';
+      f.innerHTML = '<span class="folio-name">' + docTitle +
+        ' \u00b7 McKinney Multifamily Group</span><span class="folio-num">' + (i + 1) + '</span>';
+      pg.appendChild(f);
+    });
+
+    document.body.setAttribute('data-paginated', pages.length);
+    window.__pagDone = true;
+  }
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { setTimeout(paginate, 50); });
+  } else {
+    window.addEventListener('load', function () { setTimeout(paginate, 200); });
+  }
+})();
+</script>
+</body>
+</html>

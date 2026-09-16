@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cash Flow vs. Hope — Carousel Master</title>
+<!--
+  McKinney Realty — "Cash Flow vs. Hope" LinkedIn carousel (document post)
+  12 slides · 1080 × 1350 (4:5 portrait, LinkedIn document standard)
+  Render (Claude Code, headless Chrome):
+    chrome --headless --print-to-pdf=cashflow-vs-hope-carousel.pdf \
+      --no-pdf-header-footer --print-to-pdf-no-header cashflow-vs-hope-carousel.html
+  @page is preset to 1080px x 1350px, margin 0, backgrounds on via print-color-adjust.
+  Self-contained CSS per design principle (KB-10, Mar 28 2026) — does not link mckinney-system.css,
+  but token values are copied verbatim from it.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF; --offwhite:#FAFAF8; --cream:#F5F3EF; --stone-50:#E8E4DD;
+    --gold:#B8A88A; --gold-light:#C9BBAA; --gold-dark:#9A8B6F;
+    --navy:#1A1F2E; --navy-light:#2A3044;
+    --text-1:#1A1A1A; --text-2:#6B6B6B; --text-3:#999999;
+    --font-d:'Cormorant Garamond',Georgia,serif;
+    --font-b:'DM Sans',-apple-system,sans-serif;
+  }
+  @page{ size:1080px 1350px; margin:0; }
+  *{ margin:0; padding:0; box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  html,body{ background:#444; font-family:var(--font-b); }
+
+  .slide{
+    width:1080px; height:1350px; position:relative; overflow:hidden;
+    display:flex; flex-direction:column; justify-content:center;
+    padding:110px 96px 130px;
+    page-break-after:always; break-after:page;
+    margin:0 auto 24px; /* screen preview gap; irrelevant in print */
+  }
+  @media print{ .slide{ margin:0; } }
+
+  /* ---- surfaces ---- */
+  .s-navy{ background:var(--navy); color:var(--offwhite); }
+  .s-navy-radial{
+    background:radial-gradient(120% 90% at 50% 8%, var(--navy-light) 0%, var(--navy) 62%);
+    color:var(--offwhite);
+  }
+  .s-light{ background:var(--offwhite); color:var(--text-1); }
+
+  /* ---- type roles ---- */
+  .eyebrow{
+    font-size:22px; font-weight:500; letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--gold-dark); margin-bottom:44px;
+  }
+  .s-navy .eyebrow, .s-navy-radial .eyebrow{ color:var(--gold-light); }
+
+  .display{
+    font-family:var(--font-d); font-weight:300; line-height:1.06;
+    letter-spacing:-0.01em; font-size:104px;
+  }
+  .display-md{ font-family:var(--font-d); font-weight:300; line-height:1.1; font-size:84px; }
+  em.gi{ font-family:var(--font-d); font-style:italic; font-weight:300; color:var(--gold-dark); }
+  .s-navy em.gi, .s-navy-radial em.gi{ color:var(--gold-light); }
+
+  .body{ font-size:32px; font-weight:300; line-height:1.5; color:var(--text-2); max-width:820px; }
+  .s-navy .body, .s-navy-radial .body{ color:rgba(250,250,248,0.72); }
+
+  .stat{
+    font-family:var(--font-d); font-weight:300; line-height:1;
+    font-size:230px; letter-spacing:-0.02em;
+  }
+  .stat-unit{ font-size:0.42em; font-weight:300; letter-spacing:0; }
+  .stat-caption{ font-size:30px; font-weight:300; line-height:1.45; margin-top:48px; max-width:800px; }
+  .s-light .stat-caption{ color:var(--text-2); }
+  .s-navy .stat-caption, .s-navy-radial .stat-caption{ color:rgba(250,250,248,0.72); }
+
+  .source{
+    font-size:20px; font-weight:400; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--text-3); margin-top:40px;
+  }
+  .s-navy .source, .s-navy-radial .source{ color:rgba(201,187,170,0.62); }
+
+  /* ---- structure ---- */
+  .rule{ width:88px; height:1px; background:var(--gold); margin:56px 0; }
+  .footer{
+    position:absolute; left:96px; right:96px; bottom:56px;
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-size:19px; letter-spacing:0.18em; text-transform:uppercase; font-weight:400;
+  }
+  .s-light .footer{ color:var(--text-3); }
+  .s-navy .footer, .s-navy-radial .footer{ color:rgba(250,250,248,0.34); }
+  .footer .wm{ font-family:var(--font-d); font-style:italic; text-transform:none; letter-spacing:0.02em; font-size:23px; }
+  .s-light .footer .wm{ color:var(--gold-dark); }
+  .s-navy .footer .wm, .s-navy-radial .footer .wm{ color:var(--gold-light); }
+
+  /* signature: the ledger formula treatment */
+  .formula{
+    font-family:var(--font-d); font-weight:300; font-size:72px; line-height:1.32;
+  }
+  .formula .frac{ display:inline-block; text-align:center; vertical-align:middle; margin:0 10px; }
+  .formula .frac .num{ display:block; padding:0 18px 10px; }
+  .formula .frac .den{ display:block; padding:12px 18px 0; border-top:1px solid var(--gold); }
+  .formula .eq{ color:var(--gold-dark); padding:0 14px; }
+  .s-navy .formula .eq, .s-navy-radial .formula .eq{ color:var(--gold-light); }
+
+  .ledger{ font-size:34px; font-weight:300; line-height:2.05; max-width:840px; }
+  .ledger .row{ display:flex; justify-content:space-between; border-bottom:1px solid rgba(0,0,0,0.07); }
+  .s-navy .ledger .row{ border-bottom-color:rgba(250,250,248,0.12); }
+  .ledger .row.sum{ border-bottom:none; border-top:1px solid var(--gold); font-family:var(--font-d); font-size:44px; padding-top:14px; }
+  .ledger .k{ color:var(--text-2); }
+  .s-navy .ledger .k{ color:rgba(250,250,248,0.66); }
+  .ledger .v{ font-variant-numeric:tabular-nums; }
+
+  .duo{ display:flex; gap:64px; margin-top:24px; }
+  .duo .col{ flex:1; }
+  .duo .col h3{ font-family:var(--font-d); font-weight:400; font-size:46px; margin-bottom:26px; }
+  .duo .col p{ font-size:29px; font-weight:300; line-height:1.5; color:var(--text-2); }
+  .duo .col.hope h3{ color:var(--text-3); }
+  .duo .col.income h3{ color:var(--gold-dark); }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 — cover (navy radial bookend) -->
+<section class="slide s-navy-radial">
+  <div class="eyebrow">Ontario Multi-Family</div>
+  <h1 class="display">Cash flow<br>vs. <em class="gi">hope</em>.</h1>
+  <div class="rule"></div>
+  <p class="body">Two ways to price real estate. Only one survived this cycle.</p>
+  <div class="footer"><span class="wm">McKinney Realty</span><span>1 / 12</span></div>
+</section>
+
+<!-- SLIDE 2 — model one -->
+<section class="slide s-light">
+  <div class="eyebrow">Model One — Hope</div>
+  <h2 class="display-md">A condo is worth what the last buyer paid.</h2>
+  <div class="rule"></div>
+  <p class="body">Value set by comparable sales. No income floor beneath the price. When sentiment leaves, nothing holds.</p>
+  <div class="footer"><span class="wm">McKinney Realty</span><span>2 / 12</span></div>
+</section>
+
+<!-- SLIDE 3 — model two (signature formula) -->
+<section class="slide s-navy">
+  <div class="eyebrow">Model Two — Income</div>
+  <h2 class="display-md">A building is worth what it <em class="gi">earns</em>.</h2>
+  <div class="rule"></div>
+  <div class="formula">
+    Value <span class="eq">=</span>
+    <span class="frac"><span class="num">Net Operating Income</span><span class="den">Cap Rate</span></span>
+  </div>
+  <p class="body" style="margin-top:52px;">The floor under the price is the rent roll.</p>
+  <div class="footer"><span class="wm">McKinney Realty</span><span>3 / 12</span></div>
+</section>
+
+<!-- SLIDE 4 — what hope produced -->
+<section class="slide s-light">
+  <div class="eyebrow">What Hope Produced</div>
+  <div class="stat">77<span class="stat-unit">%</span></div>
+  <p class="stat-caption">of Toronto investors with new-condo mortgages were losing money each month. Average negative cash flow: $597.</p>
+  <div class="source">CIBC · Urbanation</div>
+  <div class="footer"><span class="wm">McKinney Realty</span><span>4 / 12</span></div>
+</section>
+
+<!-- SLIDE 5 — the gap -->
+<section class="slide s-light">
+  <div class="eyebrow">The Gap</div>
+  <div class="stat">−$284<span class="stat-unit">/sq ft</span></div>
+  <p class="stat-caption">The spread between pre-construction contract prices and what units resell for. Thousands were asked to close at prices their own bank's appraiser wouldn't support.</p>
+  <div class="source">Urbanation</div>
+  <div class="footer"><span class="wm">McKinney Realty</span><span>5 / 12</span></div>
+</section>
+
+<!-- SLIDE 6 — what income produced -->
+<section class="slide s-navy">
+  <div class="eyebrow">What Income Produced</div>
+  <h2 class="display-md">Rent collected. Debt retired. Equity <em class="gi">compounded</em>.</h2>
+  <div class="rule"></div>
+  <p class="body">Through the same period, well-bought buildings in Ontario's secondary markets did what they have always done. Quietly.</p>
+  <div class="footer"><span class="wm">McKinney Realty</span><span>6 / 12</span></div>
+</section>
+
+<!-- SLIDE 7 — the part condos can't do -->
+<section class="slide s-light">
+  <div class="eyebrow">The Part Condos Can't Do</div>
+  <h2 class="display-md">You can <em class="gi">raise</em> a building's value.</h2>
+  <div class="rule"></div>
+  <div class="duo">
+    <div class="col income">
+      <h3>Buildings</h3>
+      <p>Close the rent gap. Cut utility waste. Add a unit. Every new dollar of income is capitalized into value.</p>
+    </div>
+    <div class="col hope">
+      <h3>Condos</h3>
+      <p>You cannot renovate your comparables.</p>
+    </div>
+  </div>
+  <div class="footer"><span class="wm">McKinney Realty</span><span>7 / 12</span></div>
+</section>
+
+<!-- SLIDE 8 — the cycle ahead -->
+<section class="slide s-navy">
+  <div class="eyebrow">The Cycle Ahead</div>
+  <h2 class="display-md">Record completions in 2025. Starts falling through 2028.</h2>
+  <div class="rule"></div>
+  <p class="body">Buy through the delivery peak. <em class="gi">Own into the falloff.</em></p>
+  <div class="source">CMHC</div>
+  <div class="footer"><span class="wm">McKinney Realty</span><span>8 / 12</span></div>
+</section>
+
+<!-- SLIDE 9 — builders moved -->
+<section class="slide s-light">
+  <div class="eyebrow">Builders Already Moved</div>
+  <div class="stat">58.2<span class="stat-unit">%</span></div>
+  <p class="stat-caption">of homes started in Canada in early 2026 were built to rent — not to sell. The construction industry votes with its own capital.</p>
+  <div class="source">BMO Capital Markets</div>
+  <div class="footer"><span class="wm">McKinney Realty</span><span>9 / 12</span></div>
+</section>
+
+<!-- SLIDE 10 — still a private-capital market -->
+<section class="slide s-light">
+  <div class="eyebrow">Still Within Reach</div>
+  <h2 class="display-md">Ontario's rental stock is majority-owned by <em class="gi">small investors</em>.</h2>
+  <div class="rule"></div>
+  <p class="body">Not a REIT story — a private-capital story. This asset class remains buyable by individuals.</p>
+  <div class="source">Statistics Canada</div>
+  <div class="footer"><span class="wm">McKinney Realty</span><span>10 / 12</span></div>
+</section>
+
+<!-- SLIDE 11 — the old math (standalone mechanics, no context required) -->
+<section class="slide s-navy">
+  <div class="eyebrow">The Old Math</div>
+  <h2 class="display-md">No appreciation bet <em class="gi">required</em>.</h2>
+  <div class="rule"></div>
+  <div class="ledger">
+    <div class="row"><span class="k">Rent</span><span class="v">services the debt</span></div>
+    <div class="row"><span class="k">Amortization</span><span class="v">builds equity</span></div>
+    <div class="row"><span class="k">Refinancing</span><span class="v">recycles it</span></div>
+    <div class="row"><span class="k">Time</span><span class="v">compounds</span></div>
+    <div class="row sum"><span>Then</span><span><em class="gi">repeat.</em></span></div>
+  </div>
+  <div class="footer"><span class="wm">McKinney Realty</span><span>11 / 12</span></div>
+</section>
+
+<!-- SLIDE 12 — CTA (navy radial bookend) -->
+<section class="slide s-navy-radial">
+  <div class="eyebrow">Free Public Tool</div>
+  <h2 class="display">Run the 25-year math on <em class="gi">your</em> numbers.</h2>
+  <div class="rule"></div>
+  <p class="body">The Compounding Modeler shows what buy-hold-refinance does with your capital, your rates, your markets — year by year.</p>
+  <p class="body" style="margin-top:36px;">mckinneyrealty.ca/tools</p>
+  <p class="body" style="margin-top:28px; font-size:26px;">The full argument: mckinneyrealty.ca/cashflow</p>
+  <div class="footer"><span class="wm">McKinney Realty</span><span>12 / 12</span></div>
+</section>
+
+</body>
+</html>
