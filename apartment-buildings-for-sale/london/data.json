@@ -1,0 +1,42 @@
+{
+ "generatedAt": "2026-09-07T16:00:00.000Z",
+ "source": "fixture",
+ "page": 1,
+ "pages": 1,
+ "listings": [
+  {
+   "listingKey": "fixture-029",
+   "mlsId": "FX902900",
+   "slug": "296-fixture-lane-london-fx902900",
+   "market": "london",
+   "street": "296 Fixture Lane",
+   "city": "London",
+   "band": "6 to 12 units",
+   "bandSlug": "6-12",
+   "listPrice": 1155000,
+   "office": "Demo Commercial Realty Corp., Brokerage",
+   "dom": 11,
+   "modified": "2026-09-04T04:17:24.000Z",
+   "thumb": "/images/listings-fixtures/apt-13.jpg",
+   "thumbAlt": "Sample photo 1 of 6 — synthetic listing",
+   "own": null
+  },
+  {
+   "listingKey": "fixture-028",
+   "mlsId": "FX902800",
+   "slug": "289-test-boulevard-london-fx902800",
+   "market": "london",
+   "street": "289 Test Boulevard",
+   "city": "London",
+   "band": "13 to 20 units",
+   "bandSlug": "13-20",
+   "listPrice": 2215000,
+   "office": "Placeholder Real Estate Group, Brokerage",
+   "dom": 127,
+   "modified": "2026-09-07T14:35:02.000Z",
+   "thumb": "/images/listings-fixtures/apt-06.jpg",
+   "thumbAlt": "Sample photo 1 of 6 — synthetic listing",
+   "own": null
+  }
+ ]
+}

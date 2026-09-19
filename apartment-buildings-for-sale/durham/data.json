@@ -1,0 +1,42 @@
+{
+ "generatedAt": "2026-09-07T16:00:00.000Z",
+ "source": "fixture",
+ "page": 1,
+ "pages": 1,
+ "listings": [
+  {
+   "listingKey": "fixture-033",
+   "mlsId": "FX903300",
+   "slug": "324-sample-street-oshawa-fx903300",
+   "market": "durham",
+   "street": "324 Sample Street",
+   "city": "Oshawa",
+   "band": "6 to 12 units",
+   "bandSlug": "6-12",
+   "listPrice": 1410000,
+   "office": "Placeholder Real Estate Group, Brokerage",
+   "dom": 79,
+   "modified": "2026-09-02T15:46:17.000Z",
+   "thumb": "/images/listings-fixtures/apt-19.jpg",
+   "thumbAlt": "Sample photo 1 of 5 — synthetic listing",
+   "own": null
+  },
+  {
+   "listingKey": "fixture-032",
+   "mlsId": "FX903200",
+   "slug": "oshawa-fx903200",
+   "market": "durham",
+   "street": null,
+   "city": "Oshawa",
+   "band": "13 to 20 units",
+   "bandSlug": "13-20",
+   "listPrice": 3615000,
+   "office": "Sample Properties Ltd., Brokerage",
+   "dom": 108,
+   "modified": "2026-09-06T23:35:46.000Z",
+   "thumb": "/images/listings-fixtures/apt-03.jpg",
+   "thumbAlt": "Sample photo 1 of 4 — synthetic listing",
+   "own": null
+  }
+ ]
+}

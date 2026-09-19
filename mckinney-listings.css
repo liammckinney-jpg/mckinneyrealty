@@ -35,6 +35,26 @@
   max-width: 44em;
 }
 
+/* Coverage disclosure — IDX 6.3(j) forbids claiming full access to the MLS®
+   System, and the feed does not carry every Ontario board. */
+.lst-coverage {
+  margin-top: 0.75rem;
+  font-size: var(--b-sm);
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.58);
+  max-width: 44em;
+}
+
+/* ---- pagination (IDX 6.3(b): 100 listings per inquiry) ---------- */
+.lst-pagination {
+  display: flex; align-items: center; justify-content: center; gap: 1.5rem;
+  margin-top: 2.5rem; font-size: var(--b-sm);
+}
+.lst-pagination a { color: var(--text-1); text-decoration: none; border-bottom: 1px solid var(--gold-dark); padding-bottom: 2px; }
+.lst-pagination a:hover { color: var(--gold-dark); }
+.lst-page-of { color: var(--text-2); }
+
 /* ---- filter bar ------------------------------------------------ */
 .lst-controls {
   position: sticky; top: 4.5rem; z-index: 50;
@@ -130,9 +150,13 @@
 .lst-card-body { padding: 1.25rem 1.375rem 1.375rem; }
 .lst-card-l1 { font-family: var(--font-d); font-size: 1.3125rem; font-weight: 500; color: var(--text-1); line-height: 1.25; }
 .lst-card-l2 { margin-top: 0.5rem; font-size: var(--b-md); color: var(--text-1); }
-.lst-card-l3 { margin-top: 0.25rem; font-size: var(--b-md); color: var(--gold-dark); }
-/* Attribution: body size, full brokerage name, never truncated (§7.1) */
-.lst-card-l4 { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); font-size: var(--b-md); color: var(--text-2); }
+/* Attribution (§7.1 + IDX Data Agreement 6.3(c)): the listing brokerage must
+   be "in the same font and size as the other Listing(s) details and not
+   visually separated from the Listing(s) display". So it matches .lst-card-l2
+   exactly and carries NO separating rule. The previous treatment had a
+   border-top and a muted colour — both are the thing 6.3(c) prohibits.
+   Do not re-add a divider or de-emphasise this line. */
+.lst-card-l3 { margin-top: 0.5rem; font-size: var(--b-md); color: var(--text-1); }
 
 /* ---- snapshot age (§7.5) --------------------------------------- */
 .lst-refreshed { background: var(--white); padding: 0 0 2rem; }
@@ -160,10 +184,10 @@
 .det-h1 { font-family: var(--font-d); font-weight: 400; font-size: var(--d-section); line-height: 1.1; color: var(--text-1); }
 .det-sub { margin-top: 0.625rem; font-size: var(--b-md); color: var(--text-2); }
 /* Attribution block: above the fold on mobile, never collapsed (§6/§7.1) */
-.det-attribution { margin-top: 1rem; font-size: var(--b-md); color: var(--text-2); line-height: 1.7; }
+/* 6.3(c): same size and weight as the surrounding listing details. */
+.det-attribution { margin-top: 1rem; font-size: var(--b-md); color: var(--text-1); line-height: 1.7; }
 .det-price { text-align: right; }
 .det-price-main { font-family: var(--font-d); font-size: var(--d-stat-sm); font-weight: 500; color: var(--text-1); line-height: 1.1; }
-.det-price-ppu { margin-top: 0.25rem; font-size: var(--b-md); color: var(--text-2); }
 .det-ctas { margin-top: 2rem; display: flex; gap: 2.5rem; flex-wrap: wrap; }
 .det-cta { max-width: 24rem; }
 .det-cta-help { margin-top: 0.625rem; font-size: var(--b-sm); color: var(--text-3); line-height: 1.6; }
@@ -179,7 +203,6 @@
 .det-figures-table { width: 100%; max-width: 34rem; border-collapse: collapse; }
 .det-figures-table td { padding: 0.75rem 0; border-bottom: 1px solid var(--border); font-size: var(--b-md); color: var(--text-1); }
 .det-figures-table td:last-child { text-align: right; }
-.det-notreported { color: var(--text-3); }
 
 .det-remarks { padding: 3.5rem 0 0; background: var(--white); }
 /* PublicRemarks as supplied — line breaks preserved, no editing (§7.8) */

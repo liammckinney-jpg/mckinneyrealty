@@ -1,12 +1,27 @@
 /* =========================================================================
-   Listings filter/sort layer (spec §5) — client-side over data.json.
-   Every filter state is URL-encoded so any view is a shareable URL:
-     units=5-11,25-49  markets=quinte,kingston  price_min/price_max
-     ppu_min/ppu_max   cap=1  cap_min=5         within=7|30|90
-     sort=price-asc|price-desc|ppu|units|cap    (default: newest, omitted)
+   Listings filter/sort layer (spec §5, Sept 18 2026 amendment) — client-side
+   over data.json. Every filter state is URL-encoded so any view is a
+   shareable URL:
+     band=2-5,13-20   markets=quinte,kingston   price_min/price_max
+     within=7|30|90   sort=price-asc|price-desc     (default: newest, omitted)
+
+   There is no unit-count, price-per-unit or cap-rate filter: the MLS®
+   commercial form carries none of those values. Buildings carry one of four
+   unit BANDS; see scripts/listings/provider.js.
+
+   Each page fetches its OWN data.json, which holds only that page's slice.
+   That is deliberate — IDX Data Agreement 6.3(b) caps what a consumer may
+   view or retrieve in response to an inquiry at 100 listings, so the whole
+   snapshot is never shipped to the browser at once.
+
+   KNOWN LIMIT, needs a decision before real volume: when a scope spans more
+   than one page, these filters narrow only the loaded page. Filtering across
+   the full set needs either pre-generated filter routes or a query endpoint.
+   With the fixture set (40, single page) the two are identical.
+
    Market pages carry body[data-market] and are pre-filtered; the market
-   multi-select exists only on the index. No public strings live here
-   except the §6 count line, rebuilt exactly as generated at build time.
+   multi-select exists only on the index. No public strings live here except
+   the §6 count line, rebuilt exactly as generated at build time.
    ========================================================================= */
 (function () {
   'use strict';
@@ -19,7 +34,6 @@
 
   var marketSlug = document.body.getAttribute('data-market') || '';
   var marketName = document.body.getAttribute('data-market-name') || '';
-  var BUCKETS = { '5-11': [5, 11], '12-24': [12, 24], '25-49': [25, 49], '50+': [50, Infinity] };
   var all = null;
 
   function $$(sel) { return Array.prototype.slice.call(form.querySelectorAll(sel)); }
@@ -36,12 +50,9 @@
       return $$('input[name="' + name + '"]:checked').map(function (el) { return el.value; });
     };
     return {
-      units: checked('units'),
+      bands: checked('band'),
       markets: marketSlug ? [marketSlug] : checked('markets'),
       priceMin: num('price_min'), priceMax: num('price_max'),
-      ppuMin: num('ppu_min'), ppuMax: num('ppu_max'),
-      capOnly: form.elements.cap ? form.elements.cap.checked : false,
-      capMin: num('cap_min'),
       within: form.elements.within.value ? parseInt(form.elements.within.value, 10) : null,
       sort: form.elements.sort.value || '',
     };
@@ -49,14 +60,10 @@
 
   function writeUrl(s) {
     var q = new URLSearchParams();
-    if (s.units.length) q.set('units', s.units.join(','));
+    if (s.bands.length) q.set('band', s.bands.join(','));
     if (!marketSlug && s.markets.length) q.set('markets', s.markets.join(','));
     if (s.priceMin != null) q.set('price_min', s.priceMin);
     if (s.priceMax != null) q.set('price_max', s.priceMax);
-    if (s.ppuMin != null) q.set('ppu_min', s.ppuMin);
-    if (s.ppuMax != null) q.set('ppu_max', s.ppuMax);
-    if (s.capOnly) q.set('cap', '1');
-    if (s.capMin != null) q.set('cap_min', s.capMin);
     if (s.within != null) q.set('within', s.within);
     if (s.sort) q.set('sort', s.sort);
     var qs = q.toString();
@@ -72,12 +79,11 @@
         el.checked = want.indexOf(el.value) !== -1;
       });
     };
-    if (q.get('units')) setChecks('units', q.get('units'));
+    if (q.get('band')) setChecks('band', q.get('band'));
     if (!marketSlug && q.get('markets')) setChecks('markets', q.get('markets'));
-    ['price_min', 'price_max', 'ppu_min', 'ppu_max', 'cap_min'].forEach(function (k) {
+    ['price_min', 'price_max'].forEach(function (k) {
       if (q.get(k) != null && form.elements[k]) form.elements[k].value = q.get(k);
     });
-    if (q.get('cap') === '1' && form.elements.cap) form.elements.cap.checked = true;
     if (q.get('within')) form.elements.within.value = q.get('within');
     if (q.get('sort')) form.elements.sort.value = q.get('sort');
     return q.toString().length > 0;
@@ -85,20 +91,10 @@
 
   /* ---------------- filter + sort ---------------- */
   function matches(l, s) {
-    if (s.units.length) {
-      var hit = s.units.some(function (b) {
-        var r = BUCKETS[b];
-        return r && l.units >= r[0] && l.units <= r[1];
-      });
-      if (!hit) return false;
-    }
+    if (s.bands.length && s.bands.indexOf(l.bandSlug) === -1) return false;
     if (s.markets.length && s.markets.indexOf(l.market) === -1) return false;
     if (s.priceMin != null && l.listPrice < s.priceMin) return false;
     if (s.priceMax != null && l.listPrice > s.priceMax) return false;
-    if (s.ppuMin != null && l.ppu < s.ppuMin) return false;
-    if (s.ppuMax != null && l.ppu > s.ppuMax) return false;
-    if (s.capOnly && l.cap == null) return false;
-    if (s.capMin != null && (l.cap == null || l.cap * 100 < s.capMin)) return false;
     if (s.within != null && (l.dom == null || l.dom > s.within)) return false;
     return true;
   }
@@ -114,15 +110,6 @@
     '': newestFirst,
     'price-asc': function (a, b) { return a.listPrice - b.listPrice; },
     'price-desc': function (a, b) { return b.listPrice - a.listPrice; },
-    'ppu': function (a, b) { return a.ppu - b.ppu; },
-    'units': function (a, b) { return b.units - a.units; },
-    // Reported cap: listings without NOI sort last, never hidden (spec §5)
-    'cap': function (a, b) {
-      if (a.cap == null && b.cap == null) return newestFirst(a, b);
-      if (a.cap == null) return 1;
-      if (b.cap == null) return -1;
-      return b.cap - a.cap;
-    },
   };
 
   function apply() {
@@ -141,7 +128,10 @@
   }
 
   /* ---------------- init ---------------- */
-  fetch('/apartment-buildings-for-sale/data.json')
+  // Relative, so a market page or page 2 loads its own slice — never the
+  // whole snapshot (6.3(b)).
+  var DATA_URL = location.pathname.replace(/[^/]*$/, '') + 'data.json';
+  fetch(DATA_URL)
     .then(function (r) { return r.json(); })
     .then(function (d) {
       all = d.listings;

@@ -1,0 +1,59 @@
+{
+ "generatedAt": "2026-09-07T16:00:00.000Z",
+ "source": "fixture",
+ "page": 1,
+ "pages": 1,
+ "listings": [
+  {
+   "listingKey": "fixture-022",
+   "mlsId": "FX902200",
+   "slug": "247-specimen-court-ottawa-fx902200",
+   "market": "ottawa",
+   "street": "247 Specimen Court",
+   "city": "Ottawa",
+   "band": "Over 20 units",
+   "bandSlug": "over-20",
+   "listPrice": 9090000,
+   "office": "Sample Properties Ltd., Brokerage",
+   "dom": 3,
+   "modified": "2026-09-04T00:57:51.000Z",
+   "thumb": "/images/listings-fixtures/apt-03.jpg",
+   "thumbAlt": "Sample photo 1 of 8 — synthetic listing",
+   "own": null
+  },
+  {
+   "listingKey": "fixture-024",
+   "mlsId": "FX902400",
+   "slug": "261-mock-terrace-ottawa-fx902400",
+   "market": "ottawa",
+   "street": "261 Mock Terrace",
+   "city": "Ottawa",
+   "band": "6 to 12 units",
+   "bandSlug": "6-12",
+   "listPrice": 2405000,
+   "office": "Demo Commercial Realty Corp., Brokerage",
+   "dom": 112,
+   "modified": "2026-09-02T03:11:18.000Z",
+   "thumb": "/images/listings-fixtures/apt-17.jpg",
+   "thumbAlt": "Sample photo 1 of 8 — synthetic listing",
+   "own": null
+  },
+  {
+   "listingKey": "fixture-023",
+   "mlsId": "FX902300",
+   "slug": "ottawa-fx902300",
+   "market": "ottawa",
+   "street": null,
+   "city": "Ottawa",
+   "band": "Over 20 units",
+   "bandSlug": "over-20",
+   "listPrice": 24300000,
+   "office": "Placeholder Real Estate Group, Brokerage",
+   "dom": 156,
+   "modified": "2026-09-07T03:45:54.000Z",
+   "thumb": "/images/listings-fixtures/apt-02.jpg",
+   "thumbAlt": "Sample photo 1 of 3 — synthetic listing",
+   "own": null
+  }
+ ]
+}

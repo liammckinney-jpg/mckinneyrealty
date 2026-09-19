@@ -1,0 +1,25 @@
+{
+ "generatedAt": "2026-09-07T16:00:00.000Z",
+ "source": "fixture",
+ "page": 1,
+ "pages": 1,
+ "listings": [
+  {
+   "listingKey": "fixture-039",
+   "mlsId": "FX903900",
+   "slug": "366-demo-drive-cornwall-fx903900",
+   "market": "cornwall",
+   "street": "366 Demo Drive",
+   "city": "Cornwall",
+   "band": "6 to 12 units",
+   "bandSlug": "6-12",
+   "listPrice": 900000,
+   "office": "Demo Commercial Realty Corp., Brokerage",
+   "dom": 118,
+   "modified": "2026-09-03T00:03:22.000Z",
+   "thumb": "/images/listings-fixtures/apt-20.jpg",
+   "thumbAlt": "Sample photo 1 of 8 — synthetic listing",
+   "own": null
+  }
+ ]
+}

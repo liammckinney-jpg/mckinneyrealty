@@ -105,13 +105,12 @@
       </div>
       <div class="det-price">
         <div class="det-price-main">{{PRICE}}</div>
-        <div class="det-price-ppu">{{PPU}} per unit</div>
       </div>
     </div>
     <div class="det-ctas">
       <div class="det-cta">
         <a class="btn btn--gold" href="{{UW_URL}}">Underwrite this building <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <p class="det-cta-help">Opens our underwriting tool with this listing's price and reported figures filled in. Every assumption stays editable.</p>
+        <p class="det-cta-help">Opens our underwriting tool with this listing's price filled in. Every assumption stays editable.</p>
       </div>
       <div class="det-cta">
         <a class="btn btn--outline" href="#request">Request the package <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -133,19 +132,13 @@
 </section>
 
 <!-- ============================================================
-     REPORTED FIGURES (spec §6; values as supplied, never computed
-     by us beyond the two §4 derived metrics)
+     DETAILS FROM THE LISTING (spec §6 as amended Sept 18 2026).
+     Only fields the listing actually supplies, shown as supplied.
+     Nothing is computed. Rows with no value are not rendered at all —
+     there is no "Not reported" row, because the income fields the old
+     table assumed do not exist on the MLS® commercial form.
      ============================================================ -->
-<section class="det-figures">
-  <div class="wrap">
-    <h2 class="det-h2">Figures reported by the listing brokerage</h2>
-    <table class="det-figures-table">
-      <tbody>
-{{FIGURES_ROWS}}
-      </tbody>
-    </table>
-  </div>
-</section>
+{{DETAILS_BLOCK}}
 
 <!-- ============================================================
      REMARKS — PublicRemarks as supplied, plain text, line breaks
