@@ -26,6 +26,20 @@
 <meta name="twitter:description" content="Apartment building and investment property brokers across Ontario. $250M+ in career transactions, principal-led on every deal, and Ontario's apartment listings searchable by market.">
 <meta name="twitter:image" content="https://www.mckinneyrealty.ca/images/og/home.png">
 <meta name="description" content="Apartment building and investment property brokers across Ontario. $250M+ in career transactions, principal-led on every deal, and Ontario's apartment listings searchable by market.">
+<!-- WebSite schema — the signal Google uses to pick the site name shown in results.
+     Server-rendered on purpose: the RealEstateAgent block in mckinney-schema.js is
+     injected client-side, and this one must sit in the served HTML at the domain root.
+     Home page only; Google reads it nowhere else. No alternateName — the only
+     candidate is the retired "McKinney Realty", which RE/MAX team-name rule 4
+     prohibits (KB-01), and listing it would offer it back to Google as acceptable. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "McKinney Multifamily Group",
+  "url": "https://www.mckinneyrealty.ca/"
+}
+</script>
 <script src="/mckinney-flags.js?v=2"></script>
 <script src="mckinney-consent.js?v=2"></script>
 <script src="mckinney-schema.js?v=2" defer></script>
