@@ -1,0 +1,25 @@
+{
+ "generatedAt": "2026-09-07T16:00:00.000Z",
+ "source": "fixture",
+ "page": 1,
+ "pages": 1,
+ "listings": [
+  {
+   "listingKey": "fixture-035",
+   "mlsId": "FX903500",
+   "slug": "338-placeholder-road-barrie-fx903500",
+   "market": "barrie-simcoe",
+   "street": "338 Placeholder Road",
+   "city": "Barrie",
+   "band": "13 to 20 units",
+   "bandSlug": "13-20",
+   "listPrice": 4005000,
+   "office": "Specimen Realty Co., Brokerage",
+   "dom": 18,
+   "modified": "2026-09-03T13:14:47.000Z",
+   "thumb": "/images/listings-fixtures/apt-18.jpg",
+   "thumbAlt": "Sample photo 1 of 4 — synthetic listing",
+   "own": null
+  }
+ ]
+}

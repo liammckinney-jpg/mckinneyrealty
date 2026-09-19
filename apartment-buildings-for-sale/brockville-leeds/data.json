@@ -1,0 +1,25 @@
+{
+ "generatedAt": "2026-09-07T16:00:00.000Z",
+ "source": "fixture",
+ "page": 1,
+ "pages": 1,
+ "listings": [
+  {
+   "listingKey": "fixture-038",
+   "mlsId": "FX903800",
+   "slug": "359-specimen-court-brockville-fx903800",
+   "market": "brockville-leeds",
+   "street": "359 Specimen Court",
+   "city": "Brockville",
+   "band": "Over 20 units",
+   "bandSlug": "over-20",
+   "listPrice": 3395000,
+   "office": "Placeholder Real Estate Group, Brokerage",
+   "dom": 140,
+   "modified": "2026-09-02T05:12:50.000Z",
+   "thumb": "/images/listings-fixtures/apt-06.jpg",
+   "thumbAlt": "Sample photo 1 of 7 — synthetic listing",
+   "own": null
+  }
+ ]
+}

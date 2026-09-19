@@ -48,7 +48,14 @@ function slugify(s) {
 
 // Detail route: /apartment-buildings-for-sale/[market]/[listing-slug]-[mlsId]/
 function listingSlug(listing) {
-  return slugify(listing.address.street + '-' + listing.address.city) + '-' + slugify(listing.mlsId);
+  // The street segment is dropped when the listing withholds its address
+  // (Form 590 p.9 DISPLAY ADDRESS ON INTERNET = No); the mlsId suffix keeps
+  // the URL unique either way. NOTE: if a listing toggles that flag mid-life
+  // its URL changes — handle with the 410/redirect diffing still owed in
+  // Phase 1b, rather than by inventing a placeholder street here.
+  const a = listing.address;
+  const base = a.street ? a.street + '-' + a.city : a.city;
+  return slugify(base) + '-' + slugify(listing.mlsId);
 }
 
 module.exports = { MARKETS, BY_SLUG, marketName, mapCity, slugify, listingSlug };

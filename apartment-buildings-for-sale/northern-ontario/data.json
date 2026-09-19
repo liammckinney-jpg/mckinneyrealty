@@ -1,0 +1,25 @@
+{
+ "generatedAt": "2026-09-07T16:00:00.000Z",
+ "source": "fixture",
+ "page": 1,
+ "pages": 1,
+ "listings": [
+  {
+   "listingKey": "fixture-040",
+   "mlsId": "FX904000",
+   "slug": "373-mock-terrace-sudbury-fx904000",
+   "market": "northern-ontario",
+   "street": "373 Mock Terrace",
+   "city": "Sudbury",
+   "band": "Over 20 units",
+   "bandSlug": "over-20",
+   "listPrice": 9055000,
+   "office": "Specimen Realty Co., Brokerage",
+   "dom": 117,
+   "modified": "2026-09-06T23:40:23.000Z",
+   "thumb": "/images/listings-fixtures/apt-22.jpg",
+   "thumbAlt": "Sample photo 1 of 7 — synthetic listing",
+   "own": null
+  }
+ ]
+}

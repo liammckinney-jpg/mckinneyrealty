@@ -15,7 +15,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const { createProvider, validateSnapshot } = require('./provider');
+const { createProvider, validateSnapshot, normalizeBand: bandOf } = require('./provider');
 const { MARKETS, listingSlug } = require('./markets');
 const OWN_LISTINGS = require('./own-listings');
 const R = require('./render');
@@ -24,19 +24,30 @@ const ROOT = path.join(__dirname, '..', '..');
 const OUT = path.join(ROOT, 'apartment-buildings-for-sale');
 const SITE = 'https://www.mckinneyrealty.ca';
 
-/* ---- §6 verbatim strings ------------------------------------------- */
+/* ---- §6 verbatim strings (Sept 18 2026 amendment) -------------------
+   No string claims completeness: the feed does not cover every Ontario
+   board, the IDX pool is opt-in at brokerage and listing level, and IDX
+   Data Agreement 6.3(j) forbids claiming full access to the MLS® System.
+   "updated daily" reflects the 24-hour refresh requirement (6.3(h)).
+   -------------------------------------------------------------------- */
 const COPY = {
   indexTitle: 'Apartment buildings for sale in Ontario — McKinney Multifamily Group',
-  indexMeta: 'Every building with five or more units listed for sale on the MLS® across Ontario, updated through the day. Filter by units, market and price per unit, then run the numbers on any listing.',
+  indexMeta: 'Apartment buildings listed for sale on the MLS® across Ontario, updated daily. Filter by units, market and price, then run the numbers on any listing.',
   indexH1: 'Apartment buildings for sale in Ontario',
-  indexDek: 'Every building with five or more units listed on the MLS® across the province, updated through the day. Filter by units, market and price per unit, then run the numbers on any listing.',
+  indexDek: 'Apartment buildings listed for sale on the MLS® across Ontario, updated daily. Filter by units, market and price, then run the numbers on any listing.',
+  coverage: 'Listings come from the MLS® System we subscribe to, which does not cover every board in Ontario.',
   countIndex: function (n) { return n + ' buildings listed'; },
   countMarket: function (n, market) { return n + ' buildings in ' + market; },
   marketTitle: function (m) { return 'Apartment buildings for sale in ' + m + ' — McKinney Multifamily Group'; },
   marketH1: function (m) { return 'Apartment buildings for sale in ' + m; },
-  marketDek: function (m) { return 'Every building with five or more units currently listed in ' + m + '. Updated through the day.'; },
+  marketDek: function (m) { return 'Apartment buildings currently listed in ' + m + '. Updated daily.'; },
   refreshed: function (time) { return 'Listings refreshed ' + time; },
 };
+
+/* IDX Data Agreement 6.3(b): a consumer may view or retrieve no more than
+   100 listings in response to an inquiry. Pages are chunked at this size and
+   each page ships only its own slice of data. */
+const PAGE_SIZE = 100;
 
 function fmtDate(iso) {
   return new Date(iso).toLocaleDateString('en-CA', {
@@ -53,18 +64,18 @@ function fmtRefreshTime(iso) {
 }
 
 // Card projection — the only listing fields the index/market layer ships.
+// No unit count and no computed metric: neither exists (see provider.js).
 function project(l) {
   return {
     listingKey: l.listingKey,
     mlsId: l.mlsId,
     slug: listingSlug(l),
     market: l.market,
-    street: l.address.street,
+    street: l.address.street,      // null when the listing withholds it
     city: l.address.city,
-    units: l.units,
+    band: l.unitBandLabel,
+    bandSlug: (bandOf(l.unitBand) || {}).slug || null,
     listPrice: l.listPrice,
-    ppu: l.derived.pricePerUnit,
-    cap: l.derived.capRateReported,
     office: l.listOfficeName,
     dom: l.daysOnMarket,
     modified: l.modified,
@@ -102,36 +113,47 @@ function marketFilterHtml() {
 
 /* ---- detail page pieces (spec §6 "Detail page") -------------------- */
 
-// Underwriter prefill URL: documented keys only; reported figures pass
-// through untouched — the tool completes gross = noi + opex and keeps
-// every assumption editable (appreciation default 0% is the tool's own).
+// Underwriter prefill URL. Price only — the income figures the old version
+// passed (noi/gross/opex) do not exist on the MLS® commercial form, and the
+// §6 helper line promises exactly "this listing's price filled in".
+// Open check C10 asks PropTx whether even this survives IDX 6.3(f)/6.2(f).
 function underwriterUrl(l) {
   const q = new URLSearchParams();
   q.set('price', l.listPrice);
-  q.set('units', l.units);
-  if (l.reported.taxes != null) q.set('taxes', l.reported.taxes);
-  if (l.reported.grossIncome != null) q.set('gross', l.reported.grossIncome);
-  if (l.reported.operatingExpense != null) q.set('opex', l.reported.operatingExpense);
-  if (l.reported.noi != null) q.set('noi', l.reported.noi);
   q.set('src', 'listings');
   q.set('mls', l.mlsId);
   return '/tools/underwrite?' + q.toString();
 }
 
-function figuresRows(l) {
-  const cap = l.derived.capRateReported;
-  const rows = [
-    ['Gross income', l.reported.grossIncome, R.fmtMoney],
-    ['Operating expenses', l.reported.operatingExpense, R.fmtMoney],
-    ['Net operating income', l.reported.noi, R.fmtMoney],
-    ['Property taxes', l.reported.taxes, R.fmtMoney],
-    ['Cap rate on list price', cap, R.fmtCap],
-  ];
-  return rows.map(function (r) {
-    const val = r[1] != null ? r[2](r[1]) : 'Not reported';
-    const cls = r[1] != null ? '' : ' class="det-notreported"';
-    return '        <tr><td>' + r[0] + '</td><td' + cls + '>' + val + '</td></tr>';
-  }).join('\n');
+// "Details from the listing" — supplied fields only, rendered only when
+// present. No "Not reported" row: the income fields the old table assumed
+// are not on the MLS® commercial form at all, so an empty row would be
+// inventing an expectation. Nothing here is computed.
+function detailsBlock(l) {
+  const rows = [];
+  const add = function (label, value) { if (value) rows.push([label, value]); };
+  add('Property taxes', l.taxes
+    ? R.fmtMoney(l.taxes.amount) + (l.taxes.year ? ' (' + l.taxes.year + ')' : '') : null);
+  add('Lot size', l.lotSize ? l.lotSize.value.toLocaleString('en-CA') + ' ' + l.lotSize.unit : null);
+  add('Total area', l.totalArea ? l.totalArea.value.toLocaleString('en-CA') + ' ' + l.totalArea.unit : null);
+  add('Zoning', l.zoning);
+  add('Occupancy', l.occupancy);
+  add('Heat', l.heatType);
+  if (!rows.length) return '';
+  return [
+    '<section class="det-figures">',
+    '  <div class="wrap">',
+    '    <h2 class="det-h2">Details from the listing</h2>',
+    '    <table class="det-figures-table">',
+    '      <tbody>',
+    rows.map(function (r) {
+      return '        <tr><td>' + R.esc(r[0]) + '</td><td>' + R.esc(r[1]) + '</td></tr>';
+    }).join('\n'),
+    '      </tbody>',
+    '    </table>',
+    '  </div>',
+    '</section>',
+  ].join('\n');
 }
 
 function photosHtml(l) {
@@ -142,20 +164,18 @@ function photosHtml(l) {
 
 function jsonLd(l, canonical) {
   // §8: RealEstateListing with offers.price and address; no invented fields.
+  // Street/postal are omitted entirely when the listing withholds the address.
+  const addr = { '@type': 'PostalAddress', addressLocality: l.address.city,
+                 addressRegion: l.address.region, addressCountry: 'CA' };
+  if (l.address.street) addr.streetAddress = l.address.street;
+  if (l.address.postalCode) addr.postalCode = l.address.postalCode;
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'RealEstateListing',
-    name: l.address.street + ', ' + l.address.city,
+    name: R.addressLine({ street: l.address.street, city: l.address.city }),
     url: canonical,
     dateModified: l.modified,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: l.address.street,
-      addressLocality: l.address.city,
-      addressRegion: l.address.region,
-      postalCode: l.address.postalCode,
-      addressCountry: 'CA',
-    },
+    address: addr,
     offers: { '@type': 'Offer', price: l.listPrice, priceCurrency: 'CAD' },
     provider: { '@type': 'RealEstateAgent', name: 'McKinney Multifamily Group' },
   });
@@ -172,6 +192,42 @@ function writePage(relDir, html) {
   const dir = path.join(OUT, relDir);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), html);
+}
+
+
+/* ---- paginated writer (IDX 6.3(b), 100 per inquiry) ------------------
+   Page 1 lives at the base path; later pages at <base>/page/N/. Each page
+   writes its OWN data.json holding only that page's slice, so the client
+   never receives more than the cap in one response. */
+function paginationHtml(baseHref, page, pages) {
+  if (pages < 2) return '';
+  const href = function (n) { return n === 1 ? baseHref : baseHref + 'page/' + n + '/'; };
+  const parts = ['<nav class="lst-pagination" aria-label="Pages">'];
+  if (page > 1) parts.push('  <a class="lst-page-prev" href="' + href(page - 1) + '" rel="prev">Previous</a>');
+  parts.push('  <span class="lst-page-of">Page ' + page + ' of ' + pages + '</span>');
+  if (page < pages) parts.push('  <a class="lst-page-next" href="' + href(page + 1) + '" rel="next">Next</a>');
+  parts.push('</nav>');
+  return parts.join('\n');
+}
+
+function writePaged(baseRel, baseHref, allCards, snapshot, makeVars, template) {
+  const pages = Math.max(1, Math.ceil(allCards.length / PAGE_SIZE));
+  for (let i = 0; i < pages; i++) {
+    const slice = allCards.slice(i * PAGE_SIZE, (i + 1) * PAGE_SIZE);
+    const rel = i === 0 ? baseRel : path.join(baseRel, 'page', String(i + 1));
+    const vars = makeVars(slice, i + 1, pages);
+    vars.CARDS = slice.map(R.renderCard).join('\n');
+    vars.PAGINATION = paginationHtml(baseHref, i + 1, pages);
+    writePage(rel, renderPage(template, vars));
+    fs.writeFileSync(path.join(OUT, rel, 'data.json'), JSON.stringify({
+      generatedAt: snapshot.generatedAt,
+      source: snapshot.source,
+      page: i + 1,
+      pages: pages,
+      listings: slice,
+    }, null, 1) + '\n');
+  }
+  return pages;
 }
 
 async function main() {
@@ -196,49 +252,50 @@ async function main() {
 
   fs.mkdirSync(OUT, { recursive: true });
 
-  // data.json — what the client-side filter layer reads
-  fs.writeFileSync(path.join(OUT, 'data.json'), JSON.stringify({
-    generatedAt: snapshot.generatedAt,
-    source: snapshot.source,
-    listings: cards,
-  }, null, 1) + '\n');
-
   // render.js — browser copy of the shared card renderer
   fs.copyFileSync(path.join(__dirname, 'render.js'), path.join(OUT, 'render.js'));
 
-  // Index page
-  writePage('', renderPage(template, {
-    TITLE: R.esc(COPY.indexTitle),
-    META_DESC: R.esc(COPY.indexMeta),
-    CANONICAL_URL: SITE + '/apartment-buildings-for-sale/',
-    H1: COPY.indexH1,
-    DEK: COPY.indexDek,
-    MARKET_SLUG: '',
-    MARKET_NAME: '',
-    MARKET_FILTER: marketFilterHtml(),
-    COUNT_LINE: COPY.countIndex(cards.length),
-    STAGING_BANNER: stagingBanner,
-    CARDS: cards.map(R.renderCard).join('\n'),
-    REFRESHED: R.esc(refreshed),
-  }));
+  // Index — paginated at the 6.3(b) cap; each page carries its own data.json
+  const indexPages = writePaged('', '/apartment-buildings-for-sale/', cards, snapshot,
+    function (slice, page, pages) {
+      const suffix = page > 1 ? ' — page ' + page : '';
+      return {
+        TITLE: R.esc(COPY.indexTitle + suffix),
+        META_DESC: R.esc(COPY.indexMeta),
+        CANONICAL_URL: SITE + '/apartment-buildings-for-sale/' + (page > 1 ? 'page/' + page + '/' : ''),
+        H1: COPY.indexH1,
+        DEK: COPY.indexDek,
+        COVERAGE_LINE: '    <p class="lst-coverage">' + R.esc(COPY.coverage) + '</p>',
+        MARKET_SLUG: '',
+        MARKET_NAME: '',
+        MARKET_FILTER: marketFilterHtml(),
+        COUNT_LINE: COPY.countIndex(cards.length),
+        STAGING_BANNER: stagingBanner,
+        REFRESHED: R.esc(refreshed),
+      };
+    }, template);
 
   // Market pages — every §5 market gets a stable URL, pre-filtered
   MARKETS.forEach(function (m) {
     const mine = cards.filter(function (c) { return c.market === m.slug; });
-    writePage(m.slug, renderPage(template, {
-      TITLE: R.esc(COPY.marketTitle(m.name)),
-      META_DESC: R.esc(COPY.marketDek(m.name)),
-      CANONICAL_URL: SITE + '/apartment-buildings-for-sale/' + m.slug + '/',
-      H1: COPY.marketH1(m.name),
-      DEK: COPY.marketDek(m.name),
-      MARKET_SLUG: m.slug,
-      MARKET_NAME: R.esc(m.name),
-      MARKET_FILTER: '',
-      COUNT_LINE: COPY.countMarket(mine.length, m.name),
-      STAGING_BANNER: stagingBanner,
-      CARDS: mine.map(R.renderCard).join('\n'),
-      REFRESHED: R.esc(refreshed),
-    }));
+    const base = '/apartment-buildings-for-sale/' + m.slug + '/';
+    writePaged(m.slug, base, mine, snapshot, function (slice, page, pages) {
+      const suffix = page > 1 ? ' — page ' + page : '';
+      return {
+        TITLE: R.esc(COPY.marketTitle(m.name) + suffix),
+        META_DESC: R.esc(COPY.marketDek(m.name)),
+        CANONICAL_URL: SITE + base + (page > 1 ? 'page/' + page + '/' : ''),
+        H1: COPY.marketH1(m.name),
+        DEK: COPY.marketDek(m.name),
+        COVERAGE_LINE: '',
+        MARKET_SLUG: m.slug,
+        MARKET_NAME: R.esc(m.name),
+        MARKET_FILTER: '',
+        COUNT_LINE: COPY.countMarket(mine.length, m.name),
+        STAGING_BANNER: stagingBanner,
+        REFRESHED: R.esc(refreshed),
+      };
+    }, template);
   });
 
   // Detail pages — one per listing (spec §6 "Detail page")
@@ -248,7 +305,7 @@ async function main() {
     if (!m) throw new Error('Listing ' + l.mlsId + ' has unmapped market slug "' + l.market + '"');
     const slug = listingSlug(l);
     const canonical = SITE + '/apartment-buildings-for-sale/' + m.slug + '/' + slug + '/';
-    const h1 = l.address.street + ', ' + l.address.city;
+    const h1 = R.addressLine({ street: l.address.street, city: l.address.city });
     const own = OWN_LISTINGS[l.mlsId] || null;
     // §2.2: own listings swap the secondary CTA for the full-listing link
     // (Request the package remains on the /listings/ page itself, so the
@@ -259,7 +316,7 @@ async function main() {
       : '<div class="det-cta">\n        <a class="btn btn--outline" href="#request">Request the package ' + ARROW + '</a>\n        <p class="det-cta-help">We\'ll send the full listing package and, if useful, our read on the numbers.</p>\n      </div>';
     // Sub: `{units} units · Built {yearBuilt} · MLS® {mlsId}` — the Built
     // segment is omitted when the feed carries no year.
-    const sub = l.units + ' units · ' + (l.yearBuilt != null ? 'Built ' + l.yearBuilt + ' · ' : '') + 'MLS® ' + l.mlsId;
+    const sub = l.unitBandLabel + ' · ' + (l.yearBuilt != null ? 'Built ' + l.yearBuilt + ' · ' : '') + 'MLS® ' + l.mlsId;
     let detailHtml = renderPage(detailTemplate, {
       TITLE: R.esc(h1 + ' — McKinney Multifamily Group'),
       META_DESC: R.esc(sub + '. Listed by ' + l.listOfficeName + '.'),
@@ -272,10 +329,9 @@ async function main() {
       LIST_OFFICE: R.esc(l.listOfficeName),
       UPDATED_DATE: R.esc(fmtDate(l.modified)),
       PRICE: R.fmtMoney(l.listPrice),
-      PPU: R.fmtMoney(l.derived.pricePerUnit),
       UW_URL: R.esc(underwriterUrl(l)),
       PHOTOS: photosHtml(l),
-      FIGURES_ROWS: figuresRows(l),
+      DETAILS_BLOCK: detailsBlock(l),
       REMARKS: R.esc(l.remarks),
       LISTING_JSON: JSON.stringify({
         mlsId: l.mlsId,
@@ -316,9 +372,10 @@ async function main() {
       return '  <url><loc>' + u + '</loc><lastmod>' + lastmod + '</lastmod></url>';
     }).join('\n') + '\n</urlset>\n');
 
-  console.log('listings:build OK — provider=' + provider.name +
-    ', ' + cards.length + ' listings, index + ' + MARKETS.length + ' market pages + ' +
-    snapshot.listings.length + ' detail pages → apartment-buildings-for-sale/');
+  console.log('listings:build OK — provider=' + provider.name + ', ' + cards.length +
+    ' listings, index (' + indexPages + ' page' + (indexPages > 1 ? 's' : '') + ') + ' +
+    MARKETS.length + ' market pages + ' + snapshot.listings.length +
+    ' detail pages → apartment-buildings-for-sale/  [cap ' + PAGE_SIZE + '/page]');
 }
 
 main().catch(function (e) {

@@ -1,0 +1,59 @@
+{
+ "generatedAt": "2026-09-07T16:00:00.000Z",
+ "source": "fixture",
+ "page": 1,
+ "pages": 1,
+ "listings": [
+  {
+   "listingKey": "fixture-026",
+   "mlsId": "FX902600",
+   "slug": "275-example-avenue-st-catharines-fx902600",
+   "market": "hamilton-niagara",
+   "street": "275 Example Avenue",
+   "city": "St. Catharines",
+   "band": "6 to 12 units",
+   "bandSlug": "6-12",
+   "listPrice": 1600000,
+   "office": "Example Realty Inc., Brokerage",
+   "dom": 21,
+   "modified": "2026-09-04T02:01:19.000Z",
+   "thumb": "/images/listings-fixtures/apt-04.jpg",
+   "thumbAlt": "Sample photo 1 of 6 — synthetic listing",
+   "own": null
+  },
+  {
+   "listingKey": "fixture-027",
+   "mlsId": "FX902700",
+   "slug": "282-placeholder-road-hamilton-fx902700",
+   "market": "hamilton-niagara",
+   "street": "282 Placeholder Road",
+   "city": "Hamilton",
+   "band": "Over 20 units",
+   "bandSlug": "over-20",
+   "listPrice": 5530000,
+   "office": "Sample Properties Ltd., Brokerage",
+   "dom": 59,
+   "modified": "2026-09-04T08:46:55.000Z",
+   "thumb": "/images/listings-fixtures/apt-21.jpg",
+   "thumbAlt": "Sample photo 1 of 6 — synthetic listing",
+   "own": null
+  },
+  {
+   "listingKey": "fixture-025",
+   "mlsId": "FX902500",
+   "slug": "268-sample-street-hamilton-fx902500",
+   "market": "hamilton-niagara",
+   "street": "268 Sample Street",
+   "city": "Hamilton",
+   "band": "Over 20 units",
+   "bandSlug": "over-20",
+   "listPrice": 9145000,
+   "office": "Specimen Realty Co., Brokerage",
+   "dom": 151,
+   "modified": "2026-09-04T06:43:26.000Z",
+   "thumb": "/images/listings-fixtures/apt-01.jpg",
+   "thumbAlt": "Sample photo 1 of 7 — synthetic listing",
+   "own": null
+  }
+ ]
+}

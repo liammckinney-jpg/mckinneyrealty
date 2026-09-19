@@ -1,0 +1,25 @@
+{
+ "generatedAt": "2026-09-07T16:00:00.000Z",
+ "source": "fixture",
+ "page": 1,
+ "pages": 1,
+ "listings": [
+  {
+   "listingKey": "fixture-034",
+   "mlsId": "FX903400",
+   "slug": "331-example-avenue-windsor-fx903400",
+   "market": "windsor-essex",
+   "street": "331 Example Avenue",
+   "city": "Windsor",
+   "band": "2 to 5 units",
+   "bandSlug": "2-5",
+   "listPrice": 900000,
+   "office": "Demo Commercial Realty Corp., Brokerage",
+   "dom": 5,
+   "modified": "2026-09-06T13:55:54.000Z",
+   "thumb": "/images/listings-fixtures/apt-21.jpg",
+   "thumbAlt": "Sample photo 1 of 7 — synthetic listing",
+   "own": null
+  }
+ ]
+}

@@ -1,16 +1,17 @@
 {
   "generatedAt": "2026-09-07T16:00:00.000Z",
-  "note": "SYNTHETIC FIXTURE DATA \u2014 obviously fictional, staging only, never production. See fixtures/README.md.",
+  "note": "SYNTHETIC FIXTURE DATA — never deploy to production. Reshaped Sept 18 2026 to the real MLS® commercial model (PropTx Form 590): no unit count, unit BANDS only, no income figures. Addresses, brokerage names and figures are fictional.",
   "listings": [
     {
       "listingKey": "fixture-001",
       "mlsId": "FX900100",
       "status": "Active",
-      "propertyType": "Residential",
-      "propertySubType": "Multiplex",
-      "units": 6,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 1695000,
+      "addressPublic": true,
       "address": {
         "street": "100 Sample Street",
         "city": "Toronto",
@@ -25,56 +26,55 @@
         "value": 32280,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 4626,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 126500,
-        "operatingExpense": 58200,
-        "noi": 68300,
-        "taxes": 23600
+      "taxes": {
+        "amount": 23600,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 282500,
-        "capRateReported": 0.0403
-      },
+      "zoning": null,
+      "occupancy": "Tenant",
+      "heatType": "Gas Forced Air Closed",
+      "freestanding": false,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 6 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 01. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 01. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 5,
+      "cdom": 5,
       "modified": "2026-09-02T22:02:47.000Z",
       "source": "fixture"
     },
@@ -82,11 +82,12 @@
       "listingKey": "fixture-002",
       "mlsId": "FX900200",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Investment",
-      "units": 12,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 3295000,
+      "addressPublic": true,
       "address": {
         "street": "107 Example Avenue",
         "city": "Toronto",
@@ -101,46 +102,45 @@
         "value": 67819,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 11136,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 243100,
-        "operatingExpense": 99700,
-        "noi": 143400,
-        "taxes": 38900
+      "taxes": {
+        "amount": 38900,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 274583,
-        "capRateReported": 0.0435
-      },
+      "zoning": "Sample Zone 2 [fixture]",
+      "occupancy": "Owner + Tenant",
+      "heatType": "Gas Hot Water",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 4 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 4 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 4 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 4 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 02. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 02. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 97,
+      "cdom": 97,
       "modified": "2026-09-02T19:43:47.000Z",
       "source": "fixture"
     },
@@ -148,11 +148,12 @@
       "listingKey": "fixture-003",
       "mlsId": "FX900300",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Multifamily",
-      "units": 25,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - Over 20 Units",
+      "unitBandLabel": "Over 20 units",
       "listPrice": 7380000,
+      "addressPublic": true,
       "address": {
         "street": "114 Placeholder Road",
         "city": "Toronto",
@@ -167,51 +168,50 @@
         "value": 16130,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 23050,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 528900,
-        "operatingExpense": 243300,
-        "noi": 285600,
-        "taxes": 70800
+      "taxes": {
+        "amount": 70800,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 295200,
-        "capRateReported": 0.0387
-      },
+      "zoning": "Sample Zone 3 [fixture]",
+      "occupancy": "Vacant",
+      "heatType": "Electric Baseboard",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 5 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 03. This text exists to test page layout and does not describe a real property. 25-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 03. This text exists to test page layout and does not describe a real property. 25-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 162,
+      "cdom": 162,
       "modified": "2026-09-01T19:39:24.000Z",
       "source": "fixture"
     },
@@ -219,11 +219,12 @@
       "listingKey": "fixture-004",
       "mlsId": "FX900400",
       "status": "Active",
-      "propertyType": "Residential",
-      "propertySubType": "Multiplex",
-      "units": 54,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - Over 20 Units",
+      "unitBandLabel": "Over 20 units",
       "listPrice": 14975000,
+      "addressPublic": true,
       "address": {
         "street": "121 Test Boulevard",
         "city": "Toronto",
@@ -233,68 +234,67 @@
         "lng": -79.36905
       },
       "market": "toronto",
-      "yearBuilt": 1986,
+      "yearBuilt": null,
       "lotSize": null,
-      "buildingArea": {
+      "totalArea": {
         "value": 39366,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 1163200,
-        "operatingExpense": 535100,
-        "noi": null,
-        "taxes": 205200
+      "taxes": {
+        "amount": 205200,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 277315,
-        "capRateReported": null
-      },
+      "zoning": "Sample Zone 4 [fixture]",
+      "occupancy": "Partial",
+      "heatType": "Gas Forced Air Open",
+      "freestanding": false,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 8,
-          "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 8 of 8 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 04. This text exists to test page layout and does not describe a real property. 54-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 04. This text exists to test page layout and does not describe a real property. 54-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 108,
+      "cdom": 108,
       "modified": "2026-09-05T15:33:21.000Z",
       "source": "fixture"
     },
@@ -302,18 +302,19 @@
       "listingKey": "fixture-005",
       "mlsId": "FX900500",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Investment",
-      "units": 8,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 2235000,
+      "addressPublic": false,
       "address": {
-        "street": "128 Fixture Lane",
+        "street": null,
         "city": "Toronto",
         "region": "ON",
-        "postalCode": "M5A 0A0",
-        "lat": 43.63521,
-        "lng": -79.37847
+        "postalCode": null,
+        "lat": null,
+        "lng": null
       },
       "market": "toronto",
       "yearBuilt": 1905,
@@ -321,58 +322,57 @@
         "value": 56858,
         "unit": "sqft"
       },
-      "buildingArea": null,
-      "reported": {
-        "grossIncome": null,
-        "operatingExpense": null,
-        "noi": null,
-        "taxes": 27500
+      "totalArea": null,
+      "taxes": {
+        "amount": 27500,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 279375,
-        "capRateReported": null
-      },
+      "zoning": "Sample Zone 1 [fixture]",
+      "occupancy": "Tenant",
+      "heatType": "Gas Forced Air Closed",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 7 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 05. This text exists to test page layout and does not describe a real property. 8-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 05. This text exists to test page layout and does not describe a real property. 8-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
-      "listAgentName": "Sam Sample",
       "daysOnMarket": 37,
+      "cdom": 37,
       "modified": "2026-09-02T02:48:36.000Z",
       "source": "fixture"
     },
@@ -380,11 +380,12 @@
       "listingKey": "fixture-006",
       "mlsId": "FX900600",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Multifamily",
-      "units": 96,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - Over 20 Units",
+      "unitBandLabel": "Over 20 units",
       "listPrice": 23815000,
+      "addressPublic": true,
       "address": {
         "street": "135 Specimen Court",
         "city": "Toronto",
@@ -399,66 +400,65 @@
         "value": 26285,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 87840,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 2239500,
-        "operatingExpense": 895800,
-        "noi": 1343700,
-        "taxes": 307200
+      "taxes": {
+        "amount": 307200,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 248073,
-        "capRateReported": 0.0564
-      },
+      "zoning": null,
+      "occupancy": "Owner + Tenant",
+      "heatType": "Gas Hot Water",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 8,
-          "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 8 of 8 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 06. This text exists to test page layout and does not describe a real property. 96-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 06. This text exists to test page layout and does not describe a real property. 96-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 122,
+      "cdom": 122,
       "modified": "2026-09-05T16:21:01.000Z",
       "source": "fixture"
     },
@@ -466,11 +466,12 @@
       "listingKey": "fixture-007",
       "mlsId": "FX900700",
       "status": "Active",
-      "propertyType": "Residential",
-      "propertySubType": "Multiplex",
-      "units": 5,
-      "buildings": null,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 2 to 5 Units",
+      "unitBandLabel": "2 to 5 units",
       "listPrice": 900000,
+      "addressPublic": true,
       "address": {
         "street": "142 Demo Drive",
         "city": "Quinte West",
@@ -485,51 +486,50 @@
         "value": 30786,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 3545,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 74900,
-        "operatingExpense": 32200,
-        "noi": 42700,
-        "taxes": 9100
+      "taxes": {
+        "amount": 9100,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 180000,
-        "capRateReported": 0.0474
-      },
+      "zoning": "Sample Zone 3 [fixture]",
+      "occupancy": "Vacant",
+      "heatType": "Electric Baseboard",
+      "freestanding": false,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 5 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 07. This text exists to test page layout and does not describe a real property. 5-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 07. This text exists to test page layout and does not describe a real property. 5-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 120,
+      "cdom": 120,
       "modified": "2026-09-02T21:49:33.000Z",
       "source": "fixture"
     },
@@ -537,11 +537,12 @@
       "listingKey": "fixture-008",
       "mlsId": "FX900800",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Investment",
-      "units": 11,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 1875000,
+      "addressPublic": true,
       "address": {
         "street": "149 Mock Terrace",
         "city": "Quinte West",
@@ -553,56 +554,55 @@
       "market": "quinte",
       "yearBuilt": 1909,
       "lotSize": null,
-      "buildingArea": {
+      "totalArea": {
         "value": 9372,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 184000,
-        "operatingExpense": 73600,
-        "noi": 110400,
-        "taxes": 24000
+      "taxes": {
+        "amount": 24000,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 170455,
-        "capRateReported": 0.0589
-      },
+      "zoning": "Sample Zone 4 [fixture]",
+      "occupancy": "Partial",
+      "heatType": "Gas Forced Air Open",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 6 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 08. This text exists to test page layout and does not describe a real property. 11-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 08. This text exists to test page layout and does not describe a real property. 11-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 5,
+      "cdom": 5,
       "modified": "2026-09-06T12:50:21.000Z",
       "source": "fixture"
     },
@@ -610,11 +610,12 @@
       "listingKey": "fixture-009",
       "mlsId": "FX900900",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Multifamily",
-      "units": 18,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 13 to 20 Units",
+      "unitBandLabel": "13 to 20 units",
       "listPrice": 3115000,
+      "addressPublic": true,
       "address": {
         "street": "156 Sample Street",
         "city": "Quinte West",
@@ -629,61 +630,60 @@
         "value": 88971,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 12780,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 286400,
-        "operatingExpense": 111700,
-        "noi": null,
-        "taxes": 41400
+      "taxes": {
+        "amount": 41400,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 173056,
-        "capRateReported": null
-      },
+      "zoning": "Sample Zone 1 [fixture]",
+      "occupancy": "Tenant",
+      "heatType": "Gas Forced Air Closed",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 7 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 09. This text exists to test page layout and does not describe a real property. 18-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 09. This text exists to test page layout and does not describe a real property. 18-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 124,
+      "cdom": 124,
       "modified": "2026-09-03T22:40:37.000Z",
       "source": "fixture"
     },
@@ -691,11 +691,12 @@
       "listingKey": "fixture-010",
       "mlsId": "FX901000",
       "status": "Active",
-      "propertyType": "Residential",
-      "propertySubType": "Multiplex",
-      "units": 6,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 900000,
+      "addressPublic": true,
       "address": {
         "street": "163 Example Avenue",
         "city": "Quinte West",
@@ -710,38 +711,33 @@
         "value": 14372,
         "unit": "sqft"
       },
-      "buildingArea": null,
-      "reported": {
-        "grossIncome": null,
-        "operatingExpense": null,
-        "noi": null,
-        "taxes": null
-      },
-      "derived": {
-        "pricePerUnit": 150000,
-        "capRateReported": null
-      },
+      "totalArea": null,
+      "taxes": null,
+      "zoning": "Sample Zone 2 [fixture]",
+      "occupancy": "Owner + Tenant",
+      "heatType": "Gas Hot Water",
+      "freestanding": false,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 3 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 3 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 3 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 3 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 3 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 3 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 10. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 10. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 124,
+      "cdom": 124,
       "modified": "2026-09-05T08:34:14.000Z",
       "source": "fixture"
     },
@@ -749,11 +745,12 @@
       "listingKey": "fixture-011",
       "mlsId": "FX901100",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Investment",
-      "units": 30,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - Over 20 Units",
+      "unitBandLabel": "Over 20 units",
       "listPrice": 4430000,
+      "addressPublic": true,
       "address": {
         "street": "170 Placeholder Road",
         "city": "Trenton",
@@ -763,66 +760,65 @@
         "lng": -77.56397
       },
       "market": "quinte",
-      "yearBuilt": 1908,
+      "yearBuilt": null,
       "lotSize": {
         "value": 6101,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 19890,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 429800,
-        "operatingExpense": 167600,
-        "noi": 262200,
-        "taxes": 54000
+      "taxes": {
+        "amount": 54000,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 147667,
-        "capRateReported": 0.0592
-      },
+      "zoning": null,
+      "occupancy": "Vacant",
+      "heatType": "Electric Baseboard",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 7 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 11. This text exists to test page layout and does not describe a real property. 30-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 11. This text exists to test page layout and does not describe a real property. 30-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 145,
+      "cdom": 145,
       "modified": "2026-09-03T23:35:05.000Z",
       "source": "fixture"
     },
@@ -830,11 +826,12 @@
       "listingKey": "fixture-012",
       "mlsId": "FX901200",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Multifamily",
-      "units": 9,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 1485000,
+      "addressPublic": true,
       "address": {
         "street": "177 Test Boulevard",
         "city": "Trenton",
@@ -846,61 +843,60 @@
       "market": "quinte",
       "yearBuilt": null,
       "lotSize": null,
-      "buildingArea": {
+      "totalArea": {
         "value": 6498,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 143100,
-        "operatingExpense": 52900,
-        "noi": 90200,
-        "taxes": 18300
+      "taxes": {
+        "amount": 18300,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 165000,
-        "capRateReported": 0.0607
-      },
+      "zoning": "Sample Zone 4 [fixture]",
+      "occupancy": "Partial",
+      "heatType": "Gas Forced Air Open",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 7 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 12. This text exists to test page layout and does not describe a real property. 9-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 12. This text exists to test page layout and does not describe a real property. 9-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 19,
+      "cdom": 19,
       "modified": "2026-09-01T17:30:05.000Z",
       "source": "fixture"
     },
@@ -908,11 +904,12 @@
       "listingKey": "fixture-013",
       "mlsId": "FX901300",
       "status": "Active",
-      "propertyType": "Residential",
-      "propertySubType": "Multiplex",
-      "units": 24,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - Over 20 Units",
+      "unitBandLabel": "Over 20 units",
       "listPrice": 4455000,
+      "addressPublic": true,
       "address": {
         "street": "184 Fixture Lane",
         "city": "Kingston",
@@ -927,41 +924,40 @@
         "value": 60833,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 21744,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 368600,
-        "operatingExpense": 147400,
-        "noi": 221200,
-        "taxes": 53000
+      "taxes": {
+        "amount": 53000,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 185625,
-        "capRateReported": 0.0497
-      },
+      "zoning": "Sample Zone 1 [fixture]",
+      "occupancy": "Tenant",
+      "heatType": "Gas Forced Air Closed",
+      "freestanding": false,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 3 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 3 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 3 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 3 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 3 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 3 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 13. This text exists to test page layout and does not describe a real property. 24-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 13. This text exists to test page layout and does not describe a real property. 24-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
-      "listAgentName": "Sam Sample",
       "daysOnMarket": 48,
+      "cdom": 48,
       "modified": "2026-09-03T06:31:08.000Z",
       "source": "fixture"
     },
@@ -969,18 +965,19 @@
       "listingKey": "fixture-014",
       "mlsId": "FX901400",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Investment",
-      "units": 7,
-      "buildings": null,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 1135000,
+      "addressPublic": false,
       "address": {
-        "street": "191 Specimen Court",
+        "street": null,
         "city": "Kingston",
         "region": "ON",
-        "postalCode": "K7L 0A0",
-        "lat": 44.21604,
-        "lng": -76.46258
+        "postalCode": null,
+        "lat": null,
+        "lng": null
       },
       "market": "kingston",
       "yearBuilt": 1984,
@@ -988,51 +985,50 @@
         "value": 41728,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 5033,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 123000,
-        "operatingExpense": 44300,
-        "noi": null,
-        "taxes": 11400
+      "taxes": {
+        "amount": 11400,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 162143,
-        "capRateReported": null
-      },
+      "zoning": "Sample Zone 2 [fixture]",
+      "occupancy": "Owner + Tenant",
+      "heatType": "Gas Hot Water",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 5 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 14. This text exists to test page layout and does not describe a real property. 7-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 14. This text exists to test page layout and does not describe a real property. 7-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 3,
+      "cdom": 3,
       "modified": "2026-09-04T07:14:18.000Z",
       "source": "fixture"
     },
@@ -1040,11 +1036,12 @@
       "listingKey": "fixture-015",
       "mlsId": "FX901500",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Multifamily",
-      "units": 44,
-      "buildings": 2,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - Over 20 Units",
+      "unitBandLabel": "Over 20 units",
       "listPrice": 6645000,
+      "addressPublic": true,
       "address": {
         "street": "198 Demo Drive",
         "city": "Kingston",
@@ -1059,48 +1056,47 @@
         "value": 14258,
         "unit": "sqft"
       },
-      "buildingArea": null,
-      "reported": {
-        "grossIncome": null,
-        "operatingExpense": null,
-        "noi": null,
-        "taxes": 80400
+      "totalArea": null,
+      "taxes": {
+        "amount": 80400,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 151023,
-        "capRateReported": null
-      },
+      "zoning": "Sample Zone 3 [fixture]",
+      "occupancy": "Vacant",
+      "heatType": "Electric Baseboard",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 5 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 15. This text exists to test page layout and does not describe a real property. 44-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 15. This text exists to test page layout and does not describe a real property. 44-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 17,
+      "cdom": 17,
       "modified": "2026-09-03T06:56:14.000Z",
       "source": "fixture"
     },
@@ -1108,11 +1104,12 @@
       "listingKey": "fixture-016",
       "mlsId": "FX901600",
       "status": "Active",
-      "propertyType": "Residential",
-      "propertySubType": "Multiplex",
-      "units": 12,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 2255000,
+      "addressPublic": true,
       "address": {
         "street": "205 Mock Terrace",
         "city": "Kingston",
@@ -1124,61 +1121,60 @@
       "market": "kingston",
       "yearBuilt": 1954,
       "lotSize": null,
-      "buildingArea": {
+      "totalArea": {
         "value": 11196,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 222300,
-        "operatingExpense": 100000,
-        "noi": 122300,
-        "taxes": 21000
+      "taxes": {
+        "amount": 21000,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 187917,
-        "capRateReported": 0.0542
-      },
+      "zoning": null,
+      "occupancy": "Partial",
+      "heatType": "Gas Forced Air Open",
+      "freestanding": false,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 7 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 16. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 16. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 20,
+      "cdom": 20,
       "modified": "2026-09-01T17:53:31.000Z",
       "source": "fixture"
     },
@@ -1186,11 +1182,12 @@
       "listingKey": "fixture-017",
       "mlsId": "FX901700",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Investment",
-      "units": 66,
-      "buildings": 2,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - Over 20 Units",
+      "unitBandLabel": "Over 20 units",
       "listPrice": 12580000,
+      "addressPublic": true,
       "address": {
         "street": "212 Sample Street",
         "city": "Kingston",
@@ -1205,61 +1202,60 @@
         "value": 20144,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 48510,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 1012200,
-        "operatingExpense": 465600,
-        "noi": 546600,
-        "taxes": 164800
+      "taxes": {
+        "amount": 164800,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 190606,
-        "capRateReported": 0.0434
-      },
+      "zoning": "Sample Zone 1 [fixture]",
+      "occupancy": "Tenant",
+      "heatType": "Gas Forced Air Closed",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 7 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 17. This text exists to test page layout and does not describe a real property. 66-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 17. This text exists to test page layout and does not describe a real property. 66-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 147,
+      "cdom": 147,
       "modified": "2026-09-04T17:22:01.000Z",
       "source": "fixture"
     },
@@ -1267,11 +1263,12 @@
       "listingKey": "fixture-018",
       "mlsId": "FX901800",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Multifamily",
-      "units": 10,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 1770000,
+      "addressPublic": true,
       "address": {
         "street": "219 Example Avenue",
         "city": "Peterborough",
@@ -1286,51 +1283,50 @@
         "value": 77178,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 6880,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 173400,
-        "operatingExpense": 71100,
-        "noi": 102300,
-        "taxes": 17700
+      "taxes": {
+        "amount": 17700,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 177000,
-        "capRateReported": 0.0578
-      },
+      "zoning": "Sample Zone 2 [fixture]",
+      "occupancy": "Owner + Tenant",
+      "heatType": "Gas Hot Water",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 5 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 18. This text exists to test page layout and does not describe a real property. 10-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 18. This text exists to test page layout and does not describe a real property. 10-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 141,
+      "cdom": 141,
       "modified": "2026-09-04T21:59:43.000Z",
       "source": "fixture"
     },
@@ -1338,11 +1334,12 @@
       "listingKey": "fixture-019",
       "mlsId": "FX901900",
       "status": "Active",
-      "propertyType": "Residential",
-      "propertySubType": "Multiplex",
-      "units": 5,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 2 to 5 Units",
+      "unitBandLabel": "2 to 5 units",
       "listPrice": 900000,
+      "addressPublic": true,
       "address": {
         "street": "226 Placeholder Road",
         "city": "Peterborough",
@@ -1357,61 +1354,60 @@
         "value": 61005,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 4270,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 83200,
-        "operatingExpense": 33300,
-        "noi": null,
-        "taxes": 10000
+      "taxes": {
+        "amount": 10000,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 180000,
-        "capRateReported": null
-      },
+      "zoning": "Sample Zone 3 [fixture]",
+      "occupancy": "Vacant",
+      "heatType": "Electric Baseboard",
+      "freestanding": false,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 7 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 19. This text exists to test page layout and does not describe a real property. 5-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 19. This text exists to test page layout and does not describe a real property. 5-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 17,
+      "cdom": 17,
       "modified": "2026-09-02T14:51:54.000Z",
       "source": "fixture"
     },
@@ -1419,11 +1415,12 @@
       "listingKey": "fixture-020",
       "mlsId": "FX902000",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Investment",
-      "units": 21,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - Over 20 Units",
+      "unitBandLabel": "Over 20 units",
       "listPrice": 3710000,
+      "addressPublic": true,
       "address": {
         "street": "233 Test Boulevard",
         "city": "Peterborough",
@@ -1435,58 +1432,53 @@
       "market": "peterborough-kawartha",
       "yearBuilt": 1951,
       "lotSize": null,
-      "buildingArea": null,
-      "reported": {
-        "grossIncome": null,
-        "operatingExpense": null,
-        "noi": null,
-        "taxes": null
-      },
-      "derived": {
-        "pricePerUnit": 176667,
-        "capRateReported": null
-      },
+      "totalArea": null,
+      "taxes": null,
+      "zoning": "Sample Zone 4 [fixture]",
+      "occupancy": "Partial",
+      "heatType": "Gas Forced Air Open",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 7 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 20. This text exists to test page layout and does not describe a real property. 21-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 20. This text exists to test page layout and does not describe a real property. 21-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 130,
+      "cdom": 130,
       "modified": "2026-09-05T12:31:44.000Z",
       "source": "fixture"
     },
@@ -1494,11 +1486,12 @@
       "listingKey": "fixture-021",
       "mlsId": "FX902100",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Multifamily",
-      "units": 15,
-      "buildings": null,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 13 to 20 Units",
+      "unitBandLabel": "13 to 20 units",
       "listPrice": 2400000,
+      "addressPublic": true,
       "address": {
         "street": "240 Fixture Lane",
         "city": "Peterborough",
@@ -1513,41 +1506,40 @@
         "value": 34506,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 11205,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 256700,
-        "operatingExpense": 107800,
-        "noi": 148900,
-        "taxes": 25700
+      "taxes": {
+        "amount": 25700,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 160000,
-        "capRateReported": 0.062
-      },
+      "zoning": null,
+      "occupancy": "Tenant",
+      "heatType": "Gas Forced Air Closed",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 3 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 3 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 3 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 3 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 3 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 3 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 21. This text exists to test page layout and does not describe a real property. 15-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 21. This text exists to test page layout and does not describe a real property. 15-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
-      "listAgentName": "Sam Sample",
       "daysOnMarket": 141,
+      "cdom": 141,
       "modified": "2026-09-01T17:58:07.000Z",
       "source": "fixture"
     },
@@ -1555,11 +1547,12 @@
       "listingKey": "fixture-022",
       "mlsId": "FX902200",
       "status": "Active",
-      "propertyType": "Residential",
-      "propertySubType": "Multiplex",
-      "units": 36,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - Over 20 Units",
+      "unitBandLabel": "Over 20 units",
       "listPrice": 9090000,
+      "addressPublic": true,
       "address": {
         "street": "247 Specimen Court",
         "city": "Ottawa",
@@ -1574,66 +1567,65 @@
         "value": 18752,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 28980,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 713200,
-        "operatingExpense": 278100,
-        "noi": 435100,
-        "taxes": 123600
+      "taxes": {
+        "amount": 123600,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 252500,
-        "capRateReported": 0.0479
-      },
+      "zoning": "Sample Zone 2 [fixture]",
+      "occupancy": "Owner + Tenant",
+      "heatType": "Gas Hot Water",
+      "freestanding": false,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 8,
-          "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 8 of 8 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 22. This text exists to test page layout and does not describe a real property. 36-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 22. This text exists to test page layout and does not describe a real property. 36-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 3,
+      "cdom": 3,
       "modified": "2026-09-04T00:57:51.000Z",
       "source": "fixture"
     },
@@ -1641,18 +1633,19 @@
       "listingKey": "fixture-023",
       "mlsId": "FX902300",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Investment",
-      "units": 120,
-      "buildings": 2,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - Over 20 Units",
+      "unitBandLabel": "Over 20 units",
       "listPrice": 24300000,
+      "addressPublic": false,
       "address": {
-        "street": "254 Demo Drive",
+        "street": null,
         "city": "Ottawa",
         "region": "ON",
-        "postalCode": "K1R 0A0",
-        "lat": 45.40029,
-        "lng": -75.70042
+        "postalCode": null,
+        "lat": null,
+        "lng": null
       },
       "market": "ottawa",
       "yearBuilt": 1906,
@@ -1660,41 +1653,40 @@
         "value": 81067,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 93240,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 2436500,
-        "operatingExpense": 1072100,
-        "noi": 1364400,
-        "taxes": 223600
+      "taxes": {
+        "amount": 223600,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 202500,
-        "capRateReported": 0.0561
-      },
+      "zoning": "Sample Zone 3 [fixture]",
+      "occupancy": "Vacant",
+      "heatType": "Electric Baseboard",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 3 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 3 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 3 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 3 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 3 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 3 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 23. This text exists to test page layout and does not describe a real property. 120-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 23. This text exists to test page layout and does not describe a real property. 120-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 156,
+      "cdom": 156,
       "modified": "2026-09-07T03:45:54.000Z",
       "source": "fixture"
     },
@@ -1702,11 +1694,12 @@
       "listingKey": "fixture-024",
       "mlsId": "FX902400",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Multifamily",
-      "units": 12,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 2405000,
+      "addressPublic": true,
       "address": {
         "street": "261 Mock Terrace",
         "city": "Ottawa",
@@ -1718,66 +1711,65 @@
       "market": "ottawa",
       "yearBuilt": null,
       "lotSize": null,
-      "buildingArea": {
+      "totalArea": {
         "value": 8700,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 249300,
-        "operatingExpense": 114700,
-        "noi": null,
-        "taxes": 26500
+      "taxes": {
+        "amount": 26500,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 200417,
-        "capRateReported": null
-      },
+      "zoning": "Sample Zone 4 [fixture]",
+      "occupancy": "Partial",
+      "heatType": "Gas Forced Air Open",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 8,
-          "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 8 of 8 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 24. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 24. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 112,
+      "cdom": 112,
       "modified": "2026-09-02T03:11:18.000Z",
       "source": "fixture"
     },
@@ -1785,11 +1777,12 @@
       "listingKey": "fixture-025",
       "mlsId": "FX902500",
       "status": "Active",
-      "propertyType": "Residential",
-      "propertySubType": "Multiplex",
-      "units": 50,
-      "buildings": 2,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - Over 20 Units",
+      "unitBandLabel": "Over 20 units",
       "listPrice": 9145000,
+      "addressPublic": true,
       "address": {
         "street": "268 Sample Street",
         "city": "Hamilton",
@@ -1799,63 +1792,62 @@
         "lng": -79.87083
       },
       "market": "hamilton-niagara",
-      "yearBuilt": 1955,
+      "yearBuilt": null,
       "lotSize": {
         "value": 15109,
         "unit": "sqft"
       },
-      "buildingArea": null,
-      "reported": {
-        "grossIncome": null,
-        "operatingExpense": null,
-        "noi": null,
-        "taxes": 117100
+      "totalArea": null,
+      "taxes": {
+        "amount": 117100,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 182900,
-        "capRateReported": null
-      },
+      "zoning": "Sample Zone 1 [fixture]",
+      "occupancy": "Tenant",
+      "heatType": "Gas Forced Air Closed",
+      "freestanding": false,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 7 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 25. This text exists to test page layout and does not describe a real property. 50-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 25. This text exists to test page layout and does not describe a real property. 50-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 151,
+      "cdom": 151,
       "modified": "2026-09-04T06:43:26.000Z",
       "source": "fixture"
     },
@@ -1863,11 +1855,12 @@
       "listingKey": "fixture-026",
       "mlsId": "FX902600",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Investment",
-      "units": 8,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 1600000,
+      "addressPublic": true,
       "address": {
         "street": "275 Example Avenue",
         "city": "St. Catharines",
@@ -1882,56 +1875,55 @@
         "value": 15606,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 6728,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 138000,
-        "operatingExpense": 49700,
-        "noi": 88300,
-        "taxes": 14400
+      "taxes": {
+        "amount": 14400,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 200000,
-        "capRateReported": 0.0552
-      },
+      "zoning": null,
+      "occupancy": "Owner + Tenant",
+      "heatType": "Gas Hot Water",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 6 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 26. This text exists to test page layout and does not describe a real property. 8-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 26. This text exists to test page layout and does not describe a real property. 8-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 21,
+      "cdom": 21,
       "modified": "2026-09-04T02:01:19.000Z",
       "source": "fixture"
     },
@@ -1939,11 +1931,12 @@
       "listingKey": "fixture-027",
       "mlsId": "FX902700",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Multifamily",
-      "units": 27,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - Over 20 Units",
+      "unitBandLabel": "Over 20 units",
       "listPrice": 5530000,
+      "addressPublic": true,
       "address": {
         "street": "282 Placeholder Road",
         "city": "Hamilton",
@@ -1958,56 +1951,55 @@
         "value": 56231,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 17631,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 441900,
-        "operatingExpense": 190000,
-        "noi": 251900,
-        "taxes": 67500
+      "taxes": {
+        "amount": 67500,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 204815,
-        "capRateReported": 0.0456
-      },
+      "zoning": "Sample Zone 3 [fixture]",
+      "occupancy": "Vacant",
+      "heatType": "Electric Baseboard",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 6 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 27. This text exists to test page layout and does not describe a real property. 27-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 27. This text exists to test page layout and does not describe a real property. 27-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 59,
+      "cdom": 59,
       "modified": "2026-09-04T08:46:55.000Z",
       "source": "fixture"
     },
@@ -2015,11 +2007,12 @@
       "listingKey": "fixture-028",
       "mlsId": "FX902800",
       "status": "Active",
-      "propertyType": "Residential",
-      "propertySubType": "Multiplex",
-      "units": 14,
-      "buildings": null,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 13 to 20 Units",
+      "unitBandLabel": "13 to 20 units",
       "listPrice": 2215000,
+      "addressPublic": true,
       "address": {
         "street": "289 Test Boulevard",
         "city": "London",
@@ -2031,56 +2024,55 @@
       "market": "london",
       "yearBuilt": 1978,
       "lotSize": null,
-      "buildingArea": {
+      "totalArea": {
         "value": 9212,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 243400,
-        "operatingExpense": 109500,
-        "noi": 133900,
-        "taxes": 23500
+      "taxes": {
+        "amount": 23500,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 158214,
-        "capRateReported": 0.0605
-      },
+      "zoning": "Sample Zone 4 [fixture]",
+      "occupancy": "Partial",
+      "heatType": "Gas Forced Air Open",
+      "freestanding": false,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 6 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 28. This text exists to test page layout and does not describe a real property. 14-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 28. This text exists to test page layout and does not describe a real property. 14-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 127,
+      "cdom": 127,
       "modified": "2026-09-07T14:35:02.000Z",
       "source": "fixture"
     },
@@ -2088,11 +2080,12 @@
       "listingKey": "fixture-029",
       "mlsId": "FX902900",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Investment",
-      "units": 6,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 1155000,
+      "addressPublic": true,
       "address": {
         "street": "296 Fixture Lane",
         "city": "London",
@@ -2107,56 +2100,55 @@
         "value": 31373,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 5190,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 91300,
-        "operatingExpense": 39300,
-        "noi": null,
-        "taxes": 11000
+      "taxes": {
+        "amount": 11000,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 192500,
-        "capRateReported": null
-      },
+      "zoning": "Sample Zone 1 [fixture]",
+      "occupancy": "Tenant",
+      "heatType": "Gas Forced Air Closed",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 6 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 6 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 6 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 29. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 29. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
-      "listAgentName": "Sam Sample",
       "daysOnMarket": 11,
+      "cdom": 11,
       "modified": "2026-09-04T04:17:24.000Z",
       "source": "fixture"
     },
@@ -2164,11 +2156,12 @@
       "listingKey": "fixture-030",
       "mlsId": "FX903000",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Multifamily",
-      "units": 40,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - Over 20 Units",
+      "unitBandLabel": "Over 20 units",
       "listPrice": 8865000,
+      "addressPublic": true,
       "address": {
         "street": "303 Specimen Court",
         "city": "Guelph",
@@ -2183,38 +2176,33 @@
         "value": 73255,
         "unit": "sqft"
       },
-      "buildingArea": null,
-      "reported": {
-        "grossIncome": null,
-        "operatingExpense": null,
-        "noi": null,
-        "taxes": null
-      },
-      "derived": {
-        "pricePerUnit": 221625,
-        "capRateReported": null
-      },
+      "totalArea": null,
+      "taxes": null,
+      "zoning": "Sample Zone 2 [fixture]",
+      "occupancy": "Owner + Tenant",
+      "heatType": "Gas Hot Water",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 3 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 3 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 3 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 3 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 3 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 3 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 30. This text exists to test page layout and does not describe a real property. 40-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 30. This text exists to test page layout and does not describe a real property. 40-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 38,
+      "cdom": 38,
       "modified": "2026-09-06T15:01:30.000Z",
       "source": "fixture"
     },
@@ -2222,11 +2210,12 @@
       "listingKey": "fixture-031",
       "mlsId": "FX903100",
       "status": "Active",
-      "propertyType": "Residential",
-      "propertySubType": "Multiplex",
-      "units": 11,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 2550000,
+      "addressPublic": true,
       "address": {
         "street": "310 Demo Drive",
         "city": "Kitchener",
@@ -2241,46 +2230,45 @@
         "value": 82874,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 7755,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 222200,
-        "operatingExpense": 95500,
-        "noi": 126700,
-        "taxes": 31100
+      "taxes": {
+        "amount": 31100,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 231818,
-        "capRateReported": 0.0497
-      },
+      "zoning": null,
+      "occupancy": "Vacant",
+      "heatType": "Electric Baseboard",
+      "freestanding": false,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 4 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 4 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 4 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 4 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 31. This text exists to test page layout and does not describe a real property. 11-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 31. This text exists to test page layout and does not describe a real property. 11-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 97,
+      "cdom": 97,
       "modified": "2026-09-02T17:10:15.000Z",
       "source": "fixture"
     },
@@ -2288,62 +2276,62 @@
       "listingKey": "fixture-032",
       "mlsId": "FX903200",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Investment",
-      "units": 16,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 13 to 20 Units",
+      "unitBandLabel": "13 to 20 units",
       "listPrice": 3615000,
+      "addressPublic": false,
       "address": {
-        "street": "317 Mock Terrace",
+        "street": null,
         "city": "Oshawa",
         "region": "ON",
-        "postalCode": "L1H 0A0",
-        "lat": 43.89014,
-        "lng": -78.83826
+        "postalCode": null,
+        "lat": null,
+        "lng": null
       },
       "market": "durham",
-      "yearBuilt": 1984,
+      "yearBuilt": null,
       "lotSize": null,
-      "buildingArea": {
+      "totalArea": {
         "value": 12240,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 288000,
-        "operatingExpense": 118100,
-        "noi": 169900,
-        "taxes": 45500
+      "taxes": {
+        "amount": 45500,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 225938,
-        "capRateReported": 0.047
-      },
+      "zoning": "Sample Zone 4 [fixture]",
+      "occupancy": "Partial",
+      "heatType": "Gas Forced Air Open",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 4 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 4 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 4 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 4 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 32. This text exists to test page layout and does not describe a real property. 16-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 32. This text exists to test page layout and does not describe a real property. 16-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 108,
+      "cdom": 108,
       "modified": "2026-09-06T23:35:46.000Z",
       "source": "fixture"
     },
@@ -2351,11 +2339,12 @@
       "listingKey": "fixture-033",
       "mlsId": "FX903300",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Multifamily",
-      "units": 7,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 1410000,
+      "addressPublic": true,
       "address": {
         "street": "324 Sample Street",
         "city": "Oshawa",
@@ -2370,51 +2359,50 @@
         "value": 49738,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 4928,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 124500,
-        "operatingExpense": 54800,
-        "noi": 69700,
-        "taxes": 13500
+      "taxes": {
+        "amount": 13500,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 201429,
-        "capRateReported": 0.0494
-      },
+      "zoning": "Sample Zone 1 [fixture]",
+      "occupancy": "Tenant",
+      "heatType": "Gas Forced Air Closed",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 5 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 5 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 5 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 33. This text exists to test page layout and does not describe a real property. 7-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 33. This text exists to test page layout and does not describe a real property. 7-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 79,
+      "cdom": 79,
       "modified": "2026-09-02T15:46:17.000Z",
       "source": "fixture"
     },
@@ -2422,11 +2410,12 @@
       "listingKey": "fixture-034",
       "mlsId": "FX903400",
       "status": "Active",
-      "propertyType": "Residential",
-      "propertySubType": "Multiplex",
-      "units": 5,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 2 to 5 Units",
+      "unitBandLabel": "2 to 5 units",
       "listPrice": 900000,
+      "addressPublic": true,
       "address": {
         "street": "331 Example Avenue",
         "city": "Windsor",
@@ -2441,61 +2430,60 @@
         "value": 63367,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 4160,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 66900,
-        "operatingExpense": 24800,
-        "noi": null,
-        "taxes": 12200
+      "taxes": {
+        "amount": 12200,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 180000,
-        "capRateReported": null
-      },
+      "zoning": "Sample Zone 2 [fixture]",
+      "occupancy": "Owner + Tenant",
+      "heatType": "Gas Hot Water",
+      "freestanding": false,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 7 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 34. This text exists to test page layout and does not describe a real property. 5-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 34. This text exists to test page layout and does not describe a real property. 5-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 5,
+      "cdom": 5,
       "modified": "2026-09-06T13:55:54.000Z",
       "source": "fixture"
     },
@@ -2503,11 +2491,12 @@
       "listingKey": "fixture-035",
       "mlsId": "FX903500",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Investment",
-      "units": 20,
-      "buildings": null,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 13 to 20 Units",
+      "unitBandLabel": "13 to 20 units",
       "listPrice": 4005000,
+      "addressPublic": true,
       "address": {
         "street": "338 Placeholder Road",
         "city": "Barrie",
@@ -2522,43 +2511,42 @@
         "value": 88965,
         "unit": "sqft"
       },
-      "buildingArea": null,
-      "reported": {
-        "grossIncome": null,
-        "operatingExpense": null,
-        "noi": null,
-        "taxes": 54500
+      "totalArea": null,
+      "taxes": {
+        "amount": 54500,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 200250,
-        "capRateReported": null
-      },
+      "zoning": "Sample Zone 3 [fixture]",
+      "occupancy": "Vacant",
+      "heatType": "Electric Baseboard",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 4 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 4 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 4 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 4 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 4 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 35. This text exists to test page layout and does not describe a real property. 20-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 35. This text exists to test page layout and does not describe a real property. 20-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 18,
+      "cdom": 18,
       "modified": "2026-09-03T13:14:47.000Z",
       "source": "fixture"
     },
@@ -2566,11 +2554,12 @@
       "listingKey": "fixture-036",
       "mlsId": "FX903600",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Multifamily",
-      "units": 9,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 1580000,
+      "addressPublic": true,
       "address": {
         "street": "345 Test Boulevard",
         "city": "Cobourg",
@@ -2582,61 +2571,60 @@
       "market": "northumberland",
       "yearBuilt": null,
       "lotSize": null,
-      "buildingArea": {
+      "totalArea": {
         "value": 8091,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 137800,
-        "operatingExpense": 63400,
-        "noi": 74400,
-        "taxes": 16000
+      "taxes": {
+        "amount": 16000,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 175556,
-        "capRateReported": 0.0471
-      },
+      "zoning": null,
+      "occupancy": "Partial",
+      "heatType": "Gas Forced Air Open",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 7 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 36. This text exists to test page layout and does not describe a real property. 9-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 36. This text exists to test page layout and does not describe a real property. 9-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Example Realty Inc., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 167,
+      "cdom": 167,
       "modified": "2026-09-01T17:15:27.000Z",
       "source": "fixture"
     },
@@ -2644,11 +2632,12 @@
       "listingKey": "fixture-037",
       "mlsId": "FX903700",
       "status": "Active",
-      "propertyType": "Residential",
-      "propertySubType": "Multiplex",
-      "units": 12,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 2225000,
+      "addressPublic": true,
       "address": {
         "street": "352 Fixture Lane",
         "city": "Picton",
@@ -2663,66 +2652,65 @@
         "value": 47285,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 7812,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 214400,
-        "operatingExpense": 79300,
-        "noi": 135100,
-        "taxes": 26000
+      "taxes": {
+        "amount": 26000,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 185417,
-        "capRateReported": 0.0607
-      },
+      "zoning": "Sample Zone 1 [fixture]",
+      "occupancy": "Tenant",
+      "heatType": "Gas Forced Air Closed",
+      "freestanding": false,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-07.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-08.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-09.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-10.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 8,
-          "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 8 of 8 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 37. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 37. This text exists to test page layout and does not describe a real property. 12-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Sample Properties Ltd., Brokerage",
-      "listAgentName": "Sam Sample",
       "daysOnMarket": 18,
+      "cdom": 18,
       "modified": "2026-09-06T03:14:36.000Z",
       "source": "fixture"
     },
@@ -2730,11 +2718,12 @@
       "listingKey": "fixture-038",
       "mlsId": "FX903800",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Investment",
-      "units": 26,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - Over 20 Units",
+      "unitBandLabel": "Over 20 units",
       "listPrice": 3395000,
+      "addressPublic": true,
       "address": {
         "street": "359 Specimen Court",
         "city": "Brockville",
@@ -2749,61 +2738,60 @@
         "value": 29575,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 16926,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 338500,
-        "operatingExpense": 132000,
-        "noi": 206500,
-        "taxes": 47200
+      "taxes": {
+        "amount": 47200,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 130577,
-        "capRateReported": 0.0608
-      },
+      "zoning": "Sample Zone 2 [fixture]",
+      "occupancy": "Owner + Tenant",
+      "heatType": "Gas Hot Water",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-06.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-11.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-12.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-13.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-14.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-15.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 7 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 38. This text exists to test page layout and does not describe a real property. 26-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 38. This text exists to test page layout and does not describe a real property. 26-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Placeholder Real Estate Group, Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 140,
+      "cdom": 140,
       "modified": "2026-09-02T05:12:50.000Z",
       "source": "fixture"
     },
@@ -2811,11 +2799,12 @@
       "listingKey": "fixture-039",
       "mlsId": "FX903900",
       "status": "Active",
-      "propertyType": "Commercial",
-      "propertySubType": "Multifamily",
-      "units": 6,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - 6 to 12 Units",
+      "unitBandLabel": "6 to 12 units",
       "listPrice": 900000,
+      "addressPublic": true,
       "address": {
         "street": "366 Demo Drive",
         "city": "Cornwall",
@@ -2825,71 +2814,70 @@
         "lng": -74.74755
       },
       "market": "cornwall",
-      "yearBuilt": 1961,
+      "yearBuilt": null,
       "lotSize": {
         "value": 56539,
         "unit": "sqft"
       },
-      "buildingArea": {
+      "totalArea": {
         "value": 5094,
         "unit": "sqft"
       },
-      "reported": {
-        "grossIncome": 88700,
-        "operatingExpense": 37300,
-        "noi": null,
-        "taxes": 8500
+      "taxes": {
+        "amount": 8500,
+        "year": 2025,
+        "type": "Annual"
       },
-      "derived": {
-        "pricePerUnit": 150000,
-        "capRateReported": null
-      },
+      "zoning": "Sample Zone 3 [fixture]",
+      "occupancy": "Vacant",
+      "heatType": "Electric Baseboard",
+      "freestanding": true,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-20.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-16.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-17.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-18.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-19.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 8 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 8,
-          "caption": "Sample photo 8 of 8 \u2014 synthetic listing"
+          "caption": "Sample photo 8 of 8 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 39. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 39. This text exists to test page layout and does not describe a real property. 6-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Demo Commercial Realty Corp., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 118,
+      "cdom": 118,
       "modified": "2026-09-03T00:03:22.000Z",
       "source": "fixture"
     },
@@ -2897,11 +2885,12 @@
       "listingKey": "fixture-040",
       "mlsId": "FX904000",
       "status": "Active",
-      "propertyType": "Residential",
-      "propertySubType": "Multiplex",
-      "units": 75,
-      "buildings": 1,
+      "propertyType": "Investment",
+      "propertyCategory": "Apartment",
+      "unitBand": "Apts - Over 20 Units",
+      "unitBandLabel": "Over 20 units",
       "listPrice": 9055000,
+      "addressPublic": true,
       "address": {
         "street": "373 Mock Terrace",
         "city": "Sudbury",
@@ -2913,58 +2902,53 @@
       "market": "northern-ontario",
       "yearBuilt": 1945,
       "lotSize": null,
-      "buildingArea": null,
-      "reported": {
-        "grossIncome": null,
-        "operatingExpense": null,
-        "noi": null,
-        "taxes": null
-      },
-      "derived": {
-        "pricePerUnit": 120733,
-        "capRateReported": null
-      },
+      "totalArea": null,
+      "taxes": null,
+      "zoning": "Sample Zone 4 [fixture]",
+      "occupancy": "Partial",
+      "heatType": "Gas Forced Air Open",
+      "freestanding": false,
       "media": [
         {
           "url": "/images/listings-fixtures/apt-22.jpg",
           "order": 1,
-          "caption": "Sample photo 1 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 1 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-21.jpg",
           "order": 2,
-          "caption": "Sample photo 2 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 2 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-01.jpg",
           "order": 3,
-          "caption": "Sample photo 3 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 3 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-02.jpg",
           "order": 4,
-          "caption": "Sample photo 4 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 4 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-03.jpg",
           "order": 5,
-          "caption": "Sample photo 5 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 5 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-04.jpg",
           "order": 6,
-          "caption": "Sample photo 6 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 6 of 7 — synthetic listing"
         },
         {
           "url": "/images/listings-fixtures/apt-05.jpg",
           "order": 7,
-          "caption": "Sample photo 7 of 7 \u2014 synthetic listing"
+          "caption": "Sample photo 7 of 7 — synthetic listing"
         }
       ],
-      "remarks": "SYNTHETIC SAMPLE LISTING \u2014 staging fixture 40. This text exists to test page layout and does not describe a real property. 75-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
+      "remarks": "SYNTHETIC SAMPLE LISTING — staging fixture 40. This text exists to test page layout and does not describe a real property. 75-unit apartment building placeholder description with enough length to exercise the remarks block on the detail page.\n\nSecond paragraph of the synthetic description, present to confirm that line breaks in PublicRemarks are preserved exactly as supplied.\n\nThird paragraph. All figures, addresses and names in this fixture are fictional.",
       "listOfficeName": "Specimen Realty Co., Brokerage",
-      "listAgentName": null,
       "daysOnMarket": 117,
+      "cdom": 117,
       "modified": "2026-09-06T23:40:23.000Z",
       "source": "fixture"
     }

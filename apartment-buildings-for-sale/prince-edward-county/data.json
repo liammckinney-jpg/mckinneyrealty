@@ -1,0 +1,25 @@
+{
+ "generatedAt": "2026-09-07T16:00:00.000Z",
+ "source": "fixture",
+ "page": 1,
+ "pages": 1,
+ "listings": [
+  {
+   "listingKey": "fixture-037",
+   "mlsId": "FX903700",
+   "slug": "352-fixture-lane-picton-fx903700",
+   "market": "prince-edward-county",
+   "street": "352 Fixture Lane",
+   "city": "Picton",
+   "band": "6 to 12 units",
+   "bandSlug": "6-12",
+   "listPrice": 2225000,
+   "office": "Sample Properties Ltd., Brokerage",
+   "dom": 18,
+   "modified": "2026-09-06T03:14:36.000Z",
+   "thumb": "/images/listings-fixtures/apt-21.jpg",
+   "thumbAlt": "Sample photo 1 of 8 — synthetic listing",
+   "own": null
+  }
+ ]
+}

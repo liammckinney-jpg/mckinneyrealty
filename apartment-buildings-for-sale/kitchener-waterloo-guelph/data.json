@@ -1,0 +1,42 @@
+{
+ "generatedAt": "2026-09-07T16:00:00.000Z",
+ "source": "fixture",
+ "page": 1,
+ "pages": 1,
+ "listings": [
+  {
+   "listingKey": "fixture-030",
+   "mlsId": "FX903000",
+   "slug": "303-specimen-court-guelph-fx903000",
+   "market": "kitchener-waterloo-guelph",
+   "street": "303 Specimen Court",
+   "city": "Guelph",
+   "band": "Over 20 units",
+   "bandSlug": "over-20",
+   "listPrice": 8865000,
+   "office": "Specimen Realty Co., Brokerage",
+   "dom": 38,
+   "modified": "2026-09-06T15:01:30.000Z",
+   "thumb": "/images/listings-fixtures/apt-04.jpg",
+   "thumbAlt": "Sample photo 1 of 3 — synthetic listing",
+   "own": null
+  },
+  {
+   "listingKey": "fixture-031",
+   "mlsId": "FX903100",
+   "slug": "310-demo-drive-kitchener-fx903100",
+   "market": "kitchener-waterloo-guelph",
+   "street": "310 Demo Drive",
+   "city": "Kitchener",
+   "band": "6 to 12 units",
+   "bandSlug": "6-12",
+   "listPrice": 2550000,
+   "office": "Example Realty Inc., Brokerage",
+   "dom": 97,
+   "modified": "2026-09-02T17:10:15.000Z",
+   "thumb": "/images/listings-fixtures/apt-06.jpg",
+   "thumbAlt": "Sample photo 1 of 4 — synthetic listing",
+   "own": null
+  }
+ ]
+}
